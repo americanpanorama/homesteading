@@ -1,0 +1,74 @@
+[
+  {
+    "id": 10,
+    "category": "claims (no.)"
+  },
+  {
+    "id": 11,
+    "category": "claims (acres)"
+  },
+  {
+    "id": 12,
+    "category": "patents (no.)"
+  },
+  {
+    "id": 13,
+    "category": "patents (acres)"
+  },
+  {
+    "id": 14,
+    "category": "commutations sec 2301 (no.)"
+  },
+  {
+    "id": 15,
+    "category": "commutations sec 2301 (acres)"
+  },
+  {
+    "id": 16,
+    "category": "commutations june 15, 1880 (no.)"
+  },
+  {
+    "id": 17,
+    "category": "commutations june 15, 1880 (acres)"
+  },
+  {
+    "id": 18,
+    "category": "commutations sec 2301 ($)"
+  },
+  {
+    "id": 19,
+    "category": "empty column"
+  },
+  {
+    "id": 20,
+    "category": "claims Indian land (no.)"
+  },
+  {
+    "id": 21,
+    "category": "claims Indian land (acres)"
+  },
+  {
+    "id": 22,
+    "category": "commutations Indian land (no.)"
+  },
+  {
+    "id": 23,
+    "category": "commutations Indian land (acres)"
+  },
+  {
+    "id": 24,
+    "category": "patents Indian land (no.)"
+  },
+  {
+    "id": 25,
+    "category": "patents Indian land (acres)"
+  },
+  {
+    "id": 26,
+    "category": "patents abandoned military reservation no"
+  },
+  {
+    "id": 27,
+    "category": "patents abandoned military reservation acres"
+  }
+]

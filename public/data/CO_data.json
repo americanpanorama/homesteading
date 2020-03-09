@@ -1,0 +1,3620 @@
+[
+  {
+    "id": "G0858",
+    "Office": "Golden, CO",
+    "claims": 304,
+    "claims_ac": 45224.8,
+    "patents": "",
+    "patents_ac": "",
+    "year": 1864
+  },
+  {
+    "id": "G0854",
+    "Office": "Denver, CO",
+    "claims": 157,
+    "claims_ac": 24197.99,
+    "patents": "",
+    "patents_ac": "",
+    "year": 1865
+  },
+  {
+    "id": "G0854",
+    "Office": "Denver, CO",
+    "claims": 208,
+    "claims_ac": 31265.14,
+    "patents": "",
+    "patents_ac": "",
+    "year": 1866
+  },
+  {
+    "id": "G0854",
+    "Office": "Denver, CO",
+    "claims": 127,
+    "claims_ac": 18315.91,
+    "patents": "",
+    "patents_ac": "",
+    "year": 1867
+  },
+  {
+    "id": "G0854",
+    "Office": "Denver, CO",
+    "claims": 59,
+    "claims_ac": 6754.69,
+    "patents": "",
+    "patents_ac": "",
+    "year": 1868
+  },
+  {
+    "id": "G0854",
+    "Office": "Denver, CO",
+    "claims": 61,
+    "claims_ac": 5449.49,
+    "patents": 57,
+    "patents_ac": 8837.48,
+    "year": 1869
+  },
+  {
+    "id": "G0852",
+    "Office": "Central City, CO",
+    "claims": 7,
+    "claims_ac": 560,
+    "patents": "",
+    "patents_ac": "",
+    "year": 1869
+  },
+  {
+    "id": "G0854",
+    "Office": "Denver, CO",
+    "claims": 592,
+    "claims_ac": 65797.27,
+    "patents": 76,
+    "patents_ac": 11669.12,
+    "year": 1870
+  },
+  {
+    "id": "G0852",
+    "Office": "Central City, CO",
+    "claims": 24,
+    "claims_ac": 3187.32,
+    "patents": "",
+    "patents_ac": "",
+    "year": 1870
+  },
+  {
+    "id": "G0854",
+    "Office": "Denver, CO",
+    "claims": 634,
+    "claims_ac": 79734.52,
+    "patents": 75,
+    "patents_ac": 11216.31,
+    "year": 1871
+  },
+  {
+    "id": "G0852",
+    "Office": "Central City, CO",
+    "claims": 22,
+    "claims_ac": 3033.72,
+    "patents": "",
+    "patents_ac": "",
+    "year": 1871
+  },
+  {
+    "id": "G0854",
+    "Office": "Denver, CO",
+    "claims": 242,
+    "claims_ac": 30061.53,
+    "patents": 52,
+    "patents_ac": 7900.36,
+    "year": 1872
+  },
+  {
+    "id": "G0852",
+    "Office": "Central City, CO",
+    "claims": 13,
+    "claims_ac": 2070.85,
+    "patents": "",
+    "patents_ac": "",
+    "year": 1872
+  },
+  {
+    "id": "G08515",
+    "Office": "Pueblo, CO",
+    "claims": 91,
+    "claims_ac": 14287.01,
+    "patents": 18,
+    "patents_ac": 2680,
+    "year": 1872
+  },
+  {
+    "id": "G0856",
+    "Office": "Fairplay, CO",
+    "claims": 1,
+    "claims_ac": 160,
+    "patents": "",
+    "patents_ac": "",
+    "year": 1872
+  },
+  {
+    "id": "G0854",
+    "Office": "Denver, CO",
+    "claims": 265,
+    "claims_ac": 32609.46,
+    "patents": 87,
+    "patents_ac": 12681.05,
+    "year": 1873
+  },
+  {
+    "id": "G0852",
+    "Office": "Central City, CO",
+    "claims": 21,
+    "claims_ac": 2849.42,
+    "patents": "",
+    "patents_ac": "",
+    "year": 1873
+  },
+  {
+    "id": "G08515",
+    "Office": "Pueblo, CO",
+    "claims": 179,
+    "claims_ac": 28322.19,
+    "patents": 17,
+    "patents_ac": 2579.79,
+    "year": 1873
+  },
+  {
+    "id": "G0856",
+    "Office": "Fairplay, CO",
+    "claims": 12,
+    "claims_ac": 1860,
+    "patents": "",
+    "patents_ac": "",
+    "year": 1873
+  },
+  {
+    "id": "G0854",
+    "Office": "Denver, CO",
+    "claims": 265,
+    "claims_ac": 32609.46,
+    "patents": 87,
+    "patents_ac": 12681.05,
+    "year": 1873
+  },
+  {
+    "id": "G0852",
+    "Office": "Central City, CO",
+    "claims": 21,
+    "claims_ac": 2849.42,
+    "patents": "",
+    "patents_ac": "",
+    "year": 1873
+  },
+  {
+    "id": "G08515",
+    "Office": "Pueblo, CO",
+    "claims": 179,
+    "claims_ac": 28322.19,
+    "patents": 17,
+    "patents_ac": 2579.79,
+    "year": 1873
+  },
+  {
+    "id": "G0856",
+    "Office": "Fairplay, CO",
+    "claims": 12,
+    "claims_ac": 1860,
+    "patents": "",
+    "patents_ac": "",
+    "year": 1873
+  },
+  {
+    "id": "G0854",
+    "Office": "Denver, CO",
+    "claims": 343,
+    "claims_ac": 45367.24,
+    "patents": 78,
+    "patents_ac": 10818.48,
+    "year": 1874
+  },
+  {
+    "id": "G0852",
+    "Office": "Central City, CO",
+    "claims": 32,
+    "claims_ac": 4470.43,
+    "patents": 5,
+    "patents_ac": 560,
+    "year": 1874
+  },
+  {
+    "id": "G08515",
+    "Office": "Pueblo, CO",
+    "claims": 179,
+    "claims_ac": 27868.92,
+    "patents": 14,
+    "patents_ac": 2194.59,
+    "year": 1874
+  },
+  {
+    "id": "G0856",
+    "Office": "Fairplay, CO",
+    "claims": 24,
+    "claims_ac": 3818.99,
+    "patents": "",
+    "patents_ac": "",
+    "year": 1874
+  },
+  {
+    "id": "G0852",
+    "Office": "Central City, CO",
+    "claims": 27,
+    "claims_ac": 3794.38,
+    "patents": 3,
+    "patents_ac": 320,
+    "year": 1875
+  },
+  {
+    "id": "G0854",
+    "Office": "Denver, CO",
+    "claims": 203,
+    "claims_ac": 26521.03,
+    "patents": 128,
+    "patents_ac": 14515.49,
+    "year": 1875
+  },
+  {
+    "id": "G0853",
+    "Office": "Del Norte, CO",
+    "claims": 49,
+    "claims_ac": 7840.7,
+    "patents": 4,
+    "patents_ac": 640,
+    "year": 1875
+  },
+  {
+    "id": "G0856",
+    "Office": "Fairplay, CO",
+    "claims": 12,
+    "claims_ac": 1840,
+    "patents": "",
+    "patents_ac": "",
+    "year": 1875
+  },
+  {
+    "id": "G08515",
+    "Office": "Pueblo, CO",
+    "claims": 151,
+    "claims_ac": 22548.33,
+    "patents": 62,
+    "patents_ac": 9054.94,
+    "year": 1875
+  },
+  {
+    "id": "G0852",
+    "Office": "Central City, CO",
+    "claims": 12,
+    "claims_ac": 1600,
+    "patents": 11,
+    "patents_ac": 1519.43,
+    "year": 1876
+  },
+  {
+    "id": "G0854",
+    "Office": "Denver, CO",
+    "claims": 186,
+    "claims_ac": 20930.11,
+    "patents": 208,
+    "patents_ac": 24561.83,
+    "year": 1876
+  },
+  {
+    "id": "G0853",
+    "Office": "Del Norte, CO",
+    "claims": 89,
+    "claims_ac": 13659.07,
+    "patents": 12,
+    "patents_ac": 1599.22,
+    "year": 1876
+  },
+  {
+    "id": "G0856",
+    "Office": "Fairplay, CO",
+    "claims": 17,
+    "claims_ac": 2721.1,
+    "patents": 1,
+    "patents_ac": 160,
+    "year": 1876
+  },
+  {
+    "id": "G08515",
+    "Office": "Pueblo, CO",
+    "claims": 131,
+    "claims_ac": 18087.39,
+    "patents": 64,
+    "patents_ac": 7613.2,
+    "year": 1876
+  },
+  {
+    "id": "G0852",
+    "Office": "Central City, CO",
+    "claims": 3,
+    "claims_ac": 359.86,
+    "patents": 11,
+    "patents_ac": 1711.25,
+    "year": 1877
+  },
+  {
+    "id": "G0854",
+    "Office": "Denver, CO",
+    "claims": 119,
+    "claims_ac": 13972.43,
+    "patents": 161,
+    "patents_ac": 18843.2,
+    "year": 1877
+  },
+  {
+    "id": "G0853",
+    "Office": "Del Norte, CO",
+    "claims": 49,
+    "claims_ac": 7675.9,
+    "patents": 5,
+    "patents_ac": 720,
+    "year": 1877
+  },
+  {
+    "id": "G0856",
+    "Office": "Fairplay, CO",
+    "claims": 17,
+    "claims_ac": 2720,
+    "patents": 1,
+    "patents_ac": 160,
+    "year": 1877
+  },
+  {
+    "id": "G08515",
+    "Office": "Pueblo, CO",
+    "claims": 90,
+    "claims_ac": 13338.13,
+    "patents": 38,
+    "patents_ac": 5905.41,
+    "year": 1877
+  },
+  {
+    "id": "G0852",
+    "Office": "Central City, CO",
+    "claims": 17,
+    "claims_ac": 2400.51,
+    "patents": 15,
+    "patents_ac": 1858.11,
+    "year": 1878
+  },
+  {
+    "id": "G0854",
+    "Office": "Denver, CO",
+    "claims": 249,
+    "claims_ac": 28271.35,
+    "patents": 164,
+    "patents_ac": 19963.26,
+    "year": 1878
+  },
+  {
+    "id": "G0853",
+    "Office": "Del Norte, CO",
+    "claims": 101,
+    "claims_ac": 15832.43,
+    "patents": 15,
+    "patents_ac": 2116.13,
+    "year": 1878
+  },
+  {
+    "id": "G0856",
+    "Office": "Fairplay, CO",
+    "claims": 32,
+    "claims_ac": 4982.66,
+    "patents": 4,
+    "patents_ac": 520,
+    "year": 1878
+  },
+  {
+    "id": "G08511",
+    "Office": "Lake City, CO",
+    "claims": 13,
+    "claims_ac": 1918.8,
+    "patents": 2,
+    "patents_ac": 240,
+    "year": 1878
+  },
+  {
+    "id": "G08515",
+    "Office": "Pueblo, CO",
+    "claims": 211,
+    "claims_ac": 30588.55,
+    "patents": 93,
+    "patents_ac": 13121.47,
+    "year": 1878
+  },
+  {
+    "id": "G0852",
+    "Office": "Central City, CO",
+    "claims": 23,
+    "claims_ac": 3320,
+    "patents": 13,
+    "patents_ac": 1679.46,
+    "year": 1879
+  },
+  {
+    "id": "G0853",
+    "Office": "Del Norte, CO",
+    "claims": 55,
+    "claims_ac": 8563.89,
+    "patents": 22,
+    "patents_ac": 3336.49,
+    "year": 1879
+  },
+  {
+    "id": "G0854",
+    "Office": "Denver, CO",
+    "claims": 157,
+    "claims_ac": 19093.8,
+    "patents": 121,
+    "patents_ac": 15554.03,
+    "year": 1879
+  },
+  {
+    "id": "G0856",
+    "Office": "Fairplay, CO",
+    "claims": 34,
+    "claims_ac": 5400.75,
+    "patents": 16,
+    "patents_ac": 2558.52,
+    "year": 1879
+  },
+  {
+    "id": "G08511",
+    "Office": "Lake City, CO",
+    "claims": 1,
+    "claims_ac": 80,
+    "patents": 1,
+    "patents_ac": 80,
+    "year": 1879
+  },
+  {
+    "id": "G08515",
+    "Office": "Pueblo, CO",
+    "claims": 210,
+    "claims_ac": 28903.98,
+    "patents": 144,
+    "patents_ac": 19275.97,
+    "year": 1879
+  },
+  {
+    "id": "G0852",
+    "Office": "Central City, CO",
+    "claims": 23,
+    "claims_ac": 2879.1,
+    "patents": 14,
+    "patents_ac": 2160,
+    "year": 1880
+  },
+  {
+    "id": "G0853",
+    "Office": "Del Norte, CO",
+    "claims": 76,
+    "claims_ac": 11540.9,
+    "patents": 62,
+    "patents_ac": 9800,
+    "year": 1880
+  },
+  {
+    "id": "G0854",
+    "Office": "Denver, CO",
+    "claims": 328,
+    "claims_ac": 44762.6,
+    "patents": 135,
+    "patents_ac": 17865.58,
+    "year": 1880
+  },
+  {
+    "id": "G08511",
+    "Office": "Lake City, CO",
+    "claims": 34,
+    "claims_ac": 4254.8,
+    "patents": 20,
+    "patents_ac": 2059.41,
+    "year": 1880
+  },
+  {
+    "id": "G08513",
+    "Office": "Leadville, CO",
+    "claims": 34,
+    "claims_ac": 5023.73,
+    "patents": 12,
+    "patents_ac": 1604.77,
+    "year": 1880
+  },
+  {
+    "id": "G08515",
+    "Office": "Pueblo, CO",
+    "claims": 244,
+    "claims_ac": 34997.05,
+    "patents": 175,
+    "patents_ac": 25012.6,
+    "year": 1880
+  },
+  {
+    "id": "G0852",
+    "Office": "Central City, CO",
+    "claims": 28,
+    "claims_ac": 4074.9,
+    "patents": 16,
+    "patents_ac": 2080,
+    "year": 1881
+  },
+  {
+    "id": "G0853",
+    "Office": "Del Norte, CO",
+    "claims": 100,
+    "claims_ac": 13276.83,
+    "patents": 86,
+    "patents_ac": 13639.96,
+    "year": 1881
+  },
+  {
+    "id": "G0854",
+    "Office": "Denver, CO",
+    "claims": 320,
+    "claims_ac": 41977.89,
+    "patents": 133,
+    "patents_ac": 16172.23,
+    "year": 1881
+  },
+  {
+    "id": "G08513",
+    "Office": "Leadville, CO",
+    "claims": 34,
+    "claims_ac": 5021.83,
+    "patents": 17,
+    "patents_ac": 2650.35,
+    "year": 1881
+  },
+  {
+    "id": "G08511",
+    "Office": "Lake City, CO",
+    "claims": 54,
+    "claims_ac": 7315.37,
+    "patents": 19,
+    "patents_ac": 2120,
+    "year": 1881
+  },
+  {
+    "id": "G08515",
+    "Office": "Pueblo, CO",
+    "claims": 285,
+    "claims_ac": 43884.17,
+    "patents": 221,
+    "patents_ac": 34101.65,
+    "year": 1881
+  },
+  {
+    "id": "G0852",
+    "Office": "Central City, CO",
+    "claims": 54,
+    "claims_ac": 7774.7,
+    "patents": 19,
+    "patents_ac": 2640,
+    "year": 1882
+  },
+  {
+    "id": "G0853",
+    "Office": "Del Norte, CO",
+    "claims": 122,
+    "claims_ac": 16881.29,
+    "patents": 69,
+    "patents_ac": 10764.68,
+    "year": 1882
+  },
+  {
+    "id": "G0854",
+    "Office": "Denver, CO",
+    "claims": 300,
+    "claims_ac": 42109.8,
+    "patents": 145,
+    "patents_ac": 18492.52,
+    "year": 1882
+  },
+  {
+    "id": "G08511",
+    "Office": "Lake City, CO",
+    "claims": 58,
+    "claims_ac": 8837.14,
+    "patents": 21,
+    "patents_ac": 2858.59,
+    "year": 1882
+  },
+  {
+    "id": "G08513",
+    "Office": "Leadville, CO",
+    "claims": 70,
+    "claims_ac": 10949.86,
+    "patents": 16,
+    "patents_ac": 2560,
+    "year": 1882
+  },
+  {
+    "id": "G08515",
+    "Office": "Pueblo, CO",
+    "claims": 330,
+    "claims_ac": 49856.09,
+    "patents": 273,
+    "patents_ac": 41258.73,
+    "year": 1882
+  },
+  {
+    "id": "G0852",
+    "Office": "Central City, CO",
+    "claims": 57,
+    "claims_ac": 8776.26,
+    "patents": 21,
+    "patents_ac": 2880,
+    "year": 1883
+  },
+  {
+    "id": "G0853",
+    "Office": "Del Norte, CO",
+    "claims": 70,
+    "claims_ac": 10665.7,
+    "patents": 56,
+    "patents_ac": 8872.28,
+    "year": 1883
+  },
+  {
+    "id": "G0854",
+    "Office": "Denver, CO",
+    "claims": 398,
+    "claims_ac": 59675.36,
+    "patents": 110,
+    "patents_ac": 14499.81,
+    "year": 1883
+  },
+  {
+    "id": "G0855",
+    "Office": "Durango, CO",
+    "claims": 43,
+    "claims_ac": 66073,
+    "patents": 11,
+    "patents_ac": 1720,
+    "year": 1883
+  },
+  {
+    "id": "G0859",
+    "Office": "Gunnison, CO",
+    "claims": 13,
+    "claims_ac": 1838.99,
+    "patents": 1,
+    "patents_ac": 160,
+    "year": 1883
+  },
+  {
+    "id": "G08511",
+    "Office": "Lake City, CO",
+    "claims": 20,
+    "claims_ac": 2871.47,
+    "patents": 3,
+    "patents_ac": 480,
+    "year": 1883
+  },
+  {
+    "id": "G08513",
+    "Office": "Leadville, CO",
+    "claims": 49,
+    "claims_ac": 7410.75,
+    "patents": 19,
+    "patents_ac": 2800,
+    "year": 1883
+  },
+  {
+    "id": "G08515",
+    "Office": "Pueblo, CO",
+    "claims": 737,
+    "claims_ac": 112911.17,
+    "patents": 501,
+    "patents_ac": 75680.06,
+    "year": 1883
+  },
+  {
+    "id": "G0852",
+    "Office": "Central City, CO",
+    "claims": 73,
+    "claims_ac": 11205.02,
+    "patents": 14,
+    "patents_ac": 1960,
+    "year": 1884
+  },
+  {
+    "id": "G0853",
+    "Office": "Del Norte, CO",
+    "claims": 124,
+    "claims_ac": 18540.24,
+    "patents": 67,
+    "patents_ac": 10615.76,
+    "year": 1884
+  },
+  {
+    "id": "G0854",
+    "Office": "Denver, CO",
+    "claims": 510,
+    "claims_ac": 77009.25,
+    "patents": 129,
+    "patents_ac": 17584.36,
+    "year": 1884
+  },
+  {
+    "id": "G0855",
+    "Office": "Durango, CO",
+    "claims": 52,
+    "claims_ac": 8146.62,
+    "patents": 6,
+    "patents_ac": 960,
+    "year": 1884
+  },
+  {
+    "id": "G0859",
+    "Office": "Gunnison, CO",
+    "claims": 28,
+    "claims_ac": 4429.23,
+    "patents": 1,
+    "patents_ac": 160,
+    "year": 1884
+  },
+  {
+    "id": "G08511",
+    "Office": "Lake City, CO",
+    "claims": 1,
+    "claims_ac": 160.56,
+    "patents": 3,
+    "patents_ac": 480,
+    "year": 1884
+  },
+  {
+    "id": "G08513",
+    "Office": "Leadville, CO",
+    "claims": 57,
+    "claims_ac": 8589.83,
+    "patents": 12,
+    "patents_ac": 1839.86,
+    "year": 1884
+  },
+  {
+    "id": "G08515",
+    "Office": "Pueblo, CO",
+    "claims": 460,
+    "claims_ac": 70314.17,
+    "patents": 203,
+    "patents_ac": 30703.27,
+    "year": 1884
+  },
+  {
+    "id": "G0852",
+    "Office": "Central City, CO",
+    "claims": 59,
+    "claims_ac": 9198.34,
+    "patents": 19,
+    "patents_ac": 2799.12,
+    "year": 1885
+  },
+  {
+    "id": "G0853",
+    "Office": "Del Norte, CO",
+    "claims": 99,
+    "claims_ac": 14215.98,
+    "patents": 63,
+    "patents_ac": 9429.65,
+    "year": 1885
+  },
+  {
+    "id": "G0854",
+    "Office": "Denver, CO",
+    "claims": 481,
+    "claims_ac": 73663.01,
+    "patents": 137,
+    "patents_ac": 19433.37,
+    "year": 1885
+  },
+  {
+    "id": "G0855",
+    "Office": "Durango, CO",
+    "claims": 55,
+    "claims_ac": 8675.79,
+    "patents": 11,
+    "patents_ac": 1467.11,
+    "year": 1885
+  },
+  {
+    "id": "G0857",
+    "Office": "Glenwood Springs, CO",
+    "claims": 35,
+    "claims_ac": 5364.17,
+    "patents": 2,
+    "patents_ac": 96.39,
+    "year": 1885
+  },
+  {
+    "id": "G0859",
+    "Office": "Gunnison, CO",
+    "claims": 16,
+    "claims_ac": 2439.47,
+    "patents": 1,
+    "patents_ac": 160,
+    "year": 1885
+  },
+  {
+    "id": "G08511",
+    "Office": "Lake City, CO",
+    "claims": 5,
+    "claims_ac": 747.71,
+    "patents": 2,
+    "patents_ac": 320,
+    "year": 1885
+  },
+  {
+    "id": "G08513",
+    "Office": "Leadville, CO",
+    "claims": 49,
+    "claims_ac": 7708.47,
+    "patents": 15,
+    "patents_ac": 2399.69,
+    "year": 1885
+  },
+  {
+    "id": "G08515",
+    "Office": "Pueblo, CO",
+    "claims": 355,
+    "claims_ac": 54201.45,
+    "patents": 148,
+    "patents_ac": 22249.73,
+    "year": 1885
+  },
+  {
+    "id": "G0852",
+    "Office": "Central City, CO",
+    "claims": 65,
+    "claims_ac": 10121.94,
+    "patents": 13,
+    "patents_ac": 2032.73,
+    "year": 1886
+  },
+  {
+    "id": "G0853",
+    "Office": "Del Norte, CO",
+    "claims": 93,
+    "claims_ac": 14251.26,
+    "patents": 33,
+    "patents_ac": 4970.67,
+    "year": 1886
+  },
+  {
+    "id": "G0854",
+    "Office": "Denver, CO",
+    "claims": 1011,
+    "claims_ac": 158873.69,
+    "patents": 129,
+    "patents_ac": 18951.98,
+    "year": 1886
+  },
+  {
+    "id": "G0855",
+    "Office": "Durango, CO",
+    "claims": 74,
+    "claims_ac": 11542.86,
+    "patents": 20,
+    "patents_ac": 3196.88,
+    "year": 1886
+  },
+  {
+    "id": "G0857",
+    "Office": "Glenwood Springs, CO",
+    "claims": 94,
+    "claims_ac": 14461.7,
+    "patents": 80,
+    "patents_ac": 11268.21,
+    "year": 1886
+  },
+  {
+    "id": "G0859",
+    "Office": "Gunnison, CO",
+    "claims": 16,
+    "claims_ac": 2471.99,
+    "patents": 1,
+    "patents_ac": 160,
+    "year": 1886
+  },
+  {
+    "id": "G08511",
+    "Office": "Lake City, CO",
+    "claims": 15,
+    "claims_ac": 2053.03,
+    "patents": 7,
+    "patents_ac": 946.29,
+    "year": 1886
+  },
+  {
+    "id": "G08513",
+    "Office": "Leadville, CO",
+    "claims": 45,
+    "claims_ac": 6888.7,
+    "patents": 14,
+    "patents_ac": 2400,
+    "year": 1886
+  },
+  {
+    "id": "G08515",
+    "Office": "Pueblo, CO",
+    "claims": 395,
+    "claims_ac": 61135.97,
+    "patents": 60,
+    "patents_ac": 8932.42,
+    "year": 1886
+  },
+  {
+    "id": "G0852",
+    "Office": "Central City, CO",
+    "claims": 57,
+    "claims_ac": 8881.49,
+    "patents": 20,
+    "patents_ac": 3033.59,
+    "year": 1887
+  },
+  {
+    "id": "G0853",
+    "Office": "Del Norte, CO",
+    "claims": 198,
+    "claims_ac": 30837.34,
+    "patents": 39,
+    "patents_ac": 5841.28,
+    "year": 1887
+  },
+  {
+    "id": "G0854",
+    "Office": "Denver, CO",
+    "claims": 2406,
+    "claims_ac": 381853.1,
+    "patents": 134,
+    "patents_ac": 19467.33,
+    "year": 1887
+  },
+  {
+    "id": "G0855",
+    "Office": "Durango, CO",
+    "claims": 141,
+    "claims_ac": 21714.19,
+    "patents": 27,
+    "patents_ac": 4119.79,
+    "year": 1887
+  },
+  {
+    "id": "G0857",
+    "Office": "Glenwood Springs, CO",
+    "claims": 60,
+    "claims_ac": 9490.45,
+    "patents": 7,
+    "patents_ac": 1111.6,
+    "year": 1887
+  },
+  {
+    "id": "G0859",
+    "Office": "Gunnison, CO",
+    "claims": 26,
+    "claims_ac": 3999.99,
+    "patents": 9,
+    "patents_ac": 1400,
+    "year": 1887
+  },
+  {
+    "id": "G08511",
+    "Office": "Lake City, CO",
+    "claims": 10,
+    "claims_ac": 1461.17,
+    "patents": 3,
+    "patents_ac": 428.36,
+    "year": 1887
+  },
+  {
+    "id": "G08512",
+    "Office": "Lamar, CO",
+    "claims": 1582,
+    "claims_ac": 249780.11,
+    "patents": 16,
+    "patents_ac": 1240.28,
+    "year": 1887
+  },
+  {
+    "id": "G08513",
+    "Office": "Leadville, CO",
+    "claims": 64,
+    "claims_ac": 10064.13,
+    "patents": 35,
+    "patents_ac": 5478.76,
+    "year": 1887
+  },
+  {
+    "id": "G08515",
+    "Office": "Pueblo, CO",
+    "claims": 537,
+    "claims_ac": 83492.82,
+    "patents": 51,
+    "patents_ac": 7372.21,
+    "year": 1887
+  },
+  {
+    "id": "G0852",
+    "Office": "Central City, CO",
+    "claims": 59,
+    "claims_ac": 9094.56,
+    "patents": 28,
+    "patents_ac": 4307.71,
+    "year": 1888
+  },
+  {
+    "id": "G0853",
+    "Office": "Del Norte, CO",
+    "claims": 633,
+    "claims_ac": 99298.44,
+    "patents": 57,
+    "patents_ac": 8840,
+    "year": 1888
+  },
+  {
+    "id": "G0854",
+    "Office": "Denver, CO",
+    "claims": 2997,
+    "claims_ac": 473376.1,
+    "patents": 172,
+    "patents_ac": 25105.11,
+    "year": 1888
+  },
+  {
+    "id": "G0855",
+    "Office": "Durango, CO",
+    "claims": 117,
+    "claims_ac": 17459.16,
+    "patents": 13,
+    "patents_ac": 2076.76,
+    "year": 1888
+  },
+  {
+    "id": "G0857",
+    "Office": "Glenwood Springs, CO",
+    "claims": 75,
+    "claims_ac": 11818.53,
+    "patents": 21,
+    "patents_ac": 3334.79,
+    "year": 1888
+  },
+  {
+    "id": "G0859",
+    "Office": "Gunnison, CO",
+    "claims": 17,
+    "claims_ac": 2640,
+    "patents": 10,
+    "patents_ac": 1599.35,
+    "year": 1888
+  },
+  {
+    "id": "G08511",
+    "Office": "Lake City, CO",
+    "claims": 10,
+    "claims_ac": 1585.15,
+    "patents": 1,
+    "patents_ac": 159.15,
+    "year": 1888
+  },
+  {
+    "id": "G08512",
+    "Office": "Lamar, CO",
+    "claims": 1709,
+    "claims_ac": 269351.87,
+    "patents": 30,
+    "patents_ac": 3238.33,
+    "year": 1888
+  },
+  {
+    "id": "G08513",
+    "Office": "Leadville, CO",
+    "claims": 56,
+    "claims_ac": 8716.64,
+    "patents": 19,
+    "patents_ac": 2920,
+    "year": 1888
+  },
+  {
+    "id": "G08515",
+    "Office": "Pueblo, CO",
+    "claims": 738,
+    "claims_ac": 114213.63,
+    "patents": 94,
+    "patents_ac": 13993.49,
+    "year": 1888
+  },
+  {
+    "id": "G0852",
+    "Office": "Central City, CO",
+    "claims": 57,
+    "claims_ac": 8776.26,
+    "patents": 36,
+    "patents_ac": 5478.61,
+    "year": 1889
+  },
+  {
+    "id": "G0853",
+    "Office": "Del Norte, CO",
+    "claims": 288,
+    "claims_ac": 44881.49,
+    "patents": 50,
+    "patents_ac": 7697.77,
+    "year": 1889
+  },
+  {
+    "id": "G0854",
+    "Office": "Denver, CO",
+    "claims": 1735,
+    "claims_ac": 271937.23,
+    "patents": 257,
+    "patents_ac": 38707.82,
+    "year": 1889
+  },
+  {
+    "id": "G0855",
+    "Office": "Durango, CO",
+    "claims": 92,
+    "claims_ac": 14046.99,
+    "patents": 24,
+    "patents_ac": 3777.66,
+    "year": 1889
+  },
+  {
+    "id": "G0857",
+    "Office": "Glenwood Springs, CO",
+    "claims": 91,
+    "claims_ac": 14222.88,
+    "patents": 15,
+    "patents_ac": 2391.09,
+    "year": 1889
+  },
+  {
+    "id": "G0859",
+    "Office": "Gunnison, CO",
+    "claims": 23,
+    "claims_ac": 3517.25,
+    "patents": 10,
+    "patents_ac": 1560,
+    "year": 1889
+  },
+  {
+    "id": "G08512",
+    "Office": "Lamar, CO",
+    "claims": 500,
+    "claims_ac": 78626.33,
+    "patents": 33,
+    "patents_ac": 5196.74,
+    "year": 1889
+  },
+  {
+    "id": "G08513",
+    "Office": "Leadville, CO",
+    "claims": 56,
+    "claims_ac": 8696.26,
+    "patents": 29,
+    "patents_ac": 4467,
+    "year": 1889
+  },
+  {
+    "id": "G08514",
+    "Office": "Montrose, CO",
+    "claims": 11,
+    "claims_ac": 1679.27,
+    "patents": 2,
+    "patents_ac": 320,
+    "year": 1889
+  },
+  {
+    "id": "G08515",
+    "Office": "Pueblo, CO",
+    "claims": 536,
+    "claims_ac": 79993.08,
+    "patents": 188,
+    "patents_ac": 27677.87,
+    "year": 1889
+  },
+  {
+    "id": "G0852",
+    "Office": "Central City, CO",
+    "claims": 58,
+    "claims_ac": 8236.75,
+    "patents": 38,
+    "patents_ac": 5710.5,
+    "year": 1890
+  },
+  {
+    "id": "G0853",
+    "Office": "Del Norte, CO",
+    "claims": 123,
+    "claims_ac": 18680.19,
+    "patents": 49,
+    "patents_ac": 7397.84,
+    "year": 1890
+  },
+  {
+    "id": "G0854",
+    "Office": "Denver, CO",
+    "claims": 1208,
+    "claims_ac": 187874.03,
+    "patents": 319,
+    "patents_ac": 49435.71,
+    "year": 1890
+  },
+  {
+    "id": "G0855",
+    "Office": "Durango, CO",
+    "claims": 75,
+    "claims_ac": 11120.1,
+    "patents": 43,
+    "patents_ac": 6459.8,
+    "year": 1890
+  },
+  {
+    "id": "G0857",
+    "Office": "Glenwood Springs, CO",
+    "claims": 72,
+    "claims_ac": 11408.55,
+    "patents": 24,
+    "patents_ac": 3827.79,
+    "year": 1890
+  },
+  {
+    "id": "G0859",
+    "Office": "Gunnison, CO",
+    "claims": 19,
+    "claims_ac": 2680.2,
+    "patents": 6,
+    "patents_ac": 960,
+    "year": 1890
+  },
+  {
+    "id": "G08512",
+    "Office": "Lamar, CO",
+    "claims": 206,
+    "claims_ac": 32375.86,
+    "patents": 57,
+    "patents_ac": 9098.28,
+    "year": 1890
+  },
+  {
+    "id": "G08513",
+    "Office": "Leadville, CO",
+    "claims": 38,
+    "claims_ac": 5690.65,
+    "patents": 34,
+    "patents_ac": 5155.55,
+    "year": 1890
+  },
+  {
+    "id": "G08514",
+    "Office": "Montrose, CO",
+    "claims": 21,
+    "claims_ac": 3231.24,
+    "patents": 2,
+    "patents_ac": 280,
+    "year": 1890
+  },
+  {
+    "id": "G08515",
+    "Office": "Pueblo, CO",
+    "claims": 460,
+    "claims_ac": 69610.34,
+    "patents": 167,
+    "patents_ac": 25121.1,
+    "year": 1890
+  },
+  {
+    "id": "G0851",
+    "Office": "Akron, CO",
+    "claims": 159,
+    "claims_ac": 24469.48,
+    "patents": 56,
+    "patents_ac": 8941.4,
+    "year": 1891
+  },
+  {
+    "id": "G0852",
+    "Office": "Central City, CO",
+    "claims": 86,
+    "claims_ac": 12720.57,
+    "patents": 47,
+    "patents_ac": 7267.74,
+    "year": 1891
+  },
+  {
+    "id": "G0853",
+    "Office": "Del Norte, CO",
+    "claims": 202,
+    "claims_ac": 30110.52,
+    "patents": 50,
+    "patents_ac": 5369.1,
+    "year": 1891
+  },
+  {
+    "id": "G0854",
+    "Office": "Denver, CO",
+    "claims": 289,
+    "claims_ac": 51181.46,
+    "patents": 222,
+    "patents_ac": 34272.07,
+    "year": 1891
+  },
+  {
+    "id": "G0855",
+    "Office": "Durango, CO",
+    "claims": 137,
+    "claims_ac": 18369.89,
+    "patents": 46,
+    "patents_ac": 7190.05,
+    "year": 1891
+  },
+  {
+    "id": "G0857",
+    "Office": "Glenwood Springs, CO",
+    "claims": 76,
+    "claims_ac": 11661.68,
+    "patents": 54,
+    "patents_ac": 8220.54,
+    "year": 1891
+  },
+  {
+    "id": "G0859",
+    "Office": "Gunnison, CO",
+    "claims": 14,
+    "claims_ac": 2240,
+    "patents": 10,
+    "patents_ac": 1592.56,
+    "year": 1891
+  },
+  {
+    "id": "G08510",
+    "Office": "Hugo, CO",
+    "claims": 84,
+    "claims_ac": 13405.02,
+    "patents": 9,
+    "patents_ac": 1440,
+    "year": 1891
+  },
+  {
+    "id": "G08512",
+    "Office": "Lamar, CO",
+    "claims": 155,
+    "claims_ac": 23230.07,
+    "patents": 29,
+    "patents_ac": 4632.82,
+    "year": 1891
+  },
+  {
+    "id": "G08513",
+    "Office": "Leadville, CO",
+    "claims": 35,
+    "claims_ac": 5021.71,
+    "patents": 13,
+    "patents_ac": 1960,
+    "year": 1891
+  },
+  {
+    "id": "G08514",
+    "Office": "Montrose, CO",
+    "claims": 20,
+    "claims_ac": 3122.26,
+    "patents": 2,
+    "patents_ac": 278.95,
+    "year": 1891
+  },
+  {
+    "id": "G08515",
+    "Office": "Pueblo, CO",
+    "claims": 485,
+    "claims_ac": 72845.42,
+    "patents": 185,
+    "patents_ac": 27794.66,
+    "year": 1891
+  },
+  {
+    "id": "G08516",
+    "Office": "Sterling, CO",
+    "claims": 134,
+    "claims_ac": 20637.78,
+    "patents": 114,
+    "patents_ac": 17857.37,
+    "year": 1891
+  },
+  {
+    "id": "G0851",
+    "Office": "Akron, CO",
+    "claims": 375,
+    "claims_ac": 59121.64,
+    "patents": 154,
+    "patents_ac": 24533.83,
+    "year": 1892
+  },
+  {
+    "id": "G0852",
+    "Office": "Central City, CO",
+    "claims": 104,
+    "claims_ac": 15413.36,
+    "patents": 28,
+    "patents_ac": 4020.81,
+    "year": 1892
+  },
+  {
+    "id": "G0853",
+    "Office": "Del Norte, CO",
+    "claims": 155,
+    "claims_ac": 22619.64,
+    "patents": 59,
+    "patents_ac": 8760.24,
+    "year": 1892
+  },
+  {
+    "id": "G0854",
+    "Office": "Denver, CO",
+    "claims": 293,
+    "claims_ac": 43815.08,
+    "patents": 171,
+    "patents_ac": 25941.85,
+    "year": 1892
+  },
+  {
+    "id": "G0855",
+    "Office": "Durango, CO",
+    "claims": 125,
+    "claims_ac": 18978.35,
+    "patents": 29,
+    "patents_ac": 4589.82,
+    "year": 1892
+  },
+  {
+    "id": "G0857",
+    "Office": "Glenwood Springs, CO",
+    "claims": 86,
+    "claims_ac": 13437.64,
+    "patents": 56,
+    "patents_ac": 8675.52,
+    "year": 1892
+  },
+  {
+    "id": "G0859",
+    "Office": "Gunnison, CO",
+    "claims": 13,
+    "claims_ac": 1972.46,
+    "patents": 20,
+    "patents_ac": 3158.51,
+    "year": 1892
+  },
+  {
+    "id": "G08510",
+    "Office": "Hugo, CO",
+    "claims": 116,
+    "claims_ac": 18277.94,
+    "patents": 26,
+    "patents_ac": 4157.7,
+    "year": 1892
+  },
+  {
+    "id": "G08512",
+    "Office": "Lamar, CO",
+    "claims": 131,
+    "claims_ac": 20305.07,
+    "patents": 43,
+    "patents_ac": 6797.19,
+    "year": 1892
+  },
+  {
+    "id": "G08513",
+    "Office": "Leadville, CO",
+    "claims": 68,
+    "claims_ac": 10173.97,
+    "patents": 32,
+    "patents_ac": 4813.58,
+    "year": 1892
+  },
+  {
+    "id": "G08514",
+    "Office": "Montrose, CO",
+    "claims": 28,
+    "claims_ac": 4156.26,
+    "patents": 3,
+    "patents_ac": 447.93,
+    "year": 1892
+  },
+  {
+    "id": "G08515",
+    "Office": "Pueblo, CO",
+    "claims": 476,
+    "claims_ac": 71930.46,
+    "patents": 134,
+    "patents_ac": 20588.78,
+    "year": 1892
+  },
+  {
+    "id": "G08516",
+    "Office": "Sterling, CO",
+    "claims": 309,
+    "claims_ac": 48352.49,
+    "patents": 175,
+    "patents_ac": 27808.66,
+    "year": 1892
+  },
+  {
+    "id": "G0851",
+    "Office": "Akron, CO",
+    "claims": 614,
+    "claims_ac": 96226.55,
+    "patents": 297,
+    "patents_ac": 47229.55,
+    "year": 1893
+  },
+  {
+    "id": "G0852",
+    "Office": "Central City, CO",
+    "claims": 82,
+    "claims_ac": 12325.84,
+    "patents": 48,
+    "patents_ac": 7195.68,
+    "year": 1893
+  },
+  {
+    "id": "G0853",
+    "Office": "Del Norte, CO",
+    "claims": 64,
+    "claims_ac": 9154.4,
+    "patents": 53,
+    "patents_ac": 8396.35,
+    "year": 1893
+  },
+  {
+    "id": "G0854",
+    "Office": "Denver, CO",
+    "claims": 324,
+    "claims_ac": 47093.2,
+    "patents": 211,
+    "patents_ac": 32358.22,
+    "year": 1893
+  },
+  {
+    "id": "G0855",
+    "Office": "Durango, CO",
+    "claims": 139,
+    "claims_ac": 19928.95,
+    "patents": 55,
+    "patents_ac": 8337.09,
+    "year": 1893
+  },
+  {
+    "id": "G0857",
+    "Office": "Glenwood Springs, CO",
+    "claims": 70,
+    "claims_ac": 10173.28,
+    "patents": 54,
+    "patents_ac": 8438.43,
+    "year": 1893
+  },
+  {
+    "id": "G0859",
+    "Office": "Gunnison, CO",
+    "claims": 14,
+    "claims_ac": 2036.22,
+    "patents": 9,
+    "patents_ac": 1269.51,
+    "year": 1893
+  },
+  {
+    "id": "G08510",
+    "Office": "Hugo, CO",
+    "claims": 327,
+    "claims_ac": 51611.19,
+    "patents": 131,
+    "patents_ac": 20929.99,
+    "year": 1893
+  },
+  {
+    "id": "G08512",
+    "Office": "Lamar, CO",
+    "claims": 147,
+    "claims_ac": 23023.51,
+    "patents": 146,
+    "patents_ac": 23113.35,
+    "year": 1893
+  },
+  {
+    "id": "G08513",
+    "Office": "Leadville, CO",
+    "claims": 31,
+    "claims_ac": 4796.89,
+    "patents": 36,
+    "patents_ac": 5717.42,
+    "year": 1893
+  },
+  {
+    "id": "G08514",
+    "Office": "Montrose, CO",
+    "claims": 32,
+    "claims_ac": 5022.99,
+    "patents": 13,
+    "patents_ac": 1986.84,
+    "year": 1893
+  },
+  {
+    "id": "G08515",
+    "Office": "Pueblo, CO",
+    "claims": 509,
+    "claims_ac": 75227.76,
+    "patents": 172,
+    "patents_ac": 26376.29,
+    "year": 1893
+  },
+  {
+    "id": "G08516",
+    "Office": "Sterling, CO",
+    "claims": 391,
+    "claims_ac": 60151.41,
+    "patents": 290,
+    "patents_ac": 46458.93,
+    "year": 1893
+  },
+  {
+    "id": "G0851",
+    "Office": "Akron, CO",
+    "claims": 154,
+    "claims_ac": 24221.86,
+    "patents": 295,
+    "patents_ac": 46842.38,
+    "year": 1894
+  },
+  {
+    "id": "G0852",
+    "Office": "Central City, CO",
+    "claims": 35,
+    "claims_ac": 5392.33,
+    "patents": 22,
+    "patents_ac": 3432.43,
+    "year": 1894
+  },
+  {
+    "id": "G0853",
+    "Office": "Del Norte, CO",
+    "claims": 59,
+    "claims_ac": 8708.55,
+    "patents": 84,
+    "patents_ac": 12889.12,
+    "year": 1894
+  },
+  {
+    "id": "G0854",
+    "Office": "Denver, CO",
+    "claims": 350,
+    "claims_ac": 51791.72,
+    "patents": 193,
+    "patents_ac": 30478.33,
+    "year": 1894
+  },
+  {
+    "id": "G0855",
+    "Office": "Durango, CO",
+    "claims": 45,
+    "claims_ac": 6434.95,
+    "patents": 38,
+    "patents_ac": 5756.98,
+    "year": 1894
+  },
+  {
+    "id": "G0857",
+    "Office": "Glenwood Springs, CO",
+    "claims": 30,
+    "claims_ac": 4348.71,
+    "patents": 32,
+    "patents_ac": 5106.16,
+    "year": 1894
+  },
+  {
+    "id": "G0859",
+    "Office": "Gunnison, CO",
+    "claims": 10,
+    "claims_ac": 1360,
+    "patents": 5,
+    "patents_ac": 759.55,
+    "year": 1894
+  },
+  {
+    "id": "G08510",
+    "Office": "Hugo, CO",
+    "claims": 113,
+    "claims_ac": 17833.13,
+    "patents": 143,
+    "patents_ac": 22873.48,
+    "year": 1894
+  },
+  {
+    "id": "G08512",
+    "Office": "Lamar, CO",
+    "claims": 57,
+    "claims_ac": 8350.06,
+    "patents": 167,
+    "patents_ac": 26158.78,
+    "year": 1894
+  },
+  {
+    "id": "G08513",
+    "Office": "Leadville, CO",
+    "claims": 23,
+    "claims_ac": 3354.56,
+    "patents": 21,
+    "patents_ac": 3278.4,
+    "year": 1894
+  },
+  {
+    "id": "G08514",
+    "Office": "Montrose, CO",
+    "claims": 24,
+    "claims_ac": 3518,
+    "patents": 8,
+    "patents_ac": 1279.61,
+    "year": 1894
+  },
+  {
+    "id": "G08515",
+    "Office": "Pueblo, CO",
+    "claims": 461,
+    "claims_ac": 69540.69,
+    "patents": 160,
+    "patents_ac": 24325.5,
+    "year": 1894
+  },
+  {
+    "id": "G08516",
+    "Office": "Sterling, CO",
+    "claims": 190,
+    "claims_ac": 29725.86,
+    "patents": 249,
+    "patents_ac": 39593.54,
+    "year": 1894
+  },
+  {
+    "id": "G0851",
+    "Office": "Akron, CO",
+    "claims": 55,
+    "claims_ac": 7786.97,
+    "patents": 198,
+    "patents_ac": 31137.69,
+    "year": 1895
+  },
+  {
+    "id": "G0853",
+    "Office": "Del Norte, CO",
+    "claims": 72,
+    "claims_ac": 10155.92,
+    "patents": 80,
+    "patents_ac": 12430.12,
+    "year": 1895
+  },
+  {
+    "id": "G0854",
+    "Office": "Denver, CO",
+    "claims": 635,
+    "claims_ac": 93191.17,
+    "patents": 238,
+    "patents_ac": 37058.4,
+    "year": 1895
+  },
+  {
+    "id": "G0855",
+    "Office": "Durango, CO",
+    "claims": 59,
+    "claims_ac": 8499.08,
+    "patents": 31,
+    "patents_ac": 4509.26,
+    "year": 1895
+  },
+  {
+    "id": "G0857",
+    "Office": "Glenwood Springs, CO",
+    "claims": 41,
+    "claims_ac": 5897.52,
+    "patents": 56,
+    "patents_ac": 8728.26,
+    "year": 1895
+  },
+  {
+    "id": "G0859",
+    "Office": "Gunnison, CO",
+    "claims": 15,
+    "claims_ac": 2117.27,
+    "patents": 9,
+    "patents_ac": 1440,
+    "year": 1895
+  },
+  {
+    "id": "G08510",
+    "Office": "Hugo, CO",
+    "claims": 45,
+    "claims_ac": 6928.93,
+    "patents": 94,
+    "patents_ac": 14962.4,
+    "year": 1895
+  },
+  {
+    "id": "G08512",
+    "Office": "Lamar, CO",
+    "claims": 48,
+    "claims_ac": 6476.25,
+    "patents": 73,
+    "patents_ac": 11431.27,
+    "year": 1895
+  },
+  {
+    "id": "G08513",
+    "Office": "Leadville, CO",
+    "claims": 37,
+    "claims_ac": 5069.8,
+    "patents": 19,
+    "patents_ac": 3040,
+    "year": 1895
+  },
+  {
+    "id": "G08514",
+    "Office": "Montrose, CO",
+    "claims": 29,
+    "claims_ac": 4108.06,
+    "patents": 7,
+    "patents_ac": 1120,
+    "year": 1895
+  },
+  {
+    "id": "G08515",
+    "Office": "Pueblo, CO",
+    "claims": 650,
+    "claims_ac": 96948.21,
+    "patents": 169,
+    "patents_ac": 25832.73,
+    "year": 1895
+  },
+  {
+    "id": "G08516",
+    "Office": "Sterling, CO",
+    "claims": 30,
+    "claims_ac": 3971.72,
+    "patents": 140,
+    "patents_ac": 22143.78,
+    "year": 1895
+  },
+  {
+    "id": "G0851",
+    "Office": "Akron, CO",
+    "claims": 40,
+    "claims_ac": 6313.96,
+    "patents": 115,
+    "patents_ac": 17994.62,
+    "year": 1896
+  },
+  {
+    "id": "G0853",
+    "Office": "Del Norte, CO",
+    "claims": 61,
+    "claims_ac": 9389.83,
+    "patents": 69,
+    "patents_ac": 10530.98,
+    "year": 1896
+  },
+  {
+    "id": "G0854",
+    "Office": "Denver, CO",
+    "claims": 481,
+    "claims_ac": 48773.35,
+    "patents": 232,
+    "patents_ac": 35453.47,
+    "year": 1896
+  },
+  {
+    "id": "G0855",
+    "Office": "Durango, CO",
+    "claims": 84,
+    "claims_ac": 12886.11,
+    "patents": 50,
+    "patents_ac": 7542.12,
+    "year": 1896
+  },
+  {
+    "id": "G0857",
+    "Office": "Glenwood Springs, CO",
+    "claims": 60,
+    "claims_ac": 8617.82,
+    "patents": 56,
+    "patents_ac": 8597.49,
+    "year": 1896
+  },
+  {
+    "id": "G0859",
+    "Office": "Gunnison, CO",
+    "claims": 15,
+    "claims_ac": 1858.88,
+    "patents": 5,
+    "patents_ac": 800,
+    "year": 1896
+  },
+  {
+    "id": "G08510",
+    "Office": "Hugo, CO",
+    "claims": 30,
+    "claims_ac": 4502.45,
+    "patents": 55,
+    "patents_ac": 8760.63,
+    "year": 1896
+  },
+  {
+    "id": "G08512",
+    "Office": "Lamar, CO",
+    "claims": 58,
+    "claims_ac": 8385.65,
+    "patents": 49,
+    "patents_ac": 7495.11,
+    "year": 1896
+  },
+  {
+    "id": "G08513",
+    "Office": "Leadville, CO",
+    "claims": 39,
+    "claims_ac": 5835.81,
+    "patents": 18,
+    "patents_ac": 2639.52,
+    "year": 1896
+  },
+  {
+    "id": "G08514",
+    "Office": "Montrose, CO",
+    "claims": 22,
+    "claims_ac": 3439.09,
+    "patents": 12,
+    "patents_ac": 1886.83,
+    "year": 1896
+  },
+  {
+    "id": "G08515",
+    "Office": "Pueblo, CO",
+    "claims": 373,
+    "claims_ac": 55611.56,
+    "patents": 185,
+    "patents_ac": 27788.28,
+    "year": 1896
+  },
+  {
+    "id": "G08516",
+    "Office": "Sterling, CO",
+    "claims": 36,
+    "claims_ac": 4919.1,
+    "patents": 90,
+    "patents_ac": 14150.96,
+    "year": 1896
+  },
+  {
+    "id": "G0851",
+    "Office": "Akron, CO",
+    "claims": 45,
+    "claims_ac": 6716.16,
+    "patents": 89,
+    "patents_ac": 13926.83,
+    "year": 1897
+  },
+  {
+    "id": "G0853",
+    "Office": "Del Norte, CO",
+    "claims": 53,
+    "claims_ac": 8189.42,
+    "patents": 67,
+    "patents_ac": 10241.48,
+    "year": 1897
+  },
+  {
+    "id": "G0854",
+    "Office": "Denver, CO",
+    "claims": 369,
+    "claims_ac": 54689.49,
+    "patents": 171,
+    "patents_ac": 25926.23,
+    "year": 1897
+  },
+  {
+    "id": "G0855",
+    "Office": "Durango, CO",
+    "claims": 89,
+    "claims_ac": 12888.72,
+    "patents": 44,
+    "patents_ac": 6697.74,
+    "year": 1897
+  },
+  {
+    "id": "G0857",
+    "Office": "Glenwood Springs, CO",
+    "claims": 49,
+    "claims_ac": 7525.05,
+    "patents": 18,
+    "patents_ac": 2816.24,
+    "year": 1897
+  },
+  {
+    "id": "G0859",
+    "Office": "Gunnison, CO",
+    "claims": 9,
+    "claims_ac": 875.81,
+    "patents": 7,
+    "patents_ac": 1020.2,
+    "year": 1897
+  },
+  {
+    "id": "G08510",
+    "Office": "Hugo, CO",
+    "claims": 20,
+    "claims_ac": 2979.8,
+    "patents": 35,
+    "patents_ac": 5598.7,
+    "year": 1897
+  },
+  {
+    "id": "G08512",
+    "Office": "Lamar, CO",
+    "claims": 38,
+    "claims_ac": 5821.85,
+    "patents": 36,
+    "patents_ac": 5541.19,
+    "year": 1897
+  },
+  {
+    "id": "G08513",
+    "Office": "Leadville, CO",
+    "claims": 42,
+    "claims_ac": 6342.36,
+    "patents": 21,
+    "patents_ac": 3012.39,
+    "year": 1897
+  },
+  {
+    "id": "G08514",
+    "Office": "Montrose, CO",
+    "claims": 44,
+    "claims_ac": 6088.38,
+    "patents": 14,
+    "patents_ac": 2238.35,
+    "year": 1897
+  },
+  {
+    "id": "G08515",
+    "Office": "Pueblo, CO",
+    "claims": 372,
+    "claims_ac": 56791.57,
+    "patents": 123,
+    "patents_ac": 18612.6,
+    "year": 1897
+  },
+  {
+    "id": "G08516",
+    "Office": "Sterling, CO",
+    "claims": 26,
+    "claims_ac": 3720.15,
+    "patents": 39,
+    "patents_ac": 6051.23,
+    "year": 1897
+  },
+  {
+    "id": "G0851",
+    "Office": "Akron, CO",
+    "claims": 60,
+    "claims_ac": 9189.3,
+    "patents": 92,
+    "patents_ac": 14398.8,
+    "year": 1898
+  },
+  {
+    "id": "G0853",
+    "Office": "Del Norte, CO",
+    "claims": 74,
+    "claims_ac": 10857.22,
+    "patents": 37,
+    "patents_ac": 5514.73,
+    "year": 1898
+  },
+  {
+    "id": "G0854",
+    "Office": "Denver, CO",
+    "claims": 495,
+    "claims_ac": 73383.51,
+    "patents": 170,
+    "patents_ac": 25959.73,
+    "year": 1898
+  },
+  {
+    "id": "G0855",
+    "Office": "Durango, CO",
+    "claims": 74,
+    "claims_ac": 10798.44,
+    "patents": 55,
+    "patents_ac": 8327.51,
+    "year": 1898
+  },
+  {
+    "id": "G0857",
+    "Office": "Glenwood Springs, CO",
+    "claims": 54,
+    "claims_ac": 7568.13,
+    "patents": 34,
+    "patents_ac": 5372.47,
+    "year": 1898
+  },
+  {
+    "id": "G0859",
+    "Office": "Gunnison, CO",
+    "claims": 14,
+    "claims_ac": 1437,
+    "patents": 5,
+    "patents_ac": 800,
+    "year": 1898
+  },
+  {
+    "id": "G08510",
+    "Office": "Hugo, CO",
+    "claims": 19,
+    "claims_ac": 2878.81,
+    "patents": 14,
+    "patents_ac": 2199.33,
+    "year": 1898
+  },
+  {
+    "id": "G08512",
+    "Office": "Lamar, CO",
+    "claims": 66,
+    "claims_ac": 10131.88,
+    "patents": 40,
+    "patents_ac": 5981.94,
+    "year": 1898
+  },
+  {
+    "id": "G08513",
+    "Office": "Leadville, CO",
+    "claims": 24,
+    "claims_ac": 3600,
+    "patents": 18,
+    "patents_ac": 2640,
+    "year": 1898
+  },
+  {
+    "id": "G08514",
+    "Office": "Montrose, CO",
+    "claims": 33,
+    "claims_ac": 4959.7,
+    "patents": 13,
+    "patents_ac": 2000.82,
+    "year": 1898
+  },
+  {
+    "id": "G08515",
+    "Office": "Pueblo, CO",
+    "claims": 317,
+    "claims_ac": 47856.81,
+    "patents": 179,
+    "patents_ac": 27235.38,
+    "year": 1898
+  },
+  {
+    "id": "G08516",
+    "Office": "Sterling, CO",
+    "claims": 68,
+    "claims_ac": 10151.33,
+    "patents": 67,
+    "patents_ac": 10456.66,
+    "year": 1898
+  },
+  {
+    "id": "G0851",
+    "Office": "Akron, CO",
+    "claims": 91,
+    "claims_ac": 13769.22,
+    "patents": 177,
+    "patents_ac": 27889.39,
+    "year": 1899
+  },
+  {
+    "id": "G0853",
+    "Office": "Del Norte, CO",
+    "claims": 69,
+    "claims_ac": 399.6,
+    "patents": 35,
+    "patents_ac": 5206.52,
+    "year": 1899
+  },
+  {
+    "id": "G0854",
+    "Office": "Denver, CO",
+    "claims": 431,
+    "claims_ac": 63652.41,
+    "patents": 166,
+    "patents_ac": 25038.17,
+    "year": 1899
+  },
+  {
+    "id": "G0855",
+    "Office": "Durango, CO",
+    "claims": 138,
+    "claims_ac": 21239.13,
+    "patents": 33,
+    "patents_ac": 5091.93,
+    "year": 1899
+  },
+  {
+    "id": "G0857",
+    "Office": "Glenwood Springs, CO",
+    "claims": 69,
+    "claims_ac": 9941.28,
+    "patents": 31,
+    "patents_ac": 4874.69,
+    "year": 1899
+  },
+  {
+    "id": "G0859",
+    "Office": "Gunnison, CO",
+    "claims": 11,
+    "claims_ac": 1560,
+    "patents": 2,
+    "patents_ac": 320,
+    "year": 1899
+  },
+  {
+    "id": "G08510",
+    "Office": "Hugo, CO",
+    "claims": 36,
+    "claims_ac": 5665.98,
+    "patents": 44,
+    "patents_ac": 6995.54,
+    "year": 1899
+  },
+  {
+    "id": "G08512",
+    "Office": "Lamar, CO",
+    "claims": 100,
+    "claims_ac": 15326.77,
+    "patents": 57,
+    "patents_ac": 8778.33,
+    "year": 1899
+  },
+  {
+    "id": "G08513",
+    "Office": "Leadville, CO",
+    "claims": 32,
+    "claims_ac": 4580.24,
+    "patents": 20,
+    "patents_ac": 2793,
+    "year": 1899
+  },
+  {
+    "id": "G08514",
+    "Office": "Montrose, CO",
+    "claims": 59,
+    "claims_ac": 8913.11,
+    "patents": 22,
+    "patents_ac": 3260,
+    "year": 1899
+  },
+  {
+    "id": "G08515",
+    "Office": "Pueblo, CO",
+    "claims": 379,
+    "claims_ac": 55541.19,
+    "patents": 239,
+    "patents_ac": 36425.17,
+    "year": 1899
+  },
+  {
+    "id": "G08516",
+    "Office": "Sterling, CO",
+    "claims": 100,
+    "claims_ac": 15046.95,
+    "patents": 75,
+    "patents_ac": 11678.81,
+    "year": 1899
+  },
+  {
+    "id": "G0851",
+    "Office": "Akron, CO",
+    "claims": 92,
+    "claims_ac": 13540.44,
+    "patents": 107,
+    "patents_ac": 16567.36,
+    "year": 1900
+  },
+  {
+    "id": "G0853",
+    "Office": "Del Norte, CO",
+    "claims": 101,
+    "claims_ac": 14492.25,
+    "patents": 29,
+    "patents_ac": 4069.55,
+    "year": 1900
+  },
+  {
+    "id": "G0854",
+    "Office": "Denver, CO",
+    "claims": 424,
+    "claims_ac": 63469.44,
+    "patents": 294,
+    "patents_ac": 43441.4,
+    "year": 1900
+  },
+  {
+    "id": "G0855",
+    "Office": "Durango, CO",
+    "claims": 196,
+    "claims_ac": 29409.48,
+    "patents": 49,
+    "patents_ac": 7251.08,
+    "year": 1900
+  },
+  {
+    "id": "G0857",
+    "Office": "Glenwood Springs, CO",
+    "claims": 107,
+    "claims_ac": 16396.75,
+    "patents": 44,
+    "patents_ac": 6925.69,
+    "year": 1900
+  },
+  {
+    "id": "G0859",
+    "Office": "Gunnison, CO",
+    "claims": 19,
+    "claims_ac": 2639.15,
+    "patents": 12,
+    "patents_ac": 1640,
+    "year": 1900
+  },
+  {
+    "id": "G08510",
+    "Office": "Hugo, CO",
+    "claims": 47,
+    "claims_ac": 7265.66,
+    "patents": 43,
+    "patents_ac": 6582.97,
+    "year": 1900
+  },
+  {
+    "id": "G08512",
+    "Office": "Lamar, CO",
+    "claims": 139,
+    "claims_ac": 21408.4,
+    "patents": 57,
+    "patents_ac": 8546.23,
+    "year": 1900
+  },
+  {
+    "id": "G08513",
+    "Office": "Leadville, CO",
+    "claims": 19,
+    "claims_ac": 2720,
+    "patents": 16,
+    "patents_ac": 2327.14,
+    "year": 1900
+  },
+  {
+    "id": "G08514",
+    "Office": "Montrose, CO",
+    "claims": 114,
+    "claims_ac": 17761.41,
+    "patents": 16,
+    "patents_ac": 2559.93,
+    "year": 1900
+  },
+  {
+    "id": "G08515",
+    "Office": "Pueblo, CO",
+    "claims": 643,
+    "claims_ac": 98880,
+    "patents": 288,
+    "patents_ac": 44733.15,
+    "year": 1900
+  },
+  {
+    "id": "G08516",
+    "Office": "Sterling, CO",
+    "claims": 119,
+    "claims_ac": 18104.35,
+    "patents": 68,
+    "patents_ac": 10623.33,
+    "year": 1900
+  },
+  {
+    "id": "G0851",
+    "Office": "Akron, CO",
+    "claims": 171,
+    "claims_ac": 26309.3,
+    "patents": 62,
+    "patents_ac": 9939.52,
+    "year": 1901
+  },
+  {
+    "id": "G0853",
+    "Office": "Del Norte, CO",
+    "claims": 123,
+    "claims_ac": 17774.47,
+    "patents": 28,
+    "patents_ac": 4120,
+    "year": 1901
+  },
+  {
+    "id": "G0854",
+    "Office": "Denver, CO",
+    "claims": 477,
+    "claims_ac": 72247.65,
+    "patents": 270,
+    "patents_ac": 39666.02,
+    "year": 1901
+  },
+  {
+    "id": "G0855",
+    "Office": "Durango, CO",
+    "claims": 206,
+    "claims_ac": 28563.85,
+    "patents": 64,
+    "patents_ac": 7964.99,
+    "year": 1901
+  },
+  {
+    "id": "G0857",
+    "Office": "Glenwood Springs, CO",
+    "claims": 150,
+    "claims_ac": 22542.54,
+    "patents": 28,
+    "patents_ac": 4145.58,
+    "year": 1901
+  },
+  {
+    "id": "G0859",
+    "Office": "Gunnison, CO",
+    "claims": 25,
+    "claims_ac": 3399.9,
+    "patents": 7,
+    "patents_ac": 916.44,
+    "year": 1901
+  },
+  {
+    "id": "G08510",
+    "Office": "Hugo, CO",
+    "claims": 73,
+    "claims_ac": 11271.8,
+    "patents": 41,
+    "patents_ac": 6455.26,
+    "year": 1901
+  },
+  {
+    "id": "G08512",
+    "Office": "Lamar, CO",
+    "claims": 215,
+    "claims_ac": 32284.99,
+    "patents": 45,
+    "patents_ac": 6536.37,
+    "year": 1901
+  },
+  {
+    "id": "G08513",
+    "Office": "Leadville, CO",
+    "claims": 32,
+    "claims_ac": 5119,
+    "patents": 15,
+    "patents_ac": 2237.66,
+    "year": 1901
+  },
+  {
+    "id": "G08514",
+    "Office": "Montrose, CO",
+    "claims": 110,
+    "claims_ac": 16613.14,
+    "patents": 14,
+    "patents_ac": 2160,
+    "year": 1901
+  },
+  {
+    "id": "G08515",
+    "Office": "Pueblo, CO",
+    "claims": 687,
+    "claims_ac": 103451.1,
+    "patents": 272,
+    "patents_ac": 41678.81,
+    "year": 1901
+  },
+  {
+    "id": "G08516",
+    "Office": "Sterling, CO",
+    "claims": 180,
+    "claims_ac": 27894.92,
+    "patents": 48,
+    "patents_ac": 7245.58,
+    "year": 1901
+  },
+  {
+    "id": "G0851",
+    "Office": "Akron, CO",
+    "claims": 164,
+    "claims_ac": 25066.96,
+    "patents": 38,
+    "patents_ac": 5652.88,
+    "year": 1902
+  },
+  {
+    "id": "G0853",
+    "Office": "Del Norte, CO",
+    "claims": 191,
+    "claims_ac": 28745.32,
+    "patents": 32,
+    "patents_ac": 4636.3,
+    "year": 1902
+  },
+  {
+    "id": "G0854",
+    "Office": "Denver, CO",
+    "claims": 796,
+    "claims_ac": 120002.7,
+    "patents": 271,
+    "patents_ac": 39962.31,
+    "year": 1902
+  },
+  {
+    "id": "G0855",
+    "Office": "Durango, CO",
+    "claims": 234,
+    "claims_ac": 32348.55,
+    "patents": 97,
+    "patents_ac": 12271.64,
+    "year": 1902
+  },
+  {
+    "id": "G0857",
+    "Office": "Glenwood Springs, CO",
+    "claims": 202,
+    "claims_ac": 31043.97,
+    "patents": 38,
+    "patents_ac": 5807.72,
+    "year": 1902
+  },
+  {
+    "id": "G0859",
+    "Office": "Gunnison, CO",
+    "claims": 26,
+    "claims_ac": 4000,
+    "patents": 9,
+    "patents_ac": 1198.22,
+    "year": 1902
+  },
+  {
+    "id": "G08510",
+    "Office": "Hugo, CO",
+    "claims": 79,
+    "claims_ac": 12432.91,
+    "patents": 37,
+    "patents_ac": 5778.39,
+    "year": 1902
+  },
+  {
+    "id": "G08512",
+    "Office": "Lamar, CO",
+    "claims": 224,
+    "claims_ac": 34443.18,
+    "patents": 48,
+    "patents_ac": 6804.93,
+    "year": 1902
+  },
+  {
+    "id": "G08513",
+    "Office": "Leadville, CO",
+    "claims": 44,
+    "claims_ac": 6595.17,
+    "patents": 15,
+    "patents_ac": 2280,
+    "year": 1902
+  },
+  {
+    "id": "G08514",
+    "Office": "Montrose, CO",
+    "claims": 75,
+    "claims_ac": 11382.87,
+    "patents": 19,
+    "patents_ac": 2998.84,
+    "year": 1902
+  },
+  {
+    "id": "G08515",
+    "Office": "Pueblo, CO",
+    "claims": 901,
+    "claims_ac": 135819.31,
+    "patents": 329,
+    "patents_ac": 47409.07,
+    "year": 1902
+  },
+  {
+    "id": "G08516",
+    "Office": "Sterling, CO",
+    "claims": 261,
+    "claims_ac": 40191.54,
+    "patents": 34,
+    "patents_ac": 4349.24,
+    "year": 1902
+  },
+  {
+    "id": "G0851",
+    "Office": "Akron, CO",
+    "claims": 221,
+    "claims_ac": 34048.24,
+    "patents": 42,
+    "patents_ac": 6349.68,
+    "year": 1903
+  },
+  {
+    "id": "G0853",
+    "Office": "Del Norte, CO",
+    "claims": 124,
+    "claims_ac": 18717.69,
+    "patents": 32,
+    "patents_ac": 4793.69,
+    "year": 1903
+  },
+  {
+    "id": "G0854",
+    "Office": "Denver, CO",
+    "claims": 681,
+    "claims_ac": 101259.56,
+    "patents": 249,
+    "patents_ac": 36245.56,
+    "year": 1903
+  },
+  {
+    "id": "G0855",
+    "Office": "Durango, CO",
+    "claims": 165,
+    "claims_ac": 24328.85,
+    "patents": 55,
+    "patents_ac": 7853.94,
+    "year": 1903
+  },
+  {
+    "id": "G0857",
+    "Office": "Glenwood Springs, CO",
+    "claims": 343,
+    "claims_ac": 44924.65,
+    "patents": 43,
+    "patents_ac": 6255.4,
+    "year": 1903
+  },
+  {
+    "id": "G0859",
+    "Office": "Gunnison, CO",
+    "claims": 21,
+    "claims_ac": 3359.53,
+    "patents": 5,
+    "patents_ac": 717.27,
+    "year": 1903
+  },
+  {
+    "id": "G08510",
+    "Office": "Hugo, CO",
+    "claims": 92,
+    "claims_ac": 14300.07,
+    "patents": 17,
+    "patents_ac": 2591.82,
+    "year": 1903
+  },
+  {
+    "id": "G08512",
+    "Office": "Lamar, CO",
+    "claims": 202,
+    "claims_ac": 31306.76,
+    "patents": 46,
+    "patents_ac": 6525.44,
+    "year": 1903
+  },
+  {
+    "id": "G08513",
+    "Office": "Leadville, CO",
+    "claims": 30,
+    "claims_ac": 4633.85,
+    "patents": 10,
+    "patents_ac": 1480,
+    "year": 1903
+  },
+  {
+    "id": "G08514",
+    "Office": "Montrose, CO",
+    "claims": 65,
+    "claims_ac": 9569.52,
+    "patents": 20,
+    "patents_ac": 3052.56,
+    "year": 1903
+  },
+  {
+    "id": "G08515",
+    "Office": "Pueblo, CO",
+    "claims": 975,
+    "claims_ac": 147200.13,
+    "patents": 249,
+    "patents_ac": 35227.83,
+    "year": 1903
+  },
+  {
+    "id": "G08516",
+    "Office": "Sterling, CO",
+    "claims": 325,
+    "claims_ac": 50094.53,
+    "patents": 36,
+    "patents_ac": 4889,
+    "year": 1903
+  },
+  {
+    "id": "G0851",
+    "Office": "Akron, CO",
+    "claims": 186,
+    "claims_ac": 28591.35,
+    "patents": 48,
+    "patents_ac": 7477.48,
+    "year": 1904
+  },
+  {
+    "id": "G0853",
+    "Office": "Del Norte, CO",
+    "claims": 76,
+    "claims_ac": 11225.37,
+    "patents": 31,
+    "patents_ac": 4488.14,
+    "year": 1904
+  },
+  {
+    "id": "G0854",
+    "Office": "Denver, CO",
+    "claims": 579,
+    "claims_ac": 86359.41,
+    "patents": 227,
+    "patents_ac": 33280.37,
+    "year": 1904
+  },
+  {
+    "id": "G0855",
+    "Office": "Durango, CO",
+    "claims": 103,
+    "claims_ac": 14513.23,
+    "patents": 44,
+    "patents_ac": 5578.1,
+    "year": 1904
+  },
+  {
+    "id": "G0857",
+    "Office": "Glenwood Springs, CO",
+    "claims": 286,
+    "claims_ac": 43584.88,
+    "patents": 31,
+    "patents_ac": 4876.64,
+    "year": 1904
+  },
+  {
+    "id": "G0859",
+    "Office": "Gunnison, CO",
+    "claims": 21,
+    "claims_ac": 2996.92,
+    "patents": 6,
+    "patents_ac": 837.59,
+    "year": 1904
+  },
+  {
+    "id": "G08510",
+    "Office": "Hugo, CO",
+    "claims": 140,
+    "claims_ac": 22202.75,
+    "patents": 11,
+    "patents_ac": 1679.84,
+    "year": 1904
+  },
+  {
+    "id": "G08512",
+    "Office": "Lamar, CO",
+    "claims": 143,
+    "claims_ac": 21668.91,
+    "patents": 32,
+    "patents_ac": 4307.47,
+    "year": 1904
+  },
+  {
+    "id": "G08513",
+    "Office": "Leadville, CO",
+    "claims": 21,
+    "claims_ac": 2800,
+    "patents": 17,
+    "patents_ac": 2680,
+    "year": 1904
+  },
+  {
+    "id": "G08514",
+    "Office": "Montrose, CO",
+    "claims": 50,
+    "claims_ac": 7272.12,
+    "patents": 24,
+    "patents_ac": 3680,
+    "year": 1904
+  },
+  {
+    "id": "G08515",
+    "Office": "Pueblo, CO",
+    "claims": 672,
+    "claims_ac": 101328.83,
+    "patents": 225,
+    "patents_ac": 31870.82,
+    "year": 1904
+  },
+  {
+    "id": "G08516",
+    "Office": "Sterling, CO",
+    "claims": 141,
+    "claims_ac": 21570.59,
+    "patents": 26,
+    "patents_ac": 3679.6,
+    "year": 1904
+  },
+  {
+    "id": "G0851",
+    "Office": "Akron, CO",
+    "claims": 182,
+    "claims_ac": 28376.84,
+    "patents": 49,
+    "patents_ac": 7333.55,
+    "year": 1905
+  },
+  {
+    "id": "G0853",
+    "Office": "Del Norte, CO",
+    "claims": 121,
+    "claims_ac": 18452.21,
+    "patents": 35,
+    "patents_ac": 4947.64,
+    "year": 1905
+  },
+  {
+    "id": "G0854",
+    "Office": "Denver, CO",
+    "claims": 634,
+    "claims_ac": 95059.97,
+    "patents": 173,
+    "patents_ac": 26020.38,
+    "year": 1905
+  },
+  {
+    "id": "G0855",
+    "Office": "Durango, CO",
+    "claims": 136,
+    "claims_ac": 18961.76,
+    "patents": 51,
+    "patents_ac": 7761.2,
+    "year": 1905
+  },
+  {
+    "id": "G0857",
+    "Office": "Glenwood Springs, CO",
+    "claims": 175,
+    "claims_ac": 25694.21,
+    "patents": 61,
+    "patents_ac": 8358.75,
+    "year": 1905
+  },
+  {
+    "id": "G0859",
+    "Office": "Gunnison, CO",
+    "claims": 17,
+    "claims_ac": 2520.05,
+    "patents": 7,
+    "patents_ac": 800,
+    "year": 1905
+  },
+  {
+    "id": "G08510",
+    "Office": "Hugo, CO",
+    "claims": 365,
+    "claims_ac": 57782.21,
+    "patents": 29,
+    "patents_ac": 4437.83,
+    "year": 1905
+  },
+  {
+    "id": "G08512",
+    "Office": "Lamar, CO",
+    "claims": 95,
+    "claims_ac": 14308.23,
+    "patents": 43,
+    "patents_ac": 6577.62,
+    "year": 1905
+  },
+  {
+    "id": "G08513",
+    "Office": "Leadville, CO",
+    "claims": 16,
+    "claims_ac": 2449.28,
+    "patents": 10,
+    "patents_ac": 1434.9,
+    "year": 1905
+  },
+  {
+    "id": "G08514",
+    "Office": "Montrose, CO",
+    "claims": 50,
+    "claims_ac": 7717.93,
+    "patents": 27,
+    "patents_ac": 4240,
+    "year": 1905
+  },
+  {
+    "id": "G08515",
+    "Office": "Pueblo, CO",
+    "claims": 567,
+    "claims_ac": 84157.47,
+    "patents": 224,
+    "patents_ac": 33152.81,
+    "year": 1905
+  },
+  {
+    "id": "G08516",
+    "Office": "Sterling, CO",
+    "claims": 165,
+    "claims_ac": 25546.68,
+    "patents": 38,
+    "patents_ac": 5792.36,
+    "year": 1905
+  },
+  {
+    "id": "G0853",
+    "Office": "Del Norte, CO",
+    "claims": 123,
+    "claims_ac": 18731.4,
+    "patents": 33,
+    "patents_ac": 4680,
+    "year": 1906
+  },
+  {
+    "id": "G0854",
+    "Office": "Denver, CO",
+    "claims": 925,
+    "claims_ac": 140121.38,
+    "patents": 149,
+    "patents_ac": 22015.47,
+    "year": 1906
+  },
+  {
+    "id": "G0855",
+    "Office": "Durango, CO",
+    "claims": 120,
+    "claims_ac": 15876.83,
+    "patents": 62,
+    "patents_ac": 7902.02,
+    "year": 1906
+  },
+  {
+    "id": "G0857",
+    "Office": "Glenwood Springs, CO",
+    "claims": 111,
+    "claims_ac": 16551.72,
+    "patents": 62,
+    "patents_ac": 9358.98,
+    "year": 1906
+  },
+  {
+    "id": "G0859",
+    "Office": "Gunnison, CO",
+    "claims": 7,
+    "claims_ac": 1080,
+    "patents": 8,
+    "patents_ac": 1000,
+    "year": 1906
+  },
+  {
+    "id": "G08510",
+    "Office": "Hugo, CO",
+    "claims": 1706,
+    "claims_ac": 270334.67,
+    "patents": 32,
+    "patents_ac": 5067.95,
+    "year": 1906
+  },
+  {
+    "id": "G08512",
+    "Office": "Lamar, CO",
+    "claims": 554,
+    "claims_ac": 87961.22,
+    "patents": 91,
+    "patents_ac": 14124.56,
+    "year": 1906
+  },
+  {
+    "id": "G08513",
+    "Office": "Leadville, CO",
+    "claims": 21,
+    "claims_ac": 3157.59,
+    "patents": 10,
+    "patents_ac": 1520,
+    "year": 1906
+  },
+  {
+    "id": "G08514",
+    "Office": "Montrose, CO",
+    "claims": 52,
+    "claims_ac": 7687.12,
+    "patents": 44,
+    "patents_ac": 6939.53,
+    "year": 1906
+  },
+  {
+    "id": "G08515",
+    "Office": "Pueblo, CO",
+    "claims": 1054,
+    "claims_ac": 160431.72,
+    "patents": 217,
+    "patents_ac": 32259.23,
+    "year": 1906
+  },
+  {
+    "id": "G08516",
+    "Office": "Sterling, CO",
+    "claims": 948,
+    "claims_ac": 149046.98,
+    "patents": 95,
+    "patents_ac": 14612.09,
+    "year": 1906
+  },
+  {
+    "id": "G0853",
+    "Office": "Del Norte, CO",
+    "claims": 111,
+    "claims_ac": 16075.43,
+    "patents": 45,
+    "patents_ac": 6669.06,
+    "year": 1907
+  },
+  {
+    "id": "G0854",
+    "Office": "Denver, CO",
+    "claims": 1639,
+    "claims_ac": 251400.95,
+    "patents": 215,
+    "patents_ac": 31914.99,
+    "year": 1907
+  },
+  {
+    "id": "G0855",
+    "Office": "Durango, CO",
+    "claims": 99,
+    "claims_ac": 14141.99,
+    "patents": 44,
+    "patents_ac": 6195.8,
+    "year": 1907
+  },
+  {
+    "id": "G0857",
+    "Office": "Glenwood Springs, CO",
+    "claims": 85,
+    "claims_ac": 12762.62,
+    "patents": 81,
+    "patents_ac": 12150.99,
+    "year": 1907
+  },
+  {
+    "id": "G0859",
+    "Office": "Gunnison, CO",
+    "claims": 8,
+    "claims_ac": 1237,
+    "patents": 12,
+    "patents_ac": 1800,
+    "year": 1907
+  },
+  {
+    "id": "G08510",
+    "Office": "Hugo, CO",
+    "claims": 4109,
+    "claims_ac": 649355.32,
+    "patents": 52,
+    "patents_ac": 8257.28,
+    "year": 1907
+  },
+  {
+    "id": "G08512",
+    "Office": "Lamar, CO",
+    "claims": 1912,
+    "claims_ac": 302980.58,
+    "patents": 76,
+    "patents_ac": 11550.34,
+    "year": 1907
+  },
+  {
+    "id": "G08513",
+    "Office": "Leadville, CO",
+    "claims": 36,
+    "claims_ac": 5417.82,
+    "patents": 8,
+    "patents_ac": 1200,
+    "year": 1907
+  },
+  {
+    "id": "G08514",
+    "Office": "Montrose, CO",
+    "claims": 30,
+    "claims_ac": 4349.75,
+    "patents": 26,
+    "patents_ac": 4076.27,
+    "year": 1907
+  },
+  {
+    "id": "G08515",
+    "Office": "Pueblo, CO",
+    "claims": 1807,
+    "claims_ac": 278506.58,
+    "patents": 236,
+    "patents_ac": 34492.61,
+    "year": 1907
+  },
+  {
+    "id": "G08516",
+    "Office": "Sterling, CO",
+    "claims": 1896,
+    "claims_ac": 298707.53,
+    "patents": 124,
+    "patents_ac": 19719.55,
+    "year": 1907
+  },
+  {
+    "id": "G0853",
+    "Office": "Del Norte, CO",
+    "claims": 190,
+    "claims_ac": 28479.01,
+    "patents": 33,
+    "patents_ac": 5120,
+    "year": 1908
+  },
+  {
+    "id": "G0854",
+    "Office": "Denver, CO",
+    "claims": 1643,
+    "claims_ac": 249199.67,
+    "patents": 213,
+    "patents_ac": 32265.64,
+    "year": 1908
+  },
+  {
+    "id": "G0855",
+    "Office": "Durango, CO",
+    "claims": 217,
+    "claims_ac": 26893.52,
+    "patents": 52,
+    "patents_ac": 7371.57,
+    "year": 1908
+  },
+  {
+    "id": "G0857",
+    "Office": "Glenwood Springs, CO",
+    "claims": 256,
+    "claims_ac": 36826.64,
+    "patents": 70,
+    "patents_ac": 10514.51,
+    "year": 1908
+  },
+  {
+    "id": "G08510",
+    "Office": "Hugo, CO",
+    "claims": 2246,
+    "claims_ac": 352722.75,
+    "patents": 63,
+    "patents_ac": 9864.91,
+    "year": 1908
+  },
+  {
+    "id": "G08512",
+    "Office": "Lamar, CO",
+    "claims": 1584,
+    "claims_ac": 254123.22,
+    "patents": 86,
+    "patents_ac": 13496.81,
+    "year": 1908
+  },
+  {
+    "id": "G08513",
+    "Office": "Leadville, CO",
+    "claims": 47,
+    "claims_ac": 6889.55,
+    "patents": 11,
+    "patents_ac": 1640,
+    "year": 1908
+  },
+  {
+    "id": "G08514",
+    "Office": "Montrose, CO",
+    "claims": 582,
+    "claims_ac": 70361.07,
+    "patents": 43,
+    "patents_ac": 6516.44,
+    "year": 1908
+  },
+  {
+    "id": "G08515",
+    "Office": "Pueblo, CO",
+    "claims": 1524,
+    "claims_ac": 232745.67,
+    "patents": 251,
+    "patents_ac": 38307.93,
+    "year": 1908
+  },
+  {
+    "id": "G08516",
+    "Office": "Sterling, CO",
+    "claims": 1865,
+    "claims_ac": 296329.14,
+    "patents": 138,
+    "patents_ac": 21737.88,
+    "year": 1908
+  },
+  {
+    "id": "G0853",
+    "Office": "Del Norte, CO",
+    "claims": 286,
+    "claims_ac": 43391.55,
+    "patents": 30,
+    "patents_ac": 4178.91,
+    "year": 1909
+  },
+  {
+    "id": "G0854",
+    "Office": "Denver, CO",
+    "claims": 1637,
+    "claims_ac": 269469.9,
+    "patents": 169,
+    "patents_ac": 25498.07,
+    "year": 1909
+  },
+  {
+    "id": "G0855",
+    "Office": "Durango, CO",
+    "claims": 227,
+    "claims_ac": 28737.89,
+    "patents": 51,
+    "patents_ac": 6978.56,
+    "year": 1909
+  },
+  {
+    "id": "G0857",
+    "Office": "Glenwood Springs, CO",
+    "claims": 424,
+    "claims_ac": 62947.42,
+    "patents": 148,
+    "patents_ac": 22795.81,
+    "year": 1909
+  },
+  {
+    "id": "G08510",
+    "Office": "Hugo, CO",
+    "claims": 1464,
+    "claims_ac": 239349.08,
+    "patents": 92,
+    "patents_ac": 14762.04,
+    "year": 1909
+  },
+  {
+    "id": "G08512",
+    "Office": "Lamar, CO",
+    "claims": 788,
+    "claims_ac": 135487.65,
+    "patents": 80,
+    "patents_ac": 12510.55,
+    "year": 1909
+  },
+  {
+    "id": "G08513",
+    "Office": "Leadville, CO",
+    "claims": 69,
+    "claims_ac": 9442.61,
+    "patents": 16,
+    "patents_ac": 2346.95,
+    "year": 1909
+  },
+  {
+    "id": "G08514",
+    "Office": "Montrose, CO",
+    "claims": 245,
+    "claims_ac": 31070.36,
+    "patents": 89,
+    "patents_ac": 12187.55,
+    "year": 1909
+  },
+  {
+    "id": "G08515",
+    "Office": "Pueblo, CO",
+    "claims": 956,
+    "claims_ac": 150404.88,
+    "patents": 196,
+    "patents_ac": 29869,
+    "year": 1909
+  },
+  {
+    "id": "G08516",
+    "Office": "Sterling, CO",
+    "claims": 2251,
+    "claims_ac": 375959.87,
+    "patents": 138,
+    "patents_ac": 21365.31,
+    "year": 1909
+  },
+  {
+    "id": "G0853",
+    "Office": "Del Norte, CO",
+    "claims": 251,
+    "claims_ac": 36596.63,
+    "patents": 23,
+    "patents_ac": 3166.51,
+    "year": 1910
+  },
+  {
+    "id": "G0854",
+    "Office": "Denver, CO",
+    "claims": 2416,
+    "claims_ac": 537408.13,
+    "patents": 269,
+    "patents_ac": 40858.68,
+    "year": 1910
+  },
+  {
+    "id": "G0855",
+    "Office": "Durango, CO",
+    "claims": 141,
+    "claims_ac": 16806.23,
+    "patents": 46,
+    "patents_ac": 6832.35,
+    "year": 1910
+  },
+  {
+    "id": "G0857",
+    "Office": "Glenwood Springs, CO",
+    "claims": 460,
+    "claims_ac": 67366.52,
+    "patents": 173,
+    "patents_ac": 26695.81,
+    "year": 1910
+  },
+  {
+    "id": "G08510",
+    "Office": "Hugo, CO",
+    "claims": 2553,
+    "claims_ac": 572485,
+    "patents": 90,
+    "patents_ac": 14747.44,
+    "year": 1910
+  },
+  {
+    "id": "G08512",
+    "Office": "Lamar, CO",
+    "claims": 1965,
+    "claims_ac": 502449.89,
+    "patents": 59,
+    "patents_ac": 9253.04,
+    "year": 1910
+  },
+  {
+    "id": "G08513",
+    "Office": "Leadville, CO",
+    "claims": 28,
+    "claims_ac": 3767,
+    "patents": 12,
+    "patents_ac": 1637.67,
+    "year": 1910
+  },
+  {
+    "id": "G08514",
+    "Office": "Montrose, CO",
+    "claims": 71,
+    "claims_ac": 10385.46,
+    "patents": 20,
+    "patents_ac": 2909.98,
+    "year": 1910
+  },
+  {
+    "id": "G08515",
+    "Office": "Pueblo, CO",
+    "claims": 1360,
+    "claims_ac": 275392.88,
+    "patents": 281,
+    "patents_ac": 51695.64,
+    "year": 1910
+  },
+  {
+    "id": "G08516",
+    "Office": "Sterling, CO",
+    "claims": 4168,
+    "claims_ac": 955480.98,
+    "patents": 95,
+    "patents_ac": 15569.12,
+    "year": 1910
+  },
+  {
+    "id": "G0853",
+    "Office": "Del Norte, CO",
+    "claims": 167,
+    "claims_ac": 22938.32,
+    "patents": 32,
+    "patents_ac": 4770.91,
+    "year": 1911
+  },
+  {
+    "id": "G0854",
+    "Office": "Denver, CO",
+    "claims": 1141,
+    "claims_ac": 215382.22,
+    "patents": 309,
+    "patents_ac": 47557.05,
+    "year": 1911
+  },
+  {
+    "id": "G0855",
+    "Office": "Durango, CO",
+    "claims": 137,
+    "claims_ac": 17616.87,
+    "patents": 38,
+    "patents_ac": 5534.38,
+    "year": 1911
+  },
+  {
+    "id": "G0857",
+    "Office": "Glenwood Springs, CO",
+    "claims": 251,
+    "claims_ac": 35762.02,
+    "patents": 98,
+    "patents_ac": 15304.75,
+    "year": 1911
+  },
+  {
+    "id": "G08510",
+    "Office": "Hugo, CO",
+    "claims": 954,
+    "claims_ac": 206324,
+    "patents": 327,
+    "patents_ac": 57005.96,
+    "year": 1911
+  },
+  {
+    "id": "G08512",
+    "Office": "Lamar, CO",
+    "claims": 1752,
+    "claims_ac": 428661.89,
+    "patents": 112,
+    "patents_ac": 18774.59,
+    "year": 1911
+  },
+  {
+    "id": "G08513",
+    "Office": "Leadville, CO",
+    "claims": 34,
+    "claims_ac": 5219.45,
+    "patents": 7,
+    "patents_ac": 955.63,
+    "year": 1911
+  },
+  {
+    "id": "G08514",
+    "Office": "Montrose, CO",
+    "claims": 115,
+    "claims_ac": 16803.82,
+    "patents": 26,
+    "patents_ac": 4022.84,
+    "year": 1911
+  },
+  {
+    "id": "G08515",
+    "Office": "Pueblo, CO",
+    "claims": 1616,
+    "claims_ac": 350868.64,
+    "patents": 284,
+    "patents_ac": 45252.93,
+    "year": 1911
+  },
+  {
+    "id": "G08516",
+    "Office": "Sterling, CO",
+    "claims": 1940,
+    "claims_ac": 462091.48,
+    "patents": 211,
+    "patents_ac": 39743.57,
+    "year": 1911
+  },
+  {
+    "id": "G0853",
+    "Office": "Del Norte, CO",
+    "claims": 138,
+    "claims_ac": 19094.76,
+    "patents": 36,
+    "patents_ac": 5645.94,
+    "year": 1912
+  },
+  {
+    "id": "G0854",
+    "Office": "Denver, CO",
+    "claims": 866,
+    "claims_ac": 157995.99,
+    "patents": 306,
+    "patents_ac": 49096.1,
+    "year": 1912
+  },
+  {
+    "id": "G0855",
+    "Office": "Durango, CO",
+    "claims": 180,
+    "claims_ac": 23235.75,
+    "patents": 25,
+    "patents_ac": 3509.73,
+    "year": 1912
+  },
+  {
+    "id": "G0857",
+    "Office": "Glenwood Springs, CO",
+    "claims": 234,
+    "claims_ac": 34752.92,
+    "patents": 76,
+    "patents_ac": 11627.22,
+    "year": 1912
+  },
+  {
+    "id": "G08510",
+    "Office": "Hugo, CO",
+    "claims": 513,
+    "claims_ac": 112251.42,
+    "patents": 649,
+    "patents_ac": 111776.89,
+    "year": 1912
+  },
+  {
+    "id": "G08512",
+    "Office": "Lamar, CO",
+    "claims": 706,
+    "claims_ac": 174734.61,
+    "patents": 192,
+    "patents_ac": 33165.43,
+    "year": 1912
+  },
+  {
+    "id": "G08513",
+    "Office": "Leadville, CO",
+    "claims": 42,
+    "claims_ac": 5547.66,
+    "patents": 14,
+    "patents_ac": 2234.59,
+    "year": 1912
+  },
+  {
+    "id": "G08514",
+    "Office": "Montrose, CO",
+    "claims": 78,
+    "claims_ac": 11589.33,
+    "patents": 30,
+    "patents_ac": 4458.53,
+    "year": 1912
+  },
+  {
+    "id": "G08515",
+    "Office": "Pueblo, CO",
+    "claims": 1096,
+    "claims_ac": 212051.92,
+    "patents": 342,
+    "patents_ac": 55928.94,
+    "year": 1912
+  },
+  {
+    "id": "G08516",
+    "Office": "Sterling, CO",
+    "claims": 1041,
+    "claims_ac": 244738.56,
+    "patents": 274,
+    "patents_ac": 48902.76,
+    "year": 1912
+  }
+]
