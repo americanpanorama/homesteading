@@ -7,11 +7,17 @@ import TownshipsData from '../../public/data/townships_data.json';
 
 import sliversSVG from '../../public/data/sliversSVG.json';
 import officesSVG from '../../public/data/officesSVG.json';
+import reservationsSVG from '../../public/data/reservationsSVG.json';
 import TileTree from '../../public/data/tileTree.json';
 
 const getSelectedYear = state => state.selectedYear;
 const getMapDimensions = state => state.dimensions.map;
 const getMapPosition = state => state.mapPosition;
+
+const colorRamp = d3.scaleLinear()
+    .domain([0, 1])
+    .range(["green", "violet"]);
+
 
 export const getMapParameters = createSelector(
   [getMapDimensions, getMapPosition],
@@ -42,7 +48,36 @@ export const getMapParameters = createSelector(
 export const getOfficePolygonsForYear = createSelector(
   [getSelectedYear],
   (selectedYear) => {
-    return officesSVG.filter(f => {
+    return officesSVG
+      .filter(f => {
+        const selectedYearNum = selectedYear * 1000 + 1231;
+        const startNum = f.startYear * 1000 + f.startMonth * 100 + f.startDay;
+        const endNum = f.endYear * 1000 + f.endMonth * 100 + f.endDay;
+        return startNum <= selectedYearNum && endNum >= selectedYearNum;
+      })
+      .map(f => {
+        const dataForYear = TownshipsData.find(yd => {
+          return yd.of_id ===  f.gisJoin && yd.year === selectedYear;
+        });
+        const dataForEndYear = TownshipsData.find(yd => {
+          return yd.of_id ===  f.gisJoin && yd.year === selectedYear + 5;
+        });
+        //console.log(f, dataForYear);
+        if (dataForYear && dataForEndYear) {
+          //f.fill = getFillColor(dataForYear.claims_ac / f.area);
+          f.fillOpacity = dataForYear.claims_ac / f.area * 20;
+          console.log(dataForEndYear.patents_ac / dataForYear.claims_ac);
+          f.fill = colorRamp(dataForEndYear.patents_ac / dataForYear.claims_ac);
+        } 
+        return f;
+      });
+  }
+);
+
+export const getReservationsPolygonsForYear = createSelector(
+  [getSelectedYear],
+  (selectedYear) => {
+    return reservationsSVG.filter(f => {
       const selectedYearNum = selectedYear * 1000 + 1231;
       const startNum = f.startYear * 1000 + f.startMonth * 100 + f.startDay;
       const endNum = f.endYear * 1000 + f.endMonth * 100 + f.endDay;
@@ -77,7 +112,7 @@ export const getTownshipTiles = createSelector(
                 TileTree[shId][zIdx][xIdx]
                   .forEach(yIdx => {
                     tiles.push({
-                      xlinkHref: `/data/tiles/${shId}/${zIdx}/${xIdx}/${yIdx}.png`,
+                      xlinkHref: `//s3.amazonaws.com/dsl-general/homesteading/${shId}/${zIdx}/${xIdx}/${yIdx}.png`,
                       x: xIdx,
                       y: yIdx,
                       key: `tile-${shId}-${zIdx}-${xIdx}-${yIdx}`,
@@ -129,7 +164,7 @@ export function getStyledPolygonsForYear(state) {
       });
       if (dataForYear) {
         console.log(dataForYear.claims_ac * 20 / officeFeature.area);
-        f.fill = getFillColor(dataForYear.claims_ac / officeFeature.area);
+        //f.fill = getFillColor(dataForYear.claims_ac / officeFeature.area);
         f.fillOpacity = 1;
       } 
     }
@@ -206,10 +241,9 @@ function getColor(weight) {
 export const getPolygonsForYear = createSelector(
   [getSelectedYear, getOfficePolygonsForYear],
   (selectedYear, officesForYear) => {
-    console.log(officesForYear);
     return sliversSVG.map(f => {
       f.fillOpacity = 0.2;
-      f.fill = 'transparent';
+      f.fill = 'green';
       const office = officesForYear.find(ogj => {
         return ogj.sliverIds.includes(f.id);
       });
@@ -218,8 +252,10 @@ export const getPolygonsForYear = createSelector(
           return yd.of_id ===  office.gisJoin && yd.year === selectedYear;
         });
         if (dataForYear) {
-          f.fill = getFillColor(dataForYear.claims_ac / office.area);
-          f.fillOpacity = 0.6;
+          //f.fill = getFillColor(dataForYear.claims_ac / office.area);
+          //f.fill = 'purple';
+          //f.fillOpacity = 0.6;
+          //f.fillOpacity = (dataForYear.claims_ac / office.area) * 30;
         } 
       }
       return f;

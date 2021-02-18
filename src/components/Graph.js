@@ -23,7 +23,7 @@ const mapStateToProps = state => {
     .y1(function(d) { return 0.5 - y(d.patents_ac); });
 
   const aggregateYearData = getTotalClaimsByYear();
-  console.log(aggregateYearData);
+
   const decadeXs = [1870, 1880, 1890, 1900, 1910].map(year => ({
       label: year,
       x: x(year)

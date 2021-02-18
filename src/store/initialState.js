@@ -8,7 +8,7 @@
 
 export default {
   // initialLoad: false,
-  selectedYear: 1867,
+  selectedYear: 1887,
   // selectedId: null,
   // selectedData: null,
   // vizStartYear: 1825,

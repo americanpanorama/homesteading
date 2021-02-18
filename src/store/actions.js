@@ -14,12 +14,12 @@ export function calculateDimensions() {
   const mapMargins = 20;
 
   const vizCanvas = {
-    height: innerHeight - headerHeight - mapMargins * 2,
-    width: innerWidth - mapMargins * 2,
+    height: (innerHeight - 50),
+    width: innerWidth - Math.max(200, innerWidth / 3),
   };
 
   const mapWidth = vizCanvas.width;
-  const mapHeight = vizCanvas.height * 2 / 3;
+  const mapHeight = innerHeight - 250;
   const horizontalScale = mapWidth / 960;
   const verticalScale = mapHeight / 500;
   const map = {

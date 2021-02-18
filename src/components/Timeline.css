@@ -1,0 +1,6 @@
+.timeline text {
+  fill: white !important;
+  stroke: white;
+  stroke-width: 0;
+  font-family: 'Saira Condensed', sans-serif;
+}

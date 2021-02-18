@@ -1,14 +1,38 @@
-
+body {
+  margin: 0;
+  background-color: #094182;
+}
 
 .App {
   text-align: center;
-  background-color: #F4DFB8;
+  background-color: #01131D; /* #F4DFB8; */
+  display: grid;
+  grid-template-rows: 50px auto;
+  grid-template-columns: 1fr 1fr;
+  max-height: 100vh;
+  overflow: hidden;
 }
 
 header {
   height: 50px;
   font-family: 'Cambay', sans-serif;
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 1;
+  color: yellow;
 }
+
+.vectorMap {
+  grid-column: 1 / span 1;
+  grid-row: 2 / span 1;
+}
+
+.timeline {
+  grid-column: 2 / span 1;
+  grid-row: 2 / span 1;
+  overflow: scroll;
+}
+
+
 
 header h1 {
   text-transform: uppercase;
