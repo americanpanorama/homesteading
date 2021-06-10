@@ -1,0 +1,14 @@
+#timelineDateHeader {
+  background-color: #28251E; /* #2F3E46; */
+  height: 46px;
+  margin: 0;
+  font-size: 28px;
+}
+
+#timelineDateHeader a {
+  color: lime;
+}
+
+#timelineDateHeader circle {
+  fill: lime;
+}

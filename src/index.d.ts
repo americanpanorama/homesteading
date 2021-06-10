@@ -14,6 +14,26 @@ export interface Dimensions {
   }
 }
 
+
+export interface YMD {
+  year: number;
+  month: number;
+  day: number;
+}
+
+export interface Conflict {
+  x: number;
+  y: number;
+  names: string;
+  office: string;
+  state: string;
+  nations: string[];
+  us_casualties: number;
+  native_casualties: number;
+  start_date: YMD;
+  end_date: YMD;
+}
+
 export type PlaceType = 'office' | 'stateOrTerritory';
 
 export interface TimelineYearPlaceData {
@@ -23,6 +43,7 @@ export interface TimelineYearPlaceData {
   acres_patented: number;
   patents: number;
   area: number;
+  conflicts?: Conflict[];
 }
 
 export interface TimelinePlaceData {
@@ -42,6 +63,10 @@ export interface TimelineCell {
   fillOpacity: number;
 }
 
+export interface TimelineConflict {
+  x: number;
+}
+
 // export interface TimelineYearTick {
 //   x: number;
 //   height: number;
@@ -51,6 +76,9 @@ export interface TimelineCell {
 export interface TimelineRowStyled {
   label: string;
   cells: TimelineCell[];
+  claims: number;
+  acres_claimed: number;
+  conflicts: TimelineConflict[];
   active: boolean;            // does the photographer have any photos (and is thus selectable) given the current state, e.g. timeRange
   y: number;                  // y position 
   //ySelectable: number;       // y position for the overlapping selectable rect
@@ -61,6 +89,33 @@ export interface TimelineRowStyled {
   emphasize: boolean;        // for selected photographer
   fill: string;
   linkTo: string;
-  onHover?: (photographerKey: string) => void;
-  onUnhover?: () => void,
+}
+
+export interface StyledState {
+  abbr: string;
+  name: string;
+  nhgis_join?: string;
+  d: string;
+  labelCoords: [number, number];
+  labelRotation: number;
+  fillOpacity: number;
+}
+
+export interface ProjectedState {
+  abbr: string;
+  name: string;
+  labelCoords: [number, number];
+  labelRotation: number;
+  bounds: [[number, number], [number, number]];
+  rotation: number;
+  d: string;
+}
+
+
+export interface RouterParams {
+  year: string;
+  placeId?: string;
+  stateTerr?: string;
+  office?: string;
+  fullOpacity?: string;
 }

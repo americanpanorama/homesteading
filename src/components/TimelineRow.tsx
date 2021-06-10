@@ -2,20 +2,21 @@ import * as  React from 'react';
 import { Link } from 'react-router-dom';
 import * as d3 from 'd3';
 import './TimelineRow.css';
-import { TimelineRowStyled } from '../index.d';
+import { TimelineRowStyled, RouterParams } from '../index.d';
 
 const Row = (props: TimelineRowStyled) => {
   const { useState, useEffect, useRef } = React;
   const {
     label,
+    acres_claimed,
+    claims,
     cells,
+    conflicts,
     active,
     y,
     width,
     height,
     labelSize,
-    onHover,
-    onUnhover,
     emphasize,
     fill,
     linkTo,
@@ -51,28 +52,45 @@ const Row = (props: TimelineRowStyled) => {
           y={labelSize} //{(emphasize) ? height * 1.2 : height * 0.9}
           fontSize={(emphasize) ? labelSize * 1.5 : labelSize}
           textAnchor='end'
-          className={(active) ? "active" : ""}
-          strokeWidth={3}
-          stroke='white'
-          strokeOpacity={0.75}
+          style={{
+            fill: (active) ? '#F4DFB8' : '#888',
+          }}
+          className={(!active) ? 'inactive' : ''}
         >
           {label}
         </text>
 
         <text
-          x={100}
+          x={165}
           y={labelSize} //{(emphasize) ? height * 1.2 : height * 0.9}
           fontSize={(emphasize) ? labelSize * 1.5 : labelSize}
           textAnchor='end'
+          className='stat'
           style={{
-
             fill: fill,
           }}
           //className={(active) ? 'active' : ''}
         >
-          {label}
+          {(claims) ? Math.round(claims).toLocaleString() : '—'}
         </text>
 
+        <text
+          x={230}
+          y={labelSize} //{(emphasize) ? height * 1.2 : height * 0.9}
+          fontSize={(emphasize) ? labelSize * 1.5 : labelSize}
+          textAnchor='end'
+          className='stat'
+          style={{
+            fill: fill,
+          }}
+          //className={(active) ? 'active' : ''}
+        >
+          {(acres_claimed && acres_claimed >= 100000) ? `${Math.round(acres_claimed / 1000).toLocaleString()}K` : ''}
+          {(acres_claimed && acres_claimed < 100000 && acres_claimed >= 1000) ? `${(Math.round(acres_claimed / 100) / 10).toLocaleString()}K` : ''}
+          {(acres_claimed && acres_claimed < 1000) ? Math.round(acres_claimed).toLocaleString() : ''}
+          {(!acres_claimed) ? '—' : ''}
+        </text>
+        
         {cells.map(c => (
           <rect
             x={c.x}
@@ -81,30 +99,75 @@ const Row = (props: TimelineRowStyled) => {
             height={c.height}
             fillOpacity={c.fillOpacity}
             fill={c.fill}
-            strokeWidth={0}
+            stroke='#15262F'
+            strokeWidth={1}
             //className={`cell`} 
             key={`cellFor${c.x}`}
           />
+        ))} 
+
+        {/* 
+
+        {cells.map(c => (
+          <circle
+            cx={c.x + c.width / 2}
+            cy={(18 - Math.min(c.width, c.height) / 2) / 2}
+            r={Math.min(c.width, c.height) / 2}
+            fillOpacity={c.fillOpacity}
+            fill={c.fill}
+            stroke='#15262F'
+            strokeWidth={1}
+            //className={`cell`} 
+            key={`cellFor${c.x}`}
+          />
+        ))} */}
+
+        {conflicts.map(d => (
+          <g key={`conflict-${d.x}`}>
+            <line
+              x1={d.x - 3}
+              x2={d.x + 3}
+              y1={9 - 3}
+              y2={9 + 3}
+              stroke='red'
+            />
+            <line
+              x1={d.x - 3}
+              x2={d.x + 3}
+              y1={9 + 3}
+              y2={9 - 3}
+              stroke='red'
+            />
+          </g>
+          
+
+
         ))}
+        {(active) && (
+          <Link
+            to={linkTo}
+          >
+            <rect
+              x={0}
+              y={0 - 1.5}
+              width={100}
+              height={height + 3}
+              fill={'transparent'}
+              id={label}
+            />
+          </Link>
+        )}
       </g>
 
-      {/* a transparent hoverable and selectable rect that covers the whole element */}
-      {(active) && (
-        <Link
-          to={linkTo}
-        >
-          <rect
-            x={100 - width * 12}
-            y={0 - 1.5}
-            width={width * 150}
-            height={height + 3}
-            fill={'transparent'}
-            id={label}
-            // onMouseEnter={() => { if (!isAnimating.current) { onHover(photographerKey) }}}
-            // onMouseLeave={() => { if (!isAnimating.current) { onUnhover() }}}
-          />
-        </Link>
-      )}
+                {/* <line
+              x1={d.x}
+              x2={d.x}
+              y1={0}
+              y2={18}
+              stroke='red'
+          /> */}
+
+      {/* a transparent hoverable and selectable rect that covers the label */}
     </g>
   );
 };

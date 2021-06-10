@@ -3,46 +3,16 @@ import { useAsync } from 'react-async';
 import * as d3 from 'd3';
 import { Link, useParams, useHistory } from "react-router-dom";
 import DimensionsContext from '../DimensionsContext';
-import { Dimensions } from '../index.d';
+import { Dimensions, ProjectedState, RouterParams } from '../index.d';
+import { MapDate, YearData, ProjectedTownship, AsyncParams, TileData, CalculateTransform, CalculateCenterAndDXDY, TransformData, CalculateZ, Bounds, Point } from './VectorMap.d';
+import States from '../../data/states.json';
+import MapDates from '../../data/mapDates.json';
+import TileLayers from './TileLayers';
+import DistrictPolygons from './DistrictPolygons';
+import State from './State';
+import { makeParams } from '../utilities';
+import { CANVASSIZE, ANIMATIONDURATION} from '../Config';
 import './VectorMap.css';  
-
-interface RouterParams {
-  year: string;
-}
-
-interface ProjectedTownship {
-  d: string;
-  office: string;
-  state: string;
-  area: number;
-  claims: number;
-  acres_claimed: number;
-  patents: number;
-  acres_patented: number;
-  labelCoords: [number, number];
-  bounds: [[number, number], [number, number]];
-  gisJoin: string; 
-  tile_id: number;
-}
-
-interface AsyncParams {
-  data: ProjectedTownship[];
-  error: any;
-}
-
-interface TileData {
-  tile_id: number;
-  z: number;
-  y: number;
-  x: number;
-  opacity: number;
-}
-
-function shadeRGBColor(color, percent) {
-    var f=color.split(","),t=percent<0?0:255,p=percent<0?percent*-1:percent,R=parseInt(f[0].slice(4)),G=parseInt(f[1]),B=parseInt(f[2]);
-    return "rgb("+(Math.round((t-R)*p)+R)+","+(Math.round((t-G)*p)+G)+","+(Math.round((t-B)*p)+B)+")";
-}
-
 
 const loadData = async ({ year }: RouterParams) => {
   const response = await fetch(`${process.env.PUBLIC_URL}/data/yearData/${year}.json`);
@@ -51,231 +21,187 @@ const loadData = async ({ year }: RouterParams) => {
 }
 
 const VectorMap = () => {
-  const { useEffect, useContext } = React;
-  const dimensions: Dimensions = useContext(DimensionsContext);
-  const { year } = useParams<RouterParams>();
-  const history = useHistory();
-
-  const { width, height } = dimensions.mapDimensions;
-
-  useEffect(() => {
-    if (parseInt(year) < 1912) {
-      setTimeout(() => {
-        //history.push(`/${parseInt(year) + 1}`);
-      }, 1000)
-    }
+  const { useEffect, useContext, useState, useRef } = React;
+  const params = useParams<RouterParams>();
+  const { stateTerr, office, fullOpacity } = params;
+  const year = params.year || '1863';
+  const { width, height } = (useContext(DimensionsContext) as Dimensions).mapDimensions;
+  const refTranslate = useRef(null);
+  const refScalePaths = useRef(null);
+  // the default size of the canvas when the map is projected with a scale of 1; it's 1024 or (256 * 2^2) for four tiles across and four tiles down at zoom level 2
+  const tileSize = 256;
+  
+  const calculateCenterAndDxDy: CalculateCenterAndDXDY = bounds => ({
+    center: [(bounds[1][0] + bounds[0][0]) / 2, (bounds[1][1] + bounds[0][1]) / 2],
+    dx: bounds[1][0] - bounds[0][0],
+    dy: bounds[1][1] - bounds[0][1],
   });
 
+  const getCenter = (bounds: Bounds): Point => [(bounds[1][0] + bounds[0][0]) / 2, (bounds[1][1] + bounds[0][1]) / 2];
+  const getDX = (bounds: Bounds): number => bounds[1][0] - bounds[0][0];
+  const getDY = (bounds: Bounds): number => bounds[1][1] - bounds[0][1];
 
-  const { data, error }: AsyncParams = useAsync({
+  const calculateTransform: CalculateTransform = (viewOptions) => {
+    let { dx, dy, center, yGutter, xGutter, width, height, rotation } = viewOptions;
+    // set defaults
+    xGutter = xGutter || 1;
+    yGutter = yGutter || 1;
+    dx = dx || CANVASSIZE * 0.7; // the 0.85 accounts for there not being any states with homesteading east of MI/OH
+    dy = dy || 500 / 960 * CANVASSIZE;
+    center = center || [CANVASSIZE * 0.42, CANVASSIZE / 2];
+    rotation = rotation || -2;
+
+    // calculate values
+    const scale = (width / height > dx / dy) ? yGutter * height / dy : xGutter * width / dx;
+    const translateX = width / 2 - scale * center[0];
+    const translateY = height / 2 - scale * center[1];
+    return {
+      scale,
+      transform: `translate(${translateX} ${translateY}) rotate(${rotation} ${center[0] * scale} ${center[1] * scale})`,
+      translate: `translate(${translateX} ${translateY})`,
+    }
+  };
+
+  const calculateXYBounds = (scale: number, center: Point): Bounds => {
+    const minX = center[0] - width / 2 / scale;
+    const maxX = center[0] + width / 2 / scale;
+    const minY = center[1] - height / 2 / scale;
+    const maxY = center[1] + height / 2 / scale;
+    return [[minX, minY], [maxX, maxY]];
+  };
+
+  const calculateZ: CalculateZ = (scale) => {
+    const fullSizeOfCanvas = scale * CANVASSIZE;
+    const fullSizeOfZ = (z: number): number => tileSize * Math.pow(2, z);
+    for (let z = 0; z < 18; z += 1) {
+      if (fullSizeOfZ(z) >= fullSizeOfCanvas) {
+        return z;
+      }
+    }
+  }
+
+  let { scale: initialScale, transform: initialTransform, translate: initialTranslate }: TransformData = calculateTransform({width, height});
+  const [center, setCenter] = useState<Point>([CANVASSIZE * 0.45, CANVASSIZE / 2]);
+  const [loadedDataForYear, setLoadedDataForYear] = useState<string>(null);
+
+  const { data: yearData, error }: AsyncParams = useAsync({ 
     promiseFn: loadData,
     year: year,
     watch: year,
   });
 
-  if (data) {
-    // get the selected land office data
-    const slo: ProjectedTownship = data[15];
-    console.log(slo.bounds[1][1] + slo.bounds[0][1]);
-    console.log(slo); 
-    let yGutter = 0.1;
-    let xGutter = 0.1;
-    let center = [(slo.bounds[0][0] + slo.bounds[1][0]) / 2 * 1000, (0 + (slo.bounds[1][1] + slo.bounds[0][1]) / 2) * 1000];
-    let dx = Math.abs(slo.bounds[0][0] - slo.bounds[1][0]) * 1000;
-    let dy = Math.abs(slo.bounds[0][1] - slo.bounds[1][1]) * 1000;  // 500 / 960 * 
-    // calculate the scale
-    const scale = (width / height > dx / dy) ? yGutter * height / dy : xGutter * width / dx;
+  const initialTranslateCalculated = useRef(!stateTerr);
+  const [scale, setScale] = useState(initialScale);
+  const [tileScale, setTileScale] = useState(initialScale);
+  const [transform, setTransform] = useState(initialTransform);
+  const [translate, setTranslate] = useState(initialTranslate);
+  const calculatedTransformFor = useRef<string>((!stateTerr) ? `${year}-${stateTerr}-${office}` : null);
 
+  const loaded = useRef<string>(null);
 
-    const translateX = width / 2 - scale * center[0];
-    const translateY = height / 2 - scale * center[1];
+  const getTransformAndCenter = () => {
+    let newScale: number;
+    let newTransform: string;
+    let newTranslate: string;
+    let newCenter: Point;
+    if (!stateTerr) {
+      ({ scale: newScale, transform: newTransform, translate: newTranslate } = calculateTransform({width, height}));
+      newCenter = [CANVASSIZE / 2, CANVASSIZE / 2];
+    } else {
+      const placeData = (office && yearData)
+        ? yearData.offices.find(pt => pt.state === stateTerr && pt.office.replace(/[^a-zA-Z]/g, '') === office)
+        : (States as ProjectedState[]).find(d => d.abbr === stateTerr);      
+      console.log(placeData);
+      ({ scale: newScale, transform: newTransform, translate: newTranslate } = calculateTransform({
+        ...calculateCenterAndDxDy(placeData.bounds),
+        rotation: placeData.rotation,
+        yGutter: 0.8,
+        xGutter: 0.8,
+        width,
+        height
+      }));
+      newCenter = getCenter(placeData.bounds);
+    }
+    return {
+      transform: newTransform,
+      translate: newTranslate,
+      scale: newScale,
+      tileScale: newScale / Math.pow(2, calculateZ(newScale) - 2),
+      center: newCenter,
+    }
+  }
 
-    const fullSize = scale * 1000 ;
-    
-    let z = 0;
-    for (let tempsize = 256 * Math.pow(2, z); tempsize < fullSize; z += 1, tempsize = 256 * Math.pow(2, z)) {}
+  // set initial scale and 
+  useEffect(() => {
+    // if this is the initial render and there's a state/territory, calculate the transform values before rendering the map
+    if (!initialTranslateCalculated.current) {
+      const { transform: newTransform, translate: newTranslate, center: newCenter, scale: newScale } = getTransformAndCenter();
+      console.log('calculating');
+      setCenter(center);
+      setTranslate(newTransform);
+      setScale(newScale);
+      initialTranslateCalculated.current = true;
+    }
+  });
 
-    const { tileZ, tileWidth } = {
-      tileZ: 2,
-      tileWidth: (256  * scale),
-    };
-  //   const getTownshipTiles = (mapPosition) => {
-  //     const officeIds = data.map((projectedTownship: ProjectedTownship) => projectedTownship.tile_id);
-  //     const fullDimension = Math.max(width, height) * Math.pow(2, mapPosition.z);
+  useEffect(() => {
+    const { transform: newTransform, translate: newTranslate, center: newCenter, scale: newScale } = getTransformAndCenter();
+    if (transform !== newTransform) {
+      d3.select(refTranslate.current)
+        .transition()
+        .duration((initialTranslateCalculated.current) ? ANIMATIONDURATION: 0)
+        .attr('transform', newTransform)
+        .on('end', () => {
+          console.log(newTransform);
+          setTransform(newTransform);
+        });
+    }
+  });
 
-    const tiles: TileData[] = [];
-    data.forEach((projectedTownship: ProjectedTownship) => {
-      const tilesForCanvas = Math.pow(2, z);
-      const minX: number = Math.floor(projectedTownship.bounds[0][0] / (1 / tilesForCanvas));
-      const maxX: number = Math.floor(projectedTownship.bounds[1][0] / (1 / tilesForCanvas));
-      const maxY: number = tilesForCanvas - 1 - Math.floor(projectedTownship.bounds[0][1] / (1 / tilesForCanvas));
-      const minY: number = tilesForCanvas - 1 - Math.floor(projectedTownship.bounds[1][1] / (1 / tilesForCanvas));
-      for (let tempX = minX; tempX <= maxX; tempX += 1) {
-        for (let tempY = minY; tempY <= maxY; tempY += 1) {
-//if (projectedTownship.tile_id === 287) {
-          tiles.push({
-            tile_id: projectedTownship.tile_id,
-            z: z,
-            x: tempX,
-            y: tempY,
-            opacity: 0.1 + 0.9 * projectedTownship.acres_claimed * 100 / projectedTownship.area,
-          });
-//}
-        }
-      }
-    });
+  useEffect(() => {
+    const { transform: newTransform, translate: newTranslate, center: newCenter, scale: newScale } = getTransformAndCenter();
+    if (scale !== newScale || center[0] !== newCenter[0]) {
+      setScale(newScale);
+      setCenter(newCenter);
+    }
+  });
 
-    console.log(tiles.filter((d => d.tile_id === 158)));
-    console.log(`width: ${width}`);
-    console.log(`scale: ${scale}`);
-    console.log(`z: ${z}`);
-    console.log(`tileWidth: ${tileWidth}`);
-    console.log(`translateX: ${translateX}`);
-    console.log(`translateY: ${translateY}`);
-    console.log(`scale % 1: ${scale % 1}`)
-    console.log(`center: ${center}`)
+  // the second condition here prevents 
+  if (yearData && initialTranslateCalculated.current) {
+    const projectedTownships = yearData.offices;
     return (
       <div
         className='vectorMap'
       >
         <svg
-          width={width}
+          width={width * 2}
           height={height}
           xmlns="http://www.w3.org/2000/svg"
           xmlnsXlink="http://www.w3.org/1999/xlink"
         >
-          {/* JSX Comment 
-          <g transform={`translate(${translateX - 900} ${translateY + 500}) rotate(310 ${width} ${height}) skewX(60) scale(0.8)`}>
-          */}
-          <g transform={`translate(${translateX} ${translateY}) scale(${scale / (Math.pow(2, z - 2))})`}>
-            <rect 
-              x={0}
-              y={256}
-              height={256}
-              width={256}
-              fill='silver'
-              fillOpacity={0.1}
+          <g
+            transform={transform}
+            ref={refTranslate}
+          >
 
+            <TileLayers
+              projectedTownships={projectedTownships}
+              center={center}
+              scale={scale}
+              id={`${year}-${scale}-${center[0]}-${center[1]}`}
             />
-            <rect 
-              x={256}
-              y={0}
-              height={256}
-              width={256}
-              fill='purple'
-              fillOpacity={0.1}
 
+            <DistrictPolygons 
+              projectedTownships={projectedTownships}
+              center={center}
+              scale={scale}
             />
-            {tiles.map((d: TileData) => (
-              <image
-                xlinkHref={`//s3.amazonaws.com/dsl-general/homesteading/${d.tile_id}/${d.z}/${d.x}/${d.y}.png`}
-                width={256}
-                x={256 * d.x}
-                y={256 *  (Math.pow(2, z) - d.y) - 256}
-                key={`${d.tile_id}/${d.z}/${d.x}/${d.y}`}
-                opacity={d.opacity}
-              />
-            ))}
           </g>
-
-          <g transform={`translate(${translateX} ${translateY}) scale(${scale})`}> 
-            {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16].map((x: number) => 
-              <g key={`gridX${x}`}>
-                {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16].map((y: number) => 
-                  <g key={`gridY${y}`}>
-                    <rect
-                      x={x * 256}
-                      y={(Math.pow(2, z) -y) * 256}
-                      width={256}
-                      height={256}
-                      fill='black'
-                      fillOpacity={0}
-                      stroke='#224'
-                      strokeOpacity={0.2}
-                    />
-                    <text
-                      x={x * 256 + 256/2 / z}
-                      y={(Math.pow(2, z) - y) * 256  - 256/2 / z}
-                      textAnchor='middle'
-                      stroke='#222'
-                    >
-                      {`${x}, ${y}`}
-                    </text>
-
-                  </g>
-                )}
-              </g>
-            )}
-          </g>
-            <g transform={`translate(${translateX} ${translateY}) scale(${scale * 1024})`}> 
-
-              <rect 
-                x={0.5}
-                y={0}
-                height={0.5}
-                width={0.5}
-                fill='pink'
-                fillOpacity={0.3}
-
-              />
-              {data.sort((a: ProjectedTownship, b: ProjectedTownship) => a.acres_claimed / a.area - b.acres_claimed / b.area ).map((projectedTownship: ProjectedTownship) => (
-                <path
-                  d={projectedTownship.d}
-                  key={`office-${projectedTownship.tile_id}`}
-                  //fill='#112'
-                  //fillOpacity={0.8 - 0.8 * Math.min(1, projectedTownship.acres_claimed * 100 / projectedTownship.area)}
-                  fill={shadeRGBColor(d3.interpolateGnBu(1 - projectedTownship.acres_claimed * 100 / projectedTownship.area), -0.9 + 0.9 * projectedTownship.acres_claimed * 100 / projectedTownship.area)}
-
-                  //fillOpacity={(Math.min(1, projectedTownship.acres_claimed * 100 / projectedTownship.area)) / 3}
-                  fillOpacity={0}
-                  stroke={d3.interpolateViridis(projectedTownship.acres_claimed * 100 / projectedTownship.area)}
-                  strokeWidth={(Math.min(1, projectedTownship.acres_claimed * 100 / projectedTownship.area)) / Math.max(width, height) / scale * 3 }
-                  //strokeOpacity={(Math.min(1, projectedTownship.acres_claimed * 100 / projectedTownship.area))}
-                  //stroke='#112'
-                  //strokeWidth={0.75 / (scale * 1024)}
-                />
-              ))} 
-            </g>
-
-            
-            {/*
-            <g transform={`scale(${scale})`}>
-              {states.map((p, i) => (
-                <path
-                  d={p.d}
-                  fill='transparent'
-                  stroke='#666'
-                  strokeWidth={0.25 / Math.max(width, height)}
-                  //strokeDasharray="0.01 0.002 0.001 0.002"
-                  key={`state${i}`}
-                />
-              ))}
-
-               
-              {reservations.map((p, i) => (
-                <path
-                  d={p.d}
-                  fill='#73937E'
-                  fillOpacity={1}
-                  stroke='#73937E'
-                  strokeWidth={0.5 / Math.max(width, height)}
-                  key={`state${i}`}
-                />
-              ))} 
-
-            </g>
-  j  */}
-
-
-
-
         </svg>
       </div>
     );
   }
-
   return null;
 };
 
 export default VectorMap;
-

@@ -1,6 +1,27 @@
+.timeline {
+  background-color: var(--inset-bg-color);
+}
+
+.timeline #timelineRows {
+  overflow-y: scroll;
+}
+
 .timeline text {
-  fill: white !important;
-  stroke: white;
+  fill: var(--light-color);
+  stroke: var(--light-color);
   stroke-width: 0;
   font-family: 'Saira Condensed', sans-serif;
+}
+
+.timeline text.sortNav {
+  text-anchor: middle;
+}
+
+.timeline text.sortNav tspan {
+  fill: lime;
+  text-transform: uppercase;
+}
+
+.timeline text.sortNav tspan.selected {
+  text-decoration: underline;
 }
