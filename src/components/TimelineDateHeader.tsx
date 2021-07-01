@@ -28,7 +28,7 @@ const TimelineDateHeader = () => {
               <path
                 d={`M${20 / -8},${20 / 4} V${20 / -8} H${20 / 4}`}
                 fill='transparent'
-                stroke='#233036'
+                stroke='#F4DFB8'
                 strokeWidth={20 / 10}
               />
             </g>
@@ -52,7 +52,7 @@ const TimelineDateHeader = () => {
               <path
                 d={`M${20 / -8},${20 / 4} V${20 / -8} H${20 / 4}`}
                 fill='transparent'
-                stroke='#233036'
+                stroke='#F4DFB8'
                 strokeWidth={20 / 10}
               />
             </g>
@@ -80,7 +80,7 @@ const TimelineDateHeader = () => {
                   x2={0}
                   y1={20 / 4}
                   y2={20 / -4}
-                  stroke='#233036'
+                  stroke='#F4DFB8'
                   strokeWidth={20 / 10}
                 />
                 <line
@@ -88,7 +88,7 @@ const TimelineDateHeader = () => {
                   x2={20 / 4}
                   y1={0}
                   y2={0}
-                  stroke='#233036'
+                  stroke='#F4DFB8'
                   strokeWidth={20 / 10}
                 />
               </g>
@@ -117,7 +117,7 @@ const TimelineDateHeader = () => {
                   x2={0}
                   y1={20 / 4}
                   y2={20 / -4}
-                  stroke='#233036'
+                  stroke='#F4DFB8'
                   strokeWidth={20 / 10}
                 />
                 <line
@@ -125,7 +125,7 @@ const TimelineDateHeader = () => {
                   x2={20 / 4}
                   y1={0}
                   y2={0}
-                  stroke='#233036'
+                  stroke='#F4DFB8'
                   strokeWidth={20 / 10}
                 />
               </g>

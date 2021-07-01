@@ -7,6 +7,7 @@ import { Dimensions, ProjectedState, RouterParams } from '../index.d';
 import { MapDate, YearData, ProjectedTownship, AsyncParams, TileData, CalculateTransform, CalculateCenterAndDXDY, TransformData, CalculateZ, Bounds, Point } from './VectorMap.d';
 import States from '../../data/states.json';
 import MapDates from '../../data/mapDates.json';
+import NorthAmerica from '../../data/northAmerica.json';
 import TileLayers from './TileLayers';
 import DistrictPolygons from './DistrictPolygons';
 import State from './State';
@@ -111,7 +112,6 @@ const VectorMap = () => {
       const placeData = (office && yearData)
         ? yearData.offices.find(pt => pt.state === stateTerr && pt.office.replace(/[^a-zA-Z]/g, '') === office)
         : (States as ProjectedState[]).find(d => d.abbr === stateTerr);      
-      console.log(placeData);
       ({ scale: newScale, transform: newTransform, translate: newTranslate } = calculateTransform({
         ...calculateCenterAndDxDy(placeData.bounds),
         rotation: placeData.rotation,
@@ -136,7 +136,6 @@ const VectorMap = () => {
     // if this is the initial render and there's a state/territory, calculate the transform values before rendering the map
     if (!initialTranslateCalculated.current) {
       const { transform: newTransform, translate: newTranslate, center: newCenter, scale: newScale } = getTransformAndCenter();
-      console.log('calculating');
       setCenter(center);
       setTranslate(newTransform);
       setScale(newScale);
@@ -151,8 +150,7 @@ const VectorMap = () => {
         .transition()
         .duration((initialTranslateCalculated.current) ? ANIMATIONDURATION: 0)
         .attr('transform', newTransform)
-        .on('end', () => {
-          console.log(newTransform);
+        .on('end', () => { 
           setTransform(newTransform);
         });
     }
@@ -169,6 +167,7 @@ const VectorMap = () => {
   // the second condition here prevents 
   if (yearData && initialTranslateCalculated.current) {
     const projectedTownships = yearData.offices;
+    console.log(projectedTownships);
     return (
       <div
         className='vectorMap'
@@ -183,6 +182,14 @@ const VectorMap = () => {
             transform={transform}
             ref={refTranslate}
           >
+            <g transform={`scale(${scale})`}>
+              {NorthAmerica.map((d: any) => (
+                <path
+                  d={d}
+                  className='continent'
+                />
+              ))}
+            </g>
 
             <TileLayers
               projectedTownships={projectedTownships}

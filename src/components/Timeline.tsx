@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Link, useParams } from 'react-router-dom';
-import Async from 'react-async';
+import { useAsync } from 'react-async';
 import * as d3 from 'd3';
 // @ts-ignore
 import us from 'us';
@@ -38,11 +38,18 @@ const TimelineHeatmap = () => {
 
   const [sortBy, setSortBy] = useState<sortOptions>('alphabetical');
 
+console.log(width);
   const x = d3.scaleLinear()
     .domain([1862, 1912])
-    .range([235, width - 25]);
+    .range([260, width - 25]);
 
   const cellWidth: number = x(1863) - x(1862);
+
+  const { data, error }: {data: any, error: any} = useAsync({ 
+    promiseFn: loadTimelineCells,
+    place: stateTerr || 'national',
+    watch: stateTerr
+  });
 
   const formatPlaces = (placeData: TimelinePlaceData[]): TimelineRowStyled[] => {
     // calculate the witeh of the month/cell
@@ -91,7 +98,7 @@ const TimelineHeatmap = () => {
           active,
           fill: (active) ? '#aaa' : '#444',
           width,
-          y: i * 20,
+          y: i * 25,
           height: 20,
           labelSize: 14,
           emphasize: false,
@@ -115,212 +122,198 @@ const TimelineHeatmap = () => {
 
     return rows;
   }
+
+  const rows = (data) ? formatPlaces(data) : [];
+
+  const rowHeight = 25;
+  const cellHeight = rowHeight - 2;
+  const labelSize = 12;
+  const paddingTop = 20;
+
   
   return (
-    <React.Fragment>
+    <div className='timeline'>
       <TimelineDateHeader />
-    <div
-      className='timeline'
-      style={{
-        height: height,
-      }}
-    >
-      <svg
-        width={width + leftAxisWidth}
-        height={95}
+      <div
+        style={{
+          height: Math.min(height, rows.length * rowHeight + 300)
+        }}
       >
-        <defs>
-          <linearGradient id="timelineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            {[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100].map(percent => (
-              <stop
-                offset={`${percent}%`}
-                style={{
-                  stopColor: d3.interpolateCividis(percent / 100)
-                  //stopColor: d3.scaleLinear<string>().domain([0,1]).range(['#F67280', '#355C7D'])(percent/100)
-                }}
-              />
-            ))}
-          </linearGradient>
-        </defs>
-
-        <g transform='translate(0 24)'>
-          <text
-            className='sortNav'
-            x={width / 2}
-          >
+        <nav>
+          <div>
             sort by:
-            <tspan
-              dx={20}
+          </div>
+          <div>
+            <button
               onClick={() => { setSortBy('descending'); }}
               className={(sortBy === 'descending') ? 'selected' : ''}
             >
-              descending %
-            </tspan>
-            <tspan
-              dx={20}
+              Descending %
+            </button>
+            <button
               onClick={() => { setSortBy('chronological'); }}
               className={(sortBy === 'chronological') ? 'selected' : ''}
             >
-              chronologically
-            </tspan>
-            <tspan
-              dx={20}
-              onClick={() => { setSortBy('alphabetical'); }}
-              className={(sortBy === 'alphabetical') ? 'selected' : ''}
-            >
-              alphabetically
-            </tspan>
-          </text>
-        </g>
-        <g transform='translate(0 46)'>
-          <text
-            x={165}
-            y={0} 
-            textAnchor='end'
-          >
-            number
-            <tspan
-              x={165}
-              dy={20}
-            >
-              of claims
-            </tspan>
-          </text>
+              Chronologically
+            </button>
+            <button
+                onClick={() => { setSortBy('alphabetical'); }}
+                className={(sortBy === 'alphabetical') ? 'selected' : ''}
+              >
+                Alphabetically
+            </button>
 
-          <text
-            x={230}
-            y={0} 
-            textAnchor='end'
-          >
-            acres
-            <tspan
-              x={230}
-              dy={20}
+          </div>
+        </nav>
+        <svg
+          width={width + leftAxisWidth}
+          height={95}
+        >
+          <defs>
+            <linearGradient id="timelineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              {[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100].map(percent => (
+                <stop
+                  offset={`${percent}%`}
+                  style={{
+                    stopColor: d3.interpolateCividis(percent / 100)
+                    //stopColor: d3.scaleLinear<string>().domain([0,1]).range(['#F67280', '#355C7D'])(percent/100)
+                  }}
+                />
+              ))}
+            </linearGradient>
+          </defs>
+          <g transform='translate(0 20)' className='axisLabels'>
+            <path
+              d={`M ${x(1880)} 10 L ${x(1895)} 6 v 16 L ${x(1880)} 18`}
+              fill='url(#timelineGradient)'
+            />
+            <text
+              x={x(1888)}
+              y={0} 
+              textAnchor='middle'
             >
-              claimed
-            </tspan>
-          </text>
-          <text
-            x={x(1888)}
-            y={0} 
-            textAnchor='middle'
-          >
-            {`percent of ${(!stateTerr) ? 'state or territory' : 'district' } area claimed`}
-            <tspan
-              x={x(1879)}
-              dy={20}
+              {`percent of ${(!stateTerr) ? 'state or territory' : 'district' } area claimed`}
+              <tspan
+                x={x(1879)}
+                dy={20}
+                textAnchor='end'
+              >
+                0%
+              </tspan>
+              <tspan
+                x={x(1896)}
+                dy={0}
+                textAnchor='start'
+              >
+                {`0.25% or more`}
+              </tspan>
+            </text>
+          </g>
+          <g transform='translate(0 60)' className='axisLabels'>
+            <text
+              x={190}
+              y={0} 
               textAnchor='end'
             >
-              0%
-            </tspan>
-            <tspan
-              x={x(1896)}
-              dy={0}
-              textAnchor='start'
-            >
-              {`0.25% or more`}
-            </tspan>
-          </text>
-
-
-          <path
-            d={`M ${x(1880)} 10 L ${x(1895)} 6 v 16 L ${x(1880)} 18`}
-            fill='url(#timelineGradient)'
-          />
-          {/* year tick marks */}
-          {[1870, 1880, 1890, 1900, 1910].map((year: number) => (
-              <text
-                x={x(year)}
-                y={45}
-                textAnchor='middle'
-                key={`yearAxisFor${year}`}
+              number
+              <tspan
+                x={190}
+                dy={20}
               >
-                {year}
-              </text>
-          ))}
-        </g>
-      </svg>
-      <Async
-        promiseFn={loadTimelineCells}
-        place={stateTerr || 'national'}
-        watch={stateTerr}
-      >
-        {({ data, error, isPending }) => {
-          //if (isPending) return "Loading..."
-          if (error) return `Something went wrong with the timeline: ${error.message}`
-          if (data) {
-            const rows = formatPlaces(data);
+                of claims
+              </tspan>
+            </text>
 
-            const rowHeight = 20;
-            const cellHeight = rowHeight - 2;
-            const labelSize = 12;
-            const paddingTop = 20;
+            <text
+              x={255}
+              y={0} 
+              textAnchor='end'
+            >
+              acres
+              <tspan
+                x={255}
+                dy={20}
+              >
+                claimed
+              </tspan>
+            </text>
 
-            return (
-                <div
-                  id='timelineRows'
-                  style={{
-                    height: height - 24
-                  }}
+            {/* year tick marks */}
+            {[1870, 1880, 1890, 1900, 1910].map((year: number) => (
+                <text
+                  x={x(year + 0.5)}
+                  y={20}
+                  textAnchor='middle'
+                  key={`yearAxisFor${year}`}
+                  style={{ fontSize: '1.25em' }}
                 >
-                  <svg
-                    width={width + leftAxisWidth}
-                    height={rows.length * rowHeight + 40}
-                  >
+                  {year}
+                </text>
+            ))}
+          </g>
+        </svg>
+        
 
+        {(rows) && (
+          <div
+            id='timelineRows'
+          >
+            <svg
+              width={width + leftAxisWidth}
+              height={rows.length * rowHeight + 40}
+            >
+
+            <rect
+              x={x(parseInt(year))}
+              y={0}
+              width={x(parseInt(year) + 1) - x(parseInt(year))}
+              height={rows.length * rowHeight + 10}
+              fill='#575653'
+            />
+
+            {/* year tick marks */}
+            {[1865, 1870, 1875, 1880, 1885, 1890, 1895, 1900, 1905, 1910].map((y: number) => (
+              <line 
+                x1={x(y + 0.5)}
+                x2={x(y + 0.5)}
+                y1={0}
+                y2={rows.length * rowHeight + 10}
+                stroke='white'
+                strokeOpacity={0.3}
+                key={`tickFor${y}`}
+              />
+            ))}
+            {rows.map(p => (
+              <Row
+                {...p}
+                emphasize={false}
+                width={width}
+                labelSize={18}
+                key={`timelineRowFor${p.label}`}
+              />
+            ))}
+
+              {[...Array(50).keys()].map(d => d + 1863).map(y => (
+                <Link
+                  to={makeParams(params, [{ type: 'set_year', payload: y}])}
+                  key={`linkFor${y}`}
+                >
                   <rect
-                    x={x(parseInt(year))}
+                    x={x(y)}
                     y={0}
-                    width={x(parseInt(year) + 1) - x(parseInt(year))}
+                    width={x(1863) - x(1862)}
                     height={rows.length * 20 + 10}
-                    fill='pink'
+                    fill='transparent'
+                    stroke={'transparent'}
                   />
+                </Link>
+              ))}
+            </svg>
+          </div>
 
-                  {/* year tick marks */}
-                  {[1865, 1870, 1875, 1880, 1885, 1890, 1895, 1900, 1905, 1910].map((y: number) => (
-                    <line 
-                      x1={x(y + 0.5)}
-                      x2={x(y + 0.5)}
-                      y1={0}
-                      y2={rows.length * 20 + 10}
-                      stroke='white'
-                      strokeOpacity={0.3}
-                      key={`tickFor${y}`}
-                    />
-                  ))}
-                  {rows.map(p => (
-                    <Row
-                      {...p}
-                      emphasize={false}
-                      width={width}
-                      labelSize={18}
-                      key={`timelineRowFor${p.label}`}
-                    />
-                  ))}
-
-                    {[...Array(50).keys()].map(d => d + 1863).map(y => (
-                      <Link
-                        to={makeParams(params, [{ type: 'set_year', payload: y}])}
-                        key={`linkFor${y}`}
-                      >
-                        <rect
-                          x={x(y)}
-                          y={0}
-                          width={x(1863) - x(1862)}
-                          height={rows.length * 20 + 10}
-                          fill='transparent'
-                          stroke={'transparent'}
-                        />
-                      </Link>
-                    ))}
-                  </svg>
-                </div>
-            );
-          }
-        }}
-      </Async>
+        )}
       </div>
-    </React.Fragment>
+    </div>
   );
 };
 

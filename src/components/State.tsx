@@ -1,6 +1,8 @@
 import * as React from 'react';
 import * as d3 from 'd3';
 import { Link } from "react-router-dom";
+// @ts-ignore
+import us from 'us';
 //import * as d3 from 'd3';
 import './State.css';
 import { StyledState } from '../index.d';
@@ -33,23 +35,25 @@ const State = (props: Props) => {
   } = props;
   const [scale, setScale] = useState(props.scale);
   const labelHalo = useRef(null);
-  const label = useRef(null);
+  const labelRef = useRef(null);
 
   useEffect(() => {
     d3.select(labelHalo.current)
       .transition()
       .duration(ANIMATIONDURATION)
-      .attr('stroke-width', 7 / props.scale)
-      .attr('font-size', 24 / props.scale);
-    d3.select(label.current)
+      .attr('stroke-width', 4 / props.scale)
+      .attr('font-size', 18 / props.scale);
+    d3.select(labelRef.current)
       .transition()
       .duration(ANIMATIONDURATION)
-      .attr('stroke-width', 2.5 / props.scale)
-      .attr('font-size', 24 / props.scale)
+      .attr('stroke-width', 0 / props.scale)
+      .attr('font-size', 18 / props.scale)
       .on('end', () => {
         setScale(props.scale);
       });
   }, [props.scale]);
+
+  const label = us.lookup(abbr).ap_abbr;
 
   return (
     <Link
@@ -63,7 +67,7 @@ const State = (props: Props) => {
         className={`stateBoundary ${(!linkActive) ? 'unselectable' : ''}`}
         fill='transparent'
         stroke={(selected) ? 'white' : '#6B512D'}  
-        strokeWidth={(selected) ? 4 / scale : 2 / scale}       
+        strokeWidth={(selected) ? 4 / scale : 1 / scale}       
       />
       {(labelCoords && labelCoords[0]) && (
         <g
@@ -76,23 +80,25 @@ const State = (props: Props) => {
             textAnchor='middle'
             stroke='#6B512D'
             strokeOpacity={0.8}
-            fontSize={24 / scale}
-            strokeWidth={7 / scale}
+            fontSize={18 / scale}
+            strokeWidth={4 / scale}
             ref={labelHalo}
           >
-            {abbr}
+            {label}
           </text>
           <text
             x={labelCoords[0]}
             y={labelCoords[1]}
             textAnchor='middle'
-            stroke='#F4DFB8'
-            strokeOpacity={0.5}
-            strokeWidth={2.5 / scale}
-            fontSize={24 / scale}
-            ref={label}
+            style={{
+              fill: '#F4DFB8',
+              fillOpacity: 0.85,
+            }}
+            strokeWidth={0 / scale}
+            fontSize={18 / scale}
+            ref={labelRef}
           >
-            {abbr}
+            {label}
           </text>
         </g>
       )}

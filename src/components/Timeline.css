@@ -1,5 +1,7 @@
 .timeline {
+  font-weight:  300;
   background-color: var(--inset-bg-color);
+  margin: 20px 0;
 }
 
 .timeline #timelineRows {
@@ -10,18 +12,27 @@
   fill: var(--light-color);
   stroke: var(--light-color);
   stroke-width: 0;
-  font-family: 'Saira Condensed', sans-serif;
 }
 
-.timeline text.sortNav {
-  text-anchor: middle;
+.timeline nav button {
+  background-color: transparent;
+  color: var(--light-color);
+  font-size: 18px;
+  font-family:  'Roboto Condensed', sans-serif;
+  margin: 4px 10px;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  padding: 5px 12px;
 }
 
-.timeline text.sortNav tspan {
-  fill: lime;
-  text-transform: uppercase;
+.timeline nav button:hover {
+  border-color: var(--highlight-color);
 }
 
-.timeline text.sortNav tspan.selected {
-  text-decoration: underline;
+.timeline nav button.selected {
+  background-color: var(--highlight-color);
+}
+
+.timeline .axisLabels text {
+  fill: silver;
 }

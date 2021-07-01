@@ -23,8 +23,8 @@ const App = () =>  {
       height: height - 50,
     };
     const timelineDimensions = {
-      width: width * 2 / 5,
-      height: height - 160 - 50 - 50 - 4 * 4,
+      width: width * 0.4 - 80,
+      height: height - 160 - 46 - 46,
       leftAxisWidth: 100,
       labelsWidth: 100,
     };

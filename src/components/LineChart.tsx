@@ -4,6 +4,7 @@ import * as d3 from 'd3';
 import DimensionsContext from '../DimensionsContext';
 import { Dimensions, RouterParams } from '../index.d';
 import Line from './LineChartLine';
+import './LineChart.css';
 
 interface ChartPoint {
   year: number;
@@ -66,7 +67,6 @@ const LineChart = ({ chartData, label }: {chartData: ChartData, label: string}) 
       .map(x => x * Math.pow(10, base10));
   } 
 
-  console.log(baseMax, chartData.yMax, chartData.yMax / Math.pow(10, base10), yTicks);
   const y = d3.scaleLinear()
     .domain([0, chartData.yMax * 1.1])
     .range([height, 40]);
@@ -80,13 +80,12 @@ const LineChart = ({ chartData, label }: {chartData: ChartData, label: string}) 
     <svg
       width={width}
       height={height}
+      className='lineChart'
     >
       <text 
         x={180}
         y={height / 2 - 30}
-        fontSize={25}
-        alignmentBaseline='middle'
-        textAnchor='end'
+        className='label'
       >
         {label.split(' ').map((w, idx) => (
           <tspan
@@ -101,11 +100,13 @@ const LineChart = ({ chartData, label }: {chartData: ChartData, label: string}) 
 
       {/* y axes tick marks */}
       {yTicks.map(yTick => (
-        <g key={`ticksFor${yTick}`}>
+        <g
+          className='tick y'
+          key={`ticksFor${yTick}`}
+        >
           <text
             x={230}
             y={y(yTick) + 6}
-            textAnchor='end'
           >
             {(yTick >= 100000) ? `${Math.round(yTick / 1000).toLocaleString()}K` : ''}
             {(yTick < 100000 && yTick >= 1000) ? `${(Math.round(yTick / 100) / 10).toLocaleString()}K` : ''}
@@ -116,41 +117,35 @@ const LineChart = ({ chartData, label }: {chartData: ChartData, label: string}) 
             x2={x(1912)}
             y1={y(yTick)}
             y2={y(yTick)}
-            stroke='white'
-            strokeOpacity={0.3}
-            strokeDasharray='1,3'
           />
 
         </g>
       ))}
+      <rect
+        x={x(parseInt(year) - 0.5) - 1}
+        y={40}
+        width={x(1863) - x(1862) + 2}
+        height={height}
+        className='selectedHighlight'
+      />
       {/* year tick marks */}
-      {[1865, 1870, 1875, 1880, 1885, 1890, 1895, 1900, 1905, 1910].map((y: number) => (
+      {[1865, 1870, 1875, 1880, 1885, 1890, 1895, 1900, 1905, 1910].map((year: number) => (
         <g
           key={`tickFor${y}`}
+          className='tick x'
         >
-          <rect
-            x={x(parseInt(year) - 0.5) - 1}
-            y={40}
-            width={x(1863) - x(1862) + 2}
-            height={height}
-            fill='pink'
-            fillOpacity={0.05}
-          />
           <line 
-            x1={x(y + 0.5)}
-            x2={x(y + 0.5)}
+            x1={x(year + 0.5)}
+            x2={x(year + 0.5)}
             y1={40}
             y2={height}
-            stroke='white'
-            strokeOpacity={0.3}
           />
-          {(y % 10 === 0) && (
+          {(year % 10 === 0) && (
             <text
-              x={x(y + 0.5)}
+              x={x(year + 0.5)}
               y={35}
-              textAnchor='middle'
             >
-              {y}
+              {year}
             </text>
           )}
         </g>
@@ -250,7 +245,6 @@ const LineChart = ({ chartData, label }: {chartData: ChartData, label: string}) 
           transparent: false,
         });
 
-        console.log(colorStops);
         return (
           <Line 
             d={line(lineData)}

@@ -5,9 +5,9 @@
 }
 
 #mapLegend svg {
-  background-color: var(--inset-bg-color);
+
 }
 
 #mapLegend svg .headerBackground {
-  fill: var(--inset-header-bg-color);
+  fill: var(--inset-bg-color);
 }

@@ -1,0 +1,27 @@
+.lineChart .selectedHighlight {
+  fill: var(--highlight-color);
+  fill-opacity: 0.5;
+}
+
+.lineChart .label {
+  font-size:  25px;
+  alignment-baseline: middle;
+  text-anchor: end;
+}
+
+.lineChart g.tick.y text {
+  text-anchor: end;
+}
+
+.lineChart g.tick.x text {
+  text-anchor: middle;
+}
+
+.lineChart g.tick line {
+  stroke: white;
+  stroke-opacity: 0.3;
+}
+
+.lineChart g.tick.y line {
+  stroke-dasharray: 1,3;
+}

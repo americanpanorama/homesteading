@@ -46,7 +46,7 @@ const Office = () => {
 
   const x = d3.scaleLinear()
     .domain([1862, 1912])
-    .range([leftAxisWidth, width - leftAxisWidth]);
+    .range([260, width - 25]);
 
   const y = d3.scaleLinear()
     .domain([0, 500000])
@@ -119,21 +119,51 @@ const Office = () => {
       yMax: Math.max(...averageClaimSize.map(d => d.value), ...averagePatentSize.map(d => d.value))
     } 
 
+    const claims: ChartPoint[] = landOfficeData.yearData
+      .map(yd => ({
+        year: yd.year,
+        value: yd.claims,
+      }));
+
+    const patents: ChartPoint[] = landOfficeData.yearData
+      .map(yd => ({
+        year: yd.year,
+        value: yd.patents,
+      }));
+
+    const claimsAndPatents: ChartData = {
+      linesData: [
+        {
+          lineData: claims,
+          color: 'yellow',
+          label: 'number of claims',
+        },
+        {
+          lineData: patents,
+          color: 'silver',
+          label: 'number of patents',
+        },
+      ],
+      yMax: Math.max(...claims.map(d => d.value), ...patents.map(d => d.value))
+    } 
+
 
     return (
-      <React.Fragment>
+      <aside id='officeData'>
         <TimelineDateHeader />
-        <aside id='officeData'>
-          <LineChart
-            chartData={acreageLineData}
-            label='acres'
-          />
-          <LineChart
-            chartData={averageAcreageData}
-            label='average size'
-          />
+        <LineChart
+          chartData={claimsAndPatents}
+          label='claims and patents'
+        />
+        <LineChart
+          chartData={acreageLineData}
+          label='acres'
+        />
+        <LineChart
+          chartData={averageAcreageData}
+          label='average size'
+        />
         </aside>
-       </React.Fragment>
     );
   }
   return null;

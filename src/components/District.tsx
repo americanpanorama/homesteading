@@ -17,7 +17,6 @@ const District = (props: Props) => {
   const ref = useRef(null);
 
   useEffect(() => {
-    console.log(props.strokeWidth, strokeWidth.current);
     d3.select(ref.current)
       .transition()
       .duration(ANIMATIONDURATION)

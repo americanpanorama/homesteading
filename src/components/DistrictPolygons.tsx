@@ -48,7 +48,7 @@ const DistrictPolygons = (props: Props) => {
           <District
             d={projectedTownship.d}
             link={makeParams(params, [{ type: 'set_office', payload: projectedTownship.office}])}
-            strokeWidth={3 / props.scale}
+            strokeWidth={1 / props.scale}
             key={`office-${projectedTownship.tile_id}`}
           />
         ))

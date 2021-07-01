@@ -48,7 +48,7 @@ const Row = (props: TimelineRowStyled) => {
         className='timelineRow'
       >
         <text
-          x={100}
+          x={125}
           y={labelSize} //{(emphasize) ? height * 1.2 : height * 0.9}
           fontSize={(emphasize) ? labelSize * 1.5 : labelSize}
           textAnchor='end'
@@ -61,7 +61,7 @@ const Row = (props: TimelineRowStyled) => {
         </text>
 
         <text
-          x={165}
+          x={190}
           y={labelSize} //{(emphasize) ? height * 1.2 : height * 0.9}
           fontSize={(emphasize) ? labelSize * 1.5 : labelSize}
           textAnchor='end'
@@ -75,7 +75,7 @@ const Row = (props: TimelineRowStyled) => {
         </text>
 
         <text
-          x={230}
+          x={255}
           y={labelSize} //{(emphasize) ? height * 1.2 : height * 0.9}
           fontSize={(emphasize) ? labelSize * 1.5 : labelSize}
           textAnchor='end'
@@ -127,15 +127,15 @@ const Row = (props: TimelineRowStyled) => {
             <line
               x1={d.x - 3}
               x2={d.x + 3}
-              y1={9 - 3}
-              y2={9 + 3}
+              y1={0 - 3}
+              y2={0 + 3}
               stroke='red'
             />
             <line
               x1={d.x - 3}
               x2={d.x + 3}
-              y1={9 + 3}
-              y2={9 - 3}
+              y1={0 + 3}
+              y2={0 - 3}
               stroke='red'
             />
           </g>

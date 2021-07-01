@@ -93,7 +93,7 @@ const TileLayers = (props: Props) => {
   // when there's a new set of townships when a different year is selected, load them
   useEffect(() => {
     setTiles(getTiles(projectedTownships, props.scale, center));
-  }, [projectedTownships]);
+  }, [props.scale, center[0], center[1], year, projectedTownships]);
 
   // when there's a new zoom, add the tile layer
   useEffect(() => {

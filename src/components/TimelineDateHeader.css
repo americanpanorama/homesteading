@@ -1,5 +1,4 @@
 #timelineDateHeader {
-  background-color: #28251E; /* #2F3E46; */
   height: 46px;
   margin: 0;
   font-size: 28px;
@@ -10,5 +9,5 @@
 }
 
 #timelineDateHeader circle {
-  fill: lime;
+  fill: var(--highlight-color);
 }
