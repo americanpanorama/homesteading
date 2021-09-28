@@ -1,6 +1,7 @@
 import * as  React from 'react';
 import { Link } from 'react-router-dom';
 import * as d3 from 'd3';
+import TimelineCell from './TimelineCell';
 import './TimelineRow.css';
 import { TimelineRowStyled, RouterParams } from '../index.d';
 
@@ -8,13 +9,12 @@ const Row = (props: TimelineRowStyled) => {
   const { useState, useEffect, useRef } = React;
   const {
     label,
-    acres_claimed,
-    claims,
+    acres,
+    number,
     cells,
     conflicts,
     active,
     y,
-    width,
     height,
     labelSize,
     emphasize,
@@ -71,7 +71,7 @@ const Row = (props: TimelineRowStyled) => {
           }}
           //className={(active) ? 'active' : ''}
         >
-          {(claims) ? Math.round(claims).toLocaleString() : '—'}
+          {(number) ? Math.round(number).toLocaleString() : '—'}
         </text>
 
         <text
@@ -85,64 +85,41 @@ const Row = (props: TimelineRowStyled) => {
           }}
           //className={(active) ? 'active' : ''}
         >
-          {(acres_claimed && acres_claimed >= 100000) ? `${Math.round(acres_claimed / 1000).toLocaleString()}K` : ''}
-          {(acres_claimed && acres_claimed < 100000 && acres_claimed >= 1000) ? `${(Math.round(acres_claimed / 100) / 10).toLocaleString()}K` : ''}
-          {(acres_claimed && acres_claimed < 1000) ? Math.round(acres_claimed).toLocaleString() : ''}
-          {(!acres_claimed) ? '—' : ''}
+          {(acres && acres >= 100000) ? `${Math.round(acres / 1000).toLocaleString()}K` : ''}
+          {(acres && acres < 100000 && acres >= 1000) ? `${(Math.round(acres / 100) / 10).toLocaleString()}K` : ''}
+          {(acres && acres < 1000) ? Math.round(acres).toLocaleString() : ''}
+          {(!acres) ? '—' : ''}
         </text>
         
-        {cells.map(c => (
-          <rect
-            x={c.x}
-            y={(18 - c.height) / 2}
-            width={c.width}
-            height={c.height}
-            fillOpacity={c.fillOpacity}
-            fill={c.fill}
-            stroke='#15262F'
-            strokeWidth={1}
-            //className={`cell`} 
-            key={`cellFor${c.x}`}
+        {cells.map(cell => (
+          <TimelineCell
+            {...cell}
+            key={`cellFor${cell.x}-${y}`}
           />
         ))} 
-
-        {/* 
-
-        {cells.map(c => (
-          <circle
-            cx={c.x + c.width / 2}
-            cy={(18 - Math.min(c.width, c.height) / 2) / 2}
-            r={Math.min(c.width, c.height) / 2}
-            fillOpacity={c.fillOpacity}
-            fill={c.fill}
-            stroke='#15262F'
-            strokeWidth={1}
-            //className={`cell`} 
-            key={`cellFor${c.x}`}
-          />
-        ))} */}
 
         {conflicts.map(d => (
           <g key={`conflict-${d.x}`}>
             <line
-              x1={d.x - 3}
-              x2={d.x + 3}
-              y1={0 - 3}
-              y2={0 + 3}
+              x1={d.x - d.xRadius}
+              x2={d.x + d.xRadius}
+              y1={0 - d.xRadius}
+              y2={0 + d.xRadius}
               stroke='red'
+              strokeWidth={d.strokeWidth}
             />
             <line
-              x1={d.x - 3}
-              x2={d.x + 3}
-              y1={0 + 3}
-              y2={0 - 3}
+              x1={d.x - d.xRadius}
+              x2={d.x + d.xRadius}
+              y1={0 + d.xRadius}
+              y2={0 - d.xRadius}
               stroke='red'
+              strokeWidth={d.strokeWidth}
             />
           </g>
-          
-
-
         ))}
+
+        {/* a transparent selectable rect for selecting the place */}
         {(active) && (
           <Link
             to={linkTo}
@@ -158,16 +135,6 @@ const Row = (props: TimelineRowStyled) => {
           </Link>
         )}
       </g>
-
-                {/* <line
-              x1={d.x}
-              x2={d.x}
-              y1={0}
-              y2={18}
-              stroke='red'
-          /> */}
-
-      {/* a transparent hoverable and selectable rect that covers the label */}
     </g>
   );
 };

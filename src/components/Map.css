@@ -1,22 +1,27 @@
-.leaflet-container {
-  width: 100vw;
-  height: 100vh;
+.vectorMap {
+    background-color: #0B0A08;
 }
 
-.labelBG {
-  stroke-width: 0;
-  background-color: transparent;
+.vectorMap .continent {
+    fill: var(--main-bg-color);
 }
 
-.neighborhoodLabel {
-  border: none;
-  box-shadow: none;
-  font-size: 1.5em;
-  line-height: 1.1;
-  color: silver;
-  font-family: "PT Sans";
-  background-color: transparent;
-  /* text-shadow: -1px 0 1px #666666, 0 1px 1px #666666, 1px 0 1px #666666, 0 -1px 1px #666666; */
-  margin: 0;
-  padding: 0 3px;
+.clashPopup {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.clashPopup h4 {
+    border-bottom: 1px solid #888;
+    margin: 0;
+}
+
+.clashPopup .data {
+    display: grid;
+    grid-template-columns: 100px 100px;
+    column-gap: 5px;
+}
+
+.clashPopup .data label {
+    text-align: right;
+    color: #888;
 }

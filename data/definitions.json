@@ -1,0 +1,66 @@
+{
+    "claims": {
+        "heading": "Original claims on public land",
+        "description": [
+            "The Homestead Act, as it was passed in May 1862, allowed settlers to claim parcels of “public land.” To begin their claim, homesteaders had to pay a fee and register their claim with the local land office. Applicants had to be at least 21 years old and either a U.S. citizen or declare their intention to become one. Both single men and women were eligible as applicants and a June 21, 1866 amendment specified that no difference could be made “on account of race or color.” Claims could be up to 160 acres in size, but in select areas (such as lands around railroad developments) claims were limited to 80 acres. To accommodate farmers in dry regions, from 1904 Congress allowed homesteaders in western Nebraska could claim up to 640 acres of land. From 1909, the Enlarged Homestead Act allowed homesteaders to claim up to 320 acres of land in non-irrigable zones throughout the western states."
+        ]
+    },
+    "claims_federal_land": {
+        "heading": "Original claims on public land",
+        "description": [
+            "The Homestead Act allowed settlers to claim parcels of “public land.” Public land was land that the federal government officially owned. Native nations had either officially ceded their rights to the area by forced treaties or the US government had without consultation declared the Native title invalid. (From 1871 onwards, the US President relied entirely on executive orders in declaring what areas Native nations had ceded.) By far most homestead settlements were on public land."
+        ]
+    },
+    "claims_indian_lands": {
+        "heading": "Homesteads on public land vs. homesteads on Indian land",
+        "description": [
+            "Beginning in the later part of 1890 (i.e. fiscal year 1891), there were also a number of “homesteads on Indian land.” These were settlements on land that had previously been or were still on an Indian reservation. The reservations had either been reduced in size or Native communal lands had altogether been broken-up into farm-size plots to individual Native families with the remaining “surplus lands” being opened to homestead settlers. Officially, although less so in practice, Native people would be compensated for the “homesteads on Indian land.” For this reason, special fees applied to these settlements and the rules for claims were markedly different from those for homesteads on public land. These homesteaders therefore did not get “free land,” even though the prices of between $.75 to $1.50 per acre were low, also by the standards of the time.",
+            "In contrast to homestead claims on public land, settlements on former and active Indian reservations were not governed by one law. Special laws were passed for each reservation that was “opened up” to homesteaders, and conditions differed slightly."
+        ]
+    },
+    "patents_federal_land": {
+        "heading": "Patents on public land",
+        "description": [
+            "The vast majority of patents issued to homesteaders, met through residency or commutations, was for federal lands rather than Indian lands."
+        ]
+    },
+    "patents_from_residency": {
+        "heading": "Final claims on public land",
+        "description": [
+            "After living on and cultivating their parcel for five years, homesteaders could file paperwork with the local land office to get a patent to their land claim. The patent, for which a second fee was required, officially turned the land claim into the homesteader’s private property."
+        ]
+    },
+    "patents": {
+        "heading": "Final claims on public land",
+        "description": [
+            "A patent officially turned a land claim into the homesteader’s private property. Homesteaders could file paperwork for a patent after living on and cultivating their parcel for five years. Alternately, if homestead settlers did not wish to wait for five years to get a patent by residency and cultivation, they could buy the land at the government price of usually $1.25 per acre but up to $2.50 per acre in selected areas. These early purchases were known as “commutations.”"
+        ]
+    },
+    "commutations_extended": {
+        "heading": "Commutations on public land",
+        "description": [
+            "If homestead settlers did not wish to wait for five years to get a patent by residency and cultivation, they could buy the land at the government price of usually $1.25 per acre but up to $2.50 per acre in selected areas. These early purchases were known as “commutations.”",
+            "The option of an early purchase was already in the original Homestead Act when it was passed in May 1862, but there are only statistics on commutations from fiscal year 1881 onwards. In the summer of 1870, the General Land Office published a circular that required settlers to live on their claim for at least six months ahead of commutation. Perhaps for this reasons, local land offices started accounting for land sales by commutation separately from other sales. For the fiscal years 1871-1880, local land offices collected data on payments for commutations, without counting the number of land claims and the acreage that was acquired. Only from fiscal year 1881 onward did they finally collect comprehensive commutation statistics.",
+            "In the first few years of statistics, there were two kinds of commutations: regular commutations under section 2301 of the 1878 Revised Statutes and under a special law, passed on June 15, 1880, that waived some fees for potential commuters who already lived on their land when the law was passed. Within a few years, all commutations were filed under section 2301. On March 3, 1891, Congress revised the commutation clause to require fourteen months residency (instead of six months), thereby making it significantly less attractive to commute homestead claims. As our data shows, the option was still again used quite widely in some areas.",
+            "Among critics and many historians, commutations had a questionable reputation. The practice was often seen as a cover for fraud and it was thought to undermine the spirit of the Homestead Act by allowing people to acquire land for speculative purposes rather than farming. Why else would settlers want to buy the land they would get for free in a few years? Recently, historian Richard Edwards has shown that commuting made economic sense for less nefarious reasons: only with a full property title could settlers obtain loans that would allow them to expand their farming operations. The decision to buy their claim early did therefore not necessarily mean settlers had abandoned the project of building a farm."
+        ]
+    },
+    "commutations": {
+        "heading": "Commutations on public land",
+        "description": [
+            "If homestead settlers did not wish to wait for five years to get a patent by residency and cultivation, they could commute that term and buy the land at the government price of usually $1.25 per acre but up to $2.50 per acre in selected areas."
+        ]
+    },
+    "patents_indian_lands": {
+        "heading": "Final claims on Indian land",
+        "description": [
+            "The conditions for finishing homesteads on Indian land varied a great deal; while some laws required five years residency, others waived the residency requirement after just one year when the purchase price and all necessary fees had been paid."
+        ]
+    },
+    "commutations_indian_lands": {
+        "heading": "Commutations on Indian land",
+        "description": [
+            "To reduce speculation, some of the laws “opening up” reservations to homesteaders had ruled out allowing settlers to commute their claim. However, other laws allowed for the practice. The shortened residency requirement of many laws meant that commutations made less sense."
+        ]
+    }
+}

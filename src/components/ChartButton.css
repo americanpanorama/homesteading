@@ -1,0 +1,23 @@
+nav button {
+  background-color: transparent;
+  color: var(--light-color);
+  font-size: 18px;
+  font-family:  'Roboto Condensed', sans-serif;
+  margin: 4px 10px;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  padding: 5px 12px;
+}
+
+nav button:hover {
+  border-color: var(--highlight-color);
+}
+
+nav button.selected {
+  background-color: var(--highlight-color);
+}
+
+nav button:disabled {
+  border-color:  transparent !important;
+  color: #444;
+} 

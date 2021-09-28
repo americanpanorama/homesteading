@@ -1,13 +1,32 @@
 #mapLegend {
-  margin-top: 4px;
-  margin-bottom: 20px;
-  height: 296px;
+    margin-top: 4px;
+    margin-bottom: 20px;
+    height: 150px;
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    column-gap: 30px;
+}
+
+#mapLegend #areaLegend {
+    width: 378px;
+}
+
+#mapLegend #clashesLegend {
+    width: 240px;
 }
 
 #mapLegend svg {
+    padding-top: 15px;
+}
 
+#mapLegend h3,
+#mapLegend h4 {
+    text-align: center;
+    margin: 0;
 }
 
 #mapLegend svg .headerBackground {
-  fill: var(--inset-bg-color);
+    fill: var(--inset-bg-color);
 }

@@ -4,33 +4,21 @@
   margin: 20px 0;
 }
 
-.timeline #timelineRows {
-  overflow-y: scroll;
+.timeline::-webkit-scrollbar,
+#timelineRows::-webkit-scrollbar {
+    width: 8px;
 }
 
-.timeline text {
-  fill: var(--light-color);
-  stroke: var(--light-color);
-  stroke-width: 0;
-}
-
-.timeline nav button {
-  background-color: transparent;
-  color: var(--light-color);
-  font-size: 18px;
-  font-family:  'Roboto Condensed', sans-serif;
-  margin: 4px 10px;
-  border: 2px solid transparent;
-  border-radius: 5px;
-  padding: 5px 12px;
-}
-
-.timeline nav button:hover {
-  border-color: var(--highlight-color);
-}
-
-.timeline nav button.selected {
+.timeline::-webkit-scrollbar-thumb,
+#timelineRows::-webkit-scrollbar-thumb {
   background-color: var(--highlight-color);
+  border-radius:  4px;
+}
+
+.timeline::-webkit-scrollbar-track
+#timelineRows::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 3px var(--inset-header-bg-color);
+    border-radius: 8px;
 }
 
 .timeline .axisLabels text {

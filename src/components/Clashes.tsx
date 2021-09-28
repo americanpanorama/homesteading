@@ -4,6 +4,7 @@ import { useParams, Link } from "react-router-dom";
 import DimensionsContext from '../DimensionsContext';
 import District from './District';
 import State from './State';
+import FullStateDistrict from './FullStateDistrict';
 import { makeParams } from '../utilities';
 import { Dimensions, RouterParams, ProjectedState } from '../index.d';
 import { TileData, ProjectedTownship, Point, CalculateZ, Bounds  } from './VectorMap.d';
@@ -49,14 +50,24 @@ const DistrictPolygons = (props: Props) => {
             d={projectedTownship.d}
             link={makeParams(params, [{ type: 'set_office', payload: projectedTownship.office}])}
             strokeWidth={1 / props.scale}
+            //fill={d3.interpolateCividis(projectedTownship.acres_claimed * 100 / projectedTownship.area)}
+            fill='transparent'
             key={`office-${projectedTownship.tile_id}`}
           />
         ))
       } 
 
+      {['IL', 'IN', 'OH', 'MS'].map(state => (
+        <FullStateDistrict
+          abbr={state as 'IL' | 'IN' | 'OH' | 'MS'}
+          scale={props.scale}
+          key={`fullstate${state}`}
+        />
+      ))}
+
       {States
         .filter((s: ProjectedState) => s.bounds && s.bounds[0] && s.d && s.abbr
-          && projectedTownships.some(pt => pt.state === s.abbr && pt.acres_claimed > 0))
+          && (projectedTownships.some(pt => pt.state === s.abbr && pt.acres_claimed > 0) || s.abbr === 'IL'))
         .map((state: ProjectedState) => {
           return (
             <State
@@ -74,7 +85,6 @@ const DistrictPolygons = (props: Props) => {
           );
         })
       }
-
     </g>
   );
 }

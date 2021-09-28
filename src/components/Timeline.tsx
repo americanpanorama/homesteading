@@ -1,60 +1,48 @@
 import * as React from 'react';
+import axios from 'axios';
 import { Link, useParams } from 'react-router-dom';
-import { useAsync } from 'react-async';
 import * as d3 from 'd3';
 // @ts-ignore
-import us from 'us';
-import TimelineDateHeader from './TimelineDateHeader';
-import TimelinePlaceHeader from './TimelinePlaceHeader';
+import us from '../us';
 import Row from './TimelineRow';
-import { makeParams } from '../utilities';
-import DimensionsContext from '../DimensionsContext';
-import { Dimensions, TimelineYearPlaceData, TimelinePlaceData, TimelineCell, TimelineRowStyled, TimelineConflict, RouterParams } from '../index.d';
+import { makeParams, useClaimsAndPatentsTypes, colorGradient, acresValue } from '../utilities';
+import { DimensionsContext } from '../DimensionsContext';
+import { Dimensions, TimelineYearPlaceData, TimelinePlaceData, TimelineRowStyled, RouterParams } from '../index.d';
 import './Timeline.css';
+import './ChartButton.css';
 
 type sortOptions = 'descending' | 'chronological' | 'alphabetical';
-
-const loadTimelineCells = async ({ place }: { place: string}) => {
-  const res = await fetch(`${process.env.PUBLIC_URL}/data/timelineData/${place}.json`);
-  if (!res.ok) { console.log(res) }
-  const rawData = await res.json();
-  return rawData;
-}
 
 export const monthNum = (m: number): number => (m - 1) / 12;
 export const getTimeCode = (year: number, month: number): number => year * 100 + month;
 export const timeCodeToNum = (timecode: number): number => Math.floor(timecode / 100) + monthNum(timecode % 100);
 
 const TimelineHeatmap = () => {
-  const { useRef, useState, useContext } = React;
+  const { useState, useEffect, useContext } = React;
   const params = useParams<RouterParams>();
-  const { year, placeId, stateTerr } = params;
-  const {
-    leftAxisWidth,
-    width,
-    height,
-    labelsWidth,
-  } = (useContext(DimensionsContext) as Dimensions).timelineDimensions;
+  const { stateTerr, view } = params;
+  const year = params.year || '1863';
+  const { width, height } = (useContext(DimensionsContext) as Dimensions).timelineDimensions;
+  const [data, setData] = useState<any>();
 
-  const [sortBy, setSortBy] = useState<sortOptions>('alphabetical');
+  const { acresTypes: types, countTypes, numberLabel, acresLabel } = useClaimsAndPatentsTypes();
 
-console.log(width);
+  useEffect(() => {
+    axios(`${process.env.PUBLIC_URL}/data/timelineData/${stateTerr || 'national'}.json`)
+      .then(response => {
+        setData(response.data);
+      });
+  }, [stateTerr]);
+
+  const [sortBy, setSortBy] = useState<sortOptions>('descending');
+
   const x = d3.scaleLinear()
     .domain([1862, 1912])
     .range([260, width - 25]);
 
-  const cellWidth: number = x(1863) - x(1862);
-
-  const { data, error }: {data: any, error: any} = useAsync({ 
-    promiseFn: loadTimelineCells,
-    place: stateTerr || 'national',
-    watch: stateTerr
-  });
+  const cellWidth: number = x(1870) - x(1869);
 
   const formatPlaces = (placeData: TimelinePlaceData[]): TimelineRowStyled[] => {
-    // calculate the witeh of the month/cell
-    
-    const threshold = 500;
     // organize a list of the photographers with some basic display info
     const rows: TimelineRowStyled[] = placeData
       .sort((a, b) => {
@@ -68,9 +56,9 @@ console.log(width);
         }
         if (sortBy === 'descending') {
           const officeAData = a.yearData.find(yd => yd.year === parseInt(year));
-          const officeAPercent = (officeAData && officeAData.area) ? officeAData.acres_claimed / officeAData.area : 0;
+          const officeAPercent = (officeAData && officeAData.area) ? acresValue(officeAData, types) / officeAData.area : 0;
           const officeBData = b.yearData.find(yd => yd.year === parseInt(year));
-          const officeBPercent = (officeBData && officeBData.area) ? officeBData.acres_claimed / officeBData.area : 0;
+          const officeBPercent = (officeBData && officeBData.area) ? acresValue(officeBData, types) / officeBData.area : 0;
           return officeBPercent - officeAPercent;
         }
         if (sortBy === 'chronological') {
@@ -80,20 +68,24 @@ console.log(width);
       })
       .map((d, i) => {
         const dataForSelectedYear = d.yearData.find(yd => yd.year === parseInt(year));
-        const active = !!dataForSelectedYear; 
+        const active = !!dataForSelectedYear;
         let fill = (active) ? 'gold' : 'silver';
+
         const styledRow: TimelineRowStyled = {
-          label: d.name,
-          cells: d.yearData.map((yd: TimelineYearPlaceData) => ({
-            x: x(yd.year) + 1,
-            //y: (yd.area !== 0 && yd.acres_claimed > 0) ? 18 - (6 + 12 * Math.min(1, yd.acres_claimed * 100 / yd.area))  : 0,
-            width: cellWidth - 2,
-            height: (yd.area !== 0 && yd.acres_claimed > 0) ? 8 + 8 * Math.min(1, yd.acres_claimed * 25 / yd.area) : 0,
-            fill: d3.interpolateCividis(yd.acres_claimed * 25 / yd.area), //'gold',
-            fillOpacity: 1, // (yd.area !== 0 && yd.acres_claimed > 0) ? 0.5 + 0.5 * yd.acres_claimed * 25 / yd.area : 0,
-          })),
-          acres_claimed: (dataForSelectedYear) ? dataForSelectedYear.acres_claimed : null,
-          claims: (dataForSelectedYear) ? dataForSelectedYear.claims : null,
+          label: `${d.name}${(!stateTerr && d.name !== 'North Dakota' && d.name !== 'South Dakota' && (!us.lookup(d.name) || !us.lookup(d.name).statehood_year || parseInt(year) < us.lookup(d.name).statehood_year)) ? ' Terr.' : ''}`,
+          cells: d.yearData.map((yd: TimelineYearPlaceData) => {
+            const acres = types.reduce((acc, curr) => yd[curr] + acc, 0);
+            return {
+              x: x(yd.year) + 1,
+              //y: (yd.area !== 0 && yd.acres_claimed > 0) ? 18 - (6 + 12 * Math.min(1, yd.acres_claimed * 100 / yd.area))  : 0,
+              width: cellWidth - 2,
+              height: (yd.area !== 0 && acres > 0) ? 8 + 10 * Math.min(1, acres * 20 / yd.area) : 0,
+              fill: colorGradient(acres / yd.area),
+              fillOpacity: 1, // (yd.area !== 0 && yd.acres_claimed > 0) ? 0.5 + 0.5 * yd.acres_claimed * 25 / yd.area : 0,
+            }
+          }),
+          acres: (dataForSelectedYear) ? types.reduce((acc, curr) => dataForSelectedYear[curr] + acc, 0) : null,
+          number: (dataForSelectedYear) ? countTypes.reduce((acc, curr) => dataForSelectedYear[curr] + acc, 0) : null,
           conflicts: [],
           active,
           fill: (active) ? '#aaa' : '#444',
@@ -103,17 +95,24 @@ console.log(width);
           labelSize: 14,
           emphasize: false,
           linkTo: (stateTerr)
-            ? makeParams(params, [{ type: 'set_office', payload: d.name.replace(/[^a-zA-Z0-9]/g, '') }]) 
-            : makeParams(params, [{ type: 'set_state', payload: (us.lookup(d.name)) ? us.lookup(d.name).abbr : ''}]), 
+            ? makeParams(params, [{ type: 'set_office', payload: d.name.replace(/[^a-zA-Z0-9]/g, '') }])
+            : makeParams(params, [{ type: 'set_state', payload: (us.lookup(d.name)) ? us.lookup(d.name).abbr : '' }]),
         };
 
         // add the conflicts
         d.yearData.forEach((yd: TimelineYearPlaceData) => {
           if (yd.conflicts) {
             yd.conflicts.forEach(conflict => {
-              styledRow.conflicts.push({
-                x: x(conflict.start_date.year + (conflict.start_date.month - 1) / 12 + conflict.start_date.day / 365),
-              });
+              const xValue = x(conflict.start_date.year + (conflict.start_date.month - 1) / 12 + conflict.start_date.day / 365);
+              const xRadius = Math.max(2.83, Math.sqrt(conflict.native_casualties + conflict.us_casualties) * 0.4)
+              const strokeWidth = xRadius / 2;
+              if (!styledRow.conflicts.map(d => d.x).includes(xValue)) {
+                styledRow.conflicts.push({
+                  x: xValue,
+                  strokeWidth,
+                  xRadius,
+                });
+              }
             });
           }
         });
@@ -124,22 +123,17 @@ console.log(width);
   }
 
   const rows = (data) ? formatPlaces(data) : [];
-
   const rowHeight = 25;
-  const cellHeight = rowHeight - 2;
-  const labelSize = 12;
-  const paddingTop = 20;
 
-  
   return (
     <div className='timeline'>
-      <TimelineDateHeader />
+
       <div
         style={{
           height: Math.min(height, rows.length * rowHeight + 300)
         }}
       >
-        <nav>
+        <nav className='chart'>
           <div>
             sort by:
           </div>
@@ -157,27 +151,27 @@ console.log(width);
               Chronologically
             </button>
             <button
-                onClick={() => { setSortBy('alphabetical'); }}
-                className={(sortBy === 'alphabetical') ? 'selected' : ''}
-              >
-                Alphabetically
+              onClick={() => { setSortBy('alphabetical'); }}
+              className={(sortBy === 'alphabetical') ? 'selected' : ''}
+            >
+              Alphabetically
             </button>
 
           </div>
         </nav>
         <svg
-          width={width + leftAxisWidth}
+          width={width}
           height={95}
         >
           <defs>
             <linearGradient id="timelineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-              {[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100].map(percent => (
+              {[0, 0.000001, 0.01, 0.02, 0.03, 0.04, 0.05].map(percent => (
                 <stop
-                  offset={`${percent}%`}
+                  offset={`${percent * 2000}%`}
                   style={{
-                    stopColor: d3.interpolateCividis(percent / 100)
-                    //stopColor: d3.scaleLinear<string>().domain([0,1]).range(['#F67280', '#355C7D'])(percent/100)
+                    stopColor: colorGradient(percent)
                   }}
+                  key={`gradientOffsetFor${percent}`}
                 />
               ))}
             </linearGradient>
@@ -189,10 +183,10 @@ console.log(width);
             />
             <text
               x={x(1888)}
-              y={0} 
+              y={0}
               textAnchor='middle'
             >
-              {`percent of ${(!stateTerr) ? 'state or territory' : 'district' } area claimed`}
+              {`percent of ${(!stateTerr) ? 'state or territory' : 'district'} area ${acresLabel}`}
               <tspan
                 x={x(1879)}
                 dy={20}
@@ -205,14 +199,14 @@ console.log(width);
                 dy={0}
                 textAnchor='start'
               >
-                {`0.25% or more`}
+                {`5% or more`}
               </tspan>
             </text>
           </g>
           <g transform='translate(0 60)' className='axisLabels'>
             <text
               x={190}
-              y={0} 
+              y={0}
               textAnchor='end'
             >
               number
@@ -220,13 +214,13 @@ console.log(width);
                 x={190}
                 dy={20}
               >
-                of claims
+                of {numberLabel}
               </tspan>
             </text>
 
             <text
               x={255}
-              y={0} 
+              y={0}
               textAnchor='end'
             >
               acres
@@ -234,80 +228,80 @@ console.log(width);
                 x={255}
                 dy={20}
               >
-                claimed
+                {acresLabel}
               </tspan>
             </text>
 
             {/* year tick marks */}
             {[1870, 1880, 1890, 1900, 1910].map((year: number) => (
-                <text
-                  x={x(year + 0.5)}
-                  y={20}
-                  textAnchor='middle'
-                  key={`yearAxisFor${year}`}
-                  style={{ fontSize: '1.25em' }}
-                >
-                  {year}
-                </text>
+              <text
+                x={x(year + 0.5)}
+                y={20}
+                textAnchor='middle'
+                key={`yearAxisFor${year}`}
+                style={{ fontSize: '1.25em' }}
+              >
+                {year}
+              </text>
             ))}
           </g>
         </svg>
-        
 
         {(rows) && (
           <div
             id='timelineRows'
           >
             <svg
-              width={width + leftAxisWidth}
-              height={rows.length * rowHeight + 40}
+              width={width}
+              height={rows.length * rowHeight + 50}
             >
+              <g transform='translate(0 10)'>
+                <rect
+                  x={x(parseInt(year))}
+                  y={-10}
+                  width={x(parseInt(year) + 2) - x(parseInt(year) + 1)}
+                  height={rows.length * rowHeight + 20}
+                  fill='#575653'
+                />
 
-            <rect
-              x={x(parseInt(year))}
-              y={0}
-              width={x(parseInt(year) + 1) - x(parseInt(year))}
-              height={rows.length * rowHeight + 10}
-              fill='#575653'
-            />
-
-            {/* year tick marks */}
-            {[1865, 1870, 1875, 1880, 1885, 1890, 1895, 1900, 1905, 1910].map((y: number) => (
-              <line 
-                x1={x(y + 0.5)}
-                x2={x(y + 0.5)}
-                y1={0}
-                y2={rows.length * rowHeight + 10}
-                stroke='white'
-                strokeOpacity={0.3}
-                key={`tickFor${y}`}
-              />
-            ))}
-            {rows.map(p => (
-              <Row
-                {...p}
-                emphasize={false}
-                width={width}
-                labelSize={18}
-                key={`timelineRowFor${p.label}`}
-              />
-            ))}
-
-              {[...Array(50).keys()].map(d => d + 1863).map(y => (
-                <Link
-                  to={makeParams(params, [{ type: 'set_year', payload: y}])}
-                  key={`linkFor${y}`}
-                >
-                  <rect
-                    x={x(y)}
-                    y={0}
-                    width={x(1863) - x(1862)}
-                    height={rows.length * 20 + 10}
-                    fill='transparent'
-                    stroke={'transparent'}
+                {/* year tick marks */}
+                {[1865, 1870, 1875, 1880, 1885, 1890, 1895, 1900, 1905, 1910].map((y: number) => (
+                  <line
+                    x1={x(y + 0.5)}
+                    x2={x(y + 0.5)}
+                    y1={0}
+                    y2={rows.length * rowHeight + 10}
+                    stroke='white'
+                    strokeOpacity={0.3}
+                    key={`tickFor${y}`}
                   />
-                </Link>
-              ))}
+                ))}
+                {rows.map(p => (
+                  <Row
+                    {...p}
+                    emphasize={false}
+                    width={width}
+                    labelSize={18}
+                    key={`timelineRowFor${p.label}`}
+                  />
+                ))}
+
+                {[...Array(50).keys()].map(d => d + 1863).map(y => (
+                  <Link
+                    to={makeParams(params, [{ type: 'set_year', payload: y }])}
+                    key={`linkFor${y}`}
+                  >
+                    <rect
+                      x={x(y)}
+                      y={0}
+                      width={x(1863) - x(1862)}
+                      height={rows.length * 20 + 10}
+                      fill='transparent'
+                      stroke={'transparent'}
+                    />
+                  </Link>
+                ))}
+              </g>
             </svg>
           </div>
 

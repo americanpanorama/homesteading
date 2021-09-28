@@ -1,0 +1,31 @@
+ul#appNav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 0 20px 0 0;
+}
+
+#appNav li {
+    display: inline-block;
+}
+
+#appNav li+li::before {
+    content: " | ";
+}
+
+#appNav a {
+    color: white;
+    text-decoration: none;
+    padding: 0 10px;
+}
+
+#appNav a:hover {
+    color: var(--light-color);
+    text-decoration: underline;
+}
+
+#appNav {
+    position: relative;
+    margin: 1em;
+    overflow: hidden;
+}

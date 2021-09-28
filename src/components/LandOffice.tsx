@@ -1,169 +1,215 @@
 import * as React from 'react';
-import { useAsync } from 'react-async';
+import axios from 'axios';
 import * as d3 from 'd3';
-import { Link, useParams, useHistory } from "react-router-dom";
-import DimensionsContext from '../DimensionsContext';
-import TimelineDateHeader from './TimelineDateHeader';
-import LineChart from './LineChart';
-import { Dimensions, RouterParams, TimelineYearPlaceData, TimelinePlaceData } from '../index.d';
-import { ProjectedTownship, TileData, CalculateTransform, CalculateCenterAndDXDY, TransformData, CalculateZ, Bounds, Point } from './VectorMap.d';
-import { AsyncParams } from './Timeline.d';
+// @ts-ignore
+import us from '../us.js';
+import { useParams } from "react-router-dom";
+import BarChartLegendItem from './BarChartLegendItem';
+import DistrictText from './DistrictText';
+import BarChart from './BarChart';
+import BarChartPatents from './BarChartPatents';
+import { RouterParams, TimelineYearPlaceData, TimelinePlaceData, TimelineYearPlaceDataWithStats, TimelinePlaceDataWithStats, PlaceType } from '../index.d';
+import { calculateDistrictYearStats } from '../utilities';
 import './LandOffice.css';
 
-interface ChartPoint {
-  year: number;
-  value: number;
-}
-
-type LineData = ChartPoint[];
-
-type ChartData = {
-  linesData: {
-    lineData: ChartPoint[];
-    color: string;
-    label: string;
-  }[];
-  yMax: number;
-};
-
-const loadData = async ({ place }: { place: string}) => {
-  const res = await fetch(`/data/timelineData/${place}.json`);
-  if (!res.ok) { console.log(res) }
-  const rawData = await res.json();
-  return rawData;
-}
+type SelectedView = 'number' | 'acres' | 'average_size';
 
 const Office = () => {
-  const { useEffect, useContext, useState, useRef } = React;
+  const { useState, useEffect } = React;
   const params = useParams<RouterParams>();
-  const { year, stateTerr, office } = params;
-  const { width, height, leftAxisWidth } = (useContext(DimensionsContext) as Dimensions).timelineDimensions;
-  const { data: TimelinePlaceData, error }: AsyncParams = useAsync({ 
-    promiseFn: loadData,
-    place: stateTerr,
-    watch: stateTerr,
-  });
+  const { stateTerr, office } = params;
+  const year = params.year || '1863';
 
-  const x = d3.scaleLinear()
-    .domain([1862, 1912])
-    .range([260, width - 25]);
+  const [timelinePlaceData, setTimelinePlaceData] = useState<TimelinePlaceData[]>([])
+  const [stacked, setStacked] = useState(true);
+  const [selectedView, setSelectedView] = useState<SelectedView>('number');
 
-  const y = d3.scaleLinear()
-    .domain([0, 500000])
-    .range([200, 0]);
+  useEffect(() => {
+    axios(`${process.env.PUBLIC_URL}/data/timelineData/${stateTerr}.json`)
+      .then(response => {
+        setTimelinePlaceData(response.data as TimelinePlaceData[]);
+      });
+  }, [stateTerr]);
 
-  const line = d3.line<ChartPoint>()
-    .curve(d3.curveCatmullRom)
-    .x((d: ChartPoint) => x(d.year))
-    .y((d: ChartPoint) => y(d.value));
+  if (timelinePlaceData && timelinePlaceData.length > 0) {
+    const dataWithoutStats: TimelinePlaceData = (office)
+      ? timelinePlaceData.find(pt => pt.stateOrTerritory === stateTerr && pt.name.replace(/[^a-zA-Z]/g, '') === office)
+      : (() => {
+        const yearData: TimelineYearPlaceData[] = [];
+        timelinePlaceData.forEach(districtData => {
+          districtData.yearData.forEach(dyd => {
+            const idx = yearData.findIndex(yd => yd.year === dyd.year);
+            if (idx === -1) {
+              yearData.push({
+                ...dyd,
+                conflicts: dyd.conflicts || [],
+              });
+            } else {
+              yearData[idx].claims += dyd.claims;
+              yearData[idx].claims_indian_lands += dyd.claims_indian_lands;
+              yearData[idx].acres_claimed += dyd.acres_claimed;
+              yearData[idx].acres_claimed_indian_lands += dyd.acres_claimed_indian_lands;
+              yearData[idx].patents += dyd.patents;
+              yearData[idx].patents_indian_lands += dyd.patents_indian_lands;
+              yearData[idx].acres_patented += dyd.acres_patented;
+              yearData[idx].acres_patented_indian_lands += dyd.acres_patented_indian_lands;
+              yearData[idx].commutations_2301 += dyd.commutations_2301;
+              yearData[idx].acres_commuted_2301 += dyd.acres_commuted_2301;
+              yearData[idx].commutations_18800615 += dyd.commutations_18800615;
+              yearData[idx].acres_commuted_18800615 += dyd.acres_commuted_18800615;
+              yearData[idx].commutations_indian_lands += dyd.commutations_indian_lands;
+              yearData[idx].acres_commuted_indian_lands += dyd.acres_commuted_indian_lands;
+              yearData[idx].area += dyd.area;
+              yearData[idx].conflicts = yearData[idx].conflicts
+                .concat(dyd.conflicts)
+                .filter(d => typeof d !== 'undefined')
+                .sort((a, b) => {
+                  if (b.start_date.month !== a.start_date.month) {
+                    return a.start_date.month - b.start_date.month;
+                  }
+                  if (b.start_date.day !== b.start_date.day) {
+                    return a.start_date.day - b.start_date.day;
+                  }
+                  return 0;
+                });
+            }
+          })
+        });
+        return {
+          name: us.lookup(stateTerr).name,
+          stateOrTerritory: stateTerr,
+          type: 'stateOrTerritory' as PlaceType,
+          medianYearClaimsAcres: 2000,
+          yearData,
+        };
+      })();
+    const landOfficeData: TimelinePlaceDataWithStats = {
+      ...dataWithoutStats,
+      total_claims_federal_lands: dataWithoutStats.yearData.reduce((acc, curr) => curr.claims + acc, 0),
+      total_claims_indian_lands: dataWithoutStats.yearData.reduce((acc, curr) => curr.claims_indian_lands + acc, 0),
+      total_patents_federal_lands: dataWithoutStats.yearData.reduce((acc, curr) => curr.patents + acc, 0),
+      total_patents_indian_lands: dataWithoutStats.yearData.reduce((acc, curr) => curr.patents_indian_lands + acc, 0),
+      total_commutations_2301: dataWithoutStats.yearData.reduce((acc, curr) => curr.commutations_2301 + acc, 0),
+      total_commutations_18800615: dataWithoutStats.yearData.reduce((acc, curr) => curr.commutations_18800615 + acc, 0),
+      total_commutations_indian_lands: dataWithoutStats.yearData.reduce((acc, curr) => curr.commutations_indian_lands + acc, 0),
+      yearData: dataWithoutStats.yearData.map(yd => calculateDistrictYearStats(yd)),
+    };
 
-
-  if (TimelinePlaceData) {
-    const landOfficeData: TimelinePlaceData = TimelinePlaceData.find(pt => pt.stateOrTerritory === stateTerr && pt.name.replace(/[^a-zA-Z]/g, '') === office);
-
-    const acresClaimed: ChartPoint[] = landOfficeData.yearData
-      .map(yd => ({
-        year: yd.year,
-        value: yd.acres_claimed,
-      }));
-
-    const acresPatented: ChartPoint[] = landOfficeData.yearData
-      .map(yd => ({
-        year: yd.year,
-        value: yd.acres_patented,
-      }));
-
-    const acreageLineData: ChartData = {
-      linesData: [
-        {
-          lineData: acresClaimed,
-          color: 'yellow',
-          label: 'acres claimed',
-        },
-        {
-          lineData: acresPatented,
-          color: 'silver',
-          label: 'acres patented',
-        },
-      ],
-      yMax: Math.max(...acresClaimed.map(d => d.value), ...acresPatented.map(d => d.value))
-    } 
-
-    const averageClaimSize: ChartPoint[] = landOfficeData.yearData
-      .filter(yd => yd.claims > 0)
-      .map(yd => ({
-        year: yd.year,
-        value: yd.acres_claimed / yd.claims,
-      }));
-
-    const averagePatentSize: ChartPoint[] = landOfficeData.yearData
-      .filter(yd => yd.patents > 0)
-      .map(yd => ({
-        year: yd.year,
-        value: yd.acres_patented / yd.patents,
-      }));
-
-    const averageAcreageData: ChartData = {
-      linesData: [
-        {
-          lineData: averageClaimSize,
-          color: 'yellow',
-          label: 'average size of claim',
-        },
-        {
-          lineData: averagePatentSize,
-          color: 'silver',
-          label: 'average size of patent',
-        },
-      ],
-      yMax: Math.max(...averageClaimSize.map(d => d.value), ...averagePatentSize.map(d => d.value))
-    } 
-
-    const claims: ChartPoint[] = landOfficeData.yearData
-      .map(yd => ({
-        year: yd.year,
-        value: yd.claims,
-      }));
-
-    const patents: ChartPoint[] = landOfficeData.yearData
-      .map(yd => ({
-        year: yd.year,
-        value: yd.patents,
-      }));
-
-    const claimsAndPatents: ChartData = {
-      linesData: [
-        {
-          lineData: claims,
-          color: 'yellow',
-          label: 'number of claims',
-        },
-        {
-          lineData: patents,
-          color: 'silver',
-          label: 'number of patents',
-        },
-      ],
-      yMax: Math.max(...claims.map(d => d.value), ...patents.map(d => d.value))
-    } 
-
+    const syd: TimelineYearPlaceDataWithStats = landOfficeData.yearData.find(yd => yd.year === parseInt(year));
+    const earliestYear: number = Math.min(...landOfficeData.yearData.map(d => d.year));
+    const latestYear: number = Math.max(...landOfficeData.yearData.map(d => d.year));
+    const earliestYearSYBoundaries = Math.min(...landOfficeData.yearData.filter(d => d.area === syd.area).map(d => d.year));
+    const latestYearSYBoundaries = Math.max(...landOfficeData.yearData.filter(d => d.area === syd.area).map(d => d.year));
+    // are there both federal and indian lands or only one or the other?
+    const hasMultipleClaimTypes: boolean = landOfficeData.total_claims_federal_lands > 0 && landOfficeData.total_claims_indian_lands > 0;
+    // are there both federal and indian lands or only one or the other?
+    const hasMultiplePatentTypes: boolean = [
+      landOfficeData.total_patents_federal_lands > 0,
+      landOfficeData.total_claims_indian_lands > 0,
+      landOfficeData.total_commutations_2301 > 0,
+      landOfficeData.total_commutations_18800615 > 0,
+      landOfficeData.total_commutations_indian_lands > 0
+    ].filter(d => d).length > 1;
 
     return (
       <aside id='officeData'>
-        <TimelineDateHeader />
-        <LineChart
-          chartData={claimsAndPatents}
-          label='claims and patents'
+
+        <DistrictText
+          office={landOfficeData.name}
+          type={landOfficeData.type}
+          year={year}
+          earliestYear={earliestYear}
+          latestYear={latestYear}
+          earliestYearSYBoundaries={earliestYearSYBoundaries}
+          latestYearSYBoundaries={latestYearSYBoundaries}
+          selectedYearData={syd}
         />
-        <LineChart
-          chartData={acreageLineData}
-          label='acres'
+
+        <div
+          className='barLegend'
+        >
+          {(landOfficeData.total_claims_federal_lands > 0 || landOfficeData.total_patents_federal_lands > 0) && (
+            <BarChartLegendItem
+              className='federal_lands'
+              label='claims or patents on federal land'
+            />
+          )}
+          {(landOfficeData.total_claims_indian_lands > 0 || landOfficeData.total_patents_indian_lands > 0) && (
+            <BarChartLegendItem
+              className='indian_lands'
+              label='claims or patents on Indian land'
+            />
+          )}
+          {(landOfficeData.total_commutations_2301 > 0) && (
+            <BarChartLegendItem
+              className='commutations_2301'
+              label='commutations on federal land under 2301'
+            />
+          )}
+          {(landOfficeData.total_commutations_18800615 > 0) && (
+            <BarChartLegendItem
+              className='commutations_18800615'
+              label='commutations on federal land under 1880'
+            />
+          )}
+          {(landOfficeData.total_commutations_indian_lands > 0) && (
+            <BarChartLegendItem
+              className='commutations_indian_lands'
+              label='commutations on Indian land'
+            />
+          )}
+        </div>
+
+        <nav className='chart'>
+          <div>
+            <button
+              onClick={() => { setStacked(true); }}
+              className={(stacked) ? 'selected' : ''}
+              disabled={selectedView === 'average_size'}
+            >
+              Stacked
+            </button>
+            <button
+              onClick={() => { setStacked(false); }}
+              className={(!stacked) ? 'selected' : ''}
+            >
+              Grouped
+            </button>
+          </div>
+          <div>
+            <button
+              onClick={() => { setSelectedView('number'); }}
+              className={(selectedView === 'number') ? 'selected' : ''}
+            >
+              Number
+            </button>
+            <button
+              onClick={() => { setSelectedView('acres'); }}
+              className={(selectedView === 'acres') ? 'selected' : ''}
+            >
+              Acres
+            </button>
+            <button
+              onClick={() => { setSelectedView('average_size'); setStacked(false); }}
+              className={(selectedView === 'average_size') ? 'selected' : ''}
+            >
+              Average Size
+            </button>
+          </div>
+        </nav>
+        <BarChart
+          chartData={landOfficeData}
+          stacked={stacked || !hasMultipleClaimTypes}
+          selectedView={selectedView}
+          label='claims'
         />
-        <LineChart
-          chartData={averageAcreageData}
-          label='average size'
+        <BarChartPatents
+          chartData={landOfficeData}
+          stacked={stacked || !hasMultiplePatentTypes}
+          selectedView={selectedView}
+          label='claims'
         />
-        </aside>
+      </aside>
     );
   }
   return null;

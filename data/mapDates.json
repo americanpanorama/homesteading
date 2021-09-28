@@ -1,0 +1,801 @@
+[
+  {
+    "state": "AL",
+    "map_n": 1,
+    "startYear": 1842,
+    "endYear": 1868
+  },
+  {
+    "state": "AL",
+    "map_n": 2,
+    "startYear": 1868,
+    "endYear": 1919
+  },
+  {
+    "state": "AK",
+    "map_n": 1,
+    "startYear": 1884,
+    "endYear": 1900
+  },
+  {
+    "state": "AK",
+    "map_n": 2,
+    "startYear": 1900,
+    "endYear": 1907
+  },
+  {
+    "state": "AK",
+    "map_n": 3,
+    "startYear": 1907,
+    "endYear": 1923
+  },
+  {
+    "state": "AK",
+    "map_n": 4,
+    "startYear": 1923,
+    "endYear": 2000
+  },
+  {
+    "state": "AZ",
+    "map_n": 1,
+    "startYear": 1863,
+    "endYear": 1905
+  },
+  {
+    "state": "AZ",
+    "map_n": 2,
+    "startYear": 1905,
+    "endYear": 1919
+  },
+  {
+    "state": "AR",
+    "map_n": 4,
+    "startYear": 1845,
+    "endYear": 1865
+  },
+  {
+    "state": "AR",
+    "map_n": 5,
+    "startYear": 1865,
+    "endYear": 1871
+  },
+  {
+    "state": "AR",
+    "map_n": 6,
+    "startYear": 1871,
+    "endYear": 1909
+  },
+  {
+    "state": "AR",
+    "map_n": 7,
+    "startYear": 1909,
+    "endYear": 1923
+  },
+  {
+    "state": "CA",
+    "map_n": 1,
+    "startYear": 1857,
+    "endYear": 1863
+  },
+  {
+    "state": "CA",
+    "map_n": 2,
+    "startYear": 1863,
+    "endYear": 1869
+  },
+  {
+    "state": "CA",
+    "map_n": 3,
+    "startYear": 1869,
+    "endYear": 1873
+  },
+  {
+    "state": "CA",
+    "map_n": 4,
+    "startYear": 1873,
+    "endYear": 1878
+  },
+  {
+    "state": "CA",
+    "map_n": 5,
+    "startYear": 1878,
+    "endYear": 1919
+  },
+  {
+    "state": "CA",
+    "map_n": 6,
+    "startYear": 1919,
+    "endYear": ""
+  },
+  {
+    "state": "CO",
+    "map_n": 1,
+    "startYear": 1863,
+    "endYear": 1871
+  },
+  {
+    "state": "CO",
+    "map_n": 2,
+    "startYear": 1871,
+    "endYear": 1874
+  },
+  {
+    "state": "CO",
+    "map_n": 3,
+    "startYear": 1874,
+    "endYear": 1877
+  },
+  {
+    "state": "CO",
+    "map_n": 4,
+    "startYear": 1877,
+    "endYear": 1882
+  },
+  {
+    "state": "CO",
+    "map_n": 5,
+    "startYear": 1882,
+    "endYear": 1883
+  },
+  {
+    "state": "CO",
+    "map_n": 6,
+    "startYear": 1883,
+    "endYear": 1884
+  },
+  {
+    "state": "CO",
+    "map_n": 7,
+    "startYear": 1884,
+    "endYear": 1888
+  },
+  {
+    "state": "CO",
+    "map_n": 8,
+    "startYear": 1888,
+    "endYear": 1900
+  },
+  {
+    "state": "CO",
+    "map_n": 9,
+    "startYear": 1900,
+    "endYear": 2000
+  },
+  {
+    "state": "ID",
+    "map_n": 1,
+    "startYear": 1868,
+    "endYear": 1879
+  },
+  {
+    "state": "ID",
+    "map_n": 2,
+    "startYear": 1879,
+    "endYear": 1883
+  },
+  {
+    "state": "ID",
+    "map_n": 3,
+    "startYear": 1883,
+    "endYear": 1887
+  },
+  {
+    "state": "IA",
+    "map_n": 1,
+    "startYear": 1859,
+    "endYear": 1910
+  },
+  {
+    "state": "ID",
+    "map_n": 4,
+    "startYear": 1887,
+    "endYear": 1919
+  },
+  {
+    "state": "KS",
+    "map_n": 1,
+    "startYear": 1854,
+    "endYear": 1861
+  },
+  {
+    "state": "KS",
+    "map_n": 2,
+    "startYear": 1861,
+    "endYear": 1870
+  },
+  {
+    "state": "KS",
+    "map_n": 3,
+    "startYear": 1870,
+    "endYear": 1872
+  },
+  {
+    "state": "KS",
+    "map_n": 4,
+    "startYear": 1872,
+    "endYear": 1875
+  },
+  {
+    "state": "KS",
+    "map_n": 5,
+    "startYear": 1875,
+    "endYear": 1880
+  },
+  {
+    "state": "KS",
+    "map_n": 6,
+    "startYear": 1880,
+    "endYear": 1889
+  },
+  {
+    "state": "KS",
+    "map_n": 7,
+    "startYear": 1889,
+    "endYear": 1893
+  },
+  {
+    "state": "KS",
+    "map_n": 8,
+    "startYear": 1893,
+    "endYear": 1900
+  },
+  {
+    "state": "KS",
+    "map_n": 9,
+    "startYear": 1900,
+    "endYear": 1905
+  },
+  {
+    "state": "KS",
+    "map_n": 10,
+    "startYear": 1905,
+    "endYear": 1919
+  },
+  {
+    "state": "KS",
+    "map_n": 11,
+    "startYear": 1919,
+    "endYear": 2000
+  },
+  {
+    "state": "LA",
+    "map_n": 1,
+    "startYear": 1867,
+    "endYear": 1916
+  },
+  {
+    "state": "MI",
+    "map_n": 1,
+    "startYear": 1858,
+    "endYear": 1878
+  },
+  {
+    "state": "MI",
+    "map_n": 2,
+    "startYear": 1878,
+    "endYear": 1888
+  },
+  {
+    "state": "MI",
+    "map_n": 3,
+    "startYear": 1888,
+    "endYear": 1919
+  },
+  {
+    "state": "MN",
+    "map_n": 0,
+    "startYear": 1859,
+    "endYear": 1863
+  },
+  {
+    "state": "MN",
+    "map_n": 1,
+    "startYear": 1863,
+    "endYear": 1868
+  },
+  {
+    "state": "MN",
+    "map_n": 2,
+    "startYear": 1868,
+    "endYear": 1872
+  },
+  {
+    "state": "MN",
+    "map_n": 3,
+    "startYear": 1872,
+    "endYear": 1873
+  },
+  {
+    "state": "MN",
+    "map_n": 4,
+    "startYear": 1873,
+    "endYear": 1889
+  },
+  {
+    "state": "MN",
+    "map_n": 5,
+    "startYear": 1889,
+    "endYear": 1889
+  },
+  {
+    "state": "MN",
+    "map_n": 6,
+    "startYear": 1889,
+    "endYear": 1900
+  },
+  {
+    "state": "MN",
+    "map_n": 7,
+    "startYear": 1900,
+    "endYear": 1919
+  },
+  {
+    "state": "MO",
+    "map_n": 1,
+    "startYear": 1842,
+    "endYear": 1855 
+  },
+  {
+    "state": "MO",
+    "map_n": 2,
+    "startYear": 1855,
+    "endYear": 1919 
+  },
+  {
+    "state": "MT",
+    "map_n": 1,
+    "startYear": 1867,
+    "endYear": 1881
+  },
+  {
+    "state": "MT",
+    "map_n": 2,
+    "startYear": 1881,
+    "endYear": 1892
+  },
+  {
+    "state": "MT",
+    "map_n": 3,
+    "startYear": 1892,
+    "endYear": 1898
+  },
+  {
+    "state": "MT",
+    "map_n": 4,
+    "startYear": 1898,
+    "endYear": 1906
+  },
+  {
+    "state": "MT",
+    "map_n": 5,
+    "startYear": 1906,
+    "endYear": 1916
+  },
+  {
+    "state": "NE",
+    "map_n": 1,
+    "startYear": 1854,
+    "endYear": 1869
+  },
+  {
+    "state": "NE",
+    "map_n": 2,
+    "startYear": 1869,
+    "endYear": 1872
+  },
+  {
+    "state": "NE",
+    "map_n": 3,
+    "startYear": 1873,
+    "endYear": 1875
+  },
+  {
+    "state": "NE",
+    "map_n": 4,
+    "startYear": 1875,
+    "endYear": 1881
+  },
+  {
+    "state": "NE",
+    "map_n": 5,
+    "startYear": 1881,
+    "endYear": 1883
+  },
+  {
+    "state": "NE",
+    "map_n": 6,
+    "startYear": 1883,
+    "endYear": 1886
+  },
+  {
+    "state": "NE",
+    "map_n": 7,
+    "startYear": 1886,
+    "endYear": 1887
+  },
+  {
+    "state": "NE",
+    "map_n": 8,
+    "startYear": 1887,
+    "endYear": 1893
+  },
+  {
+    "state": "NE",
+    "map_n": 9,
+    "startYear": 1893,
+    "endYear": 1900
+  },
+  {
+    "state": "NE",
+    "map_n": 10,
+    "startYear": 1900,
+    "endYear": 1919
+  },
+  {
+    "state": "NV",
+    "map_n": 1,
+    "startYear": 1864,
+    "endYear": 1868
+  },
+  {
+    "state": "NV",
+    "map_n": 2,
+    "startYear": 1868,
+    "endYear": 1873
+  },
+  {
+    "state": "NV",
+    "map_n": 3,
+    "startYear": 1873,
+    "endYear": 1900
+  },
+  {
+    "state": "NV",
+    "map_n": 4,
+    "startYear": 1900,
+    "endYear": 1919
+  },
+  {
+    "state": "ND",
+    "map_n": 1,
+    "startYear": 1861,
+    "endYear": 1874
+  },
+  {
+    "state": "ND",
+    "map_n": 2,
+    "startYear": 1874,
+    "endYear": 1880
+  },
+  {
+    "state": "ND",
+    "map_n": 3,
+    "startYear": 1880,
+    "endYear": 1883
+  },
+  {
+    "state": "ND",
+    "map_n": 4,
+    "startYear": 1883,
+    "endYear": 1891
+  },
+  {
+    "state": "ND",
+    "map_n": 5,
+    "startYear": 1891,
+    "endYear": 1905
+  },
+  {
+    "state": "ND",
+    "map_n": 6,
+    "startYear": 1905,
+    "endYear": 1908
+  },
+  {
+    "state": "ND",
+    "map_n": 7,
+    "startYear": 1908,
+    "endYear": 1913
+  },
+  {
+    "state": "ND",
+    "map_n": 8,
+    "startYear": 1913,
+    "endYear": 1923
+  },
+  {
+    "state": "ND",
+    "map_n": 9 ,
+    "startYear": 1923,
+    "endYear": 1925
+  },
+  {
+    "state": "ND",
+    "map_n": 10,
+    "startYear": 1925,
+    "endYear": 2000
+  },
+  {
+    "state": "NM",
+    "map_n": 1,
+    "startYear": 1858,
+    "endYear": 1889
+  },
+  {
+    "state": "NM",
+    "map_n": 2,
+    "startYear": 1889,
+    "endYear": 1900
+  },
+  {
+    "state": "NM",
+    "map_n": 3,
+    "startYear": 1900,
+    "endYear": 1919
+  },
+  {
+    "state": "OK",
+    "map_n": 1,
+    "startYear": 1889,
+    "endYear": 1890
+  },
+  {
+    "state": "OK",
+    "map_n": 2,
+    "startYear": 1890,
+    "endYear": 1891
+  },
+  {
+    "state": "OK",
+    "map_n": 3,
+    "startYear": 1891,
+    "endYear": 1900
+  },
+  {
+    "state": "OK",
+    "map_n": 4,
+    "startYear": 1900,
+    "endYear": 1901
+  },
+  {
+    "state": "OK",
+    "map_n": 5,
+    "startYear": 1901,
+    "endYear": 1906
+  },
+  {
+    "state": "OK",
+    "map_n": 6,
+    "startYear": 1906,
+    "endYear": 1919
+  },
+  {
+    "state": "OR",
+    "map_n": 1,
+    "startYear": 1860,
+    "endYear": 1872
+  },
+  {
+    "state": "OR",
+    "map_n": 2,
+    "startYear": 1872,
+    "endYear": 1888
+  },
+  {
+    "state": "OR",
+    "map_n": 3,
+    "startYear": 1888,
+    "endYear": 1900
+  },
+  {
+    "state": "OR",
+    "map_n": 4,
+    "startYear": 1900,
+    "endYear": 1919
+  },
+  {
+    "state": "SD",
+    "map_n": 1,
+    "startYear": 1861,
+    "endYear": 1871
+  },
+  {
+    "state": "SD",
+    "map_n": 2,
+    "startYear": 1871,
+    "endYear": 1877
+  },
+  {
+    "state": "SD",
+    "map_n": 3,
+    "startYear": 1877,
+    "endYear": 1880
+  },
+  {
+    "state": "SD",
+    "map_n": 4,
+    "startYear": 1880,
+    "endYear": 1883
+  },
+  {
+    "state": "SD",
+    "map_n": 5,
+    "startYear": 1883,
+    "endYear": 1890
+  },
+  {
+    "state": "SD",
+    "map_n": 6,
+    "startYear": 1890,
+    "endYear": 1908
+  },
+  {
+    "state": "SD",
+    "map_n": 7,
+    "startYear": 1908,
+    "endYear": 1918
+  },
+  {
+    "state": "SD",
+    "map_n": 8,
+    "startYear": 1913,
+    "endYear": 1915
+  },
+  {
+    "state": "SD",
+    "map_n": 9,
+    "startYear": 1915,
+    "endYear": 1920
+  },
+  {
+    "state": "SD",
+    "map_n": 10,
+    "startYear": 1922,
+    "endYear": 2000
+  },
+  {
+    "state": "UT",
+    "map_n": 1,
+    "startYear": 1968,
+    "endYear": 1904
+  },
+  {
+    "state": "UT",
+    "map_n": 2,
+    "startYear": 1904,
+    "endYear": 1919
+  },
+  {
+    "state": "WA",
+    "map_n": 1,
+    "startYear": 1854,
+    "endYear": 1871
+  },
+  {
+    "state": "WA",
+    "map_n": 2,
+    "startYear": 1871,
+    "endYear": 1876
+  },
+  {
+    "state": "WA",
+    "map_n": 3,
+    "startYear": 1876,
+    "endYear": 1884
+  },
+  {
+    "state": "WA",
+    "map_n": 4,
+    "startYear": 1884,
+    "endYear": 1890
+  },
+  {
+    "state": "WA",
+    "map_n": 5,
+    "startYear": 1890,
+    "endYear": 1914
+  },
+  {
+    "state": "WA",
+    "map_n": 6,
+    "startYear": 1914,
+    "endYear": 1919
+  },
+  {
+    "state": "WA",
+    "map_n": 7,
+    "startYear": 1919,
+    "endYear": 2000
+  },
+  {
+    "state": "WI",
+    "map_n": 1,
+    "startYear": 1860,
+    "endYear": 1886
+  },
+  {
+    "state": "WI",
+    "map_n": 2,
+    "startYear": 1886,
+    "endYear": 1919
+  },
+  {
+    "state": "WY",
+    "map_n": 1,
+    "startYear": 1870,
+    "endYear": 1887
+  },
+  {
+    "state": "WY",
+    "map_n": 2,
+    "startYear": 1887,
+    "endYear": 1890
+  },
+  {
+    "state": "WY",
+    "map_n": 3,
+    "startYear": 1890,
+    "endYear": 1904
+  },
+  {
+    "state": "WY",
+    "map_n": 4,
+    "startYear": 1904,
+    "endYear": 1916
+  },
+  {
+    "state": "DK",
+    "map_n": 1,
+    "startYear": 1861,
+    "endYear": 1871
+  },
+  {
+    "state": "DK",
+    "map_n": 2,
+    "startYear": 1871,
+    "endYear": 1874
+  },
+
+  {
+    "state": "DK",
+    "map_n": 3,
+    "startYear": 1874,
+    "endYear": 1877
+  },
+  {
+    "state": "DK",
+    "map_n": 3.5,
+    "startYear": 1871,
+    "endYear": 1874
+  },
+  {
+    "state": "DK",
+    "map_n": 4,
+    "startYear": 1877,
+    "endYear": 1880
+  },
+  {
+    "state": "DK",
+    "map_n": 5,
+    "startYear": 1880,
+    "endYear": 1883
+  },
+  {
+    "state": "DK",
+    "map_n": 6,
+    "startYear": 1883,
+    "endYear": 1890
+  },
+  {
+    "state": "DK",
+    "map_n": 7,
+    "startYear": 1890,
+    "endYear": 1891
+  },
+  {
+    "state": "DK",
+    "map_n": 8,
+    "startYear": 1891,
+    "endYear": 1905
+  }
+]

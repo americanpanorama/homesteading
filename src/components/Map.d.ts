@@ -1,3 +1,5 @@
+import { ClaimsAndPatentsCounts,  ClaimAndPatentsAcres } from '..';
+
 export type Point = [number, number];
 
 export type Bounds = [Point, Point];
@@ -8,15 +10,11 @@ interface YMD {
   day: number;
 }
 
-export interface ProjectedTownship {
+export type ProjectedTownship = ClaimsAndPatentsCounts & ClaimAndPatentsAcres & {
   d: string;
   office: string;
   state: string;
   area: number;
-  claims: number;
-  acres_claimed: number;
-  patents: number;
-  acres_patented: number;
   labelCoords: Point;
   bounds: Bounds;
   rotation: number;
@@ -35,6 +33,7 @@ interface ConflictData {
   native_casualties: number;
   start_date: YMD;
   end_date: YMD;
+  rotation: number;
 }
 
 interface YearData {
@@ -52,6 +51,7 @@ export interface TileData {
   z: number;
   y: number;
   x: number;
+  translate?: [number, number];
   opacity: number;
 }
 

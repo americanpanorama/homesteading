@@ -8,11 +8,13 @@ interface Props {
   d: string;
   link: string;
   strokeWidth: number;
+  fill: string;
+  stroke: string;
 }
 
 const District = (props: Props) => {
   const { useEffect, useRef } = React;
-  const { d, link } = props;
+  const { d, link, fill, stroke } = props;
   const strokeWidth = useRef(props.strokeWidth);
   const ref = useRef(null);
 
@@ -34,6 +36,9 @@ const District = (props: Props) => {
         d={d}
         style={{
           strokeWidth: strokeWidth.current,
+          fill: fill,
+          fillOpacity: 0,
+          stroke: stroke,
         }}
         className='district'
         ref={ref}

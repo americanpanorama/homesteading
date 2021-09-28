@@ -1,11 +1,10 @@
 import * as React from 'react';
 import * as d3 from 'd3';
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 // @ts-ignore
-import us from 'us';
-//import * as d3 from 'd3';
+import us from '../us.js';
 import './State.css';
-import { StyledState } from '../index.d';
+import { StyledState, RouterParams } from '../index.d';
 import { ANIMATIONDURATION } from '../Config';
 
 interface Props extends StyledState {
@@ -13,47 +12,55 @@ interface Props extends StyledState {
   linkActive: boolean;
   selected: boolean;
   scale: number;
-  // onHover(arg0: string): void;
-  // onUnhover(): void;
 }
 
 const State = (props: Props) => {
   const { useRef, useEffect, useState } = React;
   const {
     abbr,
-    name,
     link,
-    nhgis_join,
     d,
     labelCoords,
     labelRotation,
-    fillOpacity,
     linkActive,
     selected,
-    // onHover,
-    // onUnhover,
   } = props;
+  const year = useParams<RouterParams>().year || '1863';
   const [scale, setScale] = useState(props.scale);
+  const [stroke, setStroke] = useState(props.stroke);
+  const boundaryRef = useRef(null);
   const labelHalo = useRef(null);
   const labelRef = useRef(null);
+
+  const fontSize = 12;
 
   useEffect(() => {
     d3.select(labelHalo.current)
       .transition()
       .duration(ANIMATIONDURATION)
-      .attr('stroke-width', 4 / props.scale)
-      .attr('font-size', 18 / props.scale);
+      .attr('stroke-width', fontSize / 4 / props.scale)
+      .attr('font-size', fontSize / props.scale);
     d3.select(labelRef.current)
       .transition()
       .duration(ANIMATIONDURATION)
       .attr('stroke-width', 0 / props.scale)
-      .attr('font-size', 18 / props.scale)
+      .attr('font-size', fontSize / props.scale)
       .on('end', () => {
         setScale(props.scale);
       });
   }, [props.scale]);
 
-  const label = us.lookup(abbr).ap_abbr;
+  useEffect(() => {
+    d3.select(boundaryRef.current)
+      .transition()
+      .duration(ANIMATIONDURATION)
+      .attr('stroke', props.stroke)
+      .on('end', () => {
+        setStroke(props.stroke);
+      });
+  }, [props.stroke]);
+
+  const label = `${us.lookup(abbr).ap_abbr}${(!us.lookup(abbr).statehood_year || us.lookup(abbr).statehood_year > parseInt(year)) ? ' Terr.' : ''}`;
 
   return (
     <Link
@@ -65,9 +72,12 @@ const State = (props: Props) => {
       <path
         d={d}
         className={`stateBoundary ${(!linkActive) ? 'unselectable' : ''}`}
-        fill='transparent'
-        stroke={(selected) ? 'white' : '#6B512D'}  
-        strokeWidth={(selected) ? 4 / scale : 1 / scale}       
+        fill={(abbr === 'ILd') ? '#8c8686' : 'transparent'}
+        style={{
+          stroke: stroke,
+          strokeWidth: (selected) ? 4 / scale : 1.25 / scale,
+        }}
+        ref={boundaryRef}       
       />
       {(labelCoords && labelCoords[0]) && (
         <g
@@ -78,10 +88,11 @@ const State = (props: Props) => {
             x={labelCoords[0]}
             y={labelCoords[1]}
             textAnchor='middle'
-            stroke='#6B512D'
-            strokeOpacity={0.8}
-            fontSize={18 / scale}
-            strokeWidth={4 / scale}
+            //stroke='#6B512D'
+            stroke='#000000'
+            strokeOpacity={0.5}
+            fontSize={fontSize / scale}
+            strokeWidth={fontSize / 4 / scale}
             ref={labelHalo}
           >
             {label}
@@ -92,10 +103,10 @@ const State = (props: Props) => {
             textAnchor='middle'
             style={{
               fill: '#F4DFB8',
-              fillOpacity: 0.85,
+              fillOpacity: 0.5,
             }}
             strokeWidth={0 / scale}
-            fontSize={18 / scale}
+            fontSize={fontSize / scale}
             ref={labelRef}
           >
             {label}

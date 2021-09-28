@@ -1,3 +1,15 @@
+export type ClaimsCountType = "claims" | "claims_indian_lands";
+export type PatentsCountType =  "patents" | "patents_indian_lands" | "commutations_2301" | "commutations_18800615" | "commutations_indian_lands";
+export type ClaimsAndPatentsCountType = ClaimsCountType | PatentsCountType; 
+export type ClaimsAcresType = "acres_claimed" | "acres_claimed_indian_lands";
+export type PatentsResidencyAcres = "acres_patented" | "acres_patented_indian_lands";
+export type PatentsCommutationsAcresType = "acres_commuted_2301" | "acres_commuted_18800615" | "acres_commuted_indian_lands";
+export type PatentsAcresType = PatentsResidencyAcres | PatentsCommutationsAcresType;
+export type ClaimsAndPatentsAcresType = ClaimsAcresType | PatentsResidencyAcres | PatentsCommutationsAcresType;
+
+export type ClaimsAndPatentsCounts = { [count in ClaimsAndPatentsCountType]: number; }
+export type ClaimAndPatentsAcres = { [acres in ClaimsAndPatentsAcresType]: number; }
+
 export interface Dimensions {
   width: number;
   height: number;
@@ -11,9 +23,29 @@ export interface Dimensions {
     height: number;
     leftAxisWidth: number;
     labelsWidth: number;
-  }
+  };
+  officeBarchartDimensions: {
+    xAxisHeight: number;
+    yAxisWidth: number;
+    padding: number;
+    paddingTop: number;
+    chartBodyHeight: number;
+    chartBodyWidth: number;
+    height: number;
+  };
 }
 
+export type ClaimsTypesSelected = { [acres in ClaimsAcresType]: boolean; }
+export type PatentsTypesSelected = { [acres in PatentsAcresType]: boolean }
+export type ClaimsSelected = {
+  type: 'claims';
+  subcats: ClaimsTypesSelected;
+}
+export type PatentsSelected = {
+  type: 'patents';
+  subcats: PatentsTypesSelected;
+}
+export type ClaimsOrPatentsTypesSelected = ClaimsSelected | PatentsSelected;
 
 export interface YMD {
   year: number;
@@ -36,14 +68,26 @@ export interface Conflict {
 
 export type PlaceType = 'office' | 'stateOrTerritory';
 
-export interface TimelineYearPlaceData {
+export type TimelineYearPlaceData = ClaimsAndPatentsCounts & ClaimAndPatentsAcres & {
   year: number;
-  acres_claimed: number;
-  claims: number;
-  acres_patented: number;
-  patents: number;
   area: number;
   conflicts?: Conflict[];
+}
+
+export type TimelineYearPlaceDataWithStats = TimelineYearPlaceData & {
+  total_claims: number;
+  total_acres_claimed: number;
+  area_claimed_percent: number;
+  claims_federal_lands_percent: number;
+  claims_indian_lands_percent: number;
+  total_patents: number;
+  total_patents_residency: number;
+  total_patents_residency_percent: number;
+  total_patents_commutations: number;
+  total_patents_commutations_percent: number;
+  number_of_patent_types: number;
+  patents_federal_lands_percent: number;
+  patents_indian_lands_percent: number;
 }
 
 export interface TimelinePlaceData {
@@ -53,6 +97,17 @@ export interface TimelinePlaceData {
   type: PlaceType;
   medianYearClaimsAcres: number;
   yearData: TimelineYearPlaceData[];
+}
+
+export interface TimelinePlaceDataWithStats extends TimelinePlaceData {
+  total_claims_federal_lands: number;
+  total_claims_indian_lands: number;
+  total_patents_federal_lands: number;
+  total_patents_indian_lands: number;
+  total_commutations_2301: number;
+  total_commutations_18800615: number;
+  total_commutations_indian_lands: number;
+  yearData: TimelineYearPlaceDataWithStats[];
 }
 
 export interface TimelineCell {
@@ -65,19 +120,15 @@ export interface TimelineCell {
 
 export interface TimelineConflict {
   x: number;
+  strokeWidth: number;
+  xRadius: number;
 }
-
-// export interface TimelineYearTick {
-//   x: number;
-//   height: number;
-//   stroke: string;
-// }
 
 export interface TimelineRowStyled {
   label: string;
   cells: TimelineCell[];
-  claims: number;
-  acres_claimed: number;
+  number: number;
+  acres: number;
   conflicts: TimelineConflict[];
   active: boolean;            // does the photographer have any photos (and is thus selectable) given the current state, e.g. timeRange
   y: number;                  // y position 
@@ -99,6 +150,7 @@ export interface StyledState {
   labelCoords: [number, number];
   labelRotation: number;
   fillOpacity: number;
+  stroke?: string;
 }
 
 export interface ProjectedState {
@@ -109,13 +161,20 @@ export interface ProjectedState {
   bounds: [[number, number], [number, number]];
   rotation: number;
   d: string;
-}
+  stats?: {
+    area: number;
+    acres_visualized: number;
+  };
 
+}
+export type TextType = 'about' | 'introduction' | 'sources';
 
 export interface RouterParams {
-  year: string;
+  text?: TextType;
+  year?: string;
   placeId?: string;
   stateTerr?: string;
   office?: string;
+  view?: string;
   fullOpacity?: string;
 }

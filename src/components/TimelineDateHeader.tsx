@@ -1,18 +1,37 @@
 import * as React from 'react';
 import { Link, useParams } from 'react-router-dom';
 // @ts-ignore
-import us from 'us';
+import us from '../us';
 import { makeParams } from '../utilities';
 import { RouterParams } from '../index.d';
+import PlacesDateRanges from '../../data/placesDateRanges.json';
 import './TimelineDateHeader.css';
+
+interface OfficeData {
+  stub: string;
+  firstYear: number;
+  lastYear: number;
+}
+
+interface StateTerritoryData extends OfficeData {
+  offices: OfficeData[];
+}
 
 const TimelineDateHeader = () => {
   const params = useParams<RouterParams>();
   const year = params.year || '1863';
   const { stateTerr, office } = params;
+  const placesDateRanges = PlacesDateRanges as StateTerritoryData[];
+  let firstYear = 1863;
+  let lastYear = 1912;
+  if (stateTerr && !office && placesDateRanges.find(d => d.stub === stateTerr)) {
+    ({firstYear, lastYear} = placesDateRanges.find(d => d.stub === stateTerr));
+  } else if (stateTerr && office && placesDateRanges.find(d => d.stub === stateTerr).offices.find(d => d.stub === office)) {
+    ({firstYear, lastYear} = placesDateRanges.find(d => d.stub === stateTerr).offices.find(d => d.stub === office));
+  }
   return (
     <h3 id='timelineDateHeader'>
-      {(year !== '1863') && (
+      {(year > '1863' && (!firstYear || parseInt(year) > firstYear)) && (
         <Link to={makeParams(params, [{ type: 'set_year', payload: parseInt(year) - 1}])}>
           <svg
             width={20}
@@ -30,13 +49,16 @@ const TimelineDateHeader = () => {
                 fill='transparent'
                 stroke='#F4DFB8'
                 strokeWidth={20 / 10}
+                style={{
+                  pointerEvents: 'none',
+                }}
               />
             </g>
           </svg>
         </Link>
       )}
       {` ${year} `}
-      {(year !== '1912') && (
+      {(year !== '1912' && (!lastYear || parseInt(year) < lastYear)) && (
         <Link to={makeParams(params, [{ type: 'set_year', payload: parseInt(year) + 1}])}>
           <svg
             width={20}
@@ -54,6 +76,9 @@ const TimelineDateHeader = () => {
                 fill='transparent'
                 stroke='#F4DFB8'
                 strokeWidth={20 / 10}
+                style={{
+                  pointerEvents: 'none',
+                }}
               />
             </g>
           </svg>
@@ -61,7 +86,7 @@ const TimelineDateHeader = () => {
       )}
       {(stateTerr && !office) && (
         <React.Fragment>
-          {` — ${us.lookup(stateTerr).name} `}
+          {` — ${us.lookup(stateTerr).name}${(!us.lookup(stateTerr).statehood_year || parseInt(year) < us.lookup(stateTerr).statehood_year) ? ' Terr.' : ''} `}
           <Link to={makeParams(params, [{ type: 'clear_state' }])}>
             <svg
               width={20}
@@ -82,6 +107,9 @@ const TimelineDateHeader = () => {
                   y2={20 / -4}
                   stroke='#F4DFB8'
                   strokeWidth={20 / 10}
+                  style={{
+                    pointerEvents: 'none',
+                  }}
                 />
                 <line
                   x1={20 / -4}
@@ -90,6 +118,9 @@ const TimelineDateHeader = () => {
                   y2={0}
                   stroke='#F4DFB8'
                   strokeWidth={20 / 10}
+                  style={{
+                    pointerEvents: 'none',
+                  }}
                 />
               </g>
             </svg>
@@ -98,8 +129,8 @@ const TimelineDateHeader = () => {
       )}
       {(office) && (
         <React.Fragment>
-          {`— ${office.replace(/([A-Z])/g, ' $1')},  ${stateTerr} `}
-          <Link to={makeParams(params, [{ type: 'clear_office' }])}>
+          {`— ${office.replace(/([A-Z])/g, ' $1')}, ${us.lookup(stateTerr).ap_abbr}${(!us.lookup(stateTerr).statehood_year || us.lookup(stateTerr).statehood_year > parseInt(year)) ? ' Terr.' : ''} `}
+          <Link to={(['IL', 'IN', 'OH', 'MS'].includes(stateTerr)) ? makeParams(params, [{ type: 'clear_state' }]) : makeParams(params, [{ type: 'clear_office' }])}>
             <svg
               width={20}
               height={20}

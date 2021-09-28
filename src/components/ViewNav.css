@@ -1,0 +1,31 @@
+
+.mainnav {
+  text-align: right;
+  margin: 0 25px;
+}
+
+.mainnav button {
+  border-bottom: 0px;
+  border-bottom-right-radius:  0;
+  border-bottom-left-radius: 0;
+  margin: 0 0 0 10px;
+}
+
+.subnav {
+  border: 2px solid var(--highlight-color);
+  background-color: var(--highlight-color);
+  border-top-left-radius: 10px;
+  margin: 0 25px;
+}
+
+.subnav button.selected {
+  background-color: var(--main-bg-color);
+}
+
+.subnav button:hover {
+  border-color: var(--main-bg-color);
+}
+
+.mainnav button {
+  text-transform: uppercase;
+}

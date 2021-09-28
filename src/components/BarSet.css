@@ -1,0 +1,65 @@
+.bar {
+  fill-opacity: 0.45;
+}
+
+.bar .selected {
+  fill-opacity: 1;
+}
+
+.barLegend {
+  margin: 10px auto;
+  display: inline-block;
+}
+
+.barLegend .box {
+  width: 10px;
+  height: 20px;
+  transform: translateY(4px);
+  margin-right: 7px;
+  display: inline-block;
+}
+
+.barLegend div {
+  text-align: left;
+}
+
+.bar .federal_lands {
+  fill: #8A3FFC;
+}
+
+.barLegend .box.federal_lands {
+  background-color: #8A3FFC;
+}
+
+.bar .indian_lands {
+  fill: #20D5D2;
+}
+
+.barLegend .box.indian_lands {
+  background-color: #20D5D2;
+}
+
+.bar .commutations_2301 {
+  fill: #D12765;
+}
+
+.barLegend .box.commutations_2301 {
+  background-color: #D12765;
+}
+
+.bar .commutations_18800615 {
+  fill: #FA75A6;
+}
+
+.barLegend .box.commutations_18800615 {
+  background-color: #FA75A6;
+}
+
+.bar .commutations_indian_lands {
+  fill: #009E9A;
+}
+
+.barLegend .box.commutations_indian_lands {
+  background-color: #009E9A;
+}
+

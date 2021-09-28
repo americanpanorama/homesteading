@@ -1,3 +1,4 @@
 import React from 'react';
-const DimensionsContext = React.createContext();
-export default DimensionsContext;
+export const DimensionsContext = React.createContext();
+
+export const CategoriesContext = React.createContext();
