@@ -2,14 +2,16 @@ import * as React from 'react';
 import axios from 'axios';
 import * as d3 from 'd3';
 import Tooltip from 'rc-tooltip';
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { DimensionsContext } from '../DimensionsContext';
 import { Dimensions, ProjectedState, RouterParams } from '..';
 import { CalculateTransform, CalculateCenterAndDXDY, TransformData, CalculateZ, Bounds, Point, YearData, ProjectedTownship } from './Map.d';
+import us from '../us';
 import States from '../../data/states.json';
 import NorthAmerica from '../../data/northAmerica.json';
 import TileLayers from './TileLayers';
 import DistrictPolygons from './Polygons';
+import { makeParams } from '../utilities';
 import { CANVASSIZE, ANIMATIONDURATION, TILESIZE } from '../Config';
 import './Map.css';
 
@@ -20,7 +22,10 @@ const Map = () => {
   const { stateTerr, office } = params;
   const year = params.year || '1863';
 
-  const { width, height } = (useContext(DimensionsContext) as Dimensions).mapDimensions;
+  const { mapDimensions, isMobile, width: screenWidth, height: screenHeight } = (useContext(DimensionsContext) as Dimensions);
+  const { width: mapWidth, height: mapHeight, size: mapSize, setMapSize } = mapDimensions;
+  const width = mapWidth;
+  const height = mapHeight;
   const refTranslate = useRef(null);
   const [yearData, setYearData] = useState<YearData>({ offices: [], conflicts: [] })
 
@@ -37,7 +42,7 @@ const Map = () => {
     // set defaults
     xGutter = xGutter || 1;
     yGutter = yGutter || 1;
-    dx = dx || CANVASSIZE * 0.8; // the 0.7 accounts for there not being any states with homesteading east of MI/OH
+    dx = dx || CANVASSIZE; // the 0.7 accounts for there not being any states with homesteading east of MI/OH
     dy = dy || 500 / 960 * CANVASSIZE;
     center = center || [CANVASSIZE * 0.37, CANVASSIZE / 2];
     rotation = rotation || -2;
@@ -164,6 +169,28 @@ const Map = () => {
     rotation = (States as ProjectedState[]).find(d => d.abbr === stateTerr).rotation;
   }
 
+  let mapStyle = {};
+  if (!isMobile) {
+    if (mapSize === 'default') {
+      mapStyle = {
+        gridColumn: '1 / span 1',
+        gridRow: '4 / span 1',
+        width: 'calc(100% - 54px)',
+        height: 'calc(100vh - 50px - 60px - 33px - 50px - 160px)',
+        overflow: 'hidden',
+      }
+    } else if (mapSize === 'fullscreen') {
+      mapStyle = {
+        gridColumn: '1 / span 2',
+        gridRow: '1 / span 5',
+        width: '100vw',
+        height: '100vh',
+        overflow: 'hidden',
+        zIndex: 10000,
+      }
+    }
+  }
+
   // the second condition here prevents 
   if (yearData && initialTranslateCalculated.current) {
     const projectedTownships = yearData.offices;
@@ -171,6 +198,7 @@ const Map = () => {
     return (
       <div
         className='vectorMap'
+        style={mapStyle}
       >
         <svg
           width={width * 2}
@@ -191,7 +219,6 @@ const Map = () => {
                 />
               ))}
             </g>
-
 
             <TileLayers
               projectedTownships={projectedTownships}
@@ -248,10 +275,10 @@ const Map = () => {
                         )}
                       </div>
                     </div>}
+                    key={`conflictOnMap-${clash.x}-${clash.y}-${clash.start_date.month}-${clash.start_date.day}`}
                   >
                     <g
                       transform={`rotate(${clash.rotation} ${clash.x}, ${clash.y})`}
-                      key={`conflictOnMap-${clash.x}-${clash.y}-${clash.start_date.month}-${clash.start_date.day}`}
                     >
                       <line
                         x1={clash.x - xRadius}
@@ -275,7 +302,32 @@ const Map = () => {
               })}
             </g>
           </g>
+
+          <circle
+            cx={width - 100}
+            cy={40}
+            r={10}
+            fill='pink'
+            onClick={() => {
+              if (mapSize === 'default') {
+                setMapSize('fullscreen');
+              }
+            }}
+          />
+        
         </svg>
+
+        {(stateTerr) && (
+
+          <Link
+            to={(office && !['IL', 'IN', 'OH', 'MS'].includes(stateTerr)) ? makeParams(params, [{ type: 'clear_office' }]) : makeParams(params, [{ type: 'clear_state' }])}
+            className='zoom_out'
+          >
+              {`zoom out to ${(office && !['IL', 'IN', 'OH', 'MS'].includes(stateTerr)) 
+                ? `${us.lookup(stateTerr).ap_abbr}${(!us.lookup(stateTerr).statehood_year || us.lookup(stateTerr).statehood_year > parseInt(year)) ? ' Terr.' : ''}` 
+                : 'US'}`}
+          </Link>
+        )}
       </div>
     );
   }

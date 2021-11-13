@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import * as d3 from 'd3';
 import { DimensionsContext } from '../DimensionsContext';
 import { Dimensions, RouterParams, TimelinePlaceDataWithStats } from '../index.d';
-import { YTick as YTickI, GraphedDataForYear, GraphedDataForYearWithDimensions, BarSet as BarSetI } from './Barchart.d';
-import { makeParams, getYTicks, barHeightFunction, yOffsetFromBottom } from '../utilities';
+import { GraphedDataForYear, BarSet as BarSetI } from './Barchart.d';
+import { getYTicks, barHeightFunction, yOffsetFromBottom } from '../utilities';
 import YTick from './YTick';
 import BarSet from './BarSet';
 import './ChartButton.css';
@@ -58,6 +58,7 @@ const BarChart = ({ chartData, stacked, selectedView, label }: {chartData: Timel
   const barSets: BarSetI[] = graphedData.map(d => ({
     year: d.year,
     x: x(d.year) - yearWidth / 2,
+    label: `${Math.round(d.federal_lands + d.indian_lands).toLocaleString()} ${(selectedView === 'number') ? 'claims' : 'acres'}`,
     bars: [
       {
         width: barWidth,
@@ -148,7 +149,7 @@ const BarChart = ({ chartData, stacked, selectedView, label }: {chartData: Timel
           ))}
         </g>
 
-        {/* data for selected year */}
+        {/* data for selected year
         <text
           x={yAxisWidth + Math.min(Math.max(x(parseInt(year)), 35), chartBodyWidth - 50)}
           y={paddingTop + yOffsetFromBottom([barHeight(selectedYearData.federal_lands), barHeight(selectedYearData.indian_lands)]) - 7}
@@ -160,7 +161,7 @@ const BarChart = ({ chartData, stacked, selectedView, label }: {chartData: Timel
           }}
         >
           {barLabel}
-        </text>
+        </text>  */}
       </svg>
     </React.Fragment>
   );

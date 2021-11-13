@@ -3,6 +3,7 @@ import * as d3 from 'd3';
 import { useParams } from "react-router-dom";
 import District from './District';
 import State from './State';
+import Reservations from './Reservations';
 import FullStateDistrict from './FullStateDistrict';
 import { makeParams, colorGradient, useClaimsAndPatentsTypes } from '../utilities';
 import { RouterParams, ProjectedState } from '..';
@@ -40,7 +41,7 @@ const Polygons = (props: Props) => {
 
   // get the full states that need to be displayed
   const stateGLOs = projectedTownships
-    .filter(d => ['IL', 'IN', 'OH', 'MS'].includes(d.state))
+    .filter(d => ['IL', 'IN', 'OH', 'MS', 'FL'].includes(d.state))
     .map(d => d.state);
 
   return (
@@ -71,7 +72,8 @@ const Polygons = (props: Props) => {
 
       {stateGLOs.map(state => (
         <FullStateDistrict
-          abbr={state as 'IL' | 'IN' | 'OH' | 'MS'}
+          abbr={state as 'IL' | 'IN' | 'OH' | 'MS' | 'FL'}
+          projectedTownship={projectedTownships.find(d => d.state === state)}
           scale={props.scale}
           key={`fullstate${state}`}
         />
@@ -89,7 +91,8 @@ const Polygons = (props: Props) => {
           state.stats = projectedTownships
             .filter(d => d.state === state.abbr)
             .reduce((acc, curr) => ({ 
-              area: acc.area + curr.area, 
+              // OK is an exception where the districts don't cover the entire state/territory--far from it
+              area: (curr.state === 'OK') ? 44735360 : acc.area + curr.area, 
               acres_visualized: acc.acres_visualized + acresTypes.reduce((acc, type) => acc + curr[type], 0)
             }), {
               area: 0,
@@ -114,6 +117,8 @@ const Polygons = (props: Props) => {
           );
         })
       }
+
+      <Reservations />
     </g>
   );
 }

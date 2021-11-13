@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Land Acquisition and Dispossession</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&amp;family=Roboto+Condensed:wght@300;400&amp;family=Titillium+Web:ital,wght@1,200&amp;display=swap" rel="stylesheet" />
+
+    <style type="text/css">
+         :root {
+            --inset-bg-color: #181612;
+            /* #01131D; */
+            --main-bg-color: #201d18;
+            /* #15262F; */
+            --inset-header-bg-color: #28251e;
+            --light-color: #f4dfb8;
+            --highlight-color: #575653;
+        }
+        
+        body {
+            margin: 0;
+            background-color: var(--light-color);
+            font-family: "Playfair Display", sans-serif;
+        }
+        
+        header {
+            height: 50vh;
+            background-color: var(--main-bg-color);
+            color: var(--light-color);
+            text-align: center;
+        }
+        
+        a.button {
+            display: inline-block;
+            padding: 0.3em 1.2em;
+            margin: 0 0.1em 0.1em 0;
+            border: 0.16em solid rgba(255, 255, 255, 0);
+            border-radius: 2em;
+            box-sizing: border-box;
+            text-decoration: none;
+            font-family: "Roboto", sans-serif;
+            font-weight: 300;
+            color: #ffffff;
+            text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
+            text-align: center;
+            transition: all 0.2s;
+            background-color: orange;
+        }
+        
+        a.button:hover {
+            border-color: rgba(255, 255, 255, 1);
+        }
+        
+        @media all and (max-width: 30em) {
+            a.button {
+                display: block;
+                margin: 0.2em auto;
+            }
+        }
+        
+        header h1 {
+            margin-top: 0;
+        }
+        
+        #explanation p {
+            max-width: 800px;
+            margin: 20px auto;
+            font-size: 1.7em;
+            line-height: 1.5;
+        }
+        
+        .tutorial {
+            background-color: var(--highlight-color);
+            color: #eee;
+            text-align: center;
+            padding: 40px;
+        }
+        
+        .tutorial .explanation {
+            max-width: 400px;
+            display: inline-block;
+            text-align: left;
+            margin-right: 20px;
+            vertical-align: top;
+            padding-top: 20px;
+            font-size: 1.1em;
+            line-height: 1.4;
+        }
+        
+        .tutorial video {
+            margin: 20px;
+            width: 900px;
+            max-width: 95vw;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Land Acquisition and Disposession</h1>
+        <h2>Mapping the Homestead Act, 1863-1912</h2>
+
+        <a href='map/' class='button'>Explore the Map</a>
+    </header>
+    <div id="explanation">
+        <p>
+            The Homestead Act of 1862 offered Americans the opportunity to claim parcels of "public land," occupy and improve it for five years, and then receive title to it. This map visualizes over time and space the more than 2.3 million claims and 900,000 "patents"
+            granting ownership made and issued in the half century after passage of the act. By 1912, homesteaders had transformed more than 125 million acres—more than 5% of the total acre of the entire United States—from public lands to private property.
+        </p>
+        <p>
+            During the same period, Native Americans were dispossessed of large portions of the American West. While not doing it full justice, this map pays particular attention to the dispossession of the lands of Native Americans through violence and claims on
+            Indian reservations that the federal government defined as "surplus."
+        </p>
+    </div>
+
+    <div class="tutorial">
+        <div class="explanation">
+            <h4>Homesteading Activity</h4>
+            <p>
+                The map proper shows the boundaries of active land office districts for a selected year. The brightness of the office reflects the relative amount of land that was either claimed or patented there. For example, the map of claims in 1881 shows that there
+                was a lot more land claimed in the Dakota Territory adn in Arkansas than in the Wyoming or Montana Territories
+            </p>
+            <p>
+                Buttons to select claims and patents or some subset of either appear above the map.
+            </p>
+        </div>
+        <video controls>
+        <source src="../build/landing/change cat.mp4" type="video/mp4" />
+
+        Sorry, your browser doesn't support embedded videos.
+      </video>
+    </div>
+
+    <div class="tutorial">
+        <div class="explanation">
+            <h4>Zooming In</h4>
+            <p>
+                You can see homesteading at three scales—the US, a state or territory, and a specific district—by clicking on the map. The timeline and/or bar graph will change to show just the data about that selected area.
+            </p>
+        </div>
+        <video controls>
+        <source src="../build/landing/three levels 2.mp4" type="video/mp4" />
+
+        Sorry, your browser doesn't support embedded videos.
+      </video>
+    </div>
+
+    <div class="tutorial">
+        <div class="explanation">
+            <h4>Change Over Time</h4>
+            <p>
+                When the entire US or a state or territory is selected, a timeline shows changes in homesteading activity between 1863 and 1912.
+                <strong>You can jump to a year by clicking on it on the timeline.</strong
+          >
+        </p>
+      </div>
+      <video controls>
+        <source src="../build/landing/timeline.mp4" type="video/mp4" />
+
+        Sorry, your browser doesn't support embedded videos.
+      </video>
+    </div>
+
+    <div class="tutorial">
+      <div class="explanation">
+        <h4>The Nitty Gritty</h4>
+        <p>
+          When a state, territory, or district is selected, a couple of
+          bargraphs lets you see details about claims and patents over times.
+          It's clickable too to change the year that's mapped.
+        </p>
+      </div>
+      <video controls>
+        <source src="../build/landing/timeline.mp4" type="video/mp4" />
+
+        Sorry, your browser doesn't support embedded videos.
+      </video>
+    </div>
+  </body>
+</html>

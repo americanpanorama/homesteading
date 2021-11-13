@@ -1,13 +1,22 @@
 #timelineDateHeader {
-  height: 46px;
-  margin: 0;
-  font-size: 28px;
+    height: 46px;
+    margin: 0;
+    font-size: 28px;
 }
 
-#timelineDateHeader a {
-  color: lime;
+#timelineDateHeader .button circle {
+    fill: var(--highlight-color);
 }
 
-#timelineDateHeader circle {
-  fill: var(--highlight-color);
+#timelineDateHeader .button line,
+#timelineDateHeader .button path {
+    pointer-events: none;
+    stroke: var(--light-color);
+    stroke-width: 2px;
+    fill: transparent;
+}
+
+#timelineDateHeader .button:hover line,
+#timelineDateHeader .button:hover path {
+    stroke: white;
 }

@@ -37,4 +37,5 @@ export interface BarSet {
   x: number;
   year: number;
   bars: Bar[];
+  label: string;
 }

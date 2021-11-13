@@ -295,7 +295,7 @@ const TimelineHeatmap = () => {
                       x={x(y)}
                       y={0}
                       width={x(1863) - x(1862)}
-                      height={rows.length * 20 + 10}
+                      height={rows.length * rowHeight + 10}
                       fill='transparent'
                       stroke={'transparent'}
                     />

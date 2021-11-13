@@ -90,6 +90,7 @@ const BarChartPatents = ({ chartData, stacked, selectedView, label }: {chartData
   const barSets: BarSetI[] = graphedData.map(d => ({
     year: d.year,
     x: x(d.year) - yearWidth / 2,
+    label: `${Math.round(d.federal_lands + d.indian_lands + d.commutations_2301).toLocaleString()} ${(selectedView === 'number') ? 'patents' : 'acres'}`,
     bars: [
       {
         width: barWidth,
@@ -207,7 +208,7 @@ const BarChartPatents = ({ chartData, stacked, selectedView, label }: {chartData
         </g>
 
         {/* data for selected year */}
-             {/* data for selected year */}
+             {/* data for selected year 
         <text
           x={yAxisWidth + Math.min(Math.max(x(parseInt(year)), 35), chartBodyWidth - 50)}
           y={paddingTop + yOffsetFromBottom([barHeight(selectedYearData.federal_lands), barHeight(selectedYearData.indian_lands)]) - 7}
@@ -219,7 +220,7 @@ const BarChartPatents = ({ chartData, stacked, selectedView, label }: {chartData
           }}
         >
           {barLabel}
-        </text>
+        </text> */}
       </svg>
     </React.Fragment>
   );

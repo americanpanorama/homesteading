@@ -1,7 +1,7 @@
-import * as React from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom";
 import { DimensionsContext } from './DimensionsContext';
-import { Dimensions, ClaimsOrPatentsTypesSelected, PatentsAcresType } from './index.d';
+import { Dimensions, MapSize, ClaimsOrPatentsTypesSelected, PatentsAcresType } from './index.d';
 import ViewNav from './components/ViewNav';
 import Map from './components/Map';
 import MapLegend from './components/MapLegend';
@@ -17,6 +17,8 @@ const App = () => {
 
   const [dimensions, setDimensions] = useState<Dimensions>(null);
 
+  const [mapSize, setMapSize] = useState<MapSize>('default');
+
   const calculateDimensions = () => {
     const { innerWidth, innerHeight } = window;
     const { clientWidth, clientHeight } = (document.documentElement) ? document.documentElement : { clientWidth: null, clientHeight: null };
@@ -24,8 +26,10 @@ const App = () => {
     const height = clientHeight || innerHeight;
 
     const mapDimensions = {
-      width: Math.min(width * 3 / 5, width - 600),
-      height: height - 50 - 100 - 160,
+      width: (mapSize === 'default') ? Math.min(width * 3 / 5, width - 600) : width,
+      height: (mapSize === 'default') ? height - 50 - 100 - 160 : height,
+      size: mapSize,
+      setMapSize: setMapSize,
     };
     const timelineDimensions = {
       width: Math.max(width * 0.4, 600) - 20,
@@ -42,6 +46,7 @@ const App = () => {
       chartBodyWidth: 0,
       height: 0,
     };
+
     officeBarchartDimensions.chartBodyWidth = timelineDimensions.width - officeBarchartDimensions.yAxisWidth - officeBarchartDimensions.padding;
     officeBarchartDimensions.height = officeBarchartDimensions.chartBodyHeight + officeBarchartDimensions.paddingTop + officeBarchartDimensions.xAxisHeight;
 
@@ -63,6 +68,10 @@ const App = () => {
     window.addEventListener('resize', () => setDimensions(calculateDimensions()));
     setDimensions(calculateDimensions());
   }, []);
+
+  useEffect(() => {
+    setDimensions(calculateDimensions());
+  }, [mapSize]);
 
   if (!dimensions) {
     return null;
@@ -98,7 +107,8 @@ const App = () => {
     <DimensionsContext.Provider value={dimensions}>
       <div className='App'>
         <header>
-          <h1>Homesteading, 1863-1912</h1>
+          <h1>Land Acquisition and Dispossession</h1>
+          <h2>Mapping the Homestead Act, 1863-1912</h2>
         </header>
         <Router basename={process.env.PUBLIC_URL}>
           <Route path={possiblePaths}>

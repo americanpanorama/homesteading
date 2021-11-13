@@ -1,9 +1,5 @@
 import * as React from 'react';
 import * as d3 from 'd3';
-import { useParams, Link } from 'react-router-dom';
-import { DimensionsContext } from '../DimensionsContext';
-import { Dimensions, RouterParams } from '../index.d';
-import { Bar as BarI } from './Barchart.d';
 import './BarSet.css';
 
 interface Props {

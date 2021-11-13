@@ -1,32 +1,63 @@
 #mapLegend {
+    display: grid;
+    grid-column: 1 / span 1;
+    grid-row: 5 / span 1;
     margin-top: 4px;
     margin-bottom: 20px;
     height: 150px;
     text-align: left;
-    display: flex;
+    /*display: flex;*/
     justify-content: center;
     align-items: flex-end;
-    column-gap: 30px;
-}
-
-#mapLegend #areaLegend {
-    width: 378px;
+    column-gap: 2px;
 }
 
 #mapLegend #clashesLegend {
-    width: 240px;
-}
-
-#mapLegend svg {
-    padding-top: 15px;
+    grid-column: 1 / span 1;
+    grid-row: 6 / span 1;
+    width: 140px;
 }
 
 #mapLegend h3,
 #mapLegend h4 {
-    text-align: center;
-    margin: 0;
+    font-size: 11px;
 }
 
-#mapLegend svg .headerBackground {
-    fill: var(--inset-bg-color);
+@media only screen and (min-width: 768px) {
+    /* For desktop */
+    #mapLegend {
+        display: grid;
+        grid-column: 1 / span 1;
+        grid-row: 5 / span 1;
+        margin-top: 4px;
+        margin-bottom: 20px;
+        height: 150px;
+        text-align: left;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        column-gap: 30px;
+    }
+    #mapLegend #areaLegend {
+        grid-column: 1 / span 1;
+        grid-row: 5 / span 1;
+        width: 300px;
+    }
+    #mapLegend #clashesLegend {
+        grid-column: 1 / span 1;
+        grid-row: 6 / span 1;
+        width: 240px;
+    }
+    #mapLegend svg {
+        padding-top: 15px;
+    }
+    #mapLegend h3,
+    #mapLegend h4 {
+        font-size: 18px;
+        text-align: center;
+        margin: 0;
+    }
+    #mapLegend svg .headerBackground {
+        fill: var(--inset-bg-color);
+    }
 }

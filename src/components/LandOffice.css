@@ -1,6 +1,6 @@
 #officeData {
-  background-color: var(--inset-bg-color);
-  padding: 20px;
+    background-color: var(--inset-bg-color);
+    padding: 20px;
 }
 
 #officeData::-webkit-scrollbar {
@@ -8,8 +8,8 @@
 }
 
 #officeData::-webkit-scrollbar-thumb {
-  background-color: var(--highlight-color);
-  border-radius:  4px;
+    background-color: var(--highlight-color);
+    border-radius: 4px;
 }
 
 #officeData::-webkit-scrollbar-track {
@@ -18,39 +18,39 @@
 }
 
 #officeData p {
-  text-align: left;
+    text-align: left;
 }
 
 #officeData p strong {
-  color: #eeeeee;
-  font-family: Inconsolata, monospace;
-  font-size:  1.1em;
-  font-weight: 400;
+    color: #eeeeee;
+    font-family: Inconsolata, monospace;
+    font-size: 1.1em;
+    font-weight: 400;
 }
 
 table {
-  display: none;
-  margin:  10px;
+    display: none;
+    margin: 10px;
 }
 
 table caption {
-  font-size: 1.5em;
+    font-size: 1.5em;
 }
 
 table th {
-  text-align: right;
-  padding:  3px 10px;
+    text-align: right;
+    padding: 3px 10px;
 }
 
 table th.yearHeading {
-  text-align: center;
-  border-bottom:  1px solid;
+    text-align: center;
+    border-bottom: 1px solid;
 }
 
 table td {
-  font-family: Inconsolata, monospace;
-  font-weight: 200;
-  color: #aaa;
-  text-align: right;
-  padding:  3px 10px;
+    font-family: Inconsolata, monospace;
+    font-weight: 200;
+    color: #aaa;
+    text-align: right;
+    padding: 3px 10px;
 }

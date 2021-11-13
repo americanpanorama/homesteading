@@ -10,6 +10,8 @@ export type ClaimsAndPatentsAcresType = ClaimsAcresType | PatentsResidencyAcres 
 export type ClaimsAndPatentsCounts = { [count in ClaimsAndPatentsCountType]: number; }
 export type ClaimAndPatentsAcres = { [acres in ClaimsAndPatentsAcresType]: number; }
 
+
+export type MapSize = 'default' | 'nolegend' | 'fullscreen';
 export interface Dimensions {
   width: number;
   height: number;
@@ -17,6 +19,8 @@ export interface Dimensions {
   mapDimensions: {
     width: number;
     height: number;
+    size: MapSize;
+    setMapSize: React.Dispatch<React.SetStateAction<MapSize>>;
   };
   timelineDimensions: {
     width: number;
@@ -167,7 +171,7 @@ export interface ProjectedState {
   };
 
 }
-export type TextType = 'about' | 'introduction' | 'sources';
+export type TextType = 'about' | 'dispossession' | 'introduction' | 'sources';
 
 export interface RouterParams {
   text?: TextType;

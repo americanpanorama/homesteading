@@ -26,7 +26,9 @@ const DistrictText = (props: Props) => {
     selectedYearData: syd,
   } = props;
 
-  console.log(syd.conflicts);
+  if (!syd) {
+    return null;
+  }
 
   return (
     <div>

@@ -88,3 +88,16 @@ export interface MapDate {
   startYear: number;
   endYear: number;
 }
+
+export interface ReservationSVG {
+    d: string;
+    startYear: number;
+    startMonth: number;
+    startDay: number;
+    endYear: number;
+    endMonth: number;
+    endDay: number;
+    type: 'reservation' | 'unceded land';
+    opened: boolean;
+    id: number;
+}

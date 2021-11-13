@@ -1,5 +1,6 @@
 .vectorMap {
     background-color: #0B0A08;
+    position: relative;
 }
 
 .vectorMap .continent {
@@ -24,4 +25,54 @@
 .clashPopup .data label {
     text-align: right;
     color: #888;
+}
+
+a.zoom_out {
+    position: absolute;
+    top: 20px;
+    right: 70px;
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    text-decoration: none;
+    background-color: var(--highlight-color);
+    color: var(--light-color);
+    padding: 5px 10px;
+    border-radius: 8px;
+    border: 1px solid var(--main-bg-color);
+}
+
+@keyframes hideshow {
+    0% {
+        stroke-width: 2px;
+        stroke-opacity: 1;
+    }
+    50% {
+        stroke-width: 6px;
+        stroke-opacity: 0;
+    }
+    100% {
+        stroke-width: 2px;
+        stroke-opacity: 1;
+    }
+}
+
+.indianLand {
+    fill: purple;
+    stroke: purple;
+    stroke-width: 1px;
+    fill-opacity: 0.1;
+}
+
+.indianLand.opened {
+    animation: hideshow 2s ease infinite;
+    stroke: #BF40BF;
+}
+
+.indianLand.unceded {
+    stroke-dasharray: 2 4;
+    stroke: green;
+    fill: green;
+    stroke-width: 0.5px;
+    fill-opacity: 0.05;
 }

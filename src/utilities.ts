@@ -205,3 +205,5 @@ export const useClaimsAndPatentsTypes = () => {
 }
 
 export const acresValue = (data: TimelineYearPlaceData, types: ClaimsAndPatentsAcresType[]): number => types.reduce((acc, type) => data[type] + acc, 0);
+
+export const getDateValue = (year: number, month: number, day: number) => year * 10000 + month * 100 + day;

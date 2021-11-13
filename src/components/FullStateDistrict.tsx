@@ -1,10 +1,12 @@
 import * as React from 'react';
 import { useParams } from "react-router-dom";
-import { RouterParams } from '../index.d';
+import { RouterParams, ClaimsAndPatentsAcresType } from '../index.d';
+import { ProjectedTownship } from './Map.d';
 import IL from '../../data/GLOs/IL.json';
 import IN from '../../data/GLOs/IN.json';
 import OH from '../../data/GLOs/OH.json';
 import MS from '../../data/GLOs/MS.json';
+import FL from '../../data/GLOs/FL.json';
 
 interface YearData {
   year: number;
@@ -19,18 +21,22 @@ interface State {
   labelRotation: number;
 }
 
-const FullStateDistrict = ({abbr, scale}: {abbr: 'IL' | 'IN' | 'OH' | 'MS', scale: number}) => {
+const FullStateDistrict = ({abbr, projectedTownship, scale}: {abbr: 'IL' | 'IN' | 'OH' | 'MS' | 'FL', projectedTownship: ProjectedTownship, scale: number}) => {
   const params = useParams<RouterParams>();
   const year = params.year || '1863';
+  const { fullOpacity, view } = params;
   const GLOs = {
     IL: (IL as State),
     IN: (IN as State),
     OH: (OH as State),
     MS: (MS as State),
+    FL: (FL as State),
   };
 
+  const types: ClaimsAndPatentsAcresType[] = (view) ? view.split('-') as ClaimsAndPatentsAcresType[] : ["acres_claimed", "acres_claimed_indian_lands"];
+  const acres = types.reduce((acc, curr) => projectedTownship[curr] + acc, 0);
   const features = GLOs[abbr].features;
-  const opacity = (GLOs[abbr].yearData.find(yd => yd.year === parseInt(year))) ? GLOs[abbr].yearData.find(yd => yd.year === parseInt(year)).opacity : 0;
+  const opacity = (fullOpacity) ? 1 : (acres === 0) ? 0.03 : 0.15 + 0.85 * acres * 100 / projectedTownship.area;
 
   if (opacity) {
     return (
@@ -40,9 +46,9 @@ const FullStateDistrict = ({abbr, scale}: {abbr: 'IL' | 'IN' | 'OH' | 'MS', scal
             d={d}
             stroke='#7e7578'
             strokeWidth={0.2 / scale}
-            strokeOpacity={IL.yearData.find(yd => yd.year === parseInt(year)).opacity}
+            strokeOpacity={opacity}
             fill='#8c8686'
-            fillOpacity={IL.yearData.find(yd => yd.year === parseInt(year)).opacity}
+            fillOpacity={opacity}
             key={d.substring(0, 50)}
           />
         ))}
@@ -61,7 +67,7 @@ const FullStateDistrict = ({abbr, scale}: {abbr: 'IL' | 'IN' | 'OH' | 'MS', scal
             letterSpacing: 1.6
           }}
         >
-          {GLOs[abbr].office}
+          {projectedTownship.office}
         </text>
       </g>
     );

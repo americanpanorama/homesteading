@@ -96,10 +96,11 @@ const Office = () => {
     };
 
     const syd: TimelineYearPlaceDataWithStats = landOfficeData.yearData.find(yd => yd.year === parseInt(year));
+    console.log(syd);
     const earliestYear: number = Math.min(...landOfficeData.yearData.map(d => d.year));
     const latestYear: number = Math.max(...landOfficeData.yearData.map(d => d.year));
-    const earliestYearSYBoundaries = Math.min(...landOfficeData.yearData.filter(d => d.area === syd.area).map(d => d.year));
-    const latestYearSYBoundaries = Math.max(...landOfficeData.yearData.filter(d => d.area === syd.area).map(d => d.year));
+    const earliestYearSYBoundaries = Math.min(...landOfficeData.yearData.filter(d => d && syd && d.area === syd.area).map(d => d.year));
+    const latestYearSYBoundaries = Math.max(...landOfficeData.yearData.filter(d => d && syd && d.area === syd.area).map(d => d.year));
     // are there both federal and indian lands or only one or the other?
     const hasMultipleClaimTypes: boolean = landOfficeData.total_claims_federal_lands > 0 && landOfficeData.total_claims_indian_lands > 0;
     // are there both federal and indian lands or only one or the other?
