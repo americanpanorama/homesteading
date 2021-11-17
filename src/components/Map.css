@@ -27,10 +27,24 @@
     color: #888;
 }
 
-a.zoom_out {
+.mapSizeButton rect {
+    fill: var(--highlight-color);
+}
+
+.mapSizeButton path {
+    fill: none;
+    stroke: var(--light-color);
+    stroke-width: 2px;
+}
+
+#mapControls {
     position: absolute;
     top: 20px;
-    right: 70px;
+    right: 20px;
+}
+
+#mapControls a.zoom_out,
+#showLegend {
     -webkit-appearance: button;
     -moz-appearance: button;
     appearance: button;
@@ -40,6 +54,15 @@ a.zoom_out {
     padding: 5px 10px;
     border-radius: 8px;
     border: 1px solid var(--main-bg-color);
+    margin: 0 20px 0 0;
+    vertical-align: top;
+}
+
+#showLegend {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    margin: 0;
 }
 
 @keyframes hideshow {

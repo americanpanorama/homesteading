@@ -1,11 +1,6 @@
 #longform {
-    position: fixed;
-    top: 45px;
-    bottom: 0px;
-    left: 50vw;
-    margin-left: max(-450px, -45vw);
-    max-width: 900px;
-    padding: 10px 40px;
+    padding: 10px calc(50vw - 500px);
+    max-width: 1000px;
     overflow-y: scroll;
     text-align: left;
     font-size: 1.2em;
@@ -37,10 +32,12 @@
 
 #longform nav {
     text-align: right;
+    position: sticky;
+    top: 20px;
 }
 
 #longform button {
-    background-color: transparent;
+    background-color: var(--main-bg-color);
     color: var(--light-color);
     font-size: 18px;
     font-family: 'Roboto Condensed', sans-serif;

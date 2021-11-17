@@ -64,7 +64,7 @@ const TimelineDateHeader = () => {
       )}
       <Tooltip
         placement="bottom"
-        overlay={<div>To select a different year, click the buttons to advance up or back a year, or use the timeline or chart below to jump to any year.</div>}
+        overlay={<div>To select a different year, click the buttons to the right or left to advance forward or back a year, or use the timeline or chart below to jump to any year.</div>}
         overlayStyle={OverlayStyle}
       >
         <span>{` ${year} `}</span>

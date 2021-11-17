@@ -7,6 +7,7 @@ import Map from './components/Map';
 import MapLegend from './components/MapLegend';
 import TimelineDateHeader from './components/TimelineDateHeader';
 import Timeline from './components/Timeline';
+import TimelineSimple from './components/TimelineSimple';
 import LandOffice from './components/LandOffice';
 import AppNav from './components/AppNav';
 import Text from './components/Text';
@@ -25,14 +26,20 @@ const App = () => {
     const width = clientWidth || innerWidth;
     const height = clientHeight || innerHeight;
 
+    const mapHeights = {
+      default: height - 50 - 100 - 160,
+      nolegend: height - 50 - 100,
+      fullscreen: height,
+    }
+    const isMobile = width <= 1280;
     const mapDimensions = {
-      width: (mapSize === 'default') ? Math.min(width * 3 / 5, width - 600) : width,
-      height: (mapSize === 'default') ? height - 50 - 100 - 160 : height,
+      width: (!isMobile && (mapSize === 'default' || mapSize === 'nolegend')) ? Math.min(width * 3 / 5, width - 600) : width,
+      height: (!isMobile) ?  mapHeights[mapSize]: width * 0.6,
       size: mapSize,
       setMapSize: setMapSize,
     };
     const timelineDimensions = {
-      width: Math.max(width * 0.4, 600) - 20,
+      width: (isMobile) ? width * 0.95 : Math.max(width * 0.4, 600) - 20,
       height: height - 46 - 46,
       leftAxisWidth: 100,
       labelsWidth: 100,
@@ -50,7 +57,7 @@ const App = () => {
     officeBarchartDimensions.chartBodyWidth = timelineDimensions.width - officeBarchartDimensions.yAxisWidth - officeBarchartDimensions.padding;
     officeBarchartDimensions.height = officeBarchartDimensions.chartBodyHeight + officeBarchartDimensions.paddingTop + officeBarchartDimensions.xAxisHeight;
 
-    const isMobile = width <= 768;
+
 
     const dimensions: Dimensions = {
       width,
@@ -121,42 +128,47 @@ const App = () => {
             <Route path={possibleMapPaths}>
               <Map />
               <ViewNav />
-              <MapLegend />
-            {/* For general land offices where there was only one office for the state/territory for the duration of the period, redirect to that office when the state/territory is selected */}
-            <div id='sidebar'>
-              <Route path={possibleMapPaths}>
-                <TimelineDateHeader />
-              </Route>
-              <Switch>
-                <Redirect
-                  from='/stateTerr/IL'
-                  to='/year/1863/stateTerr/IL/office/Springfield'
-                  exact
-                />
-                <Redirect
-                  from='/year/:year/stateTerr/IL'
-                  to='/year/:year/stateTerr/IL/office/Springfield'
-                  exact
-                />
-                <Redirect
-                  from='/stateTerr/IN'
-                  to='/year/1863/stateTerr/IN/office/Indianapolis'
-                  exact
-                />
-                <Redirect
-                  from='/year/:year/stateTerr/IN'
-                  to='/year/:year/stateTerr/IN/office/Indianapolis'
-                  exact
-                />
-              </Switch>
-              <Route path={possibleBarGraphPaths}>
-                <LandOffice />
-              </Route>
-              <Route path={possibleTimelinePaths} exact>
-                <Timeline />
-              </Route>
+              {(mapSize === 'default') && (
+                <MapLegend />
+              )}
+              {(mapSize === 'fullscreen') && (
+                <TimelineSimple />
+              )}
+              {/* For general land offices where there was only one office for the state/territory for the duration of the period, redirect to that office when the state/territory is selected */}
+              <div id='sidebar'>
+                <Route path={possibleMapPaths}>
+                  <TimelineDateHeader />
+                </Route>
+                <Switch>
+                  <Redirect
+                    from='/stateTerr/IL'
+                    to='/year/1863/stateTerr/IL/office/Springfield'
+                    exact
+                  />
+                  <Redirect
+                    from='/year/:year/stateTerr/IL'
+                    to='/year/:year/stateTerr/IL/office/Springfield'
+                    exact
+                  />
+                  <Redirect
+                    from='/stateTerr/IN'
+                    to='/year/1863/stateTerr/IN/office/Indianapolis'
+                    exact
+                  />
+                  <Redirect
+                    from='/year/:year/stateTerr/IN'
+                    to='/year/:year/stateTerr/IN/office/Indianapolis'
+                    exact
+                  />
+                </Switch>
+                <Route path={possibleBarGraphPaths}>
+                  <LandOffice />
+                </Route>
+                <Route path={possibleTimelinePaths} exact>
+                  <Timeline />
+                </Route>
 
-            </div>
+              </div>
             </Route>
           </Switch>
         </Router>

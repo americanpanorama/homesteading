@@ -79,12 +79,17 @@ ul#appNav {
     grid-column: 1 / span 1;
     grid-row: 4 / span 1;
     width: calc(100% - 54px);
-    height: calc(85vh - 50px - 60px - 33px - 50px - 160px);
+    height: calc(60vw);
     overflow: hidden;
     border: 1px solid var(--highlight-color);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     margin: 0 25px 25px 25px;
+}
+
+#hideLegend,
+.mapSizeButton {
+    display: none;
 }
 
 
@@ -111,17 +116,48 @@ ul#appNav {
     }
     #appNav {
         grid-column: 2 / span 1;
-        grid-row: 1 / span 2;
+        grid-row: 1 / span 1;
     }
     ul#appNav {
-        display: inline-block;
         font-size: 18px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        padding: 0;
+        margin: 18px 18px 0 0;
+        overflow-x: visible;
     }
     .vectorMap {
+        grid-column: 1 / span 1;
+        grid-row: 4 / span 1;
+        width: calc(100% - 54px);
+        height: calc(100vh - 50px - 60px - 33px - 50px - 160px);
+        overflow: hidden;
         border: 2px solid var(--highlight-color);
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
         margin: 0 25px 25px 25px;
+    }
+    .vectorMap.nolegend {
+        grid-row: 4 / span 2;
+        height: calc(100vh - 50px - 60px - 50px);
+    }
+    .vectorMap.fullscreen {
+        grid-column: 1 / span 2;
+        grid-row: 1 / span 5;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        z-index: 10000;
+        border: none;
+        margin: 0;
+    }
+    #timelineSimple {
+        position: fixed;
+        bottom: 30px;
+        right: 50%;
+        left: 50%;
+        z-index: 10001;
     }
     #sidebar {
         grid-column: 2 / span 1;
@@ -137,6 +173,13 @@ ul#appNav {
         grid-column: 1 / span 1;
         grid-row: 3 / span 1;
     }
+    #longform {
+        grid-column: 1 / span 2;
+        grid-row: 3 / span 3;
+        height: calc(100vh - 50px - 60px);
+        overflow-y: scroll;
+        justify-self: center;
+    }
     header h1 {
         font-weight: 400;
         font-size: 30px;
@@ -148,6 +191,10 @@ ul#appNav {
         margin-top: 5px;
         font-size: 22px;
         font-family: 'Roboto Condensed', sans-serif;
+    }
+    #hideLegend,
+    .mapSizeButton {
+        display: inline-block;
     }
     /* End desktop */
 }

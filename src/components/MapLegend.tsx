@@ -15,9 +15,7 @@ const OverlayStyle = {
 const MapLegend = () => {
   const year = useParams<RouterParams>().year || 1863;
 
-  const {
-    width,
-  } = (React.useContext(DimensionsContext) as Dimensions).timelineDimensions;
+  const { setMapSize } = (React.useContext(DimensionsContext) as Dimensions).mapDimensions;
 
   const { acresLabel } = useClaimsAndPatentsTypes();
 
@@ -35,7 +33,6 @@ const MapLegend = () => {
   const boxInterior = boxWidth - strokeWidth;
   return (
     <div id='mapLegend'>
-     
       <div id='indianLands'>
         <h3>Indian Lands</h3>
         <svg
@@ -223,7 +220,12 @@ const MapLegend = () => {
             )
           })}
         </svg>
-
+      </div>
+      <div
+        id='hideLegend'
+        onClick={() => setMapSize('nolegend')}
+      >
+        hide the legend
       </div>
     </div>
   );

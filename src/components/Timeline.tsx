@@ -68,7 +68,8 @@ const TimelineHeatmap = () => {
       })
       .map((d, i) => {
         const dataForSelectedYear = d.yearData.find(yd => yd.year === parseInt(year));
-        const active = !!dataForSelectedYear;
+        const acres = (dataForSelectedYear) ? types.reduce((acc, curr) => dataForSelectedYear[curr] + acc, 0) : null;
+        const active = !!dataForSelectedYear && !!acres;
         let fill = (active) ? 'gold' : 'silver';
 
         const styledRow: TimelineRowStyled = {
@@ -84,7 +85,7 @@ const TimelineHeatmap = () => {
               fillOpacity: 1, // (yd.area !== 0 && yd.acres_claimed > 0) ? 0.5 + 0.5 * yd.acres_claimed * 25 / yd.area : 0,
             }
           }),
-          acres: (dataForSelectedYear) ? types.reduce((acc, curr) => dataForSelectedYear[curr] + acc, 0) : null,
+          acres: acres,
           number: (dataForSelectedYear) ? countTypes.reduce((acc, curr) => dataForSelectedYear[curr] + acc, 0) : null,
           conflicts: [],
           active,
@@ -244,6 +245,22 @@ const TimelineHeatmap = () => {
                 {year}
               </text>
             ))}
+
+            {[...Array(50).keys()].map(d => d + 1863).map(y => (
+              <Link
+                to={makeParams(params, [{ type: 'set_year', payload: y }])}
+                key={`linkFor${y}`}
+              >
+                <rect
+                  x={x(y)}
+                  y={0}
+                  width={x(1863) - x(1862)}
+                  height={40}
+                  fill='transparent'
+                  stroke={'transparent'}
+                />
+              </Link>
+            ))}
           </g>
         </svg>
 
@@ -293,9 +310,9 @@ const TimelineHeatmap = () => {
                   >
                     <rect
                       x={x(y)}
-                      y={0}
+                      y={-50}
                       width={x(1863) - x(1862)}
-                      height={rows.length * rowHeight + 10}
+                      height={rows.length * rowHeight + 60}
                       fill='transparent'
                       stroke={'transparent'}
                     />

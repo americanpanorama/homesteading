@@ -23,9 +23,6 @@ export default function Reservations() {
             );
         });
 
-
-
-    console.log(reservations);
     return (
         <g>
             {reservations.map(reservation => (

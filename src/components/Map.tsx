@@ -169,36 +169,13 @@ const Map = () => {
     rotation = (States as ProjectedState[]).find(d => d.abbr === stateTerr).rotation;
   }
 
-  let mapStyle = {};
-  if (!isMobile) {
-    if (mapSize === 'default') {
-      mapStyle = {
-        gridColumn: '1 / span 1',
-        gridRow: '4 / span 1',
-        width: 'calc(100% - 54px)',
-        height: 'calc(100vh - 50px - 60px - 33px - 50px - 160px)',
-        overflow: 'hidden',
-      }
-    } else if (mapSize === 'fullscreen') {
-      mapStyle = {
-        gridColumn: '1 / span 2',
-        gridRow: '1 / span 5',
-        width: '100vw',
-        height: '100vh',
-        overflow: 'hidden',
-        zIndex: 10000,
-      }
-    }
-  }
-
   // the second condition here prevents 
   if (yearData && initialTranslateCalculated.current) {
     const projectedTownships = yearData.offices;
     const clashes = yearData.conflicts;
     return (
       <div
-        className='vectorMap'
-        style={mapStyle}
+        className={`vectorMap ${mapSize}`}
       >
         <svg
           width={width * 2}
@@ -303,30 +280,55 @@ const Map = () => {
             </g>
           </g>
 
-          <circle
-            cx={width - 100}
-            cy={40}
-            r={10}
-            fill='pink'
+        </svg>
+
+        <div id='mapControls'>
+          {(stateTerr) && (
+            <Link
+              to={(office && !['IL', 'IN', 'OH', 'MS'].includes(stateTerr)) ? makeParams(params, [{ type: 'clear_office' }]) : makeParams(params, [{ type: 'clear_state' }])}
+              className='zoom_out'
+            >
+              {`zoom out to ${(office && !['IL', 'IN', 'OH', 'MS'].includes(stateTerr))
+                ? `${us.lookup(stateTerr).ap_abbr}${(!us.lookup(stateTerr).statehood_year || us.lookup(stateTerr).statehood_year > parseInt(year)) ? ' Terr.' : ''}`
+                : 'US'}`}
+            </Link>
+          )}
+          
+          <svg
+            width={30}
+            height={30}
+            className='mapSizeButton'
             onClick={() => {
               if (mapSize === 'default') {
                 setMapSize('fullscreen');
+              } else if (mapSize === 'fullscreen') {
+                setMapSize('default');
               }
             }}
-          />
-        
-        </svg>
-
-        {(stateTerr) && (
-
-          <Link
-            to={(office && !['IL', 'IN', 'OH', 'MS'].includes(stateTerr)) ? makeParams(params, [{ type: 'clear_office' }]) : makeParams(params, [{ type: 'clear_state' }])}
-            className='zoom_out'
           >
-              {`zoom out to ${(office && !['IL', 'IN', 'OH', 'MS'].includes(stateTerr)) 
-                ? `${us.lookup(stateTerr).ap_abbr}${(!us.lookup(stateTerr).statehood_year || us.lookup(stateTerr).statehood_year > parseInt(year)) ? ' Terr.' : ''}` 
-                : 'US'}`}
-          </Link>
+            <rect
+              x={0}
+              y={0}
+              height={30}
+              width={30}
+              rx={8}
+            />
+
+            <path
+              d={(mapSize !== 'fullscreen')
+                ? 'M 7,12 L 7,7 L 12,7 M 18,7 L 23,7 L 23,12 M 23,18 L 23,23 L 18,23 M 12,23 L 7,23 L 7,18'
+                : 'M 7,12 L 12,12 L 12,7 M 18,7 L 18,12 L 23,12 M 23,18 L 18,18 L 18,23 M 12,23 L 12,18 L 7,18'}
+            />
+          </svg>
+        </div>
+
+        {(mapSize === 'nolegend') && (
+          <div
+            id='showLegend'
+            onClick={() => setMapSize('default')}
+          >
+            show legend
+          </div>
         )}
       </div>
     );

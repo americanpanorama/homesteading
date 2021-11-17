@@ -7,6 +7,7 @@ ul#appNav {
 
 #appNav li {
     display: inline-block;
+    white-space: nowrap;
 }
 
 #appNav li+li::before {
