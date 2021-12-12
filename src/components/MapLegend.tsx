@@ -76,7 +76,7 @@ const MapLegend = () => {
             <g transform='translate(0 40)'>
               <path
                 fill="green"
-                fillOpacity={0.02}
+                fillOpacity={0.2}
                 stroke="green"
                 strokeDasharray="10 20"
                 strokeWidth={5}

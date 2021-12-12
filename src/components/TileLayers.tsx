@@ -51,7 +51,7 @@ const TileLayers = (props: Props) => {
     const fullSizeOfZ = (z: number): number => (1 << z) * TILESIZE; // equivalent too TILESIZE * Math.pow(2, z);
     for (let z = 0; z < 18; z += 1) {
       if (fullSizeOfZ(z) >= fullSizeOfCanvas) {
-        return z;
+        return Math.min(7, z);
       }
     }
   }
@@ -107,7 +107,7 @@ const TileLayers = (props: Props) => {
               z: z,
               x: tempX,
               y: tempY,
-              opacity: (fullOpacity) ? 1 : (acres === 0) ? 0.03 : 0.15 + 0.85 * acres * 100 / projectedTownship.area,
+              opacity: (fullOpacity) ? 1 : (acres === 0) ? 0.03 : Math.min(0.15 + 0.85 * acres * 100 / projectedTownship.area, 1),
               //opacity: Math.floor((i / townships.length) / (1 / 10)) / 10 + 0.1,
             });
           }

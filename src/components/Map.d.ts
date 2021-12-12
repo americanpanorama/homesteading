@@ -10,16 +10,26 @@ interface YMD {
   day: number;
 }
 
-export type ProjectedTownship = ClaimsAndPatentsCounts & ClaimAndPatentsAcres & {
+export interface OfficeBoundary {
   d: string;
+  tile_id: string;
+  tile_ids?: string[];
+  area: number;
+  bounds: [[number, number], [number, number]];
+  rotation: number;
+}
+
+export interface ProjectedTownshipAllOffices {
   office: string;
   state: string;
-  area: number;
-  labelCoords: Point;
-  bounds: Bounds;
-  rotation: number;
-  gisJoin: string; 
-  tile_id: string;
+  data: (ClaimsAndPatentsCounts & ClaimAndPatentsAcres & { adjustedForMap: boolean; })[];
+  office_boundaries: OfficeBoundary[];
+}
+
+export type ProjectedTownship = ClaimsAndPatentsCounts & ClaimAndPatentsAcres & OfficeBoundary & {
+  office: string;
+  state: string;
+  labelCoords?: Point;
 }
 
 interface ConflictData {
@@ -36,6 +46,11 @@ interface ConflictData {
   rotation: number;
 }
 
+interface YearDataRaw {
+  offices: ProjectedTownshipAllOffices[];
+  conflicts: ConflictData[];
+}
+
 interface YearData {
   offices: ProjectedTownship[];
   conflicts: ConflictData[];
@@ -44,6 +59,16 @@ interface YearData {
 export interface AsyncParams {
   data: YearData;
   error: any;
+}
+
+export interface District {
+  office: string;
+  state: string;
+  boundaries: {
+    d: string;
+    start_date: YMD;
+    end_date: YMD;
+  }[];
 }
 
 export interface TileData {

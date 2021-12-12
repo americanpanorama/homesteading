@@ -1,6 +1,7 @@
 import * as React from 'react';
 // @ts-ignore
 import us from 'us';
+import MiniMap from './MiniMap';
 import { TimelineYearPlaceDataWithStats, PlaceType } from '../index.d';
 
 interface Props {
@@ -45,6 +46,9 @@ const DistrictText = (props: Props) => {
             </React.Fragment>
           )}
         </p>
+      )}
+      {(type === 'office') && (
+      <MiniMap />
       )}
       <p>
         In {year}, <strong>{(syd.total_claims).toLocaleString()}</strong> claims were filed for <strong>{syd.total_acres_claimed.toLocaleString()}</strong> acres, {syd.area_claimed_percent}% of the area of the {(type === 'office') ? 'land office' : (us.lookup(office).statehood_year <= parseInt(year)) ? 'state' : 'territory'}

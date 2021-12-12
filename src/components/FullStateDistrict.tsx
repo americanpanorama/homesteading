@@ -6,7 +6,6 @@ import IL from '../../data/GLOs/IL.json';
 import IN from '../../data/GLOs/IN.json';
 import OH from '../../data/GLOs/OH.json';
 import MS from '../../data/GLOs/MS.json';
-import FL from '../../data/GLOs/FL.json';
 
 interface YearData {
   year: number;
@@ -21,7 +20,7 @@ interface State {
   labelRotation: number;
 }
 
-const FullStateDistrict = ({abbr, projectedTownship, scale}: {abbr: 'IL' | 'IN' | 'OH' | 'MS' | 'FL', projectedTownship: ProjectedTownship, scale: number}) => {
+const FullStateDistrict = ({abbr, projectedTownship, scale}: {abbr: 'IL' | 'IN' | 'OH' | 'MS', projectedTownship: ProjectedTownship, scale: number}) => {
   const params = useParams<RouterParams>();
   const year = params.year || '1863';
   const { fullOpacity, view } = params;
@@ -29,8 +28,7 @@ const FullStateDistrict = ({abbr, projectedTownship, scale}: {abbr: 'IL' | 'IN' 
     IL: (IL as State),
     IN: (IN as State),
     OH: (OH as State),
-    MS: (MS as State),
-    FL: (FL as State),
+    MS: (MS as State)
   };
 
   const types: ClaimsAndPatentsAcresType[] = (view) ? view.split('-') as ClaimsAndPatentsAcresType[] : ["acres_claimed", "acres_claimed_indian_lands"];

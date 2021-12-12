@@ -41,20 +41,23 @@ const Polygons = (props: Props) => {
 
   // get the full states that need to be displayed
   const stateGLOs = projectedTownships
-    .filter(d => ['IL', 'IN', 'OH', 'MS', 'FL'].includes(d.state))
+    .filter(d => ['IL', 'IN', 'OH', 'MS'].includes(d.state))
     .map(d => d.state);
 
   return (
     <g transform={`scale(${scale})`} ref={ref}>
       {projectedTownships
         .sort((a: ProjectedTownship, b: ProjectedTownship) => {
+          if (a.state === stateTerr && b.state === stateTerr) {
+            return acresTypes.reduce((acc, type) => acc + a[type], 0) / a.area - acresTypes.reduce((acc, type) => acc + b[type], 0) / b.area;
+          }
           if (a.state === stateTerr) {
             return 1;
           }
           if (b.state === stateTerr) {
             return -1;
           }
-          return a.acres_claimed / a.area - b.acres_claimed / b.area 
+          return 0;
         })
         .map((projectedTownship: ProjectedTownship) => (
           <District
@@ -72,7 +75,7 @@ const Polygons = (props: Props) => {
 
       {stateGLOs.map(state => (
         <FullStateDistrict
-          abbr={state as 'IL' | 'IN' | 'OH' | 'MS' | 'FL'}
+          abbr={state as 'IL' | 'IN' | 'OH' | 'MS'}
           projectedTownship={projectedTownships.find(d => d.state === state)}
           scale={props.scale}
           key={`fullstate${state}`}

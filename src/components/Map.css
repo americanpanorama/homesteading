@@ -1,101 +1,101 @@
-.vectorMap {
-    background-color: #0B0A08;
-    position: relative;
-}
-
-.vectorMap .continent {
-    fill: var(--main-bg-color);
-}
-
-.clashPopup {
-    font-family: 'Roboto Condensed', sans-serif;
-}
-
-.clashPopup h4 {
-    border-bottom: 1px solid #888;
-    margin: 0;
-}
-
-.clashPopup .data {
-    display: grid;
-    grid-template-columns: 100px 100px;
-    column-gap: 5px;
-}
-
-.clashPopup .data label {
-    text-align: right;
-    color: #888;
-}
-
-.mapSizeButton rect {
-    fill: var(--highlight-color);
-}
-
-.mapSizeButton path {
-    fill: none;
-    stroke: var(--light-color);
-    stroke-width: 2px;
-}
-
-#mapControls {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-}
-
-#mapControls a.zoom_out,
-#showLegend {
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    appearance: button;
-    text-decoration: none;
-    background-color: var(--highlight-color);
-    color: var(--light-color);
-    padding: 5px 10px;
-    border-radius: 8px;
-    border: 1px solid var(--main-bg-color);
-    margin: 0 20px 0 0;
-    vertical-align: top;
-}
-
-#showLegend {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    margin: 0;
-}
-
-@keyframes hideshow {
-    0% {
+    .vectorMap {
+        background-color: #0B0A08;
+        position: relative;
+    }
+    
+    .vectorMap .continent {
+        fill: var(--main-bg-color);
+    }
+    
+    .clashPopup {
+        font-family: 'Roboto Condensed', sans-serif;
+    }
+    
+    .clashPopup h4 {
+        border-bottom: 1px solid #888;
+        margin: 0;
+    }
+    
+    .clashPopup .data {
+        display: grid;
+        grid-template-columns: 100px 100px;
+        column-gap: 5px;
+    }
+    
+    .clashPopup .data label {
+        text-align: right;
+        color: #888;
+    }
+    
+    .mapSizeButton rect {
+        fill: var(--highlight-color);
+    }
+    
+    .mapSizeButton path {
+        fill: none;
+        stroke: var(--light-color);
         stroke-width: 2px;
-        stroke-opacity: 1;
     }
-    50% {
-        stroke-width: 6px;
-        stroke-opacity: 0;
+    
+    #mapControls {
+        position: absolute;
+        top: 20px;
+        right: 20px;
     }
-    100% {
-        stroke-width: 2px;
-        stroke-opacity: 1;
+    
+    #mapControls a.zoom_out,
+    #showLegend {
+        -webkit-appearance: button;
+        -moz-appearance: button;
+        appearance: button;
+        text-decoration: none;
+        background-color: var(--highlight-color);
+        color: var(--light-color);
+        padding: 5px 10px;
+        border-radius: 8px;
+        border: 1px solid var(--main-bg-color);
+        margin: 0 20px 0 0;
+        vertical-align: top;
     }
-}
-
-.indianLand {
-    fill: purple;
-    stroke: purple;
-    stroke-width: 1px;
-    fill-opacity: 0.1;
-}
-
-.indianLand.opened {
-    animation: hideshow 2s ease infinite;
-    stroke: #BF40BF;
-}
-
-.indianLand.unceded {
-    stroke-dasharray: 2 4;
-    stroke: green;
-    fill: green;
-    stroke-width: 0.5px;
-    fill-opacity: 0.05;
-}
+    
+    #showLegend {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        margin: 0;
+    }
+    
+    @keyframes hideshow {
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    
+    .indianLand {
+        fill: purple;
+        stroke: purple;
+        stroke-width: 1px;
+        fill-opacity: 0.2;
+        pointer-events: none;
+    }
+    
+    .indianLand.opened {
+        animation: hideshow 2s ease infinite;
+        stroke: #BF40BF;
+        fill-opacity: 1;
+        stroke-dasharray: 1 10;
+    }
+    
+    .indianLand.unceded {
+        stroke-dasharray: 2 4;
+        stroke: green;
+        fill: green;
+        stroke-width: 0.5px;
+        fill-opacity: 0.2;
+    }

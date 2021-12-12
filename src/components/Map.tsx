@@ -5,7 +5,7 @@ import Tooltip from 'rc-tooltip';
 import { useParams, Link } from "react-router-dom";
 import { DimensionsContext } from '../DimensionsContext';
 import { Dimensions, ProjectedState, RouterParams } from '..';
-import { CalculateTransform, CalculateCenterAndDXDY, TransformData, CalculateZ, Bounds, Point, YearData, ProjectedTownship } from './Map.d';
+import { CalculateTransform, CalculateCenterAndDXDY, TransformData, CalculateZ, Bounds, Point, YearData, YearDataRaw, ProjectedTownship } from './Map.d';
 import us from '../us';
 import States from '../../data/states.json';
 import NorthAmerica from '../../data/northAmerica.json';
@@ -120,7 +120,42 @@ const Map = () => {
   useEffect(() => {
     axios(`${process.env.PUBLIC_URL}/data/yearData/${year}.json`)
       .then(response => {
-        setYearData(response.data as YearData);
+        const yearDataRaw = response.data as YearDataRaw;
+        const offices: ProjectedTownship[] = yearDataRaw.offices
+          // filter only for those that exist at the end of the fiscal year--it if was discontinued or moved, we don't show it
+          .filter(d => d.office_boundaries.some(ob => ob.tile_id && ob.tile_id.slice(-8) >= `${year}0630`))
+          .map(d => {
+            // get the office_boundary for the end of the fiscal year
+            const office_boundary = d.office_boundaries.find(ob => ob.tile_id && ob.tile_id.slice(-8) >= `${year}0630`);
+            const data = d.data.find(d => d.adjustedForMap) || d.data.find(d => !d.adjustedForMap);
+            return {
+              d: office_boundary.d,
+              office: d.office,
+              state: d.state,
+              area: office_boundary.area,
+              bounds: office_boundary.bounds,
+              rotation: office_boundary.rotation,
+              tile_id: office_boundary.tile_id,
+              claims: data.claims,
+              acres_claimed: data.acres_claimed,
+              claims_indian_lands: data.claims_indian_lands,
+              acres_claimed_indian_lands: data.acres_claimed_indian_lands,
+              patents: data.patents,
+              acres_patented: data.acres_patented,
+              patents_indian_lands: data.patents_indian_lands,
+              acres_patented_indian_lands: data.acres_patented_indian_lands,
+              commutations_2301: data.commutations_2301,
+              acres_commuted_2301: data.acres_commuted_2301,
+              commutations_18800615: data.commutations_18800615,
+              acres_commuted_18800615: data.acres_commuted_18800615,
+              commutations_indian_lands: data.commutations_indian_lands,
+              acres_commuted_indian_lands: data.acres_commuted_indian_lands,
+            }
+          });
+        setYearData({
+          offices,
+          conflicts: yearDataRaw.conflicts,
+        });
       });
   }, [year]);
 

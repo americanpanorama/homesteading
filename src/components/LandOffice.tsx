@@ -32,6 +32,7 @@ const Office = () => {
   }, [stateTerr]);
 
   if (timelinePlaceData && timelinePlaceData.length > 0) {
+    console.log(timelinePlaceData);
     const dataWithoutStats: TimelinePlaceData = (office)
       ? timelinePlaceData.find(pt => pt.stateOrTerritory === stateTerr && pt.name.replace(/[^a-zA-Z]/g, '') === office)
       : (() => {
@@ -83,6 +84,7 @@ const Office = () => {
           yearData,
         };
       })();
+    console.log(dataWithoutStats);
     const landOfficeData: TimelinePlaceDataWithStats = {
       ...dataWithoutStats,
       total_claims_federal_lands: dataWithoutStats.yearData.reduce((acc, curr) => curr.claims + acc, 0),
@@ -96,7 +98,6 @@ const Office = () => {
     };
 
     const syd: TimelineYearPlaceDataWithStats = landOfficeData.yearData.find(yd => yd.year === parseInt(year));
-    console.log(syd);
     const earliestYear: number = Math.min(...landOfficeData.yearData.map(d => d.year));
     const latestYear: number = Math.max(...landOfficeData.yearData.map(d => d.year));
     const earliestYearSYBoundaries = Math.min(...landOfficeData.yearData.filter(d => d && syd && d.area === syd.area).map(d => d.year));
