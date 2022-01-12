@@ -2,6 +2,9 @@
     height: 46px;
     margin: 0;
     font-size: 28px;
+    font-weight: 300;
+    display: flex;
+    justify-content: center;
 }
 
 #timelineDateHeader .button circle {
@@ -19,4 +22,18 @@
 #timelineDateHeader .button:hover line,
 #timelineDateHeader .button:hover path {
     stroke: white;
+}
+
+#timelineDateHeader .label {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+#timelineDateHeader .label * {
+    margin: 0px;
+}
+
+#timelineDateHeader .label .subtext {
+    font-size: 0.6em;
+    vertical-align: text-top;
 }

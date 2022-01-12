@@ -10,6 +10,7 @@ const TileLayer = ({tiles, scale }: {tiles: TileData[], scale: number}) => {
       {tiles.map((d: TileData) => (
         <Tile
           {...d}
+          opacity={1}
           key={`${d.tile_id}/${d.z}/${d.x}/${d.y}`}
         />
       ))}

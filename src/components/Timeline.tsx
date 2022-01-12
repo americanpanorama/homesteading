@@ -22,7 +22,8 @@ const TimelineHeatmap = () => {
   const params = useParams<RouterParams>();
   const { stateTerr, view } = params;
   const year = params.year || '1863';
-  const { width, height } = (useContext(DimensionsContext) as Dimensions).timelineDimensions;
+  const { timelineDimensions, isPhoneSize } = useContext(DimensionsContext) as Dimensions;
+  const { width, height } = timelineDimensions;
   const [data, setData] = useState<any>();
 
   const { acresTypes: types, countTypes, numberLabel, acresLabel } = useClaimsAndPatentsTypes();
@@ -38,7 +39,7 @@ const TimelineHeatmap = () => {
 
   const x = d3.scaleLinear()
     .domain([1862, 1912])
-    .range([260, width - 25]);
+    .range([(!isPhoneSize) ? 260 : 70, width - 25]);
 
   const cellWidth: number = x(1870) - x(1869);
 
@@ -71,15 +72,19 @@ const TimelineHeatmap = () => {
         const acres = (dataForSelectedYear) ? types.reduce((acc, curr) => dataForSelectedYear[curr] + acc, 0) : null;
         const active = !!dataForSelectedYear && !!acres;
         let fill = (active) ? 'gold' : 'silver';
+        let label = `${d.name}${(!stateTerr && d.name !== 'North Dakota' && d.name !== 'South Dakota' && (!us.lookup(d.name) || !us.lookup(d.name).statehood_year || parseInt(year) < us.lookup(d.name).statehood_year)) ? ' Terr.' : ''}`;
+        if (isPhoneSize && !stateTerr) {
+          label = us.lookup(d.name).abbr;
+        }
 
         const styledRow: TimelineRowStyled = {
-          label: `${d.name}${(!stateTerr && d.name !== 'North Dakota' && d.name !== 'South Dakota' && (!us.lookup(d.name) || !us.lookup(d.name).statehood_year || parseInt(year) < us.lookup(d.name).statehood_year)) ? ' Terr.' : ''}`,
+          label,
           cells: d.yearData.map((yd: TimelineYearPlaceData) => {
             const acres = types.reduce((acc, curr) => yd[curr] + acc, 0);
             return {
-              x: x(yd.year) + 1,
+              x: x(yd.year) + 0.25,
               //y: (yd.area !== 0 && yd.acres_claimed > 0) ? 18 - (6 + 12 * Math.min(1, yd.acres_claimed * 100 / yd.area))  : 0,
-              width: cellWidth - 2,
+              width: cellWidth - 0.5,
               height: (yd.area !== 0 && acres > 0) ? 8 + 10 * Math.min(1, acres * 20 / yd.area) : 0,
               fill: colorGradient(acres / yd.area),
               fillOpacity: 1, // (yd.area !== 0 && yd.acres_claimed > 0) ? 0.5 + 0.5 * yd.acres_claimed * 25 / yd.area : 0,
@@ -128,7 +133,6 @@ const TimelineHeatmap = () => {
 
   return (
     <div className='timeline'>
-
       <div
         style={{
           height: Math.min(height, rows.length * rowHeight + 300)
@@ -205,33 +209,37 @@ const TimelineHeatmap = () => {
             </text>
           </g>
           <g transform='translate(0 60)' className='axisLabels'>
-            <text
-              x={190}
-              y={0}
-              textAnchor='end'
-            >
-              number
-              <tspan
-                x={190}
-                dy={20}
-              >
-                of {numberLabel}
-              </tspan>
-            </text>
+            {(!isPhoneSize) && (
+              <g>
+                <text
+                  x={190}
+                  y={0}
+                  textAnchor='end'
+                >
+                  number
+                  <tspan
+                    x={190}
+                    dy={20}
+                  >
+                    of {numberLabel}
+                  </tspan>
+                </text>
 
-            <text
-              x={255}
-              y={0}
-              textAnchor='end'
-            >
-              acres
-              <tspan
-                x={255}
-                dy={20}
-              >
-                {acresLabel}
-              </tspan>
-            </text>
+                <text
+                  x={255}
+                  y={0}
+                  textAnchor='end'
+                >
+                  acres
+                  <tspan
+                    x={255}
+                    dy={20}
+                  >
+                    {acresLabel}
+                  </tspan>
+                </text>
+              </g>
+            )}
 
             {/* year tick marks */}
             {[1870, 1880, 1890, 1900, 1910].map((year: number) => (
@@ -298,7 +306,7 @@ const TimelineHeatmap = () => {
                     {...p}
                     emphasize={false}
                     width={width}
-                    labelSize={18}
+                    labelSize={16}
                     key={`timelineRowFor${p.label}`}
                   />
                 ))}

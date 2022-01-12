@@ -17,74 +17,43 @@ body {
 /* Mobile */
 
 .App {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     text-align: center;
     background-color: var(--inset-bg-color);
-    overflow: hidden;
     color: var(--light-color);
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: 300;
     width: 100vw;
 }
 
+.App * {
+    font-weight: 300;
+}
+
 header {
-    font-family: 'Playfair Display', serif;
-    grid-column: 1 / span 1;
-    grid-row: 1 / span 1;
-}
-
-header h1 {
-    font-weight: 400;
-    font-size: 30px;
-    margin-top: 20px;
-    padding: 5px 0;
-    margin-bottom: 5px;
-}
-
-header h2 {
-    margin-top: 5px;
-    font-size: 22px;
-    font-family: 'Roboto Condensed', sans-serif;
-}
-
-#sidebar {
-    grid-column: 1 / span 1;
-    grid-row: 6 / span 4;
-    overflow-y: scroll;
-    /*padding-top: 140px;*/
+    order: -9;
 }
 
 #appNav {
-    grid-column: 1 / span 2;
-    grid-row: 1 / span 1;
-}
-
-ul#appNav {
-    display: inline-block;
-    font-size: 12px;
+    order: -10;
 }
 
 .mainnav {
-    grid-column: 1 / span 1;
-    grid-row: 2 / span 1;
+    order: -8;
 }
 
 .subnav {
-    grid-column: 1 / span 1;
-    grid-row: 3 / span 1;
+    order: -7;
     min-height: 44px;
 }
 
 .vectorMap {
-    grid-column: 1 / span 1;
-    grid-row: 4 / span 1;
-    width: calc(100% - 54px);
+    width: calc(100vw - 4px);
     height: calc(60vw);
     overflow: hidden;
     border: 1px solid var(--highlight-color);
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    margin: 0 25px 25px 25px;
+    margin: 0;
 }
 
 #hideLegend,
@@ -102,37 +71,25 @@ ul#appNav {
     .App {
         display: grid;
         grid-template-columns: auto max(40%, 600px);
-        grid-template-rows: 50px 33px 50px auto 160px;
-        grid-column-gap: 10px;
+        grid-template-rows: 75px 33px 50px auto 160px;
         height: 100vh;
         width: 100vw;
+        overflow: hidden;
     }
     header {
-        height: 50px;
+        height: 75px;
         grid-column: 1 / span 1;
         grid-row: 1 / span 1;
-        line-height: 1;
-        font-family: 'Playfair Display', serif;
     }
     #appNav {
         grid-column: 2 / span 1;
         grid-row: 1 / span 1;
     }
-    ul#appNav {
-        font-size: 18px;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        padding: 0;
-        margin: 18px 18px 0 0;
-        overflow-x: visible;
-    }
     .vectorMap {
         grid-column: 1 / span 1;
         grid-row: 4 / span 1;
         width: calc(100% - 54px);
-        height: calc(100vh - 50px - 60px - 33px - 50px - 160px);
-        overflow: hidden;
+        height: calc(100vh - 75px - 33px - 50px - 160px - 25px);
         border: 2px solid var(--highlight-color);
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
@@ -159,10 +116,15 @@ ul#appNav {
         left: 50%;
         z-index: 10001;
     }
+    #mapLegend {
+        grid-column: 1 / span 1;
+        grid-row: 5 / span 1;
+    }
     #sidebar {
         grid-column: 2 / span 1;
         grid-row: 2 / span 4;
         overflow-x: hidden;
+        overflow-y: scroll;
         padding-top: 0;
     }
     .mainnav {
@@ -180,18 +142,6 @@ ul#appNav {
         overflow-y: scroll;
         justify-self: center;
     }
-    header h1 {
-        font-weight: 400;
-        font-size: 30px;
-        margin: 0;
-        padding: 5px 0;
-        margin-bottom: 5px;
-    }
-    header h2 {
-        margin-top: 5px;
-        font-size: 22px;
-        font-family: 'Roboto Condensed', sans-serif;
-    }
     #hideLegend,
     .mapSizeButton {
         display: inline-block;
@@ -204,7 +154,7 @@ ul#appNav {
 
 @media only screen and (max-width: 768px) {
     #sidebar {
-        padding-top: 140px;
+        padding-top: 20px;
     }
 }
 

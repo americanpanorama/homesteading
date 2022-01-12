@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Land Acquisition and Dispossession</title>
     <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&amp;family=Roboto+Condensed:wght@300;400&amp;family=Titillium+Web:ital,wght@1,200&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&amp;family=Playfair+Display&amp;family=Roboto+Condensed:wght@300;400&amp;family=Titillium+Web:ital,wght@1,200&amp;family=Merriweather&display=swap" rel="stylesheet" />
 
     <style type="text/css">
          :root {
@@ -24,6 +24,16 @@
             margin: 0;
             background-color: var(--light-color);
             font-family: "Playfair Display", sans-serif;
+            width: 100vw;
+        }
+        
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0px;
+            padding: 0px;
+            overflow-x: hidden;
         }
         
         header {
@@ -39,13 +49,7 @@
             position: sticky;
             top: calc(-50vh + 70px);
             z-index: 1000;
-        }
-        
-        footer {
-            height: 100px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            text-align: center;
         }
         
         a.button {
@@ -95,38 +99,176 @@
         #explanation p {
             max-width: 800px;
             margin: 20px auto;
-            font-size: 1.7em;
             line-height: 1.5;
+            margin: 10px;
         }
         
         .tutorial {
             background-color: var(--highlight-color);
             color: #eee;
             text-align: center;
-            padding: 40px;
+            padding: 40px 0;
+        }
+        
+        .tutorial h4 {
+            font-family: 'Roboto Condensed', sans-serif;
+            color: var(--light-color);
         }
         
         .tutorial .explanation {
             max-width: 400px;
             display: inline-block;
             text-align: left;
-            margin-right: 20px;
+            margin: 10px;
             vertical-align: top;
-            padding-top: 20px;
             font-size: 1.1em;
             line-height: 1.4;
         }
         
+        .tutorial .explanation {
+            margin-top: 0;
+        }
+        
         .tutorial video {
             margin: 20px;
-            width: 900px;
+            max-width: 900px;
             max-width: 95vw;
             border-radius: 15px;
+        }
+        
+        .americanPanorama {
+            height: max(50vh, 28vw);
+            background-color: var(--main-bg-color);
+            color: var(--light-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            top: calc(-50vh + 70px);
+            z-index: 1000;
+            background-image: url(https://dsl.richmond.edu/panorama/assets/images/ap-image-s4.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+        
+        a {
+            text-decoration: none !important;
+        }
+        
+        .americanPanorama h1 {
+            color: #28668a;
+            font-size: 20px;
+            font-family: Oswald, sans-serif;
+            background-color: white;
+            opacity: 0.5;
+            width: 100vw;
+            text-align: center;
+            margin: 0;
+            font-weight: normal;
+        }
+        
+        .americanPanorama h2 {
+            font-family: "Merriweather";
+            font-size: 18px;
+            padding-bottom: 20px;
+            color: #fff;
+            opacity: .9;
+            margin: 5px;
+            text-align: center;
+        }
+        
+        .americanPanorama h3 {
+            font-size: 16px;
+            padding-bottom: 40px;
+            color: #fff;
+            opacity: .9;
+            margin: 5px;
+            text-align: center;
+        }
+        
+        footer {
+            background-color: var(--main-bg-color);
+            padding: 20px 0;
+            color: #aaa;
+            clear: both;
+            font-family: "Roboto", sans-serif;
+            text-align: center;
+        }
+        
+        footer a {
+            color: #ddd;
+        }
+        
+        footer img {
+            width: 150px;
+        }
+        
+        #ofInterest {
+            text-align: center;
+        }
+        
+        #ofInterest img {
+            max-width: 90vw;
+            padding-bottom: 20px;
+        }
+        
+        @media only screen and (min-width: 768px) {
+            #explanation p {
+                font-size: 1.7em;
+                margin: 10px auto;
+            }
+            .americanPanorama h2 {
+                font-size: 28px;
+            }
+            .americanPanorama h3 {
+                font-size: 24px;
+            }
+            #ofInterest {
+                background-size: auto;
+            }
+            footer {
+                background-color: var(--main-bg-color);
+                padding: 20px 0;
+                color: #aaa;
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+                flex-direction: row;
+                clear: both;
+                gap: 30px;
+                font-family: "Roboto", sans-serif;
+            }
+            footer div {
+                display: inline;
+            }
+            .tutorial video {
+                margin-top: 60px;
+            }
+        }
+        
+        @media only screen and (min-width: 1280px) {
+            .americanPanorama {
+                width: 67vw;
+                float: left;
+            }
+            .americanPanorama h1 {
+                width: 67vw;
+                font-size: 68px;
+            }
+            #ofInterest {
+                width: 33vw;
+                float: right;
+                background-size: 27vw;
+            }
+            #ofInterest img {
+                max-width: 28vw;
+            }
         }
     </style>
 </head>
 
-<body>
+<a>
     <header>
         <h1>Land Acquisition and Dispossession</h1>
         <h2>Mapping the Homestead Act, 1863-1912</h2>
@@ -147,8 +289,8 @@
         <div class="explanation">
             <h4>Homesteading Activity</h4>
             <p>
-                The map proper shows the boundaries of active land office districts for a selected year. The brightness of the office reflects the relative amount of land that was either claimed or patented there. For example, the map of claims in 1881 shows that there
-                was a lot more land claimed in the Dakota Territory adn in Arkansas than in the Wyoming or Montana Territories
+                The map proper shows the boundaries of active land office districts for a selected year. The color of the district reflects the relative amount of land that was either claimed or patented there. Districts colored red had a lot of claims or patents; those
+                colored green far less.
             </p>
             <p>
                 Buttons to select claims and patents or some subset of either appear above the map.
@@ -169,7 +311,7 @@
             </p>
         </div>
         <video controls>
-        <source src="./landing/three levels 2.mp4" type="video/mp4" />
+        <source src="./landing/threelevels.mp4" type="video/mp4" />
 
         Sorry, your browser doesn't support embedded videos.
       </video>
@@ -201,10 +343,34 @@
         </p>
       </div>
       <video controls>
-        <source src="./landing/timeline.mp4" type="video/mp4" />
+        <source src="./landing/bargraph.mp4" type="video/mp4" />
 
         Sorry, your browser doesn't support embedded videos.
       </video>
     </div>
+
+    <a href='https://dsl.richmond.edu/panorama'>
+        <div class='americanPanorama'>
+            <h3>"Land Acquisition and Dispossession" is part of</h3>
+            <h1>American Panorama</h1>
+            <h2>An Atlas of United States History</h2>
+        </div>
+    </a>
+
+    <a href='https://dsl.richmond.edu/panorama/overlandtrails'></a>
+        <div id='ofInterest'>
+            <p>Another <cite>American Panorama</cite> you might be interested in ...</p>
+            <h2>The Overland Trails, 1840-1860</h2>
+
+            <img src='https://dsl.richmond.edu/panorama/assets/images/maps/overland-img.jpg' alt='Overland Trails' />
+        </div>
+    </a>
+
+    <footer>
+        <div><a href='https://dsl.richmond.edu/'><img src='https://dsl.richmond.edu/assets/images/dsl-blue-logo.svg' alt='DSL logo'></a></div>
+        <div><a href='https://dsl.richmond.edu/'>The Digital Scholarship Lab</a></div>
+        <div><a href='https://library.richmond.edu/'>Boatwright Library</a></div>
+        <div><a href='https://richmond.edu/'>The University of Richmond</a></div>
+    </footer>
   </body>
 </html>

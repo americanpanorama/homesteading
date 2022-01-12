@@ -16,6 +16,7 @@ export interface Dimensions {
   width: number;
   height: number;
   isMobile: boolean;
+  isPhoneSize: boolean;
   mapDimensions: {
     width: number;
     height: number;

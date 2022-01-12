@@ -154,10 +154,6 @@ const TileLayers = (props: Props) => {
   const [underTiles, setUnderTiles] = useState<TileData[]>([]);
   const animatingYearStatus = useRef('finished');
 
-
-
-
-
   // when there's a new set of townships when a different year is selected, load them
   useEffect(() => {
     setTiles(getTiles(projectedTownships, props.scale, center));
@@ -241,31 +237,39 @@ const TileLayers = (props: Props) => {
   });
 
   // zoom when the scale changes
-  useEffect(() => {
-    d3.select(ref.current)
-      .transition()
-      .duration(ANIMATIONDURATION)
-      .attr('transform', `scale(${props.scale})`)
-      .on('end', () => {
-        setScale(props.scale);
-      })
-  }, [props.scale]);
+  // useEffect(() => {
+  //   d3.select(ref.current)
+  //     .transition()
+  //     .duration(ANIMATIONDURATION)
+  //     .attr('transform', `scale(${props.scale})`)
+  //     .on('end', () => {
+  //       setScale(props.scale);
+  //     })
+  // }, [props.scale]);
+
+  console.log(tiles);
 
   return (
-    <g transform={`scale(${scale})`} ref={ref} >
+    <g
+      //transform={`scale(${scale})`}
+      ref={ref} 
+    >
       <TileLayer
         tiles={underTiles}
         scale={getTileScale(scale, props.scale) / scale}
+        key='undertiles'
       />
 
       <TileLayer
         tiles={tiles}
         scale={getTileScale(scale) / scale}
+        key='tiles'
       />
 
       <TileLayer
         tiles={overTiles}
         scale={getTileScale(scale, props.scale) / scale}
+        key='overtiles'
       />
     </g>
   );

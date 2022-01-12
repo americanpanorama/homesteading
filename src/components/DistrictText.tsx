@@ -115,8 +115,10 @@ const DistrictText = (props: Props) => {
             <tbody>
 
           {(syd.conflicts.map(conflict => (
-            <tr>
-              <td>{`${conflict.start_date.month}/${conflict.start_date.day}`}</td>
+            <tr
+              key={conflict.names}
+            >
+              <td>{`${conflict.start_date.month}/${conflict.start_date.day}/${conflict.start_date.year}`}</td>
               <td>{conflict.names}</td>
               <td>{conflict.nations.join(', ')}</td>
               <td>{conflict.native_casualties}</td>

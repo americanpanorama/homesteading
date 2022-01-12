@@ -32,7 +32,6 @@ const Office = () => {
   }, [stateTerr]);
 
   if (timelinePlaceData && timelinePlaceData.length > 0) {
-    console.log(timelinePlaceData);
     const dataWithoutStats: TimelinePlaceData = (office)
       ? timelinePlaceData.find(pt => pt.stateOrTerritory === stateTerr && pt.name.replace(/[^a-zA-Z]/g, '') === office)
       : (() => {
@@ -84,7 +83,6 @@ const Office = () => {
           yearData,
         };
       })();
-    console.log(dataWithoutStats);
     const landOfficeData: TimelinePlaceDataWithStats = {
       ...dataWithoutStats,
       total_claims_federal_lands: dataWithoutStats.yearData.reduce((acc, curr) => curr.claims + acc, 0),

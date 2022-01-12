@@ -1,8 +1,11 @@
-ul#appNav {
+#appNav {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
-    padding: 0 20px 0 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 18px 0px 0 0;
+    padding: 0 15px 0 0;
+    font-size: 16px;
 }
 
 #appNav li {
@@ -17,7 +20,7 @@ ul#appNav {
 #appNav a {
     color: white;
     text-decoration: none;
-    padding: 0 10px;
+    padding: 0 5px;
 }
 
 #appNav a:hover {
@@ -25,8 +28,12 @@ ul#appNav {
     text-decoration: underline;
 }
 
-#appNav {
-    position: relative;
-    margin: 1em;
-    overflow: hidden;
+@media only screen and (min-width: 1280px) {
+    #appNav {
+        flex-wrap: nowrap;
+        font-size: 18px;
+        justify-content: flex-end;
+        overflow: visible;
+        padding-right: 25px;
+    }
 }

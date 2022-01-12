@@ -12,6 +12,7 @@ import LandOffice from './components/LandOffice';
 import AppNav from './components/AppNav';
 import Text from './components/Text';
 import './App.css';
+import './Header.css';
 
 const App = () => {
   const { useState, useEffect } = React;
@@ -27,13 +28,14 @@ const App = () => {
     const height = clientHeight || innerHeight;
 
     const mapHeights = {
-      default: height - 50 - 100 - 160,
-      nolegend: height - 50 - 100,
+      default: height - 75 - 33 - 50 - 160 - 25,
+      nolegend: height - 75 - 88,
       fullscreen: height,
     }
     const isMobile = width <= 1280;
+    const isPhoneSize = width <= 500;
     const mapDimensions = {
-      width: (!isMobile && (mapSize === 'default' || mapSize === 'nolegend')) ? Math.min(width * 3 / 5, width - 600) : width,
+      width: (!isMobile && (mapSize === 'default' || mapSize === 'nolegend')) ? Math.min(width * 3 / 5 - 50, width - 650) : width,
       height: (!isMobile) ?  mapHeights[mapSize]: width * 0.6,
       size: mapSize,
       setMapSize: setMapSize,
@@ -63,6 +65,7 @@ const App = () => {
       width,
       height,
       isMobile,
+      isPhoneSize,
       mapDimensions,
       timelineDimensions,
       officeBarchartDimensions,

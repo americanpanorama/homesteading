@@ -24,8 +24,6 @@ const BarChart = ({ chartData, stacked, selectedView, label }: {chartData: Timel
      height,
   } = (useContext(DimensionsContext) as Dimensions).officeBarchartDimensions;
 
-  console.log(chartData);
-
   // data stats
   const earliestYear = Math.min(...chartData.yearData.map(d => d.year));
   const lastYear = Math.max(...chartData.yearData.map(d => d.year));
@@ -42,7 +40,6 @@ const BarChart = ({ chartData, stacked, selectedView, label }: {chartData: Timel
       average_size: (d.claims_indian_lands) ? Math.round(d.acres_claimed_indian_lands / d.claims_indian_lands) : 0,
     }[selectedView],
   }));
-  console.log(graphedData);
   const selectedYearData: GraphedDataForYear = graphedData.find(d => d.year === parseInt(year));
   const maxValue = (stacked && (selectedView === 'number' || selectedView === 'acres'))
     ? Math.max(...graphedData.map(d => d.federal_lands + d.indian_lands)) * 1.1
@@ -92,7 +89,9 @@ const BarChart = ({ chartData, stacked, selectedView, label }: {chartData: Timel
   const yearTicks = years.filter(d => d % 5 === 0);
 
   // data labels 
-  const barLabel: string = `${Math.round(selectedYearData.federal_lands + selectedYearData.indian_lands).toLocaleString()} ${(selectedView === 'number') ? 'claims' : 'acres'}`;
+  const barLabel: string = (selectedYearData && selectedYearData.federal_lands && selectedYearData.indian_lands) 
+    ? `${Math.round(selectedYearData.federal_lands + selectedYearData.indian_lands).toLocaleString()} ${(selectedView === 'number') ? 'claims' : 'acres'}`
+    : '';
 
   return (
     <React.Fragment>

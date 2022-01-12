@@ -20,7 +20,7 @@ interface State {
   labelRotation: number;
 }
 
-const FullStateDistrict = ({abbr, projectedTownship, scale}: {abbr: 'IL' | 'IN' | 'OH' | 'MS', projectedTownship: ProjectedTownship, scale: number}) => {
+const FullStateDistrict = ({abbr, projectedTownship, fill, scale}: {abbr: 'IL' | 'IN' | 'OH' | 'MS', projectedTownship: ProjectedTownship, fill: string, scale: number}) => {
   const params = useParams<RouterParams>();
   const year = params.year || '1863';
   const { fullOpacity, view } = params;
@@ -45,7 +45,7 @@ const FullStateDistrict = ({abbr, projectedTownship, scale}: {abbr: 'IL' | 'IN' 
             stroke='#7e7578'
             strokeWidth={0.2 / scale}
             strokeOpacity={opacity}
-            fill='#8c8686'
+            fill={fill}
             fillOpacity={opacity}
             key={d.substring(0, 50)}
           />

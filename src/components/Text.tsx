@@ -40,13 +40,20 @@ const texts: { [index in TextType]: React.ReactElement } = {
             <ul>
                 <li>US General Land Office. <cite>Diagrams of Land Districts, 1901-1901</cite>, Record Group 49, Call Number UD163F, National Archives I, Washington, DC.</li>
             </ul>
+            <p>The mapping of Indigenous lands and reservations uses shapefiles drawn up by the U.S. Forest Service and a data spreadsheet compiled by historian Claudio Saunt. These shapefiles and data are based on maps of Indian land cessions originally drawn up by Charles C. Royce for the period 1784-1894. To ensure a correct interpretation of the land cessions data and to extend the coverage for the years after 1894, we have consulted the Office of Indian Affairs' annual maps of Indian reservations and other publications.</p>
+            <ul>
+                <li>U.S. Department of Agriculture. Forest Service, <a href='https://data.fs.usda.gov/geodata/edw/edw_resources/meta/S_USA.TRIBALCEDEDLANDS.xml' target='_blank'>“Tribal Land Cessions in the United States,”</a> April 19, 2018.</li>
+                <li>U.S. Office of Indian Affairs, Map Showing Indian Reservations with the Limits of the United States (Washington, DC: U.S. Office of Indian Affairs, 1888-1917).</li>
+                <li>U.S. Office of Indian Affairs, General Data Concerning Indian Reservations (Washington, DC: U.S. Government Printing Office, 1930)</li>
+                <li>Claudio Saunt, <a href='https://data.fs.usda.gov/geodata/edw/edw_resources/fc/S_USA.TribalCededLandsTable.gdb.zip' target='_blank'>“Tribal Ceded Lands Table,”</a> April 19, 2018.</li>
+            </ul>
             <p>The mapping and dating of frontier clashes follows two books by Gregory Michno. We only map clashes in the so-called public land states, where the federal government was in charge of land disposal and the Homestead Act in operation. During the homesteading period, Texas had quite a few frontier clashes, but as the state government controlled land disposal, there was no homesteading (under federal statutes) in the state.</p>
             <ul>
                 <li>Gregory Michno. <cite>Encyclopedia of Indian Wars: Western Battles and Skirmishes 1850-1890</cite>. Missoula, MT: Mountain Press Publishing Company, 2003.</li>
                 <li>Gregory Michno and Susan J. Michno. <cite>Forgotten Fights: Little-Known Raids and Skirmishes on the Frontier, 1823 to 1890</cite>. Missoula, MT: Mountain Press Publishing Company, 2008.</li>
             </ul>
             <p>Please note, the details recorded were heavily influenced by the perspectives of army officials, on whose reports the data points are mostly based. The data should therefore be treated with caution regarding the identity of the nations involved, as well as the casualty figures and the often euphemistic naming of confrontations.</p>
-        </React.Fragment>
+        </React.Fragment >
     ),
     introduction: (
         <React.Fragment>

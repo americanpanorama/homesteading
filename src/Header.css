@@ -1,0 +1,40 @@
+header {
+    font-family: 'Playfair Display', serif;
+    line-height: 1;
+}
+
+header h1 {
+    font-weight: 400;
+    font-size: 20px;
+    font-size: 5.9vw;
+    margin: 20px 0 5px 0;
+}
+
+header h2 {
+    font-weight: 300;
+    margin-top: 2px;
+    font-size: 16px;
+    font-size: 5vw;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+@media only screen and (min-width: 500px) {
+    header h1 {
+        font-size: 20px;
+    }
+    header h2 {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    header h1 {
+        font-size: 30px;
+        margin: 0 0 5px 0;
+        padding: 5px 0;
+    }
+    header h2 {
+        margin-top: 5px;
+        font-size: 22px;
+    }
+}

@@ -33,10 +33,10 @@ const MapLegend = () => {
   const boxInterior = boxWidth - strokeWidth;
   return (
     <div id='mapLegend'>
-      <div id='indianLands'>
+      <div id='indianLands' className='legendSection'>
         <h3>Indian Lands</h3>
         <svg
-          width={300}
+          width={150}
           height={100}
         >
           <g>
@@ -96,7 +96,7 @@ const MapLegend = () => {
 
         </svg>
       </div>
-      <div id='clashesLegend'>
+      <div id='clashesLegend' className='legendSection'>
 
         <Tooltip
           placement="top"
@@ -156,12 +156,12 @@ const MapLegend = () => {
 
         </svg>
       </div>
-      <div id='areaLegend'>
+      <div id='areaLegend' className='legendSection'>
         <h3>
           {`Percentage of the area ${acresLabel} in ${year}`}
         </h3>
         <svg
-          width={350}
+          width={300}
           height={100}
         >
           {[0, 0.000000001, 0.01, 0.02, 0.03, 0.04, 0.05].map((percent, idx) => {
@@ -175,9 +175,9 @@ const MapLegend = () => {
                   y={0}
                   width={boxWidth}
                   height={boxWidth}
-                  fill='#8c8686'
-                  fillOpacity={(percent === 0) ? 0.03 : tileOpacity(percent)}
-                  stroke={colorGradient(percent)}
+                  fill={colorGradient(percent)}
+                  fillOpacity={(percent === 0) ? 0.03 : 1}
+                  stroke='black'
                   strokeWidth={strokeWidth}
                   key={`legendSymbolFor${idx}`}
                 />

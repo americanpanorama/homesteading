@@ -1,12 +1,13 @@
 #longform {
     padding: 10px calc(50vw - 500px);
-    max-width: 1000px;
+    max-width: 90vw;
     overflow-y: scroll;
     text-align: left;
-    font-size: 1.2em;
+    font-size: 1em;
     line-height: 1.8;
     font-family: 'Playfair Display', serif;
     color: #eee;
+    margin: 0 auto;
 }
 
 #longform h3 {
@@ -17,12 +18,8 @@
 }
 
 #longform a {
-    display: block;
     color: var(--light-color);
     text-decoration: none;
-    text-align: right;
-    font-size: 1.5em;
-    font-family: 'Roboto Condensed', sans-serif;
 }
 
 #longform a:hover {
@@ -53,4 +50,11 @@
 
 #longform .citation {
     padding-left: 40px;
+}
+
+@media only screen and (min-width: 1280px) {
+    #longform {
+        font-size: 1.2em;
+        max-width: 1000px;
+    }
 }

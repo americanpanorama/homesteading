@@ -140,7 +140,10 @@ const BarChartPatents = ({ chartData, stacked, selectedView, label }: {chartData
   const yearTicks = years.filter(d => d % 5 === 0);
 
   // data labels 
-  const barLabel: string = `${Math.round(selectedYearData.federal_lands + selectedYearData.indian_lands + selectedYearData.commutations_2301).toLocaleString()} ${(selectedView === 'number') ? 'patents' : 'acres'}`;
+  const barLabel: string = (selectedYearData && selectedYearData.federal_lands && selectedYearData.indian_lands) 
+  ? `${Math.round(selectedYearData.federal_lands + selectedYearData.indian_lands + selectedYearData.commutations_2301).toLocaleString()} ${(selectedView === 'number') ? 'patents' : 'acres'}`
+  : '';
+
   // if (selectedYearData.federal_lands && selectedYearData.indian_lands) {
   //   labels.push(
   //     `${selectedYearData.federal_lands.toLocaleString()} (${Math.round(selectedYearData.federal_lands / (selectedYearData.federal_lands + selectedYearData.indian_lands + selectedYearData.commutations_2301) * 1000) / 10}%) federal land after 5 year residency`,

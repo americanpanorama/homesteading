@@ -21,9 +21,8 @@ const Map = () => {
   const params = useParams<RouterParams>();
   const { stateTerr, office } = params;
   const year = params.year || '1863';
-
-  const { mapDimensions, isMobile, width: screenWidth, height: screenHeight } = (useContext(DimensionsContext) as Dimensions);
-  const { width: mapWidth, height: mapHeight, size: mapSize, setMapSize } = mapDimensions;
+  
+  const { width: mapWidth, height: mapHeight, size: mapSize, setMapSize } = (useContext(DimensionsContext) as Dimensions).mapDimensions;
   const width = mapWidth;
   const height = mapHeight;
   const refTranslate = useRef(null);
@@ -49,11 +48,11 @@ const Map = () => {
 
     // calculate values
     const scale = (width / height > dx / dy) ? yGutter * height / dy : xGutter * width / dx;
-    const translateX = width / 2 - scale * center[0];
-    const translateY = height / 2 - scale * center[1];
+    const translateX = width / 2 - center[0] * scale;
+    const translateY = height / 2 - center[1] * scale;
     return {
       scale,
-      transform: `translate(${translateX} ${translateY}) rotate(${rotation} ${center[0] * scale} ${center[1] * scale})`,
+      transform: `translate(${translateX} ${translateY}) rotate(${rotation} ${center[0] * scale} ${center[1] * scale}) scale(${scale}) `,
       translate: `translate(${translateX} ${translateY})`,
     }
   };
@@ -99,8 +98,8 @@ const Map = () => {
         ({ scale: newScale, transform: newTransform, translate: newTranslate } = calculateTransform({
           ...calculateCenterAndDxDy(placeData.bounds),
           rotation: placeData.rotation,
-          yGutter: 0.8,
-          xGutter: 0.8,
+          yGutter: (office) ? 0.6 : 0.8,
+          xGutter: (office) ? 0.6 : 0.8,
           width,
           height
         }));
@@ -123,10 +122,12 @@ const Map = () => {
         const yearDataRaw = response.data as YearDataRaw;
         const offices: ProjectedTownship[] = yearDataRaw.offices
           // filter only for those that exist at the end of the fiscal year--it if was discontinued or moved, we don't show it
-          .filter(d => d.office_boundaries.some(ob => ob.tile_id && ob.tile_id.slice(-8) >= `${year}0630`))
+          .filter(d => d.office_boundaries.some(ob => ob.tile_id && ob.tile_id.slice(-8) >= `${year}0630`) || ['IL', 'IN', 'MS', 'OH'].includes(d.state))
           .map(d => {
             // get the office_boundary for the end of the fiscal year
-            const office_boundary = d.office_boundaries.find(ob => ob.tile_id && ob.tile_id.slice(-8) >= `${year}0630`);
+            const office_boundary = (['IL', 'IN', 'MS', 'OH'].includes(d.state))
+              ? d.office_boundaries[0]
+              : d.office_boundaries.find(ob => ob.tile_id && ob.tile_id.slice(-8) >= `${year}0630`);
             const data = d.data.find(d => d.adjustedForMap) || d.data.find(d => !d.adjustedForMap);
             return {
               d: office_boundary.d,
@@ -173,11 +174,11 @@ const Map = () => {
 
   // animage and set the transform to position the map within the canvas
   useEffect(() => {
-    const { transform: newTransform } = getTransformAndCenter();
+    const { transform: newTransform, center: newCenter, scale: newScale } = getTransformAndCenter();
     if (transform !== newTransform) {
       d3.select(refTranslate.current)
         .transition()
-        .duration((initialTranslateCalculated.current) ? ANIMATIONDURATION : 0)
+        .duration((initialTranslateCalculated.current) ? ANIMATIONDURATION * 1 : 0)
         .attr('transform', newTransform)
         .on('end', () => {
           setTransform(newTransform);
@@ -222,16 +223,13 @@ const Map = () => {
             transform={transform}
             ref={refTranslate}
           >
-            <g transform={`scale(${scale})`}>
-              {NorthAmerica.map((d: any) => (
-                <path
-                  d={d}
-                  className='continent'
-                  key={d.substring(0, 50)}
-                />
-              ))}
-            </g>
-
+            {NorthAmerica.map((d: any) => (
+              <path
+                d={d}
+                className='continent'
+                key={d.substring(0, 50)}
+              />
+            ))}
             <TileLayers
               projectedTownships={projectedTownships}
               center={center}
@@ -244,75 +242,72 @@ const Map = () => {
               center={center}
               scale={scale}
             />
+            {/* An inset box around AK */}
+            {(parseInt(year) >= 1900) && (
 
-            <g transform={`scale(${scale})`}>
-              {/* An inset box around AK */}
-              {(parseInt(year) >= 1885) && (
+              <path
+                d="M -1000 517 L 100 558 L 160 650 L 147 1024"
+                stroke='#575653'
+                strokeWidth={2}
+                fill='transparent'
+                style={{
+                  pointerEvents: 'none',
+                }}
+              />
+            )}
 
-                <path
-                  d="M -1000 517 L 100 558 L 160 650 L 147 1024"
-                  stroke='#575653'
-                  strokeWidth={2}
-                  fill='transparent'
-                  style={{
-                    pointerEvents: 'none',
-                  }}
-                />
-              )}
-
-              {clashes.map(clash => {
-                const xRadius = Math.max(2.83, Math.sqrt(clash.native_casualties + clash.us_casualties) * 0.4) / scale;
-                const strokeWidth = xRadius / 2;
-                return (
-                  <Tooltip
-                    placement="bottom"
-                    overlay={<div className='clashPopup'>
-                      <h4>{clash.names}</h4>
-                      <div className='data'>
-                        <label>date</label>
-                        <div>{`${clash.start_date.month}/${clash.start_date.day}/${clash.start_date.year}`}</div>
-                        <label>{`nation${(clash.nations.length > 1) ? 's' : ''}`}</label>
-                        <div>{clash.nations.join(', ')}</div>
-                        {(clash.native_casualties > 0) && (
-                          <React.Fragment>
-                            <label>native casualties</label>
-                            <div>{clash.native_casualties}</div>
-                          </React.Fragment>
-                        )}
-                        {(clash.us_casualties > 0) && (
-                          <React.Fragment>
-                            <label>US casualties</label>
-                            <div>{clash.us_casualties}</div>
-                          </React.Fragment>
-                        )}
-                      </div>
-                    </div>}
-                    key={`conflictOnMap-${clash.x}-${clash.y}-${clash.start_date.month}-${clash.start_date.day}`}
+            {clashes.map(clash => {
+              const xRadius = Math.max(2.83, Math.sqrt(clash.native_casualties + clash.us_casualties) * 0.4) / scale;
+              const strokeWidth = xRadius / 2;
+              return (
+                <Tooltip
+                  placement="bottom"
+                  overlay={<div className='clashPopup'>
+                    <h4>{clash.names}</h4>
+                    <div className='data'>
+                      <label>date</label>
+                      <div>{`${clash.start_date.month}/${clash.start_date.day}/${clash.start_date.year}`}</div>
+                      <label>{`nation${(clash.nations.length > 1) ? 's' : ''}`}</label>
+                      <div>{clash.nations.join(', ')}</div>
+                      {(clash.native_casualties > 0) && (
+                        <React.Fragment>
+                          <label>native casualties</label>
+                          <div>{clash.native_casualties}</div>
+                        </React.Fragment>
+                      )}
+                      {(clash.us_casualties > 0) && (
+                        <React.Fragment>
+                          <label>US casualties</label>
+                          <div>{clash.us_casualties}</div>
+                        </React.Fragment>
+                      )}
+                    </div>
+                  </div>}
+                  key={`conflictOnMap-${clash.x}-${clash.y}-${clash.start_date.month}-${clash.start_date.day}`}
+                >
+                  <g
+                    transform={`rotate(${clash.rotation} ${clash.x}, ${clash.y})`}
                   >
-                    <g
-                      transform={`rotate(${clash.rotation} ${clash.x}, ${clash.y})`}
-                    >
-                      <line
-                        x1={clash.x - xRadius}
-                        x2={clash.x + xRadius}
-                        y1={clash.y - xRadius}
-                        y2={clash.y + xRadius}
-                        strokeWidth={strokeWidth}
-                        stroke='red'
-                      />
-                      <line
-                        x1={clash.x - xRadius}
-                        x2={clash.x + xRadius}
-                        y1={clash.y + xRadius}
-                        y2={clash.y - xRadius}
-                        strokeWidth={strokeWidth}
-                        stroke='red'
-                      />
-                    </g>
-                  </Tooltip>
-                );
-              })}
-            </g>
+                    <line
+                      x1={clash.x - xRadius}
+                      x2={clash.x + xRadius}
+                      y1={clash.y - xRadius}
+                      y2={clash.y + xRadius}
+                      strokeWidth={strokeWidth}
+                      stroke='red'
+                    />
+                    <line
+                      x1={clash.x - xRadius}
+                      x2={clash.x + xRadius}
+                      y1={clash.y + xRadius}
+                      y2={clash.y - xRadius}
+                      strokeWidth={strokeWidth}
+                      stroke='red'
+                    />
+                  </g>
+                </Tooltip>
+              );
+            })}
           </g>
 
         </svg>
@@ -328,7 +323,7 @@ const Map = () => {
                 : 'US'}`}
             </Link>
           )}
-          
+
           <svg
             width={30}
             height={30}
