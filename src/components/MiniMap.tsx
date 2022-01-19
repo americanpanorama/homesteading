@@ -70,10 +70,8 @@ const Map = () => {
 
   // load the data for the map
   useEffect(() => {
-    console.log(`${process.env.PUBLIC_URL}/data/districtsData/${office}=${stateTerr}.json`);
     axios(`${process.env.PUBLIC_URL}/data/districtsData/${office}-${stateTerr}.json`)
       .then(response => {
-        console.log(response.data);
         setOfficeBoundaries(response.data as District);
       });
   }, [year, stateTerr, office]);

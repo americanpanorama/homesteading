@@ -15,6 +15,16 @@
     background-color: var(--highlight-color);
     border-top-left-radius: 10px;
     margin: 0;
+    white-space: nowrap;
+}
+
+.subnav button {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.subnav button span {
+    margin-left: 3px;
 }
 
 .subnav button.selected {

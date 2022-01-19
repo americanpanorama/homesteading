@@ -135,6 +135,7 @@ const BarChart = ({ chartData, stacked, selectedView, label }: {chartData: Timel
                 <text
                   x={x(year)}
                   y={chartBodyHeight + 15}
+                  textAnchor='middle'
                 >
                   {year}
                 </text>

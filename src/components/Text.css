@@ -52,6 +52,36 @@
     padding-left: 40px;
 }
 
+.contactUsForm form {
+    display: grid;
+    grid-template-columns: 230px auto;
+    gap: 10px;
+    padding-bottom: 10vh;
+}
+
+.contactUsForm form label {
+    grid-column: 1 / span 1;
+    text-align: right;
+}
+
+.contactUsForm form input,
+.contactUsForm form textarea,
+.contactUsForm form textarea {
+    grid-column: 2 / span 1;
+}
+
+.contactUsForm form input[type="submit"] {
+    width: min-content;
+}
+
+.contactUsForm form textarea {
+    height: 200px;
+}
+
+.contactUsForm p {
+    text-align: center;
+}
+
 @media only screen and (min-width: 1280px) {
     #longform {
         font-size: 1.2em;

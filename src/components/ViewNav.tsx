@@ -80,7 +80,7 @@ const ViewNav = () => {
                 to={makeParams(params, [{ type: 'set_view', payload: 'acres_claimed' }])}
               >
                 <button
-                  className={(!view || view === 'acres_claimed') ? 'selected' : ''}
+                  className={(view === 'acres_claimed') ? 'selected' : ''}
                 >
                   on federal lands
                   <Tooltip
@@ -96,7 +96,7 @@ const ViewNav = () => {
                 to={makeParams(params, [{ type: 'set_view', payload: 'acres_claimed_indian_lands' }])}
               >
                 <button
-                  className={(!view || view === 'acres_claimed_indian_lands') ? 'selected' : ''}
+                  className={(view === 'acres_claimed_indian_lands') ? 'selected' : ''}
                 >
                   on Indian lands
                   <Tooltip
@@ -130,7 +130,7 @@ const ViewNav = () => {
                 to={makeParams(params, [{ type: 'set_view', payload: patentFederalLandsTypes.join('-') }])}
               >
                 <button
-                  className={(!view || view === patentFederalLandsTypes.join('-')) ? 'selected' : ''}
+                  className={(view === patentFederalLandsTypes.join('-')) ? 'selected' : ''}
                 >
                   on federal lands
                   <Tooltip
@@ -146,7 +146,7 @@ const ViewNav = () => {
                 to={makeParams(params, [{ type: 'set_view', payload: patentIndianLandsTypes.join('-') }])}
               >
                 <button
-                  className={(!view || view === patentIndianLandsTypes.join('-')) ? 'selected' : ''}
+                  className={(view === patentIndianLandsTypes.join('-')) ? 'selected' : ''}
                 >
                   on Indian lands
                   <Tooltip
@@ -164,7 +164,7 @@ const ViewNav = () => {
             to={makeParams(params, [{ type: 'set_view', payload: residencyTypes.join('-') }])}
           >
             <button
-              className={(!view || view === residencyTypes.join('-')) ? 'selected' : ''}
+              className={(view === residencyTypes.join('-')) ? 'selected' : ''}
             >
               from residency
               <Tooltip
@@ -180,7 +180,7 @@ const ViewNav = () => {
             to={makeParams(params, [{ type: 'set_view', payload: commutationsTypes.join('-') }])}
           >
             <button
-              className={(!view || view === commutationsTypes.join('-')) ? 'selected' : ''}
+              className={(view === commutationsTypes.join('-')) ? 'selected' : ''}
             >
               from commutations
               <Tooltip

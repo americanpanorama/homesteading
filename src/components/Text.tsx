@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { makeParams } from '../utilities';
 import { RouterParams } from '..';
 import IndianCountryMap from './IndianCountryMap';
+import OpenReservationsMap from './OpenReservationsMap';
 import './AppNav.css';
 import './Text.css';
 import { TextType } from '../index.d';
@@ -10,17 +11,66 @@ import { TextType } from '../index.d';
 const objToday = new Date();
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 const todayString = `${months[objToday.getMonth()]} ${objToday.getDate()}, ${objToday.getFullYear()}`;
+const handleSubmit = (evt: React.SyntheticEvent) => {
+    evt.preventDefault();
+
+    const target = evt.target as typeof evt.target & {
+        name: { value: string};
+        email: { value: string};
+        message: { value: string};
+    }
+
+    var xhr = new XMLHttpRequest(),
+        params = [
+            encodeURIComponent('Form_ID') + '=' + encodeURIComponent('homesteading_contact_us'),
+            encodeURIComponent('Owner_ID') + '=' + encodeURIComponent('rnelson2'),
+            encodeURIComponent('send_submit') + '=' + encodeURIComponent('data'),
+            encodeURIComponent('send_submit_to') + '=' + encodeURIComponent('rnelson2'),
+            encodeURIComponent('project') + '=' + encodeURIComponent('homesteading_contact_form'),
+            encodeURIComponent('name') + '=' + encodeURIComponent(target.name.value),
+            encodeURIComponent('email') + '=' + encodeURIComponent(target.email.value),
+            encodeURIComponent('message') + '=' + encodeURIComponent(target.message.value)
+        ].join('&');
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            document.getElementsByClassName("contactUsForm")[0].innerHTML = "<p>We have received your message. Thank you for contacting us.</p>";
+        }
+    };
+
+    xhr.open("POST", 'https://webapps.richmond.edu/URPoster/URPoster.php');
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.send(params);
+
+    return false;
+}
 const texts: { [index in TextType]: React.ReactElement } = {
     about: (
         <React.Fragment>
             <h3>About</h3>
             <p>
-                <strong>Julius Wilm</strong> amassed all of the data and wrote the introduction for <cite>Homesteading, 1862-1912</cite>. <strong>Robert K. Nelson</strong> developed and designed the web application. <strong>Justin Madron</strong>, with some assistance from <strong>Nathaniel Ayers</strong>, georectified the General Land Office maps.
+                <strong>Julius Wilm</strong> amassed all of the data and wrote the introduction for <cite>Land Acquisition and Dispossession: Mapping the Homestead Act, 1863-1912</cite>. <strong>Robert K. Nelson</strong> developed and designed the web application. <strong>Justin Madron</strong>, with some assistance from <strong>Nathaniel Ayers</strong>, georectified the General Land Office maps.
             </p>
             <p>
-                If you are citing <cite>Homesteading, 1862-1912</cite>, we recommend the following format using the <cite>Chicago Manual of Style</cite>: </p>
+                If you are citing <cite>Homesteading, 1862-1912</cite>, we recommend the following format using the <cite>Chicago Manual of Style</cite>:</p>
 
             <div className='citation'>Julius Wilm, Robert K. Nelson, and Justin Madron, “Homesteading,” <cite>American Panorama</cite>, ed. Robert K. Nelson and Edward L. Ayers, accessed {todayString}, https://dsl.richmond.edu/panorama/homesteading/.</div>
+
+            <div className='contactUs'>
+                <h3>Contact Us</h3>
+                <div className='contactUsForm'>
+                    <p>We very much welcome feedback, comments, and suggestions.</p>
+                    <form name='redlining_contact_us' onSubmit={handleSubmit}>
+                        <label htmlFor='name'>Name</label>
+                        <input type='text' maxLength={50} name='name' />
+                        <label htmlFor='email'>Email</label>
+                        <input type='text' maxLength={50} name='email' />
+                        <label htmlFor='email'>Message</label>
+                        <textarea name="message" cols={60} />
+                        <input type="submit" />
+                    </form>
+                </div>
+            </div>
         </React.Fragment>
     ),
     sources: (
@@ -43,7 +93,7 @@ const texts: { [index in TextType]: React.ReactElement } = {
             <p>The mapping of Indigenous lands and reservations uses shapefiles drawn up by the U.S. Forest Service and a data spreadsheet compiled by historian Claudio Saunt. These shapefiles and data are based on maps of Indian land cessions originally drawn up by Charles C. Royce for the period 1784-1894. To ensure a correct interpretation of the land cessions data and to extend the coverage for the years after 1894, we have consulted the Office of Indian Affairs' annual maps of Indian reservations and other publications.</p>
             <ul>
                 <li>U.S. Department of Agriculture. Forest Service, <a href='https://data.fs.usda.gov/geodata/edw/edw_resources/meta/S_USA.TRIBALCEDEDLANDS.xml' target='_blank'>“Tribal Land Cessions in the United States,”</a> April 19, 2018.</li>
-                <li>U.S. Office of Indian Affairs, Map Showing Indian Reservations with the Limits of the United States (Washington, DC: U.S. Office of Indian Affairs, 1888-1917).</li>
+                <li>U.S. Office of Indian Affairs, Map Showing Indian Reservations within the Limits of the United States (Washington, DC: U.S. Office of Indian Affairs, 1888-1917).</li>
                 <li>U.S. Office of Indian Affairs, General Data Concerning Indian Reservations (Washington, DC: U.S. Government Printing Office, 1930)</li>
                 <li>Claudio Saunt, <a href='https://data.fs.usda.gov/geodata/edw/edw_resources/fc/S_USA.TribalCededLandsTable.gdb.zip' target='_blank'>“Tribal Ceded Lands Table,”</a> April 19, 2018.</li>
             </ul>
@@ -102,7 +152,7 @@ const texts: { [index in TextType]: React.ReactElement } = {
             <p>At the same time, the map shows that from the 1860s to 1880s, many clashes between Indigenous people and the U.S. Army or U.S. civilians took place far from the central homesteading regions, especially in the Southwest and the Far West. Therefore, it would be hard to present an argument in the style of new economic history that frontier violence in all of the West was entirely a function of homesteaders moving into a region. The army’s expansive operations and civilian frontier pursuits other than homesteading were more critical in these regions. That being said, our map documents an overlap between homesteading and ongoing frontier fights in some areas throughout the 1860s and 1870s. It was not an invention of popular culture that homestead farm-builders and Indigenous peoples clashed directly over control of the land.</p>
             <p>In addition to these violent clashes of the first decades, beginning in fiscal year 1890, our map documents another direct link between homesteading and Indigenous dispossession. In 1889, the U.S. government opened to homesteaders the Great Sioux Reservation, which extended across the Dakotas, the Ponca Reservation in Nebraska, and the first reservations in the western Indian Territory (now Oklahoma). These were reservations that, according to the original treaties, were supposed to belong to Indigenous nations permanently. In the western Indian Territory, one nation after another was forced to surrender their reservation, after which the areas were opened to settlers as “public land.” </p>
             <p>On the Great Sioux Reservation and the smaller Ponca Reservation in Nebraska, the U.S. government introduced a novel legal instrument: the “homesteads on Indian land.” Instead of forcing Indigenous nations to cede their title, the government assumed the role of a trustee for these nations’ lands. Officially for the nations’ benefit, lands were then opened to homesteaders who had to pay an extra, albeit generally low, purchase price per acre. The U.S. government administered the resulting proceeds in trust for the affected Indigenous nations. As a legal construct, this practice was different from the previous way of opening “Indian land” to U.S. citizens. In practice, however, these privatization policies were frequently put in place under tremendous pressure from the government. And representatives from affected nations pointed out that the arrangement hardly allowed them to profit from land sales proceeds.</p>
-            <p>[Insert map: Homesteads on Indian Land]</p>
+            <OpenReservationsMap />
             <p>Both the Great Sioux Reservation and the western parts of the Indian Territory were opened to homestead settlers. “Regular” land sales to purchasers who would not reside on the purchased land were not initially allowed in these areas. This means that the opening and sale of these reservation lands were organized to benefit homesteaders specifically.</p>
             <p>Beginning in the 1890s, the “homesteads on Indian land” contributed significantly to numerous nations' massive communal land losses. Under the 1887 Allotment Act (also known as the Dawes Act), private parcels were carved out from communal reservation lands for tribal members. The remaining parts of reservations were opened to homesteaders as “surplus land.” In exchange for the payment of fees, which the U.S. government took in trust, homesteaders pushed into the last remaining refuges of Indigenous nations.</p>
             <p>In most published statistics, the “homesteads on Indian land” are included in the total of all homesteads. Our map shows the extent of this practice and its specific location. The relationship between the predominantly white settlers who moved onto reservations and the remaining Indigenous nations may have been less openly violent and antagonistic than the Indigenous-homesteader confrontations from the 1860s to 1870s. However, what is clear is that, over the years, homesteading on reservations severely eroded the communal land base of the affected nations. By the time the 1934 Indian Reorganization Act ended this practice, the remaining tribal land base had been radically reduced. In some places, the legal status of reservations as separate Indigenous polities also came into question after reservations in whole or in part had become settled by non-Indigenous majorities.</p>

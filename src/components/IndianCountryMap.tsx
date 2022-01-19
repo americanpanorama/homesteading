@@ -59,32 +59,34 @@ const Map = () => {
                                 key={d.substring(0, 50)}
                             />
                         ))}
+
+                        {(States as ProjectedState[]).filter(d => d.abbr !== 'DK' && d.abbr !== 'AK').map(state => (
+                            <path
+                                d={state.d}
+                                fill='#333'
+                                stroke='black'
+                                strokeWidth={3}
+                                key={`statePath${state.abbr}`}
+                            />
+                        ))}
                         {(indianCountryD) && (
                             <path
                                 d={indianCountryD}
                                 fill='green'
-                                fillOpacity={0.25}
+                                fillOpacity={0.75}
                                 stroke='green'
                                 strokeWidth={2}
                                 strokeDasharray='2 6'
                             />
                         )}
                         {(States as ProjectedState[]).filter(d => d.abbr !== 'DK' && d.abbr !== 'AK').map(state => (
-                            <g key={`state${state.abbr}`}>
-                                <path
-                                    d={state.d}
-                                    fill='transparent'
-                                    stroke='grey'
-                                    strokeOpacity={0.2}
-                                    strokeWidth={1}
-                                />
-                                <circle
-                                    cx={state.labelCoords[0]}
-                                    cy={state.labelCoords[1]}
-                                    r={Math.sqrt(AggregatedClaims.find(d => d.state === state.abbr).acresClaimed) * 0.003}
-                                    fill='#FACB3E'
-                                />
-                            </g>
+                            <circle
+                                cx={state.labelCoords[0]}
+                                cy={state.labelCoords[1]}
+                                r={Math.sqrt(AggregatedClaims.find(d => d.state === state.abbr).acresClaimed) * 0.003}
+                                fill='#FACB3E'
+                                key={`stateData${state.abbr}`}
+                            />
                         ))}
 
                     </g>
@@ -105,7 +107,7 @@ const Map = () => {
                     </text>
                     <path
                         fill="green"
-                        fillOpacity={0.25}
+                        fillOpacity={0.7}
                         stroke="green"
                         strokeDasharray="10 20"
                         strokeWidth={5}

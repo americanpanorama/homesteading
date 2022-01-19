@@ -20,7 +20,7 @@ interface State {
   labelRotation: number;
 }
 
-const FullStateDistrict = ({abbr, projectedTownship, fill, scale}: {abbr: 'IL' | 'IN' | 'OH' | 'MS', projectedTownship: ProjectedTownship, fill: string, scale: number}) => {
+const FullStateDistrict = ({ abbr, projectedTownship, fill, scale }: { abbr: 'IL' | 'IN' | 'OH' | 'MS', projectedTownship: ProjectedTownship, fill: string, scale: number }) => {
   const params = useParams<RouterParams>();
   const year = params.year || '1863';
   const { fullOpacity, view } = params;
@@ -36,19 +36,18 @@ const FullStateDistrict = ({abbr, projectedTownship, fill, scale}: {abbr: 'IL' |
   const features = GLOs[abbr].features;
   const opacity = (fullOpacity) ? 1 : (acres === 0) ? 0.03 : 0.15 + 0.85 * acres * 100 / projectedTownship.area;
 
-  if (opacity) {
+  if (acres > 0) {
     return (
       <g>
         {features.filter(d => d).map((d) => (
-          <path
-            d={d}
-            stroke='#7e7578'
-            strokeWidth={0.2 / scale}
-            strokeOpacity={opacity}
-            fill={fill}
-            fillOpacity={opacity}
-            key={d.substring(0, 50)}
-          />
+            <path
+              d={d}
+              stroke='black'
+              strokeWidth={0.2 / scale}
+              strokeOpacity={opacity}
+              fill='#9B8E75'
+              key={d.substring(0, 50)}
+            />
         ))}
         <text
           transform={`translate(0 4) rotate(${GLOs[abbr].labelRotation * -1} ${GLOs[abbr].labelCoords.join(' ')})`}
@@ -65,7 +64,7 @@ const FullStateDistrict = ({abbr, projectedTownship, fill, scale}: {abbr: 'IL' |
             letterSpacing: 1.6
           }}
         >
-          {projectedTownship.office}
+          {(parseInt(year) <= 1876) ? projectedTownship.office : 'Washington DC'}
         </text>
       </g>
     );

@@ -8,9 +8,7 @@ import FullStateDistrict from './FullStateDistrict';
 import { makeParams, colorGradient, useClaimsAndPatentsTypes } from '../utilities';
 import { RouterParams, ProjectedState } from '..';
 import { ProjectedTownship, Point } from './Map.d';
-import { ANIMATIONDURATION } from '../Config';
 import States from '../../data/states.json';
-import { closeSync } from 'fs';
 
 interface Props {
   projectedTownships: ProjectedTownship[];
@@ -19,26 +17,11 @@ interface Props {
 }
 
 const Polygons = (props: Props) => {
-  const { useState, useEffect, useRef } = React;
   const { projectedTownships } = props;
-  const [scale, setScale] = useState(props.scale);
   const params = useParams<RouterParams>();
   const { stateTerr } = params;
-  const ref = useRef(null);
 
   const { acresTypes } = useClaimsAndPatentsTypes();
-
-  // useEffect(() => {
-  //   if (scale !== props.scale) {
-  //     d3.select(ref.current)
-  //       .transition()
-  //       .duration(ANIMATIONDURATION)
-  //       .attr('transform', `scale(${props.scale})`)
-  //       .on('end', () => {
-  //         setScale(props.scale);
-  //       });
-  //   }
-  // }, [props.scale]);
 
   // get the full states that need to be displayed
   const stateGLOs = projectedTownships
@@ -46,10 +29,7 @@ const Polygons = (props: Props) => {
     .map(d => d.state);
 
   return (
-    <g
-      //transform={`scale(${scale})`}
-      ref={ref}
-    >
+    <g>
       {projectedTownships
         .sort((a: ProjectedTownship, b: ProjectedTownship) => {
           if (a.state === stateTerr && b.state === stateTerr) {
@@ -115,6 +95,7 @@ const Polygons = (props: Props) => {
           return (
             <State
               {...state}
+              fill={(['IL', 'IN', 'MS', 'OH'].includes(state.abbr)) ? colorGradient(state.stats.acres_visualized / state.stats.area) : 'transparent'}
               fillOpacity={0}
               //stroke={(!stateTerr) ? colorGradient(state.stats.acres_visualized / state.stats.area) : 'transparent'}
               stroke='#201D18'

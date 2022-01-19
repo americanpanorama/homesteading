@@ -21,7 +21,7 @@ const Map = () => {
   const params = useParams<RouterParams>();
   const { stateTerr, office } = params;
   const year = params.year || '1863';
-  
+
   const { width: mapWidth, height: mapHeight, size: mapSize, setMapSize } = (useContext(DimensionsContext) as Dimensions).mapDimensions;
   const width = mapWidth;
   const height = mapHeight;
@@ -43,7 +43,7 @@ const Map = () => {
     yGutter = yGutter || 1;
     dx = dx || CANVASSIZE; // the 0.7 accounts for there not being any states with homesteading east of MI/OH
     dy = dy || 500 / 960 * CANVASSIZE;
-    center = center || [CANVASSIZE * 0.37, CANVASSIZE / 2];
+    center = center || [CANVASSIZE * 0.37, CANVASSIZE * 0.47];
     rotation = rotation || -2;
 
     // calculate values
@@ -67,9 +67,8 @@ const Map = () => {
     }
   }
 
-  let { scale: initialScale, transform: initialTransform, translate: initialTranslate }: TransformData = calculateTransform({ width, height });
+  let { scale: initialScale, transform: initialTransform }: TransformData = calculateTransform({ width, height });
   const [center, setCenter] = useState<Point>([CANVASSIZE / 2, CANVASSIZE / 2]);
-
   const initialTranslateCalculated = useRef(!stateTerr);
   const [scale, setScale] = useState(initialScale);
   const [transform, setTransform] = useState(initialTransform);
@@ -129,28 +128,12 @@ const Map = () => {
               ? d.office_boundaries[0]
               : d.office_boundaries.find(ob => ob.tile_id && ob.tile_id.slice(-8) >= `${year}0630`);
             const data = d.data.find(d => d.adjustedForMap) || d.data.find(d => !d.adjustedForMap);
+            delete data.adjustedForMap;
             return {
-              d: office_boundary.d,
               office: d.office,
               state: d.state,
-              area: office_boundary.area,
-              bounds: office_boundary.bounds,
-              rotation: office_boundary.rotation,
-              tile_id: office_boundary.tile_id,
-              claims: data.claims,
-              acres_claimed: data.acres_claimed,
-              claims_indian_lands: data.claims_indian_lands,
-              acres_claimed_indian_lands: data.acres_claimed_indian_lands,
-              patents: data.patents,
-              acres_patented: data.acres_patented,
-              patents_indian_lands: data.patents_indian_lands,
-              acres_patented_indian_lands: data.acres_patented_indian_lands,
-              commutations_2301: data.commutations_2301,
-              acres_commuted_2301: data.acres_commuted_2301,
-              commutations_18800615: data.commutations_18800615,
-              acres_commuted_18800615: data.acres_commuted_18800615,
-              commutations_indian_lands: data.commutations_indian_lands,
-              acres_commuted_indian_lands: data.acres_commuted_indian_lands,
+              ...office_boundary,
+              ...data,
             }
           });
         setYearData({

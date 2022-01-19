@@ -36,7 +36,7 @@ const MapLegend = () => {
       <div id='indianLands' className='legendSection'>
         <h3>Indian Lands</h3>
         <svg
-          width={150}
+          width={200}
           height={100}
         >
           <g>
@@ -67,7 +67,13 @@ const MapLegend = () => {
                 x={40}
                 y={20}
               >
-                Reservations Opened to Homesteading
+                Reservation Lands
+                <tspan
+                  x={40}
+                  dy={20}
+                >
+                  Opened to Homesteaders
+                </tspan>
               </text>
             </g>
           )}

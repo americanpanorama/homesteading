@@ -17,6 +17,7 @@ interface Props extends StyledState {
 const State = (props: Props) => {
   const { useRef, useEffect, useState } = React;
   const {
+    fill,
     abbr,
     link,
     d,
@@ -72,10 +73,11 @@ const State = (props: Props) => {
       <path
         d={d}
         className={`stateBoundary ${(!linkActive) ? 'unselectable' : ''}`}
-        fill={(abbr === 'ILd') ? '#8c8686' : 'transparent'}
         style={{
           stroke: stroke,
           strokeWidth: (selected) ? 4 / scale : 1.25 / scale,
+          fill: fill || 'transparent',
+          fillOpacity: 0.8,
         }}
         ref={boundaryRef}       
       />

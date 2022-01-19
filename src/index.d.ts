@@ -154,6 +154,7 @@ export interface StyledState {
   d: string;
   labelCoords: [number, number];
   labelRotation: number;
+  fill?: string;
   fillOpacity: number;
   stroke?: string;
 }

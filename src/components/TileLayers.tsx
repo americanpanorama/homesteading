@@ -94,7 +94,6 @@ const TileLayers = (props: Props) => {
         return acresA / a.area - acresB / b.area;
       })
       .forEach((projectedTownship) => {
-        const tilesForCanvas = Math.pow(2, z);
         const minXForOffice: number = getTileX(projectedTownship.bounds[0][0], z, CANVASSIZE);
         const maxXForOffice: number = getTileX(projectedTownship.bounds[1][0], z, CANVASSIZE);
         const maxYForOffice: number = getTileY(projectedTownship.bounds[0][1], z, CANVASSIZE);
@@ -108,7 +107,6 @@ const TileLayers = (props: Props) => {
               x: tempX,
               y: tempY,
               opacity: (fullOpacity) ? 1 : (acres === 0) ? 0.03 : Math.min(0.15 + 0.85 * acres * 100 / projectedTownship.area, 1),
-              //opacity: Math.floor((i / townships.length) / (1 / 10)) / 10 + 0.1,
             });
           }
         }
@@ -126,7 +124,6 @@ const TileLayers = (props: Props) => {
       })
       .forEach(projectedTownship => {
         const alaskaZ = calculateZ(scale / 4);
-        const tilesForCanvas = Math.pow(2, alaskaZ);
         const minXForOffice: number = getTileX(projectedTownship.bounds[0][0] + 64, alaskaZ, CANVASSIZE / 4);
         const maxXForOffice: number = getTileX(projectedTownship.bounds[1][0] + 64, alaskaZ, CANVASSIZE / 4);
         const maxYForOffice: number = getTileY(projectedTownship.bounds[0][1] - 512, alaskaZ, CANVASSIZE / 4);
@@ -141,7 +138,6 @@ const TileLayers = (props: Props) => {
               y: tempY,
               translate: [getProjectedValue(-64, alaskaZ), getProjectedValue(512, alaskaZ)],
               opacity: (fullOpacity) ? 1 : (acres === 0) ? 0.03 : tileOpacity(acres / projectedTownship.area),
-              //opacity: Math.floor((i / townships.length) / (1 / 10)) / 10 + 0.1,
             });
           }
         }
@@ -157,14 +153,20 @@ const TileLayers = (props: Props) => {
   // when there's a new set of townships when a different year is selected, load them
   useEffect(() => {
     setTiles(getTiles(projectedTownships, props.scale, center));
-  }, [props.scale, center[0], center[1], view]);
+  }, [props.scale, center[0], center[1]]);
 
   // when there's a new zoom, add the tile layer
   useEffect(() => {
     if (calculateZ(props.scale) > calculateZ(scale)) {
       setOverTiles(getTiles(projectedTownships, props.scale, center));
+      if (animatingYearStatus.current === 'finished') {
+        animatingYearStatus.current = 'finishing';
+      }
     } else if (calculateZ(props.scale) < calculateZ(scale)) {
       setUnderTiles(getTiles(projectedTownships, props.scale, center));
+      if (animatingYearStatus.current === 'finished') {
+        animatingYearStatus.current = 'finishing';
+      }
     }
   }, [props.scale]);
 
@@ -219,6 +221,7 @@ const TileLayers = (props: Props) => {
         setTiles(getTiles(projectedTownships, props.scale, center));
         setUnderTiles([]);
         animatingYearStatus.current = 'finished';
+        setScale(props.scale);
       }, ANIMATIONDURATION);
     }
   });
@@ -235,19 +238,6 @@ const TileLayers = (props: Props) => {
       }
     }
   });
-
-  // zoom when the scale changes
-  // useEffect(() => {
-  //   d3.select(ref.current)
-  //     .transition()
-  //     .duration(ANIMATIONDURATION)
-  //     .attr('transform', `scale(${props.scale})`)
-  //     .on('end', () => {
-  //       setScale(props.scale);
-  //     })
-  // }, [props.scale]);
-
-  console.log(tiles);
 
   return (
     <g

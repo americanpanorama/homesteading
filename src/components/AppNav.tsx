@@ -19,7 +19,7 @@ export default function AppNav() {
                 <Link
                     to={makeParams(params, [(params.text && params.text === 'dispossession') ? { type: 'clear_text' } : { type: 'show_text', payload: 'dispossession' }])}
                 >
-                    Indigenous Disposession
+                    Indigenous Dispossession
                 </Link>
             </li>
             <li>

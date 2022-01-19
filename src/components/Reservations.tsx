@@ -7,7 +7,7 @@ import { getDateValue } from '../utilities';
 
 interface IndianLands {
     d: string;
-    type: 'reservation' | 'unceded land';
+    type: 'reservation' | 'unceded land' | 'open_res';
     opened?: {
         year: number;
         month: number;
@@ -37,7 +37,7 @@ export default function Reservations() {
                 <path
                     d={reservation.d}
                     key={`reservation${reservation.d.substr(0, 15)}`}
-                    className={`indianLand ${(reservation.type === 'unceded land') ? 'unceded' : ''} ${(reservation.opened && reservation.opened.year <= year) ? 'opened' : ''}`}
+                    className={`indianLand ${(reservation.type === 'unceded land') ? 'unceded' : ''} ${(reservation.type === 'open_res') ? 'opened' : ''}`}
                 />
             ))}
         </g>

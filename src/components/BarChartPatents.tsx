@@ -194,6 +194,7 @@ const BarChartPatents = ({ chartData, stacked, selectedView, label }: {chartData
                 <text
                   x={x(year)}
                   y={chartBodyHeight + 15}
+                  textAnchor='middle'
                 >
                   {year}
                 </text>

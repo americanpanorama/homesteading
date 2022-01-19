@@ -5,6 +5,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:creator" content="@DSL_UR">
+    <meta property="og:url" content="https://dsl.richmond.edu/panorama/homesteading/">
+    <meta property="og:title" content="Land Acquisition and Dispossession: Mapping the Homestead Act, 1863-1912">
+    <meta property="og:description" content="Year-by-year maps of homesteading claims and patents in the American West and South and the dispossession of Native American lands.">
+    <meta property="og:image" content="https://dsl.richmond.edu/panorama/homesteading/map/static/ogimage.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <title>Land Acquisition and Dispossession</title>
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href="https://fonts.googleapis.com/css2?family=Oswald&amp;family=Playfair+Display&amp;family=Roboto+Condensed:wght@300;400&amp;family=Titillium+Web:ital,wght@1,200&amp;family=Merriweather&display=swap" rel="stylesheet" />
@@ -131,9 +139,10 @@
         
         .tutorial video {
             margin: 20px;
-            max-width: 900px;
-            max-width: 95vw;
+            width: 900px;
+            max-width: calc(95vw - 40px);
             border-radius: 15px;
+            object-fit: cover;
         }
         
         .americanPanorama {
@@ -248,17 +257,19 @@
         }
         
         @media only screen and (min-width: 1280px) {
+            #panorama {
+                display: flex;
+                align-items: center;
+            }
             .americanPanorama {
-                width: 67vw;
-                float: left;
+                width: 60vw;
             }
             .americanPanorama h1 {
-                width: 67vw;
+                width: 60vw;
                 font-size: 68px;
             }
             #ofInterest {
                 width: 33vw;
-                float: right;
                 background-size: 27vw;
             }
             #ofInterest img {
@@ -277,7 +288,7 @@
     <div id="explanation">
         <p>
             The Homestead Act of 1862 offered Americans the opportunity to claim parcels of "public land," occupy and improve it for five years, and then receive title to it. This map visualizes over time and space the more than 2.3 million claims and 900,000 "patents"
-            granting ownership made and issued in the half century after passage of the act. By 1912, homesteaders had transformed more than 125 million acres—more than 5% of the total acre of the entire United States—from public lands to private property.
+            granting ownership made and issued in the half century after passage of the act. By 1912, homesteaders had transformed more than 125 million acres—more than 5% of the total acreage of the entire United States—from public lands to private property.
         </p>
         <p>
             During the same period, Native Americans were dispossessed of large portions of the American West. While not doing it full justice, this map pays particular attention to the dispossession of the lands of Native Americans through violence and claims on
@@ -289,15 +300,15 @@
         <div class="explanation">
             <h4>Homesteading Activity</h4>
             <p>
-                The map proper shows the boundaries of active land office districts for a selected year. The color of the district reflects the relative amount of land that was either claimed or patented there. Districts colored red had a lot of claims or patents; those
+                The map proper shows the boundaries of active land office districts for a selected year. The color of th∏e district reflects the relative amount of land that was either claimed or patented there. Districts colored red had a lot of claims or patents; those
                 colored green far less.
             </p>
             <p>
                 Buttons to select claims and patents or some subset of either appear above the map.
             </p>
         </div>
-        <video controls>
-        <source src="./landing/change cat.mp4" type="video/mp4" />
+        <video poster='./landing/changecat.jpg' controls>
+        <source src="./landing/changecat.mp4" type="video/mp4" />
 
         Sorry, your browser doesn't support embedded videos.
       </video>
@@ -310,11 +321,11 @@
                 You can see homesteading at three scales—the US, a state or territory, and a specific district—by clicking on the map. The timeline and/or bar graph will change to show just the data about that selected area.
             </p>
         </div>
-        <video controls>
+        <video poster='./landing/threelevels.jpg' controls>
         <source src="./landing/threelevels.mp4" type="video/mp4" />
 
         Sorry, your browser doesn't support embedded videos.
-      </video>
+      </videocontrols>
     </div>
 
     <div class="tutorial">
@@ -326,11 +337,14 @@
           >
         </p>
       </div>
-      <video controls>
+      <video
+        poster='./landing/timeline.jpg'
+        controls
+    >
         <source src="./landing/timeline.mp4" type="video/mp4" />
 
         Sorry, your browser doesn't support embedded videos.
-      </video>
+      </videocontrols>
     </div>
 
     <div class="tutorial">
@@ -342,29 +356,34 @@
           It's clickable too to change the year that's mapped.
         </p>
       </div>
-      <video controls>
+      <video
+        poster='./landing/bargraph.jpg'
+        controls
+    >
         <source src="./landing/bargraph.mp4" type="video/mp4" />
 
         Sorry, your browser doesn't support embedded videos.
-      </video>
+      </videocontrols>
     </div>
 
-    <a href='https://dsl.richmond.edu/panorama'>
-        <div class='americanPanorama'>
-            <h3>"Land Acquisition and Dispossession" is part of</h3>
-            <h1>American Panorama</h1>
-            <h2>An Atlas of United States History</h2>
-        </div>
-    </a>
+    <div id='panorama'>
+        <a href='https://dsl.richmond.edu/panorama'>
+            <div class='americanPanorama'>
+                <h3>"Land Acquisition and Dispossession" is part of</h3>
+                <h1>American Panorama</h1>
+                <h2>An Atlas of United States History</h2>
+            </div>
+        </a>
 
-    <a href='https://dsl.richmond.edu/panorama/overlandtrails'></a>
-        <div id='ofInterest'>
-            <p>Another <cite>American Panorama</cite> you might be interested in ...</p>
-            <h2>The Overland Trails, 1840-1860</h2>
+        <a href='https://dsl.richmond.edu/panorama/overlandtrails'>
+            <div id='ofInterest'>
+                <p>Another <cite>American Panorama</cite> you might be interested in ...</p>
+                <h2>The Overland Trails, 1840-1860</h2>
 
-            <img src='https://dsl.richmond.edu/panorama/assets/images/maps/overland-img.jpg' alt='Overland Trails' />
-        </div>
-    </a>
+                <img src='https://dsl.richmond.edu/panorama/assets/images/maps/overland-img.jpg' alt='Overland Trails' />
+            </div>
+        </a>
+    </div>
 
     <footer>
         <div><a href='https://dsl.richmond.edu/'><img src='https://dsl.richmond.edu/assets/images/dsl-blue-logo.svg' alt='DSL logo'></a></div>
@@ -372,5 +391,11 @@
         <div><a href='https://library.richmond.edu/'>Boatwright Library</a></div>
         <div><a href='https://richmond.edu/'>The University of Richmond</a></div>
     </footer>
+    <script type="text/javascript">
+        window.GoogleAnalyticsObject='ga';window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+        ga('create','UA-4063620-19','auto');
+        ga('send','pageview')
+      </script>
+      <script async defer src="https://www.google-analytics.com/analytics.js" type="text/javascript"></script>
   </body>
 </html>
