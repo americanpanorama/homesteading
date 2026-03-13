@@ -1,0 +1,559 @@
+fid,date_begin,date_end,source_no,name,state,nation,army,white civilians,native dead,army dead,white civilian dead,source,xcoord,ycoord
+1,1862/05/05,1862/05/05,8, Dragoon Springs,Arizona,,,,,,,Michno: Forgotten Fights,-1302096.651,1113644.412
+2,1862/06/18,1862/06/18,9, Jones’s Fight,Arizona,,,,,,,Michno: Forgotten Fights,-1243001.743,1107840.448
+3,1862/06/25,1862/06/25,10, Apache Pass / Eyre’s Scout,Arizona,,,,,,,Michno: Forgotten Fights,-1259886.002,1088845.656
+4,1862/07/15,1862/07/15,12,Apache Pass,Arizona,,,,,,,Michno: Encyclopedia,-1273848.836,1091352.626
+5,1863/04/25,1863/04/25,14,Apache Pass,Arizona,,,,,,,Michno: Encyclopedia,-1282290.966,1105598.72
+6,1863/04/27,1863/04/27,13,Rio Bonito,Arizona,,,,,,,Michno: Encyclopedia,-1263823.807,1188964.752
+7,1863/05/07,1863/05/07,15,Aravaipa Canyon,Arizona,,,,,,,Michno: Encyclopedia,-1339275.342,1192130.55
+8,1863/08/05,1863/08/19,16,Pueblo Colorado Expedition,Arizona,,,,,,,Michno: Encyclopedia,-1262240.908,1457002.372
+9,1863/11/15,1863/12/04,17,Oraibi Expedition,Arizona,,,,,,,Michno: Encyclopedia,-1319752.917,1494464.323
+10,1863/12/11,1863/12/11,18,Riconde Massacre,Arizona,,,,,,,Michno: Encyclopedia,-1233221.087,1477052.431
+11,1863/12/29,1863/12/29,11, Butterworth’s Fight,Arizona,,,,,,,Michno: Forgotten Fights,-1412899.605,1039248.144
+12,1864/01/12,1864/01/14,19,Canyon de Chelly,Arizona,,,,,,,Michno: Encyclopedia,-1207367.064,1545117.102
+13,1864/01/24,1864/01/24,20,Fish Creek Canyon,Arizona,,,,,,,Michno: Encyclopedia,-1404701.848,1271803.15
+14,1864/04/07,1864/04/07,21,Sierra Bonita,Arizona,,,,,,,Michno: Encyclopedia,-1247994.814,1159417.298
+15,1864/05/04,1864/05/04,22,Doubtful Canyon,Arizona,,,,,,,Michno: Encyclopedia,-1230582.921,1109292.152
+16,1864/05/29,1864/05/29,23,Mescal Creek,Arizona,,,,,,,Michno: Encyclopedia,-1357742.501,1226954.336
+17,1864/06/03,1864/06/03,12, Battle Flat,Arizona,,,,,,,Michno: Forgotten Fights,-1494814.645,1368623.113
+18,1864/06/07,1864/06/08,24,San Carlos River,Arizona,,,,,,,Michno: Encyclopedia,-1344024.04,1243310.962
+19,1864/07/09,1864/07/21,26,Little Colorado River Expedition,Arizona,,,,,,,Michno: Encyclopedia,-1261185.641,1399490.363
+20,1864/07/15,1864/07/15,25,Little Colorado River,Arizona,,,,,,,Michno: Encyclopedia,-1239552.684,1382606.104
+21,1864/07/28,1864/08/04,27,Pinal Mountains Expedition,Arizona,,,,,,,Michno: Encyclopedia,-1375154.394,1243310.962
+22,1864/08/05,1864/08/05,28,Pinal Creek,Arizona,,,,,,,Michno: Encyclopedia,-1368822.796,1258084.689
+23,1864/12/15,1864/12/15,29,HassayampaRiver,Arizona,,,,,,,Michno: Encyclopedia,-1525002.197,1359917.88
+24,1865/01/01,1865/01/01,30,Sycamore Springs,Arizona,,,,,,,Michno: Encyclopedia,-1464324.389,1358334.98
+25,1865/02/17,1865/02/17,13, Fort Buchanan,Arizona,,,,,,,Michno: Forgotten Fights,-1391794.28,1056660.036
+26,1865/07/22,1865/07/22,14, Huachuca Mountains,Arizona,,,,,,,Michno: Forgotten Fights,-1369633.69,1041886.309
+27,1865/11/05,1865/11/05,15, Mescal Canyon,Arizona,,,,,,,Michno: Forgotten Fights,-1263051.801,1062464.001
+28,1866/01/21,1866/01/21,16, Cottonwood Springs,Arizona,,,,,,,Michno: Forgotten Fights,-1305790.083,1190678.847
+29,1866/02/13,1866/02/13,31,Gallegos's Fight,Arizona,,,,,,,Michno: Encyclopedia,-1405757.114,1403711.428
+30,1866/03/11,1866/03/11,17, Black Hills,Arizona,,,,,,,Michno: Forgotten Fights,-1452076.363,1386035.006
+31,1866/03/22,1866/03/22,18, Cottonwood Springs,Arizona,,,,,,,Michno: Forgotten Fights,-1379658.719,1186985.415
+32,1866/03/25,1866/03/25,19, Salt River,Arizona,,,,,,,Michno: Forgotten Fights,-1382824.517,1296733.102
+33,1866/03/31,1866/03/31,32,Walker's Fight,Arizona,,,,,,,Michno: Encyclopedia,-1396787.351,1254918.891
+34,1866/08/13,1866/08/13,20, Grapevine Spring,Arizona,,,,,,,Michno: Forgotten Fights,-1477930.386,1371788.912
+35,1866/10/03,1866/10/03,21, Cedar Valley,Arizona,,,,,,,Michno: Forgotten Fights,-1358685.302,1365457.315
+36,1866/11/08,1866/11/08,22, Big Bug,Arizona,,,,,,,Michno: Forgotten Fights,-1486900.149,1384452.107
+37,1866/11/17,1866/11/17,23, Sierra Ancha,Arizona,,,,,,,Michno: Forgotten Fights,-1382824.517,1317838.426
+38,1866/11/18,1866/11/18,24, Bell’s Canyon,Arizona,,,,,,,Michno: Forgotten Fights,-1506950.207,1396060.035
+39,1867/01/15,1867/01/15,33,Aquarius Mountains,Arizona,,,,,,,Michno: Encyclopedia,-1572489.177,1465972.135
+40,1867/02/23,1867/02/23,25, Meadow Valley / Camp Reno,Arizona,,,,,,,Michno: Forgotten Fights,-1411316.705,1314144.995
+41,1867/03/02,1867/03/02,26, Date Creek,Arizona,,,,,,,Michno: Forgotten Fights,-1528055.531,1383924.474
+42,1867/04/10,1867/04/18,34,Black Mountains,Arizona,,,,,,,Michno: Encyclopedia,-1461686.224,1419540.421
+43,1867/05/30,1867/05/30,35,Beale's Springs,Arizona,,,,,,,Michno: Encyclopedia,-1613644.56,1486549.827
+44,1867/06/14,1867/06/14,36,Yampai Valley,Arizona,,,,,,,Michno: Encyclopedia,-1590956.336,1523484.144
+45,1867/07/09,1867/07/09,37,Music Mountain,Arizona,,,,,,,Michno: Encyclopedia,-1573544.443,1528760.475
+46,1867/10/06,1867/10/06,38,Hualapai Mountain,Arizona,,,,,,,Michno: Encyclopedia,-1609423.495,1470720.833
+47,1867/11/07,1867/11/07,39,The Willows,Arizona,,,,,,,Michno: Encyclopedia,-1561936.515,1487077.46
+48,1867/11/05,1867/11/05,27, Camp Bowie,Arizona,,,,,,,Michno: Forgotten Fights,-1271493.931,1099398.318
+49,1868/01/14,1868/01/14,40,Difficult Canyon,Arizona,,,,,,,Michno: Encyclopedia,-1607840.596,1507127.518
+50,1868/03/21,1868/03/21,41,Camp Willow Grove,Arizona,,,,,,,Michno: Encyclopedia,-1580403.674,1482328.762
+51,1868/05/30,1868/05/30,28, San Carlos Trail,Arizona,,,,,,,Michno: Forgotten Fights,-1316870.378,1281959.375
+52,1868/06/16,1868/06/16,42,Sugarloaf Mountain,Arizona,,,,,,,Michno: Encyclopedia,-1429500.604,1295019.007
+53,1868/07/08,1868/07/08,43,Big Rump Canyon,Arizona,,,,,,,Michno: Encyclopedia,-1414199.244,1293436.108
+54,1868/09/09,1868/09/13,29, Agua Fria / Verde River,Arizona,,,,,,,Michno: Forgotten Fights,-1469356.348,1311506.829
+55,1868/09/25,1868/09/25,30, La Paz Massacre,Arizona,,,,,,,Michno: Forgotten Fights,-1680013.867,1331688.796
+56,1869/10/08,1869/10/08,44,Chiricahua Pass / Pedregosa Mountains,Arizona,,,,,,,Michno: Encyclopedia,-1258019.843,1018539.257
+57,1869/10/19,1869/10/19,45,Chiricahua Mountains / Tex Canyon,Arizona,,,,,,,Michno: Encyclopedia,-1259075.109,1050724.877
+58,1869/02/04,1869/02/04,31, Aravaipa Mountains,Arizona,,,,,,,Michno: Forgotten Fights,-1326367.774,1176432.753
+59,1869/06/04,1869/06/04,32, Pinal Mountains,Arizona,,,,,,,Michno: Forgotten Fights,-1371744.222,1252939.554
+60,1869/07/06,1869/07/07,33, Harquahala Mountains,Arizona,,,,,,,Michno: Forgotten Fights,-1602451.8,1329578.263
+61,1869/10/05,1869/10/05,34, Stone Massacre,Arizona,,,,,,,Michno: Forgotten Fights,-1291543.989,1102036.484
+62,1869/12/10,1869/12/10,35, Chilson’s Creek,Arizona,,,,,,,Michno: Forgotten Fights,-1441391.793,1313617.362
+63,1870/05/26,1870/05/26,46,Israel-Kennedy Wagon Train,Arizona,,,,,,,Michno: Encyclopedia,-1374626.76,1157834.398
+64,1870/06/05,1870/06/05,47,Signal Peak,Arizona,,,,,,,Michno: Encyclopedia,-1362491.199,1247532.027
+65,1870/08/01,1870/08/01,48,Skirmish Canyon,Arizona,,,,,,,Michno: Encyclopedia,-1382541.257,1267054.452
+66,1870/10/06,1870/10/06,49,Deer Creek,Arizona,,,,,,,Michno: Encyclopedia,-1331360.845,1175773.924
+67,1870/01/28,1870/01/28,36, Dragoon Mountains,Arizona,,,,,,,Michno: Forgotten Fights,-1307372.982,1095177.254
+68,1870/05/24,1870/05/24,37, Tonto Valley,Arizona,,,,,,,Michno: Forgotten Fights,-1403929.842,1338416.118
+69,1871/04/04,1870/04/12,50,Apache Mountains,Arizona,,,,,,,Michno: Encyclopedia,-1404701.848,1265471.553
+70,1871/04/30,1871/04/30,51,Camp Grant Massacre,Arizona,,,,,,,Michno: Encyclopedia,-1303202.562,1144530.956
+71,1871/05/05,1871/05/05,52,Whetstone Mountains,Arizona,,,,,,,Michno: Encyclopedia,-1372516.228,1059694.639
+72,1871/07/01,1871/07/01,53,Salt River,Arizona,,,,,,,Michno: Encyclopedia,-1355104.335,1294491.374
+73,1871/07/13,1871/07/13,42, Cienaga de los Pinos,Arizona,,,,,,,Michno: Forgotten Fights,-1367523.157,1104674.65
+74,1871/10/24,1871/10/24,43, Horseshoe Canyon,Arizona,,,,,,,Michno: Forgotten Fights,-1251971.506,1068267.965
+75,1871/11/05,1871/11/05,54,Wickenburg Massacre,Arizona,,,,,,,Michno: Encyclopedia,-1523419.298,1355169.182
+76,1871/01/01,1871/01/01,38, Pinal Mountains,Arizona,,,,,,,Michno: Forgotten Fights,-1371216.589,1238165.827
+77,1871/02/12,1871/02/12,39, Chiricahua Peak,Arizona,,,,,,,Michno: Forgotten Fights,-1257775.47,1079348.26
+78,1871/03/28,1871/03/28,40, Gila River,Arizona,,,,,,,Michno: Forgotten Fights,-1232976.714,1166935.357
+79,1871/06/08,1871/06/09,41, Rye Creek/Morton's Fight,Arizona,,,,,,,Michno: Forgotten Fights,-1396542.978,1353189.845
+80,1872/05/19,1872/05/19,55,Camp Hualpai Scout,Arizona,,,,,,,Michno: Encyclopedia,-1519198.233,1450143.142
+81,1872/06/10,1872/06/10,56, Bill Williams Mountain,Arizona,,,,,,,Michno: Encyclopedia,-1444274.331,1465444.502
+82,1872/08/27,1872/08/27,57,Davidson Canyon,Arizona,,,,,,,Michno: Encyclopedia,-1387817.588,1085548.662
+83,1872/09/08,1872/09/08,58,Date Creek,Arizona,,,,,,,Michno: Encyclopedia,-1549273.32,1381023.204
+84,1872/09/25,1872/09/25,59,Muchos Canyon,Arizona,,,,,,,Michno: Encyclopedia,-1552966.752,1404766.694
+85,1872/09/30,1872/09/30,60,Camp Crittenden,Arizona,,,,,,,Michno: Encyclopedia,-1389928.121,1061805.172
+86,1872/11/25,1872/11/25,61,Hell Canyon,Arizona,,,,,,,Michno: Encyclopedia,-1466434.922,1449615.509
+87,1872/12/07,1872/12/07,62,Red Rocks,Arizona,,,,,,,Michno: Encyclopedia,-1440580.899,1436952.314
+88,1872/12/11,1872/12/11,63,Bad Rock Mountain,Arizona,,,,,,,Michno: Encyclopedia,-1418420.309,1317707.231
+89,1872/12/13,1872/12/13,64,Mazatzal Mountains,Arizona,,,,,,,Michno: Encyclopedia,-1422641.374,1306099.302
+90,1872/12/28,1872/12/28,65,Skull Cave,Arizona,,,,,,,Michno: Encyclopedia,-1417892.676,1284466.345
+91,1872/12/30,1872/12/30,66,Baby Canyon,Arizona,,,,,,,Michno: Encyclopedia,-1495982.376,1310320.367
+92,1873/01/16,1873/01/16,67,Superstition Mountains,Arizona,,,,,,,Michno: Encyclopedia,-1403118.948,1251225.459
+93,1873/01/19,1873/01/19,68,East Verde River,Arizona,,,,,,,Michno: Encyclopedia,-1410505.812,1359917.88
+94,1873/01/22,1873/01/22,69,Tonto Creek,Arizona,,,,,,,Michno: Encyclopedia,-1393621.552,1333008.591
+95,1873/02/06,1873/02/06,70,Hell Canyon,Arizona,,,,,,,Michno: Encyclopedia,-1452716.461,1453308.941
+96,1873/03/19,1873/03/19,71,Mazatzal Mountains,Arizona,,,,,,,Michno: Encyclopedia,-1426862.438,1295019.007
+97,1873/03/27,1873/03/27,72,Turret Mountain,Arizona,,,,,,,Michno: Encyclopedia,-1443219.065,1350948.117
+98,1873/06/16,1873/06/16,73,Forks of Tonto Creek,Arizona,,,,,,,Michno: Encyclopedia,-1370405.696,1338284.922
+99,1873/09/23,1873/09/23,74,Hardscarbble Creek,Arizona,,,,,,,Michno: Encyclopedia,-1420530.841,1372581.074
+100,1873/12/04,1873/12/04,75,East Verde River,Arizona,,,,,,,Michno: Encyclopedia,-1424224.273,1360445.513
+101,1873/12/23,1873/12/23,76,Cave Creek,Arizona,,,,,,,Michno: Encyclopedia,-1474349.418,1300295.338
+102,1874/01/10,1874/01/10,77,Canyon Creek,Arizona,,,,,,,Michno: Encyclopedia,-1425279.539,1349892.851
+103,1874/03/08,1874/03/08,78,Pinal Mountains Expedition,Arizona,,,,,,,Michno: Encyclopedia,-1380430.725,1245421.495
+104,1874/03/25,1874/03/25,79,Superstition Mountains,Arizona,,,,,,,Michno: Encyclopedia,-1422113.74,1264416.287
+105,1874/04/02,1874/04/02,80,Pinal Creek,Arizona,,,,,,,Michno: Encyclopedia,-1372516.228,1260195.222
+106,1874/04/28,1874/04/28,81,Aravaipa Mountains,Arizona,,,,,,,Michno: Encyclopedia,-1348245.105,1174718.658
+107,1874/05/17,1874/05/18,82,Four Peaks,Arizona,,,,,,,Michno: Encyclopedia,-1410505.812,1292908.475
+108,1874/09/17,1874/09/17,83,Cave Creek,Arizona,,,,,,,Michno: Encyclopedia,-1487012.613,1292380.842
+109,1874/10/27,1874/10/27,84,Cave Creek,Arizona,,,,,,,Michno: Encyclopedia,-1472766.519,1286576.877
+110,1874/11/01,1874/11/01,85,Sunset Pass,Arizona,,,,,,,Michno: Encyclopedia,-1371988.595,1402656.162
+111,1874/11/25,1874/11/26,86,Snow Lake,Arizona,,,,,,,Michno: Encyclopedia,-1310255.521,1359917.88
+112,1874/12/01,1874/12/01,87,Canyon Creek,Arizona,,,,,,,Michno: Encyclopedia,-1412616.344,1344616.52
+113,1875/07/01,1875/07/01,88,East Verde River,Arizona,,,,,,,Michno: Encyclopedia,-1437415.101,1368887.643
+114,1875/07/04,1875/07/04,89,Red Rock Canyon,Arizona,,,,,,,Michno: Encyclopedia,-1424224.273,1441173.379
+115,1876/08/15,1876/08/15,90,Red Rocks,Arizona,,,,,,,Michno: Encyclopedia,-1427917.705,1424289.119
+116,1876/09/18,1876/09/18,91,The Caves,Arizona,,,,,,,Michno: Encyclopedia,-1415782.143,1385244.269
+117,1876/10/04,1876/10/04,92,Tonto Creek,Arizona,,,,,,,Michno: Encyclopedia,-1377792.559,1352003.383
+118,1877/01/12,1877/01/14,93,East Verde Creek,Arizona,,,,,,,Michno: Encyclopedia,-1403118.948,1369942.909
+119,1877/01/21,1877/01/21,94,Tonto Creek,Arizona,,,,,,,Michno: Encyclopedia,-1397314.984,1319817.763
+120,1877/01/30,1877/01/30,95,North Peak,Arizona,,,,,,,Michno: Encyclopedia,-1412616.344,1331953.325
+121,1878/04/05,1878/04/05,96,Hell Canyon,Arizona,,,,,,,Michno: Encyclopedia,-1474349.418,1465972.135
+122,1879/06/25,1879/06/25,97,Tonto Basin,Arizona,,,,,,,Michno: Encyclopedia,-1394676.819,1348309.951
+123,1880/05/07,1880/05/07,98,Ash Creek Valley,Arizona,,,,,,,Michno: Encyclopedia,-1282818.599,1203210.846
+124,1881/08/30,1881/08/30,99,Cibicue Creek,Arizona,,,,,,,Michno: Encyclopedia,-1326084.514,1319290.13
+125,1881/08/31,1881/09/01,100,Fort Apache,Arizona,,,,,,,Michno: Encyclopedia,-1287567.297,1293963.741
+126,1881/10/02,1881/10/02,101,Cedar Springs,Arizona,,,,,,,Michno: Encyclopedia,-1319225.284,1166276.528
+127,1881/10/02,1881/10/02,44, K-H Butte,Arizona,,,,,,,Michno: Forgotten Fights,-1303679.551,1178015.652
+128,1881/10/04,1881/10/04,102,Dragoon Mountains,Arizona,,,,,,,Michno: Encyclopedia,-1232693.453,1114568.483
+129,1881/11/01,1881/11/02,45, Dravo’s Scout,Arizona,,,,,,,Michno: Forgotten Fights,-1287322.924,1273517.245
+130,1882/04/23,1882/04/23,102,Horseshoe Canyon,Arizona,,,,,,,Michno: Encyclopedia,-1304979.19,1064970.971
+131,1882/07/17,1882/07/17,104,Big Dry Wash / General Spring,Arizona,,,,,,,Michno: Encyclopedia,-1364074.098,1369942.909
+132,1883/03/21,1883/03/21,105,Canelo Hills,Arizona,,,,,,,Michno: Encyclopedia,-1375154.394,1039116.948
+133,1890/03/07,1890/03/07,46, Salt River,Arizona,,,,,,,Michno: Forgotten Fights,-1363829.725,1272461.979
+134,1862/05/31,1862/05/31,32,Eel River,California,,,,,,,Michno: Encyclopedia,-2291653.108,2244758.608
+135,1862/06/06,1862/06/06,33,Daley's Ferry,California,,,,,,,Michno: Encyclopedia,-2311703.166,2337622.035
+136,1862/06/24,1862/06/24,35,Owens Lake,California,,,,,,,Michno: Encyclopedia,-1882737.447,1640354.879
+137,1862/07/07,1862/07/07,34,Mattole Valley,California,,,,,,,Michno: Encyclopedia,-2344416.419,2257421.802
+138,1862/07/28,1862/07/28,36,Whitney's Ranch,California,,,,,,,Michno: Encyclopedia,-2291782.365,2328817.186
+139,1862/09/08,1862/09/08,37,Reedwood Creek,California,,,,,,,Michno: Encyclopedia,-2304843.936,2288024.523
+140,1863/04/09,1863/04/09,39,Williams Valley,California,,,,,,,Michno: Encyclopedia,-2267909.618,2177749.202
+141,1863/04/19,1863/04/19,11,Kern River,California,,,,,,,Michno: Forgotten Fights,-1962375.886,1655280.404
+142,1863/04/21,1863/04/23,38,North Fork Eel River,California,,,,,,,Michno: Encyclopedia,-2280045.179,2221015.118
+143,1863/05/09,1863/05/09,40,Shealter Cove,California,,,,,,,Michno: Encyclopedia,-2339660.953,2238084.758
+144,1863/07/09,1863/07/09,41,Redwood Creek,California,,,,,,,Michno: Encyclopedia,-2292309.998,2327234.287
+145,1863/11/13,1863/11/14,42,Thomas's Ranch,California,,,,,,,Michno: Encyclopedia,-2258126.499,2301674.586
+146,1863/11/17,1863/11/17,43,Willow Creek,California,,,,,,,Michno: Encyclopedia,-2238200.636,2277861.529
+147,1863/12/23,1863/12/26,12,Christmas Pairie,California,,,,,,,Michno: Forgotten Fights,-2307975.573,2312183.628
+148,1864/02/29,1864/02/29,44,Redwood Creek,California,,,,,,,Michno: Encyclopedia,-2301213.807,2301116.448
+149,1864/03/19,1864/03/28,45,"East Branch, South Fork Eel River",California,,,,,,,Michno: Encyclopedia,-2301741.44,2213793.168
+150,1864/04/28,1864/04/28,46,Big Bend Eel River,California,,,,,,,Michno: Encyclopedia,-2288286.796,2216958.966
+151,1864/05/02,1864/05/02,47,Kneeland's Prairie,California,,,,,,,Michno: Encyclopedia,-2314140.818,2322485.589
+152,1864/05/24,1864/05/24,13,Grouse Creek,California,,,,,,,Michno: Forgotten Fights,-2291091.314,2314294.16
+153,1864/05/27,1864/05/27,48,Thomas's Ranch,California,,,,,,,Michno: Encyclopedia,-2259794.607,2290299.969
+154,1864/05/28,1864/05/28,49,Big Flat,California,,,,,,,Michno: Encyclopedia,-2338939.574,2247825.503
+155,1866/07/29,1866/07/29,14,Camp Cady,California,,,,,,,Michno: Forgotten Fights,-1840492.637,1511764.198
+156,1867/08/22,1867/08/22,50,Surprise Valley,California,,,,,,,Michno: Encyclopedia,-1978566.159,2325915.204
+157,1867/09/26,1867/09/28,51,Infernal Caverns,California,,,,,,,Michno: Encyclopedia,-2020415.528,2292133.57
+158,1872/12/21,1872/12/21,52,Land's Ranch,California,,,,,,,Michno: Encyclopedia,-2069485.407,2371278.537
+159,1873/01/17,1873/01/17,53,Battle of Stronghold,California,,,,,,,Michno: Encyclopedia,-2080038.069,2378665.4
+160,1873/04/11,1873/04/11,54,Canby Massacre,California,,,,,,,Michno: Encyclopedia,-2081093.336,2373389.069
+161,1873/04/15,1873/04/17,55,Lava Beds,California,,,,,,,Michno: Encyclopedia,-2074761.738,2376027.235
+162,1873/04/26,1873/04/26,56,Hardin Butte / Lava Beds,California,,,,,,,Michno: Encyclopedia,-2075817.004,2371278.537
+163,1873/05/07,1873/05/07,57,Scorpion Point,California,,,,,,,Michno: Encyclopedia,-2079510.436,2368640.371
+164,1873/05/10,1873/05/10,58,Sorass Lake / Dry Lake,California,,,,,,,Michno: Encyclopedia,-2072123.573,2366002.205
+165,1873/05/19,1873/05/19,59,Willow Creek Ridge,California,,,,,,,Michno: Encyclopedia,-2087424.933,2377082.501
+166,1848/06/19,1848/06/19,1,Manco Burro Pass,Colorado,,,,,,,Michno: Forgotten Fights,-737304.9469,1597417.017
+167,1848/07/23,1848/07/23,2,Cumbress Pass,Colorado,,,,,,,Michno: Forgotten Fights,-918468.1393,1615309.678
+168,1855/04/29,1855/04/29,5,Poncha Pass,Colorado,Ute,x,,50,1,,Michno: Encyclopedia,-878959.3452,1761043.73
+169,1864/04/12,1864/04/12,7,Fremont's Orchard,Colorado,Cheyenne,x,x,4,2,,Michno: Encyclopedia,-671943.0693,1936211.348
+170,1864/04/15,1864/04/15,8,Eayre's Fight,Colorado,Cheyenne,x,x,,1,,Michno: Encyclopedia,-601421.0412,1825878.498
+171,1864/05/03,1864/05/03,9,Cedar Canyon,Colorado,Cheyenne,x,x,,,,Michno: Encyclopedia,-617914.0962,1999908.664
+172,1864/06/11,1864/06/11,10,Hungate Massacre,Colorado,Arapaho,,x,,,4,Michno: Encyclopedia,-734502.9329,1814503.977
+173,1864/08/11,1864/08/11,11,Sand Creek,Colorado,Arapaho,x,,,,,Michno: Encyclopedia,-569572.3834,1708720.935
+174,1864/10/10,1864/10/10,12,White Butte Creek,Colorado,Cheyenne,x,,10,,,Michno: Encyclopedia,-594880.6918,1945026.602
+175,1864/11/29,1864/11/29,13,Sand Creek / Chivington Massacre,Colorado,"Cheyenne, Arapaho",x,,130,15,,Michno: Encyclopedia,-567297.4792,1747394.305
+176,1865/01/07,1865/01/07,14,Julesburg,Colorado,"Cheyenne, Lakota",x,,,14,,Michno: Encyclopedia,-522936.8487,2002183.568
+177,1865/01/07,1865/01/07,15,Valley Station,Colorado,"Cheyenne, Lakota",,x,2,,13,Michno: Encyclopedia,-584359.2602,1977728.348
+178,1865/01/14,1865/01/14,16,American Ranch,Colorado,"Cheyenne, Lakota",,x,3,,8,Michno: Encyclopedia,-602558.4933,1958960.389
+179,1865/01/14,1865/01/15,17,Godfrey's Ranch,Colorado,"Cheyenne, Lakota",,x,17,,,Michno: Encyclopedia,-619335.9112,1953273.129
+180,1865/02/02,1865/02/02,18,Julesburg,Colorado,"Cheyenne, Lakota",x,x,,,,Michno: Encyclopedia,-512699.7801,2006733.376
+181,1865/06/14,1865/06/14,19,Spring Canyon,Colorado,"Kiowa, Comanche",x,,5,,1,Michno: Encyclopedia,-545685.89,1582463.756
+182,1867/06/11,1867/06/11,20,Big Timber,Colorado,Cheyenne,x,x,3,1,,Michno: Encyclopedia,-529761.5611,1783792.771
+183,1868/08/25,1868/08/25,3,Dietemann Massacre,Colorado,Arapaho,,x,,,2,Michno: Forgotten Fights,-759670.7731,1842322.814
+184,1868/09/10,1868/09/10,21,Rule Creek,Colorado,Cheyenne,x,,4,2,,Michno: Encyclopedia,-613933.0139,1668910.113
+185,1868/09/15,1868/09/15,22,Big Sandy Creek,Colorado,Cheyenne,x,,11,,,Michno: Encyclopedia,-612795.5619,1795167.292
+186,1868/09/17,1868/09/21,23,Beecher's Island,Colorado,"Cheyenne, Lakota",x,,30,6,,Michno: Encyclopedia,-529192.8351,1883319.827
+187,1869/07/08,1869/07/08,24,Dog Creek,Colorado,Cheyenne,x,,3,,,Michno: Encyclopedia,-522368.1227,1904362.69
+188,1869/07/11,1869/07/11,25,Summit Springs,Colorado,Cheyenne,x,,52,,1,Michno: Encyclopedia,-578387.6369,1949292.047
+189,1879/09/29,1879/09/29,27,White River Massacre / Meeker Massacre,Colorado,Ute,x,x,,,9,Michno: Encyclopedia,-1000666.716,1962372.746
+190,1879/09/29,1879/10/05,26,Milk Creek,Colorado,Ute,x,,37,13,,Michno: Encyclopedia,-973367.8667,1973747.266
+191,1887/08/25,1887/08/25,4,Colorow's War,Colorado,Ute,x,,8,4,,Michno: Forgotten Fights,-1085093.545,1982109.228
+192,1862/08/09,1862/08/10,9,Massacre Rocks,Idaho,,,,,,,Michno: Encyclopedia,-1380897.36,2310403.181
+193,1862/09/12,1862/09/12,10,City of Rocks,Idaho,,,,,,,Michno: Encyclopedia,-1430427.774,2263526.182
+194,1863/01/29,1863/01/29,11,Bear River,Idaho,,,,,,,Michno: Encyclopedia,-1296872.549,2245836.748
+195,1864/09/13,1864/09/16,2,Three Island Crossing,Idaho,,,,,,,Michno: Forgotten Fights,-1557913.312,2364927.049
+196,1865/02/15,1865/02/15,12,Bruneau Valley,Idaho,,,,,,,Michno: Encyclopedia,-1595823.98,2359049.124
+197,1866/07/03,1866/07/07,3,Jennings's Fight,Idaho,,,,,,,Michno: Forgotten Fights,-1681379.461,2345932.257
+198,1868/06/24,1868/06/24,4,Battle Creek,Idaho,,,,,,,Michno: Forgotten Fights,-1638113.545,2339600.659
+199,1868/07/26,1868/07/26,5,Juniper Canyon,Idaho,,,,,,,Michno: Forgotten Fights,-1673992.597,2397640.302
+200,1877/06/08,1877/06/08,22,South Mountains,Idaho,,,,,,,Michno: Encyclopedia,-1672330.781,2378949.737
+201,1877/06/17,1877/06/17,13,White Bird Canyon,Idaho,,,,,,,Michno: Encyclopedia,-1557791.698,2666845.272
+202,1877/07/01,1877/07/01,14,Clear Creek,Idaho,,,,,,,Michno: Encyclopedia,-1530373.075,2718144.63
+203,1877/07/03,1877/07/03,15,Cottonwood Creek / Craig's Mountain,Idaho,,,,,,,Michno: Encyclopedia,-1574154.424,2721240.281
+204,1877/07/04,1877/07/04,16,Cottonwood House,Idaho,,,,,,,Michno: Encyclopedia,-1555580.518,2713280.036
+205,1877/07/05,1877/07/05,17,"""Brave Seventeen"" Fight",Idaho,,,,,,,Michno: Encyclopedia,-1558233.933,2699128.489
+206,1877/07/11,1877/07/12,18,Clearwater River,Idaho,,,,,,,Michno: Encyclopedia,-1532142.019,2703550.847
+207,1877/07/17,1877/07/17,19,Weippe Prairie,Idaho,,,,,,,Michno: Encyclopedia,-1514452.585,2748658.904
+208,1877/08/15,1877/08/15,20,Birch Creek,Idaho,,,,,,,Michno: Encyclopedia,-1354363.209,2464743.491
+209,1877/08/20,1877/08/20,21,Camas Meadows,Idaho,,,,,,,Michno: Encyclopedia,-1292007.955,2477568.331
+210,1878/07/21,1878/07/21,23,Middle Fork Clearwater River,Idaho,,,,,,,Michno: Encyclopedia,-1508427.121,2709465.752
+211,1879/07/29,1879/07/29,24,Big Creek / Vinegar Hill,Idaho,,,,,,,Michno: Encyclopedia,-1489632.098,2599349.026
+212,1864/05/16,1864/05/16,2,Spirit Lake,Iowa,,,,,,,Michno: Encyclopedia,84921.25052,2258015.027
+213,1857/07/29,1857/07/29,1,Solomon's Fork,Kansas,Cheyenne,x,,9,2,,Michno: Encyclopedia,-332831.2502,1821667.303
+214,1859/05/13,1859/05/13,2,Crooked Creek,Kansas,Comanche,x,,49,2,,Michno: Encyclopedia,-360894.7126,1610671.641
+215,1863/05/15,1863/05/15,13,Verdigris River,Kansas,Osage,x,,,20,,Michno: Forgotten Fights,84918.73951,1597976.163
+216,1864/05/16,1864/05/16,3,Big Bushes,Kansas,Cheyenne,x,,3,4,,Michno: Encyclopedia,-278263.4066,1742154.159
+217,1864/07/20,1864/07/22,14,Cow Creek,Kansas,"Kiowa, Arapaho, Comanche",,x,,30,2,Michno: Forgotten Fights,-201922.9818,1711482.731
+218,1864/08/01,1864/08/01,15,Wagon Bed Spring,Kansas,Kiowa,,x,,,5,Michno: Forgotten Fights,-474786.0617,1631524.902
+219,1864/08/06,1864/08/06,16,Moffitt Massacre,Kansas,n/a,,x,,4,4,Michno: Forgotten Fights,-174524.8446,1780816.792
+220,1864/08/16,1864/08/16,4,Smoky Hill Crossing,Kansas,Cheyenne,x,,,4,,Michno: Encyclopedia,-170686.8006,1748910.178
+221,1864/08/21,1864/08/21,17,Cimarron Crossing,Kansas,Cheyenne,x,,,,11,Michno: Forgotten Fights,-368548.3871,1652213.291
+222,1864/09/25,1864/09/25,5,Pawnee Fork,Kansas,Cheyenne,x,,9,2,,Michno: Encyclopedia,-381162.7688,1690184.785
+223,1864/11/20,1864/11/20,6,Fort Zarah,Kansas,n/a,x,,,,,Michno: Encyclopedia,-241365.1504,1705255.903
+224,1864/12/04,1864/12/04,7,Cow Creek,Kansas,n/a,x,,,1,,Michno: Encyclopedia,-202388.1193,1715649.778
+225,1865/01/20,1865/01/20,8,Point of Rocks,Kansas,"Cheyenne, Arapaho",x,,3,1,,Michno: Encyclopedia,-356737.1627,1647050.203
+226,1865/06/11,1865/06/11,9,Cow Creek,Kansas,Kiowa,x,,27,1,,Michno: Encyclopedia,-211222.913,1697980.191
+227,1865/06/12,1865/06/12,18,Fort Dodge,Kansas,Kiowa,x,x,,2,,Michno: Forgotten Fights,-338913.6674,1642707.815
+228,1866/05/18,1866/05/18,19,Little Cheyenne Creek,Kansas,Cheyenne,,x,,,6,Michno: Forgotten Fights,-151599.8728,1835053.921
+229,1867/04/15,1867/04/15,10,Lookout Station,Kansas,"Lakota, Cheyenne",x,x,,,2,Michno: Encyclopedia,-292295.1378,1759823.747
+230,1867/04/19,1867/04/19,11,Cimarron Crossing,Kansas,Cheyenne,x,,2,,,Michno: Encyclopedia,-375965.8314,1653286.528
+231,1867/06/12,1867/06/12,12,Fort Dodge,Kansas,Kiowa,x,,,1,,Michno: Encyclopedia,-345823.5939,1654325.916
+232,1867/06/21,1867/06/22,13,Fort Wallace,Kansas,Cheyenne,x,,,5,,Michno: Encyclopedia,-500952.1779,1783989.506
+233,1867/06/21,1867/06/27,20,Union Pacific Railroad,Kansas,"Cheyenne, Lakota",,x,,,17,Michno: Forgotten Fights,-253923.5277,1762364.985
+234,1867/06/22,1867/06/22,14,Baca's Wagon Train,Kansas,Cheyenne,,x,,,10,Michno: Encyclopedia,-384280.9313,1640813.878
+235,1867/06/26,1867/06/26,15,Pond Creek Station,Kansas,Cheyenne,x,,6,6,,Michno: Encyclopedia,-511346.0529,1791265.219
+236,1867/06/26,1867/06/26,16,Black Butte Creek / Cooke's Fight,Kansas,"Cheyenne, Lakota",x,,5,,,Michno: Encyclopedia,-488999.2217,1814651.437
+237,1867/07/02,1867/07/02,17,Kidder's Fight,Kansas,"Lakota, Cheyenne",x,,2,10,,Michno: Encyclopedia,-479384.8874,1850770.153
+238,1867/08/01,1867/08/02,18,Saline River,Kansas,"Lakota, Cheyenne", ,x,6,1,7,Michno: Encyclopedia,-278263.4066,1791005.372
+239,1867/08/21,1867/08/22,19,Prairie Dog Creek,Kansas,"Lakota, Cheyenne",x,,10,8,,Michno: Encyclopedia,-312043.5003,1864801.884
+240,1867/09/15,1867/09/15,20,Davis's Fight,Kansas,Cheyenne,x,x,13,1,2,Michno: Encyclopedia,-344264.5127,1782690.272
+241,1868/08/13,1868/08/13,21,Elkhorn Creek,Kansas,"Cheyenne, Arapaho, Lakota",,x,3,,,Michno: Encyclopedia,-173804.9631,1775934.253
+242,1868/08/18,1868/08/21,22,Pawnee Fork,Kansas,n/o,x,x,5,,,Michno: Encyclopedia,-300610.2378,1674593.972
+243,1868/09/02,1868/09/02,23,Little Coon Creek,Kansas,Kiowa,x,,3,,,Michno: Encyclopedia,-322957.069,1654845.61
+244,1868/10/14,1868/10/14,24,Prairie Dog Creek,Kansas,Cheyenne,x,,,1,,Michno: Encyclopedia,-336988.8002,1878313.922
+245,1868/10/18,1868/10/18,25,Beaver Creek,Kansas,"Cheyenne, Lakota",x,,10,,,Michno: Encyclopedia,-428974.5937,1878313.922
+246,1868/10/25,1868/10/26,26,Beaver Creek,Kansas,"Cheyenne, Lakota",x,,10,,,Michno: Encyclopedia,-406627.7625,1887668.409
+247,1868/11/19,1868/11/19,27,Wilson's Fight,Kansas,n/o,x,,2,,,Michno: Encyclopedia,-295932.9941,1712531.616
+248,1869/01/29,1869/01/29,28,Mulberry Creek,Kansas,Pawnee,x,x,7,,,Michno: Encyclopedia,-329193.394,1625742.76
+249,1869/05/13,1869/05/13,29,Elephant Rock,Kansas,Lakota,x,,25,4,,Michno: Encyclopedia,-393115.7251,1890786.572
+250,1869/05/28,1869/05/28,30,Fossil Creek Station,Kansas,Cheyenne,,x,,,2,Michno: Encyclopedia,-246562.0879,1762422.216
+251,1869/05/30,1869/05/30,21,Spillman Creek Raids,Kansas,Cheyenne,,x,,,11,Michno: Forgotten Fights,-182912.0295,1789203.977
+252,1869/06/19,1869/06/19,31,Sheridan,Kansas,Cheyenne,x,,4,,,Michno: Encyclopedia,-483802.2842,1798540.931
+253,1869/09/26,1869/09/26,32,Prairie Dog Creek,Kansas,Lakota,x,,1,,,Michno: Encyclopedia,-376485.5251,1865321.578
+254,1870/05/31,1870/05/31,33,Bear Creek Station,Kansas,Kiowa,x,x,5,2,,Michno: Encyclopedia,-341146.3502,1580789.25
+255,1870/06/01,1870/06/01,34,North Fork Solomon River,Kansas,Cheyenne,x,x,,,,Michno: Encyclopedia,-254877.1879,1849211.072
+256,1872/05/22,1872/05/22,35,Cimarron Crossing,Kansas,Cheyenne,x,,,2,,Michno: Encyclopedia,-339327.4221,1564159.051
+257,1874/06/24,1874/06/24,36,Bear Creek Redoubt,Kansas,Cheyenne,x,,4,,,Michno: Encyclopedia,-347382.6752,1597939.144
+258,1874/08/25,1874/08/25,22,Lone Tree Massacre,Kansas,Cheyenne,,x,,,6,Michno: Forgotten Fights,-390914.2133,1578965.21
+259,1875/04/23,1875/04/23,37,Sappa Creek,Kansas,Cheyenne,x,,27,2,,Michno: Encyclopedia,-419620.1062,1861164.028
+260,1875/10/27,1875/10/27,38,Smoky Hill Station,Kansas,Arapaho,x,,2,,,Michno: Encyclopedia,-451581.2718,1775414.559
+261,1878/09/27,1878/09/27,39,Punished Woman's Fork,Kansas,Cheyenne,x,,2,2,,Michno: Encyclopedia,-439888.1624,1749429.872
+262,1862/08/18,1862/08/18,1,Redwood Agency,Minnesota,,,,,,,Michno: Encyclopedia,72987.14518,2386306.659
+263,1862/08/18,1862/08/18,2,Lower Sioux Agency,Minnesota,,,,,,,Michno: Encyclopedia,84324.54525,2401224.291
+264,1862/08/19,1862/08/23,3,New Ulm,Minnesota,,,,,,,Michno: Encyclopedia,114159.8086,2369598.912
+265,1862/08/20,1862/08/22,,Fort Ridgely,Minnesota,,,,,,,Michno: Encyclopedia,101927.3506,2405401.228
+266,1862/09/02,1862/09/03,5,Birch Coulee,Minnesota,,,,,,,Michno: Encyclopedia,71495.38201,2413158.396
+267,1862/09/03,1862/09/03,6,Hutchinson,Minnesota,,,,,,,Michno: Encyclopedia,117441.6876,2436131.549
+268,1862/09/23,1862/09/23,7,Wood Lake,Minnesota,,,,,,,Michno: Encyclopedia,37483.18177,2409876.517
+269,1863/06/29,1863/06/29,8,Dustin Massacre,Minnesota,,,,,,,Michno: Encyclopedia,138923.0772,2451049.181
+270,1865/09/01,1865/09/08,1,Powder River,Montana,,,,,,,Michno: Encyclopedia,-712904.1467,2560132.445
+271,1867/08/01,1867/08/01,2,Hayfield Fight,Montana,,,,,,,Michno: Encyclopedia,-939257.1078,2526008.883
+272,1868/04/16,1868/04/16,5,Fort C. F. Smith,Montana,,,,,,,Michno: Forgotten Fights,-938916.7424,2518863.064
+273,1869/04/07,1869/04/07,3,Sixteenmile Creek,Montana,,,,,,,Michno: Encyclopedia,-1154235.548,2698901.597
+274,1870/01/23,1870/01/23,4,Marias River,Montana,,,,,,,Michno: Encyclopedia,-1182671.85,2910467.681
+275,1872/08/14,1872/08/14,7,Pryor's Fork,Montana,,,,,,,Michno: Encyclopedia,-963143.6011,2615867.596
+276,1873/08/04,1873/08/04,6,Tongue River,Montana,,,,,,,Michno: Encyclopedia,-773189.1062,2640891.541
+277,1873/08/11,1873/08/11,7,Bighorn,Montana,,,,,,,Michno: Encyclopedia,-897171.3813,2644303.897
+278,1876/02/22,1876/03/17,6,Fort Pease,Montana,,,,,,6,Michno: Forgotten Fights / Peters: Indian Battles,-893304.6083,2649183.447
+279,1876/03/17,1876/03/17,8,Powder River / Reynold's Fight,Montana,,,,,,,Michno: Encyclopedia,-768639.2979,2507809.65
+280,1876/06/17,1876/06/17,9,Rosebud Creek,Montana,,,,,,,Michno: Encyclopedia,-873284.888,2535108.499
+281,1876/06/25,1876/06/25,10,Little Bighorn,Montana,,,,,,,Michno: Encyclopedia,-907408.4499,2545345.568
+282,1876/10/21,1876/10/21,11,Cedar Creek,Montana,,,,,,,Michno: Encyclopedia,-707216.8864,2714825.925
+283,1876/12/18,1876/12/18,12,Ash Creek,Montana,,,,,,,Michno: Encyclopedia,-716316.5029,2736437.515
+284,1877/01/08,1877/01/08,13,Wolf Mountain,Montana,,,,,,,Michno: Encyclopedia,-815274.8326,2538520.855
+285,1877/05/07,1877/05/07,14,Little Muddy Creek / Lame Deer Fight,Montana,,,,,,,Michno: Encyclopedia,-833474.0657,2554445.184
+286,1877/08/09,1877/08/10,15,Big Hole,Montana,,,,,,,Michno: Encyclopedia,-1364664.18,2629517.021
+287,1877/08/12,1877/08/12,16,Horse Prairie,Montana,,,,,,,Michno: Encyclopedia,-1345327.495,2584018.938
+288,1877/09/13,1877/09/13,17,Canyon Creek,Montana,,,,,,,Michno: Encyclopedia,-979067.9301,2611317.787
+289,1877/09/25,1877/09/25,18,Cow Island,Montana,,,,,,,Michno: Encyclopedia,-967693.4094,2802409.734
+290,1877/09/25,1877/09/25,19,Cow Creek,Montana,,,,,,,Michno: Encyclopedia,-959731.2449,2825158.776
+291,1877/09/30,1877/10/05,20,Bear's Paw / Snake Creek,Montana,,,,,,,Michno: Encyclopedia,-980205.3821,2877481.571
+292,1878/09/04,1878/09/04,21,Clark's Fork,Montana,,,,,,,Michno: Encyclopedia,-1029115.821,2539658.307
+293,1879/04/05,1879/04/05,7,Mizpah Creek,Montana,,,,,,,Michno: Forgotten Fights,-722584.9065,2586629.663
+294,1879/04/17,1879/04/17,22,Careless Creek,Montana,,,,,,,Michno: Encyclopedia,-1026840.917,2686389.624
+295,1879/07/17,1879/07/17,23,Milk River,Montana,,,,,,,Michno: Encyclopedia,-873284.888,2882031.379
+296,1880/02/12,1880/02/12,24,Pumpkin Creek,Montana,,,,,,,Michno: Encyclopedia,-756127.3252,2576056.773
+297,1880/03/08,1880/03/08,8,Rosebud Creek,Montana,,,,,,,Michno: Forgotten Fights,-859421.3087,2630938.593
+298,1880/08/17,1880/08/17,9,Little Missouri River,Montana,,,,,,,Michno: Forgotten Fights,-637876.6575,2539714.325
+299,1881/01/02,1881/01/02,25,Poplar River,Montana,,,,,,,Michno: Encyclopedia,-692430.0095,2833120.94
+300,1883/04/19,1883/04/19,10,Wilde Horse Lake,Montana,,,,,,,Michno: Forgotten Fights,-1032747.418,2951526.736
+301,1887/11/05,1887/11/05,26,Crow Agency,Montana,,,,,,,Michno: Encyclopedia,-905133.5458,2566957.157
+302,1849/10/29,1849/10/29,1,Fort Kearny,Nebraska,,,,,,,Michno: Forgotten Fights,-234073.857,1984345.811
+303,1855/09/03,1855/09/03,1,Bluewater Creek,Nebraska,Brule,x,,86,7,,Michno: Encyclopedia,-504745.7018,2057686.916
+304,1856/08/26,1856/08/26,2,Grand Island,Nebraska,Cheyenne,x,,6,,,Michno: Encyclopedia,-220377.2946,1978663.647
+305,1856/08/26,1856/09/05,2,Babbitt's Wagon Train,Nebraska,,,,,,,Michno: Forgotten Fights,-201643.4089,2000001.889
+306,1857/08/02,1857/08/03,3,Plum Creek,Nebraska,Cheyenne,,x,6,,1,Michno: Encyclopedia,-318435.3661,1960205.657
+307,1857/09/10,1857/09/10,4,Ash Hollow,Nebraska,Cheyenne,,x,,,3,Michno: Encyclopedia,-502438.4531,2040382.551
+308,1860/08/03,1860/08/06,5,Republican Fork,Nebraska,"Kiowa, Comanche",x,,29,4,,Michno: Encyclopedia,-347852.7875,1924443.301
+309,1863/06/23,1863/06/23,6,Pawnee Agency,Nebraska,Brule,x,,,2,,Michno: Encyclopedia,-184038.127,2038940.52
+310,1863/12/04,1863/12/04,7,Niobrara,Nebraska,Ponca,x,x,7,,,Michno: Encyclopedia,-156399.659,2194135.342
+311,1864/06/24,1864/06/24,8,Looking Glass Creek,Nebraska,Lakota,,x,,,3,Michno: Encyclopedia,-139046.7766,2053937.637
+312,1864/08/07,1864/08/07,10,Plum Creek Massacre,Nebraska,Cheyenne,,x,2,,13,Michno: Encyclopedia,-287287.5081,1969434.652
+313,1864/08/07,1864/08/09,9,Little Blue River Raid,Nebraska,"Cheyenne, Lakota",,x,,,38,Michno: Encyclopedia,-129817.7816,1918675.18
+314,1864/08/16,1864/08/16,11,Elk Creek,Nebraska,Cheyenne,x,x,10,1,1,Michno: Encyclopedia,-165868.5432,1897044.723
+315,1864/09/20,1864/09/20,12,Cottonwood Canyon,Nebraska,Cheyenne,x,,9,4,,Michno: Encyclopedia,-373232.5236,2000005.698
+316,1864/10/12,1864/10/12,13,Mullahla's Station,Nebraska,n/o,x,x,3,2,,Michno: Encyclopedia,-329971.6098,1979817.271
+317,1864/11/26,1864/11/26,14,Plum Creek,Nebraska,Cheyenne,x,x,3,1,2,Michno: Encyclopedia,-301131.0005,1955014.347
+318,1865/02/04,1865/02/06,15,Mud Springs,Nebraska,"Cheyenne, Lakota",x,,,3,,Michno: Encyclopedia,-580884.9102,2068069.535
+319,1865/02/08,1865/02/09,16,Rush Creek,Nebraska,"Cheyenne, Lakota",x,,3,2,,Michno: Encyclopedia,-563580.5447,2081913.028
+320,1865/05/12,1865/05/12,17,Smith's Ranch,Nebraska,Lakota,x,x,,1,,Michno: Encyclopedia,-349583.2241,1991930.327
+321,1865/05/18,1865/05/18,18,Elm Creek Station,Nebraska,Pawnee,x,,,2,,Michno: Encyclopedia,-197304.8072,1950399.85
+322,1865/06/14,1865/06/14,19,Horse Creek / Fouts's Fight,Nebraska,Lakota,x,,4,1,,Michno: Encyclopedia,-652409.6211,2126904.378
+323,1865/06/17,1865/06/17,20,Dead Man's Fork,Nebraska,Lakota,x,,4,,,Michno: Encyclopedia,-622415.3875,2204197.211
+324,1866/10/23,1866/10/23,21,North Platte River,Nebraska,Lakota,x,x,4,,,Michno: Encyclopedia,-403226.7572,2032307.18
+325,1867/06/24,1867/06/24,22,North Fork Republican River,Nebraska,Lakota,x,,2,,,Michno: Encyclopedia,-474463.0621,1905120.093
+326,1867/08/06,1867/08/06,23,Turkey Leg's Raid,Nebraska,Cheyenne,,x,,,7,Michno: Encyclopedia,-309206.3711,1980970.895
+327,1867/08/17,1867/08/17,24,Plum Creek,Nebraska,Cheyenne,,,15,,,Michno: Encyclopedia,-301131.0005,1965973.779
+328,1868/04/29,1868/04/29,25,Tobin Massacre,Nebraska,Lakota,,x,,,4,Michno: Encyclopedia,-279788.9497,1981547.708
+329,1869/05/16,1869/05/16,26,Spring Creek,Nebraska,Lakota,x,,,3,,Michno: Encyclopedia,-310936.8077,1938286.794
+330,1869/07/06,1869/07/06,27,Frenchman's Fork,Nebraska,Cheyenne,x,,3,,,Michno: Encyclopedia,-468694.9402,1943189.697
+331,1869/08/24,1869/08/24,3,Nelson Buck Massacre,Nebraska,Lakota,x,x,3,,11,Michno: Forgotten Fights,-338074.9489,1908302.002
+332,1870/05/17,1870/05/17,28,Spring Creek,Nebraska,Lakota,x,,1,,,Michno: Encyclopedia,-151448.2385,1905120.093
+333,1870/06/08,1870/06/08,29,Red Willow Creek,Nebraska,n/o,x,,2,,,Michno: Encyclopedia,-383326.7369,1936267.951
+334,1872/04/26,1872/04/26,30,South Fork Loup River,Nebraska,Lakota,x,,3,,,Michno: Encyclopedia,-379000.6455,2061147.789
+335,1876/04/28,1876/04/28,31,Gracie Creek,Nebraska,Lakota,x,x,1,1,,Michno: Encyclopedia,-275174.4522,2118829.008
+336,1876/07/17,1876/07/17,32,Hat Creek / Warbonnet Creek,Nebraska,Cheyenne,x,,1,,,Michno: Encyclopedia,-628183.5094,2238805.942
+337,1879/01/09,1879/01/22,33,Fort Robinson,Nebraska,Cheyenne,x,,64,7,,Michno: Encyclopedia,-606264.6463,2216887.079
+338,1862/09/01,1862/09/01,2,Gravelly Ford Massacre,Nevada,,,,,,,Michno: Forgotten Fights,-1671156.569,2140551.068
+339,1863/03/22,1863/03/22,3,Eight Mile Station,Nevada,,,,,,,Michno: Forgotten Fights,-1526585.096,2061406.101
+340,1863/05/04,1863/05/04,4,Duck Creek,Nevada,,,,,,,Michno: Forgotten Fights,-1593066.869,1955879.479
+341,1863/05/06,1863/05/06,5,Cedar Swamp,Nevada,,,,,,,Michno: Forgotten Fights,-1583569.473,1940050.486
+342,1863/06/20,1863/06/20,8,Government Springs,Nevada,,,,,,,Michno: Encyclopedia,-1585645.844,2060502.634
+343,1863/06/23,1863/06/23,9,Egan Canyon Station,Nevada,,,,,,,Michno: Encyclopedia,-1590922.175,2014070.92
+344,1863/07/06,1863/07/06,6,Egan Canyon Station,Nevada,,,,,,,Michno: Forgotten Fights,-1586735.271,2050853.439
+345,1863/08/15,1863/08/15,7,Steptoe Valley,Nevada,,,,,,,Michno: Forgotten Fights,-1573016.81,2100450.952
+346,1865/03/15,1865/03/15,8,Granite Creek Station,Nevada,,,,,,,Michno: Forgotten Fights,-1948691.586,2205977.574
+347,1865/04/06,1865/04/06,9,Cottonwood Creek,Nevada,,,,,,,Michno: Forgotten Fights,-1720754.081,2258740.885
+348,1865/04/14,1865/04/14,10,Mud Lake,Nevada,,,,,,,Michno: Encyclopedia,-1976094.346,2153366.062
+349,1865/05/20,1865/05/20,11,Tuscarora,Nevada,,,,,,,Michno: Encyclopedia,-1682730.337,2209295.171
+350,1865/07/26,1865/07/26,10,Willow Point,Nevada,,,,,,,Michno: Forgotten Fights,-1734472.542,2235525.028
+351,1865/07/31,1865/07/31,11,Cottonwood Canyon,Nevada,,,,,,,Michno: Forgotten Fights,-1648995.978,2152158.997
+352,1865/09/03,1865/09/03,12,Table Mountain,Nevada,,,,,,,Michno: Forgotten Fights,-1844220.23,2129998.406
+353,1865/09/13,1865/09/13,13,Willow Creek,Nevada,,,,,,,Michno: Forgotten Fights,-1756633.133,2268238.281
+354,1865/11/17,1865/11/17,14,Leonard Creek,Nevada,,,,,,,Michno: Forgotten Fights,-1850551.827,2290398.872
+355,1866/01/12,1866/01/12,15,Battle Creek,Nevada,,,,,,,Michno: Forgotten Fights,-1865325.554,2273514.612
+356,1866/02/15,1866/02/15,16,Guano Valley,Nevada,,,,,,,Michno: Forgotten Fights,-1906480.937,2339996.384
+357,1867/01/18,1867/01/18,17,Eden Valley,Nevada,,,,,,,Michno: Forgotten Fights,-1701759.289,2241856.625
+358,1867/02/15,1867/02/15,18,Black Slate Mountain,Nevada,,,,,,,Michno: Forgotten Fights,-1739748.873,2208088.106
+359,1867/03/22,1867/03/22,19,South Form Owyhee,Nevada,,,,,,,Michno: Forgotten Fights,-1654272.309,2265072.482
+360,1868/04/22,1868/04/22,20,Deep Canyon,Nevada,,,,,,,Michno: Forgotten Fights,-1735527.809,2273514.612
+361,1862/10/25,1862/10/25,27,Graydon Affair,New Mexico,,,,,,,Michno: Encyclopedia,-901339.8595,1216929.307
+362,1863/01/18,1863/01/18,28,Mangas Coloradas Affair,New Mexico,,,,,,,Michno: Encyclopedia,-1122945.766,1122482.98
+363,1863/01/19,1863/01/19,29,Pinos Altos Mines,New Mexico,,,,,,,Michno: Encyclopedia,-1143523.458,1155723.866
+364,1863/01/29,1863/01/29,30,Pinos Altos Mines,New Mexico,,,,,,,Michno: Encyclopedia,-1132970.795,1142005.405
+365,1863/06/16,1863/06/16,31,Jornada de Muerto,New Mexico,,,,,,,Michno: Encyclopedia,-1017946.777,1128286.944
+366,1863/06/20,1863/06/20,32,Warm Springs,New Mexico,,,,,,,Michno: Encyclopedia,-1031137.605,1176301.557
+367,1863/07/04,1863/07/04,33,Fort Craig,New Mexico,,,,,,,Michno: Encyclopedia,-1023223.108,1238034.631
+368,1863/07/10,1863/07/10,34,Cooke's Canyon,New Mexico,,,,,,,Michno: Encyclopedia,-1089177.247,1112457.951
+369,1863/07/12,1863/07/12,35,Fort Thorn,New Mexico,,,,,,,Michno: Encyclopedia,-1048549.498,1116151.382
+370,1863/07/18,1863/07/18,36,Rio Hondo,New Mexico,,,,,,,Michno: Encyclopedia,-805838.2664,1178939.723
+371,1863/07/19,1863/07/19,37,Paraje,New Mexico,,,,,,,Michno: Encyclopedia,-1006866.482,1214818.774
+372,1863/07/22,1863/07/22,38,Conchas Springs,New Mexico,,,,,,,Michno: Encyclopedia,-762572.3513,1405821.961
+373,1863/07/24,1863/07/24,39,Cooke's Canyon,New Mexico,,,,,,,Michno: Encyclopedia,-1083373.283,1098739.49
+374,1863/08/27,1863/08/27,40,Las Animas Creek,New Mexico,,,,,,,Michno: Encyclopedia,-1045911.332,1171552.859
+375,1863/08/27,1863/08/28,41,Salt Lakes,New Mexico,,,,,,,Michno: Encyclopedia,-1150382.688,1407404.86
+376,1863/09/08,1863/09/08,12,Mimbres River,New Mexico,,,,,,,Michno: Forgotten Fights,-1093058.965,1122144.318
+377,1863/09/27,1863/09/27,42,Jemez,New Mexico,,,,,,,Michno: Encyclopedia,-959907.1349,1454364.207
+378,1863/12/16,1863/12/16,43,Fort Sumner,New Mexico,,,,,,,Michno: Encyclopedia,-775235.5459,1333536.224
+379,1864/01/04,1864/01/04,44,Bosque Redondo,New Mexico,,,,,,,Michno: Encyclopedia,-771014.481,1281300.546
+380,1864/01/12,1864/01/12,45,Datil Mountains,New Mexico,,,,,,,Michno: Encyclopedia,-1079679.851,1317179.598
+381,1864/01/29,1864/01/29,46,San Andres Mountains,New Mexico,,,,,,,Michno: Encyclopedia,-974153.2289,1203210.846
+382,1864/02/25,1864/02/25,47,Pinos Altos Mines,New Mexico,,,,,,,Michno: Encyclopedia,-1148272.156,1138311.973
+383,1864/08/25,1864/08/25,48,Sacramento Mountains,New Mexico,,,,,,,Michno: Encyclopedia,-899229.3271,1115623.749
+384,1864/12/01,1864/12/01,49,Red River,New Mexico,,,,,,,Michno: Encyclopedia,-1121362.867,1296601.906
+385,1865/07/01,1865/07/01,13,San Andreas Pass,New Mexico,,,,,,,Michno: Forgotten Fights,-964367.6665,1102440.387
+386,1865/09/17,1865/09/17,14,Mimbres Mountains,New Mexico,,,,,,,Michno: Forgotten Fights,-1066581.808,1160320.684
+387,1866/01/17,1866/01/17,15,Oak Grove,New Mexico,,,,,,,Michno: Forgotten Fights,-1055498.347,1072884.491
+388,1867/07/09,1867/07/09,50,Fort Sumner,New Mexico,,,,,,,Michno: Encyclopedia,-766793.4161,1291325.575
+389,1867/08/01,1867/08/01,16,Loving's Fight,New Mexico,,,,,,,Michno: Forgotten Fights,-778411.8185,1031321.511
+390,1867/11/20,1867/11/20,51,Dona Ana Mountains,New Mexico,,,,,,,Michno: Encyclopedia,-993148.0209,1086076.295
+391,1868/03/11,1868/03/11,52,Tularosa,New Mexico,,,,,,,Michno: Encyclopedia,-914530.6873,1142005.405
+392,1868/04/17,1868/04/17,53,Nesmith's Mills,New Mexico,,,,,,,Michno: Encyclopedia,-893425.3629,1145171.204
+393,1868/06/13,1868/06/13,54,Apache Springs,New Mexico,,,,,,,Michno: Encyclopedia,-837496.2531,1417957.522
+394,1868/08/27,1868/08/27,55,Hatchet Mountains,New Mexico,,,,,,,Michno: Encyclopedia,-1159352.451,1019066.89
+395,1869/04/22,1869/04/22,56,Sangre Cayon,New Mexico,,,,,,,Michno: Encyclopedia,-861767.3762,1057056.474
+396,1869/05/02,1869/05/02,57,San Augustin Pass,New Mexico,,,,,,,Michno: Encyclopedia,-966766.3653,1077106.532
+397,1869/05/07,1869/05/07,58,San Augustin Pass,New Mexico,,,,,,,Michno: Encyclopedia,-952520.2713,1070247.302
+398,1869/11/18,1869/11/18,59,Guadalupe Mountains,New Mexico,,,,,,,Michno: Encyclopedia,-842772.5842,1046503.812
+399,1869/12/26,1869/12/30,60,Sanguinara Canyon,New Mexico,,,,,,,Michno: Encyclopedia,-853325.2464,1042810.38
+400,1873/02/26,1873/02/26,61,Fort Bascom,New Mexico,,,,,,,Michno: Encyclopedia,-680261.5859,1407668.676
+401,1873/07/13,1873/07/13,62,Canada Alamosa,New Mexico,,,,,,,Michno: Encyclopedia,-1057783.077,1202947.029
+402,1876/09/15,1876/09/15,63,Florida Mountains,New Mexico,,,,,,,Michno: Encyclopedia,-1075986.419,1062332.805
+403,1877/01/09,1877/01/09,64,Animas Mountains,New Mexico,,,,,,,Michno: Encyclopedia,-1180985.409,1031466.268
+404,1877/01/24,1877/01/24,65,Florida Mountains,New Mexico,,,,,,,Michno: Encyclopedia,-1077833.135,1052043.959
+405,1877/09/08,1877/09/09,17,San Francisco River,New Mexico,,,,,,,Michno: Forgotten Fights,-1172490.437,1224666.334
+406,1877/12/18,1877/12/18,66,Animas Mountains,New Mexico,,,,,,,Michno: Encyclopedia,-1186525.556,1014582.008
+407,1878/08/05,1878/08/05,67,Dog Canyon,New Mexico,,,,,,,Michno: Encyclopedia,-910837.2555,1119580.998
+408,1878/09/17,1878/09/17,18,Bear Creek,New Mexico,,,,,,,Michno: Forgotten Fights,-1128156.592,1181563.985
+409,1879/05/29,1879/05/29,68,Black Range,New Mexico,,,,,,,Michno: Encyclopedia,-1091287.78,1191075.284
+410,1879/09/04,1879/09/04,69,Ojo Calente,New Mexico,,,,,,,Michno: Encyclopedia,-1071237.721,1231966.85
+411,1879/09/10,1879/09/10,19,McEnver's Farm,New Mexico,,,,,,,Michno: Forgotten Fights,-1058577.086,1113831.722
+412,1879/09/18,1879/09/18,70,Las Animas Creek,New Mexico,,,,,,,Michno: Encyclopedia,-1069654.822,1164165.996
+413,1879/09/29,1879/09/30,71,Cuchillo Negro Creek,New Mexico,,,,,,,Michno: Encyclopedia,-1070710.088,1188700.935
+414,1879/10/13,1879/10/13,72,Lloyd's and Slocum's Ranches,New Mexico,,,,,,,Michno: Encyclopedia,-1068071.923,1129078.394
+415,1880/01/12,1880/01/12,73,Percha Creek,New Mexico,,,,,,,Michno: Encyclopedia,-1079679.851,1152821.884
+416,1880/01/17,1880/01/17,74,San Mateo Mountains,New Mexico,,,,,,,Michno: Encyclopedia,-1050923.847,1256765.607
+417,1880/01/30,1880/01/30,75,Caballo Mountains,New Mexico,,,,,,,Michno: Encyclopedia,-1034039.587,1162319.28
+418,1880/02/03,1880/02/03,76,San Andres Mountains,New Mexico,,,,,,,Michno: Encyclopedia,-983650.6249,1176829.19
+419,1880/02/09,1880/02/09,77,San Andres Mountains,New Mexico,,,,,,,Michno: Encyclopedia,-977846.6607,1185535.137
+420,1880/03/05,1880/03/05,20,Palomas,New Mexico,,,,,,,Michno: Forgotten Fights,-1026558.198,1154471.08
+421,1880/04/07,1880/04/08,78,Hembrillo Canyon / San Andres Springs,New Mexico,,,,,,,Michno: Encyclopedia,-992620.3878,1151766.617
+422,1880/04/09,1880/04/09,79,Shakehand Springs,New Mexico,,,,,,,Michno: Encyclopedia,-846466.016,1043074.196
+423,1880/04/16,1880/04/16,80,Mescalero Agency,New Mexico,,,,,,,Michno: Encyclopedia,-903978.0251,1149656.085
+424,1880/04/17,1880/04/17,81,Dog Canyon,New Mexico,,,,,,,Michno: Encyclopedia,-920334.6515,1107445.436
+425,1880/05/14,1880/05/14,21,Old Fort Tularosa,New Mexico,,,,,,,Michno: Forgotten Fights,-1150939.262,1258532.465
+426,1880/05/24,1880/05/24,82,Palomas River,New Mexico,,,,,,,Michno: Encyclopedia,-1085219.999,1177093.007
+427,1880/06/05,1880/06/05,83,Cooke's Canyon,New Mexico,,,,,,,Michno: Encyclopedia,-1093134.496,1110347.418
+428,1880/09/01,1880/09/01,84,Agua Chiquita Canyon,New Mexico,,,,,,,Michno: Encyclopedia,-890011.4979,1117032.608
+429,1880/09/07,1880/09/07,85,Fort Cummings,New Mexico,,,,,,,Michno: Encyclopedia,-1097883.194,1100586.206
+430,1881/01/24,1881/01/24,22,Canada Alamosa,New Mexico,,,,,,,Michno: Forgotten Fights,-1050572.364,1248064.751
+431,1881/07/25,1881/07/25,86,San Andres Mountains,New Mexico,,,,,,,Michno: Encyclopedia,-982595.3587,1137784.34
+432,1881/08/01,1881/08/01,87,Red Canyon,New Mexico,,,,,,,Michno: Encyclopedia,-1043536.983,1228537.235
+433,1881/08/03,1881/08/03,88,Monica Springs,New Mexico,,,,,,,Michno: Encyclopedia,-1049604.764,1241991.879
+434,1881/08/12,1881/08/12,89,Carrizo Canyon,New Mexico,,,,,,,Michno: Encyclopedia,-1022167.842,1320081.58
+435,1881/08/16,1881/08/16,90,Cuchillo Negro Creek,New Mexico,,,,,,,Michno: Encyclopedia,-1082054.2,1207431.911
+436,1881/08/18,1881/08/18,23,Gold Dust,New Mexico,,,,,,,Michno: Forgotten Fights,-1059192.834,1135998.644
+437,1881/08/19,1881/08/19,91,Gavilan Canyon,New Mexico,,,,,,,Michno: Encyclopedia,-1092606.862,1132771.825
+438,1882/06/01,1882/06/01,24,Cloverdale Canyon,New Mexico,,,,,,,Michno: Forgotten Fights,-1214361.29,1020238.05
+439,1882/06/23,1882/06/23,92,Mescalero Agency,New Mexico,,,,,,,Michno: Encyclopedia,-892897.7298,1160208.747
+440,1883/03/28,1883/03/28,93,McComas Massacre,New Mexico,,,,,,,Michno: Encyclopedia,-1165947.865,1119053.364
+441,1885/05/22,1885/05/22,94,Devil's Creek,New Mexico,,,,,,,Michno: Encyclopedia,-1177291.977,1224579.987
+442,1885/11/08,1885/11/08,95,Florida Mountains,New Mexico,,,,,,,Michno: Encyclopedia,-1088913.431,1061013.722
+443,1885/12/09,1885/12/09,25,Lilie's Ranch,New Mexico,,,,,,,Michno: Forgotten Fights,-1119228.248,1223742.712
+444,1885/12/19,1885/12/19,96,Little Dry Creek,New Mexico,,,,,,,Michno: Encyclopedia,-1186261.74,1193977.266
+445,1862/09/03,1862/09/06,1,Fort Abercrombie,North Dakota,,,,,,,Michno: Encyclopedia,-62294.33582,2578238.088
+446,1863/07/23,1863/07/23,3,Dead Buffalo Lake,North Dakota,,,,,,,Michno: Encyclopedia,-297015.6942,2639091.774
+447,1863/07/24,1863/07/24,2,Big Mound,North Dakota,,,,,,,Michno: Encyclopedia,-281560.79,2642955.5
+448,1863/07/28,1863/07/28,4,Stony Lake,North Dakota,,,,,,,Michno: Encyclopedia,-323095.8451,2631847.287
+449,1863/08/03,1863/08/03,5,Mackinaw Massacre,North Dakota,,,,,,,Michno: Encyclopedia,-356903.4482,2628949.493
+450,1863/09/03,1863/09/03,6,Whitestone Hill,North Dakota,,,,,,,Michno: Encyclopedia,-246304.2896,2594658.924
+451,1863/12/16,1863/12/16,7,St. Joseph,North Dakota,,,,,,,Michno: Encyclopedia,-170961.6314,2882506.516
+452,1864/07/28,1864/07/28,8,Killdeer Mountain,North Dakota,,,,,,,Michno: Encyclopedia,-510003.5935,2715400.364
+453,1864/08/07,1864/08/07,9,Badlands,North Dakota,,,,,,,Michno: Encyclopedia,-598386.3272,2685939.452
+454,1864/09/02,1864/09/02,10,Red Buttes / Fort Dilts,North Dakota,,,,,,,Michno: Encyclopedia,-587278.1148,2600937.479
+455,1864/11/21,1864/11/27,11,Fort Rice,North Dakota,,,,,,,Michno: Encyclopedia,-373324.284,2600937.479
+456,1865/04/12,1865/04/26,12,Fort Rice,North Dakota,,,,,,,Michno: Encyclopedia,-375256.147,2621222.041
+457,1865/05/26,1865/05/26,1,Fort Rice,North Dakota,,,,,,,Michno: Forgotten Fights,-352668.6026,2623718.206
+458,1865/07/28,1865/07/28,13,Fort Rice,North Dakota,,,,,,,Michno: Encyclopedia,-393125.8801,2610113.828
+459,1868/08/20,1868/08/20,2,Fort Buford,North Dakota,,,,,,,Michno: Forgotten Fights,-601423.7091,2802029.526
+460,1872/08/26,1872/08/26,3,Fort McKean,North Dakota,,,,,,,Michno: Forgotten Fights,-371939.8085,2651502.436
+461,1872/10/02,1872/10/02,5,Fort McKean,North Dakota,,,,,,,Michno: Forgotten Fights,-371587.0274,2652913.56
+462,1872/10/03,1872/10/04,4,Heart River,North Dakota,,,,,,,Michno: Forgotten Fights,-464553.2757,2644769.299
+463,1873/05/07,1873/05/07,6,Fort Abraham Lincoln,North Dakota,,,,,,,Michno: Forgotten Fights,-372351.3864,2652149.201
+464,1862/10/23,1862/10/24,6,Fort Cobb,Oklahoma,,,,,,,Michno: Encyclopedia,-219309.6339,1335217.864
+465,1868/09/10,1868/09/13,7,Sand Hills,Oklahoma,,,,,,,Michno: Encyclopedia,-307756.8029,1494422.768
+466,1868/11/27,1868/11/27,8,Washita River,Oklahoma,,,,,,,Michno: Encyclopedia,-339597.7837,1401553.241
+467,1868/12/25,1868/12/25,9,Soldier Spring,Oklahoma,,,,,,,Michno: Encyclopedia,-298027.6143,1323719.732
+468,1870/06/08,1870/06/08,10,Bodamer's Fight,Oklahoma,,,,,,,Michno: Encyclopedia,-319254.9349,1550144.485
+469,1870/06/11,1870/06/11,11,Camp Supply,Oklahoma,,,,,,,Michno: Encyclopedia,-327215.1801,1514765.617
+470,1871/04/09,1871/04/09,12,Foster Springs,Oklahoma,,,,,,,Michno: Encyclopedia,-272377.9353,1257384.356
+471,1874/04/07,1874/04/07,14,Hennessey Wagon Train,Oklahoma,,,,,,,Michno: Encyclopedia,-170663.691,1455506.014
+472,1874/06/21,1874/06/21,13,Buffalo Creek,Oklahoma,,,,,,,Michno: Encyclopedia,-310410.218,1528917.164
+473,1874/08/22,1874/08/23,15,Anadarko / Wichita Agency,Oklahoma,,,,,,,Michno: Encyclopedia,-202504.6718,1346715.996
+474,1875/04/06,1875/04/06,16,Sand Hills Fight,Oklahoma,,,,,,,Michno: Encyclopedia,-180392.8796,1403322.184
+475,1878/09/13,1878/09/13,17,Turkey Springs,Oklahoma,,,,,,,Michno: Encyclopedia,-259110.86,1541299.768
+476,1862/08/14,1862/08/14,35,Grande Ronde Prairie,Oregon,,,,,,,Michno: Encyclopedia,-1704397.455,2673988.144
+477,1863/04/01,1863/04/01,6,Standifer's Fight,Oregon,,,,,,,Michno: Forgotten Fights,-1728067.154,2513282.471
+478,1864/04/07,1864/04/07,36,Harney Lake Valley,Oregon,,,,,,,Michno: Encyclopedia,-1859521.59,2434442.711
+479,1864/05/18,1864/05/18,37,Crooked River,Oregon,,,,,,,Michno: Encyclopedia,-1902787.505,2589566.846
+480,1864/06/24,1864/06/24,38,John Day's Road,Oregon,,,,,,,Michno: Encyclopedia,-2029419.452,2501979.749
+481,1864/10/17,1864/10/17,7,Paulina Creek,Oregon,,,,,,,Michno: Forgotten Fights,-2026431.866,2572546.694
+482,1865/07/09,1865/07/09,39,Malheur River,Oregon,,,,,,,Michno: Encyclopedia,-1778266.091,2511477.145
+483,1865/07/17,1865/07/17,40,Owyhee River,Oregon,,,,,,,Michno: Encyclopedia,-1698065.858,2461879.633
+484,1866/02/23,1866/02/23,8,Dry Creek,Oregon,,,,,,,Michno: Forgotten Fights,-1723447.48,2459731.142
+485,1866/05/27,1866/05/28,9,Three Forks,Oregon,,,,,,,Michno: Forgotten Fights,-1717162.123,2388878.025
+486,1866/07/18,1866/07/18,10,Rattlesnake Creek,Oregon,,,,,,,Michno: Forgotten Fights,-1802871.54,2512299.584
+487,1866/10/26,1866/10/26,11,Lake Albert,Oregon,,,,,,,Michno: Forgotten Fights,-1967433.619,2426590.168
+488,1866/10/30,1866/10/30,12,O'Beirne's Fight / Malheur Country,Oregon,,,,,,,Michno: Forgotten Fights,-1776587.319,2459159.746
+489,1866/11/17,1866/11/17,13,Fort Klamath,Oregon,,,,,,,Michno: Forgotten Fights,-2079427.256,2458588.35
+490,1866/12/26,1866/12/26,41,Owyhee River,Oregon,,,,,,,Michno: Encyclopedia,-1727613.312,2456603.302
+491,1867/01/06,1867/01/07,14,Crooked River,Oregon,,,,,,,Michno: Forgotten Fights,-1942292.19,2615722.28
+492,1867/01/29,1867/01/29,42,Steen's Mountain,Oregon,,,,,,,Michno: Encyclopedia,-1819421.473,2405950.523
+493,1867/02/26,1867/02/26,43,Pueblo Mountain,Oregon,,,,,,,Michno: Encyclopedia,-1847386.028,2370071.471
+494,1867/04/27,1867/04/27,15,Silvies River,Oregon,,,,,,,Michno: Forgotten Fights,-1854868.585,2508871.208
+495,1867/06/19,1867/06/19,44,Steen's Mountain,Oregon,,,,,,,Michno: Encyclopedia,-1833667.567,2389066.264
+496,1867/07/05,1867/07/05,45,Donner and Blitzen Creek,Oregon,,,,,,,Michno: Encyclopedia,-1834722.834,2450271.704
+497,1867/07/08,1867/07/08,16,Malheur River,Oregon,,,,,,,Michno: Forgotten Fights,-1776587.319,2565439.422
+498,1867/07/15,1867/07/15,17,South Fork Malheur,Oregon,,,,,,,Michno: Forgotten Fights,-1790872.221,2472301.857
+499,1867/07/27,1867/07/27,46,Camp Warner,Oregon,,,,,,,Michno: Encyclopedia,-1933917.858,2409116.322
+500,1867/08/11,1867/08/15,18,Owyhee River,Oregon,,,,,,,Michno: Forgotten Fights,-1713733.747,2363165.2
+501,1867/09/06,1867/09/08,19,Silver Lake,Oregon,,,,,,,Michno: Forgotten Fights,-1986861.086,2516299.357
+502,1868/03/14,1868/03/14,47,Donner and Blitzen Creek,Oregon,,,,,,,Michno: Encyclopedia,-1825225.438,2468211.23
+503,1868/05/31,1868/05/31,20,Castle Rock,Oregon,,,,,,,Michno: Forgotten Fights,-1765159.396,2527727.279
+504,1872/11/30,1872/11/30,48,Lost River,Oregon,,,,,,,Michno: Encyclopedia,-2078489.331,2399618.926
+505,1878/04/07,1878/04/07,52,Umatilla Agency,Oregon,,,,,,,Michno: Encyclopedia,-1758743.665,2721475.124
+506,1878/06/28,1878/06/28,49,Silver River,Oregon,,,,,,,Michno: Encyclopedia,-1882209.814,2523085.074
+507,1878/07/02,1878/07/02,50,North Fork John Day River,Oregon,,,,,,,Michno: Encyclopedia,-1797788.516,2678209.209
+508,1878/07/06,1878/07/06,21,Willow Spring,Oregon,,,,,,,Michno: Forgotten Fights,-1767444.981,2703717.28
+509,1878/07/08,1878/07/08,51,Birch Creek / Pilot Rock,Oregon,,,,,,,Michno: Encyclopedia,-1784070.055,2714088.26
+510,1878/07/20,1878/07/20,53,North Fork John Day River,Oregon,,,,,,,Michno: Encyclopedia,-1760326.565,2651827.553
+511,1864/06/26,1864/06/26,3,Little Cheyenne River,South Dakota,,,,,,,Michno: Forgotten Fights,-539410.5854,2338995.596
+512,1876/08/01,1876/08/01,4,Red Canyon,South Dakota,,,,,,,Michno: Forgotten Fights,-619374.2965,2307010.111
+513,1876/09/09,1876/09/09,1,Slim Buttes,South Dakota,,,,,,,Michno: Encyclopedia,-546226.0253,2528009.649
+514,1890/04/12,1890/04/12,2,Wounded Knee Creek,South Dakota,,,,,,,Michno: Encyclopedia,-529805.1896,2260446.62
+515,1890/12/30,1890/12/30,3,White Clay Creek / Drexel Mission,South Dakota,,,,,,,Michno: Encyclopedia,-505656.9017,2271071.866
+516,1862/11/23,1862/11/23,6,Cache Valley,Utah,,,,,,,Michno: Encyclopedia,-1310915.592,2210159.015
+517,1862/12/06,1862/12/06,7,Empey's Ferry,Utah,,,,,,,Michno: Encyclopedia,-1335941.13,2189084.878
+518,1863/04/12,1863/04/15,8,Spanish Fork Canyon,Utah,,,,,,,Michno: Encyclopedia,-1300378.524,2003369.045
+519,1884/07/15,1884/07/15,9,White River / Wormington Canyon,Utah,,,,,,,Michno: Forgotten Fights,-1245058.914,1724136.73
+520,1863/02/20,1863/02/20,4,Pass Creek,Wyoming,,,,,,,Michno: Encyclopedia,-904111.8396,2132347.974
+521,1863/07/07,1863/07/07,5,Grand Pass,Wyoming,,,,,,,Michno: Encyclopedia,-859003.7834,2084586.503
+522,1864/07/07,1864/07/07,2,Townsend's Wagon Train,Wyoming,,,,,,,Michno: Forgotten Fights,-838551.5193,2343162.183
+523,1864/07/12,1864/07/12,6,Kelly Wagon Train,Wyoming,,,,,,,Michno: Encyclopedia,-794437.3501,2230524.332
+524,1864/07/19,1864/07/19,3,Brown's Spring,Wyoming,,,,,,,Michno: Forgotten Fights,-785788.2082,2266127.749
+525,1865/05/20,1865/05/20,7,Deer Creek Station,Wyoming,,,,,,,Michno: Encyclopedia,-805051.0103,2248213.766
+526,1865/06/03,1865/06/03,8,Dry Creek,Wyoming,,,,,,,Michno: Encyclopedia,-860772.7268,2251751.652
+527,1865/06/08,1865/06/08,9,Sage Creek Station,Wyoming,,,,,,,Michno: Encyclopedia,-935952.8204,2130579.031
+528,1865/06/21,1865/06/21,4,Sweetwater Station,Wyoming,,,,,,,Michno: Forgotten Fights,-890259.5642,2235525.028
+529,1865/07/26,1865/07/26,10,Platte Bridge,Wyoming,,,,,,,Michno: Encyclopedia,-839545.4062,2249098.237
+530,1865/07/26,1865/07/26,11,Red Buttes / Custard's Wagon Train,Wyoming,,,,,,,Michno: Encyclopedia,-855023.6608,2262807.549
+531,1865/08/13,1865/08/13,12,Crazy Woman's Fork,Wyoming,,,,,,,Michno: Encyclopedia,-820971.5007,2403438.547
+532,1865/08/13,1865/08/15,13,Bone Pile Creek,Wyoming,,,,,,,Michno: Encyclopedia,-772325.5578,2397247.245
+533,1865/08/16,1865/08/16,14,Powder River,Wyoming,,,,,,,Michno: Encyclopedia,-805493.2462,2416705.623
+534,1865/08/29,1865/08/29,15,Tongue River,Wyoming,,,,,,,Michno: Encyclopedia,-860330.4909,2490116.773
+535,1865/09/01,1865/09/01,5,Sawyers's Wagon Train,Wyoming,,,,,,,Michno: Forgotten Fights,-869154.2397,2481402.058
+536,1866/07/17,1866/07/17,16,Cazeau Wagon Train,Wyoming,,,,,,,Michno: Encyclopedia,-857677.0759,2440586.358
+537,1866/07/20,1866/07/20,17,Crazy Woman Creek,Wyoming,,,,,,,Michno: Encyclopedia,-839103.1704,2390834.826
+538,1866/07/24,1866/07/24,18,Clear Creek,Wyoming,,,,,,,Michno: Encyclopedia,-843525.5288,2402775.193
+539,1866/07/24,1866/07/24,6,Floyd's Wagon Train,Wyoming,,,,,,,Michno: Forgotten Fights,-791592.1724,2279318.576
+540,1866/12/06,1866/12/06,19,Peno Creek,Wyoming,,,,,,,Michno: Encyclopedia,-851485.774,2450536.665
+541,1866/12/21,1866/12/21,20,Fort Phil Kearny / Fetterman Fight,Wyoming,,,,,,,Michno: Encyclopedia,-845736.708,2438154.061
+542,1867/06/23,1867/06/23,7,Bitter Creek,Wyoming,,,,,,,Michno: Forgotten Fights,-1041954.084,2134747.104
+543,1867/08/02,1867/08/02,21,Wagon Box Fight,Wyoming,,,,,,,Michno: Encyclopedia,-868511.8541,2428424.872
+544,1867/11/04,1867/11/04,8,Goose Creek/ Shurly's Fight,Wyoming,,,,,,,Michno: Forgotten Fights,-857018.6782,2462934.899
+545,1867/12/01,1867/12/02,9,Crazy Woman Creek,Wyoming,,,,,,,Michno: Forgotten Fights,-837364.3448,2397772.21
+546,1868/07/19,1868/07/19,10,Fort Reno,Wyoming,,,,,,,Michno: Forgotten Fights,-829779.6188,2365982.315
+547,1869/04/06,1869/04/06,11,La Bonte Creek,Wyoming,,,,,,,Michno: Forgotten Fights,-783875.5381,2229852.972
+548,1869/09/14,1869/09/14,22,Popo Agie,Wyoming,,,,,,,Michno: Encyclopedia,-1016218.626,2289120.581
+549,1869/12/01,1869/12/01,23,Horseshoe Creek,Wyoming,,,,,,,Michno: Encyclopedia,-768124.3173,2208191.422
+550,1870/05/04,1870/05/04,24,Miner's Delight,Wyoming,,,,,,,Michno: Encyclopedia,-1042310.541,2259490.78
+551,1874/02/09,1874/02/09,12,Cottonwood Creek,Wyoming,,,,,,,Michno: Forgotten Fights,-769101.811,2185531.791
+552,1874/07/04,1874/07/04,25,Snake Mountain,Wyoming,,,,,,,Michno: Encyclopedia,-943249.7118,2312559.081
+553,1876/06/09,1876/06/09,13,Prairie Dog Creek/ Tongue River,Wyoming,,,,,,,Michno: Forgotten Fights,-847191.5115,2483116.866
+554,1876/07/07,1876/07/07,14,Sibley's Scout,Wyoming,,,,,,,Michno: Forgotten Fights,-882015.2968,2470453.671
+555,1876/08/01,1876/08/01,15,Heck Reel's Wagon Train,Wyoming,,,,,,,Michno: Forgotten Fights,-779654.4732,2211913.446
+556,1876/11/25,1876/11/25,26,Red Fork Powder River,Wyoming,,,,,,,Michno: Encyclopedia,-881336.6936,2370049.741
+557,1878/09/12,1878/09/12,27,Snake River,Wyoming,,,,,,,Michno: Encyclopedia,-1149331.615,2402775.193
+558,1882/04/29,1882/04/29,28,Fort Washakie,Wyoming,,,,,,,Michno: Encyclopedia,-1022409.928,2304156.6

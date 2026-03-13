@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { useParams } from 'react-router-dom';
 import * as d3 from 'd3';
 import { DimensionsContext } from './DimensionsContext';
-import { RouterParams, TimelineYearPlaceData, TimelineYearPlaceDataWithStats, Dimensions, ClaimsAndPatentsAcresType, ClaimsAndPatentsCountType } from './index.d';
-import { YTick } from './components/Barchart.d';
+import { RouterParams, TimelineYearPlaceData, TimelineYearPlaceDataWithStats, Dimensions, ClaimsAndPatentsAcresType } from './index.d';
+import { YTick } from './components/LandOffice/BarCharts/types';
 import { Actions } from './actions.d';
+import { heatmapGradientColors } from './Constants';
 
 export const makeParams = (params: RouterParams, actions: Actions): string => {
   const { text, year, stateTerr, office, fullOpacity, view } = params;
@@ -55,19 +55,19 @@ export const makeParams = (params: RouterParams, actions: Actions): string => {
     newPath += `/text/${newText}`;
   }
   if (newYear) {
-    newPath += `/year/${newYear}`;
+    newPath += `/map/year/${newYear}`;
   }
   if (newStateTerr) {
-    newPath += `/stateTerr/${newStateTerr}`;
+    newPath += `/map/stateTerr/${newStateTerr}`;
   }
   if (newOffice) {
-    newPath += `/office/${newOffice}`;
+    newPath += `/map/office/${newOffice}`;
   }
   if (newView) {
-    newPath += `/view/${newView}`;
+    newPath += `/map/view/${newView}`;
   }
   if (newFullOpacity) {
-    newPath += `/fullOpacity/${newFullOpacity}`;
+    newPath += `/map/fullOpacity/${newFullOpacity}`;
   }
   return newPath;
 };  
@@ -150,60 +150,31 @@ export const getYTicks = (maxValue: number): YTick[] => {
 };
 
 export const colorGradient = d3.scaleLinear<string>()
-  .domain([0, 0.000000001, 0.01, 0.02, 0.03, 0.04,  0.05, 1])
-  .range(['#232123', '#232123', '#50C4AA', '#B6C95C', '#FACB3E', '#FC800F', '#FF4759', '#FF4759'])
-  //.range(['#232123', '#1C6179', '#39F3BB', '#39F3BB']);
-  // .domain([0, 0.33, 1, 5, 10, 10000])
-  // .range(['#232123', '#1C6179', '#2B9992', '#3DD0AD', '#39F3BB', '#39F3BB']);
+  .domain([0, 0.000000001, 0.01, 0.02, 0.03, 0.04, 0.05, 1])
+  .range([heatmapGradientColors[0], heatmapGradientColors[0], ...heatmapGradientColors.slice(1), heatmapGradientColors[5]]);
 
 export const tileOpacity = (percent: number) => (percent === 0) 
   ? 0.03 
   : d3.scaleLinear().domain([0, 0.05, 1]).range([0.1, 1, 1])(percent) ;
 
-export const useClaimsAndPatentsTypes = () => {
-  const params = useParams<RouterParams>();
-  const { view } = params;
-  const types: ClaimsAndPatentsAcresType[] = (view) ? view.split('-') as ClaimsAndPatentsAcresType[] : ["acres_claimed", "acres_claimed_indian_lands"];
-  const countTypes: ClaimsAndPatentsCountType[] = [];
-  if (types.includes('acres_claimed')) {
-    countTypes.push('claims');
-  }
-  if (types.includes('acres_claimed_indian_lands')) {
-    countTypes.push('claims_indian_lands');
-  }
-  if (types.includes('acres_patented')) {
-    countTypes.push('patents');
-  }
-  if (types.includes('acres_patented_indian_lands')) {
-    countTypes.push('patents_indian_lands');
-  }
-  if (types.includes('acres_commuted_indian_lands')) {
-    countTypes.push('commutations_indian_lands');
-  }
-  if (types.includes('acres_commuted_2301')) {
-    countTypes.push('commutations_2301');
-  }
-    if (types.includes('acres_commuted_18800615')) {
-    countTypes.push('commutations_18800615');
-  }
-
-  let numberLabel = 'claims';
-  let acresLabel = 'claimed';
-  if (view === 'acres_commuted_2301-acres_commuted_18800615-acres_commuted_indian_lands') {
-    numberLabel = 'commutations';
-    acresLabel = 'commuted';
-  } else if (view && view.includes('patented')) {
-    numberLabel = 'patents';
-    acresLabel = 'patented';
-  }
-  return {
-    acresTypes: types,
-    countTypes,
-    numberLabel,
-    acresLabel,
-  };
-}
-
 export const acresValue = (data: TimelineYearPlaceData, types: ClaimsAndPatentsAcresType[]): number => types.reduce((acc, type) => data[type] + acc, 0);
 
 export const getDateValue = (year: number, month: number, day: number) => year * 10000 + month * 100 + day;
+
+
+
+export const hexToRgb = (hex: string) => {
+  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex) as RegExpExecArray;
+  const rgb = result
+    ? {
+      r: parseInt(result[1], 16),
+      g: parseInt(result[2], 16),
+      b: parseInt(result[3], 16),
+    }
+    : {
+      r: 125,
+      g: 125,
+      b: 125,
+    };
+  return `${rgb.r}, ${rgb.g}, ${rgb.b}`;
+};

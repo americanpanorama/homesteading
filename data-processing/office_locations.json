@@ -1,0 +1,130 @@
+[
+  {
+    "State_id": "G085",
+    "of_id": "G0851",
+    "Field_office": "Akron",
+    "state": "Colorado",
+    "lat": 40.160537,
+    "long": -103.214384
+  },
+  {
+    "State_id": "G085",
+    "of_id": "G0852",
+    "Field_office": "Central City",
+    "state": "Colorado",
+    "lat": 39.801932,
+    "long": -105.514164
+  },
+  {
+    "State_id": "G085",
+    "of_id": "G0853",
+    "Field_office": "Del Norte",
+    "state": "Colorado",
+    "lat": 37.678892,
+    "long": -106.353368
+  },
+  {
+    "State_id": "G085",
+    "of_id": "G0854",
+    "Field_office": "Denver",
+    "state": "Colorado",
+    "lat": 39.739154,
+    "long": -104.984703
+  },
+  {
+    "State_id": "G085",
+    "of_id": "G0855",
+    "Field_office": "Durango",
+    "state": "Colorado",
+    "lat": 37.27528,
+    "long": -107.880067
+  },
+  {
+    "State_id": "G085",
+    "of_id": "G0856",
+    "Field_office": "Fairplay",
+    "state": "Colorado",
+    "lat": 39.224713,
+    "long": -106.001962
+  },
+  {
+    "State_id": "G085",
+    "of_id": "G0857",
+    "Field_office": "Glenwood Springs",
+    "state": "Colorado",
+    "lat": 39.550538,
+    "long": -107.324776
+  },
+  {
+    "State_id": "G085",
+    "of_id": "G0858",
+    "Field_office": "Golden City",
+    "state": "Colorado",
+    "lat": 39.755543,
+    "long": -105.2211
+  },
+  {
+    "State_id": "G085",
+    "of_id": "G0859",
+    "Field_office": "Gunnison",
+    "state": "Colorado",
+    "lat": 38.545825,
+    "long": -106.925321
+  },
+  {
+    "State_id": "G085",
+    "of_id": "G08510",
+    "Field_office": "Hugo",
+    "state": "Colorado",
+    "lat": 39.1361,
+    "long": -103.469945
+  },
+  {
+    "State_id": "G085",
+    "of_id": "G08511",
+    "Field_office": "Lake City",
+    "state": "Colorado",
+    "lat": 38.029997,
+    "long": -107.315334
+  },
+  {
+    "State_id": "G085",
+    "of_id": "G08512",
+    "Field_office": "Lamar",
+    "state": "Colorado",
+    "lat": 38.087231,
+    "long": -102.62075
+  },
+  {
+    "State_id": "G085",
+    "of_id": "G08513",
+    "Field_office": "Leadville",
+    "state": "Colorado",
+    "lat": 39.250823,
+    "long": -106.292524
+  },
+  {
+    "State_id": "G085",
+    "of_id": "G08514",
+    "Field_office": "Montrose",
+    "state": "Colorado",
+    "lat": 38.47832,
+    "long": -107.876174
+  },
+  {
+    "State_id": "G085",
+    "of_id": "G08515",
+    "Field_office": "Pueblo",
+    "state": "Colorado",
+    "lat": 38.254447,
+    "long": -104.609141
+  },
+  {
+    "State_id": "G085",
+    "of_id": "G08516",
+    "Field_office": "Sterling",
+    "state": "Colorado",
+    "lat": 40.625542,
+    "long": -103.207709
+  }
+]

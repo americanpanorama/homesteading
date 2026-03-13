@@ -1,7 +1,7 @@
 import * as React from 'react';
 // @ts-ignore
 import us from 'us';
-import MiniMap from './MiniMap';
+import MiniMap from './Map/MiniMap';
 import { TimelineYearPlaceDataWithStats, PlaceType } from '../index.d';
 
 interface Props {

@@ -1,0 +1,63 @@
+<html>
+
+<head>
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        .state {
+            fill: #ccc;
+            stroke: #fff;
+        }
+        
+        svg {
+            border: 2px solid grey;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    <svg width=1024 height=1024 xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" id='map'>
+        <g
+        transform='scale(0.5)'
+        >
+        <image xlink:href='AK-Juneau-1902-1907/1/0/1.png' width=256 x=0 y=0 transform='translate(-128, 1024)' />
+        <image xlink:href='AK-Juneau-1902-1907/1/1/1.png' width=256 x=256 y=0 />
+        <image xlink:href='AK-Juneau-1902-1907/1/0/0.png' width=256 x=0 y=256 />
+        <image xlink:href='AK-Juneau-1902-1907/1/1/0.png' width=256 x=256 y=256 />
+        </g>
+    </svg>
+
+    <script>
+        const alaskaProjection = d3.geoConicEqualArea()
+            .scale(1070 / 960 * 256)
+            //.translate([64, 640])
+            .translate([128, 128])
+            .parallels([55, 65])
+            .rotate([154, 0])
+            .center([-2, 58.5]);
+
+        console.log(alaskaProjection([-176.951868, 69.9475326]));
+
+        const alaskaPath = d3.geoPath(alaskaProjection);
+
+        d3.json("alaska.json", function(error, data) {
+            const d = alaskaPath(data);
+            d3.select("svg")
+                .append('path')
+                .attr('transform', 'scale(1)')
+                .attr('d', d)
+                .attr('fill', 'transparent')
+                .attr('stroke', 'purple')
+                .attr('stroke-width', '2px');
+        });
+    </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+import { createGlobalStyle } from 'styled-components';
+
+const MiniMapStyles = createGlobalStyle`
+  .minimap {
+    display: inline-block;
+    background-color: var(--inset-bg-color);
+    border-radius: 5px;
+    margin: 5px;
+  }
+
+  .minimap .stateTerr {
+    fill: var(--main-bg-color);
+    stroke: var(--light-color);
+    stroke-opacity: 0.3;
+  }
+
+  .minimap .district {
+    fill: var(--light-color);
+    fill-opacity: 0.3;
+    stroke: none;
+  }
+
+  .minimap.selected .stateTerr {
+    stroke-opacity: 1;
+  }
+
+  .minimap.selected .district {
+    fill-opacity: 1;
+  }
+
+  .minimap .dates {
+    color: var(--soft-text-color);
+  }
+`;
+
+export default MiniMapStyles;

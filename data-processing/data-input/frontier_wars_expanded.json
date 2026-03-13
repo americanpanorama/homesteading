@@ -1,0 +1,7154 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-97.921334, 42.730178]
+    },
+    "properties":
+    {
+      "cartodb_id": 1,
+      "fid": 1,
+      "date_begin": "1863-12-04T00:00:00Z",
+      "date_end": "1863-12-04T00:00:00Z",
+      "source_no": "7",
+      "name": "Niobrara",
+      "state": "Nebraska",
+      "nation": "Ponca",
+      "army": "x",
+      "white_civilians": "x",
+      "native_dead": 7,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-97.677802, 41.479849]
+    },
+    "properties":
+    {
+      "cartodb_id": 2,
+      "fid": 2,
+      "date_begin": "1864-06-24T00:00:00Z",
+      "date_end": "1864-06-24T00:00:00Z",
+      "source_no": "8",
+      "name": "Looking Glass Creek",
+      "state": "Nebraska",
+      "nation": "Lakota",
+      "army": null,
+      "white_civilians": "x",
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": 3,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-98.216295, 41.337659]
+    },
+    "properties":
+    {
+      "cartodb_id": 3,
+      "fid": 3,
+      "date_begin": "1863-06-23T00:00:00Z",
+      "date_end": "1863-06-23T00:00:00Z",
+      "source_no": "6",
+      "name": "Pawnee Agency",
+      "state": "Nebraska",
+      "nation": "Brule",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": 2,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-99.346931, 42.027449]
+    },
+    "properties":
+    {
+      "cartodb_id": 4,
+      "fid": 4,
+      "date_begin": "1876-04-28T00:00:00Z",
+      "date_end": "1876-04-28T00:00:00Z",
+      "source_no": "31",
+      "name": "Gracie Creek",
+      "state": "Nebraska",
+      "nation": "Lakota",
+      "army": "x",
+      "white_civilians": "x",
+      "native_dead": 1,
+      "army_dead": 1,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-100.574325, 41.473724]
+    },
+    "properties":
+    {
+      "cartodb_id": 5,
+      "fid": 5,
+      "date_begin": "1872-04-26T00:00:00Z",
+      "date_end": "1872-04-26T00:00:00Z",
+      "source_no": "30",
+      "name": "South Fork Loup River",
+      "state": "Nebraska",
+      "nation": "Lakota",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": 3,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-103.455478, 42.735005]
+    },
+    "properties":
+    {
+      "cartodb_id": 6,
+      "fid": 6,
+      "date_begin": "1879-01-09T00:00:00Z",
+      "date_end": "1879-01-22T00:00:00Z",
+      "source_no": "33",
+      "name": "Fort Robinson",
+      "state": "Nebraska",
+      "nation": "Cheyenne",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": 64,
+      "army_dead": 7,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-103.640726, 42.610357]
+    },
+    "properties":
+    {
+      "cartodb_id": 7,
+      "fid": 7,
+      "date_begin": "1865-06-17T00:00:00Z",
+      "date_end": "1865-06-17T00:00:00Z",
+      "source_no": "20",
+      "name": "Dead Man's Fork",
+      "state": "Nebraska",
+      "nation": "Lakota",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": 4,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-103.745776, 42.914866]
+    },
+    "properties":
+    {
+      "cartodb_id": 8,
+      "fid": 8,
+      "date_begin": "1876-07-17T00:00:00Z",
+      "date_end": "1876-07-17T00:00:00Z",
+      "source_no": "32",
+      "name": "Hat Creek / Warbonnet Creek",
+      "state": "Nebraska",
+      "nation": "Cheyenne",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": 1,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-103.928276, 41.899544]
+    },
+    "properties":
+    {
+      "cartodb_id": 9,
+      "fid": 9,
+      "date_begin": "1865-06-14T00:00:00Z",
+      "date_end": "1865-06-14T00:00:00Z",
+      "source_no": "19",
+      "name": "Horse Creek / Fouts's Fight",
+      "state": "Nebraska",
+      "nation": "Lakota",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": 4,
+      "army_dead": 1,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-103.009811, 41.425583]
+    },
+    "properties":
+    {
+      "cartodb_id": 10,
+      "fid": 10,
+      "date_begin": "1865-02-04T00:00:00Z",
+      "date_end": "1865-02-06T00:00:00Z",
+      "source_no": "15",
+      "name": "Mud Springs",
+      "state": "Nebraska",
+      "nation": "Cheyenne, Lakota",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": 3,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-102.813673, 41.560177]
+    },
+    "properties":
+    {
+      "cartodb_id": 11,
+      "fid": 11,
+      "date_begin": "1865-02-08T00:00:00Z",
+      "date_end": "1865-02-09T00:00:00Z",
+      "source_no": "16",
+      "name": "Rush Creek",
+      "state": "Nebraska",
+      "nation": "Cheyenne, Lakota",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": 3,
+      "army_dead": 2,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-113.564184, 45.515485]
+    },
+    "properties":
+    {
+      "cartodb_id": 12,
+      "fid": 34,
+      "date_begin": "1877-08-09T00:00:00Z",
+      "date_end": "1877-08-10T00:00:00Z",
+      "source_no": "15",
+      "name": "Big Hole",
+      "state": "Montana",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-109.384503, 46.514819]
+    },
+    "properties":
+    {
+      "cartodb_id": 13,
+      "fid": 40,
+      "date_begin": "1879-04-17T00:00:00Z",
+      "date_end": "1879-04-17T00:00:00Z",
+      "source_no": "22",
+      "name": "Careless Creek",
+      "state": "Montana",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-107.172608, 45.341578]
+    },
+    "properties":
+    {
+      "cartodb_id": 14,
+      "fid": 43,
+      "date_begin": "1876-06-17T00:00:00Z",
+      "date_end": "1876-06-17T00:00:00Z",
+      "source_no": "9",
+      "name": "Rosebud Creek",
+      "state": "Montana",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-102.085693, 41.379875]
+    },
+    "properties":
+    {
+      "cartodb_id": 15,
+      "fid": 12,
+      "date_begin": "1855-09-03T00:00:00Z",
+      "date_end": "1855-09-03T00:00:00Z",
+      "source_no": "1",
+      "name": "Bluewater Creek",
+      "state": "Nebraska",
+      "nation": "Brule",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": 86,
+      "army_dead": 7,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-102.044697, 41.226924]
+    },
+    "properties":
+    {
+      "cartodb_id": 16,
+      "fid": 13,
+      "date_begin": "1857-09-10T00:00:00Z",
+      "date_end": "1857-09-10T00:00:00Z",
+      "source_no": "4",
+      "name": "Ash Hollow",
+      "state": "Nebraska",
+      "nation": "Cheyenne",
+      "army": null,
+      "white_civilians": "x",
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": 3,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-100.848483, 41.205672]
+    },
+    "properties":
+    {
+      "cartodb_id": 17,
+      "fid": 14,
+      "date_begin": "1866-10-23T00:00:00Z",
+      "date_end": "1866-10-23T00:00:00Z",
+      "source_no": "21",
+      "name": "North Platte River",
+      "state": "Nebraska",
+      "nation": "Lakota",
+      "army": "x",
+      "white_civilians": "x",
+      "native_dead": 4,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-99.592107, 40.65435]
+    },
+    "properties":
+    {
+      "cartodb_id": 18,
+      "fid": 15,
+      "date_begin": "1867-08-17T00:00:00Z",
+      "date_end": "1867-08-17T00:00:00Z",
+      "source_no": "24",
+      "name": "Plum Creek",
+      "state": "Nebraska",
+      "nation": "Cheyenne",
+      "army": null,
+      "white_civilians": null,
+      "native_dead": 15,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-99.695293, 40.785393]
+    },
+    "properties":
+    {
+      "cartodb_id": 19,
+      "fid": 16,
+      "date_begin": "1867-08-06T00:00:00Z",
+      "date_end": "1867-08-06T00:00:00Z",
+      "source_no": "23",
+      "name": "Turkey Leg's Raid",
+      "state": "Nebraska",
+      "nation": "Cheyenne",
+      "army": null,
+      "white_civilians": "x",
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": 7,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-99.428607, 40.689794]
+    },
+    "properties":
+    {
+      "cartodb_id": 20,
+      "fid": 17,
+      "date_begin": "1864-08-07T00:00:00Z",
+      "date_end": "1864-08-07T00:00:00Z",
+      "source_no": "10",
+      "name": "Plum Creek Massacre",
+      "state": "Nebraska",
+      "nation": "Cheyenne",
+      "army": null,
+      "white_civilians": "x",
+      "native_dead": 2,
+      "army_dead": null,
+      "white_civilian_dead": 13,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-99.344276, 40.800267]
+    },
+    "properties":
+    {
+      "cartodb_id": 21,
+      "fid": 18,
+      "date_begin": "1868-04-29T00:00:00Z",
+      "date_end": "1868-04-29T00:00:00Z",
+      "source_no": "25",
+      "name": "Tobin Massacre",
+      "state": "Nebraska",
+      "nation": "Lakota",
+      "army": null,
+      "white_civilians": "x",
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": 4,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-99.587174, 40.556574]
+    },
+    "properties":
+    {
+      "cartodb_id": 22,
+      "fid": 19,
+      "date_begin": "1864-11-26T00:00:00Z",
+      "date_end": "1864-11-26T00:00:00Z",
+      "source_no": "14",
+      "name": "Plum Creek",
+      "state": "Nebraska",
+      "nation": "Cheyenne",
+      "army": "x",
+      "white_civilians": "x",
+      "native_dead": 3,
+      "army_dead": 1,
+      "white_civilian_dead": 2,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-99.795565, 40.596887]
+    },
+    "properties":
+    {
+      "cartodb_id": 23,
+      "fid": 20,
+      "date_begin": "1857-08-02T00:00:00Z",
+      "date_end": "1857-08-03T00:00:00Z",
+      "source_no": "3",
+      "name": "Plum Creek",
+      "state": "Nebraska",
+      "nation": "Cheyenne",
+      "army": null,
+      "white_civilians": "x",
+      "native_dead": 6,
+      "army_dead": null,
+      "white_civilian_dead": 1,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-99.696122, 40.403999]
+    },
+    "properties":
+    {
+      "cartodb_id": 24,
+      "fid": 21,
+      "date_begin": "1869-05-16T00:00:00Z",
+      "date_end": "1869-05-16T00:00:00Z",
+      "source_no": "26",
+      "name": "Spring Creek",
+      "state": "Nebraska",
+      "nation": "Lakota",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": 3,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-99.942608, 40.767652]
+    },
+    "properties":
+    {
+      "cartodb_id": 25,
+      "fid": 22,
+      "date_begin": "1864-10-12T00:00:00Z",
+      "date_end": "1864-10-12T00:00:00Z",
+      "source_no": "13",
+      "name": "Mullahla's Station",
+      "state": "Nebraska",
+      "nation": "n/o",
+      "army": "x",
+      "white_civilians": "x",
+      "native_dead": 3,
+      "army_dead": 2,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-100.183007, 40.868231]
+    },
+    "properties":
+    {
+      "cartodb_id": 26,
+      "fid": 23,
+      "date_begin": "1865-05-12T00:00:00Z",
+      "date_end": "1865-05-12T00:00:00Z",
+      "source_no": "17",
+      "name": "Smith's Ranch",
+      "state": "Nebraska",
+      "nation": "Lakota",
+      "army": "x",
+      "white_civilians": "x",
+      "native_dead": null,
+      "army_dead": 1,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-100.470126, 40.930657]
+    },
+    "properties":
+    {
+      "cartodb_id": 27,
+      "fid": 24,
+      "date_begin": "1864-09-20T00:00:00Z",
+      "date_end": "1864-09-20T00:00:00Z",
+      "source_no": "12",
+      "name": "Cottonwood Canyon",
+      "state": "Nebraska",
+      "nation": "Cheyenne",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": 9,
+      "army_dead": 4,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-98.633595, 40.791209]
+    },
+    "properties":
+    {
+      "cartodb_id": 28,
+      "fid": 25,
+      "date_begin": "1856-08-26T00:00:00Z",
+      "date_end": "1856-08-26T00:00:00Z",
+      "source_no": "2",
+      "name": "Grand Island",
+      "state": "Nebraska",
+      "nation": "Cheyenne",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": 6,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-100.127279, 40.266969]
+    },
+    "properties":
+    {
+      "cartodb_id": 29,
+      "fid": 26,
+      "date_begin": "1860-08-03T00:00:00Z",
+      "date_end": "1860-08-06T00:00:00Z",
+      "source_no": "5",
+      "name": "Republican Fork",
+      "state": "Nebraska",
+      "nation": "Kiowa, Comanche",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": 29,
+      "army_dead": 4,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-98.34964, 40.544345]
+    },
+    "properties":
+    {
+      "cartodb_id": 30,
+      "fid": 27,
+      "date_begin": "1865-05-18T00:00:00Z",
+      "date_end": "1865-05-18T00:00:00Z",
+      "source_no": "18",
+      "name": "Elm Creek Station",
+      "state": "Nebraska",
+      "nation": "Pawnee",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": 2,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-97.540014, 40.273528]
+    },
+    "properties":
+    {
+      "cartodb_id": 31,
+      "fid": 28,
+      "date_begin": "1864-08-07T00:00:00Z",
+      "date_end": "1864-08-09T00:00:00Z",
+      "source_no": "9",
+      "name": "Little Blue River Raid",
+      "state": "Nebraska",
+      "nation": "Cheyenne, Lakota",
+      "army": null,
+      "white_civilians": "x",
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": 38,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-97.793523, 40.14917]
+    },
+    "properties":
+    {
+      "cartodb_id": 32,
+      "fid": 29,
+      "date_begin": "1870-05-17T00:00:00Z",
+      "date_end": "1870-05-17T00:00:00Z",
+      "source_no": "28",
+      "name": "Spring Creek",
+      "state": "Nebraska",
+      "nation": "Lakota",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": 1,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-100.554283, 40.357952]
+    },
+    "properties":
+    {
+      "cartodb_id": 33,
+      "fid": 30,
+      "date_begin": "1870-06-08T00:00:00Z",
+      "date_end": "1870-06-08T00:00:00Z",
+      "source_no": "29",
+      "name": "Red Willow Creek",
+      "state": "Nebraska",
+      "nation": "n/o",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": 2,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-101.571243, 40.379074]
+    },
+    "properties":
+    {
+      "cartodb_id": 34,
+      "fid": 31,
+      "date_begin": "1869-07-06T00:00:00Z",
+      "date_end": "1869-07-06T00:00:00Z",
+      "source_no": "27",
+      "name": "Frenchman's Fork",
+      "state": "Nebraska",
+      "nation": "Cheyenne",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": 3,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-97.962275, 40.074565]
+    },
+    "properties":
+    {
+      "cartodb_id": 35,
+      "fid": 32,
+      "date_begin": "1864-08-16T00:00:00Z",
+      "date_end": "1864-08-16T00:00:00Z",
+      "source_no": "11",
+      "name": "Elk Creek",
+      "state": "Nebraska",
+      "nation": "Cheyenne",
+      "army": "x",
+      "white_civilians": "x",
+      "native_dead": 10,
+      "army_dead": 1,
+      "white_civilian_dead": 1,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-101.612952, 40.036832]
+    },
+    "properties":
+    {
+      "cartodb_id": 36,
+      "fid": 33,
+      "date_begin": "1867-06-24T00:00:00Z",
+      "date_end": "1867-06-24T00:00:00Z",
+      "source_no": "22",
+      "name": "North Fork Republican River",
+      "state": "Nebraska",
+      "nation": "Lakota",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": 2,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-113.215866, 45.144767]
+    },
+    "properties":
+    {
+      "cartodb_id": 37,
+      "fid": 35,
+      "date_begin": "1877-08-12T00:00:00Z",
+      "date_end": "1877-08-12T00:00:00Z",
+      "source_no": "16",
+      "name": "Horse Prairie",
+      "state": "Montana",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-111.864862, 48.302671]
+    },
+    "properties":
+    {
+      "cartodb_id": 38,
+      "fid": 36,
+      "date_begin": "1870-01-23T00:00:00Z",
+      "date_end": "1870-01-23T00:00:00Z",
+      "source_no": "4",
+      "name": "Marias River",
+      "state": "Montana",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-111.044577, 46.455164]
+    },
+    "properties":
+    {
+      "cartodb_id": 39,
+      "fid": 37,
+      "date_begin": "1869-04-07T00:00:00Z",
+      "date_end": "1869-04-07T00:00:00Z",
+      "source_no": "3",
+      "name": "Sixteenmile Creek",
+      "state": "Montana",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-107.993392, 45.188231]
+    },
+    "properties":
+    {
+      "cartodb_id": 40,
+      "fid": 38,
+      "date_begin": "1867-08-01T00:00:00Z",
+      "date_end": "1867-08-01T00:00:00Z",
+      "source_no": "2",
+      "name": "Hayfield Fight",
+      "state": "Montana",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-109.150823, 45.203311]
+    },
+    "properties":
+    {
+      "cartodb_id": 41,
+      "fid": 39,
+      "date_begin": "1878-09-04T00:00:00Z",
+      "date_end": "1878-09-04T00:00:00Z",
+      "source_no": "21",
+      "name": "Clark's Fork",
+      "state": "Montana",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-108.639991, 45.903164]
+    },
+    "properties":
+    {
+      "cartodb_id": 42,
+      "fid": 41,
+      "date_begin": "1877-09-13T00:00:00Z",
+      "date_end": "1877-09-13T00:00:00Z",
+      "source_no": "17",
+      "name": "Canyon Creek",
+      "state": "Montana",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-105.80804, 45.201251]
+    },
+    "properties":
+    {
+      "cartodb_id": 43,
+      "fid": 42,
+      "date_begin": "1876-03-17T00:00:00Z",
+      "date_end": "1876-03-17T00:00:00Z",
+      "source_no": "8",
+      "name": "Powder River / Reynold's Fight",
+      "state": "Montana",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-108.444412, 45.962668]
+    },
+    "properties":
+    {
+      "cartodb_id": 44,
+      "fid": 44,
+      "date_begin": "1872-08-14T00:00:00Z",
+      "date_end": "1872-08-14T00:00:00Z",
+      "source_no": "7",
+      "name": "Pryor's Fork",
+      "state": "Montana",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-107.62086, 45.396275]
+    },
+    "properties":
+    {
+      "cartodb_id": 45,
+      "fid": 45,
+      "date_begin": "1876-06-25T00:00:00Z",
+      "date_end": "1876-06-25T00:00:00Z",
+      "source_no": "10",
+      "name": "Little Bighorn",
+      "state": "Montana",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-107.625706, 45.591768]
+    },
+    "properties":
+    {
+      "cartodb_id": 46,
+      "fid": 46,
+      "date_begin": "1887-11-05T00:00:00Z",
+      "date_end": "1887-11-05T00:00:00Z",
+      "source_no": "26",
+      "name": "Crow Agency",
+      "state": "Montana",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-106.695382, 45.555505]
+    },
+    "properties":
+    {
+      "cartodb_id": 47,
+      "fid": 47,
+      "date_begin": "1877-05-07T00:00:00Z",
+      "date_end": "1877-05-07T00:00:00Z",
+      "source_no": "14",
+      "name": "Little Muddy Creek / Lame Deer Fight",
+      "state": "Montana",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-106.441383, 45.431284]
+    },
+    "properties":
+    {
+      "cartodb_id": 48,
+      "fid": 48,
+      "date_begin": "1877-01-08T00:00:00Z",
+      "date_end": "1877-01-08T00:00:00Z",
+      "source_no": "13",
+      "name": "Wolf Mountain",
+      "state": "Montana",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-105.738429, 45.823644]
+    },
+    "properties":
+    {
+      "cartodb_id": 49,
+      "fid": 49,
+      "date_begin": "1880-02-12T00:00:00Z",
+      "date_end": "1880-02-12T00:00:00Z",
+      "source_no": "24",
+      "name": "Pumpkin Creek",
+      "state": "Montana",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-105.16558, 45.719614]
+    },
+    "properties":
+    {
+      "cartodb_id": 50,
+      "fid": 50,
+      "date_begin": "1865-09-01T00:00:00Z",
+      "date_end": "1865-09-08T00:00:00Z",
+      "source_no": "1",
+      "name": "Powder River",
+      "state": "Montana",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-107.645592, 46.292066]
+    },
+    "properties":
+    {
+      "cartodb_id": 51,
+      "fid": 51,
+      "date_begin": "1873-08-11T00:00:00Z",
+      "date_end": "1873-08-11T00:00:00Z",
+      "source_no": "7",
+      "name": "Bighorn",
+      "state": "Montana",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-106.044505, 46.388817]
+    },
+    "properties":
+    {
+      "cartodb_id": 52,
+      "fid": 52,
+      "date_begin": "1873-08-04T00:00:00Z",
+      "date_end": "1873-08-04T00:00:00Z",
+      "source_no": "6",
+      "name": "Tongue River",
+      "state": "Montana",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-105.286663, 47.113459]
+    },
+    "properties":
+    {
+      "cartodb_id": 53,
+      "fid": 53,
+      "date_begin": "1876-10-21T00:00:00Z",
+      "date_end": "1876-10-21T00:00:00Z",
+      "source_no": "11",
+      "name": "Cedar Creek",
+      "state": "Montana",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-108.825877, 47.627072]
+    },
+    "properties":
+    {
+      "cartodb_id": 54,
+      "fid": 54,
+      "date_begin": "1877-09-25T00:00:00Z",
+      "date_end": "1877-09-25T00:00:00Z",
+      "source_no": "18",
+      "name": "Cow Island",
+      "state": "Montana",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-108.761859, 47.840982]
+    },
+    "properties":
+    {
+      "cartodb_id": 55,
+      "fid": 55,
+      "date_begin": "1877-09-25T00:00:00Z",
+      "date_end": "1877-09-25T00:00:00Z",
+      "source_no": "19",
+      "name": "Cow Creek",
+      "state": "Montana",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-105.433454, 47.299852]
+    },
+    "properties":
+    {
+      "cartodb_id": 56,
+      "fid": 56,
+      "date_begin": "1876-12-18T00:00:00Z",
+      "date_end": "1876-12-18T00:00:00Z",
+      "source_no": "12",
+      "name": "Ash Creek",
+      "state": "Montana",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-109.126215, 48.285963]
+    },
+    "properties":
+    {
+      "cartodb_id": 57,
+      "fid": 57,
+      "date_begin": "1877-09-30T00:00:00Z",
+      "date_end": "1877-10-05T00:00:00Z",
+      "source_no": "20",
+      "name": "Bear's Paw / Snake Creek",
+      "state": "Montana",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-107.717212, 48.453484]
+    },
+    "properties":
+    {
+      "cartodb_id": 58,
+      "fid": 58,
+      "date_begin": "1879-07-17T00:00:00Z",
+      "date_end": "1879-07-17T00:00:00Z",
+      "source_no": "23",
+      "name": "Milk River",
+      "state": "Montana",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-105.244343, 48.192809]
+    },
+    "properties":
+    {
+      "cartodb_id": 59,
+      "fid": 59,
+      "date_begin": "1881-01-02T00:00:00Z",
+      "date_end": "1881-01-02T00:00:00Z",
+      "source_no": "25",
+      "name": "Poplar River",
+      "state": "Montana",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-107.87477, 40.114198]
+    },
+    "properties":
+    {
+      "cartodb_id": 60,
+      "fid": 60,
+      "date_begin": "1879-09-29T00:00:00Z",
+      "date_end": "1879-09-29T00:00:00Z",
+      "source_no": "27",
+      "name": "White River Massacre / Meeker Massacre",
+      "state": "Colorado",
+      "nation": "Ute",
+      "army": "x",
+      "white_civilians": "x",
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": 9,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-107.570402, 40.244932]
+    },
+    "properties":
+    {
+      "cartodb_id": 61,
+      "fid": 61,
+      "date_begin": "1879-09-29T00:00:00Z",
+      "date_end": "1879-10-05T00:00:00Z",
+      "source_no": "26",
+      "name": "Milk Creek",
+      "state": "Colorado",
+      "nation": "Ute",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": 37,
+      "army_dead": 13,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-106.187463, 38.455564]
+    },
+    "properties":
+    {
+      "cartodb_id": 62,
+      "fid": 62,
+      "date_begin": "1855-04-29T00:00:00Z",
+      "date_end": "1855-04-29T00:00:00Z",
+      "source_no": "5",
+      "name": "Poncha Pass",
+      "state": "Colorado",
+      "nation": "Ute",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": 50,
+      "army_dead": 1,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-104.578844, 39.057269]
+    },
+    "properties":
+    {
+      "cartodb_id": 63,
+      "fid": 63,
+      "date_begin": "1864-06-11T00:00:00Z",
+      "date_end": "1864-06-11T00:00:00Z",
+      "source_no": "10",
+      "name": "Hungate Massacre",
+      "state": "Colorado",
+      "nation": "Arapaho",
+      "army": null,
+      "white_civilians": "x",
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": 4,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-103.050454, 37.851012]
+    },
+    "properties":
+    {
+      "cartodb_id": 64,
+      "fid": 64,
+      "date_begin": "1868-09-10T00:00:00Z",
+      "date_end": "1868-09-10T00:00:00Z",
+      "source_no": "21",
+      "name": "Rule Creek",
+      "state": "Colorado",
+      "nation": "Cheyenne",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": 4,
+      "army_dead": 2,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-102.204366, 37.123946]
+    },
+    "properties":
+    {
+      "cartodb_id": 65,
+      "fid": 65,
+      "date_begin": "1865-06-14T00:00:00Z",
+      "date_end": "1865-06-14T00:00:00Z",
+      "source_no": "19",
+      "name": "Spring Canyon",
+      "state": "Colorado",
+      "nation": "Kiowa, Comanche",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": 5,
+      "army_dead": null,
+      "white_civilian_dead": 1,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-102.574269, 38.233638]
+    },
+    "properties":
+    {
+      "cartodb_id": 66,
+      "fid": 66,
+      "date_begin": "1864-08-11T00:00:00Z",
+      "date_end": "1864-08-11T00:00:00Z",
+      "source_no": "11",
+      "name": "Sand Creek",
+      "state": "Colorado",
+      "nation": "Arapaho",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-102.578948, 38.579247]
+    },
+    "properties":
+    {
+      "cartodb_id": 67,
+      "fid": 67,
+      "date_begin": "1864-11-29T00:00:00Z",
+      "date_end": "1864-11-29T00:00:00Z",
+      "source_no": "13",
+      "name": "Sand Creek / Chivington Massacre",
+      "state": "Colorado",
+      "nation": "Cheyenne, Arapaho",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": 130,
+      "army_dead": 15,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-102.141681, 40.921142]
+    },
+    "properties":
+    {
+      "cartodb_id": 68,
+      "fid": 68,
+      "date_begin": "1865-02-02T00:00:00Z",
+      "date_end": "1865-02-02T00:00:00Z",
+      "source_no": "18",
+      "name": "Julesburg",
+      "state": "Colorado",
+      "nation": "Cheyenne, Lakota",
+      "army": "x",
+      "white_civilians": "x",
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-102.260376, 40.874638]
+    },
+    "properties":
+    {
+      "cartodb_id": 69,
+      "fid": 69,
+      "date_begin": "1865-01-07T00:00:00Z",
+      "date_end": "1865-01-07T00:00:00Z",
+      "source_no": "14",
+      "name": "Julesburg",
+      "state": "Colorado",
+      "nation": "Cheyenne, Lakota",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": 14,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-102.172282, 38.925706]
+    },
+    "properties":
+    {
+      "cartodb_id": 70,
+      "fid": 70,
+      "date_begin": "1867-06-11T00:00:00Z",
+      "date_end": "1867-06-11T00:00:00Z",
+      "source_no": "20",
+      "name": "Big Timber",
+      "state": "Colorado",
+      "nation": "Cheyenne",
+      "army": "x",
+      "white_civilians": "x",
+      "native_dead": 3,
+      "army_dead": 1,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-103.14627, 38.975071]
+    },
+    "properties":
+    {
+      "cartodb_id": 71,
+      "fid": 71,
+      "date_begin": "1868-09-15T00:00:00Z",
+      "date_end": "1868-09-15T00:00:00Z",
+      "source_no": "22",
+      "name": "Big Sandy Creek",
+      "state": "Colorado",
+      "nation": "Cheyenne",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": 11,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-103.040596, 39.255888]
+    },
+    "properties":
+    {
+      "cartodb_id": 72,
+      "fid": 72,
+      "date_begin": "1864-04-15T00:00:00Z",
+      "date_end": "1864-04-15T00:00:00Z",
+      "source_no": "8",
+      "name": "Eayre's Fight",
+      "state": "Colorado",
+      "nation": "Cheyenne",
+      "army": "x",
+      "white_civilians": "x",
+      "native_dead": null,
+      "army_dead": 1,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-103.970635, 40.187776]
+    },
+    "properties":
+    {
+      "cartodb_id": 73,
+      "fid": 73,
+      "date_begin": "1864-04-12T00:00:00Z",
+      "date_end": "1864-04-12T00:00:00Z",
+      "source_no": "7",
+      "name": "Fremont's Orchard",
+      "state": "Colorado",
+      "nation": "Cheyenne",
+      "army": "x",
+      "white_civilians": "x",
+      "native_dead": 4,
+      "army_dead": 2,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-102.241728, 39.812206]
+    },
+    "properties":
+    {
+      "cartodb_id": 74,
+      "fid": 74,
+      "date_begin": "1868-09-17T00:00:00Z",
+      "date_end": "1868-09-21T00:00:00Z",
+      "source_no": "23",
+      "name": "Beecher's Island",
+      "state": "Colorado",
+      "nation": "Cheyenne, Lakota",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": 30,
+      "army_dead": 6,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-102.17757, 40.003579]
+    },
+    "properties":
+    {
+      "cartodb_id": 75,
+      "fid": 75,
+      "date_begin": "1869-07-08T00:00:00Z",
+      "date_end": "1869-07-08T00:00:00Z",
+      "source_no": "24",
+      "name": "Dog Creek",
+      "state": "Colorado",
+      "nation": "Cheyenne",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": 3,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-103.391058, 40.793513]
+    },
+    "properties":
+    {
+      "cartodb_id": 76,
+      "fid": 76,
+      "date_begin": "1864-05-03T00:00:00Z",
+      "date_end": "1864-05-03T00:00:00Z",
+      "source_no": "9",
+      "name": "Cedar Canyon",
+      "state": "Colorado",
+      "nation": "Cheyenne",
+      "army": "x",
+      "white_civilians": "x",
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-102.971754, 40.618656]
+    },
+    "properties":
+    {
+      "cartodb_id": 77,
+      "fid": 77,
+      "date_begin": "1865-01-07T00:00:00Z",
+      "date_end": "1865-01-07T00:00:00Z",
+      "source_no": "15",
+      "name": "Valley Station",
+      "state": "Colorado",
+      "nation": "Cheyenne, Lakota",
+      "army": null,
+      "white_civilians": "x",
+      "native_dead": 2,
+      "army_dead": null,
+      "white_civilian_dead": 13,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-103.171204, 40.439489]
+    },
+    "properties":
+    {
+      "cartodb_id": 78,
+      "fid": 78,
+      "date_begin": "1865-01-14T00:00:00Z",
+      "date_end": "1865-01-14T00:00:00Z",
+      "source_no": "16",
+      "name": "American Ranch",
+      "state": "Colorado",
+      "nation": "Cheyenne, Lakota",
+      "army": null,
+      "white_civilians": "x",
+      "native_dead": 3,
+      "army_dead": null,
+      "white_civilian_dead": 8,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-102.876255, 40.369349]
+    },
+    "properties":
+    {
+      "cartodb_id": 79,
+      "fid": 79,
+      "date_begin": "1869-07-11T00:00:00Z",
+      "date_end": "1869-07-11T00:00:00Z",
+      "source_no": "25",
+      "name": "Summit Springs",
+      "state": "Colorado",
+      "nation": "Cheyenne",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": 52,
+      "army_dead": null,
+      "white_civilian_dead": 1,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-103.067858, 40.320585]
+    },
+    "properties":
+    {
+      "cartodb_id": 80,
+      "fid": 80,
+      "date_begin": "1864-10-10T00:00:00Z",
+      "date_end": "1864-10-10T00:00:00Z",
+      "source_no": "12",
+      "name": "White Butte Creek",
+      "state": "Colorado",
+      "nation": "Cheyenne",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": 10,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-103.364853, 40.377425]
+    },
+    "properties":
+    {
+      "cartodb_id": 81,
+      "fid": 81,
+      "date_begin": "1865-01-14T00:00:00Z",
+      "date_end": "1865-01-15T00:00:00Z",
+      "source_no": "17",
+      "name": "Godfrey's Ranch",
+      "state": "Colorado",
+      "nation": "Cheyenne, Lakota",
+      "army": null,
+      "white_civilians": "x",
+      "native_dead": 17,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-101.963751, 39.002723]
+    },
+    "properties":
+    {
+      "cartodb_id": 82,
+      "fid": 82,
+      "date_begin": "1867-06-26T00:00:00Z",
+      "date_end": "1867-06-26T00:00:00Z",
+      "source_no": "15",
+      "name": "Pond Creek Station",
+      "state": "Kansas",
+      "nation": "Cheyenne",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": 6,
+      "army_dead": 6,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-101.837631, 38.943689]
+    },
+    "properties":
+    {
+      "cartodb_id": 83,
+      "fid": 83,
+      "date_begin": "1867-06-21T00:00:00Z",
+      "date_end": "1867-06-22T00:00:00Z",
+      "source_no": "13",
+      "name": "Fort Wallace",
+      "state": "Kansas",
+      "nation": "Cheyenne",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": 5,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-101.648326, 39.082521]
+    },
+    "properties":
+    {
+      "cartodb_id": 84,
+      "fid": 84,
+      "date_begin": "1869-06-19T00:00:00Z",
+      "date_end": "1869-06-19T00:00:00Z",
+      "source_no": "31",
+      "name": "Sheridan",
+      "state": "Kansas",
+      "nation": "Cheyenne",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": 4,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-101.720162, 39.223235]
+    },
+    "properties":
+    {
+      "cartodb_id": 85,
+      "fid": 85,
+      "date_begin": "1867-06-26T00:00:00Z",
+      "date_end": "1867-06-26T00:00:00Z",
+      "source_no": "16",
+      "name": "Black Butte Creek / Cooke's Fight",
+      "state": "Kansas",
+      "nation": "Cheyenne, Lakota",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": 5,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-101.258024, 38.893014]
+    },
+    "properties":
+    {
+      "cartodb_id": 86,
+      "fid": 86,
+      "date_begin": "1875-10-27T00:00:00Z",
+      "date_end": "1875-10-27T00:00:00Z",
+      "source_no": "38",
+      "name": "Smoky Hill Station",
+      "state": "Kansas",
+      "nation": "Arapaho",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": 2,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-101.1059, 38.667214]
+    },
+    "properties":
+    {
+      "cartodb_id": 87,
+      "fid": 87,
+      "date_begin": "1878-09-27T00:00:00Z",
+      "date_end": "1878-09-27T00:00:00Z",
+      "source_no": "39",
+      "name": "Punished Woman's Fork",
+      "state": "Kansas",
+      "nation": "Cheyenne",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": 2,
+      "army_dead": 2,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-101.632975, 39.550061]
+    },
+    "properties":
+    {
+      "cartodb_id": 88,
+      "fid": 88,
+      "date_begin": "1867-07-02T00:00:00Z",
+      "date_end": "1867-07-02T00:00:00Z",
+      "source_no": "17",
+      "name": "Kidder's Fight",
+      "state": "Kansas",
+      "nation": "Lakota, Cheyenne",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": 2,
+      "army_dead": 10,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-100.644016, 39.948253]
+    },
+    "properties":
+    {
+      "cartodb_id": 89,
+      "fid": 89,
+      "date_begin": "1869-05-13T00:00:00Z",
+      "date_end": "1869-05-13T00:00:00Z",
+      "source_no": "29",
+      "name": "Elephant Rock",
+      "state": "Kansas",
+      "nation": "Lakota",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": 25,
+      "army_dead": 4,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-100.801512, 39.914469]
+    },
+    "properties":
+    {
+      "cartodb_id": 90,
+      "fid": 90,
+      "date_begin": "1868-10-25T00:00:00Z",
+      "date_end": "1868-10-26T00:00:00Z",
+      "source_no": "26",
+      "name": "Beaver Creek",
+      "state": "Kansas",
+      "nation": "Cheyenne, Lakota",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": 10,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-101.059026, 39.820757]
+    },
+    "properties":
+    {
+      "cartodb_id": 91,
+      "fid": 91,
+      "date_begin": "1868-10-18T00:00:00Z",
+      "date_end": "1868-10-18T00:00:00Z",
+      "source_no": "25",
+      "name": "Beaver Creek",
+      "state": "Kansas",
+      "nation": "Cheyenne, Lakota",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": 10,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-100.938406, 39.672314]
+    },
+    "properties":
+    {
+      "cartodb_id": 92,
+      "fid": 92,
+      "date_begin": "1875-04-23T00:00:00Z",
+      "date_end": "1875-04-23T00:00:00Z",
+      "source_no": "37",
+      "name": "Sappa Creek",
+      "state": "Kansas",
+      "nation": "Cheyenne",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": 27,
+      "army_dead": 2,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-100.433825, 39.728343]
+    },
+    "properties":
+    {
+      "cartodb_id": 93,
+      "fid": 93,
+      "date_begin": "1869-09-26T00:00:00Z",
+      "date_end": "1869-09-26T00:00:00Z",
+      "source_no": "32",
+      "name": "Prairie Dog Creek",
+      "state": "Kansas",
+      "nation": "Lakota",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": 1,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-99.975647, 39.859764]
+    },
+    "properties":
+    {
+      "cartodb_id": 94,
+      "fid": 94,
+      "date_begin": "1868-10-14T00:00:00Z",
+      "date_end": "1868-10-14T00:00:00Z",
+      "source_no": "24",
+      "name": "Prairie Dog Creek",
+      "state": "Kansas",
+      "nation": "Cheyenne",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": 1,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-99.675497, 39.748238]
+    },
+    "properties":
+    {
+      "cartodb_id": 95,
+      "fid": 95,
+      "date_begin": "1867-08-21T00:00:00Z",
+      "date_end": "1867-08-22T00:00:00Z",
+      "source_no": "19",
+      "name": "Prairie Dog Creek",
+      "state": "Kansas",
+      "nation": "Lakota, Cheyenne",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": 10,
+      "army_dead": 8,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-98.996855, 39.6271]
+    },
+    "properties":
+    {
+      "cartodb_id": 96,
+      "fid": 96,
+      "date_begin": "1870-06-01T00:00:00Z",
+      "date_end": "1870-06-01T00:00:00Z",
+      "source_no": "34",
+      "name": "North Fork Solomon River",
+      "state": "Kansas",
+      "nation": "Cheyenne",
+      "army": "x",
+      "white_civilians": "x",
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-99.899249, 39.356252]
+    },
+    "properties":
+    {
+      "cartodb_id": 97,
+      "fid": 97,
+      "date_begin": "1857-07-29T00:00:00Z",
+      "date_end": "1857-07-29T00:00:00Z",
+      "source_no": "1",
+      "name": "Solomon's Fork",
+      "state": "Kansas",
+      "nation": "Cheyenne",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": 9,
+      "army_dead": 2,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-100.013763, 39.004541]
+    },
+    "properties":
+    {
+      "cartodb_id": 98,
+      "fid": 98,
+      "date_begin": "1867-09-15T00:00:00Z",
+      "date_end": "1867-09-15T00:00:00Z",
+      "source_no": "20",
+      "name": "Davis's Fight",
+      "state": "Kansas",
+      "nation": "Cheyenne",
+      "army": "x",
+      "white_civilians": "x",
+      "native_dead": 13,
+      "army_dead": 1,
+      "white_civilian_dead": 2,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-99.248241, 39.10117]
+    },
+    "properties":
+    {
+      "cartodb_id": 99,
+      "fid": 99,
+      "date_begin": "1867-08-01T00:00:00Z",
+      "date_end": "1867-08-02T00:00:00Z",
+      "source_no": "18",
+      "name": "Saline River",
+      "state": "Kansas",
+      "nation": "Lakota, Cheyenne",
+      "army": " ",
+      "white_civilians": "x",
+      "native_dead": 6,
+      "army_dead": 1,
+      "white_civilian_dead": 7,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-98.025602, 38.992611]
+    },
+    "properties":
+    {
+      "cartodb_id": 100,
+      "fid": 100,
+      "date_begin": "1868-08-13T00:00:00Z",
+      "date_end": "1868-08-13T00:00:00Z",
+      "source_no": "21",
+      "name": "Elkhorn Creek",
+      "state": "Kansas",
+      "nation": "Cheyenne, Arapaho, Lakota",
+      "army": null,
+      "white_civilians": "x",
+      "native_dead": 3,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-99.398888, 38.818761]
+    },
+    "properties":
+    {
+      "cartodb_id": 101,
+      "fid": 101,
+      "date_begin": "1867-04-15T00:00:00Z",
+      "date_end": "1867-04-15T00:00:00Z",
+      "source_no": "10",
+      "name": "Lookout Station",
+      "state": "Kansas",
+      "nation": "Lakota, Cheyenne",
+      "army": "x",
+      "white_civilians": "x",
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": 2,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-98.868356, 38.855383]
+    },
+    "properties":
+    {
+      "cartodb_id": 102,
+      "fid": 102,
+      "date_begin": "1869-05-28T00:00:00Z",
+      "date_end": "1869-05-28T00:00:00Z",
+      "source_no": "30",
+      "name": "Fossil Creek Station",
+      "state": "Kansas",
+      "nation": "Cheyenne",
+      "army": null,
+      "white_civilians": "x",
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": 2,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-99.228873, 38.665578]
+    },
+    "properties":
+    {
+      "cartodb_id": 103,
+      "fid": 103,
+      "date_begin": "1864-05-16T00:00:00Z",
+      "date_end": "1864-05-16T00:00:00Z",
+      "source_no": "3",
+      "name": "Big Bushes",
+      "state": "Kansas",
+      "nation": "Cheyenne",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": 3,
+      "army_dead": 4,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-97.982702, 38.752146]
+    },
+    "properties":
+    {
+      "cartodb_id": 104,
+      "fid": 104,
+      "date_begin": "1864-08-16T00:00:00Z",
+      "date_end": "1864-08-16T00:00:00Z",
+      "source_no": "4",
+      "name": "Smoky Hill Crossing",
+      "state": "Kansas",
+      "nation": "Cheyenne",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": 4,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-98.341291, 38.449049]
+    },
+    "properties":
+    {
+      "cartodb_id": 105,
+      "fid": 105,
+      "date_begin": "1864-12-04T00:00:00Z",
+      "date_end": "1864-12-04T00:00:00Z",
+      "source_no": "7",
+      "name": "Cow Creek",
+      "state": "Kansas",
+      "nation": "n/a",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": 1,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-98.788425, 38.346968]
+    },
+    "properties":
+    {
+      "cartodb_id": 106,
+      "fid": 106,
+      "date_begin": "1864-11-20T00:00:00Z",
+      "date_end": "1864-11-20T00:00:00Z",
+      "source_no": "6",
+      "name": "Fort Zarah",
+      "state": "Kansas",
+      "nation": "n/a",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-98.438208, 38.289475]
+    },
+    "properties":
+    {
+      "cartodb_id": 107,
+      "fid": 107,
+      "date_begin": "1865-06-11T00:00:00Z",
+      "date_end": "1865-06-11T00:00:00Z",
+      "source_no": "9",
+      "name": "Cow Creek",
+      "state": "Kansas",
+      "nation": "Kiowa",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": 27,
+      "army_dead": 1,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-99.421363, 38.395942]
+    },
+    "properties":
+    {
+      "cartodb_id": 108,
+      "fid": 108,
+      "date_begin": "1868-11-19T00:00:00Z",
+      "date_end": "1868-11-19T00:00:00Z",
+      "source_no": "27",
+      "name": "Wilson's Fight",
+      "state": "Kansas",
+      "nation": "n/o",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": 2,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-99.459431, 38.056183]
+    },
+    "properties":
+    {
+      "cartodb_id": 109,
+      "fid": 109,
+      "date_begin": "1868-08-18T00:00:00Z",
+      "date_end": "1868-08-21T00:00:00Z",
+      "source_no": "22",
+      "name": "Pawnee Fork",
+      "state": "Kansas",
+      "nation": "n/o",
+      "army": "x",
+      "white_civilians": "x",
+      "native_dead": 5,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-100.393542, 38.165479]
+    },
+    "properties":
+    {
+      "cartodb_id": 110,
+      "fid": 110,
+      "date_begin": "1864-09-25T00:00:00Z",
+      "date_end": "1864-09-25T00:00:00Z",
+      "source_no": "5",
+      "name": "Pawnee Fork",
+      "state": "Kansas",
+      "nation": "Cheyenne",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": 9,
+      "army_dead": 2,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-99.707485, 37.872596]
+    },
+    "properties":
+    {
+      "cartodb_id": 111,
+      "fid": 111,
+      "date_begin": "1868-09-02T00:00:00Z",
+      "date_end": "1868-09-02T00:00:00Z",
+      "source_no": "23",
+      "name": "Little Coon Creek",
+      "state": "Kansas",
+      "nation": "Kiowa",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": 3,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-99.969444, 37.859725]
+    },
+    "properties":
+    {
+      "cartodb_id": 112,
+      "fid": 112,
+      "date_begin": "1867-06-12T00:00:00Z",
+      "date_end": "1867-06-12T00:00:00Z",
+      "source_no": "12",
+      "name": "Fort Dodge",
+      "state": "Kansas",
+      "nation": "Kiowa",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": 1,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-100.090968, 37.790739]
+    },
+    "properties":
+    {
+      "cartodb_id": 113,
+      "fid": 113,
+      "date_begin": "1865-01-20T00:00:00Z",
+      "date_end": "1865-01-20T00:00:00Z",
+      "source_no": "8",
+      "name": "Point of Rocks",
+      "state": "Kansas",
+      "nation": "Cheyenne, Arapaho",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": 3,
+      "army_dead": 1,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-99.765771, 37.610941]
+    },
+    "properties":
+    {
+      "cartodb_id": 114,
+      "fid": 114,
+      "date_begin": "1869-01-29T00:00:00Z",
+      "date_end": "1869-01-29T00:00:00Z",
+      "source_no": "28",
+      "name": "Mulberry Creek",
+      "state": "Kansas",
+      "nation": "Pawnee",
+      "army": "x",
+      "white_civilians": "x",
+      "native_dead": 7,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-100.314427, 37.838742]
+    },
+    "properties":
+    {
+      "cartodb_id": 115,
+      "fid": 115,
+      "date_begin": "1867-04-19T00:00:00Z",
+      "date_end": "1867-04-19T00:00:00Z",
+      "source_no": "11",
+      "name": "Cimarron Crossing",
+      "state": "Kansas",
+      "nation": "Cheyenne",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": 2,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-100.403085, 37.724172]
+    },
+    "properties":
+    {
+      "cartodb_id": 116,
+      "fid": 116,
+      "date_begin": "1867-06-22T00:00:00Z",
+      "date_end": "1867-06-22T00:00:00Z",
+      "source_no": "14",
+      "name": "Baca's Wagon Train",
+      "state": "Kansas",
+      "nation": "Cheyenne",
+      "army": null,
+      "white_civilians": "x",
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": 10,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-100.120509, 37.464845]
+    },
+    "properties":
+    {
+      "cartodb_id": 117,
+      "fid": 117,
+      "date_begin": "1859-05-13T00:00:00Z",
+      "date_end": "1859-05-13T00:00:00Z",
+      "source_no": "2",
+      "name": "Crooked Creek",
+      "state": "Kansas",
+      "nation": "Comanche",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": 49,
+      "army_dead": 2,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-99.853025, 37.058216]
+    },
+    "properties":
+    {
+      "cartodb_id": 118,
+      "fid": 118,
+      "date_begin": "1872-05-22T00:00:00Z",
+      "date_end": "1872-05-22T00:00:00Z",
+      "source_no": "35",
+      "name": "Cimarron Crossing",
+      "state": "Kansas",
+      "nation": "Cheyenne",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": 2,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-99.881364, 37.205843]
+    },
+    "properties":
+    {
+      "cartodb_id": 119,
+      "fid": 119,
+      "date_begin": "1870-05-31T00:00:00Z",
+      "date_end": "1870-05-31T00:00:00Z",
+      "source_no": "33",
+      "name": "Bear Creek Station",
+      "state": "Kansas",
+      "nation": "Kiowa",
+      "army": "x",
+      "white_civilians": "x",
+      "native_dead": 5,
+      "army_dead": 2,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-99.960363, 37.356457]
+    },
+    "properties":
+    {
+      "cartodb_id": 120,
+      "fid": 120,
+      "date_begin": "1874-06-24T00:00:00Z",
+      "date_end": "1874-06-24T00:00:00Z",
+      "source_no": "36",
+      "name": "Bear Creek Redoubt",
+      "state": "Kansas",
+      "nation": "Cheyenne",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": 4,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-104.388192, 37.125837]
+    },
+    "properties":
+    {
+      "cartodb_id": 121,
+      "fid": 121,
+      "date_begin": "1848-06-19T00:00:00Z",
+      "date_end": "1848-06-19T00:00:00Z",
+      "source_no": "1",
+      "name": "Manco Burro Pass",
+      "state": "Colorado",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-106.456619, 37.124695]
+    },
+    "properties":
+    {
+      "cartodb_id": 122,
+      "fid": 122,
+      "date_begin": "1848-07-23T00:00:00Z",
+      "date_end": "1848-07-23T00:00:00Z",
+      "source_no": "2",
+      "name": "Cumbress Pass",
+      "state": "Colorado",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-104.901462, 39.283805]
+    },
+    "properties":
+    {
+      "cartodb_id": 123,
+      "fid": 123,
+      "date_begin": "1868-08-25T00:00:00Z",
+      "date_end": "1868-08-25T00:00:00Z",
+      "source_no": "3",
+      "name": "Dietemann Massacre",
+      "state": "Colorado",
+      "nation": "Arapaho",
+      "army": null,
+      "white_civilians": "x",
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": 2,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-108.896482, 40.190931]
+    },
+    "properties":
+    {
+      "cartodb_id": 124,
+      "fid": 124,
+      "date_begin": "1887-08-25T00:00:00Z",
+      "date_end": "1887-08-25T00:00:00Z",
+      "source_no": "4",
+      "name": "Colorow's War",
+      "state": "Colorado",
+      "nation": "Ute",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": 8,
+      "army_dead": 4,
+      "white_civilian_dead": null,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-98.799182, 40.838431]
+    },
+    "properties":
+    {
+      "cartodb_id": 125,
+      "fid": 125,
+      "date_begin": "1849-10-29T00:00:00Z",
+      "date_end": "1849-10-29T00:00:00Z",
+      "source_no": "1",
+      "name": "Fort Kearny",
+      "state": "Nebraska",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-98.4163, 40.986134]
+    },
+    "properties":
+    {
+      "cartodb_id": 126,
+      "fid": 126,
+      "date_begin": "1856-08-26T00:00:00Z",
+      "date_end": "1856-09-05T00:00:00Z",
+      "source_no": "2",
+      "name": "Babbitt's Wagon Train",
+      "state": "Nebraska",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-100.003341, 40.12676]
+    },
+    "properties":
+    {
+      "cartodb_id": 127,
+      "fid": 127,
+      "date_begin": "1869-08-24T00:00:00Z",
+      "date_end": "1869-08-24T00:00:00Z",
+      "source_no": "3",
+      "name": "Nelson Buck Massacre",
+      "state": "Nebraska",
+      "nation": "Lakota",
+      "army": "x",
+      "white_civilians": "x",
+      "native_dead": 3,
+      "army_dead": null,
+      "white_civilian_dead": 11,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-95.031346, 37.417525]
+    },
+    "properties":
+    {
+      "cartodb_id": 128,
+      "fid": 128,
+      "date_begin": "1863-05-15T00:00:00Z",
+      "date_end": "1863-05-15T00:00:00Z",
+      "source_no": "13",
+      "name": "Verdigris River",
+      "state": "Kansas",
+      "nation": "Osage",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": 20,
+      "white_civilian_dead": null,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-98.334729, 38.411986]
+    },
+    "properties":
+    {
+      "cartodb_id": 129,
+      "fid": 129,
+      "date_begin": "1864-07-20T00:00:00Z",
+      "date_end": "1864-07-22T00:00:00Z",
+      "source_no": "14",
+      "name": "Cow Creek",
+      "state": "Kansas",
+      "nation": "Kiowa, Arapaho, Comanche",
+      "army": null,
+      "white_civilians": "x",
+      "native_dead": null,
+      "army_dead": 30,
+      "white_civilian_dead": 2,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-101.43197, 37.599632]
+    },
+    "properties":
+    {
+      "cartodb_id": 130,
+      "fid": 130,
+      "date_begin": "1864-08-01T00:00:00Z",
+      "date_end": "1864-08-01T00:00:00Z",
+      "source_no": "15",
+      "name": "Wagon Bed Spring",
+      "state": "Kansas",
+      "nation": "Kiowa",
+      "army": null,
+      "white_civilians": "x",
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": 5,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-98.035208, 39.036026]
+    },
+    "properties":
+    {
+      "cartodb_id": 131,
+      "fid": 131,
+      "date_begin": "1864-08-06T00:00:00Z",
+      "date_end": "1864-08-06T00:00:00Z",
+      "source_no": "16",
+      "name": "Moffitt Massacre",
+      "state": "Kansas",
+      "nation": "n/a",
+      "army": null,
+      "white_civilians": "x",
+      "native_dead": null,
+      "army_dead": 4,
+      "white_civilian_dead": 4,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-100.228873, 37.83215]
+    },
+    "properties":
+    {
+      "cartodb_id": 132,
+      "fid": 132,
+      "date_begin": "1864-08-21T00:00:00Z",
+      "date_end": "1864-08-21T00:00:00Z",
+      "source_no": "17",
+      "name": "Cimarron Crossing",
+      "state": "Kansas",
+      "nation": "Cheyenne",
+      "army": "x",
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": 11,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-99.884772, 37.7587]
+    },
+    "properties":
+    {
+      "cartodb_id": 133,
+      "fid": 133,
+      "date_begin": "1865-06-12T00:00:00Z",
+      "date_end": "1865-06-12T00:00:00Z",
+      "source_no": "18",
+      "name": "Fort Dodge",
+      "state": "Kansas",
+      "nation": "Kiowa",
+      "army": "x",
+      "white_civilians": "x",
+      "native_dead": null,
+      "army_dead": 2,
+      "white_civilian_dead": null,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-97.779781, 39.523967]
+    },
+    "properties":
+    {
+      "cartodb_id": 134,
+      "fid": 134,
+      "date_begin": "1866-05-18T00:00:00Z",
+      "date_end": "1866-05-18T00:00:00Z",
+      "source_no": "19",
+      "name": "Little Cheyenne Creek",
+      "state": "Kansas",
+      "nation": "Cheyenne",
+      "army": null,
+      "white_civilians": "x",
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": 6,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-98.953919, 38.852861]
+    },
+    "properties":
+    {
+      "cartodb_id": 135,
+      "fid": 135,
+      "date_begin": "1867-06-21T00:00:00Z",
+      "date_end": "1867-06-27T00:00:00Z",
+      "source_no": "20",
+      "name": "Union Pacific Railroad",
+      "state": "Kansas",
+      "nation": "Cheyenne, Lakota",
+      "army": null,
+      "white_civilians": "x",
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": 17,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-98.135179, 39.109197]
+    },
+    "properties":
+    {
+      "cartodb_id": 136,
+      "fid": 136,
+      "date_begin": "1869-05-30T00:00:00Z",
+      "date_end": "1869-05-30T00:00:00Z",
+      "source_no": "21",
+      "name": "Spillman Creek Raids",
+      "state": "Kansas",
+      "nation": "Cheyenne",
+      "army": null,
+      "white_civilians": "x",
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": 11,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-100.44585, 37.170129]
+    },
+    "properties":
+    {
+      "cartodb_id": 137,
+      "fid": 137,
+      "date_begin": "1874-08-25T00:00:00Z",
+      "date_end": "1874-08-25T00:00:00Z",
+      "source_no": "22",
+      "name": "Lone Tree Massacre",
+      "state": "Kansas",
+      "nation": "Cheyenne",
+      "army": null,
+      "white_civilians": "x",
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": 6,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-107.977653, 45.124886]
+    },
+    "properties":
+    {
+      "cartodb_id": 138,
+      "fid": 138,
+      "date_begin": "1868-04-16T00:00:00Z",
+      "date_end": "1868-04-16T00:00:00Z",
+      "source_no": "5",
+      "name": "Fort C. F. Smith",
+      "state": "Montana",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-107.603593, 46.339995]
+    },
+    "properties":
+    {
+      "cartodb_id": 139,
+      "fid": 139,
+      "date_begin": "1876-02-22T00:00:00Z",
+      "date_end": "1876-03-17T00:00:00Z",
+      "source_no": "6",
+      "name": "Fort Pease",
+      "state": "Montana",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": 6,
+      "source": "Michno: Forgotten Fights / Peters: Indian Battles"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-105.322565, 45.948639]
+    },
+    "properties":
+    {
+      "cartodb_id": 140,
+      "fid": 140,
+      "date_begin": "1879-04-05T00:00:00Z",
+      "date_end": "1879-04-05T00:00:00Z",
+      "source_no": "7",
+      "name": "Mizpah Creek",
+      "state": "Montana",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-107.139921, 46.213134]
+    },
+    "properties":
+    {
+      "cartodb_id": 141,
+      "fid": 141,
+      "date_begin": "1880-03-08T00:00:00Z",
+      "date_end": "1880-03-08T00:00:00Z",
+      "source_no": "8",
+      "name": "Rosebud Creek",
+      "state": "Montana",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-104.183479, 45.598148]
+    },
+    "properties":
+    {
+      "cartodb_id": 142,
+      "fid": 142,
+      "date_begin": "1880-08-17T00:00:00Z",
+      "date_end": "1880-08-17T00:00:00Z",
+      "source_no": "9",
+      "name": "Little Missouri River",
+      "state": "Montana",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-109.964759, 48.884299]
+    },
+    "properties":
+    {
+      "cartodb_id": 143,
+      "fid": 143,
+      "date_begin": "1883-04-19T00:00:00Z",
+      "date_end": "1883-04-19T00:00:00Z",
+      "source_no": "10",
+      "name": "Wilde Horse Lake",
+      "state": "Montana",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-117.9284, 45.276426]
+    },
+    "properties":
+    {
+      "cartodb_id": 144,
+      "fid": 144,
+      "date_begin": "1862-08-14T00:00:00Z",
+      "date_end": "1862-08-14T00:00:00Z",
+      "source_no": "35",
+      "name": "Grande Ronde Prairie",
+      "state": "Oregon",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-119.112732, 42.861217]
+    },
+    "properties":
+    {
+      "cartodb_id": 145,
+      "fid": 145,
+      "date_begin": "1864-04-07T00:00:00Z",
+      "date_end": "1864-04-07T00:00:00Z",
+      "source_no": "36",
+      "name": "Harney Lake Valley",
+      "state": "Oregon",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-120.107314, 44.11302]
+    },
+    "properties":
+    {
+      "cartodb_id": 146,
+      "fid": 146,
+      "date_begin": "1864-05-18T00:00:00Z",
+      "date_end": "1864-05-18T00:00:00Z",
+      "source_no": "37",
+      "name": "Crooked River",
+      "state": "Oregon",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-121.349056, 43.062651]
+    },
+    "properties":
+    {
+      "cartodb_id": 147,
+      "fid": 147,
+      "date_begin": "1864-06-24T00:00:00Z",
+      "date_end": "1864-06-24T00:00:00Z",
+      "source_no": "38",
+      "name": "John Day's Road",
+      "state": "Oregon",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-118.361281, 43.703931]
+    },
+    "properties":
+    {
+      "cartodb_id": 148,
+      "fid": 148,
+      "date_begin": "1865-07-09T00:00:00Z",
+      "date_end": "1865-07-09T00:00:00Z",
+      "source_no": "39",
+      "name": "Malheur River",
+      "state": "Oregon",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-117.249887, 43.434616]
+    },
+    "properties":
+    {
+      "cartodb_id": 149,
+      "fid": 149,
+      "date_begin": "1865-07-17T00:00:00Z",
+      "date_end": "1865-07-17T00:00:00Z",
+      "source_no": "40",
+      "name": "Owyhee River",
+      "state": "Oregon",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-117.592402, 43.329397]
+    },
+    "properties":
+    {
+      "cartodb_id": 150,
+      "fid": 150,
+      "date_begin": "1866-12-26T00:00:00Z",
+      "date_end": "1866-12-26T00:00:00Z",
+      "source_no": "41",
+      "name": "Owyhee River",
+      "state": "Oregon",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-118.550607, 42.698956]
+    },
+    "properties":
+    {
+      "cartodb_id": 151,
+      "fid": 151,
+      "date_begin": "1867-01-29T00:00:00Z",
+      "date_end": "1867-01-29T00:00:00Z",
+      "source_no": "42",
+      "name": "Steen's Mountain",
+      "state": "Oregon",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-118.779561, 42.327991]
+    },
+    "properties":
+    {
+      "cartodb_id": 152,
+      "fid": 152,
+      "date_begin": "1867-02-26T00:00:00Z",
+      "date_end": "1867-02-26T00:00:00Z",
+      "source_no": "43",
+      "name": "Pueblo Mountain",
+      "state": "Oregon",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-118.671582, 42.522115]
+    },
+    "properties":
+    {
+      "cartodb_id": 153,
+      "fid": 153,
+      "date_begin": "1867-06-19T00:00:00Z",
+      "date_end": "1867-06-19T00:00:00Z",
+      "source_no": "44",
+      "name": "Steen's Mountain",
+      "state": "Oregon",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-118.862733, 43.051951]
+    },
+    "properties":
+    {
+      "cartodb_id": 154,
+      "fid": 154,
+      "date_begin": "1867-07-05T00:00:00Z",
+      "date_end": "1867-07-05T00:00:00Z",
+      "source_no": "45",
+      "name": "Donner and Blitzen Creek",
+      "state": "Oregon",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-119.921863, 42.478465]
+    },
+    "properties":
+    {
+      "cartodb_id": 155,
+      "fid": 155,
+      "date_begin": "1867-07-27T00:00:00Z",
+      "date_end": "1867-07-27T00:00:00Z",
+      "source_no": "46",
+      "name": "Camp Warner",
+      "state": "Oregon",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-118.801493, 43.228197]
+    },
+    "properties":
+    {
+      "cartodb_id": 156,
+      "fid": 156,
+      "date_begin": "1868-03-14T00:00:00Z",
+      "date_end": "1868-03-14T00:00:00Z",
+      "source_no": "47",
+      "name": "Donner and Blitzen Creek",
+      "state": "Oregon",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-121.596691, 42.063356]
+    },
+    "properties":
+    {
+      "cartodb_id": 157,
+      "fid": 157,
+      "date_begin": "1872-11-30T00:00:00Z",
+      "date_end": "1872-11-30T00:00:00Z",
+      "source_no": "48",
+      "name": "Lost River",
+      "state": "Oregon",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-119.652082, 43.581613]
+    },
+    "properties":
+    {
+      "cartodb_id": 158,
+      "fid": 158,
+      "date_begin": "1878-06-28T00:00:00Z",
+      "date_end": "1878-06-28T00:00:00Z",
+      "source_no": "49",
+      "name": "Silver River",
+      "state": "Oregon",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-119.097296, 45.11626]
+    },
+    "properties":
+    {
+      "cartodb_id": 159,
+      "fid": 159,
+      "date_begin": "1878-07-02T00:00:00Z",
+      "date_end": "1878-07-02T00:00:00Z",
+      "source_no": "50",
+      "name": "North Fork John Day River",
+      "state": "Oregon",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-119.037446, 45.459104]
+    },
+    "properties":
+    {
+      "cartodb_id": 160,
+      "fid": 160,
+      "date_begin": "1878-07-08T00:00:00Z",
+      "date_end": "1878-07-08T00:00:00Z",
+      "source_no": "51",
+      "name": "Birch Creek / Pilot Rock",
+      "state": "Oregon",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-118.745226, 45.578015]
+    },
+    "properties":
+    {
+      "cartodb_id": 161,
+      "fid": 161,
+      "date_begin": "1878-04-07T00:00:00Z",
+      "date_end": "1878-04-07T00:00:00Z",
+      "source_no": "52",
+      "name": "Umatilla Agency",
+      "state": "Oregon",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-118.555172, 44.966058]
+    },
+    "properties":
+    {
+      "cartodb_id": 162,
+      "fid": 162,
+      "date_begin": "1878-07-20T00:00:00Z",
+      "date_end": "1878-07-20T00:00:00Z",
+      "source_no": "53",
+      "name": "North Fork John Day River",
+      "state": "Oregon",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-113.04024, 42.673923]
+    },
+    "properties":
+    {
+      "cartodb_id": 163,
+      "fid": 163,
+      "date_begin": "1862-08-09T00:00:00Z",
+      "date_end": "1862-08-10T00:00:00Z",
+      "source_no": "9",
+      "name": "Massacre Rocks",
+      "state": "Idaho",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-113.532314, 42.181414]
+    },
+    "properties":
+    {
+      "cartodb_id": 164,
+      "fid": 164,
+      "date_begin": "1862-09-12T00:00:00Z",
+      "date_end": "1862-09-12T00:00:00Z",
+      "source_no": "10",
+      "name": "City of Rocks",
+      "state": "Idaho",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-111.891379, 42.234607]
+    },
+    "properties":
+    {
+      "cartodb_id": 165,
+      "fid": 165,
+      "date_begin": "1863-01-29T00:00:00Z",
+      "date_end": "1863-01-29T00:00:00Z",
+      "source_no": "11",
+      "name": "Bear River",
+      "state": "Idaho",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-115.745036, 42.731197]
+    },
+    "properties":
+    {
+      "cartodb_id": 166,
+      "fid": 166,
+      "date_begin": "1865-02-15T00:00:00Z",
+      "date_end": "1865-02-15T00:00:00Z",
+      "source_no": "12",
+      "name": "Bruneau Valley",
+      "state": "Idaho",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-116.081258, 45.502854]
+    },
+    "properties":
+    {
+      "cartodb_id": 167,
+      "fid": 167,
+      "date_begin": "1877-06-17T00:00:00Z",
+      "date_end": "1877-06-17T00:00:00Z",
+      "source_no": "13",
+      "name": "White Bird Canyon",
+      "state": "Idaho",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-115.874348, 46.006079]
+    },
+    "properties":
+    {
+      "cartodb_id": 168,
+      "fid": 168,
+      "date_begin": "1877-07-01T00:00:00Z",
+      "date_end": "1877-07-01T00:00:00Z",
+      "source_no": "14",
+      "name": "Clear Creek",
+      "state": "Idaho",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-116.434304, 45.950319]
+    },
+    "properties":
+    {
+      "cartodb_id": 169,
+      "fid": 169,
+      "date_begin": "1877-07-03T00:00:00Z",
+      "date_end": "1877-07-03T00:00:00Z",
+      "source_no": "15",
+      "name": "Cottonwood Creek / Craig's Mountain",
+      "state": "Idaho",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-116.178811, 45.915724]
+    },
+    "properties":
+    {
+      "cartodb_id": 170,
+      "fid": 170,
+      "date_begin": "1877-07-04T00:00:00Z",
+      "date_end": "1877-07-04T00:00:00Z",
+      "source_no": "16",
+      "name": "Cottonwood House",
+      "state": "Idaho",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-116.173819, 45.786103]
+    },
+    "properties":
+    {
+      "cartodb_id": 171,
+      "fid": 171,
+      "date_begin": "1877-07-05T00:00:00Z",
+      "date_end": "1877-07-05T00:00:00Z",
+      "source_no": "17",
+      "name": "\"Brave Seventeen\" Fight",
+      "state": "Idaho",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-115.857629, 45.874172]
+    },
+    "properties":
+    {
+      "cartodb_id": 172,
+      "fid": 172,
+      "date_begin": "1877-07-11T00:00:00Z",
+      "date_end": "1877-07-12T00:00:00Z",
+      "source_no": "18",
+      "name": "Clearwater River",
+      "state": "Idaho",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-115.754705, 46.304867]
+    },
+    "properties":
+    {
+      "cartodb_id": 173,
+      "fid": 173,
+      "date_begin": "1877-07-17T00:00:00Z",
+      "date_end": "1877-07-17T00:00:00Z",
+      "source_no": "19",
+      "name": "Weippe Prairie",
+      "state": "Idaho",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-113.058, 44.076637]
+    },
+    "properties":
+    {
+      "cartodb_id": 174,
+      "fid": 174,
+      "date_begin": "1877-08-15T00:00:00Z",
+      "date_end": "1877-08-15T00:00:00Z",
+      "source_no": "20",
+      "name": "Birch Creek",
+      "state": "Idaho",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-112.31578, 44.287629]
+    },
+    "properties":
+    {
+      "cartodb_id": 175,
+      "fid": 175,
+      "date_begin": "1877-08-20T00:00:00Z",
+      "date_end": "1877-08-20T00:00:00Z",
+      "source_no": "21",
+      "name": "Camas Meadows",
+      "state": "Idaho",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-116.715498, 42.760616]
+    },
+    "properties":
+    {
+      "cartodb_id": 176,
+      "fid": 176,
+      "date_begin": "1877-06-08T00:00:00Z",
+      "date_end": "1877-06-08T00:00:00Z",
+      "source_no": "22",
+      "name": "South Mountains",
+      "state": "Idaho",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-115.574514, 45.970309]
+    },
+    "properties":
+    {
+      "cartodb_id": 177,
+      "fid": 177,
+      "date_begin": "1878-07-21T00:00:00Z",
+      "date_end": "1878-07-21T00:00:00Z",
+      "source_no": "23",
+      "name": "Middle Fork Clearwater River",
+      "state": "Idaho",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-115.054596, 45.034033]
+    },
+    "properties":
+    {
+      "cartodb_id": 178,
+      "fid": 178,
+      "date_begin": "1879-07-29T00:00:00Z",
+      "date_end": "1879-07-29T00:00:00Z",
+      "source_no": "24",
+      "name": "Big Creek / Vinegar Hill",
+      "state": "Idaho",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-106.971283, 41.724608]
+    },
+    "properties":
+    {
+      "cartodb_id": 179,
+      "fid": 179,
+      "date_begin": "1863-02-20T00:00:00Z",
+      "date_end": "1863-02-20T00:00:00Z",
+      "source_no": "4",
+      "name": "Pass Creek",
+      "state": "Wyoming",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-106.365409, 41.345692]
+    },
+    "properties":
+    {
+      "cartodb_id": 180,
+      "fid": 180,
+      "date_begin": "1863-07-07T00:00:00Z",
+      "date_end": "1863-07-07T00:00:00Z",
+      "source_no": "5",
+      "name": "Grand Pass",
+      "state": "Wyoming",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-105.772356, 42.704119]
+    },
+    "properties":
+    {
+      "cartodb_id": 181,
+      "fid": 181,
+      "date_begin": "1864-07-12T00:00:00Z",
+      "date_end": "1864-07-12T00:00:00Z",
+      "source_no": "6",
+      "name": "Kelly Wagon Train",
+      "state": "Wyoming",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-105.924617, 42.851742]
+    },
+    "properties":
+    {
+      "cartodb_id": 182,
+      "fid": 182,
+      "date_begin": "1865-05-20T00:00:00Z",
+      "date_end": "1865-05-20T00:00:00Z",
+      "source_no": "7",
+      "name": "Deer Creek Station",
+      "state": "Wyoming",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-106.61089, 42.829445]
+    },
+    "properties":
+    {
+      "cartodb_id": 183,
+      "fid": 183,
+      "date_begin": "1865-06-03T00:00:00Z",
+      "date_end": "1865-06-03T00:00:00Z",
+      "source_no": "8",
+      "name": "Dry Creek",
+      "state": "Wyoming",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-107.351513, 41.675566]
+    },
+    "properties":
+    {
+      "cartodb_id": 184,
+      "fid": 184,
+      "date_begin": "1865-06-08T00:00:00Z",
+      "date_end": "1865-06-08T00:00:00Z",
+      "source_no": "9",
+      "name": "Sage Creek Station",
+      "state": "Wyoming",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-106.34776, 42.826748]
+    },
+    "properties":
+    {
+      "cartodb_id": 185,
+      "fid": 185,
+      "date_begin": "1865-07-26T00:00:00Z",
+      "date_end": "1865-07-26T00:00:00Z",
+      "source_no": "10",
+      "name": "Platte Bridge",
+      "state": "Wyoming",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-106.555679, 42.933501]
+    },
+    "properties":
+    {
+      "cartodb_id": 186,
+      "fid": 186,
+      "date_begin": "1865-07-26T00:00:00Z",
+      "date_end": "1865-07-26T00:00:00Z",
+      "source_no": "11",
+      "name": "Red Buttes / Custard's Wagon Train",
+      "state": "Wyoming",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-106.326523, 44.219483]
+    },
+    "properties":
+    {
+      "cartodb_id": 187,
+      "fid": 187,
+      "date_begin": "1865-08-13T00:00:00Z",
+      "date_end": "1865-08-13T00:00:00Z",
+      "source_no": "12",
+      "name": "Crazy Woman's Fork",
+      "state": "Wyoming",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-105.711091, 44.210171]
+    },
+    "properties":
+    {
+      "cartodb_id": 188,
+      "fid": 188,
+      "date_begin": "1865-08-13T00:00:00Z",
+      "date_end": "1865-08-15T00:00:00Z",
+      "source_no": "13",
+      "name": "Bone Pile Creek",
+      "state": "Wyoming",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-106.151078, 44.352764]
+    },
+    "properties":
+    {
+      "cartodb_id": 189,
+      "fid": 189,
+      "date_begin": "1865-08-16T00:00:00Z",
+      "date_end": "1865-08-16T00:00:00Z",
+      "source_no": "14",
+      "name": "Powder River",
+      "state": "Wyoming",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-106.94237, 44.953371]
+    },
+    "properties":
+    {
+      "cartodb_id": 190,
+      "fid": 190,
+      "date_begin": "1865-08-29T00:00:00Z",
+      "date_end": "1865-08-29T00:00:00Z",
+      "source_no": "15",
+      "name": "Tongue River",
+      "state": "Wyoming",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-106.837388, 44.514178]
+    },
+    "properties":
+    {
+      "cartodb_id": 191,
+      "fid": 191,
+      "date_begin": "1866-07-17T00:00:00Z",
+      "date_end": "1866-07-17T00:00:00Z",
+      "source_no": "16",
+      "name": "Cazeau Wagon Train",
+      "state": "Wyoming",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-106.535241, 44.089292]
+    },
+    "properties":
+    {
+      "cartodb_id": 192,
+      "fid": 192,
+      "date_begin": "1866-07-20T00:00:00Z",
+      "date_end": "1866-07-20T00:00:00Z",
+      "source_no": "17",
+      "name": "Crazy Woman Creek",
+      "state": "Wyoming",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-106.60697, 44.191329]
+    },
+    "properties":
+    {
+      "cartodb_id": 193,
+      "fid": 193,
+      "date_begin": "1866-07-24T00:00:00Z",
+      "date_end": "1866-07-24T00:00:00Z",
+      "source_no": "18",
+      "name": "Clear Creek",
+      "state": "Wyoming",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-106.77402, 44.609238]
+    },
+    "properties":
+    {
+      "cartodb_id": 194,
+      "fid": 194,
+      "date_begin": "1866-12-06T00:00:00Z",
+      "date_end": "1866-12-06T00:00:00Z",
+      "source_no": "19",
+      "name": "Peno Creek",
+      "state": "Wyoming",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-106.684349, 44.504595]
+    },
+    "properties":
+    {
+      "cartodb_id": 195,
+      "fid": 195,
+      "date_begin": "1866-12-21T00:00:00Z",
+      "date_end": "1866-12-21T00:00:00Z",
+      "source_no": "20",
+      "name": "Fort Phil Kearny / Fetterman Fight",
+      "state": "Wyoming",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-106.955453, 44.394613]
+    },
+    "properties":
+    {
+      "cartodb_id": 196,
+      "fid": 196,
+      "date_begin": "1867-08-02T00:00:00Z",
+      "date_end": "1867-08-02T00:00:00Z",
+      "source_no": "21",
+      "name": "Wagon Box Fight",
+      "state": "Wyoming",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-108.567174, 42.992192]
+    },
+    "properties":
+    {
+      "cartodb_id": 197,
+      "fid": 197,
+      "date_begin": "1869-09-14T00:00:00Z",
+      "date_end": "1869-09-14T00:00:00Z",
+      "source_no": "22",
+      "name": "Popo Agie",
+      "state": "Wyoming",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-105.423687, 42.529067]
+    },
+    "properties":
+    {
+      "cartodb_id": 198,
+      "fid": 198,
+      "date_begin": "1869-12-01T00:00:00Z",
+      "date_end": "1869-12-01T00:00:00Z",
+      "source_no": "23",
+      "name": "Horseshoe Creek",
+      "state": "Wyoming",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-108.836772, 42.698264]
+    },
+    "properties":
+    {
+      "cartodb_id": 199,
+      "fid": 199,
+      "date_begin": "1870-05-04T00:00:00Z",
+      "date_end": "1870-05-04T00:00:00Z",
+      "source_no": "24",
+      "name": "Miner's Delight",
+      "state": "Wyoming",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-107.709756, 43.283569]
+    },
+    "properties":
+    {
+      "cartodb_id": 200,
+      "fid": 200,
+      "date_begin": "1874-07-04T00:00:00Z",
+      "date_end": "1874-07-04T00:00:00Z",
+      "source_no": "25",
+      "name": "Snake Mountain",
+      "state": "Wyoming",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-107.030693, 43.861235]
+    },
+    "properties":
+    {
+      "cartodb_id": 201,
+      "fid": 201,
+      "date_begin": "1876-11-25T00:00:00Z",
+      "date_end": "1876-11-25T00:00:00Z",
+      "source_no": "26",
+      "name": "Red Fork Powder River",
+      "state": "Wyoming",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-110.401402, 43.831472]
+    },
+    "properties":
+    {
+      "cartodb_id": 202,
+      "fid": 202,
+      "date_begin": "1878-09-12T00:00:00Z",
+      "date_end": "1878-09-12T00:00:00Z",
+      "source_no": "27",
+      "name": "Snake River",
+      "state": "Wyoming",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-108.66748, 43.11828]
+    },
+    "properties":
+    {
+      "cartodb_id": 203,
+      "fid": 203,
+      "date_begin": "1882-04-29T00:00:00Z",
+      "date_end": "1882-04-29T00:00:00Z",
+      "source_no": "28",
+      "name": "Fort Washakie",
+      "state": "Wyoming",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-98.424698, 35.050221]
+    },
+    "properties":
+    {
+      "cartodb_id": 204,
+      "fid": 204,
+      "date_begin": "1862-10-23T00:00:00Z",
+      "date_end": "1862-10-24T00:00:00Z",
+      "source_no": "6",
+      "name": "Fort Cobb",
+      "state": "Oklahoma",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-99.466014, 36.447074]
+    },
+    "properties":
+    {
+      "cartodb_id": 205,
+      "fid": 205,
+      "date_begin": "1868-09-10T00:00:00Z",
+      "date_end": "1868-09-13T00:00:00Z",
+      "source_no": "7",
+      "name": "Sand Hills",
+      "state": "Oklahoma",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-99.78264, 35.607526]
+    },
+    "properties":
+    {
+      "cartodb_id": 206,
+      "fid": 206,
+      "date_begin": "1868-11-27T00:00:00Z",
+      "date_end": "1868-11-27T00:00:00Z",
+      "source_no": "8",
+      "name": "Washita River",
+      "state": "Oklahoma",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-99.290004, 34.926347]
+    },
+    "properties":
+    {
+      "cartodb_id": 207,
+      "fid": 207,
+      "date_begin": "1868-12-25T00:00:00Z",
+      "date_end": "1868-12-25T00:00:00Z",
+      "source_no": "9",
+      "name": "Soldier Spring",
+      "state": "Oklahoma",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-99.619274, 36.940278]
+    },
+    "properties":
+    {
+      "cartodb_id": 208,
+      "fid": 208,
+      "date_begin": "1870-06-08T00:00:00Z",
+      "date_end": "1870-06-08T00:00:00Z",
+      "source_no": "10",
+      "name": "Bodamer's Fight",
+      "state": "Oklahoma",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-99.693845, 36.622]
+    },
+    "properties":
+    {
+      "cartodb_id": 209,
+      "fid": 209,
+      "date_begin": "1870-06-11T00:00:00Z",
+      "date_end": "1870-06-11T00:00:00Z",
+      "source_no": "11",
+      "name": "Camp Supply",
+      "state": "Oklahoma",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-98.984061, 34.341121]
+    },
+    "properties":
+    {
+      "cartodb_id": 210,
+      "fid": 210,
+      "date_begin": "1871-04-09T00:00:00Z",
+      "date_end": "1871-04-09T00:00:00Z",
+      "source_no": "12",
+      "name": "Foster Springs",
+      "state": "Oklahoma",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-99.510213, 36.753911]
+    },
+    "properties":
+    {
+      "cartodb_id": 211,
+      "fid": 211,
+      "date_begin": "1874-06-21T00:00:00Z",
+      "date_end": "1874-06-21T00:00:00Z",
+      "source_no": "13",
+      "name": "Buffalo Creek",
+      "state": "Oklahoma",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-97.913808, 36.134389]
+    },
+    "properties":
+    {
+      "cartodb_id": 212,
+      "fid": 212,
+      "date_begin": "1874-04-07T00:00:00Z",
+      "date_end": "1874-04-07T00:00:00Z",
+      "source_no": "14",
+      "name": "Hennessey Wagon Train",
+      "state": "Oklahoma",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-98.241972, 35.156634]
+    },
+    "properties":
+    {
+      "cartodb_id": 213,
+      "fid": 213,
+      "date_begin": "1874-08-22T00:00:00Z",
+      "date_end": "1874-08-23T00:00:00Z",
+      "source_no": "15",
+      "name": "Anadarko / Wichita Agency",
+      "state": "Oklahoma",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-98.010501, 35.66666]
+    },
+    "properties":
+    {
+      "cartodb_id": 214,
+      "fid": 214,
+      "date_begin": "1875-04-06T00:00:00Z",
+      "date_end": "1875-04-06T00:00:00Z",
+      "source_no": "16",
+      "name": "Sand Hills Fight",
+      "state": "Oklahoma",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-98.934832, 36.879891]
+    },
+    "properties":
+    {
+      "cartodb_id": 215,
+      "fid": 215,
+      "date_begin": "1878-09-13T00:00:00Z",
+      "date_end": "1878-09-13T00:00:00Z",
+      "source_no": "17",
+      "name": "Turkey Springs",
+      "state": "Oklahoma",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-103.001239, 45.558973]
+    },
+    "properties":
+    {
+      "cartodb_id": 216,
+      "fid": 216,
+      "date_begin": "1876-09-09T00:00:00Z",
+      "date_end": "1876-09-09T00:00:00Z",
+      "source_no": "1",
+      "name": "Slim Buttes",
+      "state": "South Dakota",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-102.555293, 43.174262]
+    },
+    "properties":
+    {
+      "cartodb_id": 217,
+      "fid": 217,
+      "date_begin": "1890-04-12T00:00:00Z",
+      "date_end": "1890-04-12T00:00:00Z",
+      "source_no": "2",
+      "name": "Wounded Knee Creek",
+      "state": "South Dakota",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-102.266046, 43.283771]
+    },
+    "properties":
+    {
+      "cartodb_id": 218,
+      "fid": 218,
+      "date_begin": "1890-12-30T00:00:00Z",
+      "date_end": "1890-12-30T00:00:00Z",
+      "source_no": "3",
+      "name": "White Clay Creek / Drexel Mission",
+      "state": "South Dakota",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-96.80535, 46.190278]
+    },
+    "properties":
+    {
+      "cartodb_id": 219,
+      "fid": 219,
+      "date_begin": "1862-09-03T00:00:00Z",
+      "date_end": "1862-09-06T00:00:00Z",
+      "source_no": "1",
+      "name": "Fort Abercrombie",
+      "state": "North Dakota",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-99.670654, 46.727449]
+    },
+    "properties":
+    {
+      "cartodb_id": 220,
+      "fid": 220,
+      "date_begin": "1863-07-24T00:00:00Z",
+      "date_end": "1863-07-24T00:00:00Z",
+      "source_no": "2",
+      "name": "Big Mound",
+      "state": "North Dakota",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-99.869869, 46.687059]
+    },
+    "properties":
+    {
+      "cartodb_id": 221,
+      "fid": 221,
+      "date_begin": "1863-07-23T00:00:00Z",
+      "date_end": "1863-07-23T00:00:00Z",
+      "source_no": "3",
+      "name": "Dead Buffalo Lake",
+      "state": "North Dakota",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-100.205072, 46.611725]
+    },
+    "properties":
+    {
+      "cartodb_id": 222,
+      "fid": 222,
+      "date_begin": "1863-07-28T00:00:00Z",
+      "date_end": "1863-07-28T00:00:00Z",
+      "source_no": "4",
+      "name": "Stony Lake",
+      "state": "North Dakota",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-100.642568, 46.571402]
+    },
+    "properties":
+    {
+      "cartodb_id": 223,
+      "fid": 223,
+      "date_begin": "1863-08-03T00:00:00Z",
+      "date_end": "1863-08-03T00:00:00Z",
+      "source_no": "5",
+      "name": "Mackinaw Massacre",
+      "state": "North Dakota",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-99.190265, 46.303429]
+    },
+    "properties":
+    {
+      "cartodb_id": 224,
+      "fid": 224,
+      "date_begin": "1863-09-03T00:00:00Z",
+      "date_end": "1863-09-03T00:00:00Z",
+      "source_no": "6",
+      "name": "Whitestone Hill",
+      "state": "North Dakota",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-98.305259, 48.929094]
+    },
+    "properties":
+    {
+      "cartodb_id": 225,
+      "fid": 225,
+      "date_begin": "1863-12-16T00:00:00Z",
+      "date_end": "1863-12-16T00:00:00Z",
+      "source_no": "7",
+      "name": "St. Joseph",
+      "state": "North Dakota",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-102.707772, 47.268539]
+    },
+    "properties":
+    {
+      "cartodb_id": 226,
+      "fid": 226,
+      "date_begin": "1864-07-28T00:00:00Z",
+      "date_end": "1864-07-28T00:00:00Z",
+      "source_no": "8",
+      "name": "Killdeer Mountain",
+      "state": "North Dakota",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-103.833458, 46.941923]
+    },
+    "properties":
+    {
+      "cartodb_id": 227,
+      "fid": 227,
+      "date_begin": "1864-08-07T00:00:00Z",
+      "date_end": "1864-08-07T00:00:00Z",
+      "source_no": "9",
+      "name": "Badlands",
+      "state": "North Dakota",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-103.599877, 46.185485]
+    },
+    "properties":
+    {
+      "cartodb_id": 228,
+      "fid": 228,
+      "date_begin": "1864-09-02T00:00:00Z",
+      "date_end": "1864-09-02T00:00:00Z",
+      "source_no": "10",
+      "name": "Red Buttes / Fort Dilts",
+      "state": "North Dakota",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-100.837276, 46.311633]
+    },
+    "properties":
+    {
+      "cartodb_id": 229,
+      "fid": 229,
+      "date_begin": "1864-11-21T00:00:00Z",
+      "date_end": "1864-11-27T00:00:00Z",
+      "source_no": "11",
+      "name": "Fort Rice",
+      "state": "North Dakota",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-100.875737, 46.493471]
+    },
+    "properties":
+    {
+      "cartodb_id": 230,
+      "fid": 230,
+      "date_begin": "1865-04-12T00:00:00Z",
+      "date_end": "1865-04-26T00:00:00Z",
+      "source_no": "12",
+      "name": "Fort Rice",
+      "state": "North Dakota",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-101.099746, 46.384945]
+    },
+    "properties":
+    {
+      "cartodb_id": 231,
+      "fid": 231,
+      "date_begin": "1865-07-28T00:00:00Z",
+      "date_end": "1865-07-28T00:00:00Z",
+      "source_no": "13",
+      "name": "Fort Rice",
+      "state": "North Dakota",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-94.947974, 43.311977]
+    },
+    "properties":
+    {
+      "cartodb_id": 232,
+      "fid": 232,
+      "date_begin": "1864-05-16T00:00:00Z",
+      "date_end": "1864-05-16T00:00:00Z",
+      "source_no": "2",
+      "name": "Spirit Lake",
+      "state": "Iowa",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-95.080429, 44.46323]
+    },
+    "properties":
+    {
+      "cartodb_id": 233,
+      "fid": 233,
+      "date_begin": "1862-08-18T00:00:00Z",
+      "date_end": "1862-08-18T00:00:00Z",
+      "source_no": "1",
+      "name": "Redwood Agency",
+      "state": "Minnesota",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-94.935494, 44.596076]
+    },
+    "properties":
+    {
+      "cartodb_id": 234,
+      "fid": 234,
+      "date_begin": "1862-08-18T00:00:00Z",
+      "date_end": "1862-08-18T00:00:00Z",
+      "source_no": "2",
+      "name": "Lower Sioux Agency",
+      "state": "Minnesota",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-94.564934, 44.308724]
+    },
+    "properties":
+    {
+      "cartodb_id": 235,
+      "fid": 235,
+      "date_begin": "1862-08-19T00:00:00Z",
+      "date_end": "1862-08-23T00:00:00Z",
+      "source_no": "3",
+      "name": "New Ulm",
+      "state": "Minnesota",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-94.712588, 44.631621]
+    },
+    "properties":
+    {
+      "cartodb_id": 236,
+      "fid": 236,
+      "date_begin": "1862-08-20T00:00:00Z",
+      "date_end": "1862-08-22T00:00:00Z",
+      "source_no": null,
+      "name": "Fort Ridgely",
+      "state": "Minnesota",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-95.096005, 44.704424]
+    },
+    "properties":
+    {
+      "cartodb_id": 237,
+      "fid": 237,
+      "date_begin": "1862-09-02T00:00:00Z",
+      "date_end": "1862-09-03T00:00:00Z",
+      "source_no": "5",
+      "name": "Birch Coulee",
+      "state": "Minnesota",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-94.510578, 44.905567]
+    },
+    "properties":
+    {
+      "cartodb_id": 238,
+      "fid": 238,
+      "date_begin": "1862-09-03T00:00:00Z",
+      "date_end": "1862-09-03T00:00:00Z",
+      "source_no": "6",
+      "name": "Hutchinson",
+      "state": "Minnesota",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-95.526255, 44.677167]
+    },
+    "properties":
+    {
+      "cartodb_id": 239,
+      "fid": 239,
+      "date_begin": "1862-09-23T00:00:00Z",
+      "date_end": "1862-09-23T00:00:00Z",
+      "source_no": "7",
+      "name": "Wood Lake",
+      "state": "Minnesota",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-94.234691, 45.03629]
+    },
+    "properties":
+    {
+      "cartodb_id": 240,
+      "fid": 240,
+      "date_begin": "1863-06-29T00:00:00Z",
+      "date_end": "1863-06-29T00:00:00Z",
+      "source_no": "8",
+      "name": "Dustin Massacre",
+      "state": "Minnesota",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-100.584288, 46.526105]
+    },
+    "properties":
+    {
+      "cartodb_id": 241,
+      "fid": 241,
+      "date_begin": "1865-05-26T00:00:00Z",
+      "date_end": "1865-05-26T00:00:00Z",
+      "source_no": "1",
+      "name": "Fort Rice",
+      "state": "North Dakota",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-104.000682, 47.986724]
+    },
+    "properties":
+    {
+      "cartodb_id": 242,
+      "fid": 242,
+      "date_begin": "1868-08-20T00:00:00Z",
+      "date_end": "1868-08-20T00:00:00Z",
+      "source_no": "1",
+      "name": "Fort Buford",
+      "state": "North Dakota",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-100.852796, 46.767962]
+    },
+    "properties":
+    {
+      "cartodb_id": 243,
+      "fid": 243,
+      "date_begin": "1872-08-26T00:00:00Z",
+      "date_end": "1872-08-26T00:00:00Z",
+      "source_no": "3",
+      "name": "Fort McKean",
+      "state": "North Dakota",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Fort Abraham Lincoln"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-100.849139, 46.780851]
+    },
+    "properties":
+    {
+      "cartodb_id": 244,
+      "fid": 244,
+      "date_begin": "1872-10-02T00:00:00Z",
+      "date_end": "1872-10-02T00:00:00Z",
+      "source_no": "5",
+      "name": "Fort McKean",
+      "state": "North Dakota",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-100.858587, 46.773605]
+    },
+    "properties":
+    {
+      "cartodb_id": 245,
+      "fid": 245,
+      "date_begin": "1873-05-07T00:00:00Z",
+      "date_end": "1873-05-07T00:00:00Z",
+      "source_no": "6",
+      "name": "Fort Abraham Lincoln",
+      "state": "North Dakota",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-102.052617, 46.659319]
+    },
+    "properties":
+    {
+      "cartodb_id": 246,
+      "fid": 246,
+      "date_begin": "1872-10-03T00:00:00Z",
+      "date_end": "1872-10-04T00:00:00Z",
+      "source_no": "4",
+      "name": "Heart River",
+      "state": "North Dakota",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-103.705672, 43.530017]
+    },
+    "properties":
+    {
+      "cartodb_id": 247,
+      "fid": 247,
+      "date_begin": "1876-08-01T00:00:00Z",
+      "date_end": "1876-08-01T00:00:00Z",
+      "source_no": "4",
+      "name": "Red Canyon",
+      "state": "South Dakota",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-102.742591, 43.870281]
+    },
+    "properties":
+    {
+      "cartodb_id": 248,
+      "fid": 248,
+      "date_begin": "1864-06-26T00:00:00Z",
+      "date_end": "1864-06-26T00:00:00Z",
+      "source_no": "3",
+      "name": "Little Cheyenne River",
+      "state": "South Dakota",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-106.462741, 43.665048]
+    },
+    "properties":
+    {
+      "cartodb_id": 249,
+      "fid": 249,
+      "date_begin": "1864-07-07T00:00:00Z",
+      "date_end": "1864-07-07T00:00:00Z",
+      "source_no": "2",
+      "name": "Townsend's Wagon Train",
+      "state": "Wyoming",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-105.711302, 43.029014]
+    },
+    "properties":
+    {
+      "cartodb_id": 250,
+      "fid": 250,
+      "date_begin": "1864-07-19T00:00:00Z",
+      "date_end": "1864-07-19T00:00:00Z",
+      "source_no": "3",
+      "name": "Brown's Spring",
+      "state": "Wyoming",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-106.948275, 42.655313]
+    },
+    "properties":
+    {
+      "cartodb_id": 251,
+      "fid": 251,
+      "date_begin": "1865-06-21T00:00:00Z",
+      "date_end": "1865-06-21T00:00:00Z",
+      "source_no": "4",
+      "name": "Sweetwater Station",
+      "state": "Wyoming",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-107.040774, 44.866447]
+    },
+    "properties":
+    {
+      "cartodb_id": 252,
+      "fid": 252,
+      "date_begin": "1865-09-01T00:00:00Z",
+      "date_end": "1865-09-01T00:00:00Z",
+      "source_no": "5",
+      "name": "Sawyers's Wagon Train",
+      "state": "Wyoming",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-105.799277, 43.141164]
+    },
+    "properties":
+    {
+      "cartodb_id": 253,
+      "fid": 253,
+      "date_begin": "1866-07-24T00:00:00Z",
+      "date_end": "1866-07-24T00:00:00Z",
+      "source_no": "6",
+      "name": "Floyd's Wagon Train",
+      "state": "Wyoming",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-108.629485, 41.593318]
+    },
+    "properties":
+    {
+      "cartodb_id": 254,
+      "fid": 254,
+      "date_begin": "1867-06-23T00:00:00Z",
+      "date_end": "1867-06-23T00:00:00Z",
+      "source_no": "7",
+      "name": "Bitter Creek",
+      "state": "Wyoming",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-106.861275, 44.714205]
+    },
+    "properties":
+    {
+      "cartodb_id": 255,
+      "fid": 255,
+      "date_begin": "1867-11-04T00:00:00Z",
+      "date_end": "1867-11-04T00:00:00Z",
+      "source_no": "8",
+      "name": "Goose Creek/ Shurly's Fight",
+      "state": "Wyoming",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-106.523193, 44.152859]
+    },
+    "properties":
+    {
+      "cartodb_id": 256,
+      "fid": 256,
+      "date_begin": "1867-12-01T00:00:00Z",
+      "date_end": "1867-12-02T00:00:00Z",
+      "source_no": "9",
+      "name": "Crazy Woman Creek",
+      "state": "Wyoming",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-106.385156, 43.876972]
+    },
+    "properties":
+    {
+      "cartodb_id": 257,
+      "fid": 257,
+      "date_begin": "1868-07-19T00:00:00Z",
+      "date_end": "1868-07-19T00:00:00Z",
+      "source_no": "10",
+      "name": "Fort Reno",
+      "state": "Wyoming",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-105.642496, 42.707779]
+    },
+    "properties":
+    {
+      "cartodb_id": 258,
+      "fid": 258,
+      "date_begin": "1869-04-06T00:00:00Z",
+      "date_end": "1869-04-06T00:00:00Z",
+      "source_no": "11",
+      "name": "La Bonte Creek",
+      "state": "Wyoming",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-105.40817, 42.326521]
+    },
+    "properties":
+    {
+      "cartodb_id": 259,
+      "fid": 259,
+      "date_begin": "1874-02-09T00:00:00Z",
+      "date_end": "1874-02-09T00:00:00Z",
+      "source_no": "12",
+      "name": "Cottonwood Creek",
+      "state": "Wyoming",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-106.766653, 44.904341]
+    },
+    "properties":
+    {
+      "cartodb_id": 260,
+      "fid": 260,
+      "date_begin": "1876-06-09T00:00:00Z",
+      "date_end": "1876-06-09T00:00:00Z",
+      "source_no": "13",
+      "name": "Prairie Dog Creek/ Tongue River",
+      "state": "Wyoming",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-107.186356, 44.755295]
+    },
+    "properties":
+    {
+      "cartodb_id": 261,
+      "fid": 261,
+      "date_begin": "1876-07-07T00:00:00Z",
+      "date_end": "1876-07-07T00:00:00Z",
+      "source_no": "14",
+      "name": "Sibley's Scout",
+      "state": "Wyoming",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-105.56878, 42.551908]
+    },
+    "properties":
+    {
+      "cartodb_id": 262,
+      "fid": 262,
+      "date_begin": "1876-08-01T00:00:00Z",
+      "date_end": "1876-08-01T00:00:00Z",
+      "source_no": "15",
+      "name": "Heck Reel's Wagon Train",
+      "state": "Wyoming",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-115.303475, 42.851902]
+    },
+    "properties":
+    {
+      "cartodb_id": 263,
+      "fid": 263,
+      "date_begin": "1864-09-13T00:00:00Z",
+      "date_end": "1864-09-16T00:00:00Z",
+      "source_no": "2",
+      "name": "Three Island Crossing",
+      "state": "Idaho",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-116.736227, 42.454705]
+    },
+    "properties":
+    {
+      "cartodb_id": 264,
+      "fid": 264,
+      "date_begin": "1866-07-03T00:00:00Z",
+      "date_end": "1866-07-07T00:00:00Z",
+      "source_no": "3",
+      "name": "Jennings's Fight",
+      "state": "Idaho",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-116.202427, 42.482094]
+    },
+    "properties":
+    {
+      "cartodb_id": 265,
+      "fid": 265,
+      "date_begin": "1868-06-24T00:00:00Z",
+      "date_end": "1868-06-24T00:00:00Z",
+      "source_no": "4",
+      "name": "Battle Creek",
+      "state": "Idaho",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-116.785272, 42.920695]
+    },
+    "properties":
+    {
+      "cartodb_id": 266,
+      "fid": 266,
+      "date_begin": "1868-07-26T00:00:00Z",
+      "date_end": "1868-07-26T00:00:00Z",
+      "source_no": "5",
+      "name": "Juniper Canyon",
+      "state": "Idaho",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-117.75727, 43.823187]
+    },
+    "properties":
+    {
+      "cartodb_id": 267,
+      "fid": 267,
+      "date_begin": "1863-04-01T00:00:00Z",
+      "date_end": "1863-04-01T00:00:00Z",
+      "source_no": "6",
+      "name": "Standifer's Fight",
+      "state": "Oregon",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-121.544824, 43.679283]
+    },
+    "properties":
+    {
+      "cartodb_id": 268,
+      "fid": 268,
+      "date_begin": "1864-10-17T00:00:00Z",
+      "date_end": "1864-10-17T00:00:00Z",
+      "source_no": "7",
+      "name": "Paulina Creek",
+      "state": "Oregon",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-117.550818, 43.36509]
+    },
+    "properties":
+    {
+      "cartodb_id": 269,
+      "fid": 269,
+      "date_begin": "1866-02-23T00:00:00Z",
+      "date_end": "1866-02-23T00:00:00Z",
+      "source_no": "8",
+      "name": "Dry Creek",
+      "state": "Oregon",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-117.279787, 42.75938]
+    },
+    "properties":
+    {
+      "cartodb_id": 270,
+      "fid": 270,
+      "date_begin": "1866-05-27T00:00:00Z",
+      "date_end": "1866-05-28T00:00:00Z",
+      "source_no": "9",
+      "name": "Three Forks",
+      "state": "Oregon",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-118.661587, 43.659348]
+    },
+    "properties":
+    {
+      "cartodb_id": 271,
+      "fid": 271,
+      "date_begin": "1866-07-18T00:00:00Z",
+      "date_end": "1866-07-18T00:00:00Z",
+      "source_no": "10",
+      "name": "Rattlesnake Creek",
+      "state": "Oregon",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-120.372912, 42.554394]
+    },
+    "properties":
+    {
+      "cartodb_id": 272,
+      "fid": 272,
+      "date_begin": "1866-10-26T00:00:00Z",
+      "date_end": "1866-10-26T00:00:00Z",
+      "source_no": "11",
+      "name": "Lake Albert",
+      "state": "Oregon",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-118.190111, 43.251544]
+    },
+    "properties":
+    {
+      "cartodb_id": 273,
+      "fid": 273,
+      "date_begin": "1866-10-30T00:00:00Z",
+      "date_end": "1866-10-30T00:00:00Z",
+      "source_no": "12",
+      "name": "O'Beirne's Fight / Malheur Country",
+      "state": "Oregon",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-121.800081, 42.569318]
+    },
+    "properties":
+    {
+      "cartodb_id": 274,
+      "fid": 274,
+      "date_begin": "1866-11-17T00:00:00Z",
+      "date_end": "1866-11-17T00:00:00Z",
+      "source_no": "13",
+      "name": "Fort Klamath",
+      "state": "Oregon",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-120.67003, 44.250014]
+    },
+    "properties":
+    {
+      "cartodb_id": 275,
+      "fid": 275,
+      "date_begin": "1867-01-06T00:00:00Z",
+      "date_end": "1867-01-07T00:00:00Z",
+      "source_no": "14",
+      "name": "Crooked River",
+      "state": "Oregon",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-119.279324, 43.517998]
+    },
+    "properties":
+    {
+      "cartodb_id": 276,
+      "fid": 276,
+      "date_begin": "1867-04-27T00:00:00Z",
+      "date_end": "1867-04-27T00:00:00Z",
+      "source_no": "15",
+      "name": "Silvies River",
+      "state": "Oregon",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-118.498634, 44.177879]
+    },
+    "properties":
+    {
+      "cartodb_id": 277,
+      "fid": 277,
+      "date_begin": "1867-07-08T00:00:00Z",
+      "date_end": "1867-07-08T00:00:00Z",
+      "source_no": "16",
+      "name": "Malheur River",
+      "state": "Oregon",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-118.400015, 43.33628]
+    },
+    "properties":
+    {
+      "cartodb_id": 278,
+      "fid": 278,
+      "date_begin": "1867-07-15T00:00:00Z",
+      "date_end": "1867-07-15T00:00:00Z",
+      "source_no": "17",
+      "name": "South Fork Malheur",
+      "state": "Oregon",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-117.16889, 42.541832]
+    },
+    "properties":
+    {
+      "cartodb_id": 279,
+      "fid": 279,
+      "date_begin": "1867-08-11T00:00:00Z",
+      "date_end": "1867-08-15T00:00:00Z",
+      "source_no": "18",
+      "name": "Owyhee River",
+      "state": "Oregon",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-120.887418, 43.285972]
+    },
+    "properties":
+    {
+      "cartodb_id": 280,
+      "fid": 280,
+      "date_begin": "1867-09-06T00:00:00Z",
+      "date_end": "1867-09-08T00:00:00Z",
+      "source_no": "19",
+      "name": "Silver Lake",
+      "state": "Oregon",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-118.249408, 43.872921]
+    },
+    "properties":
+    {
+      "cartodb_id": 281,
+      "fid": 281,
+      "date_begin": "1868-05-31T00:00:00Z",
+      "date_end": "1868-05-31T00:00:00Z",
+      "source_no": "20",
+      "name": "Castle Rock",
+      "state": "Oregon",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-118.799443, 45.404226]
+    },
+    "properties":
+    {
+      "cartodb_id": 282,
+      "fid": 282,
+      "date_begin": "1878-07-06T00:00:00Z",
+      "date_end": "1878-07-06T00:00:00Z",
+      "source_no": "21",
+      "name": "Willow Spring",
+      "state": "Oregon",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Forgotten Fights"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-111.987378, 41.899155]
+    },
+    "properties":
+    {
+      "cartodb_id": 283,
+      "fid": 283,
+      "date_begin": "1862-11-23T00:00:00Z",
+      "date_end": "1862-11-23T00:00:00Z",
+      "source_no": "6",
+      "name": "Cache Valley",
+      "state": "Utah",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-112.243207, 41.675762]
+    },
+    "properties":
+    {
+      "cartodb_id": 284,
+      "fid": 284,
+      "date_begin": "1862-12-06T00:00:00Z",
+      "date_end": "1862-12-06T00:00:00Z",
+      "source_no": "7",
+      "name": "Empey's Ferry",
+      "state": "Utah",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-111.454764, 40.093007]
+    },
+    "properties":
+    {
+      "cartodb_id": 285,
+      "fid": 285,
+      "date_begin": "1863-04-12T00:00:00Z",
+      "date_end": "1863-04-15T00:00:00Z",
+      "source_no": "8",
+      "name": "Spanish Fork Canyon",
+      "state": "Utah",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Encyclopedia"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry":
+    {
+      "type": "Point",
+      "coordinates": [-110.311874, 37.708977]
+    },
+    "properties":
+    {
+      "cartodb_id": 286,
+      "fid": 286,
+      "date_begin": "1884-07-15T00:00:00Z",
+      "date_end": "1884-07-15T00:00:00Z",
+      "source_no": "9",
+      "name": "White River / Wormington Canyon",
+      "state": "Utah",
+      "nation": null,
+      "army": null,
+      "white_civilians": null,
+      "native_dead": null,
+      "army_dead": null,
+      "white_civilian_dead": null,
+      "source": "Michno: Forgotten Fights"
+    }
+  }]
+}

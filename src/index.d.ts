@@ -116,6 +116,7 @@ export interface TimelinePlaceDataWithStats extends TimelinePlaceData {
 }
 
 export interface TimelineCell {
+  year: number;
   x: number;                    // x position
   width: number;
   height: number;
@@ -145,6 +146,7 @@ export interface TimelineRowStyled {
   emphasize: boolean;        // for selected photographer
   fill: string;
   linkTo: string;
+  showClashes: boolean;
 }
 
 export interface StyledState {

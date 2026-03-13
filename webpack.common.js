@@ -1,28 +1,17 @@
-require('webpack');
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-//const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const SRC_DIR = path.resolve(__dirname, 'src');
-const appDir = path.resolve(__dirname, 'build');
 
 const config = {
-  entry: ['babel-polyfill', './src/index.js'],
+  entry: './src/index.tsx',
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.jsx']
+    extensions: ['.ts', '.tsx', '.js', '.jsx'],
+    fallback: {
+      fs: false,
+    },
   },
   module: {
     rules: [
-      {
-        test: /\.html$/,
-        use: 'file-loader'
-      },
-      {
-        test: /\.jsx?/,
-        include: SRC_DIR,
-        loader: 'babel-loader'
-      },
       {
         test: /\.tsx?$/,
         use: 'ts-loader',
@@ -45,9 +34,6 @@ const config = {
         ]
       }
     ]
-  },
-  node: {
-    fs: 'empty'
   }
 };
 

@@ -1,4 +1,4 @@
-import { ClaimsAndPatentsCounts,  ClaimAndPatentsAcres } from '..';
+import { ClaimsAndPatentsCounts,  ClaimAndPatentsAcres } from '../index.d';
 
 export type Point = [number, number];
 
@@ -32,7 +32,7 @@ export type ProjectedTownship = ClaimsAndPatentsCounts & ClaimAndPatentsAcres & 
   labelCoords?: Point;
 }
 
-interface ConflictData {
+export interface ConflictData {
   x: number;
   y: number;
   names: string;
@@ -46,12 +46,12 @@ interface ConflictData {
   rotation: number;
 }
 
-interface YearDataRaw {
-  offices: ProjectedTownshipAllOffices[];
+export interface YearDataRaw {
+  offices: ProjectedTownship[];
   conflicts: ConflictData[];
 }
 
-interface YearData {
+export interface YearData {
   offices: ProjectedTownship[];
   conflicts: ConflictData[];
 }
@@ -91,6 +91,7 @@ export type CalculateTransform = (viewOptions: {
   dy?: number;
   yGutter?: number;
   xGutter?: number;
+  focusY?: number;
   center?: Point;
   rotation?: number;
   width: number;
