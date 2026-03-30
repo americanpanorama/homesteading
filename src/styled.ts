@@ -28,8 +28,9 @@ export const AppContainer = styled.main<{ $isMapFullscreen: boolean }>`
   color: ${Constants.colors.lightColor};
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: 300;
-  width: 100vw;
-  min-height: 100vh;
+  width: 100%;
+  min-height: 100dvh;
+  overflow-x: hidden;
   --inset-bg-color: ${Constants.colors.insetBGcolor};
   --main-bg-color: ${Constants.colors.mainBGcolor};
   --inset-header-bg-color: ${Constants.colors.insetHeaderBGcolor};
@@ -58,9 +59,9 @@ export const AppContainer = styled.main<{ $isMapFullscreen: boolean }>`
     outline-offset: 2px;
   }
 
-  @media ${Constants.devices.desktop} {
+  @media ${Constants.devices.tabletLandscape} {
     display: grid;
-    grid-template-columns: ${({ $isMapFullscreen }) => ($isMapFullscreen ? 'minmax(0, 1fr) auto' : 'minmax(0, 1fr) max(40%, 600px)')};
+    grid-template-columns: ${({ $isMapFullscreen }) => ($isMapFullscreen ? 'minmax(0, 1fr) auto' : 'minmax(0, 1fr) minmax(360px, 40%)')};
     grid-template-rows: 75px 150px auto;
     grid-template-areas: ${({ $isMapFullscreen }) => ($isMapFullscreen
     ? `"masthead appNav"
@@ -93,11 +94,11 @@ export const SkipLink = styled.a`
 `;
 
 export const Sidebar = styled.aside<{ $isCollapsed?: boolean }>`
-  @media ${Constants.devices.desktop} {
+  @media ${Constants.devices.tabletLandscape} {
     grid-area: sidebar;
     grid-row: 2 / span 2;
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: auto;
     padding-top: 0;
     display: ${({ $isCollapsed }) => ($isCollapsed ? 'none' : 'block')};
   }

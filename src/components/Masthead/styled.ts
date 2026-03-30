@@ -5,6 +5,7 @@ export const Container = styled.header`
   grid-area: masthead;
   font-family: "Unica One", serif;
   line-height: 1;
+  min-height: 56px;
 
   a {
     text-decoration: none;
@@ -23,13 +24,14 @@ export const Container = styled.header`
     text-transform: uppercase;
     letter-spacing: 0.03em;
     color: #666;
-    color: ${Constants.heatmapGradientColors[3]}
+    color: ${Constants.heatmapGradientColors[4]}
     
   }
 
   @media ${Constants.devices.mobile} {
     h1 {
       font-size: 20px;
+      margin: 14px 0 4px 0;
     }
   }
 
@@ -58,7 +60,7 @@ export const Acquisition = styled.span`
 export const And = styled.span`
   font-weight: 100;
   font-size: 0.6em;
-  color: ${Constants.heatmapGradientColors[5]};
+  color: ${Constants.heatmapGradientColors[3]};
   text-transform: uppercase;
   font-family: "Zen Dots", sans-serif;
   `;

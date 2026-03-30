@@ -1,9 +1,7 @@
 import * as React from 'react';
 import ContinentalUS from '../../../../data/continentalUS.json';
-import States from '../../../../data/states.json';
-import { heatmapGradientColors } from '../../../Constants';
 import { DimensionsContext } from '../../../DimensionsContext';
-import { Dimensions, ProjectedState } from '../../../index.d';
+import { Dimensions } from '../../../index.d';
 import { useAnimatedHomeMapYear, useHomeMapData } from '../../../hooks';
 import { colorGradient } from '../../../utilities';
 import { calculateTransform } from '../../Map/utilities';
@@ -43,7 +41,7 @@ const HomeMap = () => {
       >
         <g transform={transform}>
           {ContinentalUS.map((pathD: string) => (
-            <path
+            <Styled.BasePath
               d={pathD}
               fill='#eee'
               fillOpacity={0.6}
@@ -64,15 +62,12 @@ const HomeMap = () => {
           ))} */}
 
           {offices.map(office => (
-            <path
+            <Styled.OfficePath
               d={office.d}
-              fill={colorGradient(office.values[yearIndex])}
-              fillOpacity={office.values[yearIndex] > 0 ? 1 : 0.16}
+              $fill={colorGradient(office.values[yearIndex])}
+              $fillOpacity={office.values[yearIndex] > 0 ? 1 : 0.16}
               stroke='rgba(212, 198, 183, 0.28)'
               strokeWidth={1}
-              style={{
-                transition: 'fill 850ms ease, fill-opacity 850ms ease',
-              }}
               key={`home-office-${office.state}-${office.office}`}
             />
           ))}

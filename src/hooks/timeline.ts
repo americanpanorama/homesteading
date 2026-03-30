@@ -4,10 +4,11 @@ import { Dimensions } from '../index.d';
 import { buildTimelineRows, getTimelineXScale, TIMELINE_ROW_HEIGHT } from '../components/Timeline/utilities';
 import { TimelineSortOption } from '../components/Timeline/types';
 import { useTimelineData } from './data';
-import { useClaimsAndPatentsTypes, useURLParams } from './routing';
+import { useClaimsAndPatentsTypes, useLinkBuilder, useURLParams } from './routing';
 
 interface UseTimelineChartArgs {
   sortBy?: TimelineSortOption;
+  showInactiveAreasForSelectedYear?: boolean;
 }
 
 /**
@@ -30,6 +31,7 @@ export const useTimelineX = () => {
  */
 export const useTimelineChart = ({
   sortBy = 'alphabetical',
+  showInactiveAreasForSelectedYear = true,
 }: UseTimelineChartArgs = {}) => {
   const { timelineDimensions, isPhoneSize } = useContext(DimensionsContext) as Dimensions;
   const { width } = timelineDimensions;
@@ -37,6 +39,7 @@ export const useTimelineChart = ({
   const { stateTerr, yearNum } = params;
   const data = useTimelineData(stateTerr || 'national');
   const { acresTypes: types, countTypes } = useClaimsAndPatentsTypes();
+  const buildLink = useLinkBuilder();
   const x = useTimelineX();
 
   const rows = useMemo(() => buildTimelineRows({
@@ -46,11 +49,12 @@ export const useTimelineChart = ({
     stateTerr,
     isPhoneSize,
     width,
-    params,
     types,
     countTypes,
     xScale: x,
-  }), [countTypes, data, isPhoneSize, params, sortBy, stateTerr, types, width, x, yearNum]);
+    showInactiveAreasForSelectedYear,
+    buildLink,
+  }), [buildLink, countTypes, data, isPhoneSize, showInactiveAreasForSelectedYear, sortBy, stateTerr, types, width, x, yearNum]);
 
   return {
     x,

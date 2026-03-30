@@ -5,8 +5,8 @@ import { ProjectedState } from '../../../index.d';
 import { District, YMD } from '../../Map.d';
 import States from '../../../../data/states.json';
 import { getDateValue } from '../../../utilities';
-import { calculateCenterAndDxDy, calculateTransform, calculateZ } from '../utilities';
-import MiniMapStyles from './styled';
+import { calculateCenterAndDxDy, calculateTransform, getScaledStrokeWidth } from '../utilities';
+import * as Styled from './styled';
 
 const Map = () => {
   const { useEffect, useState } = React;
@@ -51,15 +51,14 @@ const Map = () => {
 
   if (officeBoundaries && officeBoundaries.boundaries.length > 0) {
     return (
-      <>
-        <MiniMapStyles />
-        <div>
+        <Styled.List>
         {officeBoundaries.boundaries
           .map(officeBoundary => (
-            <div
-              className={`minimap ${overlapsWithFiscalYear(officeBoundary.start_date, officeBoundary.end_date) ? 'selected' : ''}`}
+            <Styled.Card
+              $selected={overlapsWithFiscalYear(officeBoundary.start_date, officeBoundary.end_date)}
+              key={`minimap-${officeBoundary.d.substr(0, 20)}`}
             >
-              <svg
+              <Styled.Svg
                 width={width}
                 height={height}
                 xmlns="http://www.w3.org/2000/svg"
@@ -68,28 +67,25 @@ const Map = () => {
                 <g
                   transform={transform}
                 >
-                  <g transform={`scale(${scale})`}>
-                    <path
-                      d={placeData.d}
-                      className='stateTerr'
-                      strokeWidth={1 / scale}
-                    />
-                    <path
-                      d={officeBoundary.d}
-                      className='district'
-                    />
-                  </g>
+                  <Styled.StateTerritoryPath
+                    d={placeData.d}
+                    $selected={overlapsWithFiscalYear(officeBoundary.start_date, officeBoundary.end_date)}
+                    $strokeWidth={getScaledStrokeWidth(scale, 1.5, 0.22, 0.9)}
+                  />
+                  <Styled.DistrictPath
+                    d={officeBoundary.d}
+                    $selected={overlapsWithFiscalYear(officeBoundary.start_date, officeBoundary.end_date)}
+                  />
                 </g>
-              </svg>
-              <div className='dates'>
+              </Styled.Svg>
+              <Styled.Dates>
                 {`${months[officeBoundary.start_date.month - 1]} ${officeBoundary.start_date.day}, ${officeBoundary.start_date.year} -`}
                 <br />
                 {`${months[officeBoundary.end_date.month - 1]} ${officeBoundary.end_date.day}, ${officeBoundary.end_date.year}`}
-              </div>
-            </div>
+              </Styled.Dates>
+            </Styled.Card>
           ))}
-        </div>
-      </>
+        </Styled.List>
     );
   }
 

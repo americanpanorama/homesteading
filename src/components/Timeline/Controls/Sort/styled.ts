@@ -8,30 +8,32 @@ export const Label = styled.label`
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--light-color);
+  text-align: left;
 `;
 
 export const Select = styled.select`
-  width: 100%;
+  width: min-content;
   min-width: 0;
+  max-width: 100%;
+  display: block;             
   appearance: none;
-  border: 2px solid ${Constants.colors.mutedTextColor};
+  border: 1px solid ${Constants.colors.mutedTextColor};
   background-color: var(--main-bg-color);
   color: var(--light-color);
-  font-size: 1em;
+  font-size: 0.9em;
+  line-height: 1.1;
   font-family: 'Roboto Condensed', sans-serif;
-  background-image:
-    linear-gradient(45deg, transparent 50%, var(--light-color) 50%),
-    linear-gradient(135deg, var(--light-color) 50%, transparent 50%);
-  background-position:
-    calc(100% - 28px) calc(50% - 3px),
-    calc(100% - 18px) calc(50% - 3px);
-  background-size: 10px 10px, 10px 10px;
+  padding: 0.5rem 2.25rem 0.5rem 0.5rem;
   background-repeat: no-repeat;
-  padding: 0.5em;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath d='M0 0 L5 6 L10 0 Z' fill='%235b4b63'/%3E%3C/svg%3E");
+  background-position: right 0.5rem center;
+  background-size: 0.7rem 0.5rem;
 
   &:focus {
     border-color: ${Constants.colors.accentColor};
-    outline: 3px solid ${Constants.colors.focusRingColor};
-    outline-offset: 2px;
+  }
+
+  @media ${Constants.devices.desktop} {
+    max-width: 190px;
   }
 `;

@@ -4,7 +4,7 @@ import * as Styled from './styled';
 
 const Masthead = () => {
   return (
-    <Styled.Container>
+    <Styled.Container data-phone-chrome='masthead'>
       <Link to='/'>
         <h1>
           <Styled.Acquisition>Land Acquisition</Styled.Acquisition>

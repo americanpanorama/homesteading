@@ -1,22 +1,30 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import Row from "./Row";
+import Row from "./Row/Index";
 import { DimensionsContext } from "../../../DimensionsContext";
-import { useTimelineChart, useTimelineX, useURLParams } from "../../../hooks";
-import { makeParams } from "../../../utilities";
+import { useLinkBuilder, useTimelineChart, useTimelineX, useURLParams } from "../../../hooks";
 import { Dimensions } from "../../../index.d";
 import * as Styled from "./styled";
 
 import { TIMELINE_GRID_YEARS, TIMELINE_SELECTABLE_YEARS } from "../utilities";
 
-const TimelineHeatmap = ({ sortBy, showClashes }: { sortBy: "alphabetical" | "descending" | "chronological"; showClashes: boolean }) => {
+const TimelineHeatmap = ({
+  sortBy,
+  showClashes,
+  showInactiveAreasForSelectedYear,
+}: {
+  sortBy: "alphabetical" | "descending" | "chronological";
+  showClashes: boolean;
+  showInactiveAreasForSelectedYear: boolean;
+}) => {
   const params = useURLParams();
+  const buildLink = useLinkBuilder();
   const { yearNum } = params;
   const { timelineDimensions } = useContext(DimensionsContext) as Dimensions;
   const { width } = timelineDimensions;
   const x = useTimelineX();
 
-  const { rows, rowHeight } = useTimelineChart({ sortBy });
+  const { rows, rowHeight } = useTimelineChart({ sortBy, showInactiveAreasForSelectedYear });
 
   if (!rows) return null;
 
@@ -48,7 +56,6 @@ const TimelineHeatmap = ({ sortBy, showClashes }: { sortBy: "alphabetical" | "de
             y2={rows.length * rowHeight + 10}
           />
 
-
           {rows.map(p => (
             <Row
               {...p}
@@ -62,7 +69,7 @@ const TimelineHeatmap = ({ sortBy, showClashes }: { sortBy: "alphabetical" | "de
 
           {TIMELINE_SELECTABLE_YEARS.map(y => (
             <Link
-              to={makeParams(params, [{ type: "set_year", payload: y }])}
+              to={buildLink({ year: y })}
               key={`linkFor${y}`}
             >
               <Styled.HitArea

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useURLParams } from '../../hooks';
-import { makeParams } from '../../utilities';
+import { useLinkBuilder, useURLParams } from '../../hooks';
 import IndianCountryMap from './IndianCountryMap/Index';
 import OpenReservationsMap from './OpenReservationsMap/Index';
 import { TextType } from '../../index.d';
@@ -149,6 +148,7 @@ const texts: { [index in Exclude<TextType, 'about'>]: React.ReactElement } = {
 export default function About() {
     const [messageSent, setMessageSent] = React.useState(false);
     const params = useURLParams();
+    const buildLink = useLinkBuilder();
     const { text } = params;
     const activeText: TextType = (text as TextType) || 'introduction';
     const aboutContent = (
@@ -194,7 +194,7 @@ export default function About() {
         <Styled.LongformContainer id='main-content'>
             <Styled.LongformNav>
                 <Styled.CloseTextLink
-                    to={makeParams(params, [{ type: 'clear_text' }])}
+                    to={buildLink({ clearText: true })}
                 >
                     close
                 </Styled.CloseTextLink>

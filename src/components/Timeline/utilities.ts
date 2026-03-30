@@ -1,9 +1,9 @@
 import * as d3 from 'd3';
 // @ts-ignore
 import us from '../../us';
-import { ClaimsAndPatentsAcresType, ClaimsAndPatentsCountType, RouterParams, TimelineConflict, TimelinePlaceData, TimelineRowStyled, TimelineYearPlaceData } from '../../index.d';
+import { ClaimsAndPatentsAcresType, ClaimsAndPatentsCountType, TimelineConflict, TimelinePlaceData, TimelineRowStyled, TimelineYearPlaceData } from '../../index.d';
 import { colors } from '../../Constants';
-import { acresValue, colorGradient, makeParams } from '../../utilities';
+import { acresValue, colorGradient } from '../../utilities';
 import { TimelineSortOption } from './types';
 
 export const TIMELINE_YEAR_LABELS = [1870, 1880, 1890, 1900, 1910];
@@ -17,7 +17,7 @@ export const TIMELINE_ROW_HEIGHT = 25;
  */
 export const getTimelineXScale = (width: number, isPhoneSize: boolean) => d3.scaleLinear()
   .domain([1862, 1912])
-  .range([isPhoneSize ? 70 : 140, width - 25]);
+  .range([isPhoneSize ? 70 : 125, width - 25]);
 
 /**
  * Produces the display label for a row, including the territory suffix used before statehood.
@@ -109,10 +109,20 @@ interface BuildTimelineRowsArgs {
   stateTerr: string | undefined;
   isPhoneSize: boolean;
   width: number;
-  params: RouterParams;
   types: ClaimsAndPatentsAcresType[];
   countTypes: ClaimsAndPatentsCountType[];
   xScale: d3.ScaleLinear<number, number>;
+  showInactiveAreasForSelectedYear: boolean;
+  buildLink: (overrides?: {
+    stateTerr?: string | null;
+    office?: string | null;
+    clearState?: boolean;
+    clearOffice?: boolean;
+    year?: string | number;
+    view?: string | null;
+    text?: string | null;
+    hash?: string | null;
+  }) => string;
 }
 
 /**
@@ -126,45 +136,65 @@ export const buildTimelineRows = ({
   stateTerr,
   isPhoneSize,
   width,
-  params,
   types,
   countTypes,
   xScale,
+  showInactiveAreasForSelectedYear,
+  buildLink,
 }: BuildTimelineRowsArgs): TimelineRowStyled[] => {
   const cellWidth = xScale(1870) - xScale(1869);
 
-  return sortTimelinePlaces(placeData, sortBy, yearNum, types).map((place, index) => {
-    const dataForSelectedYear = place.yearData.find(yd => yd.year === yearNum);
-    const acres = dataForSelectedYear ? types.reduce((acc, type) => dataForSelectedYear[type] + acc, 0) : 0;
-    const active = !!dataForSelectedYear && acres > 0;
+  return sortTimelinePlaces(placeData, sortBy, yearNum, types)
+    .filter((place) => {
+      if (showInactiveAreasForSelectedYear) {
+        return true;
+      }
 
-    return {
-      label: getTimelineLabel(place, isPhoneSize, stateTerr, yearNum),
-      cells: place.yearData.map((yearDatum: TimelineYearPlaceData) => {
-        const yearAcres = types.reduce((acc, type) => yearDatum[type] + acc, 0);
-        return {
-          year: yearDatum.year,
-          x: xScale(yearDatum.year) + 0.25,
-          width: cellWidth - 0.5,
-          height: (yearDatum.area !== 0 && yearAcres > 0) ? 8 + 10 * Math.min(1, yearAcres * 20 / yearDatum.area) : 0,
-          fill: colorGradient(yearAcres / yearDatum.area),
-          fillOpacity: 1,
-        };
-      }),
-      acres,
-      number: dataForSelectedYear ? countTypes.reduce((acc, type) => dataForSelectedYear[type] + acc, 0) : 0,
-      conflicts: buildTimelineConflictMarkers(place.yearData, xScale),
-      showClashes: true,
-      active,
-      fill: active ? colors.mutedTextColor : colors.disabledTextColor,
-      width,
-      y: index * TIMELINE_ROW_HEIGHT,
-      height: 20,
-      labelSize: 14,
-      emphasize: false,
-      linkTo: stateTerr
-        ? makeParams(params, [{ type: 'set_office', payload: place.name.replace(/[^a-zA-Z0-9]/g, '') }])
-        : makeParams(params, [{ type: 'set_state', payload: us.lookup(place.name) ? us.lookup(place.name).abbr : '' }]),
-    };
-  });
+      const dataForSelectedYear = place.yearData.find(yd => yd.year === yearNum);
+      if (!dataForSelectedYear) {
+        return false;
+      }
+
+      return types.reduce((acc, type) => dataForSelectedYear[type] + acc, 0) > 0;
+    })
+    .map((place, index) => {
+      // Keep the full historical row visible even when the selected year has no
+      // activity. That preserves the long-term pattern while muting the label to
+      // show that the place is inactive in the focused year.
+      const dataForSelectedYear = place.yearData.find(yd => yd.year === yearNum);
+      const acres = dataForSelectedYear
+        ? types.reduce((acc, type) => dataForSelectedYear[type] + acc, 0)
+        : 0;
+      const active = acres > 0;
+
+      return {
+        label: getTimelineLabel(place, isPhoneSize, stateTerr, yearNum),
+        cells: place.yearData.map((yearDatum: TimelineYearPlaceData) => {
+          const yearAcres = types.reduce((acc, type) => yearDatum[type] + acc, 0);
+          return {
+            year: yearDatum.year,
+            x: xScale(yearDatum.year) + 0.25,
+            width: cellWidth - 0.5,
+            fill: colorGradient(yearAcres / yearDatum.area),
+            fillOpacity: 1,
+          };
+        }),
+        acres,
+        number: dataForSelectedYear
+          ? countTypes.reduce((acc, type) => dataForSelectedYear[type] + acc, 0)
+          : 0,
+        conflicts: buildTimelineConflictMarkers(place.yearData, xScale),
+        showClashes: true,
+        active,
+        fill: active ? colors.mutedTextColor : colors.disabledTextColor,
+        width,
+        y: index * TIMELINE_ROW_HEIGHT,
+        height: 20,
+        labelSize: 14,
+        emphasize: false,
+        linkTo: stateTerr
+          ? buildLink({ office: place.name.replace(/[^a-zA-Z0-9]/g, '') })
+          : buildLink({ stateTerr: us.lookup(place.name) ? us.lookup(place.name).abbr : null }),
+      };
+    });
 };

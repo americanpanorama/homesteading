@@ -1,12 +1,11 @@
 import React from 'react';
+import * as Styled from './styled';
 
-const BarChartLegendItem = ({ className, label }: { className: string; label: string }) => (
-  <div>
-    <div
-      className={`box ${className}`}
-    />
+const BarChartLegendItem = ({ className, label }: { className: Styled.LegendVariant; label: string }) => (
+  <Styled.Item>
+    <Styled.Swatch $variant={className} />
     {label}
-  </div>
+  </Styled.Item>
 );
 
 export default BarChartLegendItem;

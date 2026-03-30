@@ -14,6 +14,17 @@ export const Svg = styled.svg`
   height: 100%;
 `;
 
+export const BasePath = styled.path``;
+
+export const OfficePath = styled.path.attrs<{ $fill: string; $fillOpacity: number }>(({ $fill, $fillOpacity }) => ({
+  style: {
+    fill: $fill,
+    fillOpacity: $fillOpacity,
+  },
+}))`
+  transition: fill 850ms ease, fill-opacity 850ms ease;
+`;
+
 export const YearBadge = styled.div`
   position: absolute;
   top: 330px;

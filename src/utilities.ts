@@ -1,76 +1,9 @@
 import * as React from 'react';
 import * as d3 from 'd3';
 import { DimensionsContext } from './DimensionsContext';
-import { RouterParams, TimelineYearPlaceData, TimelineYearPlaceDataWithStats, Dimensions, ClaimsAndPatentsAcresType } from './index.d';
+import { TimelineYearPlaceData, TimelineYearPlaceDataWithStats, Dimensions, ClaimsAndPatentsAcresType } from './index.d';
 import { YTick } from './components/LandOffice/BarCharts/types';
-import { Actions } from './actions.d';
-import { heatmapGradientColors } from './Constants';
-
-export const makeParams = (params: RouterParams, actions: Actions): string => {
-  const { text, year, stateTerr, office, fullOpacity, view } = params;
-  let newText = text;
-  let newYear = year;
-  let newStateTerr = stateTerr;
-  let newOffice = office;
-  let newView = view;
-  let newFullOpacity = fullOpacity;
-  actions.forEach(a => {
-    if (a.type === 'set_year') {
-      newYear = a.payload.toString();
-    }
-    if (a.type === 'set_state') {
-      newStateTerr = a.payload.replace(/[^a-zA-Z0-9]/g, '');
-      newOffice = null;
-    }
-    if (a.type === 'clear_state') {
-      newStateTerr = null;
-      newOffice = null;
-    }
-    if (a.type === 'set_office') {
-      newOffice = a.payload.replace(/[^a-zA-Z0-9]/g, '');
-    }
-    if (a.type === 'clear_office') {
-      newOffice = null;
-    }
-    if (a.type === 'set_view') {
-      newView = a.payload;
-    }
-    if (a.type === 'show_text') {
-      newText = a.payload;
-    }
-    if (a.type === 'clear_text') {
-      newText = null;
-    }
-  });
-  // remove indian_lands if the year is before 1890 when that legislation passed
-  if (newView && parseInt(newYear) < 1890) {
-    newView = newView
-      .split('-')
-      .filter(type => !type.includes('indian'))
-      .join('-');
-  }
-
-  let newPath = '';
-  if (newText) {
-    newPath += `/text/${newText}`;
-  }
-  if (newYear) {
-    newPath += `/map/year/${newYear}`;
-  }
-  if (newStateTerr) {
-    newPath += `/map/stateTerr/${newStateTerr}`;
-  }
-  if (newOffice) {
-    newPath += `/map/office/${newOffice}`;
-  }
-  if (newView) {
-    newPath += `/map/view/${newView}`;
-  }
-  if (newFullOpacity) {
-    newPath += `/map/fullOpacity/${newFullOpacity}`;
-  }
-  return newPath;
-};  
+import { heatmapGradientColors, colors } from './Constants';
 
 export const getTotalClaims = (d: TimelineYearPlaceData): number => d.claims + d.claims_indian_lands;
 
@@ -150,8 +83,8 @@ export const getYTicks = (maxValue: number): YTick[] => {
 };
 
 export const colorGradient = d3.scaleLinear<string>()
-  .domain([0, 0.000000001, 0.01, 0.02, 0.03, 0.04, 0.05, 1])
-  .range([heatmapGradientColors[0], heatmapGradientColors[0], ...heatmapGradientColors.slice(1), heatmapGradientColors[5]]);
+  .domain([0, 0.0005, 0.01, 0.02, 0.03, 0.04, 0.05, 1])
+  .range([colors.northAmericaBackgroundColor, heatmapGradientColors[0], ...heatmapGradientColors.slice(1), heatmapGradientColors[5]]);
 
 export const tileOpacity = (percent: number) => (percent === 0) 
   ? 0.03 
@@ -178,3 +111,8 @@ export const hexToRgb = (hex: string) => {
     };
   return `${rgb.r}, ${rgb.g}, ${rgb.b}`;
 };
+
+export const hextoRgba = (hex: string, opacity: number) => {
+  const rgb = hexToRgb(hex);
+  return `rgba(${rgb}, ${opacity})`;
+}

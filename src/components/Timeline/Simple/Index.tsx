@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 import * as d3 from 'd3';
 // @ts-ignore
 import us from '../../../us';
-import { useClaimsAndPatentsTypes, useTimelineData, useURLParams } from '../../../hooks';
-import { makeParams } from '../../../utilities';
+import { useClaimsAndPatentsTypes, useLinkBuilder, useTimelineData, useURLParams } from '../../../hooks';
 import { DimensionsContext } from '../../../DimensionsContext';
 import { Dimensions, TimelinePlaceData } from '../../../index.d';
 import * as Styled from './styled';
@@ -22,6 +21,7 @@ export const timeCodeToNum = (timecode: number): number => Math.floor(timecode /
 const TimelineHeatmap = () => {
   const { useContext } = React;
   const params = useURLParams();
+  const buildLink = useLinkBuilder();
   const { stateTerr, office, year, yearNum } = params;
   const { width: mapWidth } = (useContext(DimensionsContext) as Dimensions).mapDimensions;
   const width = mapWidth * 0.9;
@@ -73,9 +73,7 @@ const TimelineHeatmap = () => {
       <Styled.TimelineSvg
         width={width}
         height={125}
-        style={{
-          marginLeft: width / -2,
-        }}
+        $marginLeft={width / -2}
       >
 
       <rect
@@ -106,17 +104,15 @@ const TimelineHeatmap = () => {
               fill={color(yearData.acres)}
               fillOpacity={(yearData.year.toString() === year) ? 1 : 0.6}
             />
-            <text
+            <Styled.AcreageLabel
               x={(x(1873) - x(1872)) / 2}
               y={ 75 - (8 + 67 * yearData.acres / max) - 7}
               textAnchor='middle'
               fill='white'
-              style={{
-                visibility: (yearNum === yearData.year) ? 'visible' : 'hidden',
-              }}
+              $visible={yearNum === yearData.year}
             >
               {`${Math.round(yearData.acres).toLocaleString()} acres`}
-            </text>
+            </Styled.AcreageLabel>
           </g>
 
 
@@ -124,15 +120,14 @@ const TimelineHeatmap = () => {
 
         {/* year tick marks */}
         {[1865, 1870, 1875, 1880, 1885, 1890, 1895, 1900, 1905, 1910].map((year: number) => (
-          <text
+          <Styled.YearTickLabel
             x={x(year + 0.5)}
             y={95}
             textAnchor='middle'
             key={`yearAxisFor${year}`}
-            style={{ fontSize: '1.25em' }}
           >
             {year}
-          </text>
+          </Styled.YearTickLabel>
         ))}
 
         <line
@@ -146,7 +141,7 @@ const TimelineHeatmap = () => {
 
         {yearsData.map(yearData => (
           <Link
-            to={makeParams(params, [{ type: 'set_year', payload: yearData.year }])}
+            to={buildLink({ year: yearData.year })}
             key={`LinkFor${yearData.year}`}
           >
             <rect

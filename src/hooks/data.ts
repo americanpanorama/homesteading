@@ -1,6 +1,6 @@
 import * as React from 'react';
 import axios from 'axios';
-import { ProjectedTownship, YearData, YearDataRaw } from '../components/Map.d';
+import { ProjectedTownship, ProjectedTownshipAllOffices, YearData, YearDataRaw } from '../components/Map.d';
 import { TimelinePlaceData } from '../index.d';
 import { useURLParams } from './routing';
 
@@ -12,9 +12,64 @@ const yearDataRequestCache = new Map<string, Promise<YearData>>();
 const timelineDataCache = new Map<string, TimelinePlaceData[]>();
 const timelineDataRequestCache = new Map<string, Promise<TimelinePlaceData[]>>();
 
+const FULL_STATE_OFFICE_STATES = ['IL', 'IN', 'MS', 'OH'];
+
+const isFlattenedOffice = (office: ProjectedTownship | ProjectedTownshipAllOffices): office is ProjectedTownship =>
+  'tile_id' in office;
+
+const transformFlattenedOffice = (year: string, office: ProjectedTownship): ProjectedTownship | null => {
+  if ((office.tile_id && office.tile_id.slice(-8) >= `${year}0630`) || FULL_STATE_OFFICE_STATES.includes(office.state)) {
+    return office;
+  }
+
+  return null;
+};
+
+const transformNestedOffice = (year: string, office: ProjectedTownshipAllOffices): ProjectedTownship | null => {
+  const officeBoundaries = Array.isArray(office.office_boundaries) ? office.office_boundaries : [];
+  const officeData = Array.isArray(office.data) ? office.data : [];
+  const activeBoundary = FULL_STATE_OFFICE_STATES.includes(office.state)
+    ? officeBoundaries[0]
+    : officeBoundaries.find(boundary => boundary.tile_id && boundary.tile_id.slice(-8) >= `${year}0630`);
+
+  if (!activeBoundary) {
+    return null;
+  }
+
+  // Prefer the map-adjusted stats when they are present, while still supporting
+  // older generated years that only include a single raw row.
+  const officeDatum = officeData.find(datum => datum.adjustedForMap) || officeData.find(datum => !datum.adjustedForMap);
+  if (!officeDatum) {
+    return null;
+  }
+
+  const { adjustedForMap, ...officeStats } = officeDatum;
+  void adjustedForMap;
+
+  return {
+    office: office.office,
+    state: office.state,
+    ...activeBoundary,
+    ...officeStats,
+  };
+};
+
 const transformYearData = (year: string, yearDataRaw: YearDataRaw): YearData => {
   const offices: ProjectedTownship[] = (Array.isArray(yearDataRaw.offices) ? yearDataRaw.offices : [])
-    .filter(d => (d.tile_id && d.tile_id.slice(-8) >= `${year}0630`) || ['IL', 'IN', 'MS', 'OH'].includes(d.state));
+    .reduce((acc: ProjectedTownship[], office) => {
+      // Some checked-in years are already flattened for the app, while others
+      // still use the generator's nested office/data shape. Normalize both here
+      // so the map can render consistently regardless of how a year was produced.
+      const normalizedOffice = isFlattenedOffice(office)
+        ? transformFlattenedOffice(year, office)
+        : transformNestedOffice(year, office);
+
+      if (normalizedOffice) {
+        acc.push(normalizedOffice);
+      }
+
+      return acc;
+    }, []);
 
   return {
     offices,
@@ -106,6 +161,11 @@ export const useTimelineData = (place: string): TimelinePlaceData[] => {
   const [timelineData, setTimelineData] = React.useState<TimelinePlaceData[]>(timelineDataCache.get(place) || []);
 
   React.useEffect(() => {
+    if (!place) {
+      setTimelineData([]);
+      return undefined;
+    }
+
     let isMounted = true;
     fetchTimelineData(place)
       .then(data => {

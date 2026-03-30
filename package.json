@@ -18,9 +18,11 @@
     "start": "webpack-dev-server --open --config webpack.dev.js --mode development",
     "build": "webpack --config webpack.prod.js --mode production && npm run copy-public-assets",
     "dist": "webpack --config webpack.prod.js --mode production && npm run copy-public-assets",
+    "audit-places-date-ranges": "cd data-processing && npm run audit-places-date-ranges",
     "build-home-map-data": "node scripts/build-home-map-data.mjs",
+    "build-places-date-ranges": "cd data-processing && npm run build-places-date-ranges",
     "start2": "webpack-dev-server --open --config webpack.dev.js --mode development",
-    "copy-public-assets": "rm -rf build/data build/timelineData build/static && cp -R public/data build/data && cp -R public/timelineData build/timelineData && cp -R public/static build/static && cp public/favicon.ico build/favicon.ico",
+    "copy-public-assets": "rm -rf build/data build/timelineData build/static && cp -R public/data build/data && cp -R public/data/timelineData build/timelineData && cp -R public/static build/static && cp public/favicon.ico build/favicon.ico",
     "test": "echo \"No test runner configured\""
   },
   "devDependencies": {

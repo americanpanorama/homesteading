@@ -13,16 +13,19 @@ const TimelineHeatmap = () => {
   const { height } = timelineDimensions;
   const [sortBy, setSortBy] = useState<TimelineSortOption>("alphabetical");
   const [showClashes, setShowClashes] = useState(false);
-  const { rows, rowHeight } = useTimelineChart({ sortBy });
+  const [showInactiveAreasForSelectedYear, setShowInactiveAreasForSelectedYear] = useState(true);
+  const { rows, rowHeight } = useTimelineChart({ sortBy, showInactiveAreasForSelectedYear });
 
   return (
-    <Styled.Container>
+    <Styled.Container data-timeline-host>
       <Styled.ScrollPanel $height={Math.min(height, rows.length * rowHeight + 340)}>
         <Controls
           sortBy={sortBy}
           onSortChange={setSortBy}
           showClashes={showClashes}
           onToggleClashes={setShowClashes}
+          showInactiveAreasForSelectedYear={showInactiveAreasForSelectedYear}
+          onToggleInactiveAreasForSelectedYear={setShowInactiveAreasForSelectedYear}
         />
 
         <YAxis />
@@ -30,6 +33,7 @@ const TimelineHeatmap = () => {
         <Heatmap
           sortBy={sortBy}
           showClashes={showClashes}
+          showInactiveAreasForSelectedYear={showInactiveAreasForSelectedYear}
         />
       </Styled.ScrollPanel>
     </Styled.Container>

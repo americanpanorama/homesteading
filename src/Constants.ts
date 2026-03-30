@@ -13,7 +13,8 @@ export const colors = {
   disabledTextColor: '#444444',
   districtStrokeColor: '#8A4353',
   fullStateDistrictFillColor: '#9B8E75',
-  accentColor: '#02796B',
+  accentColor: '#5A455A', // '#02796B',
+  northAmericaBackgroundColor: '#FFFDFA',
 };
 
 /* 
@@ -31,9 +32,18 @@ export const barCategoryColors = {
   commutationsIndianLands: '#009E9A',
 };
 
+// export const heatmapGradientColors = [
+//   '#FFF0E1',
+//   '#FFCBBC',
+//   '#FFA696',
+//   '#FF7E6F',
+//   '#CC4440',
+//   '#BF1657',
+//   '#BA0079',
+// ];
+
 export const heatmapGradientColors = [
   '#FFF0E1',
-  '#FFCBBC',
   '#FFA696',
   '#FF7E6F',
   '#CC4440',
@@ -55,10 +65,16 @@ export const sizes = {
   desktop: 1280,
 };
 
+export const isTabletLandscapeViewport = (width: number, height: number) =>
+  width >= sizes.tabletLandscape && width > height;
+
+export const isWideViewport = (width: number, height: number) =>
+  width >= sizes.desktop || isTabletLandscapeViewport(width, height);
+
 export const devices = {
   // min-width helpers (keep if you use them a lot)
   mobile: `(min-width: ${sizes.mobile}px)`,
   tabletPortrait: `(min-width: ${sizes.tabletPortrait}px)`,
-  tabletLandscape: `(min-width: ${sizes.tabletLandscape}px)`,
+  tabletLandscape: `(min-width: ${sizes.tabletLandscape}px) and (orientation: landscape)`,
   desktop: `(min-width: ${sizes.desktop}px)`,
 };

@@ -2,21 +2,22 @@ import styled from 'styled-components';
 import * as Constants from '../../../Constants';
 
 export const Container = styled.div`
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
   width: 100%;
   min-width: 0;
-  grid-template-columns: auto auto auto;
-  gap: 20px 28px;
-  align-items: end;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-around;
   padding: 12px 12px 18px;
 
-  @media only screen and (max-width: 1100px) {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  @media ${Constants.devices.tabletLandscape} {
+    gap: 16px 18px;
   }
 
-  @media (max-width: ${Constants.sizes.tabletPortrait}px) {
-    grid-template-columns: 1fr;
-    align-items: start;
+  @media ${Constants.devices.desktop} {
+    gap: 18px 16px;
   }
 `;
 
@@ -26,7 +27,5 @@ export const Block = styled.div`
   flex-direction: column;
   gap: 10px;
   min-width: 0;
+  align-self: start;
 `;
-
-
-

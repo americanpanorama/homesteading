@@ -1,6 +1,5 @@
-import styled from 'styled-components';
-import * as Constants from '../../Constants';
-
+import styled from "styled-components";
+import * as Constants from "../../Constants";
 
 export const Container = styled.div<{ $isExpanded: boolean }>`
   grid-area: yearHeader;
@@ -10,27 +9,32 @@ export const Container = styled.div<{ $isExpanded: boolean }>`
   position: relative;
   width: 100%;
   grid-template-columns: 1fr auto 1fr;
-  grid-template-rows: auto 1fr 1fr;
-  grid-template-areas: "headerLabel headerLabel headerLabel" "previous year next" ". fiscalYear .";
+  grid-template-rows: auto 1fr;
+  grid-template-areas: "headerLabel headerLabel headerLabel" "previous year next";
+  padding: 6px 12px 14px;
+  min-height: 92px;
 
-  &::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 20px;
-    width: 100%;
-    height: 1px;
-    background: linear-gradient(
-      to right,
-      transparent,
-      rgba(0,0,0,0.4) 15%,
-      rgba(0,0,0,0.4) 85%,
-      transparent
-    );
+  @media ${Constants.devices.tabletLandscape} {
+    grid-template-rows: auto 1fr 1fr;
+    grid-template-areas: "headerLabel headerLabel headerLabel" "previous year next" ". fiscalYear .";
+    padding: 0;
+    min-height: auto;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 20px;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.4) 15%, rgba(0, 0, 0, 0.4) 85%, transparent);
+    }
   }
 
   @media ${Constants.devices.desktop} {
-    ${({ $isExpanded }) => $isExpanded && `
+    ${({ $isExpanded }) =>
+      $isExpanded &&
+      `
       padding: 0 25px;
     `}
   }
@@ -39,8 +43,9 @@ export const Container = styled.div<{ $isExpanded: boolean }>`
 export const Previous = styled.div`
   grid-area: previous;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
+  padding-left: 2em;
 
   svg {
     width: 30px;
@@ -58,6 +63,11 @@ export const Previous = styled.div`
       fill: none;
     }
   }
+
+  @media ${Constants.devices.tabletLandscape} {
+    justify-content: flex-end;
+    padding-left: 0;
+  }
 `;
 
 export const Year = styled.h1`
@@ -69,31 +79,45 @@ export const Year = styled.h1`
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: clamp(2.2rem, 8vw, 4rem);
 `;
 
 export const Next = styled(Previous)`
   grid-area: next;
-  justify-content: flex-start;
+  justify-content: flex-end;
   align-items: center;
+  padding-right: 2em;
+
+  @media ${Constants.devices.tabletLandscape} {
+    justify-content: flex-start;
+    padding-right: 0;
+  }
 `;
 
 export const FiscalYear = styled.h2`
   grid-area: fiscalYear;
+  display: none;
   text-align: center;
-  font-size: 1em;
+  font-size: clamp(0.8rem, 3vw, 1rem);
   font-family: "Roboto Condensed", sans-serif;
   margin: 0;
   padding: 0;
   text-transform: uppercase;
+  letter-spacing: 0.04em;
+
+  @media ${Constants.devices.tabletLandscape} {
+    display: block;
+  }
 `;
 
 export const Header = styled.div`
   grid-area: headerLabel;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.75rem;
   width: 100%;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
 
@@ -102,11 +126,7 @@ export const Header = styled.div`
     content: "";
     flex: 1;
     height: 1px;
-    background: linear-gradient(
-      to right,
-      transparent,
-      rgba(0, 0, 0, 0.35)
-    );
+    background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.35));
   }
 
   &::after {

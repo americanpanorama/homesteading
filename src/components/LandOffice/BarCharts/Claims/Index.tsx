@@ -2,16 +2,15 @@ import * as React from 'react';
 import * as d3 from 'd3';
 import { DimensionsContext } from '../../../../DimensionsContext';
 import { useURLParams } from '../../../../hooks';
-import { Dimensions, RouterParams, TimelinePlaceDataWithStats } from '../../../../index.d';
+import { Dimensions, TimelinePlaceDataWithStats } from '../../../../index.d';
 import { GraphedDataForYear, BarSet as BarSetI } from '../types';
-import { getYTicks, barHeightFunction, yOffsetFromBottom } from '../../../../utilities';
+import { getYTicks, barHeightFunction } from '../../../../utilities';
 import YTick from '../YTick';
 import BarSet from '../BarSet';
 
 type SelectedView = 'number' | 'acres' | 'average_size';
 
 const BarChart = ({ chartData, stacked, selectedView, label }: {chartData: TimelinePlaceDataWithStats, stacked: boolean, selectedView: SelectedView, label: string}) => {
-  const { useContext, useEffect, useState } = React;
   const params = useURLParams();
   const year = params.year || '1863';
   const {
@@ -21,7 +20,7 @@ const BarChart = ({ chartData, stacked, selectedView, label }: {chartData: Timel
      chartBodyHeight,
      chartBodyWidth,
      height,
-  } = (useContext(DimensionsContext) as Dimensions).officeBarchartDimensions;
+  } = (React.useContext(DimensionsContext) as Dimensions).officeBarchartDimensions;
 
   // data stats
   const earliestYear = Math.min(...chartData.yearData.map(d => d.year));
@@ -94,9 +93,7 @@ const BarChart = ({ chartData, stacked, selectedView, label }: {chartData: Timel
 
   return (
     <React.Fragment>
-      <h2>Claims</h2>
-
-    <svg
+      <svg
         width={chartBodyWidth + yAxisWidth}
         height={height}
         className='lineChart'

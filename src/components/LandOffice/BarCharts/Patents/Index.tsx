@@ -1,29 +1,26 @@
 import * as React from 'react';
-import { Link } from 'react-router-dom';
 import * as d3 from 'd3';
 import { DimensionsContext } from '../../../../DimensionsContext';
 import { useURLParams } from '../../../../hooks';
-import { Dimensions, RouterParams, TimelinePlaceDataWithStats } from '../../../../index.d';
-import { YTick as YTickI, GraphedDataForYear, GraphedDataForYearWithDimensions, BarSet as BarSetI } from '../types';
-import { makeParams, getYTicks, barHeightFunction, yOffsetFromBottom } from '../../../../utilities';
+import { Dimensions, TimelinePlaceDataWithStats } from '../../../../index.d';
+import { GraphedDataForYear, BarSet as BarSetI } from '../types';
+import { getYTicks, barHeightFunction } from '../../../../utilities';
 import YTick from '../YTick';
 import BarSet from '../BarSet';
 
 type SelectedView = 'number' | 'acres' | 'average_size';
 
 const BarChartPatents = ({ chartData, stacked, selectedView, label }: {chartData: TimelinePlaceDataWithStats, stacked: boolean, selectedView: SelectedView, label: string}) => {
-  const { useContext, useEffect, useState } = React;
   const params = useURLParams();
   const year = params.year || '1863';
   const {
      xAxisHeight,
      yAxisWidth,
-     padding,
      paddingTop,
      chartBodyHeight,
      chartBodyWidth,
      height,
-  } = (useContext(DimensionsContext) as Dimensions).officeBarchartDimensions;
+  } = (React.useContext(DimensionsContext) as Dimensions).officeBarchartDimensions;
 
   // data stats
   const earliestYear = Math.min(...chartData.yearData.map(d => d.year));
@@ -155,7 +152,6 @@ const BarChartPatents = ({ chartData, stacked, selectedView, label }: {chartData
 
   return (
     <React.Fragment>
-      <h2>Patents</h2>
       <svg
         width={chartBodyWidth + yAxisWidth}
         height={height}

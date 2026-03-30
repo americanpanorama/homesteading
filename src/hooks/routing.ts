@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import States from '../../data/states.json';
 import PlacesDateRanges from '../../data/placesDateRanges.json';
 import { ClaimsAndPatentsAcresType, ClaimsAndPatentsCountType, ProjectedState, RouterParams, TextType } from '../index.d';
@@ -7,6 +7,7 @@ import { ClaimsAndPatentsAcresType, ClaimsAndPatentsCountType, ProjectedState, R
 const DEFAULT_YEAR = 1863;
 const LAST_YEAR = 1912;
 const VALID_TEXT_TYPES: TextType[] = ['about', 'dispossession', 'introduction', 'sources'];
+const VALID_PANEL_TYPES = ['timeline', 'charts'] as const;
 const VALID_VIEW_TYPES = new Set<ClaimsAndPatentsAcresType>([
   'acres_claimed',
   'acres_claimed_indian_lands',
@@ -27,12 +28,15 @@ interface StateTerritoryDateRange extends OfficeDateRange {
   offices: OfficeDateRange[];
 }
 
+type PanelType = typeof VALID_PANEL_TYPES[number];
+
 export interface URLParamsState extends RouterParams {
   text?: TextType;
   year: string;
   yearNum: number;
   stateTerr?: string;
   office?: string;
+  panel?: PanelType;
   view?: string;
   viewTypes: ClaimsAndPatentsAcresType[];
   fullOpacity?: string;
@@ -49,6 +53,21 @@ export interface URLParamsState extends RouterParams {
   selectedOfficeIsActive: boolean;
 }
 
+interface LinkBuilderOverrides {
+  text?: TextType | null;
+  year?: string | number;
+  stateTerr?: string | null;
+  office?: string | null;
+  panel?: PanelType | null;
+  view?: string | null;
+  fullOpacity?: string | null;
+  clearText?: boolean;
+  clearState?: boolean;
+  clearOffice?: boolean;
+  clearPanel?: boolean;
+  hash?: string | null;
+}
+
 const STATES_BY_ABBR = new Map((States as ProjectedState[]).map(state => [state.abbr, state]));
 const STATE_RANGES = PlacesDateRanges as StateTerritoryDateRange[];
 const STATE_RANGES_BY_ABBR = new Map(STATE_RANGES.map(range => [range.stub, range]));
@@ -62,8 +81,78 @@ const clampYear = (yearParam?: string): number => {
 };
 
 const sanitizeOfficeStub = (office?: string): string => (office || '').replace(/[^a-zA-Z0-9]/g, '');
+const sanitizePathParam = (value?: string | null): string | undefined => (
+  value ? value.replace(/[^a-zA-Z0-9]/g, '') : undefined
+);
 
 const isValidViewType = (value: string): value is ClaimsAndPatentsAcresType => VALID_VIEW_TYPES.has(value as ClaimsAndPatentsAcresType);
+const isValidPanelType = (value?: string): value is PanelType =>
+  !!value && VALID_PANEL_TYPES.includes(value as PanelType);
+
+const sanitizeViewForYear = (view: string | undefined, yearNum: number): string | undefined => {
+  if (!view) {
+    return undefined;
+  }
+
+  const filteredView = (yearNum < 1890)
+    ? view
+      .split('-')
+      .filter(type => !type.includes('indian'))
+      .join('-')
+    : view;
+
+  return filteredView || undefined;
+};
+
+const buildCanonicalPath = ({
+  text,
+  year,
+  stateTerr,
+  office,
+  panel,
+  view,
+  fullOpacity,
+}: {
+  text?: TextType;
+  year?: string;
+  stateTerr?: string;
+  office?: string;
+  panel?: PanelType;
+  view?: string;
+  fullOpacity?: string;
+}) => {
+  const segments: string[] = [];
+
+  if (text) {
+    segments.push('text', text);
+  }
+
+  if (year) {
+    segments.push('year', year);
+  }
+
+  if (stateTerr) {
+    segments.push('stateTerr', stateTerr);
+  }
+
+  if (office) {
+    segments.push('office', office);
+  }
+
+  if (panel) {
+    segments.push('panel', panel);
+  }
+
+  if (view) {
+    segments.push('view', view);
+  }
+
+  if (fullOpacity) {
+    segments.push('fullOpacity', fullOpacity);
+  }
+
+  return segments.length > 0 ? `/${segments.join('/')}` : '/';
+};
 
 export const useClaimsAndPatentsTypes = () => {
   const params = useURLParams();
@@ -112,6 +201,91 @@ export const useClaimsAndPatentsTypes = () => {
 };
 
 /**
+ * Builds canonical app URLs from the current URL state plus explicit overrides.
+ * This replaces the old string-concatenation helper so links stay normalized and
+ * do not accumulate legacy `/map/.../map/...` segments.
+ */
+export const useLinkBuilder = () => {
+  const params = useURLParams();
+  const location = useLocation();
+
+  return React.useCallback((overrides: LinkBuilderOverrides = {}) => {
+    let text = (typeof overrides.text !== 'undefined' ? overrides.text || undefined : params.text);
+    let year = (typeof overrides.year !== 'undefined' ? overrides.year.toString() : params.year);
+    let stateTerr = (typeof overrides.stateTerr !== 'undefined'
+      ? sanitizePathParam(overrides.stateTerr)
+      : params.stateTerr);
+    let office = (typeof overrides.office !== 'undefined'
+      ? sanitizePathParam(overrides.office)
+      : params.office);
+    let panel = (typeof overrides.panel !== 'undefined' ? overrides.panel || undefined : params.panel);
+    let view = (typeof overrides.view !== 'undefined' ? overrides.view || undefined : params.view);
+    const fullOpacity = (typeof overrides.fullOpacity !== 'undefined'
+      ? overrides.fullOpacity || undefined
+      : params.fullOpacity);
+
+    if (overrides.clearText) {
+      text = undefined;
+    }
+
+    if (typeof overrides.stateTerr !== 'undefined' && typeof overrides.office === 'undefined') {
+      office = undefined;
+      if (typeof overrides.panel === 'undefined') {
+        panel = undefined;
+      }
+    }
+
+    if (overrides.clearState) {
+      stateTerr = undefined;
+      office = undefined;
+      panel = undefined;
+    }
+
+    if (overrides.clearOffice) {
+      office = undefined;
+      if (typeof overrides.panel === 'undefined') {
+        panel = undefined;
+      }
+    }
+
+    if (overrides.clearPanel) {
+      panel = undefined;
+    }
+
+    if (!stateTerr) {
+      office = undefined;
+      panel = undefined;
+    }
+
+    if (office && typeof overrides.panel === 'undefined') {
+      panel = 'charts';
+    }
+
+    if (stateTerr && !office && typeof overrides.panel === 'undefined' && typeof params.panel === 'undefined') {
+      panel = 'timeline';
+    }
+
+    year = clampYear(year).toString();
+    view = sanitizeViewForYear(view, parseInt(year, 10));
+
+    let path = buildCanonicalPath({
+      text,
+      year,
+      stateTerr,
+      office,
+      panel,
+      view,
+      fullOpacity,
+    });
+
+    path = path.replace(/\/{2,}/g, '/').replace(/\/$/, '') || '/';
+
+    const hash = typeof overrides.hash === 'undefined' ? location.hash : (overrides.hash || '');
+    return `${path}${hash}`;
+  }, [location.hash, params]);
+};
+
+/**
  * Returns normalized URL-driven app state along with derived place metadata.
  * This keeps routing concerns in one hook instead of repeating parsing and lookups in each component.
  */
@@ -129,6 +303,13 @@ export const useURLParams = (): URLParamsState => {
       ? stateTerrRange?.offices.find(office => sanitizeOfficeStub(office.stub) === params.office)
       : undefined;
     const office = officeRange ? params.office : undefined;
+    const panel = office
+      ? 'charts'
+      : isValidPanelType(params.panel)
+        ? params.panel
+        : stateTerr
+          ? 'timeline'
+          : undefined;
     const rawViewTypes = (params.view || '')
       .split('-')
       .filter(Boolean)
@@ -151,6 +332,7 @@ export const useURLParams = (): URLParamsState => {
       yearNum,
       stateTerr,
       office,
+      panel,
       view,
       viewTypes,
       fullOpacity: params.fullOpacity,
@@ -166,5 +348,5 @@ export const useURLParams = (): URLParamsState => {
       selectedStateTerritoryIsActive,
       selectedOfficeIsActive,
     };
-  }, [params.fullOpacity, params.office, params.placeId, params.stateTerr, params.text, params.view, params.year]);
+  }, [params.fullOpacity, params.office, params.panel, params.placeId, params.stateTerr, params.text, params.view, params.year]);
 };

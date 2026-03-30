@@ -1,8 +1,14 @@
 import * as React from 'react';
+import styled from 'styled-components';
 // @ts-ignore
 import us from 'us';
 import MiniMap from './Map/MiniMap';
 import { TimelineYearPlaceDataWithStats, PlaceType } from '../index.d';
+
+const ConflictsTable = styled.table`
+  display: block;
+  margin: 10px auto;
+`;
 
 interface Props {
   office: string;
@@ -102,7 +108,7 @@ const DistrictText = (props: Props) => {
           <p>
             <strong>{syd.conflicts.length}</strong> clashes, battles, or skirmishes occurred in the {(type === 'office') ? 'district': (us.lookup(office).statehood_year <= parseInt(year)) ? 'state' : 'territory'} in {year}: 
           </p>
-          <table style={{ display: 'block', margin: '10px auto' }}>
+          <ConflictsTable>
             <thead>
               <tr>
                 <td>date</td>
@@ -129,7 +135,7 @@ const DistrictText = (props: Props) => {
 
             </tbody>
 
-          </table>
+          </ConflictsTable>
         </React.Fragment>
       )}
     </div>

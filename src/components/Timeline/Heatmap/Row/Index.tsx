@@ -19,6 +19,7 @@ const Row = (props: TimelineRowStyled) => {
     conflicts,
     active,
     y,
+    width,
     height,
     labelSize,
     emphasize,
@@ -50,48 +51,33 @@ const Row = (props: TimelineRowStyled) => {
         transform={`translate(0, ${translateY})`}
         ref={ref}
       >
-        <text
-          x={(isPhoneSize) ? 65 : 125}
-          y={labelSize} //{(emphasize) ? height * 1.2 : height * 0.9}
-          fontSize={(emphasize) ? labelSize * 1.5 : labelSize}
-          textAnchor='end'
-          style={{
-            fill: active ? colors.lightColor : colors.mutedTextColor,
-          }}
-        >
-          {label}
-        </text>
-
-        {(!isPhoneSize && false) && (
-          <React.Fragment>
-            <Styled.StatText
-              x={190}
-              y={labelSize} //{(emphasize) ? height * 1.2 : height * 0.9}
-              fontSize={(emphasize) ? labelSize * 1.5 : labelSize * 0.9}
+        {active ? (
+          <Link
+            to={linkTo}
+            aria-label={`View ${label}`}
+          >
+            <Styled.LabelText
+              x={isPhoneSize ? 65 : 125}
+              y={labelSize}
+              fontSize={emphasize ? labelSize * 1.5 : labelSize}
               textAnchor='end'
-              style={{
-                fill: fill,
-              }}
+              $fill={colors.lightColor}
             >
-              {(number) ? Math.round(number).toLocaleString() : '—'}
-            </Styled.StatText>
-    
-            <Styled.StatText
-              x={255}
-              y={labelSize} //{(emphasize) ? height * 1.2 : height * 0.9}
-              fontSize={(emphasize) ? labelSize * 1.5 : labelSize * 0.9}
-              textAnchor='end'
-              style={{
-                fill: fill,
-              }}
-            >
-              {(acres && acres >= 100000) ? `${Math.round(acres / 1000).toLocaleString()}K` : ''}
-              {(acres && acres < 100000 && acres >= 1000) ? `${(Math.round(acres / 100) / 10).toLocaleString()}K` : ''}
-              {(acres && acres < 1000) ? Math.round(acres).toLocaleString() : ''}
-              {(!acres) ? '—' : ''}
-            </Styled.StatText>
-          </React.Fragment>
+              {label}
+            </Styled.LabelText>
+          </Link>
+        ) : (
+          <Styled.LabelText
+            x={isPhoneSize ? 65 : 125}
+            y={labelSize}
+            fontSize={emphasize ? labelSize * 1.5 : labelSize}
+            textAnchor='end'
+            $fill={colors.mutedTextColor}
+          >
+            {label}
+          </Styled.LabelText>
         )}
+
         {cells.map(cell => (
           <TimelineCell
             {...cell}
@@ -132,8 +118,8 @@ const Row = (props: TimelineRowStyled) => {
             >
               <Styled.HitArea
                 x={0}
-                y={100}
-                width={100}
+                y={0}
+                width={width}
                 height={height + 3}
               />
             </Link>

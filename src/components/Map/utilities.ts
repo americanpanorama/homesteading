@@ -30,6 +30,17 @@ export const getScaledStrokeWidth = (
 ): number => Math.min(maxWidth, Math.max(minWidth, baseWidth / scale));
 
 /**
+ * Keeps text readable as the map zoom changes without letting labels dominate
+ * close-up views or disappear in the national view.
+ */
+export const getScaledFontSize = (
+  scale: number,
+  baseSize: number,
+  minSize = 2,
+  maxSize = 13,
+): number => Math.min(maxSize, Math.max(minSize, baseSize / scale));
+
+/**
  * Calculates the SVG transform needed to fit a projected region into the map viewport.
  * Defaults match the historical full-US framing used by the map when no specific bounds exist.
  */

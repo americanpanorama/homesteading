@@ -2,19 +2,20 @@ import styled, { css } from 'styled-components';
 import { MapSize } from '../../index.d';
 import * as Constants from '../../Constants';
 
-export const VectorMap = styled.div<{ $mapSize: MapSize }>`
-  background-color: #fff6ef;
+export const VectorMap = styled.div<{ $mapSize: MapSize; $height: number }>`
+  background-color: #eeeeee;
   position: relative;
   width: calc(100vw - 4px);
-  height: calc(60vw);
+  height: ${({ $height }) => `${$height}px`};
   overflow: hidden;
   margin: 0;
   z-index: 1000;
+  border: 1px solid #aaa;
 
-  @media ${Constants.devices.desktop} {
+  @media ${Constants.devices.tabletLandscape} {
     grid-area: map;
-    width: calc(100% - 50px);
-    height: calc(100vh - 75px - 150px - 25px);
+    width: calc(100% - 50px - 2px); // the 2px is for the border
+    height: calc(100vh - 75px - 150px - 25px - 2px); // the 2px is for the border
     margin: 0 0px 25px 25px;
     transition: width 220ms ease, margin 220ms ease, border-radius 220ms ease;
 
@@ -37,7 +38,7 @@ export const FullscreenToggleContainer = styled.div`
  display: none;
  pointer-events: none;
 
-  @media ${Constants.devices.desktop} {
+  @media ${Constants.devices.tabletLandscape} {
     z-index: 10000;
     background: transparent;
     border: none;
@@ -57,7 +58,7 @@ export const FullscreenToggleContainer = styled.div`
 `
 
 export const FullscreenToggle = styled.button<{ $mapSize: MapSize }>`
-  @media ${Constants.devices.desktop} {
+  @media ${Constants.devices.tabletLandscape} {
     pointer-events: all;
     cursor: pointer;
 
@@ -78,3 +79,6 @@ export const FullscreenToggle = styled.button<{ $mapSize: MapSize }>`
   }
 `;
 
+export const AlaskaInset = styled.path`
+  pointer-events: none;
+`;

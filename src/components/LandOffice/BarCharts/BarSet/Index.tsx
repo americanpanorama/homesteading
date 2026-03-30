@@ -2,17 +2,17 @@ import * as React from 'react';
 import * as d3 from 'd3';
 import { Link } from 'react-router-dom';
 import { DimensionsContext } from '../../../../DimensionsContext';
-import { useURLParams } from '../../../../hooks';
+import { useLinkBuilder, useURLParams } from '../../../../hooks';
 import { Dimensions, RouterParams } from '../../../../index.d';
 import { BarSet as BarSetI } from '../types';
 import Bar from './Bar';
-import { makeParams } from '../../../../utilities';
-import BarSetStyles from './styled';
+import BarSetStyles, * as Styled from './styled';
 
 const BarSet = ({ barSet, stacked }: { barSet: BarSetI, stacked: boolean }) => {
   const { year, x, bars, label } = barSet;
   const { useContext, useState, useEffect, useRef } = React;
   const params = useURLParams();
+  const buildLink = useLinkBuilder();
   const { year: selectedYear } = params;
   const { chartBodyHeight } = (useContext(DimensionsContext) as Dimensions).officeBarchartDimensions;
   const [ visibleLabelForYear, setVisibleLabelForYear ] = useState(parseInt(selectedYear));
@@ -57,22 +57,16 @@ const BarSet = ({ barSet, stacked }: { barSet: BarSetI, stacked: boolean }) => {
           />
         );
       })}
-        <text
+        <Styled.LabelText
           x={bars[0].width / 2}
           y={labelY}
-          style={{
-            fill: 'white',
-            stroke: 'white',
-            pointerEvents: 'none',
-            textAnchor: 'middle',
-            visibility: (year === visibleLabelForYear) ? 'visible' : 'hidden',
-          }}
+          $visible={year === visibleLabelForYear}
           ref={ref}
         >
           {label}
-        </text>
+        </Styled.LabelText>
       <Link
-        to={makeParams(params, [{ type: 'set_year', payload: year}])}
+        to={buildLink({ year })}
         aria-label={`Select year ${year}`}
       >
         <rect

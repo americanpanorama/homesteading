@@ -1,8 +1,8 @@
 import * as React from 'react';
 import * as d3 from 'd3';
 import { TimelineCell } from '../../../../../index.d';
-import * as Constants from '../../../../../Constants';
 import { useURLParams } from '../../../../../hooks';
+import * as Styled from './styled';
 
 const Tile = (props: TimelineCell) => {
   const { useState, useEffect, useRef } = React;
@@ -22,20 +22,17 @@ const Tile = (props: TimelineCell) => {
         setFill(props.fill);
         setFillOpacity(props.fillOpacity);
       });
-  }, [props.height, props.fill, props.fillOpacity]);
+  }, [props.fill, props.fillOpacity]);
 
   return (
-    <rect
+    <Styled.CellRect
       x={props.x}
       y={2.5}
       width={props.width}
       height={20}
-      stroke={(props.year === yearNum ) ? Constants.colors.accentColor  : Constants.colors.mutedTextColor}
-      strokeWidth={0.25}
-      style={{
-        fill: fill,
-        fillOpacity: fillOpacity,
-      }}
+      $selected={props.year === yearNum}
+      $fill={fill}
+      $fillOpacity={fillOpacity}
       ref={ref}
       key={`cellFor${props.year}`}
     />

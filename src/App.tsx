@@ -6,13 +6,18 @@ import AppLayout from './components/Layout';
 import Home from './components/Home/Index';
 
 import AppNav from './components/AppNav/Index';
-import { useURLParams } from './hooks';
+import { useLinkBuilder, useURLParams } from './hooks';
 import { Dimensions } from './index.d';
 import { AppContainer, BaseStyles, SkipLink } from './styled';
 
 const DefaultOfficeRedirect = ({ office }: { office: string }) => {
   const { year } = useURLParams();
   return <Navigate to={`/year/${year}/stateTerr/${office === 'Springfield' ? 'IL' : 'IN'}/office/${office}`} replace />;
+};
+
+const CanonicalRouteRedirect = () => {
+  const buildLink = useLinkBuilder();
+  return <Navigate to={buildLink()} replace />;
 };
 
 const AppShell = () => {
@@ -39,9 +44,12 @@ const AppShell = () => {
     return all.map((d: any) => d.join('')).reverse();
   };
 
-  const possibleMapPaths = combine(['/map/year/:year', '/map/stateTerr/:stateTerr', '/map/office/:office', '/map/view/:view', '/map/fullOpacity/:fullOpacity', '/map'], 1);
-  const possibleTextPaths = ['/text/:text', ...possibleMapPaths.map(d => `/text/:text${d}`)];
-  const possiblePaths = combine(['/text/:text', '/map/year/:year', '/map/stateTerr/:stateTerr', '/map/office/:office', '/map/view/:view', '/map/fullOpacity/:fullOpacity', '/map'], 1);
+  const canonicalMapPaths = ['', ...combine(['/stateTerr/:stateTerr', '/office/:office', '/panel/:panel', '/view/:view', '/fullOpacity/:fullOpacity'], 1)]
+    .map(path => `/year/:year${path}`);
+  const legacyMapPaths = combine(['/map/year/:year', '/map/stateTerr/:stateTerr', '/map/office/:office', '/map/panel/:panel', '/map/view/:view', '/map/fullOpacity/:fullOpacity', '/map'], 1);
+  const canonicalTextPaths = ['/text/:text', ...canonicalMapPaths.map(d => `/text/:text${d}`)];
+  const legacyTextPaths = legacyMapPaths.map(d => `/text/:text${d}`);
+  const appNavPaths = [...new Set([...canonicalTextPaths, ...canonicalMapPaths])];
 
   return (
     <AppContainer $isMapFullscreen={mapDimensions.size === 'fullscreen'}>
@@ -50,7 +58,7 @@ const AppShell = () => {
       <>
         <Router basename={process.env.PUBLIC_URL}>
           <Routes>
-            {possiblePaths.map(path => (
+            {appNavPaths.map(path => (
               <Route
                 key={`app-nav-${path}`}
                 path={path}
@@ -76,11 +84,25 @@ const AppShell = () => {
               path='/year/:year/stateTerr/IN'
               element={<DefaultOfficeRedirect office='Indianapolis' />}
             />
-            {[...possibleTextPaths, ...possibleMapPaths].map(path => (
+            {canonicalTextPaths.map(path => (
               <Route
-                key={`app-layout-${path}`}
+                key={`app-layout-text-${path}`}
                 path={path}
                 element={<AppLayout />}
+              />
+            ))}
+            {canonicalMapPaths.map(path => (
+              <Route
+                key={`app-layout-map-${path}`}
+                path={path}
+                element={<AppLayout />}
+              />
+            ))}
+            {[...legacyTextPaths, ...legacyMapPaths].map(path => (
+              <Route
+                key={`app-layout-legacy-${path}`}
+                path={path}
+                element={<CanonicalRouteRedirect />}
               />
             ))}
             {/* <Route path='*' element={<Navigate to='/' replace />} /> */}

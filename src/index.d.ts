@@ -26,8 +26,6 @@ export interface Dimensions {
   timelineDimensions: {
     width: number;
     height: number;
-    leftAxisWidth: number;
-    labelsWidth: number;
   };
   officeBarchartDimensions: {
     xAxisHeight: number;
@@ -119,7 +117,6 @@ export interface TimelineCell {
   year: number;
   x: number;                    // x position
   width: number;
-  height: number;
   fill: string;
   fillOpacity: number;
 }
@@ -183,6 +180,7 @@ export interface RouterParams {
   placeId?: string;
   stateTerr?: string;
   office?: string;
+  panel?: string;
   view?: string;
   fullOpacity?: string;
 }

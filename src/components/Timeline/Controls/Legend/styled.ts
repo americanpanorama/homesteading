@@ -10,6 +10,8 @@ export const LegendTitle = styled.div`
   text-transform: uppercase;
   color: var(--light-color);
   text-align: left;
+  line-height: 1.15;
+  max-width: 100%;
 `;
 
 export const LegendRow = styled.div`
@@ -17,16 +19,16 @@ export const LegendRow = styled.div`
   width: 100%;
   min-width: 0;
   grid-template-columns: auto minmax(0, 1fr) auto;
-  gap: 12px;
+  gap: 10px;
   align-items: center;
   color: var(--light-color);
-  font-size: 1rem;
+  font-size: 0.95rem;
 `;
 
 export const LegendBar = styled.div`
   width: 100%;
   min-width: 0;
-  height: 18px;
+  height: 17px;
   border-radius: 1px;
   background: linear-gradient(
     90deg,

@@ -1,9 +1,7 @@
 import React, { useContext } from "react";
 import * as Styled from "./styled";
 import { TIMELINE_YEAR_LABELS, TIMELINE_SELECTABLE_YEARS } from "../utilities";
-import { useTimelineX } from "../../../hooks/timeline";
-import { makeParams } from "../../../utilities";
-import { useURLParams } from "../../../hooks";
+import { useLinkBuilder, useTimelineX, useURLParams } from "../../../hooks";
 import { Link } from "react-router-dom";
 import { Dimensions } from "../../../index.d";
 import { DimensionsContext } from "../../../DimensionsContext";
@@ -11,6 +9,7 @@ import { DimensionsContext } from "../../../DimensionsContext";
 const YAxis = () => {
   const x = useTimelineX();
   const params = useURLParams();
+  const buildLink = useLinkBuilder();
   const { yearNum } = params;
   const { timelineDimensions } = useContext(DimensionsContext) as Dimensions;
   const { width } = timelineDimensions;
@@ -49,7 +48,7 @@ const YAxis = () => {
 
         {TIMELINE_SELECTABLE_YEARS.map(year => (
           <Link
-            to={makeParams(params, [{ type: "set_year", payload: year }])}
+            to={buildLink({ year })}
             key={`linkFor${year}`}
           >
             <Styled.HitArea

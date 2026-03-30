@@ -14,8 +14,6 @@ const defaultDimensions = {
   timelineDimensions: {
     width: 600,
     height: 400,
-    leftAxisWidth: 100,
-    labelsWidth: 100,
   },
   officeBarchartDimensions: {
     xAxisHeight: 30,

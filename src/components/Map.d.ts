@@ -47,7 +47,7 @@ export interface ConflictData {
 }
 
 export interface YearDataRaw {
-  offices: ProjectedTownship[];
+  offices: (ProjectedTownship | ProjectedTownshipAllOffices)[];
   conflicts: ConflictData[];
 }
 

@@ -1,62 +1,88 @@
-import { createGlobalStyle } from 'styled-components';
+import styled from 'styled-components';
+import * as Constants from '../../Constants';
+import { Label as SelectLabel, Select as BaseSelect } from '../Timeline/Controls/Sort/styled';
+import { controlBase, selectedControl, ToggleGroup as LegendToggleGroup } from '../Map/Legend/styled';
 
-const LandOfficeStyles = createGlobalStyle`
-  #officeData {
-    background-color: var(--inset-bg-color);
-    padding: 20px;
-  }
+export const Container = styled.section`
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 0 0 8px;
+  background-color: var(--inset-bg-color);
+`;
 
-  #officeData::-webkit-scrollbar {
-    width: 8px;
-  }
+export const ControlsCard = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 18px;
+`;
 
-  #officeData::-webkit-scrollbar-thumb {
-    background-color: var(--highlight-color);
-    border-radius: 4px;
-  }
+export const Legend = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px 18px;
+`;
 
-  #officeData::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 3px var(--inset-header-bg-color);
-    border-radius: 8px;
-  }
+export const ControlsGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
 
-  #officeData p {
-    text-align: left;
-  }
-
-  #officeData p strong {
-    color: var(--soft-text-color);
-    font-family: Inconsolata, monospace;
-    font-size: 1.1em;
-    font-weight: 400;
-  }
-
-  table {
-    display: none;
-    margin: 10px;
-  }
-
-  table caption {
-    font-size: 1.5em;
-  }
-
-  table th {
-    text-align: right;
-    padding: 3px 10px;
-  }
-
-  table th.yearHeading {
-    text-align: center;
-    border-bottom: 1px solid;
-  }
-
-  table td {
-    font-family: Inconsolata, monospace;
-    font-weight: 200;
-    color: var(--muted-text-color);
-    text-align: right;
-    padding: 3px 10px;
+  @media (max-width: ${Constants.sizes.tabletPortrait}px) {
+    grid-template-columns: 1fr;
   }
 `;
 
-export default LandOfficeStyles;
+export const ControlGroup = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+`;
+
+export const ControlLabel = styled(SelectLabel)``;
+
+export const SegmentedControl = styled(LegendToggleGroup)`
+  width: auto;
+  align-self: flex-start;
+`;
+
+export const ControlButton = styled.button<{ $active: boolean }>`
+  ${controlBase}
+  border: 0;
+  border-right: 1px solid #bfc1c2;
+  min-width: 120px;
+  padding: 0 1em;
+  cursor: pointer;
+
+  &:last-child {
+    border-right: 0;
+  }
+
+  ${({ $active }) => $active && selectedControl}
+
+  &:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+  }
+`;
+
+export const Select = styled(BaseSelect)`
+  max-width: 260px;
+`;
+
+export const ChartBlock = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+`;
+
+export const ChartTitle = styled.h3`
+  margin: 0;
+  text-align: left;
+  font-size: 2rem;
+  font-family: ${Constants.fonts.serif};
+  font-weight: 700;
+  color: var(--light-color);
+`;

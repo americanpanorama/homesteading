@@ -1,11 +1,5 @@
-import styled, { createGlobalStyle } from 'styled-components';
+import styled from 'styled-components';
 import { colors, fonts } from '../../../Constants';
-
-const PolygonsStyles = createGlobalStyle`
-  .district {
-    stroke: ${colors.districtStrokeColor};
-  }
-`;
 
 export const OfficeLabel = styled.text`
   fill: ${colors.lightColor};
@@ -18,5 +12,3 @@ export const OfficeLabel = styled.text`
   letter-spacing: 0.02em;
   pointer-events: none;
 `;
-
-export default PolygonsStyles;
