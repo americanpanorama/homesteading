@@ -34,7 +34,6 @@ const HomeMap = () => {
     <Styled.Container aria-hidden='true'>
       <Styled.YearBadge>{activeYear}</Styled.YearBadge>
       
-
       <Styled.Svg
         viewBox={`100 150 ${width} ${height}`}
         role='presentation'
@@ -44,7 +43,7 @@ const HomeMap = () => {
             <Styled.BasePath
               d={pathD}
               fill='#eee'
-              fillOpacity={0.6}
+              fillOpacity={0.8}
               stroke='#e6ddd3'
               strokeWidth={1}
               key={pathD.substring(0, 48)}

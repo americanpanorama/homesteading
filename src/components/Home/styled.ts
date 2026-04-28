@@ -10,12 +10,12 @@ export const Home = styled.div`
     height: 100vh;
     width: 100%;
     margin: 0 auto;
-    padding: 2em 0 50em 0;
+    // padding: 2em 0 50em 0;
     font-size: 1em;
     line-height: 1.5;
     overflow: auto;
     background-image: url(${process.env.PUBLIC_URL}/static/landing.jpg);
-    background-position: center top;
+    background-position: center bottom;
     background-repeat: no-repeat;
     background-size: 100% auto;
 
@@ -28,9 +28,12 @@ export const Home = styled.div`
       overflow-y: visible;
       background-image: url(${process.env.PUBLIC_URL}/static/landing.jpg);
     }
-
     @media ${Constants.devices.desktop} {
       background-image: url(${process.env.PUBLIC_URL}/static/landing.jpg);
+    }
+    @media (min-width: 2000px) {
+      background-image: url(${process.env.PUBLIC_URL}/static/landing.jpg);
+      background-position: center 70%;
     }
 
     ~ header {
@@ -51,7 +54,7 @@ export const Title = styled.h1`
     justify-content: center;
     align-items: center;
     margin-top: 3rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0;
     font-size: calc(2rem + ((1vw - 4.8px) * 2.5));
     font-weight: 700;
     text-align: center;
@@ -60,10 +63,9 @@ export const Title = styled.h1`
     text-transform: uppercase;
     color: ${Constants.heatmapGradientColors[3]};
   
-
     @media ${Constants.devices.tabletLandscape} {
         grid-area: title;
-        margin-top: 12vh;
+        margin-top: 8vh;
     }
 `;
 
@@ -82,10 +84,14 @@ export const Acquisition = styled.span`
 
 export const And = styled.span`
   font-weight: 100;
-  font-size: 0.6em;
-  color: ${Constants.heatmapGradientColors[5]};
-  text-transform: uppercase;
-  font-family: "Zen Dots", sans-serif;
+  font-size: 1.5em;
+  // color: ${Constants.heatmapGradientColors[5]};
+  color: ${Constants.colors.fullStateDistrictFillColor};
+  // font-family: "Zen Dots", sans-serif;
+  font-family: "Playfair Display", serif;
+  font-family: "Montaga", serif;
+  margin: 0 0.2em;
+  opacity: 0.5;
   `;
 
 export const Dispossession = styled.span`
@@ -96,6 +102,7 @@ export const Dispossession = styled.span`
 export const Subtitle = styled.h2`
   display: block;
   margin-top: 0;
+  color: color-mix(in srgb, ${Constants.colors.fullStateDistrictFillColor} 70%, black);
   font-size: calc(1.125rem + ((1vw - 4.8px) * 1.3462)) !important;
   text-align: center;
   line-height: 1.1;
@@ -112,6 +119,7 @@ export const Description = styled.p`
   font-weight: 300;
   text-align: center;
   line-height: 1.4;
+  text-shadow: 0px 0px 50px ${Constants.colors.mainBGcolor}, 0px 0px 50px ${Constants.colors.mainBGcolor}, 0px 0px 50px ${Constants.colors.mainBGcolor};
 
   @media ${Constants.devices.tabletLandscape} {
     grid-area: description;
@@ -129,11 +137,24 @@ export const Explore = styled.div`
   position: relative;
   width: 100%;
 
+  &::before {
+    content: "";
+    position: absolute;
+    top: -200px;
+    bottom: -200px;
+    left: -100px;
+    right: -100px;
+    background: radial-gradient(circle, white 0%, transparent 50%);
+    z-index: 0;
+    pointer-events: none;
+  }
+
   @media ${Constants.devices.tabletLandscape} {
     grid-area: explore;
     height: 520px;
     width: 100%;
-    align-self: flex-end;
+    // align-self: flex-end;
+    align-self: center;
     margin: 0 auto 3rem auto;
   }
 `;
@@ -144,22 +165,23 @@ export const ExploreButton = styled(Link)`
   bottom: 1.5rem;
   transform: translateX(-50%);
   margin: 0 auto;
-  color: ${Constants.colors.blackColor};
+  color: ${Constants.colors.whiteColor};
   font-size: 1em;
   font-weight: bold;
   text-align: center;
   text-decoration: none;
   line-height: 1;
-  background-color: #94f8df;
-  padding: 1em 4em;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  background-color: ${Constants.colors.accentColor};
+  padding: 1.2em 3em;
   border-radius: 999px;
   z-index: 1000;
   text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: background-color 0.2s;
 
   &:hover,
   &:focus,
   &:active {
-    background-color: white;
+    background-color: color-mix(in srgb, ${Constants.colors.accentColor} 75%, black);
   }
 `;

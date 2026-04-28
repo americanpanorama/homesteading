@@ -23,8 +23,7 @@ export const Container = styled.header`
     gap: 0.25ch;
     text-transform: uppercase;
     letter-spacing: 0.03em;
-    color: #666;
-    color: ${Constants.heatmapGradientColors[4]}
+    color: ${Constants.heatmapGradientColors[3]}
     
   }
 
@@ -58,11 +57,12 @@ export const Acquisition = styled.span`
   `;
 
 export const And = styled.span`
+  margin: 0 0.15em;  
+  color: ${Constants.colors.fullStateDistrictFillColor};
+  font-family: "Montaga", serif;
+  font-size: 1.3em;
   font-weight: 100;
-  font-size: 0.6em;
-  color: ${Constants.heatmapGradientColors[3]};
-  text-transform: uppercase;
-  font-family: "Zen Dots", sans-serif;
+  opacity: 0.75;
   `;
 
 export const Dispossession = styled.span`
