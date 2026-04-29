@@ -9,7 +9,7 @@ export const LongformContainer = styled.div`
   text-align: left;
   font-size: 1em;
   line-height: 1.8;
-  font-family: ${Constants.fonts.serif};
+  font-family: ${Constants.fonts.sansSerif};
   color: ${Constants.colors.lightColor};
   margin: 0 auto;
 
