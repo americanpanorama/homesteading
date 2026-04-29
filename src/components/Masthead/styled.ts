@@ -3,42 +3,45 @@ import * as Constants from '../../Constants';
 
 export const Container = styled.header`
   grid-area: masthead;
+  display: flex;
+  align-items: center;
+  min-height: 56px;
   font-family: "Unica One", serif;
   line-height: 1;
-  min-height: 56px;
 
   a {
-    text-decoration: none;
+    display: block;
+    width: fit-content;
     color: inherit;
+    text-decoration: none;
   }
 
   h1 {
-    font-weight: 700;
-    font-size: 4vw;
-    margin: 20px 0 5px 0;
-    text-align: left;
-    padding-left: 1em;
     display: flex;
     align-items: center;
     gap: 0.25ch;
+    margin: 0 0 5px 0;
+    padding-left: 1em;
+    font-size: 5vw;
+    font-weight: 700;
+    text-align: left;
+    color: ${Constants.heatmapGradientColors[3]};
     text-transform: uppercase;
     letter-spacing: 0.03em;
-    color: ${Constants.heatmapGradientColors[3]}
-    
   }
 
   @media ${Constants.devices.mobile} {
     h1 {
-      font-size: 20px;
-      margin: 14px 0 4px 0;
+      font-size: 24px;
+      margin: 0 0 4px 0;
     }
   }
 
   @media ${Constants.devices.desktop} {
     h1 {
-      font-size: 26px;
       margin: 0 0 5px 0;
       padding: 5px 0 5px 1em;
+      font-size: 26px;
     }
   }
 `;
