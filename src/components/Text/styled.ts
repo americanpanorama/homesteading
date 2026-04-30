@@ -15,19 +15,14 @@ export const LongformContainer = styled.div`
 
   h3 {
     text-align: center;
-    color: ${Constants.colors.lightColor};
-    font-family: ${Constants.fonts.sansSerif};
+    color: ${Constants.colors.olive};
+    font-family: ${Constants.fonts.serif};
     font-size: 2em;
   }
 
   a {
-    color: ${Constants.colors.lightColor};
-    text-decoration: none;
-  }
-
-  a:hover {
-    color: ${Constants.colors.whiteColor};
-    text-decoration: underline;
+    color: ${Constants.colors.accentColor};
+    // text-decoration: none;
   }
 
   @media ${Constants.devices.desktop} {
@@ -48,20 +43,23 @@ export const LongformNav = styled.nav`
 
 export const CloseTextLink = styled(Link)`
   display: inline-block;
-  background-color: ${Constants.colors.mainBGcolor};
-  color: ${Constants.colors.lightColor};
-  font-size: 18px;
-  font-family: ${Constants.fonts.sansSerif};
   margin: 4px 10px;
-  border: 2px solid ${Constants.colors.highlightColor};
-  border-radius: 5px;
-  padding: 5px 12px;
-  text-decoration: none;
+  padding: 5px 15px;
+  color: ${Constants.colors.accentColor};
+  font-size: 0.9rem;
+  font-family: ${Constants.fonts.sansSerif};
+  text-decoration: none !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background-color: ${Constants.colors.mainBGcolor};
+  border: 2px solid ${Constants.colors.accentColor};
+  border-radius: 999px;
 
   &:hover,
   &:focus-visible {
     color: ${Constants.colors.whiteColor};
-    text-decoration: none;
+    background-color: ${Constants.colors.accentColor};
+    text-decoration: none !important;
   }
 `;
 
@@ -91,15 +89,30 @@ export const ContactForm = styled.form`
 
   input[type='submit'] {
     width: min-content;
-    background-color: ${Constants.colors.mainBGcolor};
-    color: ${Constants.colors.lightColor};
-    font-size: 18px;
+    margin: 4px 0;
+    padding: 1em 2em;
+    color: ${Constants.colors.whiteColor};
     font-family: ${Constants.fonts.sansSerif};
-    margin: 4px 10px;
-    border: 2px solid ${Constants.colors.highlightColor};
-    border-radius: 5px;
-    padding: 5px 12px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    line-height: 1;    
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background-color: ${Constants.colors.accentColor};
+    border: none;
+    border-radius: 999px;
+    transition: background-color 0.2s ease;
     cursor: pointer;
+    z-index: 1000;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: color-mix(in srgb, ${Constants.colors.accentColor} 75%, black);
+    }
+
   }
 
   textarea {

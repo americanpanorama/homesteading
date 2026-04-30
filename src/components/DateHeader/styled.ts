@@ -53,6 +53,8 @@ export const Previous = styled.div`
     padding: 3px;
     border: 1px solid ${Constants.colors.accentColor};
     border-radius: 50%;
+    transition: background-color 0.25s ease;
+
     circle {
       fill: transparent;
     }
@@ -72,14 +74,15 @@ export const Previous = styled.div`
 
 export const Year = styled.h1`
   grid-area: year;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-  font-family: ${Constants.fonts.serif};
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0;
+  padding: 0;
+  color: ${Constants.colors.accentColor};
+  font-family: ${Constants.fonts.serif};
   font-size: clamp(2.2rem, 8vw, 4rem);
+  text-align: center;
 `;
 
 export const Next = styled(Previous)`

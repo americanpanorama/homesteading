@@ -196,7 +196,7 @@ export default function About() {
                 <Styled.CloseTextLink
                     to={buildLink({ clearText: true })}
                 >
-                    close
+                    Close
                 </Styled.CloseTextLink>
             </Styled.LongformNav>
 

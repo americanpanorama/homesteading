@@ -13,6 +13,7 @@ export const colors = {
   disabledTextColor: '#444444',
   districtStrokeColor: '#8A4353',
   fullStateDistrictFillColor: '#9B8E75',
+  olive: '#6d6352',
   accentColor: '#5A455A', // '#02796B',
   northAmericaBackgroundColor: '#FFFDFA',
 };
@@ -54,8 +55,7 @@ export const heatmapGradientColors = [
 export const indianLandsColors = '#00BE8B';
 
 export const fonts = {
-  // serif: '"Playfair Display", serif;',
-  serif: '"Montaga", serif;',
+  serif: '"DM Serif Display", serif',
   sansSerif: '"Roboto Condensed", sans-serif;',
 }
 

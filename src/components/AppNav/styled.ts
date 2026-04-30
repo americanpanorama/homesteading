@@ -121,7 +121,7 @@ export const NavItem = styled.li`
 const navLinkStyles = `
   display: block;
   padding: 5px 1em;
-  color: ${Constants.colors.blackColor};
+  color: ${Constants.colors.olive};
   text-decoration: none;
   border-radius: 5px;
 

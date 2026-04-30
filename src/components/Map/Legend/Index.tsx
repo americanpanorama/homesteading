@@ -57,7 +57,7 @@ const Legend = () => {
         </Styled.HeaderButton>
         <Styled.Divider />
         <Styled.GuideLink to="/guide">
-          <Styled.GuideIcon>⌘</Styled.GuideIcon>
+          <Styled.GuideIcon></Styled.GuideIcon>
           Map Guide
         </Styled.GuideLink>
       </Styled.HeaderBar>

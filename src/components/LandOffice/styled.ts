@@ -54,7 +54,6 @@ export const ControlButton = styled.button<{ $active: boolean }>`
   border-right: 1px solid #bfc1c2;
   min-width: 120px;
   padding: 0 1em;
-  cursor: pointer;
 
   &:last-child {
     border-right: 0;

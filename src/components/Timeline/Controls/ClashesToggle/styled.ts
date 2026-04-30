@@ -31,9 +31,7 @@ export const ToggleInput = styled.input`
 `;
 
 export const ToggleText = styled.span`
-  font-size: 0.95rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  font-size: 1rem;
   line-height: 1.1;
   text-align: left;
 `;

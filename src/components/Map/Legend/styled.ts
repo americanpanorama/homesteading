@@ -124,7 +124,7 @@ export const GuideLink = styled(Link)`
   pointer-events: auto;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 7px;
   color: ${colors.lightColor};
   text-decoration: none;
   font-family: ${fonts.sansSerif};
@@ -141,9 +141,16 @@ export const GuideLink = styled(Link)`
 `;
 
 export const GuideIcon = styled.span`
-  font-size: 1rem;
+  display: inline-block;
+  width: 1.25em;
+  height: 1em;
   line-height: 1;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 16' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linejoin='round'%3E%3Cpath d='M1 2l7-1 8 2 7-1v13l-7 1-8-2-7 1z'/%3E%3Cpath d='M8 1v13M16 3v13'/%3E%3C/svg%3E");
 `;
+
 
 export const Panel = styled.div<{ $collapsed: boolean }>`
   pointer-events: auto;

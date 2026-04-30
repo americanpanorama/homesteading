@@ -88,8 +88,7 @@ export const And = styled.span`
   // color: ${Constants.heatmapGradientColors[5]};
   color: ${Constants.colors.fullStateDistrictFillColor};
   // font-family: "Zen Dots", sans-serif;
-  font-family: "Playfair Display", serif;
-  font-family: "Montaga", serif;
+  font-family: ${Constants.fonts.serif};
   margin: 0 0.2em;
   opacity: 0.5;
   `;
@@ -102,7 +101,7 @@ export const Dispossession = styled.span`
 export const Subtitle = styled.h2`
   display: block;
   margin-top: 0;
-  color: color-mix(in srgb, ${Constants.colors.fullStateDistrictFillColor} 70%, black);
+  color: ${Constants.colors.olive};
   font-size: calc(1.125rem + ((1vw - 4.8px) * 1.3462)) !important;
   text-align: center;
   line-height: 1.1;
