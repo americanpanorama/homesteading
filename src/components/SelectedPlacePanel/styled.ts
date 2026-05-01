@@ -56,6 +56,7 @@ export const Title = styled.h2`
   font-family: ${Constants.fonts.serif};
   font-weight: 700;
   color: var(--light-color);
+  color: ${Constants.colors.olive};
   align-self: center;
 `;
 

@@ -79,7 +79,7 @@ export const Year = styled.h1`
   align-items: center;
   margin: 0;
   padding: 0;
-  color: ${Constants.colors.accentColor};
+  color: ${Constants.colors.olive};
   font-family: ${Constants.fonts.serif};
   font-size: clamp(2.2rem, 8vw, 4rem);
   text-align: center;

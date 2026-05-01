@@ -24,6 +24,10 @@ export const LongformContainer = styled.div`
     color: ${Constants.colors.accentColor};
     // text-decoration: none;
   }
+   
+  li {
+    margin-bottom: 0.5em;
+  }
 
   @media ${Constants.devices.desktop} {
     grid-column: 1 / span 2;
