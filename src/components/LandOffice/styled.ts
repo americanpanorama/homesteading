@@ -79,9 +79,10 @@ export const ChartBlock = styled.div`
 
 export const ChartTitle = styled.h3`
   margin: 0;
-  text-align: left;
-  font-size: 2rem;
+  // text-align: left;
+  color: ${Constants.colors.olive};
+  font-size: 1.5rem;
   font-family: ${Constants.fonts.serif};
   font-weight: 700;
-  color: var(--light-color);
+  // color: var(--light-color);
 `;
