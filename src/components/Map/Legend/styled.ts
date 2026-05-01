@@ -105,7 +105,7 @@ export const HeaderButton = styled.button`
   font-family: ${fonts.sansSerif};
   font-size: 0.9rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   // add a halo for better visibility on the map
 

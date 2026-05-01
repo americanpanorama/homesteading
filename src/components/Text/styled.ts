@@ -76,24 +76,43 @@ export const ContactSection = styled.div``;
 export const ContactFormContainer = styled.div``;
 
 export const ContactForm = styled.form`
-  display: grid;
-  grid-template-columns: 230px auto;
-  gap: 10px;
+  // display: grid;
+  // grid-template-columns: 100px auto;
+  // gap: 10px;
   padding-bottom: 10vh;
+  // justify-content: center;
+  
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
 
   label {
-    grid-column: 1 / span 1;
-    text-align: right;
+    // grid-column: 1 / span 1;
+    // text-align: right;
+    display: block;
+    pointer-events: auto;
+    color: ${Constants.colors.lightColor};
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
   }
 
   input,
   textarea {
-    grid-column: 2 / span 1;
+    // grid-column: 2 / span 1;
+    display: block;
+    width: calc(100% - 2em - 2px);
+    margin-bottom: 1em;
+    padding: 1em;
+    border-width: 1px;
   }
 
   input[type='submit'] {
     width: min-content;
-    margin: 4px 0;
+    margin: 25px auto 0 auto;
     padding: 1em 2em;
     color: ${Constants.colors.whiteColor};
     font-family: ${Constants.fonts.sansSerif};
