@@ -10,7 +10,7 @@ import * as Styled from './styled';
 const HomeMap = () => {
   const { width: viewportWidth, isPhoneSize } = React.useContext(DimensionsContext) as Dimensions;
   const data = useHomeMapData();
-  const yearIndex = useAnimatedHomeMapYear(data?.years.length || 0);
+  const yearIndex = useAnimatedHomeMapYear(data?.years.length || 0, 750);
 
   const width = Math.min(viewportWidth, 980);
   const height = Math.max(isPhoneSize ? 250 : 340, Math.min(width * 0.62, 520));

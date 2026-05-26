@@ -22,7 +22,7 @@ export const OfficePath = styled.path.attrs<{ $fill: string; $fillOpacity: numbe
     fillOpacity: $fillOpacity,
   },
 }))`
-  transition: fill 850ms ease, fill-opacity 850ms ease;
+  //transition: fill 850ms ease, fill-opacity 850ms ease;
 `;
 
 export const YearBadge = styled.div`

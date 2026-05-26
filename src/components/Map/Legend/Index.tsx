@@ -72,6 +72,10 @@ const Legend = () => {
             <Styled.ReservationSwatch />
             Reservations
           </Styled.Reservations>
+          <Styled.ReservationsOpened>
+            <Styled.ReservationOpenedSwatch />
+            Reservations opened to homesteading
+          </Styled.ReservationsOpened>
           <Styled.Unceded>
             <Styled.UncededSwatch />
             Unceded Lands

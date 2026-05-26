@@ -18,7 +18,7 @@ const Reservations = () => {
           height='10'
           patternTransform='rotate(45)'
         >
-          <rect width='5' height='10' fill={Constants.indianLandsColors} />
+          <rect width='5' height='10' fill={Constants.indianLandsColors} opacity={0.5} />
         </pattern>
       </defs>
       {polygons.map((reservation) => (

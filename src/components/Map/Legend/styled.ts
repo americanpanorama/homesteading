@@ -238,8 +238,8 @@ export const IndianLands = styled.section`
   grid-area: indian;
   align-self: start;
   display: grid;
-  grid-template-rows: auto auto auto;
-  grid-template-areas: 'indianLandsLabel' 'reservations' 'unceded';
+  grid-template-rows: auto auto auto auto;
+  grid-template-areas: 'indianLandsLabel' 'reservations' 'reservationsOpened' 'unceded';
   row-gap: 0.5em;
   padding: 0.5em;
 
@@ -254,6 +254,11 @@ export const IndianLandsLabel = styled(ColumnTitle)`
 
 export const Reservations = styled.div`
   grid-area: reservations;
+  text-align: left;
+`;
+
+export const ReservationsOpened = styled.div`
+  grid-area: reservationsOpened;
   text-align: left;
 `;
 
@@ -441,21 +446,41 @@ export const IndianLegendItem = styled.div`
 
 export const ReservationSwatch = styled.span`
   display: inline-block;
-  width: 16px;
-  height: 10px;
-  border: 2px solid #67e5c5;
-  background-color: rgba(103, 229, 197, 0.5);
+  width: 18px;
+  height: 12px;
+  border: 1px solid rgba(14, 176, 135, 1);
+  background-color: rgba(14, 176, 135, 0.1);
   margin-right: 1em;
 `;
 
-export const UncededSwatch = styled(ReservationSwatch)`
+export const ReservationOpenedSwatch = styled.span`
+  display: inline-block;
+  width: 18px;
+  height: 12px;
+  margin-right: 1em;
   background: repeating-linear-gradient(
     -45deg,
-    rgba(103, 229, 197, 0.5),
-    rgba(103, 229, 197, 0.5) 4px,
+    rgba(14, 176, 135, 0.5),
+    rgba(14, 176, 135, 0.5) 4px,
     transparent 4px,
     transparent 8px
   );
+`;
+
+export const UncededSwatch = styled(ReservationSwatch)`
+  /* background: repeating-linear-gradient(
+    -45deg,
+    rgba(14, 176, 135, 0.5),
+    rgba(14, 176, 135, 0.5) 4px,
+    transparent 4px,
+    transparent 8px
+  ); */
+  display: inline-block;
+  width: 20px;
+  height: 14px;
+  border: none;
+  background-color: rgba(14, 176, 135, 0.5);
+  margin-right: 1em;
 `;
 
 export const ClashLegend = styled.div`

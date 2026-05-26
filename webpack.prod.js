@@ -10,13 +10,14 @@ const normalizedBuildPublicUrl = rawBuildPublicUrl === '/'
   ? '/'
   : rawBuildPublicUrl.replace(/\/+$/, '');
 const runtimePublicUrl = normalizedBuildPublicUrl === '/' ? '' : normalizedBuildPublicUrl;
+const public_url = '/panorama/homesteading';
 
 module.exports = merge({
     devtool: false,
     output: {
         path: appDir,
         filename: 'index.js',
-        publicPath: normalizedBuildPublicUrl,
+        publicPath: public_url,
         clean: true,
     },
     plugins: [
@@ -24,7 +25,7 @@ module.exports = merge({
             //'process.env.NODE_ENV': JSON.stringify('production')
             'process.env': {
                 NODE_ENV: JSON.stringify('production'),
-                PUBLIC_URL: JSON.stringify(runtimePublicUrl)
+                PUBLIC_URL: JSON.stringify(public_url)
             }
         }),
         new HtmlWebpackPlugin({
