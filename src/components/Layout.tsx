@@ -34,7 +34,12 @@ const AppLayout = () => {
   }, [isCompactLayout]);
 
   if (text) {
-    return <Text />;
+    return (
+      <>
+        <Masthead />
+        <Text />
+      </>
+    );
   }
 
   if (isCompactLayout) {
