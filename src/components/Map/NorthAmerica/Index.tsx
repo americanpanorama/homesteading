@@ -8,7 +8,8 @@ const NorthAmericaBasemap = () => {
     {NorthAmerica.map((d: any) => (
       <path
         d={d}
-        fill={Constants.colors.northAmericaBackgroundColor}
+        /* fill={Constants.colors.northAmericaBackgroundColor} */
+        fill='#f7f7f7'
         key={d.substring(0, 50)}
         stroke='#e9eef1'
         strokeWidth={3}

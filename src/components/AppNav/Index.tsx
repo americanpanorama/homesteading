@@ -1,16 +1,26 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
+import NavItem from './NavItem/Index';
+import Hamburger from './Hamburger/Index';
 import * as Constants from '../../Constants';
-import { useLinkBuilder, useURLParams } from '../../hooks';
 import { DimensionsContext } from '../../DimensionsContext';
 import { Dimensions } from '../../index.d';
 import * as Styled from './styled';
 
-  const AppNav = () => {
-  const params = useURLParams();
-  const buildLink = useLinkBuilder();
+const AppNav = () => {
+  const { pathname } = useLocation();
   const { width } = useContext(DimensionsContext) as Dimensions;
   const usesHamburgerMenu = width < Constants.sizes.desktop;
   const [isOpen, setIsOpen] = useState(false);
+
+  // this keeps track of the most recent map viewed so if the users checks out the intro or the about page they can return to the map they were looking at most recently
+  const isMapPath = pathname.startsWith("/year");
+  const [mapPath, setMapPath] = useState(isMapPath ? pathname : "/year/1863");
+  useEffect(() => {
+    if (isMapPath) {
+      setMapPath(pathname);
+    }
+  }, [pathname]);
 
   useEffect(() => {
     if (!usesHamburgerMenu) {
@@ -23,59 +33,28 @@ import * as Styled from './styled';
   return (
     <Styled.NavContainer aria-label='Site sections'>
       {usesHamburgerMenu && (
-        <Styled.Hamburger
-          aria-expanded={isOpen}
-          aria-controls='site-nav-list'
-          onClick={() => setIsOpen(current => !current)}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </Styled.Hamburger>
+        <Hamburger isOpen={isOpen} setIsOpen={setIsOpen} />
       )}
 
       <Styled.NavList id='site-nav-list' $isOpen={isOpen}>
-        <Styled.NavItem>
-          <Styled.InternalLink
-            to={params.text === 'introduction' ? buildLink({ clearText: true }) : buildLink({ text: 'introduction' })}
-            aria-current={params.text === 'introduction' ? 'page' : undefined}
-            onClick={closeMenu}
-          >
-            Introduction
-          </Styled.InternalLink>
-        </Styled.NavItem>
-        <Styled.NavItem>
-          <Styled.InternalLink
-            to={params.text === 'dispossession' ? buildLink({ clearText: true }) : buildLink({ text: 'dispossession' })}
-            aria-current={params.text === 'dispossession' ? 'page' : undefined}
-            onClick={closeMenu}
-          >
-            Indigenous Dispossession
-          </Styled.InternalLink>
-        </Styled.NavItem>
-        <Styled.NavItem>
-          <Styled.InternalLink
-            to={params.text === 'sources' ? buildLink({ clearText: true }) : buildLink({ text: 'sources' })}
-            aria-current={params.text === 'sources' ? 'page' : undefined}
-            onClick={closeMenu}
-          >
-            Sources
-          </Styled.InternalLink>
-        </Styled.NavItem>
-        <Styled.NavItem>
-          <Styled.InternalLink
-            to={params.text === 'about' ? buildLink({ clearText: true }) : buildLink({ text: 'about' })}
-            aria-current={params.text === 'about' ? 'page' : undefined}
-            onClick={closeMenu}
-          >
-            About
-          </Styled.InternalLink>
-        </Styled.NavItem>
-        <Styled.NavItem>
-          <Styled.ExternalLink href='//dsl.richmond.edu/panorama#maps' onClick={closeMenu}>
-            American Panorama
-          </Styled.ExternalLink>
-        </Styled.NavItem>
+        <NavItem to={mapPath} closeMenu={closeMenu}>
+          Maps
+        </NavItem>
+        <NavItem to="/introduction" closeMenu={closeMenu}>
+          Introduction
+        </NavItem>
+        <NavItem to="/dispossession" closeMenu={closeMenu}>
+          Indigenous Dispossession  
+        </NavItem>
+        <NavItem to="/sources" closeMenu={closeMenu}>
+          Sources
+        </NavItem>
+        <NavItem to="/about" closeMenu={closeMenu}>
+          About
+        </NavItem>
+        <NavItem href="//dsl.richmond.edu/panorama#maps" closeMenu={closeMenu}>
+          American Panorama
+        </NavItem>
       </Styled.NavList>
     </Styled.NavContainer>
   );

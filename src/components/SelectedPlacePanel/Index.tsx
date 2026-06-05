@@ -4,6 +4,7 @@ import LandOffice from '../LandOffice';
 import Timeline from '../Timeline/Index';
 import * as Styled from './styled';
 import Summary from './Summary/Index';
+import Backlink from '../Buttons/Backlink/Index';
 import { getSelectedPlaceTitle, getStateTerritoryLabel } from './utilities';
 
 const SelectedPlacePanel = () => {
@@ -34,9 +35,7 @@ const SelectedPlacePanel = () => {
   return (
     <Styled.Container>
       <Styled.Header>
-        <Styled.BackLink to={backTo}>
-          &larr; {backLabel}
-        </Styled.BackLink>
+        <Backlink to={backTo} label={backLabel} />
         <Styled.Title>{title}</Styled.Title>
       </Styled.Header>
 

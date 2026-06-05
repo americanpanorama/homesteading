@@ -47,8 +47,8 @@ const AppShell = () => {
   const canonicalMapPaths = ['', ...combine(['/stateTerr/:stateTerr', '/office/:office', '/panel/:panel', '/view/:view', '/fullOpacity/:fullOpacity'], 1)]
     .map(path => `/year/:year${path}`);
   const legacyMapPaths = combine(['/map/year/:year', '/map/stateTerr/:stateTerr', '/map/office/:office', '/map/panel/:panel', '/map/view/:view', '/map/fullOpacity/:fullOpacity', '/map'], 1);
-  const canonicalTextPaths = ['/text/:text', ...canonicalMapPaths.map(d => `/text/:text${d}`)];
-  const legacyTextPaths = legacyMapPaths.map(d => `/text/:text${d}`);
+  const canonicalTextPaths = [':text', ...canonicalMapPaths.map(d => `/:text${d}`)];
+  const legacyTextPaths = legacyMapPaths.map(d => `/:text${d}`);
   const appNavPaths = [...new Set([...canonicalTextPaths, ...canonicalMapPaths])];
 
   return (

@@ -39,14 +39,14 @@ const Map = () => {
     yearData,
   });
 
+  console.log(mapSize);
+
   if (yearData && isReady) {
     const mapView = { center, rotation, scale };
     return (
-        <MapViewContext.Provider value={mapView}>
+      <MapViewContext.Provider value={mapView}>
         <Styled.VectorMap $mapSize={mapSize} $height={height}>
-          {(mapSize === 'default') && (
-            <Legend />
-          )}
+          <Legend />
 
           <svg
             width={width * 2}
@@ -63,12 +63,13 @@ const Map = () => {
               <States />
               <Reservations />
             {/* An inset box around AK */}
-            {(yearNum >= 1900) && (
+            {(yearNum >= 1900) && false && (
 
               <Styled.AlaskaInset
                 d="M -1000 517 L 100 558 L 160 650 L 147 1024"
-                stroke={colors.highlightColor}
-                strokeWidth={2}
+                  stroke={'#aaa'}
+                  strokeWidth={0.5}
+                  
                 fill='transparent'
               />
             )}

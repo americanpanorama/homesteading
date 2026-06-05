@@ -1,8 +1,5 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import Tooltip from 'rc-tooltip';
-// @ts-ignore
-import us from '../../us';
 import { useContext } from 'react';
 import { DimensionsContext } from '../../DimensionsContext';
 import { useLinkBuilder, useURLParams } from '../../hooks';
@@ -10,19 +7,14 @@ import { Dimensions } from '../../index.d';
 import * as Styled from './styled';
 import Previous from '../Buttons/Previous';
 import Next from '../Buttons/Next';
-
-
-const OverlayStyle = {
-  maxWidth: 400,
-  fontSize: 16,
-  fontFamily: '"Roboto Condensed", sans-serif',
-}
+import Backlink from '../Buttons/Backlink/Index';
+import { getStateTerritoryLabel } from '../SelectedPlacePanel/utilities';
 
 const TimelineDateHeader = () => {
   const params = useURLParams();
   const buildLink = useLinkBuilder();
   const { mapDimensions } = useContext(DimensionsContext) as Dimensions;
-  const { year, yearNum, stateTerr, office, stateTerrRange, officeRange, stateTerrData } = params;
+  const { year, yearNum, office, stateTerrRange, officeRange, stateTerr, stateTerrData } = params;
   let firstYear = 1863;
   let lastYear = 1912;
   if (stateTerrRange && !office) {
@@ -30,6 +22,13 @@ const TimelineDateHeader = () => {
   } else if (officeRange) {
     ({ firstYear, lastYear } = officeRange);
   }
+  const backLabel = office && stateTerr
+    ? getStateTerritoryLabel(stateTerr, yearNum, stateTerrData?.name)
+    : 'United States';
+  const backTo = office
+    ? buildLink({ clearOffice: true })
+    : buildLink({ clearState: true });
+
   return (
     <Styled.Container
       data-phone-chrome='date-header'
@@ -59,6 +58,11 @@ const TimelineDateHeader = () => {
           </Link>
         </Styled.Next>
       )}
+
+      <Styled.BacklinkContainer $show={mapDimensions.size === 'fullscreen' && !!stateTerr}>
+        <Backlink to={backTo} label={backLabel} />
+      </Styled.BacklinkContainer>
+      
     </Styled.Container>
   );
 }

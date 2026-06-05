@@ -192,13 +192,6 @@ export default function About() {
 
     return (
         <Styled.LongformContainer id='main-content'>
-            <Styled.LongformNav>
-                <Styled.CloseTextLink
-                    to={buildLink({ clearText: true })}
-                >
-                    Close
-                </Styled.CloseTextLink>
-            </Styled.LongformNav>
 
             {(activeText === 'about') ? aboutContent : texts[activeText as Exclude<TextType, 'about'>]}
         </Styled.LongformContainer>

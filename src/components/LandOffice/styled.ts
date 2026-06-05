@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import * as Constants from '../../Constants';
 import { Label as SelectLabel, Select as BaseSelect } from '../Timeline/Controls/Sort/styled';
-import { controlBase, selectedControl, ToggleGroup as LegendToggleGroup } from '../Map/Legend/styled';
+import { controlBase, selectedControl } from '../Map/Legend/ActivityToggle/styled';
 
 export const Container = styled.section`
   display: flex;
@@ -33,6 +33,17 @@ export const ControlsGrid = styled.div`
     grid-template-columns: 1fr;
   }
 `;
+
+export const LegendToggleGroup = styled.nav`
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  width: 100%;
+  min-width: 0;
+  border: 1px solid ${Constants.colors.legendBorderColor};
+  background: ${Constants.colors.legendToggleBackgroundColor};
+`;
+
 
 export const ControlGroup = styled.div`
   display: flex;

@@ -15,28 +15,43 @@ export const Container = styled.div<{ $isExpanded: boolean }>`
   min-height: 92px;
 
   @media ${Constants.devices.tabletLandscape} {
-    grid-template-rows: auto 1fr 1fr;
+    align-self: center;
+    grid-template-rows: min-content auto 1fr;
     grid-template-areas: "headerLabel headerLabel headerLabel" "previous year next" ". fiscalYear .";
     padding: 0;
     min-height: auto;
-
-    &::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 20px;
-      width: 100%;
-      height: 1px;
-      background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.4) 15%, rgba(0, 0, 0, 0.4) 85%, transparent);
-    }
   }
 
   @media ${Constants.devices.desktop} {
     ${({ $isExpanded }) =>
       $isExpanded &&
       `
-      padding: 0 25px;
+      width: calc(100vw - 24px);
     `}
+  }
+`;
+
+export const Header = styled.div`
+  grid-area: headerLabel;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+
+  &::before,
+  &::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.35));
+  }
+
+  &::after {
+    transform: scaleX(-1);
   }
 `;
 
@@ -83,6 +98,7 @@ export const Year = styled.h1`
   font-family: ${Constants.fonts.serif};
   font-size: clamp(2.2rem, 8vw, 4rem);
   text-align: center;
+  line-height: 1;
 `;
 
 export const Next = styled(Previous)`
@@ -113,26 +129,9 @@ export const FiscalYear = styled.h2`
   }
 `;
 
-export const Header = styled.div`
-  grid-area: headerLabel;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  width: 100%;
-  font-size: 0.75rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-
-  &::before,
-  &::after {
-    content: "";
-    flex: 1;
-    height: 1px;
-    background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.35));
-  }
-
-  &::after {
-    transform: scaleX(-1);
-  }
+export const BacklinkContainer = styled.div<{ $show: boolean }>`
+  display: ${({ $show }) => ($show ? 'block' : 'none')};
+  position: absolute;
+  right: 12px;
+  bottom: 0px;
 `;

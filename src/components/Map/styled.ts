@@ -14,8 +14,8 @@ export const VectorMap = styled.div<{ $mapSize: MapSize; $height: number }>`
 
   @media ${Constants.devices.tabletLandscape} {
     grid-area: map;
-    width: calc(100% - 50px - 2px); // the 2px is for the border
-    height: calc(100vh - 75px - 150px - 25px - 2px); // the 2px is for the border
+    width: calc(100% - 50px - 2px); /* the 2px is for the border */
+    height: calc(100vh - 75px - 150px - 25px - 2px); /* the 2px is for the border */
     margin: 0 0px 25px 25px;
     transition: width 220ms ease, margin 220ms ease, border-radius 220ms ease;
 
@@ -26,7 +26,7 @@ export const VectorMap = styled.div<{ $mapSize: MapSize; $height: number }>`
     ${({ $mapSize }) => $mapSize === 'fullscreen' && css`
       grid-column: 1 / -1;
       grid-row: 3;
-      width: calc(100% - 25px);
+      width: calc(100vw - 50px) !important;
       height: calc(100vh - 75px - 150px - 25px);
       z-index: 1;
       margin: 0 25px 25px 25px;

@@ -49,11 +49,7 @@ export const Container = styled.header`
 export const Land = styled.span`
   font-weight: 700;
   text-transform: uppercase;
-  //font-size: 0.7em;
-  /* align-self: flex-start; */
-  //font-family: "Inter", sans-serif;
-  //font-family: "Zen Dots", sans-serif;
-  `;
+`;
 
 export const Acquisition = styled.span`
   font-weight: 600;

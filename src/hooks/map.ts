@@ -480,6 +480,34 @@ export const useMapReservations = (): IndianLandsPolygon[] => {
   return polygons;
 };
 
+/** 
+ * Returns boolean values for whether the indian lands layers has unceded lands, reservations, or open reservations for the current year. Used to determine whether to show/hide the layer and which legend items to show.
+ */
+export const useHasIndianLandsTypes = () => {
+  const reservations = useMapReservations();
+
+  return React.useMemo(() => {
+    const hasTypes = {
+      hasUncededLands: false,
+      hasReservations: false,
+      hasOpenRes: false,
+    };
+
+    reservations.forEach((polygon) => {
+      if (polygon.type === 'unceded land') {
+        hasTypes.hasUncededLands = true;
+      } else if (polygon.type === 'reservation') {
+        hasTypes.hasReservations = true;
+      } else if (polygon.type === 'open_res') {
+        hasTypes.hasOpenRes = true;
+      }
+    });
+
+    return hasTypes;
+  }, [reservations]);
+};
+
+
 /**
  * Builds the complete district-layer view model: sorted district polygons,
  * full-state overlays, and collision-filtered office labels for selected views.

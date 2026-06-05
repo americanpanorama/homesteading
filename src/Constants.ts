@@ -1,12 +1,21 @@
+import { hextoRgba } from './colorUtilities';
+
+const lightTextColor = '#211D16';
+const blackColor = '#000000';
+const whiteColor = '#FFFFFF';
+const legendBorderColor = '#BFC1C2';
+const legendLandscapeBackgroundColor = '#F7F5F1';
+const legendIndianLandsColor = '#0EB087';
+
 export const colors = {
-  insetBGcolor: '#FFFFFA',
-  mainBGcolor: '#FFFFFA',
+  insetBGcolor: whiteColor,
+  mainBGcolor: whiteColor,
   insetHeaderBGcolor: '#28251E',
-  lightColor: '#211D16',
+  lightColor: lightTextColor,
   highlightColor: '#575653',
   mapBGcolor: '#0B0A08',
-  whiteColor: '#FFFFFF',
-  blackColor: '#000000',
+  whiteColor,
+  blackColor,
   focusRingColor: '#F2BE00',
   mutedTextColor: '#888888',
   softTextColor: '#EEEEEE',
@@ -16,6 +25,20 @@ export const colors = {
   olive: '#6d6352',
   accentColor: '#5A455A', // '#02796B',
   northAmericaBackgroundColor: '#FFFDFA',
+  legendBorderColor,
+  legendControlBackgroundColor: hextoRgba(whiteColor, 0.9),
+  legendToggleBackgroundColor: hextoRgba(whiteColor, 0.88),
+  legendPanelBackgroundColor: hextoRgba(whiteColor, 0.97),
+  legendPanelLandscapeBackgroundColor: hextoRgba(legendLandscapeBackgroundColor, 0.96),
+  legendPanelShadowColor: hextoRgba(blackColor, 0.16),
+  legendPanelLandscapeShadowColor: hextoRgba(blackColor, 0.06),
+  legendHeaderShadowColor: hextoRgba(blackColor, 0.08),
+  legendHeaderDividerColor: hextoRgba(lightTextColor, 0.26),
+  legendDimmedTextColor: '#BBBBBB',
+  legendIndianLandsColor,
+  legendIndianLandsFaintColor: hextoRgba(legendIndianLandsColor, 0.1),
+  legendIndianLandsMediumColor: hextoRgba(legendIndianLandsColor, 0.5),
+  legendConflictColor: '#E12727',
 };
 
 /* 

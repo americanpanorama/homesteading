@@ -10,7 +10,6 @@ const Masthead = () => {
           <Styled.Acquisition>Land Acquisition</Styled.Acquisition>
           <Styled.And>&</Styled.And>
           <Styled.Dispossession>Dispossession</Styled.Dispossession>
-
         </h1>
       </Link>
     </Styled.Container>

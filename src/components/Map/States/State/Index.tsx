@@ -15,6 +15,14 @@ const State = ({ state, scale }: Props) => {
   const { yearNum } = useURLParams();
   const label = `${us.lookup(state.abbr).ap_abbr}${(!us.lookup(state.abbr).statehood_year || us.lookup(state.abbr).statehood_year > yearNum) ? ' Terr.' : ''}`;
 
+  let strokeWidth = state.selected
+    ? getScaledStrokeWidth(scale, 3.2, 0.45, 1.35)
+    : getScaledStrokeWidth(scale, 1.35, 0.22, 0.8);
+  
+  // for Alaska, we want a thinner stroke width to avoid overwhelming the small size of the state, but we also want to make sure it doesn't disappear entirely when zoomed out. So we set a minimum stroke width of 0.5px.
+  if (state.abbr === 'AK') {
+    strokeWidth = strokeWidth / 3;
+  }
   return (
     <Styled.Container
       to={state.link}
@@ -26,9 +34,7 @@ const State = ({ state, scale }: Props) => {
     >
       <Styled.Boundary
         d={state.d}
-        $strokeWidth={state.selected
-          ? getScaledStrokeWidth(scale, 3.2, 0.45, 1.35)
-          : getScaledStrokeWidth(scale, 1.35, 0.22, 0.8)}
+        $strokeWidth={strokeWidth}
         $fill={state.fill || 'transparent'}
       />
     </Styled.Container>
