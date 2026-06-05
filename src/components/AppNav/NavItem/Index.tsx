@@ -13,11 +13,16 @@ const NavItem = ({ to, href, closeMenu, children }: NavItemProps) => {
   const params = useURLParams();
 
   if (to) {
+    const textPath = to.replace(/^\//, '');
+    const isCurrent = params.text
+      ? params.text === textPath
+      : to.startsWith('/year');
+
     return (
       <Styled.NavItem>
         <Styled.InternalLink
           to={to}
-          aria-current={params.text === to ? 'page' : undefined}
+          aria-current={isCurrent ? 'page' : undefined}
           onClick={closeMenu}
         >
           {children}

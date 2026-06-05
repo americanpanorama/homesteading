@@ -31,8 +31,8 @@ export const LongformContainer = styled.div`
 
   @media ${Constants.devices.desktop} {
     grid-column: 1 / span 2;
-    grid-row: 3 / span 1;
-    height: calc(100vh - 150px - 75px);
+    grid-row: 2 / span 2;
+    height: calc(100vh - 75px);
     justify-self: center;
     font-size: 1.2em;
     max-width: 1000px;
@@ -67,8 +67,66 @@ export const CloseTextLink = styled(Link)`
   }
 `;
 
-export const Citation = styled.div`
-  padding-left: 40px;
+export const AboutMenu = styled.nav`
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  margin: 0 auto 2rem;
+`;
+
+export const AboutMenuButton = styled.button<{ $selected: boolean }>`
+  min-width: 0;
+  border: 0;
+  border-right: 1px solid ${Constants.colors.accentColor};
+  border-bottom: 1px solid ${Constants.colors.accentColor};
+  border-top: 1px solid ${Constants.colors.accentColor};
+
+  padding: 0.65em 0.75em;
+  background-color: ${({ $selected }) => ($selected ? Constants.colors.accentColor : 'transparent')};
+  color: ${({ $selected }) => ($selected ? Constants.colors.whiteColor : Constants.colors.accentColor)};
+  cursor: pointer;
+  font-family: ${Constants.fonts.sansSerif};
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+
+  &:first-child {
+    border-left: 1px solid ${Constants.colors.accentColor};
+  }
+
+  &:hover,
+  &:focus-visible {
+    background-color: ${({ $selected }) => ($selected ? Constants.colors.accentColor : Constants.colors.softTextColor)};
+  }
+`;
+
+export const AboutPanel = styled.section`
+  margin: 0 auto;
+  max-width: 100%;
+`;
+
+export const CitationGrid = styled.div`
+  display: grid;
+  grid-template-columns: minmax(90px, max-content) minmax(0, 1fr);
+  gap: 1px;
+  margin: 1.5rem 0 0;
+  border: 1px solid ${Constants.colors.softTextColor};
+  background-color: ${Constants.colors.softTextColor};
+`;
+
+export const CitationStyle = styled.div`
+  padding: 1em;
+  background-color: ${Constants.colors.mainBGcolor};
+  color: ${Constants.colors.accentColor};
+  font-weight: 700 !important;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+`;
+
+export const CitationText = styled.div`
+  padding: 1em;
+  background-color: ${Constants.colors.mainBGcolor};
 `;
 
 export const ContactSection = styled.div``;
@@ -84,7 +142,6 @@ export const ContactForm = styled.form`
   
   display: block;
   width: 100%;
-  max-width: 600px;
   margin: 0 auto;
 
   label {

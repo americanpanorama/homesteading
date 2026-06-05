@@ -59,7 +59,7 @@ export const AppContainer = styled.main<{ $isMapFullscreen: boolean }>`
     outline-offset: 2px;
   }
 
-  @media ${Constants.devices.tabletLandscape} {
+  @media ${Constants.devices.wideLayout} {
     display: grid;
     grid-template-columns: ${({ $isMapFullscreen }) => ($isMapFullscreen ? 'minmax(0, 1fr) auto' : 'minmax(0, 1fr) minmax(360px, 40%)')};
     grid-template-rows: 75px 150px auto;
@@ -94,7 +94,7 @@ export const SkipLink = styled.a`
 `;
 
 export const Sidebar = styled.aside<{ $isCollapsed?: boolean }>`
-  @media ${Constants.devices.tabletLandscape} {
+  @media ${Constants.devices.wideLayout} {
     grid-area: sidebar;
     grid-row: 2 / span 2;
     overflow-x: hidden;

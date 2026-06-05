@@ -101,4 +101,5 @@ export const devices = {
   tabletPortrait: `(min-width: ${sizes.tabletPortrait}px)`,
   tabletLandscape: `(min-width: ${sizes.tabletLandscape}px) and (orientation: landscape)`,
   desktop: `(min-width: ${sizes.desktop}px)`,
+  wideLayout: `(min-width: ${sizes.desktop}px), (min-width: ${sizes.tabletLandscape}px) and (orientation: landscape)`,
 };

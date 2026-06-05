@@ -12,7 +12,7 @@ export const VectorMap = styled.div<{ $mapSize: MapSize; $height: number }>`
   z-index: 1000;
   border: 1px solid #aaa;
 
-  @media ${Constants.devices.tabletLandscape} {
+  @media ${Constants.devices.wideLayout} {
     grid-area: map;
     width: calc(100% - 50px - 2px); /* the 2px is for the border */
     height: calc(100vh - 75px - 150px - 25px - 2px); /* the 2px is for the border */
@@ -38,7 +38,7 @@ export const FullscreenToggleContainer = styled.div`
  display: none;
  pointer-events: none;
 
-  @media ${Constants.devices.tabletLandscape} {
+  @media ${Constants.devices.wideLayout} {
     z-index: 10000;
     background: transparent;
     border: none;
@@ -58,7 +58,7 @@ export const FullscreenToggleContainer = styled.div`
 `
 
 export const FullscreenToggle = styled.button<{ $mapSize: MapSize }>`
-  @media ${Constants.devices.tabletLandscape} {
+  @media ${Constants.devices.wideLayout} {
     pointer-events: all;
     cursor: pointer;
 

@@ -8,7 +8,7 @@ export const NavContainer = styled.nav`
   right: 12px;
   z-index: 13000;
 
-  @media ${Constants.devices.tabletLandscape} {
+  @media ${Constants.devices.wideLayout} {
     grid-area: appNav;
   }
 `;
@@ -53,4 +53,3 @@ export const NavList = styled.ul<{ $isOpen?: boolean }>`
     padding-right: 25px;
   }
 `;
-

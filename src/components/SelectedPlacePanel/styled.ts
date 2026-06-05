@@ -9,7 +9,7 @@ export const Container = styled.section`
   padding: 1em 0.5em 32px;
   background-color: var(--inset-bg-color);
 
-  @media ${Constants.devices.tabletLandscape} {
+  @media ${Constants.devices.wideLayout} {
     padding: 24px 24px 32px;
   }
 
@@ -18,7 +18,7 @@ export const Container = styled.section`
 export const Header = styled.header`
   display: none;
 
-  @media ${Constants.devices.tabletLandscape} {
+  @media ${Constants.devices.wideLayout} {
     display: flex;
     flex-direction: column;
     align-items: flex-start;

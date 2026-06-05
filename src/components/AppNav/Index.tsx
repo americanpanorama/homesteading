@@ -46,9 +46,6 @@ const AppNav = () => {
         <NavItem to="/dispossession" closeMenu={closeMenu}>
           Indigenous Dispossession  
         </NavItem>
-        <NavItem to="/sources" closeMenu={closeMenu}>
-          Sources
-        </NavItem>
         <NavItem to="/about" closeMenu={closeMenu}>
           About
         </NavItem>

@@ -16,7 +16,7 @@ export const ScrollPanel = styled.div<{ $height: number }>`
   min-width: 0;
   height: ${({ $height }) => $height}px;
 
-  @media ${Constants.devices.tabletLandscape} {
+  @media ${Constants.devices.wideLayout} {
     height: auto;
   }
 `;

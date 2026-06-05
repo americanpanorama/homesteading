@@ -14,7 +14,7 @@ export const Container = styled.div<{ $isExpanded: boolean }>`
   padding: 6px 12px 14px;
   min-height: 92px;
 
-  @media ${Constants.devices.tabletLandscape} {
+  @media ${Constants.devices.wideLayout} {
     align-self: center;
     grid-template-rows: min-content auto 1fr;
     grid-template-areas: "headerLabel headerLabel headerLabel" "previous year next" ". fiscalYear .";
@@ -81,7 +81,7 @@ export const Previous = styled.div`
     }
   }
 
-  @media ${Constants.devices.tabletLandscape} {
+  @media ${Constants.devices.wideLayout} {
     justify-content: flex-end;
     padding-left: 0;
   }
@@ -107,7 +107,7 @@ export const Next = styled(Previous)`
   align-items: center;
   padding-right: 2em;
 
-  @media ${Constants.devices.tabletLandscape} {
+  @media ${Constants.devices.wideLayout} {
     justify-content: flex-start;
     padding-right: 0;
   }
@@ -124,7 +124,7 @@ export const FiscalYear = styled.h2`
   text-transform: uppercase;
   letter-spacing: 0.04em;
 
-  @media ${Constants.devices.tabletLandscape} {
+  @media ${Constants.devices.wideLayout} {
     display: block;
   }
 `;
