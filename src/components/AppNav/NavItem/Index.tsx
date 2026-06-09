@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import * as Styled from './styled';
 import { useURLParams } from '../../../hooks';
 
@@ -11,12 +12,13 @@ type NavItemProps = {
 
 const NavItem = ({ to, href, closeMenu, children }: NavItemProps) => {
   const params = useURLParams();
+  const { pathname } = useLocation();
 
   if (to) {
     const textPath = to.replace(/^\//, '');
-    const isCurrent = params.text
+    const isCurrent = pathname === to || (params.text
       ? params.text === textPath
-      : to.startsWith('/year');
+      : to.startsWith('/year') && pathname.startsWith('/year'));
 
     return (
       <Styled.NavItem>

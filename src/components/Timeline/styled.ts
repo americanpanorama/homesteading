@@ -8,7 +8,8 @@ export const Container = styled.div`
   background-color: var(--inset-bg-color);
   margin: 20px 0;
   padding-bottom: 12px;
-  overflow-x: hidden;
+  overflow-x: clip;
+  overflow-y: visible;
 `;
 
 export const ScrollPanel = styled.div<{ $height: number }>`

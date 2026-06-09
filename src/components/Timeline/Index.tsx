@@ -4,7 +4,7 @@ import { useTimelineChart  } from "../../hooks";
 import { Dimensions } from "../../index.d";
 import * as Styled from "./styled";
 import Controls from "./Controls/Index";
-import YAxis from "./YAxis/Index";
+import XAxis from "./XAxis/Index";
 import Heatmap from "./Heatmap/Index";
 import { TimelineSortOption } from "./types";
 
@@ -28,7 +28,7 @@ const TimelineHeatmap = () => {
           onToggleInactiveAreasForSelectedYear={setShowInactiveAreasForSelectedYear}
         />
 
-        <YAxis />
+        <XAxis />
 
         <Heatmap
           sortBy={sortBy}

@@ -1,3 +1,4 @@
+import React from 'react';
 export type ClaimsCountType = "claims" | "claims_indian_lands";
 export type PatentsCountType =  "patents" | "patents_indian_lands" | "commutations_2301" | "commutations_18800615" | "commutations_indian_lands";
 export type ClaimsAndPatentsCountType = ClaimsCountType | PatentsCountType; 

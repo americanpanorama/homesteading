@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { DimensionsContext } from './DimensionsContext';
 import * as Constants from './Constants';
 import { Dimensions, MapSize } from './index.d';
@@ -38,7 +38,7 @@ const DimensionsContextProvider = ({ children }: { children: React.ReactNode }) 
   const [wideSidebarMeasuredWidth, setWideSidebarMeasuredWidth] = useState<number | null>(null);
   const [timelineHostMeasuredWidth, setTimelineHostMeasuredWidth] = useState<number | null>(null);
 
-  const calculateDimensions = (): Dimensions => {
+  const calculateDimensions = useCallback((): Dimensions => {
     const { innerWidth, innerHeight, visualViewport } = window;
     const { clientWidth, clientHeight } = document.documentElement || { clientWidth: null, clientHeight: null };
     const width = clientWidth || innerWidth || 1280;
@@ -108,7 +108,7 @@ const DimensionsContextProvider = ({ children }: { children: React.ReactNode }) 
       timelineDimensions,
       officeBarchartDimensions,
     };
-  };
+  }, [mapSize, phoneChromeHeights, timelineHostMeasuredWidth, wideSidebarMeasuredWidth]);
 
   const [dimensions, setDimensions] = useState<Dimensions>(() => calculateDimensions());
 
@@ -122,7 +122,7 @@ const DimensionsContextProvider = ({ children }: { children: React.ReactNode }) 
       window.removeEventListener('resize', onResize);
       window.visualViewport?.removeEventListener('resize', onResize);
     };
-  }, []);
+  }, [calculateDimensions]);
 
   useEffect(() => {
     if (typeof document === 'undefined' || typeof ResizeObserver === 'undefined') {
@@ -193,7 +193,7 @@ const DimensionsContextProvider = ({ children }: { children: React.ReactNode }) 
 
   useEffect(() => {
     setDimensions(calculateDimensions());
-  }, [mapSize, phoneChromeHeights, timelineHostMeasuredWidth, wideSidebarMeasuredWidth]);
+  }, [calculateDimensions]);
 
   useEffect(() => {
     if (typeof document === 'undefined' || typeof ResizeObserver === 'undefined') {

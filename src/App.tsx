@@ -2,13 +2,13 @@ import React, { useContext } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import DimensionsContextProvider from './DimensionsContextProvider';
 import { DimensionsContext } from './DimensionsContext';
+import AppChrome from './components/AppChrome';
 import AppLayout from './components/Layout';
 import Home from './components/Home/Index';
 import Introduction from './components/Text/Introduction/Index';
 import IndigenousDispossession from './components/Text/IndigenousDispossession/Index';
 import About from './components/Text/About/Index';
 
-import AppNav from './components/AppNav/Index';
 import { useLinkBuilder, useURLParams } from './hooks';
 import { Dimensions } from './index.d';
 import { AppContainer, BaseStyles, SkipLink } from './styled';
@@ -51,70 +51,60 @@ const AppShell = () => {
     .map(path => `/year/:year${path}`);
   const legacyMapPaths = combine(['/map/year/:year', '/map/stateTerr/:stateTerr', '/map/office/:office', '/map/panel/:panel', '/map/view/:view', '/map/fullOpacity/:fullOpacity', '/map'], 1);
   const legacyTextPaths = legacyMapPaths.map(d => `/:text${d}`);
-  const appNavPaths = [...new Set([, ...canonicalMapPaths])];
 
   return (
     <AppContainer $isMapFullscreen={mapDimensions.size === 'fullscreen'}>
       <BaseStyles />
       <SkipLink href='#main-content'>Skip to main content</SkipLink>
-      <>
-        <Router basename={process.env.PUBLIC_URL}>
-          <Routes>
-            {appNavPaths.map(path => (
-              <Route
-                key={`app-nav-${path}`}
-                path={path}
-                element={<AppNav />}
-              />
-            ))}
-            <Route path='/' element={<Home />} />
-          </Routes>
-          <Routes>
+      <Router basename={process.env.PUBLIC_URL}>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route element={<AppChrome />}>
             <Route
-              path='/stateTerr/IL'
+              path='stateTerr/IL'
               element={<Navigate to='/year/1863/stateTerr/IL/office/Springfield' replace />}
             />
             <Route
-              path='/year/:year/stateTerr/IL'
+              path='year/:year/stateTerr/IL'
               element={<DefaultOfficeRedirect office='Springfield' />}
             />
             <Route
-              path='/stateTerr/IN'
+              path='stateTerr/IN'
               element={<Navigate to='/year/1863/stateTerr/IN/office/Indianapolis' replace />}
             />
             <Route
-              path='/year/:year/stateTerr/IN'
+              path='year/:year/stateTerr/IN'
               element={<DefaultOfficeRedirect office='Indianapolis' />}
             />
             <Route
-              path='/introduction'
+              path='introduction'
               element={<Introduction />}
             />
             <Route
-              path='/dispossession'
+              path='dispossession'
               element={<IndigenousDispossession />}
             />
             <Route
-              path='/about'
+              path='about'
               element={<About />}
             />
             {canonicalMapPaths.map(path => (
               <Route
                 key={`app-layout-map-${path}`}
-                path={path}
+                path={path.replace(/^\//, '')}
                 element={<AppLayout />}
               />
             ))}
             {[...legacyTextPaths, ...legacyMapPaths].map(path => (
               <Route
                 key={`app-layout-legacy-${path}`}
-                path={path}
+                path={path.replace(/^\//, '')}
                 element={<CanonicalRouteRedirect />}
               />
             ))}
-          </Routes>
-        </Router>
-      </>
+          </Route>
+        </Routes>
+      </Router>
     </AppContainer>
   );
 };

@@ -6,6 +6,9 @@ import { Point } from '../../Map.d';
 import States from '../../../../data/states.json';
 import NorthAmerica from '../../../../data/northAmerica.json';
 import { CANVASSIZE } from '../../../Config';
+import * as Styled from './styled';
+import { useMapReservations, useMapOpenReservations } from '../../../hooks';
+import * as Constants from '../../../Constants';
 
 interface OpenReservations {
   reservations1912: string;
@@ -18,9 +21,11 @@ const Map = () => {
   const { width: screenWidth } = (useContext(DimensionsContext) as Dimensions);
   const width = Math.min(1000 * 0.95, screenWidth * 0.9);
   const height = 1.5 * width * 500 / 960;
-  const [openReservations, setOpenReservations] = useState<OpenReservations>(null);
+  const indianLands = useMapReservations(1912);
+  const reservations = indianLands.filter(d => d.type === 'reservation');
+  const openReservations = useMapOpenReservations();
 
-  // calculate values
+  // calculate value
   const xGutter = 2;
   const yGutter = 2;
   const dx = CANVASSIZE * 0.7; // the 0.7 accounts for there not being any states with homesteading east of MI/OH
@@ -33,139 +38,102 @@ const Map = () => {
   const translateY = height / 2 - scale * center[1];
   const transform = `translate(${translateX} ${translateY}) rotate(${rotation} ${center[0] * scale} ${center[1] * scale})`;
 
-  // load the data for the map
-  useEffect(() => {
-    axios(`${process.env.PUBLIC_URL}/data/OpenReservations.json`)
-      .then(response => {
-        setOpenReservations(response.data as OpenReservations);
-      });
-  }, []);
 
   return (
-    <div
-    >
+    <Styled.Figure>
+      <Styled.Shell $height={height}>
       <svg
         width={width}
         height={height}
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
-      >
+        >
+                <defs>
+                  <pattern
+                    id='diagonalStripes'
+                    patternUnits='userSpaceOnUse'
+                    width='10'
+                    height='10'
+                    patternTransform='rotate(45)'
+                  >
+                    <rect width='5' height='10' fill={Constants.indianLandsColors} opacity={0.5} />
+                  </pattern>
+                </defs>
         <g
           transform={transform}
         >
           <g transform={`scale(${scale})`}>
             {NorthAmerica.map((d: any) => (
-              <path
+              <Styled.NorthAmericaPath
                 d={d}
                 className='continent'
                 key={d.substring(0, 50)}
               />
             ))}
             {(States as ProjectedState[]).filter(d => d.abbr !== 'DK' && d.abbr !== 'AK').map(state => (
-              <path
+              <Styled.StatePath
                 d={state.d}
-                fill='#333'
-                stroke='black'
-                strokeOpacity={1}
-                strokeWidth={1}
                 key={`state${state.abbr}`}
               />
             ))}
-            {(openReservations) && (
-              <g>
-                <path
-                  d={openReservations.reservations1912}
-                  fill='#D685D6'
-                  fillOpacity={0.7}
-                  stroke='#D685D6'
-                  strokeWidth={1}
+              
+              {reservations.map(reservation => (
+                <Styled.ReservationPath
+                  d={reservation.d}
+                  $isUnceded={false}
+                  $isOpened={false}
+                  $strokeWidth={1.5}
+                  $uncededStrokeWidth={5}
+                  key={reservation.d.substring(0, 50)}
                 />
-                {openReservations.openReservations.map((d, idx: number) => (
-                  <path
-                    d={d.d}
-                    fill='lime'
-                    fillOpacity={0.7}
-                    stroke='lime'
-                    strokeWidth={1}
-                    key={`openRes_polygon${idx}`}
-                  />
-                ))}
+              ))}
 
-                {openReservations.openReservations.map((d, idx: number) => (
-                  <g
-                    transform={`translate(${d.labelCoords[0]} ${d.labelCoords[1] + 6})`}
-                    key={`open_res${idx}`}
-                  >
-                    <text
-                      x={0}
-                      y={0}
-                      textAnchor='middle'
-                      stroke='#000000'
-                      strokeWidth={2}
-                      strokeOpacity={0.5}
-                      fontFamily='"Roboto Condensed", sans-serif'
-                      fontSize='0.7em'
-                    >
-                      {d.year}
-                    </text>
-                    <text
-                      x={0}
-                      y={0}
-                      textAnchor='middle'
-                      fontFamily='"Roboto Condensed", sans-serif'
-                      fontSize='0.7em'
-                    >
-                      {d.year}
-                    </text>
-                  </g>
-                ))}
-              </g>
-            )}
+              {openReservations.map(reservation => (
+                <Styled.ReservationPath
+                  d={reservation.d}
+                  $isUnceded={false}
+                  $isOpened={true}
+                  $strokeWidth={1.5}
+                  $uncededStrokeWidth={5}
+                  key={reservation.d.substring(0, 50)}
+                />
+              ))}
 
+              <text
+                x={440}
+                y={412}
+                fontSize={11}
+                textAnchor='middle'
+                transform={`rotate(${rotation * -1} ${440} ${412})`}
+              >
+                Great Sioux Reservation
+              </text>
 
+              <text
+                x={490}
+                y={570}
+                fontSize={11}
+                textAnchor='start'
+                transform={`rotate(${rotation * -1} ${490} ${570})`}
+              >
+                Indian Territory
+              </text>
           </g>
         </g>
-        <g transform={`translate(10 ${height - 50})`}>
-          <rect
-            x={-10}
-            y={-10}
-            width={20}
-            height={20}
-            fill="lime"
-            fillOpacity={0.7}
-            stroke="lime"
-            strokeWidth={1}
-            transform="translate(15 40)"
-          />
-          <text
-            x={40}
-            y={40}
+        </svg>
+      </Styled.Shell>
+      
+      <Styled.Legend>
+        <Styled.ReservationSwatch />
+        <div>Reservations, 1912</div>
+        <Styled.ReservationOpenedSwatch />
+        <div>Reservations opened to homesteaders, 1891-1912</div>
+      </Styled.Legend>
 
-          >
-            Reservations opened to homesteaders, 1891-1912
-          </text>
-          <rect
-            x={-10}
-            y={-10}
-            width={20}
-            height={20}
-            fill="#D685D6"
-            fillOpacity={0.7}
-            stroke="#D685D6"
-            strokeWidth={1}
-
-            transform="translate(15 0)"
-          />
-          <text
-            x={40}
-            y={10}
-
-          >
-            Reservations, 1912
-          </text>
-        </g>
-      </svg>
-    </div>
+      <Styled.Figcaption>
+        By 1912, nearly half of reservation or what had once been reservation lands had been opened to homesteading.
+      </Styled.Figcaption>
+    </Styled.Figure>
   );
 };
 

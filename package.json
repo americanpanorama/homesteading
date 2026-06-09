@@ -22,7 +22,7 @@
     "build-home-map-data": "node scripts/build-home-map-data.mjs",
     "build-places-date-ranges": "cd data-processing && npm run build-places-date-ranges",
     "start2": "webpack-dev-server --open --config webpack.dev.js --mode development",
-    "copy-public-assets": "rm -rf build/data build/timelineData build/static && cp -R public/data build/data && cp -R public/data/timelineData build/timelineData && cp -R public/static build/static && cp public/favicon.ico build/favicon.ico",
+    "copy-public-assets": "rm -rf build/data build/timelineData build/static && cp -R public/data build/data && cp -R public/data/timelineData build/timelineData && cp -R public/static build/static && cp public/favicon.ico build/favicon.ico && cp public/openReservations.json build/openReservations.json",
     "test": "echo \"No test runner configured\""
   },
   "devDependencies": {

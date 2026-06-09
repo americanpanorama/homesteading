@@ -30,6 +30,8 @@ export interface IndianLandsPolygon {
 
 const indianLandsCache = new Map<number, IndianLandsPolygon[]>();
 const indianLandsRequestCache = new Map<number, Promise<IndianLandsPolygon[]>>();
+let openReservationPolygonsCache: IndianLandsPolygon[] | null = null;
+let openReservationPolygonsRequestCache: Promise<IndianLandsPolygon[]> | null = null;
 
 const FULL_STATE_OFFICES = ['IL', 'IN', 'OH', 'MS'] as const;
 
@@ -378,12 +380,14 @@ export const useMapStates = (): MapStateLayerItem[] => {
     );
 
     return (States as ProjectedState[])
-      // Only keep places that either have geometry for the year, have timeline activity, or are selected.
+      // Only keep places that either have geometry for the year, have timeline on or before the year or on or after the year, or are selected.
       .filter((projectedState) => {
         const hasOfficeGeometry = yearData.offices.some(projectedTownship => projectedTownship.state === projectedState.abbr);
         const timelinePlace = stateTimelineByAbbr.get(projectedState.abbr);
-        const timelineYearStats = getTimelineYearStats(timelinePlace, yearNum);
-        return hasOfficeGeometry || !!timelineYearStats || projectedState.abbr === stateTerr;
+        const hasTimelineActivityBeforeOrOnYear = timelinePlace?.yearData.some(yearData => yearData.year <= yearNum && getTimelineVisualizedAcres(yearData, acresTypes) > 0);
+        const hasTimelineActivityOnOrAfterYear = timelinePlace?.yearData.some(yearData => yearData.year >= yearNum && getTimelineVisualizedAcres(yearData, acresTypes) > 0);
+        const isDuringActiveTimeline = timelinePlace && hasTimelineActivityBeforeOrOnYear && hasTimelineActivityOnOrAfterYear;
+        return hasOfficeGeometry || isDuringActiveTimeline || projectedState.abbr === stateTerr;
       })
       .map((projectedState) => {
         const timelinePlace = stateTimelineByAbbr.get(projectedState.abbr);
@@ -413,7 +417,7 @@ export const useMapStates = (): MapStateLayerItem[] => {
           selected: projectedState.abbr === stateTerr,
         };
       })
-      .filter(projectedState => projectedState.stats?.acres_visualized > 0 || projectedState.selected)
+      // .filter(projectedState => projectedState.stats?.acres_visualized > 0 || projectedState.selected)
       .sort((a, b) => {
         if (!a.stats || !b.stats) {
           return 0;
@@ -429,8 +433,9 @@ export const useMapStates = (): MapStateLayerItem[] => {
  * Results are cached by year so toggling views or rerendering the map does not
  * trigger another network request for the same file.
  */
-export const useMapReservations = (): IndianLandsPolygon[] => {
-  const { yearNum } = useURLParams();
+export const useMapReservations = (year?: number): IndianLandsPolygon[] => {
+  const { yearNum: _yearNum } = useURLParams();
+  const yearNum = year || _yearNum;
   const [polygons, setPolygons] = React.useState<IndianLandsPolygon[]>(() => (
     indianLandsCache.get(yearNum) || []
   ));
@@ -444,21 +449,7 @@ export const useMapReservations = (): IndianLandsPolygon[] => {
       return;
     }
 
-    const inFlightRequest = indianLandsRequestCache.get(yearNum) || axios(
-      `${process.env.PUBLIC_URL}/data/indianLandsYearData/${yearNum}.json`,
-    )
-      .then((response) => response.data as IndianLandsPolygon[])
-      .then((responsePolygons) => {
-        indianLandsCache.set(yearNum, responsePolygons);
-        indianLandsRequestCache.delete(yearNum);
-        return responsePolygons;
-      })
-      .catch((error) => {
-        indianLandsRequestCache.delete(yearNum);
-        throw error;
-      });
-
-    indianLandsRequestCache.set(yearNum, inFlightRequest);
+    const inFlightRequest = fetchIndianLandsForYear(yearNum);
 
     inFlightRequest
       .then((responsePolygons) => {
@@ -478,6 +469,92 @@ export const useMapReservations = (): IndianLandsPolygon[] => {
   }, [yearNum]);
 
   return polygons;
+};
+
+const fetchIndianLandsForYear = (yearNum: number): Promise<IndianLandsPolygon[]> => {
+  const cachedPolygons = indianLandsCache.get(yearNum);
+  if (cachedPolygons) {
+    return Promise.resolve(cachedPolygons);
+  }
+
+  const inFlightRequest = indianLandsRequestCache.get(yearNum);
+  if (inFlightRequest) {
+    return inFlightRequest;
+  }
+
+  const request = axios(
+    `${process.env.PUBLIC_URL}/data/indianLandsYearData/${yearNum}.json`,
+  )
+    .then((response) => response.data as IndianLandsPolygon[])
+    .then((responsePolygons) => {
+      indianLandsCache.set(yearNum, responsePolygons);
+      indianLandsRequestCache.delete(yearNum);
+      return responsePolygons;
+    })
+    .catch((error) => {
+      indianLandsRequestCache.delete(yearNum);
+      throw error;
+    });
+
+  indianLandsRequestCache.set(yearNum, request);
+  return request;
+};
+
+const fetchOpenReservationPolygons = (): Promise<IndianLandsPolygon[]> => {
+  if (openReservationPolygonsCache) {
+    return Promise.resolve(openReservationPolygonsCache);
+  }
+
+  if (openReservationPolygonsRequestCache) {
+    return openReservationPolygonsRequestCache;
+  }
+
+  openReservationPolygonsRequestCache = axios(`${process.env.PUBLIC_URL}/openReservations.json`)
+    .then((response) => response.data as IndianLandsPolygon[])
+    .then((openReservationPolygons) => {
+      openReservationPolygonsCache = openReservationPolygons;
+      openReservationPolygonsRequestCache = null;
+      return openReservationPolygons;
+    })
+    .catch((error) => {
+      openReservationPolygonsRequestCache = null;
+      throw error;
+    });
+
+  return openReservationPolygonsRequestCache;
+};
+
+export const useMapOpenReservations = (): IndianLandsPolygon[] => {
+  const [openReservationPolygons, setOpenReservationPolygons] = React.useState<IndianLandsPolygon[]>(() => (
+    openReservationPolygonsCache || []
+  ));
+
+  React.useEffect(() => {
+    let isCancelled = false;
+
+    if (openReservationPolygonsCache) {
+      setOpenReservationPolygons(openReservationPolygonsCache);
+      return;
+    }
+
+    fetchOpenReservationPolygons()
+      .then((polygons) => {
+        if (!isCancelled) {
+          setOpenReservationPolygons(polygons);
+        }
+      })
+      .catch(() => {
+        if (!isCancelled) {
+          setOpenReservationPolygons([]);
+        }
+      });
+
+    return () => {
+      isCancelled = true;
+    };
+  }, []);
+
+  return React.useMemo(() => openReservationPolygons, [openReservationPolygons]);
 };
 
 /** 

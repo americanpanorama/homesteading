@@ -162,7 +162,7 @@ export const NorthAmericaPath = styled.path`
 
 export const StatePath = styled.path`
   fill: rgba(255, 255, 255, 0.05);
-  stroke: rgba(33, 29, 22, 0.28);
+  stroke: #ccc;
   stroke-width: 0.75;
   vector-effect: non-scaling-stroke;
   pointer-events: none;

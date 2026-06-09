@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import * as Constants from '../../../Constants';
 
 export const Container = styled.div`
+  box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
   width: 100%;

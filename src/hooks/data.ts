@@ -1,16 +1,19 @@
 import * as React from 'react';
 import axios from 'axios';
-import { ProjectedTownship, ProjectedTownshipAllOffices, YearData, YearDataRaw } from '../components/Map.d';
+import { ConflictData, ProjectedTownship, ProjectedTownshipAllOffices, YearData, YearDataRaw } from '../components/Map.d';
 import { TimelinePlaceData } from '../index.d';
 import { useURLParams } from './routing';
 
 const DEFAULT_YEAR_DATA: YearData = { offices: [], conflicts: [] };
 const DEFAULT_YEAR = 1863;
+const LAST_YEAR = 1912;
 
 const yearDataCache = new Map<string, YearData>();
 const yearDataRequestCache = new Map<string, Promise<YearData>>();
 const timelineDataCache = new Map<string, TimelinePlaceData[]>();
 const timelineDataRequestCache = new Map<string, Promise<TimelinePlaceData[]>>();
+const stateTimelineConflictsCache = new Map<string, Map<string, ConflictData[]>>();
+const stateTimelineConflictsRequestCache = new Map<string, Promise<Map<string, ConflictData[]>>>();
 
 const FULL_STATE_OFFICE_STATES = ['IL', 'IN', 'MS', 'OH'];
 
@@ -185,3 +188,105 @@ export const useTimelineData = (place: string): TimelinePlaceData[] => {
 
   return timelineData;
 };
+
+const getOfficeConflictKey = (office: string): string => office.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+
+const getConflictIdentity = (conflict: ConflictData): string => [
+  conflict.names,
+  conflict.state,
+  conflict.office,
+  conflict.start_date.year,
+  conflict.start_date.month,
+  conflict.start_date.day,
+  conflict.x.toFixed(3),
+  conflict.y.toFixed(3),
+].join('|');
+
+const fetchStateTimelineConflicts = (stateTerr: string): Promise<Map<string, ConflictData[]>> => {
+  const cached = stateTimelineConflictsCache.get(stateTerr);
+  if (cached) {
+    return Promise.resolve(cached);
+  }
+
+  const inFlight = stateTimelineConflictsRequestCache.get(stateTerr);
+  if (inFlight) {
+    return inFlight;
+  }
+
+  const years = Array.from({ length: LAST_YEAR - DEFAULT_YEAR + 1 }, (_value, index) => DEFAULT_YEAR + index);
+  const request = Promise.all(years.map(year => fetchYearData(year.toString())))
+    .then((yearsData) => {
+      const groupedConflicts = new Map<string, ConflictData[]>();
+      const seenConflicts = new Set<string>();
+
+      yearsData.forEach(yearData => {
+        yearData.conflicts
+          .filter(conflict => conflict.state === stateTerr)
+          .forEach(conflict => {
+            const conflictIdentity = getConflictIdentity(conflict);
+            if (seenConflicts.has(conflictIdentity)) {
+              return;
+            }
+
+            seenConflicts.add(conflictIdentity);
+            const officeKey = getOfficeConflictKey(conflict.office);
+            const officeConflicts = groupedConflicts.get(officeKey) || [];
+            officeConflicts.push(conflict);
+            groupedConflicts.set(officeKey, officeConflicts);
+          });
+      });
+
+      groupedConflicts.forEach((conflicts) => {
+        conflicts.sort((a, b) => (
+          a.start_date.year - b.start_date.year
+          || a.start_date.month - b.start_date.month
+          || a.start_date.day - b.start_date.day
+        ));
+      });
+
+      stateTimelineConflictsCache.set(stateTerr, groupedConflicts);
+      stateTimelineConflictsRequestCache.delete(stateTerr);
+      return groupedConflicts;
+    })
+    .catch(error => {
+      stateTimelineConflictsRequestCache.delete(stateTerr);
+      throw error;
+    });
+
+  stateTimelineConflictsRequestCache.set(stateTerr, request);
+  return request;
+};
+
+export const useStateTimelineConflicts = (stateTerr?: string): Map<string, ConflictData[]> => {
+  const [timelineConflicts, setTimelineConflicts] = React.useState<Map<string, ConflictData[]>>(
+    stateTerr ? stateTimelineConflictsCache.get(stateTerr) || new Map<string, ConflictData[]>() : new Map<string, ConflictData[]>(),
+  );
+
+  React.useEffect(() => {
+    if (!stateTerr) {
+      setTimelineConflicts(new Map<string, ConflictData[]>());
+      return undefined;
+    }
+
+    let isMounted = true;
+    fetchStateTimelineConflicts(stateTerr)
+      .then(conflicts => {
+        if (isMounted) {
+          setTimelineConflicts(conflicts);
+        }
+      })
+      .catch(() => {
+        if (isMounted) {
+          setTimelineConflicts(new Map<string, ConflictData[]>());
+        }
+      });
+
+    return () => {
+      isMounted = false;
+    };
+  }, [stateTerr]);
+
+  return timelineConflicts;
+};
+
+export const getTimelineConflictOfficeKey = getOfficeConflictKey;

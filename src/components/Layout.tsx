@@ -6,8 +6,6 @@ import { Dimensions } from '../index.d';
 import Map from '../components/Map/Index';
 import TimelineDateHeader from '../components/DateHeader';
 import Timeline from '../components/Timeline/Index';
-import Text from '../components/Text';
-import Masthead from '../components/Masthead';
 import SelectedPlacePanel from '../components/SelectedPlacePanel/Index';
 import { Sidebar } from '../styled';
 import * as Styled from './Layout.styled';
@@ -20,7 +18,7 @@ import {
 const AppLayout = () => {
   const params = useURLParams();
   const buildLink = useLinkBuilder();
-  const { text, office, stateTerr, year, yearNum, stateTerrData, selectedPlaceName } = params;
+  const { office, stateTerr, year, yearNum, stateTerrData, selectedPlaceName } = params;
   const { mapDimensions, width, height } = useContext(DimensionsContext) as Dimensions;
   const { size: mapSize } = mapDimensions;
   const isCompactLayout = !Constants.isWideViewport(width, height);
@@ -32,15 +30,6 @@ const AppLayout = () => {
       setIsDrawerOpen(false);
     }
   }, [isCompactLayout]);
-
-  if (text) {
-    return (
-      <>
-        <Masthead />
-        <Text />
-      </>
-    );
-  }
 
   if (isCompactLayout) {
     const placeTitle = (stateTerr && selectedPlaceName)
@@ -66,7 +55,6 @@ const AppLayout = () => {
 
     return (
       <>
-        <Masthead />
         <TimelineDateHeader />
         <Map />
 
@@ -123,7 +111,6 @@ const AppLayout = () => {
 
   return (
     <>
-      <Masthead />
       <Map />
       <TimelineDateHeader />
       <Sidebar data-layout-sidebar $isCollapsed={mapSize === 'fullscreen'} aria-hidden={mapSize === 'fullscreen'}>

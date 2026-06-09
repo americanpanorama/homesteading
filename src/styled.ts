@@ -99,6 +99,7 @@ export const Sidebar = styled.aside<{ $isCollapsed?: boolean }>`
     grid-row: 2 / span 2;
     overflow-x: hidden;
     overflow-y: auto;
+    scrollbar-gutter: stable;
     padding-top: 0;
     display: ${({ $isCollapsed }) => ($isCollapsed ? 'none' : 'block')};
   }

@@ -6,7 +6,10 @@ import { Point } from '../../Map.d';
 import States from '../../../../data/states.json';
 import AggregatedClaims from '../../../../data/aggregatedClaims.json';
 import NorthAmerica from '../../../../data/northAmerica.json';
+import Border from '../../../../data/internationalBorder.json';
 import { CANVASSIZE } from '../../../Config';
+import * as Styled from './styled';
+import * as Constants from '../../../Constants';
 
 const Map = () => {
     const { useEffect, useContext, useState } = React;
@@ -38,8 +41,8 @@ const Map = () => {
     }, []);
 
     return (
-        <div
-        >
+        <Styled.Figure>
+        <Styled.Shell $height={height}>
             <svg
                 width={width * 2}
                 height={height}
@@ -51,77 +54,61 @@ const Map = () => {
                 >
                     <g transform={`scale(${scale})`}>
                         {NorthAmerica.map((d: any) => (
-                            <path
+                            <Styled.NorthAmericaPath
                                 d={d}
-                                className='continent'
                                 key={d.substring(0, 50)}
                             />
                         ))}
 
                         {(States as ProjectedState[]).filter(d => d.abbr !== 'DK' && d.abbr !== 'AK').map(state => (
-                            <path
+                            <Styled.StatePath
                                 d={state.d}
-                                fill='#333'
-                                stroke='black'
-                                strokeWidth={3}
                                 key={`statePath${state.abbr}`}
                             />
+                        ))}
+                        {(Border as string[]).map(d => (
+                            <Styled.BorderPath d={d} key={`source-tile-border-${d.substring(0, 50)}`} />
                         ))}
                         {(indianCountryD) && (
                             <path
                                 d={indianCountryD}
-                                fill='green'
-                                fillOpacity={0.75}
-                                stroke='green'
-                                strokeWidth={2}
-                                strokeDasharray='2 6'
+                                fill="rgba(103, 229, 197, 0.5)"
                             />
                         )}
                         {(States as ProjectedState[]).filter(d => d.abbr !== 'DK' && d.abbr !== 'AK').map(state => (
+                        
                             <circle
                                 cx={state.labelCoords[0]}
                                 cy={state.labelCoords[1]}
-                                r={Math.sqrt(AggregatedClaims.find(d => d.state === state.abbr).acresClaimed) * 0.003}
-                                fill='#FACB3E'
+                                r={(Math.sqrt(AggregatedClaims.find(d => d.state === state.abbr)!.acresClaimed!)) * 0.003}
+                                fill={Constants.heatmapGradientColors[2]}
                                 key={`stateData${state.abbr}`}
                             />
                         ))}
 
                     </g>
                 </g>
-                <g transform={`translate(10 ${height - 60})`}>
-                    <circle
-                        cx={18}
-                        cy={12}
-                        r={10}
-                        fill='#FACB3E'
-                    />
-                    <text
-                        x={40}
-                        y={20}
-
-                    >
-                        Homestead Claims, 1863-1912
-                    </text>
-                    <path
-                        fill="green"
-                        fillOpacity={0.7}
-                        stroke="green"
-                        strokeDasharray="10 20"
-                        strokeWidth={5}
-                        d="M22.3,-33.3C28.3,-30.8,32.3,-23.7,39.1,-15.8C45.9,-7.9,55.6,0.7,58,10.8C60.4,20.9,55.5,32.4,49,45.6C42.5,58.8,34.2,73.7,22.6,77.4C10.9,81.1,-4.3,73.6,-10.8,60.7C-17.3,47.8,-15.1,29.5,-17.7,19.3C-20.4,9.2,-27.8,7.1,-33.8,1.6C-39.7,-4,-44.1,-13.1,-42.9,-21.2C-41.7,-29.3,-34.8,-36.4,-26.7,-38C-18.7,-39.5,-9.3,-35.5,-0.6,-34.5C8.1,-33.6,16.3,-35.8,22.3,-33.3Z"
-                        transform="translate(15 40) scale(0.2)"
-                    />
-                    <text
-                        x={40}
-                        y={50}
-
-                    >
-                        "Indian Country," May 1862
-                    </text>
-                </g>
             </svg>
-        </div>
+            </Styled.Shell>
+
+            <Styled.Legend>
+                <Styled.LegendCircle $color={Constants.heatmapGradientColors[2]} />
+                <div>Homestead Claims, 1863-1912</div>
+                <svg width={34} height={24} viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path
+                        fill='rgba(103, 229, 197, 0.8)'
+                        fillOpacity={1}
+                        d="M22.3,-33.3C28.3,-30.8,32.3,-23.7,39.1,-15.8C45.9,-7.9,55.6,0.7,58,10.8C60.4,20.9,55.5,32.4,49,45.6C42.5,58.8,34.2,73.7,22.6,77.4C10.9,81.1,-4.3,73.6,-10.8,60.7C-17.3,47.8,-15.1,29.5,-17.7,19.3C-20.4,9.2,-27.8,7.1,-33.8,1.6C-39.7,-4,-44.1,-13.1,-42.9,-21.2C-41.7,-29.3,-34.8,-36.4,-26.7,-38C-18.7,-39.5,-9.3,-35.5,-0.6,-34.5C8.1,-33.6,16.3,-35.8,22.3,-33.3Z"
+                        transform="translate(20 10) scale(0.2)"
+                    />
+                </svg>
+                <div>"Indian Country," May 1862</div>
+            </Styled.Legend>
+
+            <Styled.Figcaption>
+              Most of the land that was homesteadeders claimed in the half century after the passage of the Homestead Act in 1862 was land that had not been ceded by Indigenous nations to the United States government at the time of the Act's passage.
+            </Styled.Figcaption>
+        </Styled.Figure>
     );
 };
 

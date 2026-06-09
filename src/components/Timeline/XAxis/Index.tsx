@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { Dimensions } from "../../../index.d";
 import { DimensionsContext } from "../../../DimensionsContext";
 
-const YAxis = () => {
+const XAxis = () => {
   const x = useTimelineX();
   const params = useURLParams();
   const buildLink = useLinkBuilder();
@@ -17,14 +17,14 @@ const YAxis = () => {
   return (
     <svg
       width={width}
-      height={65}
+      height={35}
     >
-      <Styled.AxisLabelsGroup transform="translate(0 18)">
+      <Styled.AxisLabelsGroup>
         {/* These labels define the shared year anchors for both the header and the row grid. */}
         {TIMELINE_YEAR_LABELS.map((year: number) => (
           <Styled.Label
             x={x(year + 0.5)}
-            y={34}
+            y={25}
             key={`yearAxisFor${year}`}
           >
             {year}
@@ -33,7 +33,7 @@ const YAxis = () => {
 
         <Styled.CurrentYearLabel
           x={x(yearNum + 0.5)}
-          y={34}
+          y={25}
         >
           {yearNum}
           <tspan
@@ -64,4 +64,4 @@ const YAxis = () => {
   );
 };
 
-export default YAxis;
+export default XAxis;
