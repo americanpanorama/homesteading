@@ -72,10 +72,10 @@ export const Panel = styled.div<{ $collapsed: boolean }>`
     grid-template-columns: minmax(160px, 0.95fr) minmax(220px, 1.05fr);
     justify-content: center;
     max-height: none;
-    margin-top: 0;
+    margin: 0 auto;
     background: ${colors.legendPanelLandscapeBackgroundColor};
     box-shadow: 0 4px 10px ${colors.legendPanelLandscapeShadowColor};
-    max-width: 1200px;
+    max-width: 1000px;
 
     section:not(:last-child) {
       border-bottom: 0;

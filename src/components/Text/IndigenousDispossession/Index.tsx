@@ -1,9 +1,10 @@
 import React from 'react';
 import IndianCountryMap from '../IndianCountryMap/Index';
 import OpenReservationsMap from '../OpenReservationsMap/Index';
+import * as Styled from '../styled';
 
 const IndigenousDispossession = () => (
-    <React.Fragment>
+    <Styled.LongformContainer id='main-content'>
         <h3>Homesteading and Indigenous Dispossession</h3>
 
         <p>Did homestead settlers benefit from Indigenous land dispossession? To what extent did they cause it? One can examine these multifaceted questions at more general as well as concrete levels.</p>
@@ -22,15 +23,16 @@ const IndigenousDispossession = () => (
 
         <h3>Selected Literature</h3>
         <ul>
-            <li>Campbell, Susan D. “Reservations: The Surplus Lands Acts and the Question of Reservation Disestablishment”. <cite>American Indian Law Review</cite> 12, No. 1 (1984): 57–99.</li>
-            <li>Edwards, Richard, Jacob K. Friefeld, und Rebecca S. Wingo. <cite>Homesteading the Plains: Toward a New History</cite>.</li>
-            <li>Frymer, Paul. B<cite>uilding an American Empire: The Era of Territorial and Political Expansion</cite>. Princeton, NJ: Princeton University Press, 2017.</li>
-            <li>Hansen, Karen, and Mignon Duffy. “Mapping the Dispossession: Scandinavian Homesteading at Fort Totten, 1900-1930”. Great Plains Research: A Journal of Natural and Social Sciences 18, No. 1 (2008): 67–80.</li>
-            <li>Hansen, Karen V. <cite>Encounter on the Great Plains: Scandinavian Settlers and the Dispossession of Dakota Indians</cite>, 1890-1930. New York: Oxford University Press, 2013.</li>
-            <li>Monnett, John H. “Reimagining Transitional Kansas Landscapes: Environment and Violence”. <cite>Kansas History</cite> 34, No. 4 (Winter 2011): 258–79.</li>
-            <li>Wilm, Julius. “‘The Indians must yield’: Antebellum Free Land, the Homestead Act, and the Displacement of Native Peoples”. <cite>Bulletin of the German Historical Institute</cite>, No. 67 (Fall 2020): 17–39.</li>
+            <li>Susan D. Campbell, “Reservations: The Surplus Lands Acts and the Question of Reservation Disestablishment,” <cite>American Indian Law Review</cite> 12, no. 1 (1984): 57–99.</li>
+            <li>Richard Edwards, Jacob K. Friefeld, and Rebecca S. Wingo, <cite>Homesteading the Plains: Toward a New History</cite>.</li>
+            <li><a href="https://doi.org/10.23943/princeton/9780691166056.001.0001" target="_blank" rel="noopener noreferrer">Paul Frymer, <cite>Building an American Empire: The Era of Territorial and Political Expansion</cite> (Princeton, NJ: Princeton University Press, 2017).</a></li>
+            <li>Karen V. Hansen and Mignon Duffy, “Mapping the Dispossession: Scandinavian Homesteading at Fort Totten, 1900–1930,” <cite>Great Plains Research: A Journal of Natural and Social Sciences</cite> 18, no. 1 (2008): 67–80.</li>
+            <li><a href="https://doi.org/10.1093/acprof:oso/9780199746811.001.0001" target="_blank" rel="noopener noreferrer">Karen V. Hansen, <cite>Encounter on the Great Plains: Scandinavian Settlers and the Dispossession of Dakota Indians, 1890–1930</cite> (New York: Oxford University Press, 2013).</a></li>
+            <li>John H. Monnett, “Reimagining Transitional Kansas Landscapes: Environment and Violence,” <cite>Kansas History</cite> 34, no. 4 (Winter 2011): 258–79.</li>
+            <li>Julius Wilm, “‘The Indians Must Yield’: Antebellum Free Land, the Homestead Act, and the Displacement of Native Peoples,” <cite>Bulletin of the German Historical Institute</cite>, no. 67 (Fall 2020): 17–39.</li>
         </ul>
-    </React.Fragment>
+
+    </Styled.LongformContainer>
 );
 
 export default IndigenousDispossession;

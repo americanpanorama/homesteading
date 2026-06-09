@@ -1,7 +1,9 @@
 import React from 'react';
+import * as Styled from '../styled';
+import SourceTileFigure from '../SourceTileFigure/Index';
 
 const Introduction = () => (
-    <React.Fragment>
+    <Styled.LongformContainer id='main-content'>
         <h3>
             Introduction
         </h3>
@@ -11,26 +13,29 @@ const Introduction = () => (
         <p>Historians of the neo-progressive school around Paul W. Gates, which dominated the field from the 1930s to the 1970s, found truth in these complaints. In recent years, however, historians have questioned some of these assumptions. In addition, researchers have also gone beyond measuring the practice of homesteading against its ideals. Instead, studies ask the following questions: To what extent have homesteaders contributed to and benefited from the dispossession and marginalization of Indigenous peoples? Was the opportunity of obtaining land in practice available to all citizens, including non-whites? Or did the land donation program contribute to the existing racial wealth gap by effectively (if not by law) limiting the land to white claimants? How did the law affect the division of labor and the position of women in settler households? What ecological implications did homestead settlements have in different contexts?</p>
 
         <h3>Mapping homesteading</h3>
-        <p>This map offers a new view of the history of homesteading in the first fifty years following the adoption of the Homestead Act. Mapping the General Land Office's internal statistics from local land offices for the entire period from 1863 to 1912, the map provides a granular view of homestead settlements. Previously, statistics were only available for the state level, covering a shorter period, and were compiled in inconsistent ways. The map uses newly digitized diagrams of local land districts that the General Land Office had prepared for a newer published illustrated history to visualize the new statistics. By going below the state level, the map enables a more intricate view of where homesteaders claimed land—and how many claims were converted to full property titles by residency or early purchase (“commutations”).</p>
+        <p>This map offers a new view of the history of homesteading in the first fifty years following the adoption of the Homestead Act. Mapping the General Land Office's internal statistics from local land offices for the entire period from 1863 to 1912, the map provides a granular view of homestead settlements. Previously, statistics were only available for the state level, covering a shorter period, and were compiled in inconsistent ways. The map uses newly digitized diagrams of local land districts that the General Land Office had prepared for a newer published illustrated history to visualize the new statistics.</p>
+        <SourceTileFigure />
         <p>The map shows previously unknown patterns in the data, such as local land rushes, which tend to get lost in state-level data. The map also reveals locally very distinct patterns of perfecting claims by commutation instead of residency—which may add to the understanding of controversies surrounding the practice. There are also some larger discoveries in this map; for example, the relatively large number of original and final homesteads in the Deep South states of Alabama, Arkansas, Florida, Louisiana, and Mississippi. Little is known about how homesteading worked in the Jim Crow South, who could use the law, and how it affected social relations under Jim Crow. There has also been little research on homesteading in the Great Lakes region. Beyond making these and other patterns visible, the map also allows for contextualizing qualitative sources, for example, by showing to what extent they corresponded to general patterns—or contradicted them.</p>
         <p>Our map allows for re-examining many different research questions, both old and new. A specific purpose of the map is however to show how homesteaders contributed to and benefited from the dispossession of Indigenous nations. To serve this purpose, we have added another data category to the map: frontier clashes in the "public land" states, that is to say, all the western states except Texas (where the Homestead Act did not apply). These event data show a temporal overlap in the claims between Indigenous people and homesteaders who built farms on previously Indigenous lands. In later years, when the U.S. government carved up reservations into allotments for individual Indigenous households under the 1887 Allotment Act (also known as the Dawes Act), there were also the "homesteads on Indian land." These were claims on the unallotted or "surplus lands" of Indian reservations. In different ways—and with vastly different consequences—homesteading contributed to the marginalization of Indigenous peoples through the entire era covered by this map (for more on this, see the text "Homesteading and Indigenous Dispossession").</p>
 
         <h3>Selected Literature</h3>
         <ul>
-            <li>Dick, Everett. <cite>The Lure of the Land: A Social History of the Public Lands from the Articles of Confederation to the New Deal</cite>. Lincoln, NE: University of Nebraska Press, 1970, pp. 138-159.</li>
-            <li>Eckstrom, Mikal Brotnov, and Richard Edwards. “Staking Their Claim: DeWitty and Black Homesteaders in Nebraska.” <cite>Great Plains Quarterly</cite> 38, no. 3 (2018): 295–317.</li>
-            <li>Edwards, Richard. “To Commute or Not Commute, the Homesteader’s Dilemma”. <cite>Great Plains Quarterly</cite> 38, No. 2 (2018): 129–50. </li>
-            <li>Edwards, Richard, Jacob K. Friefeld, und Rebecca S. Wingo. <cite>Homesteading the Plains: Toward a New History</cite>. Lincoln, NE: University of Nebraska Press, 2017.</li>
-            <li>Edwards, Richard, Jacob K. Friefeld, und Mikal Brotnov Eckstrom. “‘Canaan on the Prairie’: New Evidence on the Number of African American Homesteaders in the Great Plains”. <cite>Great Plains Quarterly</cite> 39, No. 3 (2019): 223–41.</li>
-            <li>Friefeld, Jacob K., Mikal Brotnov Eckstrom, und Richard Edwards. “African American Homesteader “Colonies” in the Settling of the Great Plains”. <cite>Great Plains Quarterly</cite> 39, No. 1 (2019): 11–37.</li>
-            <li>Gates, Paul W. <cite>History of Public Land Law Development</cite>. Washington DC: US Government Printing Office, 1968, pp. 387-462.</li>
-            <li>Gates, Paul W. “The Homestead Law in an Incongruous Land System”. <cite>American Historical Review</cite> 41, No. 4 (1936): 652–81.</li>
-            <li>Gregg, Sara M. “Imagining Opportunity: The 1909 Enlarged Homestead Act and the Promise of the Public Domain”. <cite>Western Historical Quarterly</cite> 50, No. 3 (2019): 257–79.</li>
-            <li>Gregg, Sara M. “American Land Rush: “A Lonely Homesteader” Searches for Security in the Montana Homestead Boom”. Environment & Society Portal, December 15, 2020. http://www.environmentandsociety.org/exhibitions/american-land-rush.</li>
-            <li>Landon, George Cooke. “The Homestead Act: Attitudes and Reactions”. PhD dissertation, George Washington University, 1964.</li>
-            <li>Okada, Yasuo. Public Lands and Pioneer Farmers: Gage County, Nebraska, 1850-1900. New York: Arno Press, 1978.</li>
+            <li>Everett Dick, <cite>The Lure of the Land: A Social History of the Public Lands from the Articles of Confederation to the New Deal</cite> (Lincoln, NE: University of Nebraska Press, 1970), 138–159.</li>
+            <li><a href="https://doi.org/10.1353/gpq.2018.0043" target="_blank" rel="noopener noreferrer">Mikal Brotnov Eckstrom and Richard Edwards, “Staking Their Claim: DeWitty and Black Homesteaders in Nebraska,” <cite>Great Plains Quarterly</cite> 38, no. 3 (2018): 295–317.</a></li>
+            <li>Richard Edwards, “To Commute or Not Commute, the Homesteader’s Dilemma,” <cite>Great Plains Quarterly</cite> 38, no. 2 (2018): 129–50.</li>
+            <li>Richard Edwards, Jacob K. Friefeld, and Rebecca S. Wingo, <cite>Homesteading the Plains: Toward a New History</cite> (Lincoln, NE: University of Nebraska Press, 2017).</li>
+            <li><a href="https://doi.org/10.1353/gpq.2019.0036" target="_blank" rel="noopener noreferrer">Richard Edwards, Jacob K. Friefeld, and Mikal Brotnov Eckstrom, “‘Canaan on the Prairie’: New Evidence on the Number of African American Homesteaders in the Great Plains,” <cite>Great Plains Quarterly</cite> 39, no. 3 (2019): 223–41.</a></li>
+            <li><a href="https://doi.org/10.1353/gpq.2019.0001" target="_blank" rel="noopener noreferrer">Jacob K. Friefeld, Mikal Brotnov Eckstrom, and Richard Edwards, “African American Homesteader ‘Colonies’ in the Settling of the Great Plains,” <cite>Great Plains Quarterly</cite> 39, no. 1 (2019): 11–37.</a></li>
+            <li>Paul W. Gates, <cite>History of Public Land Law Development</cite> (Washington, DC: US Government Printing Office, 1968), 387–462.</li>
+            <li><a href="https://doi.org/10.1086/ahr/41.4.652" target="_blank" rel="noopener noreferrer">Paul W. Gates, “The Homestead Law in an Incongruous Land System,” <cite>American Historical Review</cite> 41, no. 4 (1936): 652–81.</a></li>
+            <li><a href="https://doi.org/10.1093/whq/whz044" target="_blank" rel="noopener noreferrer">Sara M. Gregg, “Imagining Opportunity: The 1909 Enlarged Homestead Act and the Promise of the Public Domain,” <cite>Western Historical Quarterly</cite> 50, no. 3 (2019): 257–79.</a></li>
+            <li><a href="https://doi.org/10.5282/rcc/8996" target="_blank" rel="noopener noreferrer">Sara M. Gregg, “American Land Rush: ‘A Lonely Homesteader’ Searches for Security in the Montana Homestead Boom,” Environment & Society Portal, December 15, 2020.</a></li>
+            <li>George Cooke Landon, “The Homestead Act: Attitudes and Reactions” (PhD diss., George Washington University, 1964).</li>
+            <li>Yasuo Okada, <cite>Public Lands and Pioneer Farmers: Gage County, Nebraska, 1850–1900</cite> (New York: Arno Press, 1978).</li>
         </ul>
-    </React.Fragment>
+
+
+    </Styled.LongformContainer>
 );
 
 export default Introduction;

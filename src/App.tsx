@@ -4,6 +4,9 @@ import DimensionsContextProvider from './DimensionsContextProvider';
 import { DimensionsContext } from './DimensionsContext';
 import AppLayout from './components/Layout';
 import Home from './components/Home/Index';
+import Introduction from './components/Text/Introduction/Index';
+import IndigenousDispossession from './components/Text/IndigenousDispossession/Index';
+import About from './components/Text/About/Index';
 
 import AppNav from './components/AppNav/Index';
 import { useLinkBuilder, useURLParams } from './hooks';
@@ -47,9 +50,8 @@ const AppShell = () => {
   const canonicalMapPaths = ['', ...combine(['/stateTerr/:stateTerr', '/office/:office', '/panel/:panel', '/view/:view', '/fullOpacity/:fullOpacity'], 1)]
     .map(path => `/year/:year${path}`);
   const legacyMapPaths = combine(['/map/year/:year', '/map/stateTerr/:stateTerr', '/map/office/:office', '/map/panel/:panel', '/map/view/:view', '/map/fullOpacity/:fullOpacity', '/map'], 1);
-  const canonicalTextPaths = [':text', ...canonicalMapPaths.map(d => `/:text${d}`)];
   const legacyTextPaths = legacyMapPaths.map(d => `/:text${d}`);
-  const appNavPaths = [...new Set([...canonicalTextPaths, ...canonicalMapPaths])];
+  const appNavPaths = [...new Set([, ...canonicalMapPaths])];
 
   return (
     <AppContainer $isMapFullscreen={mapDimensions.size === 'fullscreen'}>
@@ -84,13 +86,18 @@ const AppShell = () => {
               path='/year/:year/stateTerr/IN'
               element={<DefaultOfficeRedirect office='Indianapolis' />}
             />
-            {canonicalTextPaths.map(path => (
-              <Route
-                key={`app-layout-text-${path}`}
-                path={path}
-                element={<AppLayout />}
-              />
-            ))}
+            <Route
+              path='/introduction'
+              element={<Introduction />}
+            />
+            <Route
+              path='/dispossession'
+              element={<IndigenousDispossession />}
+            />
+            <Route
+              path='/about'
+              element={<About />}
+            />
             {canonicalMapPaths.map(path => (
               <Route
                 key={`app-layout-map-${path}`}
@@ -105,7 +112,6 @@ const AppShell = () => {
                 element={<CanonicalRouteRedirect />}
               />
             ))}
-            {/* <Route path='*' element={<Navigate to='/' replace />} /> */}
           </Routes>
         </Router>
       </>
