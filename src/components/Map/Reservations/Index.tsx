@@ -14,11 +14,11 @@ const Reservations = () => {
         <pattern
           id='diagonalStripes'
           patternUnits='userSpaceOnUse'
-          width='10'
+          width='6'
           height='10'
           patternTransform='rotate(45)'
         >
-          <rect width='5' height='10' fill={Constants.indianLandsColors} opacity={0.5} />
+          <rect width='3' height='10' fill={Constants.indianLandsColors} opacity={0.5} />
         </pattern>
       </defs>
       {polygons.map((reservation) => (

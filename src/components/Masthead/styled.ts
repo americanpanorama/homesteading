@@ -58,7 +58,7 @@ export const Acquisition = styled.span`
 export const And = styled.span`
   margin: 0 0.15em;  
   color: ${Constants.colors.fullStateDistrictFillColor};
-  font-family: ${Constants.fonts.serif};
+  font-family: "Zen Dots", sans-serif;
   font-size: 1.3em;
   font-weight: 100;
   opacity: 0.75;

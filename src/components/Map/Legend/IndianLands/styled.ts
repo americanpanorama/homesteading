@@ -46,9 +46,9 @@ export const ReservationOpenedSwatch = styled(ReservationSwatch)`
   background: repeating-linear-gradient(
     -45deg,
     ${colors.legendIndianLandsMediumColor},
-    ${colors.legendIndianLandsMediumColor} 4px,
-    transparent 4px,
-    transparent 8px
+    ${colors.legendIndianLandsMediumColor} 3px,
+    transparent 3px,
+    transparent 6px
   );
 `;
 

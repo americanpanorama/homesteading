@@ -87,8 +87,8 @@ export const And = styled.span`
   font-size: 1.5em;
   // color: ${Constants.heatmapGradientColors[5]};
   color: ${Constants.colors.fullStateDistrictFillColor};
-  // font-family: "Zen Dots", sans-serif;
-  font-family: ${Constants.fonts.serif};
+  font-family: "Zen Dots", sans-serif;
+  //font-family: ${Constants.fonts.serif};
   margin: 0 0.2em;
   opacity: 0.5;
   `;

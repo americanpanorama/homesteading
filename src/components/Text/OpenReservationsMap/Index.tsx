@@ -5,6 +5,7 @@ import { Dimensions, ProjectedState } from '../../../index.d';
 import { Point } from '../../Map.d';
 import States from '../../../../data/states.json';
 import NorthAmerica from '../../../../data/northAmerica.json';
+import InternationalBorder from '../../Map/InternationalBorder/Index';
 import { CANVASSIZE } from '../../../Config';
 import * as Styled from './styled';
 import { useMapReservations, useMapOpenReservations } from '../../../hooks';
@@ -52,11 +53,11 @@ const Map = () => {
                   <pattern
                     id='diagonalStripes'
                     patternUnits='userSpaceOnUse'
-                    width='10'
+                    width='6'
                     height='10'
                     patternTransform='rotate(45)'
                   >
-                    <rect width='5' height='10' fill={Constants.indianLandsColors} opacity={0.5} />
+                    <rect width='3' height='10' fill={Constants.indianLandsColors} opacity={0.5} />
                   </pattern>
                 </defs>
         <g
@@ -76,6 +77,8 @@ const Map = () => {
                 key={`state${state.abbr}`}
               />
             ))}
+              
+              <InternationalBorder />
               
               {reservations.map(reservation => (
                 <Styled.ReservationPath

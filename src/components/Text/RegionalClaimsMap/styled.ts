@@ -3,6 +3,7 @@ import * as Constants from '../../../Constants';
 import { hextoRgba } from '../../../utilities';
 export { PopupContainer, PopupData } from '../../Map/Clashes/styled';
 export { Legend } from '../IndianCountryMap/styled';
+export { NorthAmericaPath } from '../SourceTileFigure/styled';
 import { ClashCross as _ClashCross, ClashItem } from '../../Map/Legend/Conflicts/styled';
 
 export { ClashItem };
@@ -40,12 +41,6 @@ export const MapSvg = styled.svg`
 export const MapLayer = styled.g`
 `;
 
-export const NorthAmericaPath = styled.path`
-  fill: #f7f7f7;
-  stroke: #e9eef1;
-  stroke-width: 3;
-  pointer-events: none;
-`;
 
 export const DistrictPath = styled.path.attrs<{
   $fill: string;
@@ -59,6 +54,7 @@ export const DistrictPath = styled.path.attrs<{
   stroke: ${Constants.colors.districtStrokeColor};
   fill-opacity: 0.82;
   stroke-opacity: 0.62;
+  stroke-linejoin: round;
   pointer-events: none;
 `;
 
@@ -68,6 +64,7 @@ export const StateBoundaryPath = styled.path`
   stroke-width: 0.75;
   vector-effect: non-scaling-stroke;
   pointer-events: none;
+  stroke-linejoin: round;
 `;
 
 export const StatePath = styled.path`
@@ -76,14 +73,25 @@ export const StatePath = styled.path`
   stroke-width: 1.35;
   vector-effect: non-scaling-stroke;
   pointer-events: none;
+  stroke-linejoin: round;
 `;
 
 export const ConflictMarker = styled.g<{ $currentYear: boolean }>`
   opacity: ${({ $currentYear }) => ($currentYear ? 1 : 0.58)};
   pointer-events: auto;
 
-  line {
-    stroke: ${({ $currentYear }) => ($currentYear ? Constants.colors.legendConflictColor : hextoRgba(Constants.colors.legendConflictColor, 0.78))};
+  /* first two lines are drop shadow */
+  line:nth-of-type(-n + 2) {
+    stroke: rgba(255, 255, 255, 0.7);
+    stroke-linecap: round;
+  }
+
+  /* last two lines are the cross */
+  line:nth-of-type(n + 3) {
+    stroke: ${({ $currentYear }) =>
+    $currentYear
+      ? Constants.colors.legendConflictColor
+      : hextoRgba(Constants.colors.legendConflictColor, 0.78)};
     stroke-linecap: round;
   }
 `;
@@ -169,14 +177,59 @@ export const Ticks = styled.div`
   }
 `;
 
-export const Tick = styled.div<{ $left: number; $labeled: boolean }>`
+export const TickButton = styled.button<{ $left: number; $labeled: boolean; $selected: boolean }>`
   position: absolute;
   left: ${({ $left }) => `${$left}%`};
   top: 0;
-  width: 1px;
-  height: ${({ $labeled }) => ($labeled ? '16px' : '9px')};
-  background-color: ${({ $labeled }) => ($labeled ? 'rgba(33, 29, 22, 0.5)' : 'rgba(33, 29, 22, 0.28)')};
+  width: 28px;
+  height: 42px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
   transform: translateX(-50%);
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: ${({ $selected }) => ($selected ? '2px' : '1px')};
+    height: ${({ $labeled }) => ($labeled ? '16px' : '9px')};
+    background-color: ${({ $labeled, $selected }) => {
+      if ($selected) {
+        return Constants.colors.accentColor;
+      }
+
+      return $labeled ? 'rgba(33, 29, 22, 0.5)' : 'rgba(33, 29, 22, 0.28)';
+    }};
+    transform: translateX(-50%);
+  }
+
+  &:hover::before,
+  &:focus-visible::before {
+    background-color: ${Constants.colors.accentColor};
+  }
+
+  &:focus-visible {
+    outline: 2px solid ${hextoRgba(Constants.colors.accentColor, 0.48)};
+    outline-offset: 3px;
+  }
+
+  &:disabled {
+    cursor: default;
+  }
+
+  &:disabled:hover::before {
+    background-color: ${({ $labeled, $selected }) => {
+      if ($selected) {
+        return Constants.colors.accentColor;
+      }
+
+      return $labeled ? 'rgba(33, 29, 22, 0.5)' : 'rgba(33, 29, 22, 0.28)';
+    }};
+  }
 `;
 
 export const TickLabel = styled.span`

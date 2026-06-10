@@ -1,5 +1,5 @@
 import React from 'react';
-import { heatmapGradientColors } from '../../../../Constants';
+import { heatmapGradientColors, colors } from '../../../../Constants';
 
 const Gradient = () => {
   return (
@@ -33,18 +33,18 @@ const Gradient = () => {
                   <rect
                     x={0}
                     y={0}
-                    width={180}
+                    width={174}
                     height={20}
                     fill="url(#legend-gradient)"
                   />
                   {[0, 0.01, 0.02, 0.03, 0.04, 0.05].map((value, i) => (
                     <text
                       key={value}
-                      x={i * 36}
+                      x={i * 35}
                       y={35}
-                      fontSize={12}
-                      fontWeight={300}
-                      stroke="grey"
+                      fontSize="0.85em"
+                      fontWeight="700"
+                      fill={colors.lightColor}
                       textAnchor="middle"
                     >
                       {(value * 100).toFixed(0)}%{value === 0.05 && "+"}

@@ -14,6 +14,7 @@ export const Legend = styled.div`
   justify-content: center;
   gap: 8px;
   font-size: 14px;
+  margin-top: 0.5em;
 `; 
 
 export const LegendCircle = styled.div<{ $color: string }>`

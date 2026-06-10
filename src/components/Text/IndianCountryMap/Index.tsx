@@ -93,7 +93,7 @@ const Map = () => {
 
             <Styled.Legend>
                 <Styled.LegendCircle $color={Constants.heatmapGradientColors[2]} />
-                <div>Homestead Claims, 1863-1912</div>
+                <div>Area claimed by homesteaders, scaled, 1863-1912</div>
                 <svg width={34} height={24} viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                     <path
                         fill='rgba(103, 229, 197, 0.8)'

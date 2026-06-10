@@ -16,11 +16,12 @@ const DEFAULT_END_YEAR = 1879;
 const VIEW_WIDTH = 980;
 const VIEW_HEIGHT = 560;
 
-export interface RegionalClaimsClashesMapProps {
+export interface RegionalClaimsMapProps {
   states?: string[];
   startYear?: number;
   endYear?: number;
   caption?: React.ReactNode;
+  includeClashes?: boolean;
 }
 
 const dateLabel = (conflict: ConflictData) => `${conflict.start_date.month}/${conflict.start_date.day}/${conflict.start_date.year}`;
@@ -102,12 +103,13 @@ const useRegionalConflicts = (
   return conflicts;
 };
 
-const RegionalClaimsClashesMap = ({
+const RegionalClaimsMap = ({
   states = DEFAULT_STATES,
   startYear = DEFAULT_START_YEAR,
   endYear = DEFAULT_END_YEAR,
   caption,
-}: RegionalClaimsClashesMapProps) => {
+  includeClashes = true,
+}: RegionalClaimsMapProps) => {
   const rangeStartYear = Math.min(startYear, endYear);
   const rangeEndYear = Math.max(startYear, endYear);
   const statesKey = states.map(state => state.toUpperCase()).join('|');
@@ -180,6 +182,14 @@ const RegionalClaimsClashesMap = ({
     setPlaying(current => !current);
   };
 
+  const selectYear = (selectedYear: number) => {
+    if (playing) {
+      return;
+    }
+
+    setYear(selectedYear);
+  };
+
   const getDistrictFill = (district: ProjectedTownship) => {
     // Match the main map's default claims view by including both ordinary
     // claims and claims recorded as occurring on Indian lands.
@@ -192,10 +202,11 @@ const RegionalClaimsClashesMap = ({
     <Styled.Figure>
       <Styled.Shell>
         <Styled.MapSvg
-          aria-label={`${displayStateNames} homestead claims and frontier clashes through ${year}`}
+          aria-label={`${displayStateNames} homestead claims${includeClashes ? ' and frontier clashes' : ''} through ${year}`}
           role='img'
           viewBox={`0 0 ${VIEW_WIDTH} ${VIEW_HEIGHT}`}
         >
+          
           <Styled.MapLayer transform={viewport.transform}>
             {NorthAmerica.map((d: string) => (
               <Styled.NorthAmericaPath
@@ -203,7 +214,7 @@ const RegionalClaimsClashesMap = ({
                 key={d.substring(0, 50)}
               />
             ))}
-            {States.map(state => (
+            {States.filter(state => state.abbr !== 'AK').map(state => (
               <Styled.StateBoundaryPath
                 d={state.d}
                 data-state-boundary={state.abbr}
@@ -225,68 +236,87 @@ const RegionalClaimsClashesMap = ({
                 key={state.abbr}
               />
             ))}
-            {visibleConflicts.map(conflict => {
-              const currentYear = conflict.start_date.year === year;
-              const casualties = conflict.native_casualties + conflict.us_casualties;
-              const xRadius = Math.max(2.8, Math.sqrt(casualties) * 0.4) / viewport.scale;
-              const strokeWidth = currentYear
-                ? xRadius * 0.55
-                : xRadius * 0.38;
+            {includeClashes && (
+              <>              
+                {visibleConflicts.map(conflict => {
+                  const currentYear = conflict.start_date.year === year;
+                  const casualties = conflict.native_casualties + conflict.us_casualties;
+                  const xRadius = 5 / viewport.scale;
+                  const strokeWidth = currentYear
+                    ? xRadius * 0.55
+                    : xRadius * 0.38;
+    
+                  return (
+                    <Tooltip
+                      placement='bottom'
+                      overlay={(
+                        <Styled.PopupContainer>
+                          <h4>{conflict.names}</h4>
+                          <Styled.PopupData>
+                            <label>date</label>
+                            <div>{dateLabel(conflict)}</div>
+                            <label>state</label>
+                            <div>{conflict.state}</div>
+                            <label>{`nation${(conflict.nations.length > 1) ? 's' : ''}`}</label>
+                            <div>{conflict.nations.join(', ')}</div>
+                            {(conflict.native_casualties > 0) && (
+                              <React.Fragment>
+                                <label>native casualties</label>
+                                <div>{conflict.native_casualties}</div>
+                              </React.Fragment>
+                            )}
+                            {(conflict.us_casualties > 0) && (
+                              <React.Fragment>
+                                <label>US casualties</label>
+                                <div>{conflict.us_casualties}</div>
+                              </React.Fragment>
+                            )}
+                          </Styled.PopupData>
+                        </Styled.PopupContainer>
+                      )}
+                      key={conflictKey(conflict)}
+                    >
+                      <Styled.ConflictMarker
+                        transform={`rotate(${conflict.rotation} ${conflict.x}, ${conflict.y})`}
+                        $currentYear={currentYear}
+                        data-clash-year={conflict.start_date.year}
+                        data-clash-state={conflict.state}
+                      >
+                        <line
+                          x1={conflict.x - xRadius}
+                          x2={conflict.x + xRadius}
+                          y1={conflict.y - xRadius}
+                          y2={conflict.y + xRadius}
+                          strokeWidth={strokeWidth * 2}
+                        />
+                        <line
+                          x1={conflict.x - xRadius}
+                          x2={conflict.x + xRadius}
+                          y1={conflict.y + xRadius}
+                          y2={conflict.y - xRadius}
+                          strokeWidth={strokeWidth * 2}
+                        />
+                        <line
+                          x1={conflict.x - xRadius}
+                          x2={conflict.x + xRadius}
+                          y1={conflict.y - xRadius}
+                          y2={conflict.y + xRadius}
+                          strokeWidth={strokeWidth}
+                        />
+                        <line
+                          x1={conflict.x - xRadius}
+                          x2={conflict.x + xRadius}
+                          y1={conflict.y + xRadius}
+                          y2={conflict.y - xRadius}
+                          strokeWidth={strokeWidth}
+                        />
+                      </Styled.ConflictMarker>
+                    </Tooltip>
+                  );
+                })}
+              </>
 
-              return (
-                <Tooltip
-                  placement='bottom'
-                  overlay={(
-                    <Styled.PopupContainer>
-                      <h4>{conflict.names}</h4>
-                      <Styled.PopupData>
-                        <label>date</label>
-                        <div>{dateLabel(conflict)}</div>
-                        <label>state</label>
-                        <div>{conflict.state}</div>
-                        <label>{`nation${(conflict.nations.length > 1) ? 's' : ''}`}</label>
-                        <div>{conflict.nations.join(', ')}</div>
-                        {(conflict.native_casualties > 0) && (
-                          <React.Fragment>
-                            <label>native casualties</label>
-                            <div>{conflict.native_casualties}</div>
-                          </React.Fragment>
-                        )}
-                        {(conflict.us_casualties > 0) && (
-                          <React.Fragment>
-                            <label>US casualties</label>
-                            <div>{conflict.us_casualties}</div>
-                          </React.Fragment>
-                        )}
-                      </Styled.PopupData>
-                    </Styled.PopupContainer>
-                  )}
-                  key={conflictKey(conflict)}
-                >
-                  <Styled.ConflictMarker
-                    transform={`rotate(${conflict.rotation} ${conflict.x}, ${conflict.y})`}
-                    $currentYear={currentYear}
-                    data-clash-year={conflict.start_date.year}
-                    data-clash-state={conflict.state}
-                  >
-                    <line
-                      x1={conflict.x - xRadius}
-                      x2={conflict.x + xRadius}
-                      y1={conflict.y - xRadius}
-                      y2={conflict.y + xRadius}
-                      strokeWidth={strokeWidth}
-                    />
-                    <line
-                      x1={conflict.x - xRadius}
-                      x2={conflict.x + xRadius}
-                      y1={conflict.y + xRadius}
-                      y2={conflict.y - xRadius}
-                      strokeWidth={strokeWidth}
-                    />
-                  </Styled.ConflictMarker>
-                </Tooltip>
-              );
-            })}
+            )}
           </Styled.MapLayer>
         </Styled.MapSvg>
 
@@ -317,13 +347,19 @@ const RegionalClaimsClashesMap = ({
                 const labeledTick = tickYear === rangeStartYear || tickYear === rangeEndYear || tickYear % 5 === 0;
 
                 return (
-                  <Styled.Tick
+                  <Styled.TickButton
+                    type='button'
+                    aria-current={tickYear === year ? 'step' : undefined}
+                    aria-label={`Show ${tickYear}`}
                     $left={left}
                     $labeled={labeledTick}
+                    $selected={tickYear === year}
+                    disabled={playing}
                     key={tickYear}
+                    onClick={() => selectYear(tickYear)}
                   >
                     {labeledTick && <Styled.TickLabel>{tickYear}</Styled.TickLabel>}
-                  </Styled.Tick>
+                  </Styled.TickButton>
                 );
               })}
             </Styled.Ticks>
@@ -334,20 +370,24 @@ const RegionalClaimsClashesMap = ({
       <Styled.Legend>
         <Gradient />
         <h4>Percentage of area claimed in selected year</h4>
-        <Styled.ClashItem>
-          <Styled.ClashCross $size={16} />
-        </Styled.ClashItem>
-        <h4>Clashes</h4>
-        <Styled.ClashItem>
-          <Styled.ClashCross $size={16} $opacity={0.58} />
-        </Styled.ClashItem>
-        <h4>previous years</h4>
+        {includeClashes && (
+          <>          
+            <Styled.ClashItem>
+              <Styled.ClashCross $size={16} />
+            </Styled.ClashItem>
+            <h4>Armed conflicts involving Indians</h4>
+            <Styled.ClashItem>
+              <Styled.ClashCross $size={16} $opacity={0.58} />
+            </Styled.ClashItem>
+            <h4>previous years</h4>
+          </>
+        )}
       </Styled.Legend>
 
       <Styled.Figcaption>
         {caption || (
           <>
-            Homestead land office districts in {displayStateNames}, colored by claimed acreage, with recorded clashes through the selected year. Newly appearing clashes are darker.
+            Homestead land office districts in {displayStateNames}, colored by claimed acreage{includeClashes ? ', with recorded clashes through the selected year. Newly appearing clashes are darker.' : '.'}
           </>
         )}
       </Styled.Figcaption>
@@ -355,5 +395,5 @@ const RegionalClaimsClashesMap = ({
   );
 };
 
-export { RegionalClaimsClashesMap };
-export default RegionalClaimsClashesMap;
+export { RegionalClaimsMap };
+export default RegionalClaimsMap;

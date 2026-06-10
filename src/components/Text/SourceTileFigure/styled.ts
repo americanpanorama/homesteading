@@ -158,6 +158,7 @@ export const NorthAmericaPath = styled.path`
   fill: ${Constants.colors.northAmericaBackgroundColor};
   stroke: #d9d4ca;
   stroke-width: 2.6;
+  stroke-linejoin: round;
 `;
 
 export const StatePath = styled.path`
@@ -166,6 +167,7 @@ export const StatePath = styled.path`
   stroke-width: 0.75;
   vector-effect: non-scaling-stroke;
   pointer-events: none;
+  stroke-linejoin: round;
 `;
 
 export const DistrictPath = styled.path`
@@ -174,6 +176,7 @@ export const DistrictPath = styled.path`
   stroke-width: 1;
   vector-effect: non-scaling-stroke;
   pointer-events: none;
+  stroke-linejoin: round;
 `;
 
 export const BorderPath = styled.path`
@@ -182,6 +185,7 @@ export const BorderPath = styled.path`
   stroke-width: 2;
   vector-effect: non-scaling-stroke;
   pointer-events: none;
+  stroke-linejoin: round;
 `;
 
 export const TimelineControl = styled.div`
