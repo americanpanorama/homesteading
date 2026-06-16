@@ -15,6 +15,7 @@ import { useMapViewport, useURLParams, useYearData } from '../../hooks';
 import { colors } from '../../Constants';
 import Open from '../Buttons/Next';
 import Close from '../Buttons/Previous';
+import HorizontalArrows from '../Buttons/HorizontalArrows';
 
 const Map = () => {
   const { stateTerr, office, year, yearNum } = useURLParams();
@@ -91,7 +92,7 @@ const Map = () => {
               aria-pressed={mapSize === 'fullscreen'}
               onClick={() => setMapSize(mapSize === 'fullscreen' ? 'default' : 'fullscreen')}
             >
-              {mapSize === 'fullscreen' ? <Close /> : <Open />}
+              <HorizontalArrows />
             </Styled.FullscreenToggle>
           </Styled.FullscreenToggleContainer>
         )}

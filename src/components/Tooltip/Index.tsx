@@ -2,24 +2,66 @@ import React from "react";
 import * as Styled from "./styled";
 
 interface TooltipProps {
-  text: string;
+  text: string | React.ReactNode;
 }
 
 const Tooltip = ({ text }: TooltipProps) => {
   const [open, setOpen] = React.useState(false);
+  const closeTimeoutRef = React.useRef<number | undefined>();
+  const pointerInsideRef = React.useRef(false);
+  const focusInsideRef = React.useRef(false);
   const tooltipId = React.useId();
-  const hasText = text.trim().length > 0;
+  const hasText = typeof text === "string" ? text.trim().length > 0 : !!text;
+
+  const clearCloseTimeout = () => {
+    if (typeof closeTimeoutRef.current !== "undefined") {
+      window.clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = undefined;
+    }
+  };
+
+  const openTooltip = () => {
+    clearCloseTimeout();
+    setOpen(true);
+  };
+
+  const scheduleCloseTooltip = () => {
+    clearCloseTimeout();
+    closeTimeoutRef.current = window.setTimeout(() => {
+      if (!pointerInsideRef.current && !focusInsideRef.current) {
+        setOpen(false);
+      }
+      closeTimeoutRef.current = undefined;
+    }, 150);
+  };
+
+  React.useEffect(() => () => clearCloseTimeout(), []);
 
   return (
-    <Styled.Container>
+    <Styled.Container
+      onMouseEnter={() => {
+        pointerInsideRef.current = true;
+        openTooltip();
+      }}
+      onMouseLeave={() => {
+        pointerInsideRef.current = false;
+        scheduleCloseTooltip();
+      }}
+      onFocusCapture={() => {
+        focusInsideRef.current = true;
+        openTooltip();
+      }}
+      onBlurCapture={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget)) {
+          focusInsideRef.current = false;
+          scheduleCloseTooltip();
+        }
+      }}
+    >
       <Styled.IconButton
         type="button"
         aria-label="More information"
         aria-describedby={hasText ? tooltipId : undefined}
-        onMouseEnter={() => setOpen(true)}
-        onMouseLeave={() => setOpen(false)}
-        onFocus={() => setOpen(true)}
-        onBlur={() => setOpen(false)}
       >
         i
       </Styled.IconButton>

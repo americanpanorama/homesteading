@@ -9,10 +9,12 @@ import * as Styled from './styled';
 interface Props {
   state: MapStateLayerItem;
   scale: number;
+  year?: number;
 }
 
-const State = ({ state, scale }: Props) => {
-  const { yearNum } = useURLParams();
+const State = ({ state, scale, year }: Props) => {
+  const { yearNum: _yearNum } = useURLParams();
+  const yearNum = year || _yearNum;
   const label = `${us.lookup(state.abbr).ap_abbr}${(!us.lookup(state.abbr).statehood_year || us.lookup(state.abbr).statehood_year > yearNum) ? ' Terr.' : ''}`;
 
   let strokeWidth = state.selected

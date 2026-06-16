@@ -6,6 +6,7 @@ export const Shell = styled.div<{ $height: number }>`
   height: ${({ $height }) => $height}px;
   background: #e9e6df;
   border: 1px solid #aaa;
+  overflow: hidden;
 `;
 
 export const Legend = styled.div`

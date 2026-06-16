@@ -3,13 +3,14 @@ import axios from 'axios';
 import { DimensionsContext } from '../../../DimensionsContext';
 import { Dimensions, ProjectedState } from '../../../index.d';
 import { Point } from '../../Map.d';
-import States from '../../../../data/states.json';
 import AggregatedClaims from '../../../../data/aggregatedClaims.json';
-import NorthAmerica from '../../../../data/northAmerica.json';
-import Border from '../../../../data/internationalBorder.json';
 import { CANVASSIZE } from '../../../Config';
 import * as Styled from './styled';
 import * as Constants from '../../../Constants';
+import StatesData from '../../../../data/states.json';
+import NorthAmericaBasemap from '../../Map/NorthAmerica/Index';
+import States from '../../Map/States/Index';
+import InternationalBorder from '../../Map/InternationalBorder/Index';
 
 const Map = () => {
     const { useEffect, useContext, useState } = React;
@@ -53,30 +54,22 @@ const Map = () => {
                     transform={transform}
                 >
                     <g transform={`scale(${scale})`}>
-                        {NorthAmerica.map((d: any) => (
-                            <Styled.NorthAmericaPath
-                                d={d}
-                                key={d.substring(0, 50)}
-                            />
-                        ))}
+                        <NorthAmericaBasemap />
+                        <States
+                            scale={scale}
+                            year={1912}
+                            justBoundaries
+                            disableLink
+                        />
+                        <InternationalBorder />
 
-                        {(States as ProjectedState[]).filter(d => d.abbr !== 'DK' && d.abbr !== 'AK').map(state => (
-                            <Styled.StatePath
-                                d={state.d}
-                                key={`statePath${state.abbr}`}
-                            />
-                        ))}
-                        {(Border as string[]).map(d => (
-                            <Styled.BorderPath d={d} key={`source-tile-border-${d.substring(0, 50)}`} />
-                        ))}
                         {(indianCountryD) && (
                             <path
                                 d={indianCountryD}
                                 fill="rgba(103, 229, 197, 0.5)"
                             />
                         )}
-                        {(States as ProjectedState[]).filter(d => d.abbr !== 'DK' && d.abbr !== 'AK').map(state => (
-                        
+                        {(StatesData as ProjectedState[]).filter(d => d.abbr !== 'DK' && d.abbr !== 'AK').map(state => (
                             <circle
                                 cx={state.labelCoords[0]}
                                 cy={state.labelCoords[1]}

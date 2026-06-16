@@ -11,8 +11,9 @@ const NorthAmericaBasemap = () => {
         /* fill={Constants.colors.northAmericaBackgroundColor} */
         fill='#f7f7f7'
         key={d.substring(0, 50)}
-        stroke='#e9eef1'
-        strokeWidth={3}
+        strokeWidth={2.6}
+        stroke='#d9d4ca'
+        strokeLinejoin='round'
       />
     ))
       }

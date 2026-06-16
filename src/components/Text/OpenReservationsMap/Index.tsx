@@ -1,15 +1,14 @@
 import * as React from 'react';
-import axios from 'axios';
 import { DimensionsContext } from '../../../DimensionsContext';
-import { Dimensions, ProjectedState } from '../../../index.d';
+import { Dimensions } from '../../../index.d';
 import { Point } from '../../Map.d';
-import States from '../../../../data/states.json';
-import NorthAmerica from '../../../../data/northAmerica.json';
-import InternationalBorder from '../../Map/InternationalBorder/Index';
 import { CANVASSIZE } from '../../../Config';
 import * as Styled from './styled';
 import { useMapReservations, useMapOpenReservations } from '../../../hooks';
 import * as Constants from '../../../Constants';
+import NorthAmericaBasemap from '../../Map/NorthAmerica/Index';
+import StatesMap from '../../Map/States/Index';
+import InternationalBorderMap from '../../Map/InternationalBorder/Index';
 
 interface OpenReservations {
   reservations1912: string;
@@ -17,10 +16,10 @@ interface OpenReservations {
 }
 
 const Map = () => {
-  const { useEffect, useContext, useState } = React;
+  const { useContext } = React;
 
   const { width: screenWidth } = (useContext(DimensionsContext) as Dimensions);
-  const width = Math.min(1000 * 0.95, screenWidth * 0.9);
+  const width = Math.min(1300, screenWidth * 0.95);
   const height = 1.5 * width * 500 / 960;
   const indianLands = useMapReservations(1912);
   const reservations = indianLands.filter(d => d.type === 'reservation');
@@ -38,7 +37,6 @@ const Map = () => {
   const translateX = width / 2 - scale * center[0];
   const translateY = height / 2 - scale * center[1];
   const transform = `translate(${translateX} ${translateY}) rotate(${rotation} ${center[0] * scale} ${center[1] * scale})`;
-
 
   return (
     <Styled.Figure>
@@ -64,21 +62,14 @@ const Map = () => {
           transform={transform}
         >
           <g transform={`scale(${scale})`}>
-            {NorthAmerica.map((d: any) => (
-              <Styled.NorthAmericaPath
-                d={d}
-                className='continent'
-                key={d.substring(0, 50)}
-              />
-            ))}
-            {(States as ProjectedState[]).filter(d => d.abbr !== 'DK' && d.abbr !== 'AK').map(state => (
-              <Styled.StatePath
-                d={state.d}
-                key={`state${state.abbr}`}
-              />
-            ))}
-              
-              <InternationalBorder />
+            <NorthAmericaBasemap />
+            <StatesMap
+              scale={scale}
+              year={1912}
+              justBoundaries
+              disableLink
+            />
+            <InternationalBorderMap />
               
               {reservations.map(reservation => (
                 <Styled.ReservationPath

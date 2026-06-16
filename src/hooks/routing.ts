@@ -88,6 +88,7 @@ const sanitizePathParam = (value?: string | null): string | undefined => (
 const isValidViewType = (value: string): value is ClaimsAndPatentsAcresType => VALID_VIEW_TYPES.has(value as ClaimsAndPatentsAcresType);
 const isValidPanelType = (value?: string): value is PanelType =>
   !!value && VALID_PANEL_TYPES.includes(value as PanelType);
+const isCommutationAcresType = (type: ClaimsAndPatentsAcresType) => type.includes('commuted');
 
 const sanitizeViewForYear = (view: string | undefined, yearNum: number): string | undefined => {
   if (!view) {
@@ -156,8 +157,11 @@ const buildCanonicalPath = ({
 
 export const useClaimsAndPatentsTypes = () => {
   const params = useURLParams();
-  const { view, viewTypes } = params;
-  const types: ClaimsAndPatentsAcresType[] = viewTypes.length > 0 ? viewTypes : ['acres_claimed', 'acres_claimed_indian_lands'];
+  const { view, viewTypes, isIndianLandsYear } = params;
+  const defaultTypes: ClaimsAndPatentsAcresType[] = isIndianLandsYear
+    ? ['acres_claimed', 'acres_claimed_indian_lands']
+    : ['acres_claimed'];
+  const types: ClaimsAndPatentsAcresType[] = viewTypes.length > 0 ? viewTypes : defaultTypes;
   const countTypes: ClaimsAndPatentsCountType[] = [];
 
   if (types.includes('acres_claimed')) {
@@ -184,7 +188,7 @@ export const useClaimsAndPatentsTypes = () => {
 
   let numberLabel = 'claims';
   let acresLabel = 'claimed';
-  if (view === 'acres_commuted_2301-acres_commuted_18800615-acres_commuted_indian_lands') {
+  if (types.length > 0 && types.every(isCommutationAcresType)) {
     numberLabel = 'commutations';
     acresLabel = 'commuted';
   } else if (view && view.includes('patented')) {

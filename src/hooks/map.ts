@@ -49,10 +49,10 @@ const getTimelineVisualizedAcres = (
   acresTypes: ReturnType<typeof useClaimsAndPatentsTypes>['acresTypes'],
 ) => acresTypes.reduce((total, type) => total + yearData[type], 0);
 
-export const useMapView = (): MapViewState => {
+export const useMapView = (): MapViewState | undefined => {
   const mapView = React.useContext(MapViewContext);
   if (!mapView) {
-    throw new Error('useMapView must be used within a MapViewContext.Provider');
+    return undefined;
   }
   return mapView;
 };
@@ -364,10 +364,11 @@ const getOfficeLabelPlacements = (
  * aggregated fill stats and drill-down link state. Keeping this in a hook lets
  * the visual `States` layer focus on rendering instead of data shaping.
  */
-export const useMapStates = (): MapStateLayerItem[] => {
+export const useMapStates = (year?: number): MapStateLayerItem[] => {
   const params = useURLParams();
   const buildLink = useLinkBuilder();
-  const { stateTerr, yearNum } = params;
+  const { stateTerr, yearNum: _yearNum } = params;
+  const yearNum = year || _yearNum;
   const { acresTypes } = useClaimsAndPatentsTypes();
   const yearData = useYearData();
   const nationalTimelineData = useTimelineData('national');

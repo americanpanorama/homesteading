@@ -52,4 +52,6 @@ export const Bubble = styled.span<{ $open: boolean }>`
   text-align: left;
   transform: translateX(-50%);
   white-space: normal;
+  max-height: 240px;
+  overflow-y: auto;
 `;

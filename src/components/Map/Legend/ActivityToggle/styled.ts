@@ -4,8 +4,6 @@ import * as Constants from '../../../../Constants';
 import { IndianLandsLabel } from '../IndianLands/styled';
 import { Container as Conflicts } from '../Conflicts/styled';
 
-const { devices } = Constants;
-
 export const controlBase = css`
   display: inline-flex;
   align-items: center;
@@ -38,8 +36,12 @@ export const selectedControl = css`
 
 export const Container = styled(Conflicts)`
   grid-area: activity;
-  grid-template-rows: auto auto;
-  grid-template-areas: 'activityTooltip activityLabel' '. activitySymbols';
+  grid-template-rows: auto auto auto auto;
+  grid-template-areas:
+    'activityTooltip activityLabel'
+    '. activitySymbols'
+    '. filterLabel'
+    'filterTooltip filterSelect';
 `;
 
 export const ActivityTooltip = styled.div`
@@ -57,10 +59,6 @@ export const ActivitySymbols = styled.div`
   text-align: left;
   display: grid;
   grid-template-columns: 1fr 1fr;
-
-  /* @media ${devices.tabletPortrait} {
-    width: 100%;
-  } */
 `;
 
 export const ToggleLink = styled(Link) <{ $selected?: boolean }>`
@@ -74,4 +72,52 @@ export const ToggleLink = styled(Link) <{ $selected?: boolean }>`
   }
 
   ${({ $selected }) => $selected && selectedControl}
+`;
+
+export const FilterLabel = styled.label`
+  grid-area: filterLabel;
+  margin-top: 0.75em;
+  color: ${Constants.colors.lightColor};
+  font-family: ${Constants.fonts.sansSerif};
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+  text-align: left;
+`;
+
+export const FilterRow = styled.div`
+  display: contents;
+`;
+
+export const FilterTooltip = styled.div`
+  grid-area: filterTooltip;
+  align-content: center;
+`;
+
+export const FilterSelect = styled.select`
+  grid-area: filterSelect;
+  width: 100%;
+  min-width: 0;
+  min-height: 34px;
+  padding: 0.2em 0.45em;
+  border: 1px solid ${Constants.colors.legendBorderColor};
+  border-radius: 0;
+  background-color: ${Constants.colors.legendControlBackgroundColor};
+  color: ${Constants.colors.lightColor};
+  font-family: ${Constants.fonts.sansSerif};
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0;
+
+  &:disabled {
+    color: ${Constants.colors.mutedTextColor};
+    cursor: default;
+  }
+
+  &:focus-visible {
+    outline: 3px solid ${Constants.colors.focusRingColor};
+    outline-offset: 2px;
+  }
 `;
