@@ -34,6 +34,19 @@ export const selectedControl = css`
   color: ${Constants.colors.whiteColor};
 `;
 
+export const toggleControlStyles = css<{ $selected?: boolean }>`
+  ${controlBase}
+  border: 0;
+  padding: 0 0.5em;
+  outline: 1px solid ${Constants.colors.accentColor};
+
+  &:last-child {
+    border-right: 0;
+  }
+
+  ${({ $selected }) => $selected && selectedControl}
+`;
+
 export const Container = styled(Conflicts)`
   grid-area: activity;
   grid-template-rows: auto auto auto auto;
@@ -62,16 +75,7 @@ export const ActivitySymbols = styled.div`
 `;
 
 export const ToggleLink = styled(Link) <{ $selected?: boolean }>`
-  ${controlBase}
-  border: 0;
-  padding: 0 0.5em;
-  outline: 1px solid ${Constants.colors.accentColor}; 
-
-  &:last-child {
-    border-right: 0;
-  }
-
-  ${({ $selected }) => $selected && selectedControl}
+  ${toggleControlStyles}
 `;
 
 export const FilterLabel = styled.label`

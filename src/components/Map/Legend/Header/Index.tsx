@@ -1,7 +1,7 @@
 import React from "react";
 import * as Styled from "./styled";
 
-const LegendHeader = ({ collapsed, setCollapsed }: { collapsed: boolean; setCollapsed: React.Dispatch<React.SetStateAction<boolean>> }) => {
+const LegendHeader = ({ collapsed, setCollapsed, guideOpen, setIsGuideOpen }: { collapsed: boolean; setCollapsed: React.Dispatch<React.SetStateAction<boolean>>; guideOpen: boolean; setIsGuideOpen: React.Dispatch<React.SetStateAction<boolean>> }) => {
   return (
     <Styled.Container>
       <Styled.Divider />
@@ -15,9 +15,9 @@ const LegendHeader = ({ collapsed, setCollapsed }: { collapsed: boolean; setColl
         <Styled.Chevron $collapsed={collapsed} />
       </Styled.HeaderButton>
       <Styled.Divider />
-      <Styled.GuideLink to="/guide">
+      <Styled.GuideLink onClick={() => setIsGuideOpen(!guideOpen)}>
         <Styled.GuideIcon></Styled.GuideIcon>
-        Map Guide
+        Guide
       </Styled.GuideLink>
     </Styled.Container>
   );

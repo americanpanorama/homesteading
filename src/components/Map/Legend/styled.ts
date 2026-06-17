@@ -8,6 +8,7 @@ export const Container = styled.section<{ $collapsed: boolean }>`
   top: 12px;
   left: 12px;
   right: 12px;
+  max-height: calc(100% - 24px);
   z-index: 20;
   display: grid;
   align-items: start;
@@ -113,3 +114,5 @@ export const ColumnTitle = styled.h3`
   font-weight: 700 !important;
   text-align: left;
 `;
+
+

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext} from 'react';
 import { DimensionsContext } from '../../DimensionsContext';
 import { Dimensions } from '../../index.d';
 import * as Constants from '../../Constants';
@@ -12,9 +12,6 @@ import * as Styled from './styled';
 import Legend from './Legend/Index';
 import { MapViewContext } from './ViewContext';
 import { useMapViewport, useURLParams, useYearData } from '../../hooks';
-import { colors } from '../../Constants';
-import Open from '../Buttons/Next';
-import Close from '../Buttons/Previous';
 import HorizontalArrows from '../Buttons/HorizontalArrows';
 
 const Map = () => {
@@ -40,7 +37,6 @@ const Map = () => {
     yearData,
   });
 
-  console.log(mapSize);
 
   if (yearData && isReady) {
     const mapView = { center, rotation, scale };
@@ -96,6 +92,7 @@ const Map = () => {
             </Styled.FullscreenToggle>
           </Styled.FullscreenToggleContainer>
         )}
+
       </MapViewContext.Provider>
     );
   }

@@ -59,8 +59,9 @@ export const Chevron = styled.span<{ $collapsed: boolean }>`
   transform: ${({ $collapsed }) => ($collapsed ? 'rotate(45deg) translateY(-1px)' : 'rotate(225deg) translateY(-1px)')};
 `;
 
-export const GuideLink = styled(Link)`
+export const GuideLink = styled.div`
   pointer-events: auto;
+  cursor: pointer;
   display: inline-flex;
   align-items: center;
   gap: 7px;
