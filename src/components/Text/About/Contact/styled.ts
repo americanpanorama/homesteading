@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import * as Constants from '../../../../Constants';
+import { hexToRgb } from '../../../../utilities';
+import { hextoRgba } from '../../../../utilities';
 
 export const ContactForm = styled.form`
   // display: grid;
@@ -33,6 +35,12 @@ export const ContactForm = styled.form`
     margin-bottom: 1em;
     padding: 1em;
     border-width: 1px;
+
+    &:focus {
+      outline: none;
+      border-color: ${Constants.colors.accentColor};
+      box-shadow: 0 0 0 4px color-mix(in srgb, ${Constants.colors.accentColor} 25%, white);
+    }
   }
 
   input[type='submit'] {
@@ -60,7 +68,6 @@ export const ContactForm = styled.form`
     &:active {
       background-color: color-mix(in srgb, ${Constants.colors.accentColor} 75%, black);
     }
-
   }
 
   textarea {

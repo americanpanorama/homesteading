@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import * as Constants from "../../../../Constants";
-import { hexToRgb } from "../../../../utilities";
+import { hexToRgb } from '../../../../utilities';
+import { hextoRgba } from '../../../../utilities';
 
 export const Container = styled.div`
   display: flex;
@@ -43,14 +44,16 @@ export const SectionContainer = styled.div<{ $active: boolean }>`
 `;
 
 export const TipsSection = styled.div`
-  display: grid;
-  grid-template-columns: 100px auto;
-  grid-column-gap: 10px;
-  align-items: center;
   padding-bottom: 1em;
-
   border-bottom: 1px solid rgba(${hexToRgb(Constants.colors.blackColor)}, 0.25);
 
+  @media ${Constants.devices.mobile} {
+    display: grid;
+    grid-template-columns: 100px auto;
+    grid-column-gap: 10px;
+    align-items: center;
+    grid-template-columns: 110px auto;
+  }
 
   @media ${Constants.devices.desktop} {
     grid-template-columns: 110px auto;
@@ -92,8 +95,13 @@ export const Symbol = styled.div<{ $imgWidth?: number | string }>`
   grid-column: 1 / span 1;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
   grid-gap: 2px;
+  padding-top: 0.5em;
+
+  @media ${Constants.devices.mobile} {
+    justify-content: flex-end;
+    padding-top: 0;
+  }
 
   button {
     margin: 0;
@@ -116,13 +124,16 @@ export const Term = styled.div`
   grid-column: 1 / span 1;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
   text-transform: uppercase;
   color: ${Constants.colors.accentColor};
   font-weight: 700;
   align-self: start;
   padding-top: 0.5em;
   font-size: 0.9em;
+
+  @media ${Constants.devices.mobile} {
+    justify-content: flex-end;
+  }
 `;
 
 export const Tip = styled.div`
@@ -165,19 +176,19 @@ export const CloseMenu = styled.li`
 export const MenuItem = styled.li<{ $active: boolean }>`
   padding: 20px;
   color: ${(p => (p.$active) ? Constants.colors.accentColor : Constants.colors.whiteColor)};
-  background-color: ${(p => (p.$active) ? Constants.colors.whiteColor : 'transparent')};
+  background-color: ${(p => (p.$active) ? Constants.colors.whiteColor : Constants.colors.accentColor)};
   cursor: pointer;
     
   &:hover,
   &:focus,
   &:active {
-    color: ${(p => (p.$active) ? Constants.colors.blackColor : Constants.colors.accentColor)};
+    background-color: ${(p => (p.$active) ? Constants.colors.whiteColor : hextoRgba(Constants.colors.whiteColor, 0.2))};
   }
 `; 
 
 export const Menu = styled.ul`
   z-index: 2600;
-    background-color: black;
+  background-color: ${Constants.colors.accentColor};
   list-style: none;
   text-align: right;
   padding: 0;

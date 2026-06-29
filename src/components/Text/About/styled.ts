@@ -6,6 +6,7 @@ export const AboutMenu = styled.nav`
   display: flex;
   justify-content: center;
   gap: 0;
+  width: 100%;
   margin: 0 auto 2rem;
 `;
 
@@ -15,7 +16,6 @@ export const AboutMenuButton = styled.button<{ $selected: boolean }>`
   border-right: 1px solid ${Constants.colors.accentColor};
   border-bottom: 1px solid ${Constants.colors.accentColor};
   border-top: 1px solid ${Constants.colors.accentColor};
-
   padding: 0.65em 0.75em;
   background-color: ${({ $selected }) => ($selected ? Constants.colors.accentColor : 'transparent')};
   color: ${({ $selected }) => ($selected ? Constants.colors.whiteColor : Constants.colors.accentColor)};
@@ -25,6 +25,10 @@ export const AboutMenuButton = styled.button<{ $selected: boolean }>`
   letter-spacing: 0.08em;
   line-height: 1;
   text-transform: uppercase;
+
+  @media ${Constants.devices.tabletPortrait} {
+    padding: 0.65em 2em;
+  }
 
   &:first-child {
     border-left: 1px solid ${Constants.colors.accentColor};

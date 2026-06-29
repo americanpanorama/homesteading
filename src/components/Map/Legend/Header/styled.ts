@@ -11,9 +11,9 @@ export const Container = styled.div`
   justify-content: space-between;
   gap: 12px;
   padding: 8px 12px;
-    border: 0;
-    border-radius: 0;
-    background: transparent;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
   box-shadow: 0 4px 16px ${colors.legendHeaderShadowColor};
   backdrop-filter: blur(10px);
 

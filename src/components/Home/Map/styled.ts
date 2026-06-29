@@ -4,14 +4,16 @@ import * as Constants from '../../../Constants';
 export const Container = styled.div`
   position: absolute;
   inset: 0;
-  border-radius: 28px;
-  overflow: hidden;
+  // border-radius: 28px;
+  overflow: hidden;;
 `;
 
 export const Svg = styled.svg`
   display: block;
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
 `;
 
 export const BasePath = styled.path``;
@@ -36,7 +38,7 @@ export const YearBadge = styled.div`
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-text-shadow: 0 0 4px ${Constants.colors.blackColor}, 0 0 6px ${Constants.colors.blackColor};
+  text-shadow: 0 0 4px ${Constants.colors.blackColor}, 0 0 6px ${Constants.colors.blackColor};
 `;
 
 export const Legend = styled.div`

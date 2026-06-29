@@ -10,7 +10,7 @@ export const LongformContainer = styled.div`
   text-align: left;
   font-size: 1em;
   line-height: 1.8;
-  font-family: ${Constants.fonts.serif};
+  font-family: ${Constants.fonts.sansSerif};
   color: ${Constants.colors.lightColor};
   margin: 0 auto;
 
@@ -23,11 +23,15 @@ export const LongformContainer = styled.div`
 
   a {
     color: ${Constants.colors.accentColor};
-    // text-decoration: none;
   }
    
   li {
     margin-bottom: 0.5em;
+    line-height: 1.6;
+  }
+
+  figcaption {
+    padding-bottom: 1rem;
   }
 
   @media ${Constants.devices.desktop} {
@@ -38,7 +42,7 @@ export const LongformContainer = styled.div`
     font-size: 1.2em;
     max-width: 1300px;
 
-    p {
+    p, ul, figcaption {
       max-width: 700px;
       margin-left: auto;
       margin-right: auto;

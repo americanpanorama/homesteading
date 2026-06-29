@@ -8,6 +8,9 @@ export const Figure = styled.figure<{ $expanded?: boolean }>`
   max-width: ${({ $expanded }) => ($expanded ? 'none' : '980px')};
   color: ${Constants.colors.lightColor};
   overflow: visible;
+
+  background-color: ${Constants.colors.northAmericaBackgroundColor};
+    box-shadow: 0 4px 10px ${Constants.colors.legendPanelLandscapeShadowColor};
 `;
 
 export const Shell = styled.div<{ $expanded?: boolean }>`

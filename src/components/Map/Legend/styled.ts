@@ -24,15 +24,15 @@ export const Container = styled.section<{ $collapsed: boolean }>`
 
 export const Panel = styled.div<{ $collapsed: boolean }>`
   pointer-events: auto;
-  display: ${({ $collapsed }) => ($collapsed ? 'none' : 'grid')};
+  display: ${({ $collapsed }) => ($collapsed ? 'none' : 'block')};
   width: 100%;
   max-width: 100%;
   max-height: min(72vh, calc(100vh - 140px));
   margin-top: 8px;
   box-sizing: border-box;
   overflow-y: auto;
-  grid-template-columns: 1fr;
   justify-content: stretch;
+  text-align:left;
   background: ${colors.legendPanelBackgroundColor};
   border: 1px solid ${colors.legendBorderColor};
   box-shadow: 0 12px 32px ${colors.legendPanelShadowColor};
@@ -43,7 +43,13 @@ export const Panel = styled.div<{ $collapsed: boolean }>`
     padding: 0.5em;
   }
 
-  @media ${devices.tabletPortrait} {
+  section:nth-child(1),
+  section:nth-child(3) {
+    padding-left: 33px;
+  }
+
+  @media ${devices.mobile} {
+    display: ${({ $collapsed }) => ($collapsed ? 'none' : 'grid')};
     grid-template-columns: minmax(200px, 0.9fr) minmax(260px, 1.1fr);
     grid-template-areas:
       'indian conflicts'
@@ -60,6 +66,7 @@ export const Panel = styled.div<{ $collapsed: boolean }>`
 
     section:nth-child(1),
     section:nth-child(3) {
+      padding-left: 0.5em;
       border-right: 1px solid ${colors.legendBorderColor};
     }
 

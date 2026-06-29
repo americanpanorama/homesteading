@@ -17,6 +17,8 @@ export const Figure = styled.figure`
   width: 100%;
   max-width: 980px;
   color: ${Constants.colors.lightColor};
+  background-color: ${Constants.colors.northAmericaBackgroundColor};
+  box-shadow: 0 4px 10px ${Constants.colors.legendPanelLandscapeShadowColor};
 `;
 
 export const Shell = styled.div`

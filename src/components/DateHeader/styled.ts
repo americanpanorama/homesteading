@@ -70,6 +70,12 @@ export const Previous = styled.div`
     border-radius: 50%;
     transition: background-color 0.25s ease;
 
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: ${Constants.colors.softTextColor};
+    }
+
     circle {
       fill: transparent;
     }
@@ -94,7 +100,7 @@ export const Year = styled.h1`
   align-items: center;
   margin: 0;
   padding: 0;
-  color: ${Constants.colors.olive};
+  color: ${Constants.colors.accentColor};
   font-family: ${Constants.fonts.serif};
   font-size: clamp(2.2rem, 8vw, 4rem);
   text-align: center;
