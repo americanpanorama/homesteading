@@ -162,7 +162,7 @@ export const ExploreButton = styled(Link)`
   margin: 0 auto;
   color: ${Constants.colors.whiteColor};
   font-size: 1em;
-  font-weight: bold;
+  font-weight: 400 !important;
   text-align: center;
   text-decoration: none;
   line-height: 1;

@@ -50,7 +50,7 @@ export const ContactForm = styled.form`
     color: ${Constants.colors.whiteColor};
     font-family: ${Constants.fonts.sansSerif};
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 400 !important;
     text-align: center;
     text-decoration: none;
     line-height: 1;    

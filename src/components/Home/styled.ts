@@ -54,7 +54,7 @@ export const Title = styled.h1`
     align-items: center;
     margin-top: 2rem;
     margin-bottom: 0.5rem;
-    font-size: clamp(2.5rem, 5vw + 0.5em, 4rem);
+    font-size: clamp(2.5rem, 5vw + 0.5em, 5rem);
     font-weight: 700;
     text-align: center;
     line-height: 1.1;
@@ -168,7 +168,7 @@ export const ExploreButton = styled(Link)`
   transform: translateX(-50%);
   color: ${Constants.colors.whiteColor};
   font-size: 1em;
-  font-weight: bold;
+  font-weight: 400 !important;
   text-align: center;
   text-decoration: none;
   line-height: 1;

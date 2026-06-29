@@ -38,13 +38,34 @@ const HomeMap = () => {
         viewBox={`100 150 ${width} ${height}`}
         role='presentation'
       >
-        <g transform={transform}>
+        <g 
+          transform={transform}
+          filter="url(#mapShadow)"
+        >
+          <defs>
+            <filter 
+              id="mapShadow" 
+              x="-50%" 
+              y="-50%" 
+              width="200%" 
+              height="200%"
+            >
+              <feDropShadow 
+                dx="0"
+                dy="8"
+                stdDeviation="8"
+                floodColor="black"
+                floodOpacity="0.7"
+              />
+            </filter>
+          </defs>
+
           {ContinentalUS.map((pathD: string) => (
             <Styled.BasePath
               d={pathD}
-              fill='#eee'
+              fill="#eee"
               fillOpacity={0.8}
-              stroke='#e6ddd3'
+              stroke="#e6ddd3"
               strokeWidth={1}
               key={pathD.substring(0, 48)}
             />
