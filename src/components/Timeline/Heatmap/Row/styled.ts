@@ -13,7 +13,7 @@ export const LabelText = styled.text<{ $fill?: string }>`
 
 export const StatText = styled.text<{ $fill?: string }>`
   fill: ${({ $fill }) => $fill || Constants.colors.lightColor};
-  font-family: Inconsolata, monospace;
+  font-family: ${Constants.fonts.sansSerif};
   font-weight: 200;
 `;
 

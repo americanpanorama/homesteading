@@ -39,7 +39,7 @@ export const ContactForm = styled.form`
     &:focus {
       outline: none;
       border-color: ${Constants.colors.accentColor};
-      box-shadow: 0 0 0 4px color-mix(in srgb, ${Constants.colors.accentColor} 25%, white);
+      box-shadow: 0 0 0 4px color-mix(in srgb, ${Constants.colors.accentColor} 20%, white);
     }
   }
 

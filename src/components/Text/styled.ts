@@ -17,8 +17,9 @@ export const LongformContainer = styled.div`
   h3 {
     text-align: center;
     color: ${Constants.colors.olive};
-    font-family: ${Constants.fonts.serif};
-    font-size: 2em;
+    font-size: clamp(1em, 4vw + 0.5em, 1.8em);
+    font-weight: 400 !important;
+    line-height: 1.2;
   }
 
   a {

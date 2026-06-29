@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 import { colors } from '../../../Constants';
+import * as Constants from '../../../Constants';
 
 export const PopupContainer = styled.div`
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: ${Constants.fonts.sansSerif};
 
   h4 {
     border-bottom: 1px solid ${colors.mutedTextColor};

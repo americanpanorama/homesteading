@@ -61,8 +61,10 @@ export const TipsSection = styled.div`
 
   h3 {
     grid-column: 1 / span 2;
+    color: ${Constants.colors.olive};
+    font-size: clamp(1.2rem, 2vw + 0.5em, 1.5rem);
+    font-weight: 400 !important;
     text-align: left;
-    font-weight: 400;
   }
 `;
 
@@ -163,6 +165,7 @@ export const CloseMenu = styled.li`
   text-transform: uppercase;
   letter-spacing: 0.1em;
   text-align: center;
+  cursor: pointer;
 
   svg {
     height: 20px;
@@ -176,6 +179,7 @@ export const CloseMenu = styled.li`
 export const MenuItem = styled.li<{ $active: boolean }>`
   padding: 20px;
   color: ${(p => (p.$active) ? Constants.colors.accentColor : Constants.colors.whiteColor)};
+  font-size: 0.9em;
   background-color: ${(p => (p.$active) ? Constants.colors.whiteColor : Constants.colors.accentColor)};
   cursor: pointer;
     

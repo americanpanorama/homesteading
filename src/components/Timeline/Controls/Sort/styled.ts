@@ -22,7 +22,7 @@ export const Select = styled.select`
   color: var(--light-color);
   font-size: 0.9em;
   line-height: 1.1;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: ${Constants.fonts.sansSerif};
   padding: 0.5rem 2.25rem 0.5rem 0.5rem;
   background-repeat: no-repeat;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath d='M0 0 L5 6 L10 0 Z' fill='%235b4b63'/%3E%3C/svg%3E");

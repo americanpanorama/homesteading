@@ -93,7 +93,7 @@ export const ChartTitle = styled.h3`
   // text-align: left;
   color: ${Constants.colors.olive};
   font-size: 1.5rem;
-  font-family: ${Constants.fonts.serif};
   font-weight: 700;
+  text-transform: uppercase;
   // color: var(--light-color);
 `;

@@ -15,7 +15,7 @@ export const BackLink = styled(Link)`
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  font-weight: 700 !important;
+  font-weight: 500 !important;
 
   &:hover {
     background-color: ${Constants.colors.accentColor};

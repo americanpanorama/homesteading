@@ -29,12 +29,12 @@ export const Header = styled.header`
 
 export const Title = styled.h2`
   margin: 0;
-  font-size: clamp(1.5rem, 3vw, 2rem);
-  line-height: 1;
-  font-family: ${Constants.fonts.serif};
-  font-weight: 700;
   color: var(--light-color);
   color: ${Constants.colors.olive};
+  font-family: ${Constants.fonts.sansSerif};
+  font-size: clamp(1.5rem, 3vw + 0.5em, 2rem);
+  font-weight: 400 !important;
+  line-height: 1;
   align-self: center;
 `;
 
@@ -63,9 +63,8 @@ export const ToggleLink = styled(Link)<{ $active: boolean }>`
   font-family: inherit;
   font-size: 1rem;
   letter-spacing: 0.04em;
-
   text-transform: uppercase;
-  font-weight: 700 !important;
+  font-weight: 500 !important;
   text-decoration: none;
   cursor: pointer;
 

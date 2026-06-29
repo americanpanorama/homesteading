@@ -6,7 +6,7 @@ export const Container = styled.header`
   display: flex;
   align-items: center;
   min-height: 56px;
-  font-family: "Unica One", serif;
+  font-family: ${Constants.fonts.serif};
   line-height: 1;
 
   a {
@@ -58,7 +58,7 @@ export const Acquisition = styled.span`
 export const And = styled.span`
   margin: 0 0.15em;  
   color: ${Constants.colors.fullStateDistrictFillColor};
-  font-family: "Zen Dots", sans-serif;
+  font-family: ${Constants.fonts.altFont};
   font-size: 1.3em;
   font-weight: 100;
   opacity: 0.75;

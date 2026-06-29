@@ -14,7 +14,7 @@ export const CitationStyle = styled.div`
   padding: 1em;
   background-color: ${Constants.colors.mainBGcolor};
   color: ${Constants.colors.accentColor};
-  font-weight: 700 !important;
+  font-weight: 500 !important;
   letter-spacing: 0.06em;
   text-transform: uppercase;
 `;

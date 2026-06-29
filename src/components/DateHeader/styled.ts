@@ -99,10 +99,11 @@ export const Year = styled.h1`
   justify-content: center;
   align-items: center;
   margin: 0;
-  padding: 0;
+  padding: 0.1em 0 0 0;
   color: ${Constants.colors.accentColor};
-  font-family: ${Constants.fonts.serif};
-  font-size: clamp(2.2rem, 8vw, 4rem);
+  font-family: ${Constants.fonts.sansSerif};
+  font-size: clamp(2.2rem, 8vw + 0.5em, 4rem);
+  font-weight: 500 !important;
   text-align: center;
   line-height: 1;
 `;
@@ -123,8 +124,10 @@ export const FiscalYear = styled.h2`
   grid-area: fiscalYear;
   display: none;
   text-align: center;
-  font-size: clamp(0.8rem, 3vw, 1rem);
-  font-family: "Roboto Condensed", sans-serif;
+  color: ${Constants.colors.accentColor};
+  font-family: ${Constants.fonts.sansSerif};
+  font-size: clamp(0.8rem, 3vw + 0.5em, 1rem);
+  font-weight: 400 !important;
   margin: 0;
   padding: 0;
   text-transform: uppercase;

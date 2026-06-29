@@ -55,14 +55,14 @@ export const Title = styled.h1`
     align-items: center;
     margin-top: 3rem;
     margin-bottom: 0;
+    color: ${Constants.heatmapGradientColors[3]};
+    font-family: ${Constants.fonts.serif};
     font-size: calc(2rem + ((1vw - 4.8px) * 2.5));
     font-weight: 700;
     text-align: center;
     line-height: 1.2;
-    font-family: "Unica One", serif;
     text-transform: uppercase;
-    color: ${Constants.heatmapGradientColors[3]};
-  
+    
     @media ${Constants.devices.tabletLandscape} {
         grid-area: title;
         margin-top: 8vh;
@@ -72,10 +72,7 @@ export const Title = styled.h1`
 export const Land = styled.span`
   font-weight: 700;
   text-transform: uppercase;
-  //font-size: 0.7em;
-  /* align-self: flex-start; */
-  //font-family: "Inter", sans-serif;
-  //font-family: "Zen Dots", sans-serif;
+  // align-self: flex-start;
   `;
 
 export const Acquisition = styled.span`
@@ -87,8 +84,7 @@ export const And = styled.span`
   font-size: 1.5em;
   // color: ${Constants.heatmapGradientColors[5]};
   color: ${Constants.colors.fullStateDistrictFillColor};
-  font-family: "Zen Dots", sans-serif;
-  //font-family: ${Constants.fonts.serif};
+  font-family: ${Constants.fonts.altFont};
   margin: 0 0.2em;
   opacity: 0.5;
   `;

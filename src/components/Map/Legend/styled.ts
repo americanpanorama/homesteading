@@ -118,7 +118,7 @@ export const ColumnTitle = styled.h3`
   color: ${colors.lightColor};
   font-family: ${fonts.sansSerif};
   font-size: 1rem;
-  font-weight: 700 !important;
+  font-weight: 500 !important;
   text-align: left;
 `;
 

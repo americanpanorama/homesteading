@@ -31,7 +31,7 @@ export const Paragraph = styled.p`
 `;
 
 export const Highlight = styled.strong`
-  font-weight: 700 !important;;
+  font-weight: 500 !important;;
 `;
 
 export const ConflictNote = styled.div`

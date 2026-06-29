@@ -54,11 +54,11 @@ export const Title = styled.h1`
     align-items: center;
     margin-top: 2rem;
     margin-bottom: 0.5rem;
-    font-size: clamp(1.8rem, 8vw, 3.5rem);
+    font-size: clamp(2.5rem, 5vw + 0.5em, 4rem);
     font-weight: 700;
     text-align: center;
     line-height: 1.1;
-    font-family: "Unica One", serif;
+    font-family: ${Constants.fonts.serif};
     text-transform: uppercase;
     color: ${Constants.heatmapGradientColors[3]};
 
@@ -86,7 +86,7 @@ export const And = styled.span`
   font-weight: 100;
   font-size: 1.5em;
   color: ${Constants.colors.fullStateDistrictFillColor};
-  font-family: "Zen Dots", sans-serif;
+  font-family: ${Constants.fonts.altFont};
   margin: 0 0.2em;
   opacity: 0.5;
 `;
@@ -101,7 +101,7 @@ export const Subtitle = styled.h2`
   margin-top: 0;
   margin-bottom: 1.5rem;
   color: ${Constants.colors.olive};
-  font-size: clamp(1.1rem, 4vw, 1.6rem);
+  font-size: clamp(1.1rem, 4vw + 0.5em, 1.6rem);
   text-align: center;
   line-height: 1.2;
   padding: 0;

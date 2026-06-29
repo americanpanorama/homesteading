@@ -315,7 +315,7 @@ export const SelectedYearLabel = styled.div<{ $left: number }>`
   color: ${Constants.colors.lightColor};
   font-family: ${Constants.fonts.sansSerif};
   font-size: 1rem;
-  font-weight: 700 !important;
+  font-weight: 500 !important;
   line-height: 1;
   transform: translateX(-50%);
   pointer-events: none;

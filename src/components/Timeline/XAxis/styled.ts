@@ -16,7 +16,7 @@ export const CurrentYearLabel = styled(Label)`
   stroke: ${Constants.colors.mainBGcolor};
   stroke-width: 0.5em;
   font-size: 1.1em;
-  font-weight: 700 !important;
+  font-weight: 500 !important;
   paint-order: stroke fill;
   stroke-linejoin: round;
 `;

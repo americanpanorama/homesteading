@@ -26,7 +26,7 @@ export const AppContainer = styled.main<{ $isMapFullscreen: boolean }>`
   text-align: center;
   background-color: ${Constants.colors.insetBGcolor};
   color: ${Constants.colors.lightColor};
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: ${Constants.fonts.sansSerif};
   font-weight: 300;
   width: 100%;
   min-height: 100dvh;

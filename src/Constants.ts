@@ -78,8 +78,9 @@ export const heatmapGradientColors = [
 export const indianLandsColors = '#00BE8B';
 
 export const fonts = {
-  serif: '"DM Serif Display", serif',
+  serif: '"Unica One", serif',
   sansSerif: '"Roboto Condensed", sans-serif;',
+  altFont: '"Zen Dots", sans-serif;',
 }
 
 export const sizes = {
