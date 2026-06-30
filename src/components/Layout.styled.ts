@@ -132,7 +132,7 @@ export const MobileActionButton = styled.button`
 export const MobileSelectionTitle = styled.h2`
   margin: 0;
   color: ${Constants.colors.lightColor};
-  font-family: ${Constants.fonts.serif};
+  font-family: ${Constants.fonts.sansSerif};
   font-size: 1.2rem;
   font-weight: 600;
   line-height: 1.05;
