@@ -161,9 +161,10 @@ export const CloseMenu = styled.li`
   display: flex;
   justify-content: center;
   padding: 20px;
-  font-size: 0.9em;
+  font-size: 0.8em;
   text-transform: uppercase;
   letter-spacing: 0.1em;
+  line-height: 20px;
   text-align: center;
   cursor: pointer;
 
