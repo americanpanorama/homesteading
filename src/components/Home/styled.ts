@@ -17,7 +17,16 @@ export const Home = styled.div`
     background-position: center bottom;
     background-repeat: no-repeat;
     background-size: 100% auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     // padding: 1rem 1rem 4rem;
+
+    /* when viewport is wider/shorter: height < 3/4 width */
+    @media (min-aspect-ratio: 4/3) {
+        background-position: center center;
+    }
 
     @media ${Constants.devices.tabletLandscape} {
       display: grid;
@@ -61,6 +70,8 @@ export const Title = styled.h1`
     font-family: ${Constants.fonts.serif};
     text-transform: uppercase;
     color: ${Constants.heatmapGradientColors[3]};
+    order: -1;
+
 
     @media ${Constants.devices.tabletPortrait} {
         display: flex;
@@ -112,8 +123,9 @@ export const Subtitle = styled.h2`
 `;
 
 export const Description = styled.p`
+  display: none;
   max-width: 90ch;
-  margin: 0 auto 2rem;
+  margin: 0 auto 0;
   color: black;
   font-weight: 300;
   text-align: center;
@@ -122,33 +134,33 @@ export const Description = styled.p`
   text-shadow: 0px 0px 50px ${Constants.colors.mainBGcolor}, 
                0px 0px 50px ${Constants.colors.mainBGcolor}, 
                0px 0px 50px ${Constants.colors.mainBGcolor};
+  order: 5;
 
-  @media ${Constants.devices.tabletLandscape} {
+  @media ${Constants.devices.tabletLandscape},
+         ${Constants.devices.tabletPortrait} {
+    order: 2;
+    display: block;
     grid-area: description;
     max-width: min(90%, 800px);
-    padding-bottom: 3vh;
   }
 `;
 
 export const Explore = styled.div`
-  position: relative;
-  margin: 0 auto 100px auto;
+  margin: 0 auto 0px auto;
   overflow: visible;
   width: 90vw;
-  max-width: 700px;
-  height: 0;
-  padding-bottom: 50vw;
-
+  order: 3;
+  
   @media ${Constants.devices.tabletPortrait} {
-    padding-bottom: 400px;
+    max-width: 700px;
+    min-height: auto;
   }
 `;
 
 export const ExploreButton = styled(Link)`
-  position: absolute;
-  left: 50%;
-  bottom: -50px;
-  transform: translateX(-50%);
+  align-self: flex-start;
+  order: 4;
+  margin: 0 auto;
   color: ${Constants.colors.whiteColor};
   font-size: 1em;
   font-weight: 400 !important;
@@ -156,13 +168,19 @@ export const ExploreButton = styled(Link)`
   text-decoration: none;
   line-height: 1;
   background-color: ${Constants.colors.accentColor};
-  padding: 1rem 2.5rem;
+  padding: 1rem 4.5rem;
   border-radius: 999px;
   z-index: 1000;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   transition: background-color 0.2s;
   white-space: nowrap;
+  border: 1px solid rgba(255,255,255,0.75);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+
+  @media ${Constants.devices.tabletLandscape} {
+    align-self: start;
+  }
 
   &:hover,
   &:focus,

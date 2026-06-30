@@ -2,28 +2,28 @@ import styled from 'styled-components';
 import * as Constants from '../../../Constants';
 
 export const Container = styled.div`
-  position: absolute;
-  inset: 0;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+
+  /* hide the map if the window is to small to display it: less than 600px in height */
+  @media (max-height: 600px) {
+    display: none;
+  } 
 `;
 
 export const Svg = styled.svg`
-  position: absolute;
-  width: 100%;
-  max-width: 100%;
-  height: auto;
   overflow: visible;
 
-  @media ${Constants.devices.tabletPortrait} {
+  /* @media ${Constants.devices.tabletPortrait} {
     transform: translate(0, 15%);
   }
   @media ${Constants.devices.tabletLandscape} {
     transform: translate(0, 15%) scale(1.2);
     transform-origin: center center;
-  }
+  } */
 `;
 
 export const BasePath = styled.path``;
@@ -42,7 +42,9 @@ export const YearBadge = styled.div`
 
   @media ${Constants.devices.mobile} {
     display: block;
-    position: absolute;
+    margin-top: -50px;
+    margin-left: calc(100% * 0.6);
+    align-self: flex-start;
     top: 83%;
     right: 28%;
     z-index: 2;

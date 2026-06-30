@@ -42,19 +42,41 @@ export const getScaledFontSize = (
 
 /**
  * Calculates the SVG transform needed to fit a projected region into the map viewport.
- * Defaults match the historical full-US framing used by the map when no specific bounds exist.
+ *
+ * The map data already lives in a fixed projected canvas (`CANVASSIZE` square).
+ * `center` is the point in that canvas that should land at the viewport focus
+ * point. `dx` and `dy` are the projected width/height of the region being fit,
+ * usually from `calculateCenterAndDxDy(bounds)`.
+ *
+ * The scale is selected from the limiting dimension: if the viewport is wider
+ * than the fitted region, height limits the scale; otherwise width limits it.
+ * The relevant `xGutter` or `yGutter` multiplier can then leave breathing room
+ * around the fitted region.
+ *
+ * `focusY` moves the target point vertically within the viewport. For example,
+ * 0.5 centers it, while 0.62 places it a little lower to reserve room for UI.
+ *
+ * Defaults match the historical national framing used when no specific bounds
+ * exist. The default center is deliberately west/north of the canvas midpoint:
+ * the projected canvas includes areas east of the homesteading activity, so the
+ * old hand-tuned 0.37/0.47 values keep the active map area in view.
  */
 export const calculateTransform: CalculateTransform = viewOptions => {
-  let { dx, dy, center, yGutter, xGutter, focusY, width, height, rotation } = viewOptions;
-  xGutter = xGutter || 1;
-  yGutter = yGutter || 1;
-  focusY = focusY || 0.5;
-  dx = dx || CANVASSIZE;
-  dy = dy || 500 / 960 * CANVASSIZE;
-  center = center || [CANVASSIZE * 0.37, CANVASSIZE * 0.47];
-  rotation = rotation || -2;
+  const {
+    width,
+    height,
+    dx = CANVASSIZE,
+    dy = 500 / 960 * CANVASSIZE,
+    center = [CANVASSIZE * 0.37, CANVASSIZE * 0.47],
+    xGutter = 1,
+    yGutter = 1,
+    focusY = 0.5,
+    rotation = -2,
+  } = viewOptions;
 
-  const scale = (width / height > dx / dy) ? yGutter * height / dy : xGutter * width / dx;
+  const xScale = xGutter * width / dx;
+  const yScale = yGutter * height / dy;
+  const scale = (width / height > dx / dy) ? yScale : xScale;
   const translateX = width / 2 - center[0] * scale;
   const translateY = height * focusY - center[1] * scale;
 

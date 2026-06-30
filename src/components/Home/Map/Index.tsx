@@ -4,8 +4,17 @@ import { DimensionsContext } from '../../../DimensionsContext';
 import { Dimensions } from '../../../index.d';
 import { useAnimatedHomeMapYear, useHomeMapData } from '../../../hooks';
 import { colorGradient } from '../../../utilities';
-import { calculateTransform } from '../../Map/utilities';
+import { calculateCenterAndDxDy, calculateTransform } from '../../Map/utilities';
+import type { Bounds } from '../../Map.d';
 import * as Styled from './styled';
+
+// Bounds of data/continentalUS.json in the same projected CANVASSIZE space used
+// by the rest of the map. Home wants the continental silhouette centered, not
+// the default national homesteading activity framing from calculateTransform.
+const CONTINENTAL_US_BOUNDS: Bounds = [
+  [90.79997279301239 - 10, 232.41602466320683 - 10],
+  [915.2583557534542 + 10, 744.715202989936 + 10],
+];
 
 const HomeMap = () => {
   const { width: viewportWidth, isPhoneSize } = React.useContext(DimensionsContext) as Dimensions;
@@ -13,9 +22,16 @@ const HomeMap = () => {
   const yearIndex = useAnimatedHomeMapYear(data?.years.length || 0, 750);
 
   const width = Math.min(viewportWidth, 980);
-  const height = Math.max(isPhoneSize ? 250 : 340, Math.min(width * 0.62, 520));
+  const height = Math.max(isPhoneSize ? 250 : 340, width * 0.62);
   const { transform } = React.useMemo(
-    () => calculateTransform({ width, height, yGutter: 0.88, dx: -100, focusY: 0.63 }),
+    () => calculateTransform({
+      ...calculateCenterAndDxDy(CONTINENTAL_US_BOUNDS),
+      width,
+      height,
+      xGutter: 0.88,
+      yGutter: 0.88,
+      focusY: 0.5,
+    }),
     [height, width],
   );
 
@@ -32,10 +48,10 @@ const HomeMap = () => {
 
   return (
     <Styled.Container aria-hidden='true'>
-      <Styled.YearBadge>{activeYear}</Styled.YearBadge>
+
       
       <Styled.Svg
-        viewBox={`100 150 ${width} ${height}`}
+        viewBox={`0 0 ${width} ${height}`}
         role='presentation'
       >
         <g 
@@ -93,6 +109,8 @@ const HomeMap = () => {
           ))}
         </g>
       </Styled.Svg>
+
+      <Styled.YearBadge>{activeYear}</Styled.YearBadge>
     </Styled.Container>
   );
 };
