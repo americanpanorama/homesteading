@@ -132,18 +132,6 @@ export const Explore = styled.div`
   position: relative;
   width: 100%;
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: -200px;
-    bottom: -200px;
-    left: -100px;
-    right: -100px;
-    background: radial-gradient(circle, white 0%, transparent 50%);
-    z-index: 0;
-    pointer-events: none;
-  }
-
   @media ${Constants.devices.tabletLandscape} {
     grid-area: explore;
     height: 520px;

@@ -101,7 +101,7 @@ export const Subtitle = styled.h2`
   margin-top: 0;
   margin-bottom: 1.5rem;
   color: ${Constants.colors.olive};
-  font-size: clamp(1.1rem, 4vw + 0.5em, 1.6rem);
+  font-size: clamp(1.1rem, 4vw, 1.6rem);
   text-align: center;
   line-height: 1.2;
   padding: 0;
@@ -112,7 +112,7 @@ export const Subtitle = styled.h2`
 `;
 
 export const Description = styled.p`
-  max-width: 100vw;
+  max-width: 90ch;
   margin: 0 auto 2rem;
   color: black;
   font-weight: 300;
@@ -131,40 +131,23 @@ export const Description = styled.p`
 `;
 
 export const Explore = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: min(90%, 800px);
-  height: 280px;
-  margin: 0 auto;
   position: relative;
-  width: 100%;
+  margin: 0 auto 100px auto;
+  overflow: visible;
+  width: 90vw;
+  max-width: 700px;
+  height: 0;
+  padding-bottom: 50vw;
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: -150px;
-    bottom: -150px;
-    left: -80px;
-    right: -80px;
-    background: radial-gradient(circle, white 0%, transparent 60%);
-    z-index: 0;
-    pointer-events: none;
-  }
-
-  @media ${Constants.devices.tabletLandscape} {
-    grid-area: explore;
-    height: 520px;
-    width: 100%;
-    align-self: center;
-    margin: 0 auto 3rem auto;
+  @media ${Constants.devices.tabletPortrait} {
+    padding-bottom: 400px;
   }
 `;
 
 export const ExploreButton = styled(Link)`
   position: absolute;
   left: 50%;
-  bottom: 1.2rem;
+  bottom: -50px;
   transform: translateX(-50%);
   color: ${Constants.colors.whiteColor};
   font-size: 1em;

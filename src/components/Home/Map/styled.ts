@@ -4,16 +4,26 @@ import * as Constants from '../../../Constants';
 export const Container = styled.div`
   position: absolute;
   inset: 0;
-  // border-radius: 28px;
-  overflow: hidden;;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 `;
 
 export const Svg = styled.svg`
-  display: block;
+  position: absolute;
+  width: 100%;
   max-width: 100%;
-  max-height: 100%;
-  width: auto;
   height: auto;
+  overflow: visible;
+
+  @media ${Constants.devices.tabletPortrait} {
+    transform: translate(0, 15%);
+  }
+  @media ${Constants.devices.tabletLandscape} {
+    transform: translate(0, 15%) scale(1.2);
+    transform-origin: center center;
+  }
 `;
 
 export const BasePath = styled.path``;
@@ -28,17 +38,22 @@ export const OfficePath = styled.path.attrs<{ $fill: string; $fillOpacity: numbe
 `;
 
 export const YearBadge = styled.div`
-  position: absolute;
-  top: 330px;
-  right: 250px;
-  z-index: 2;
-  color: white;
-  font-family: ${Constants.fonts.sansSerif};
-  font-size: 1.5em;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  text-shadow: 0 0 4px ${Constants.colors.blackColor}, 0 0 6px ${Constants.colors.blackColor};
+  display: none;
+
+  @media ${Constants.devices.mobile} {
+    display: block;
+    position: absolute;
+    top: 83%;
+    right: 28%;
+    z-index: 2;
+    color: white;
+    font-family: ${Constants.fonts.sansSerif};
+    font-size: 1.5em;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-shadow: 0 0 4px ${Constants.colors.blackColor}, 0 0 6px ${Constants.colors.blackColor};
+  }
 `;
 
 export const Legend = styled.div`

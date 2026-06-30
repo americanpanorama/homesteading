@@ -55,7 +55,7 @@ const HomeMap = () => {
                 dy="8"
                 stdDeviation="8"
                 floodColor="black"
-                floodOpacity="0.7"
+                floodOpacity="0.6"
               />
             </filter>
           </defs>
