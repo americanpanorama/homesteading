@@ -64,7 +64,7 @@ export const ToggleLink = styled(Link)<{ $active: boolean }>`
   font-size: 1rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  font-weight: 500 !important;
+  font-weight: 400 !important;
   text-decoration: none;
   cursor: pointer;
 
