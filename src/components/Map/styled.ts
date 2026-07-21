@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { Link } from 'react-router-dom';
 import { MapSize } from '../../index.d';
 import * as Constants from '../../Constants';
 
@@ -31,6 +32,32 @@ export const VectorMap = styled.div<{ $mapSize: MapSize; $height: number }>`
       z-index: 1;
       margin: 0 25px 25px 25px;
     `}
+  }
+`;
+
+export const MapDataAccessLink = styled(Link)`
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  z-index: 10001;
+  max-width: min(420px, calc(100% - 24px));
+  padding: 10px 12px;
+  background: ${Constants.colors.whiteColor};
+  color: ${Constants.colors.lightColor};
+  border: 2px solid ${Constants.colors.focusRingColor};
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);
+  text-align: left;
+  text-decoration: none;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-140%);
+  transition: transform 160ms ease;
+
+  body.keyboard-navigation &:focus {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
   }
 `;
 

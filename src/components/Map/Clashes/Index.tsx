@@ -17,6 +17,7 @@ const Clashes = () => {
         return (
           <Tooltip
             placement='bottom'
+            trigger={['hover', 'click']}
             overlay={(
               <Styled.PopupContainer>
                 <h4>{clash.names}</h4>

@@ -13,8 +13,13 @@ import Legend from './Legend/Index';
 import { MapViewContext } from './ViewContext';
 import { useMapViewport, useURLParams, useYearData } from '../../hooks';
 import HorizontalArrows from '../Buttons/HorizontalArrows';
+import { VisuallyHidden } from '../../styled';
 
-const Map = () => {
+type MapProps = {
+  mainContentId?: string;
+};
+
+const Map = ({ mainContentId }: MapProps = {}) => {
   const { stateTerr, office, year, yearNum } = useURLParams();
   const { mapDimensions, width: viewportWidth, height: viewportHeight } = useContext(DimensionsContext) as Dimensions;
   const isCompactLayout = !Constants.isWideViewport(viewportWidth, viewportHeight);
@@ -42,7 +47,23 @@ const Map = () => {
     const mapView = { center, rotation, scale };
     return (
       <MapViewContext.Provider value={mapView}>
-        <Styled.VectorMap $mapSize={mapSize} $height={height}>
+        <Styled.VectorMap
+          as={mainContentId ? 'main' : 'div'}
+          id={mainContentId}
+          $mapSize={mapSize}
+          $height={height}
+          aria-label='Interactive homesteading map'
+          aria-describedby={mainContentId ? 'map-keyboard-instructions' : undefined}
+          tabIndex={mainContentId ? -1 : undefined}
+        >
+          {mainContentId && (
+            <VisuallyHidden id='map-keyboard-instructions'>
+              Interactive map. Use Tab to move through available states, territories, land office districts, legend controls, and year controls. Press Enter to follow a focused map link.
+            </VisuallyHidden>
+          )}
+          <Styled.MapDataAccessLink to={`/map-data/year/${year}`}>
+            This map visualization is also available as structured map data for {year}.
+          </Styled.MapDataAccessLink>
           <Legend />
 
           <svg

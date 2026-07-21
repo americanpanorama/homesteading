@@ -17,7 +17,7 @@ export const colors = {
   whiteColor,
   blackColor,
   focusRingColor: '#F2BE00',
-  mutedTextColor: '#888888',
+  mutedTextColor: '#777676',
   softTextColor: '#EEEEEE',
   disabledTextColor: '#444444',
   districtStrokeColor: '#8A4353',
@@ -34,7 +34,7 @@ export const colors = {
   legendPanelLandscapeShadowColor: hextoRgba(blackColor, 0.06),
   legendHeaderShadowColor: hextoRgba(blackColor, 0.08),
   legendHeaderDividerColor: hextoRgba(lightTextColor, 0.26),
-  legendDimmedTextColor: '#BBBBBB',
+  legendDimmedTextColor: '#999999',
   legendIndianLandsColor,
   legendIndianLandsFaintColor: hextoRgba(legendIndianLandsColor, 0.1),
   legendIndianLandsMediumColor: hextoRgba(legendIndianLandsColor, 0.5),
@@ -66,10 +66,37 @@ export const barCategoryColors = {
 //   '#BA0079',
 // ];
 
+// export const heatmapGradientColors = [
+//   '#FFF0E1',
+//   '#FFA696',
+//   '#FF7E6F',
+//   '#CC4440',
+//   '#BF1657',
+//   '#BA0079',
+// ];
+
+// export const heatmapGradientColors = [
+//   '#FFF0E1', // near-zero / very low
+//   '#F5B084', // low, still quiet
+//   '#E57762', // low-mid
+//   '#C94951', // mid
+//   '#B51D66', // high
+//   '#BA0079', // highest
+// ];
+
+// export const heatmapGradientColors = [
+//   '#FFF0E1',
+//   '#EDB184',
+//   '#D98260',
+//   '#BF514F',
+//   '#A92B61',
+//   '#970079',
+// ];
+
 export const heatmapGradientColors = [
   '#FFF0E1',
-  '#FFA696',
-  '#FF7E6F',
+  '#F2AD90',
+  '#E07464',
   '#CC4440',
   '#BF1657',
   '#BA0079',

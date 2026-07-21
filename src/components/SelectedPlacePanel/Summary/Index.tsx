@@ -19,20 +19,29 @@ const SelectedPlaceSummary = ({ data }: { data: LandOfficeViewModel }) => {
 
   const isOffice = chartData.type === 'office';
   const isState = !isOffice && us.lookup(chartData.name)?.statehood_year <= yearNum;
+  const isSingleYearOffice = isOffice && earliestYear === latestYear;
 
   return (
     <Styled.Container $isOffice={isOffice}>
       <Styled.Copy>
         {isOffice && (
           <Styled.Paragraph>
-            The {chartData.name} district land office operated between <Styled.Highlight>{earliestYear}</Styled.Highlight> and <Styled.Highlight>{latestYear}</Styled.Highlight>
-            {(earliestYear !== earliestYearSYBoundaries || latestYear !== latestYearSYBoundaries) ? (
+            {isSingleYearOffice ? (
               <React.Fragment>
-                . It had the displayed boundaries between <Styled.Highlight>{earliestYearSYBoundaries}</Styled.Highlight> and <Styled.Highlight>{latestYearSYBoundaries}</Styled.Highlight>. The area of the district during these years was <Styled.Highlight>{Math.round(selectedYearData.area).toLocaleString()}</Styled.Highlight> acres ({Math.round(selectedYearData.area / 640).toLocaleString()} square miles).
+                The {chartData.name} district land office operated only in {earliestYear}. The area of the district was <Styled.Highlight>{Math.round(selectedYearData.area).toLocaleString()}</Styled.Highlight> acres ({Math.round(selectedYearData.area / 640).toLocaleString()} square miles).
               </React.Fragment>
             ) : (
               <React.Fragment>
-                , always with the displayed boundaries. The area of the district during these years was <Styled.Highlight>{Math.round(selectedYearData.area).toLocaleString()}</Styled.Highlight> acres ({Math.round(selectedYearData.area / 640).toLocaleString()} square miles).
+                The {chartData.name} district land office operated between <Styled.Highlight>{earliestYear}</Styled.Highlight> and <Styled.Highlight>{latestYear}</Styled.Highlight>
+                {(earliestYear !== earliestYearSYBoundaries || latestYear !== latestYearSYBoundaries) ? (
+                  <React.Fragment>
+                    . It had the displayed boundaries between <Styled.Highlight>{earliestYearSYBoundaries}</Styled.Highlight> and <Styled.Highlight>{latestYearSYBoundaries}</Styled.Highlight>. The area of the district during these years was <Styled.Highlight>{Math.round(selectedYearData.area).toLocaleString()}</Styled.Highlight> acres ({Math.round(selectedYearData.area / 640).toLocaleString()} square miles).
+                  </React.Fragment>
+                ) : (
+                  <React.Fragment>
+                    , always with the displayed boundaries. The area of the district during these years was <Styled.Highlight>{Math.round(selectedYearData.area).toLocaleString()}</Styled.Highlight> acres ({Math.round(selectedYearData.area / 640).toLocaleString()} square miles).
+                  </React.Fragment>
+                )}
               </React.Fragment>
             )}
           </Styled.Paragraph>

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { DimensionsContext } from '../DimensionsContext';
 import * as Constants from '../Constants';
 import { useLandOfficeData, useLinkBuilder, useURLParams } from '../hooks';
@@ -24,12 +24,27 @@ const AppLayout = () => {
   const isCompactLayout = !Constants.isWideViewport(width, height);
   const landOfficeData = useLandOfficeData();
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const mobileDrawerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!isCompactLayout) {
       setIsDrawerOpen(false);
     }
   }, [isCompactLayout]);
+
+  useEffect(() => {
+    const drawer = mobileDrawerRef.current;
+
+    if (!drawer) {
+      return;
+    }
+
+    if (isDrawerOpen) {
+      drawer.removeAttribute('inert');
+    } else {
+      drawer.setAttribute('inert', '');
+    }
+  }, [isDrawerOpen]);
 
   if (isCompactLayout) {
     const placeTitle = (stateTerr && selectedPlaceName)
@@ -56,23 +71,13 @@ const AppLayout = () => {
     return (
       <>
         <TimelineDateHeader />
-        <Map />
-
-        <Styled.MobileDrawer $open={isDrawerOpen} aria-hidden={!isDrawerOpen}>
-          <Styled.MobileDrawerHeader>
-            <Styled.MobileDrawerHandle />
-          </Styled.MobileDrawerHeader>
-          <Styled.MobileDrawerContent>
-            {(stateTerr || office) ? <SelectedPlacePanel /> : <Timeline />}
-          </Styled.MobileDrawerContent>
-        </Styled.MobileDrawer>
-
-        <Styled.MobileBottomBar data-phone-chrome='bottom-bar'>
+        <Styled.MobileBottomBar id='timeline-data' tabIndex={-1} data-phone-chrome='bottom-bar'>
           {!stateTerr && !office && (
             <Styled.MobileBottomRow>
               <Styled.MobilePrimaryButton
                 type='button'
                 aria-expanded={isDrawerOpen}
+                aria-controls='mobile-map-details'
                 onClick={() => setIsDrawerOpen(current => !current)}
               >
                 {isDrawerOpen ? 'Close Timeline' : 'Open Timeline'}
@@ -89,6 +94,7 @@ const AppLayout = () => {
                 <Styled.MobileActionButton
                   type='button'
                   aria-expanded={isDrawerOpen}
+                  aria-controls='mobile-map-details'
                   onClick={() => setIsDrawerOpen(current => !current)}
                 >
                   {isDrawerOpen ? 'Close Data' : 'Open Data'}
@@ -105,15 +111,30 @@ const AppLayout = () => {
             </Styled.MobileSelectionCard>
           )}
         </Styled.MobileBottomBar>
+
+        <Styled.MobileDrawer
+          ref={mobileDrawerRef}
+          id='mobile-map-details'
+          $open={isDrawerOpen}
+          aria-hidden={!isDrawerOpen}
+        >
+          <Styled.MobileDrawerHeader>
+            <Styled.MobileDrawerHandle />
+          </Styled.MobileDrawerHeader>
+          <Styled.MobileDrawerContent>
+            {(stateTerr || office) ? <SelectedPlacePanel /> : <Timeline />}
+          </Styled.MobileDrawerContent>
+        </Styled.MobileDrawer>
+
+        <Map mainContentId='main-content' />
       </>
     );
   }
 
   return (
     <>
-      <Map />
       <TimelineDateHeader />
-      <Sidebar data-layout-sidebar $isCollapsed={mapSize === 'fullscreen'} aria-hidden={mapSize === 'fullscreen'}>
+      <Sidebar id='timeline-data' tabIndex={-1} data-layout-sidebar $isCollapsed={mapSize === 'fullscreen'} aria-hidden={mapSize === 'fullscreen'}>
         {mapSize !== 'fullscreen' && (
           <>
             {(stateTerr || office) && (
@@ -125,6 +146,7 @@ const AppLayout = () => {
           </>
         )}
       </Sidebar>
+      <Map mainContentId='main-content' />
     </>
   );
 };

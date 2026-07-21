@@ -31,7 +31,7 @@ const AppNav = () => {
   const closeMenu = () => setIsOpen(false);
 
   return (
-    <Styled.NavContainer aria-label='Site sections'>
+    <Styled.NavContainer id='site-navigation' tabIndex={-1} aria-label='Site sections'>
       {usesHamburgerMenu && (
         <Hamburger isOpen={isOpen} setIsOpen={setIsOpen} />
       )}

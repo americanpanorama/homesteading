@@ -15,7 +15,12 @@ const LegendHeader = ({ collapsed, setCollapsed, guideOpen, setIsGuideOpen }: { 
         <Styled.Chevron $collapsed={collapsed} />
       </Styled.HeaderButton>
       <Styled.Divider />
-      <Styled.GuideLink onClick={() => setIsGuideOpen(!guideOpen)}>
+      <Styled.GuideLink
+        type="button"
+        onClick={() => setIsGuideOpen(!guideOpen)}
+        aria-expanded={guideOpen}
+        aria-controls="map-guide"
+      >
         <Styled.GuideIcon></Styled.GuideIcon>
         Guide
       </Styled.GuideLink>

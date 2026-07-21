@@ -2,7 +2,9 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import * as Constants from '../../Constants';
 
-export const LongformContainer = styled.div`
+export const LongformContainer = styled.main.attrs({
+  tabIndex: -1,
+})`
   padding: 10px calc(50vw - 500px);
   max-width: 95vw;
   overflow-y: scroll;
@@ -50,7 +52,6 @@ export const LongformContainer = styled.div`
     }
   }
 `;
-
 
 
 

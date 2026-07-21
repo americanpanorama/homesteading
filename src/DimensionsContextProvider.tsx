@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useLayoutEffect, useMemo, useState } from 'react';
 import { DimensionsContext } from './DimensionsContext';
 import * as Constants from './Constants';
 import { Dimensions, MapSize } from './index.d';
@@ -32,6 +32,21 @@ const getPhoneChromeHeights = (): PhoneChromeHeights => {
   };
 };
 
+const getElementWidth = (selector: string): number | null => {
+  if (typeof document === 'undefined') {
+    return null;
+  }
+
+  const element = document.querySelector(selector);
+
+  if (!(element instanceof HTMLElement)) {
+    return null;
+  }
+
+  const width = Math.round(element.getBoundingClientRect().width);
+  return width > 0 ? width : null;
+};
+
 const DimensionsContextProvider = ({ children }: { children: React.ReactNode }) => {
   const [mapSize, setMapSize] = useState<MapSize>('default');
   const [phoneChromeHeights, setPhoneChromeHeights] = useState<PhoneChromeHeights>(DEFAULT_PHONE_CHROME_HEIGHTS);
@@ -43,16 +58,17 @@ const DimensionsContextProvider = ({ children }: { children: React.ReactNode }) 
     const { clientWidth, clientHeight } = document.documentElement || { clientWidth: null, clientHeight: null };
     const width = clientWidth || innerWidth || 1280;
     const height = Math.round(visualViewport?.height || clientHeight || innerHeight || 720);
-    const isDesktop = width >= Constants.sizes.desktop;
     const isWideLayout = Constants.isWideViewport(width, height);
     const isCompactLayout = !isWideLayout;
-    const sidebarWidth = isDesktop ? Math.max(width * 0.4, 600) : Math.max(width * 0.4, 360);
+    const measuredSidebarWidth = getElementWidth('[data-layout-sidebar]') || wideSidebarMeasuredWidth;
+    const measuredTimelineHostWidth = getElementWidth('[data-timeline-host]') || timelineHostMeasuredWidth;
+    const sidebarWidth = measuredSidebarWidth || Math.max(width * 0.4, 360);
     const isExpandedMap = isWideLayout && mapSize === 'fullscreen';
 
     const mapHeights = {
       default: height - 75 - 150 - 25,
       nolegend: height - 75 - 150 - 25,
-      fullscreen: isDesktop
+      fullscreen: width >= Constants.sizes.desktop
         ? height - 75 - 150 - 25
         : isWideLayout
           ? height - 75 - 150 - 25
@@ -77,8 +93,8 @@ const DimensionsContextProvider = ({ children }: { children: React.ReactNode }) 
       setMapSize,
     };
 
-    const timelineSidebarWidth = isWideLayout ? (wideSidebarMeasuredWidth || sidebarWidth) : width * 0.95;
-    const timelineHostWidth = timelineHostMeasuredWidth || timelineSidebarWidth;
+    const timelineSidebarWidth = isWideLayout ? sidebarWidth : width * 0.95;
+    const timelineHostWidth = measuredTimelineHostWidth || timelineSidebarWidth;
     const timelineHorizontalPadding = isWideLayout ? 8 : 20;
     const timelineDimensions = {
       // The sidebar now includes internal cards/padding around the timeline and
@@ -112,6 +128,14 @@ const DimensionsContextProvider = ({ children }: { children: React.ReactNode }) 
 
   const [dimensions, setDimensions] = useState<Dimensions>(() => calculateDimensions());
 
+  const updateMeasuredLayoutWidths = useCallback(() => {
+    const nextSidebarWidth = getElementWidth('[data-layout-sidebar]');
+    const nextTimelineHostWidth = getElementWidth('[data-timeline-host]');
+
+    setWideSidebarMeasuredWidth(current => (current === nextSidebarWidth ? current : nextSidebarWidth));
+    setTimelineHostMeasuredWidth(current => (current === nextTimelineHostWidth ? current : nextTimelineHostWidth));
+  }, []);
+
   useEffect(() => {
     const onResize = () => setDimensions(calculateDimensions());
     window.addEventListener('resize', onResize);
@@ -125,6 +149,26 @@ const DimensionsContextProvider = ({ children }: { children: React.ReactNode }) 
   }, [calculateDimensions]);
 
   useEffect(() => {
+    if (typeof document === 'undefined' || typeof MutationObserver === 'undefined') {
+      return;
+    }
+
+    const observer = new MutationObserver(() => {
+      updateMeasuredLayoutWidths();
+    });
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
+    updateMeasuredLayoutWidths();
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [updateMeasuredLayoutWidths]);
+
+  useLayoutEffect(() => {
     if (typeof document === 'undefined' || typeof ResizeObserver === 'undefined') {
       return;
     }
@@ -161,7 +205,7 @@ const DimensionsContextProvider = ({ children }: { children: React.ReactNode }) 
     return () => {
       observer.disconnect();
     };
-  });
+  }, [dimensions.isMobile]);
 
   useEffect(() => {
     if (typeof document === 'undefined' || typeof ResizeObserver === 'undefined') {
@@ -189,19 +233,20 @@ const DimensionsContextProvider = ({ children }: { children: React.ReactNode }) 
     return () => {
       observer.disconnect();
     };
-  });
+  }, [dimensions.isMobile, mapSize]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setDimensions(calculateDimensions());
   }, [calculateDimensions]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (typeof document === 'undefined' || typeof ResizeObserver === 'undefined') {
       return;
     }
 
     const sidebar = document.querySelector('[data-layout-sidebar]');
     if (!(sidebar instanceof HTMLElement)) {
+      setWideSidebarMeasuredWidth(null);
       return;
     }
 
@@ -220,7 +265,7 @@ const DimensionsContextProvider = ({ children }: { children: React.ReactNode }) 
     return () => {
       observer.disconnect();
     };
-  });
+  }, [dimensions.isMobile]);
 
   const value = useMemo(() => dimensions, [dimensions]);
 

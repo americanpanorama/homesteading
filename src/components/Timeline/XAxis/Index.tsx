@@ -49,6 +49,8 @@ const XAxis = () => {
         {TIMELINE_SELECTABLE_YEARS.map(year => (
           <Link
             to={buildLink({ year })}
+            aria-label={`Show fiscal year ${year}`}
+            aria-current={yearNum === year ? 'page' : undefined}
             key={`linkFor${year}`}
           >
             <Styled.HitArea

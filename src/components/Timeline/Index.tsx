@@ -7,10 +7,12 @@ import Controls from "./Controls/Index";
 import XAxis from "./XAxis/Index";
 import Heatmap from "./Heatmap/Index";
 import { TimelineSortOption } from "./types";
+import { useTableLinkBuilder } from "../Table/routing";
 
 const TimelineHeatmap = () => {
   const { timelineDimensions } = useContext(DimensionsContext) as Dimensions;
   const { height } = timelineDimensions;
+  const buildTableLink = useTableLinkBuilder();
   const [sortBy, setSortBy] = useState<TimelineSortOption>("alphabetical");
   const [showClashes, setShowClashes] = useState(false);
   const [showInactiveAreasForSelectedYear, setShowInactiveAreasForSelectedYear] = useState(true);
@@ -18,6 +20,9 @@ const TimelineHeatmap = () => {
 
   return (
     <Styled.Container data-timeline-host>
+      <Styled.TableAccessLink to={buildTableLink()}>
+        This timeline visualization is also available as a data table with rows for places and columns for each year.
+      </Styled.TableAccessLink>
       <Styled.ScrollPanel $height={Math.min(height, rows.length * rowHeight + 340)}>
         <Controls
           sortBy={sortBy}

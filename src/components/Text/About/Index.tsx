@@ -16,6 +16,42 @@ const aboutSections: { id: AboutSection; label: string }[] = [
 
 const About = () => {
     const [activeSection, setActiveSection] = React.useState<AboutSection>('sources');
+    const tabRefs = React.useRef<Record<AboutSection, HTMLButtonElement | null>>({
+        sources: null,
+        citation: null,
+        contact: null,
+        credits: null,
+    });
+
+    const selectSection = (section: AboutSection, focus = false) => {
+        setActiveSection(section);
+
+        if (focus) {
+            window.requestAnimationFrame(() => {
+                tabRefs.current[section]?.focus();
+            });
+        }
+    };
+
+    const handleTabKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>, section: AboutSection) => {
+        const currentIndex = aboutSections.findIndex(item => item.id === section);
+        let nextIndex = currentIndex;
+
+        if (event.key === 'ArrowRight') {
+            nextIndex = (currentIndex + 1) % aboutSections.length;
+        } else if (event.key === 'ArrowLeft') {
+            nextIndex = (currentIndex - 1 + aboutSections.length) % aboutSections.length;
+        } else if (event.key === 'Home') {
+            nextIndex = 0;
+        } else if (event.key === 'End') {
+            nextIndex = aboutSections.length - 1;
+        } else {
+            return;
+        }
+
+        event.preventDefault();
+        selectSection(aboutSections[nextIndex].id, true);
+    };
 
     return (
         <Styled.LongformContainer id='main-content'>
@@ -27,12 +63,17 @@ const About = () => {
                         <Styled.AboutMenuButton
                             key={section.id}
                             id={`about-tab-${section.id}`}
+                            ref={element => {
+                                tabRefs.current[section.id] = element;
+                            }}
                             type='button'
                             role='tab'
                             aria-selected={selected}
                             aria-controls={`about-panel-${section.id}`}
+                            tabIndex={selected ? 0 : -1}
                             $selected={selected}
-                            onClick={() => setActiveSection(section.id)}
+                            onClick={() => selectSection(section.id)}
+                            onKeyDown={event => handleTabKeyDown(event, section.id)}
                         >
                             {section.label}
                         </Styled.AboutMenuButton>
@@ -44,6 +85,7 @@ const About = () => {
                 id={`about-panel-${activeSection}`}
                 role='tabpanel'
                 aria-labelledby={`about-tab-${activeSection}`}
+                tabIndex={0}
             >
                 {activeSection === 'sources' && <Sources />}
                 {activeSection === 'citation' && <Citations />}

@@ -27,7 +27,7 @@ const IndigenousDispossession = () => (
             states={['CO', 'AZ', 'NM']}
             startYear={1863}
             endYear={1890}
-            caption='Many clashes between Indigenous people and the U.S. Army or U.S. civilians took place far from the central homesteading regions, especially in the Southwest'
+            caption='Many clashes between Indigenous people and the U.S. Army or U.S. civilians took place far from the central homesteading regions, especially in the Southwest.'
         />
         <p>On the Great Sioux Reservation and the smaller Ponca Reservation in Nebraska, the U.S. government introduced a novel legal instrument: the “homesteads on Indian land.” Instead of forcing Indigenous nations to cede their title, the government assumed the role of a trustee for these nations’ lands. Officially for the nations’ benefit, lands were then opened to homesteaders who had to pay an extra, albeit generally low, purchase price per acre. The U.S. government administered the resulting proceeds in trust for the affected Indigenous nations. As a legal construct, this practice was different from the previous way of opening “Indian land” to U.S. citizens. In practice, however, these privatization policies were frequently put in place under tremendous pressure from the government. And representatives from affected nations pointed out that the arrangement hardly allowed them to profit from land sales proceeds.</p>
         <OpenReservationsMap />

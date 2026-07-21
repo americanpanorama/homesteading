@@ -14,6 +14,6 @@ export const Boundary = styled.path.attrs<{
     fill: $fill,
   },
 }))`
-  stroke: #aaa;
+  stroke: #776776;
   fill-opacity: 0.8;
 `;

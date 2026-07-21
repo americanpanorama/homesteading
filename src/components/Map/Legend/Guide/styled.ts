@@ -157,10 +157,15 @@ export const Tip = styled.div`
   }
 `;
 
-export const CloseMenu = styled.li`
+export const CloseMenu = styled.button`
   display: flex;
   justify-content: center;
+  width: 100%;
+  border: 0;
   padding: 20px;
+  background: transparent;
+  color: ${Constants.colors.whiteColor};
+  font-family: ${Constants.fonts.sansSerif};
   font-size: 0.8em;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -177,10 +182,15 @@ export const CloseMenu = styled.li`
   }
 `;
 
-export const MenuItem = styled.li<{ $active: boolean }>`
+export const MenuItem = styled.button<{ $active: boolean }>`
+  display: block;
+  width: 100%;
+  border: 0;
   padding: 20px;
   color: ${(p => (p.$active) ? Constants.colors.accentColor : Constants.colors.whiteColor)};
+  font-family: ${Constants.fonts.sansSerif};
   font-size: 0.9em;
+  text-align: right;
   background-color: ${(p => (p.$active) ? Constants.colors.whiteColor : Constants.colors.accentColor)};
   cursor: pointer;
     
@@ -191,10 +201,9 @@ export const MenuItem = styled.li<{ $active: boolean }>`
   }
 `; 
 
-export const Menu = styled.ul`
+export const Menu = styled.nav`
   z-index: 2600;
   background-color: ${Constants.colors.accentColor};
-  list-style: none;
   text-align: right;
   padding: 0;
   display: none;

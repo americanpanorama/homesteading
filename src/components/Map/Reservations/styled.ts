@@ -9,8 +9,10 @@ export const ReservationPath = styled.path<{
 }>`
   // styling for unceded lands
   ${({ $isUnceded }) => $isUnceded &&`
-    fill: rgba(103, 229, 197, 0.5);
-    stroke-width: 0;
+    fill: rgba(103, 229, 197, 0.35);
+    stroke: #008F76;
+    stroke-width: 0.5;
+    stroke-opacity: 0.85;
   `}
 
   // styling for reservations

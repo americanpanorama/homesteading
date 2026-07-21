@@ -6,11 +6,13 @@ import * as Styled from './styled';
 interface Props {
   d: string;
   link: string;
+  linkActive: boolean;
+  label: string;
   strokeWidth: number;
   fill: string;
 }
 
-const District = ({ d, link, strokeWidth: nextStrokeWidth, fill: nextFill }: Props) => {
+const District = ({ d, link, linkActive, label, strokeWidth: nextStrokeWidth, fill: nextFill }: Props) => {
   const strokeWidth = React.useRef(nextStrokeWidth);
   const fill = React.useRef(nextFill);
   const ref = React.useRef<SVGPathElement | null>(null);
@@ -35,17 +37,29 @@ const District = ({ d, link, strokeWidth: nextStrokeWidth, fill: nextFill }: Pro
       });
   }, [nextFill]);
 
+  const boundary = (
+    <Styled.Boundary
+      d={d}
+      ref={ref}
+      $strokeWidth={strokeWidth.current}
+      $fill={fill.current}
+    />
+  );
+
+  if (!linkActive) {
+    return (
+      <Styled.StaticContainer aria-hidden='true' focusable='false'>
+        {boundary}
+      </Styled.StaticContainer>
+    );
+  }
+
   return (
     <Styled.Container
       to={link}
-      aria-label='View land office district details'
+      aria-label={label}
     >
-      <Styled.Boundary
-        d={d}
-        ref={ref}
-        $strokeWidth={strokeWidth.current}
-        $fill={fill.current}
-      />
+      {boundary}
     </Styled.Container>
   );
 };

@@ -26,9 +26,37 @@ export interface RegionalClaimsMapProps {
 
 const dateLabel = (conflict: ConflictData) => `${conflict.start_date.month}/${conflict.start_date.day}/${conflict.start_date.year}`;
 
+const getFiscalYear = ({ year, month }: { year: number; month: number }) => (
+  month >= 7 ? year + 1 : year
+);
+
+const getConflictStartFiscalYear = (conflict: ConflictData) => getFiscalYear(conflict.start_date);
+const getConflictEndFiscalYear = (conflict: ConflictData) => getFiscalYear(conflict.end_date);
+const conflictFiscalYearLabel = (conflict: ConflictData) => {
+  const startFiscalYear = getConflictStartFiscalYear(conflict);
+  const endFiscalYear = getConflictEndFiscalYear(conflict);
+
+  return startFiscalYear === endFiscalYear
+    ? startFiscalYear.toString()
+    : `${startFiscalYear}-${endFiscalYear}`;
+};
+
+const conflictOverlapsFiscalRange = (
+  conflict: ConflictData,
+  startYear: number,
+  endYear: number,
+) => getConflictStartFiscalYear(conflict) <= endYear && getConflictEndFiscalYear(conflict) >= startYear;
+
+const conflictOverlapsFiscalYear = (
+  conflict: ConflictData,
+  year: number,
+) => conflictOverlapsFiscalRange(conflict, year, year);
+
 const conflictKey = (conflict: ConflictData) => [
   conflict.names,
   conflict.state,
+  getConflictStartFiscalYear(conflict),
+  getConflictEndFiscalYear(conflict),
   conflict.start_date.year,
   conflict.start_date.month,
   conflict.start_date.day,
@@ -74,15 +102,18 @@ const useRegionalConflicts = (
           return;
         }
 
-        const nextConflicts = responses
+        const dedupedConflicts = new Map<string, ConflictData>();
+        responses
           .reduce<ConflictData[]>((acc, response) => acc.concat((response.data as YearDataRaw).conflicts || []), [])
-          .filter(conflict => (
-            targetStates.includes(conflict.state)
-            && conflict.start_date.year >= startYear
-            && conflict.start_date.year <= endYear
-          ))
+          .filter(conflict => targetStates.includes(conflict.state) && conflictOverlapsFiscalRange(conflict, startYear, endYear))
+          .forEach(conflict => {
+            dedupedConflicts.set(conflictKey(conflict), conflict);
+          });
+
+        const nextConflicts = Array.from(dedupedConflicts.values())
           .sort((a, b) => (
-            a.start_date.year - b.start_date.year
+            getConflictStartFiscalYear(a) - getConflictStartFiscalYear(b)
+            || a.start_date.year - b.start_date.year
             || a.start_date.month - b.start_date.month
             || a.start_date.day - b.start_date.day
           ));
@@ -143,7 +174,7 @@ const RegionalClaimsMap = ({
   const selectedYearLeft = (rangeEndYear === rangeStartYear)
     ? 50
     : (year - rangeStartYear) / (rangeEndYear - rangeStartYear) * 100;
-  const visibleConflicts = allConflicts.filter(conflict => conflict.start_date.year <= year);
+  const visibleConflicts = allConflicts.filter(conflict => getConflictStartFiscalYear(conflict) <= year);
   const districts = React.useMemo(() => (
     yearData.offices.filter(office => targetStateSet.has(office.state))
   ), [targetStateSet, yearData.offices]);
@@ -202,7 +233,7 @@ const RegionalClaimsMap = ({
     <Styled.Figure>
       <Styled.Shell>
         <Styled.MapSvg
-          aria-label={`${displayStateNames} homestead claims${includeClashes ? ' and frontier clashes' : ''} through ${year}`}
+          aria-label={`${displayStateNames} homestead claims${includeClashes ? ' and frontier clashes' : ''} through fiscal year ${year}`}
           role='img'
           viewBox={`0 0 ${VIEW_WIDTH} ${VIEW_HEIGHT}`}
         >
@@ -239,7 +270,8 @@ const RegionalClaimsMap = ({
             {includeClashes && (
               <>              
                 {visibleConflicts.map(conflict => {
-                  const currentYear = conflict.start_date.year === year;
+                  const conflictStartFiscalYear = getConflictStartFiscalYear(conflict);
+                  const currentYear = conflictOverlapsFiscalYear(conflict, year);
                   const casualties = conflict.native_casualties + conflict.us_casualties;
                   const xRadius = 5 / viewport.scale;
                   const strokeWidth = currentYear
@@ -249,12 +281,15 @@ const RegionalClaimsMap = ({
                   return (
                     <Tooltip
                       placement='bottom'
+                      trigger={['hover', 'click']}
                       overlay={(
                         <Styled.PopupContainer>
                           <h4>{conflict.names}</h4>
                           <Styled.PopupData>
                             <label>date</label>
                             <div>{dateLabel(conflict)}</div>
+                            <label>{getConflictStartFiscalYear(conflict) === getConflictEndFiscalYear(conflict) ? 'fiscal year' : 'fiscal years'}</label>
+                            <div>{conflictFiscalYearLabel(conflict)}</div>
                             <label>state</label>
                             <div>{conflict.state}</div>
                             <label>{`nation${(conflict.nations.length > 1) ? 's' : ''}`}</label>
@@ -279,7 +314,7 @@ const RegionalClaimsMap = ({
                       <Styled.ConflictMarker
                         transform={`rotate(${conflict.rotation} ${conflict.x}, ${conflict.y})`}
                         $currentYear={currentYear}
-                        data-clash-year={conflict.start_date.year}
+                        data-clash-year={conflictStartFiscalYear}
                         data-clash-state={conflict.state}
                       >
                         <line
@@ -350,7 +385,7 @@ const RegionalClaimsMap = ({
                   <Styled.TickButton
                     type='button'
                     aria-current={tickYear === year ? 'step' : undefined}
-                    aria-label={`Show ${tickYear}`}
+                    aria-label={`Show fiscal year ${tickYear}`}
                     $left={left}
                     $labeled={labeledTick}
                     $selected={tickYear === year}
@@ -364,6 +399,7 @@ const RegionalClaimsMap = ({
               })}
             </Styled.Ticks>
             <Styled.SelectedYearMarker $left={selectedYearLeft} />
+            <Styled.FiscalYearLabel>Fiscal year</Styled.FiscalYearLabel>
           </Styled.TimelineRail>
         </Styled.Controls>
       </Styled.Shell>

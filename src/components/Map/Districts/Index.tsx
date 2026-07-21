@@ -10,10 +10,12 @@ const Districts = () => {
 
   return (
     <g>
-      {districts.map(({ projectedTownship, link, strokeWidth, fill }) => (
+      {districts.map(({ projectedTownship, link, linkActive, label, strokeWidth, fill }) => (
           <District
             d={projectedTownship.d}
             link={link}
+            linkActive={linkActive}
+            label={label}
             strokeWidth={strokeWidth}
             fill={fill}
             key={`office-${projectedTownship.office}-${projectedTownship.state}-${projectedTownship.area}`}

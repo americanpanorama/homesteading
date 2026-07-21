@@ -49,22 +49,23 @@ export const ControlGroup = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
+  min-width: 0;
   text-align: left;
 `;
 
 export const ControlLabel = styled(SelectLabel)``;
 
 export const SegmentedControl = styled(LegendToggleGroup)`
-  width: auto;
-  align-self: flex-start;
+  width: 100%;
 `;
 
 export const ControlButton = styled.button<{ $active: boolean }>`
   ${controlBase}
+  flex: 1 1 0;
   border: 0;
   border-right: 1px solid #bfc1c2;
-  min-width: 120px;
-  padding: 0 1em;
+  min-width: 0;
+  padding: 0 0.75em;
 
   &:last-child {
     border-right: 0;
@@ -79,6 +80,7 @@ export const ControlButton = styled.button<{ $active: boolean }>`
 `;
 
 export const Select = styled(BaseSelect)`
+  width: 100%;
   max-width: 260px;
 `;
 

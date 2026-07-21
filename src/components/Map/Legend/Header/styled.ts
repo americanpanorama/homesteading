@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import * as Constants from '../../../../Constants';
-import { Link } from "react-router-dom";
 
 const { colors, fonts, devices } = Constants;
 
@@ -59,12 +58,15 @@ export const Chevron = styled.span<{ $collapsed: boolean }>`
   transform: ${({ $collapsed }) => ($collapsed ? 'rotate(45deg) translateY(-1px)' : 'rotate(225deg) translateY(-1px)')};
 `;
 
-export const GuideLink = styled.div`
+export const GuideLink = styled.button`
   pointer-events: auto;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   gap: 7px;
+  border: 0;
+  padding: 0;
+  background: transparent;
   color: ${colors.lightColor};
   text-decoration: none;
   font-family: ${fonts.sansSerif};

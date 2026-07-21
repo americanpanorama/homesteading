@@ -103,13 +103,13 @@ export const Controls = styled.div`
   grid-template-columns: auto minmax(0, 1fr);
   align-items: center;
   gap: 16px;
-  padding: 14px 18px 18px;
+  padding: 14px 18px 16px;
   background-color: rgba(255, 255, 255, 0.92);
   border-top: 1px solid rgba(33, 29, 22, 0.12);
 
   @media (max-width: ${Constants.sizes.tabletPortrait}px) {
     gap: 12px;
-    padding: 14px 12px 18px;
+    padding: 14px 12px 16px;
   }
 `;
 
@@ -157,7 +157,7 @@ export const PauseIcon = styled.svg.attrs({
 
 export const TimelineRail = styled.div`
   position: relative;
-  height: 58px;
+  height: 94px;
   min-width: 0;
 `;
 
@@ -238,7 +238,7 @@ export const TickLabel = styled.span`
   position: absolute;
   top: 20px;
   left: 50%;
-  color: silver;
+  color: ${Constants.colors.olive};
   font-family: ${Constants.fonts.sansSerif};
   font-size: 0.82rem;
   line-height: 1;
@@ -269,6 +269,22 @@ export const SelectedYearLabel = styled.div<{ $left: number }>`
   font-weight: 500 !important;
   line-height: 1;
   transform: translateX(-50%);
+  pointer-events: none;
+`;
+
+export const FiscalYearLabel = styled.div`
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 72px;
+  color: ${Constants.colors.highlightColor};
+  font-family: ${Constants.fonts.sansSerif};
+  font-size: 0.78rem;
+  font-weight: 500 !important;
+  letter-spacing: 0;
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
   pointer-events: none;
 `;
 

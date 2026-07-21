@@ -18,7 +18,7 @@ const Home = () => {
         }, [pathname]);
   
     return (
-      <Styled.Home>
+      <Styled.Home id='main-content'>
         <Styled.Title>
           <Styled.Acquisition>Land Acquisition</Styled.Acquisition>
           <Styled.And>&</Styled.And>

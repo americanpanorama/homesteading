@@ -70,6 +70,10 @@ const TimelineHeatmap = ({
           {TIMELINE_SELECTABLE_YEARS.map(y => (
             <Link
               to={buildLink({ year: y })}
+              aria-label={`Show fiscal year ${y}`}
+              aria-current={yearNum === y ? 'page' : undefined}
+              aria-hidden='true'
+              tabIndex={-1}
               key={`linkFor${y}`}
             >
               <Styled.HitArea

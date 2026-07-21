@@ -22,16 +22,16 @@ const LandOffice = ({ data: providedData }: Props) => {
   const [stacked, setStacked] = React.useState(true);
   const [selectedView, setSelectedView] = React.useState<SelectedView>('number');
 
-  if (!data) {
+  React.useEffect(() => {
+    setStacked(true);
+    setSelectedView('number');
+  }, [data?.chartData.name, data?.chartData.type]);
+
+  if (!data || data.chartData.yearData.length <= 1) {
     return null;
   }
 
   const { chartData, hasMultipleClaimTypes, hasMultiplePatentTypes } = data;
-
-  React.useEffect(() => {
-    setStacked(true);
-    setSelectedView('number');
-  }, [chartData.name, chartData.type]);
 
   return (
     <Styled.Container>

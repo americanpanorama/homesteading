@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-labelledby="title desc">
+  <title id="title">Tilted survey grid</title>
+  <desc id="desc">A field of colored square parcels skewed and compressed to fill the viewport.</desc>
+  <!--
+    The source squares are 30 by 30 with 1-unit gaps. The field extends well
+    beyond the viewport so the transformed grid can be repositioned safely.
+    Each fixed fill is colorGradient(value), with its sampled value retained in
+    data-gradient-value for later regeneration. Orthogonal neighbors alternate
+    between randomized light and dark portions of the gradient for contrast.
+  -->
+  <g transform="translate(16 16) skewX(-42) scale(1 0.52)">
+    <rect x="-32" y="-32" width="30" height="30" fill="rgb(250, 214, 194)" data-gradient-value="0.004190"/>
+    <rect x="-1" y="-32" width="30" height="30" fill="rgb(239 168 140)" data-gradient-value="0.038694"/>
+    <rect x="30" y="-32" width="30" height="30" fill="rgb(246, 193, 168)" data-gradient-value="0.007195"/>
+    <rect x="61" y="-32" width="30" height="30" fill="rgb(189, 13, 101)" data-gradient-value="0.044011"/>
+    <rect x="92" y="-32" width="30" height="30" fill="rgb(245, 187, 161)" data-gradient-value="0.008014"/>
+    <rect x="-32" y="-1" width="30" height="30" fill="rgb(192, 26, 85)" data-gradient-value="0.039120"/>
+    <rect x="-1" y="-1" width="30" height="30" fill="rgb(249, 210, 189)" data-gradient-value="0.004715"/>
+    <rect x="30" y="-1" width="30" height="30" fill="rgb(193, 30, 83)" data-gradient-value="0.038216"/>
+    <rect x="61" y="-1" width="30" height="30" fill="rgb(245, 186, 160)" data-gradient-value="0.008121"/>
+    <rect x="92" y="-1" width="30" height="30" fill="rgb(190, 16, 97)" data-gradient-value="0.042869"/>
+    <rect x="-32" y="30" width="30" height="30" fill="rgb(252, 223, 204)" data-gradient-value="0.002936"/>
+    <rect x="-1" y="30" width="30" height="30" fill="rgb(239, 168, 140)" data-gradient-value="0.040719"/>
+    <rect x="30" y="30" width="30" height="30" fill="rgb(249, 208, 186)" data-gradient-value="0.005061"/>
+    <rect x="61" y="30" width="30" height="30" fill="rgb(187, 4, 115)" data-gradient-value="0.048096"/>
+    <rect x="92" y="30" width="30" height="30" fill="rgb(246, 194, 169)" data-gradient-value="0.007023"/>
+    <rect x="-32" y="61" width="30" height="30" fill="rgb(189, 13, 101)" data-gradient-value="0.044079"/>
+    <rect x="-1" y="61" width="30" height="30" fill="rgb(249, 207, 185)" data-gradient-value="0.005159"/>
+    <rect x="30" y="61" width="30" height="30" fill="rgb(188, 9, 108)" data-gradient-value="0.046079"/>
+    <rect x="61" y="61" width="30" height="30" fill="rgb(243, 179, 152)" data-gradient-value="0.009102"/>
+    <rect x="92" y="61" width="30" height="30" fill="rgb(193, 29, 84)" data-gradient-value="0.038562"/>
+    <rect x="-32" y="92" width="30" height="30" fill="rgb(250, 214, 194)" data-gradient-value="0.004146"/>
+    <rect x="-1" y="92" width="30" height="30" fill="rgb(188, 8, 109)" data-gradient-value="0.046516"/>
+    <rect x="30" y="92" width="30" height="30" fill="rgb(242, 174, 145)" data-gradient-value="0.009842"/>
+    <rect x="61" y="92" width="30" height="30" fill="rgb(188, 9, 108)" data-gradient-value="0.046064"/>
+    <rect x="92" y="92" width="30" height="30" fill="rgb(253, 231, 215)" data-gradient-value="0.001720"/>
+  </g>
+</svg>

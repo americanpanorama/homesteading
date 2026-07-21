@@ -288,6 +288,8 @@ export interface MapStateLayerItem extends ProjectedState {
 export interface MapDistrictLayerItem {
   projectedTownship: ProjectedTownship;
   link: string;
+  linkActive: boolean;
+  label: string;
   strokeWidth: number;
   fill: string;
 }
@@ -653,6 +655,8 @@ export const useMapDistricts = (): MapDistrictLayerState => {
       .map((projectedTownship) => ({
         projectedTownship,
         link: buildLink({ office: projectedTownship.office }),
+        linkActive: !!stateTerr && projectedTownship.state === stateTerr,
+        label: `View ${formatOfficeLabel(projectedTownship.office)} land office district details`,
         strokeWidth: stateTerr === projectedTownship.state
           ? getScaledStrokeWidth(scale, 2.1, 0.35, 1.1)
           : getScaledStrokeWidth(scale, 0.95, 0.18, 0.65),

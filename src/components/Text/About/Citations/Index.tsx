@@ -45,28 +45,28 @@ const Citations = () => {
       style: "Chicago",
       citation: (
         <>
-          Julius Wilm, Robert K. Nelson, and Justin Madron, “Homesteading,” <cite>American Panorama</cite>, ed. Robert K. Nelson and Edward L. Ayers, accessed {todayString}, https://dsl.richmond.edu/panorama/homesteading/.
+          Julius Wilm, Robert K. Nelson, and Justin Madron, “Land Acquisition and Dispossession,” <cite>American Panorama</cite>, ed. Robert K. Nelson, accessed {todayString}, https://dsl.richmond.edu/panorama/homesteading/.
         </>
       ),
-      copyText: `Julius Wilm, Robert K. Nelson, and Justin Madron, “Homesteading,” American Panorama, ed. Robert K. Nelson and Edward L. Ayers, accessed ${todayString}, https://dsl.richmond.edu/panorama/homesteading/.`,
+      copyText: `Julius Wilm, Robert K. Nelson, and Justin Madron, “Land Acquisition and Dispossession,” American Panorama, ed. Robert K. Nelson, accessed ${todayString}, https://dsl.richmond.edu/panorama/homesteading/.`,
     },
     {
       style: "APA",
       citation: (
         <>
-          Wilm, J., Nelson, R. K., & Madron, J. (n.d.). Homesteading. In R. K. Nelson & E. L. Ayers (Eds.), <cite>American Panorama</cite>. Digital Scholarship Lab, University of Richmond. Retrieved {todayString}, from https://dsl.richmond.edu/panorama/homesteading/
+          Wilm, J., Nelson, R.K., & Madron, J.(n.d.).Land Acquisition and Dispossession. In R. K. Nelson (Ed.), <cite>American Panorama</cite>. Digital Scholarship Lab, University of Richmond. Retrieved {todayString}, from https://dsl.richmond.edu/panorama/homesteading/
         </>
       ),
-      copyText: `Wilm, J., Nelson, R. K., & Madron, J. (n.d.). Homesteading. In R. K. Nelson & E. L. Ayers (Eds.), American Panorama. Digital Scholarship Lab, University of Richmond. Retrieved ${todayString}, from https://dsl.richmond.edu/panorama/homesteading/`,
+      copyText: `Wilm, J., Nelson, R. K., & Madron, J. (n.d.). Land Acquisition and Dispossession. In R. K. Nelson (Ed.), American Panorama. Digital Scholarship Lab, University of Richmond. Retrieved ${todayString}, from https://dsl.richmond.edu/panorama/homesteading/`,
     },
     {
       style: "MLA",
       citation: (
         <>
-          Wilm, Julius, Robert K. Nelson, and Justin Madron. “Homesteading.” <cite>American Panorama</cite>, edited by Robert K. Nelson and Edward L. Ayers, Digital Scholarship Lab, University of Richmond, https://dsl.richmond.edu/panorama/homesteading/. Accessed {todayString}.
+          Wilm, Julius, Robert K.Nelson, and Justin Madron.Land Acquisition and Dispossession.” <cite>American Panorama</cite>, edited by Robert K. Nelson, Digital Scholarship Lab, University of Richmond, https://dsl.richmond.edu/panorama/homesteading/. Accessed {todayString}.
         </>
       ),
-      copyText: `Wilm, Julius, Robert K. Nelson, and Justin Madron. “Homesteading.” American Panorama, edited by Robert K. Nelson and Edward L. Ayers, Digital Scholarship Lab, University of Richmond, https://dsl.richmond.edu/panorama/homesteading/. Accessed ${todayString}.`,
+      copyText: `Wilm, Julius, Robert K. Nelson, and Justin Madron. Land Acquisition and Dispossession.” American Panorama, edited by Robert K. Nelson, Digital Scholarship Lab, University of Richmond, https://dsl.richmond.edu/panorama/homesteading/. Accessed ${todayString}.`,
     },
   ];
 

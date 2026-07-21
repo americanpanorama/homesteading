@@ -2,7 +2,9 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import * as Constants from "../../Constants";
 
-export const Home = styled.div`
+export const Home = styled.main.attrs({
+  tabIndex: -1,
+})`
     grid-column: 1 / -1;
     grid-row: 1 / -1;
     height: 100%;

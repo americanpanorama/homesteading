@@ -12,11 +12,11 @@ const Map = () => {
   const { useEffect, useState } = React;
 
   const params = useURLParams();
-  const { stateTerr, office, year, yearNum, stateTerrData } = params;
+  const { stateTerr, office, yearNum, stateTerrData } = params;
 
   const width = 100;
   const height = 100;
-  const [officeBoundaries, setOfficeBoundaries] = useState<District>(null);
+  const [officeBoundaries, setOfficeBoundaries] = useState<District | null>(null);
 
   const placeData = stateTerrData || (States as ProjectedState[]).find(d => d.abbr === stateTerr);
   const { scale, transform } = calculateTransform({
@@ -30,11 +30,25 @@ const Map = () => {
 
   // load the data for the map
   useEffect(() => {
+    let isCurrentOffice = true;
+    setOfficeBoundaries(null);
+
     axios(`${process.env.PUBLIC_URL}/data/districtsData/${office}-${stateTerr}.json`)
       .then(response => {
-        setOfficeBoundaries(response.data as District);
+        if (isCurrentOffice) {
+          setOfficeBoundaries(response.data as District);
+        }
+      })
+      .catch(() => {
+        if (isCurrentOffice) {
+          setOfficeBoundaries(null);
+        }
       });
-  }, [year, stateTerr, office]);
+
+    return () => {
+      isCurrentOffice = false;
+    };
+  }, [stateTerr, office]);
 
   const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
@@ -53,10 +67,11 @@ const Map = () => {
     return (
         <Styled.List>
         {officeBoundaries.boundaries
-          .map(officeBoundary => (
+          .map((officeBoundary, boundaryIndex) => (
             <Styled.Card
               $selected={overlapsWithFiscalYear(officeBoundary.start_date, officeBoundary.end_date)}
-              key={`minimap-${officeBoundary.d.substr(0, 20)}`}
+              data-testid='district-boundary-mini-map'
+              key={`minimap-${office}-${getDateValue(officeBoundary.start_date.year, officeBoundary.start_date.month, officeBoundary.start_date.day)}-${getDateValue(officeBoundary.end_date.year, officeBoundary.end_date.month, officeBoundary.end_date.day)}-${boundaryIndex}`}
             >
               <Styled.Svg
                 width={width}

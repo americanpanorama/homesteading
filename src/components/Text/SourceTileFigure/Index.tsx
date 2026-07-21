@@ -23,7 +23,7 @@ interface SourceTileFigureSceneProps {
   expanded?: boolean;
   year: number;
   onYearChange: (year: number) => void;
-  onExpand?: () => void;
+  onExpand?: (trigger: HTMLElement) => void;
   onClose?: () => void;
 }
 
@@ -351,7 +351,14 @@ const SourceTileFigureScene = ({
               type='button'
               aria-label={expanded ? 'Close expanded source map' : 'Expand source map'}
               title={expanded ? 'Close' : 'Expand'}
-              onClick={expanded ? onClose : onExpand}
+              onClick={event => {
+                if (expanded) {
+                  onClose?.();
+                  return;
+                }
+
+                onExpand?.(event.currentTarget);
+              }}
             >
               {expanded ? <Previous /> : <Next />}
             </Styled.ExpandToggle>
@@ -427,6 +434,32 @@ const SourceTileFigureScene = ({
 const SourceTileFigure = () => {
   const [year, setYear] = React.useState(DEFAULT_YEAR);
   const [expanded, setExpanded] = React.useState(false);
+  const modalPanelRef = React.useRef<HTMLDivElement | null>(null);
+  const previouslyFocusedElementRef = React.useRef<HTMLElement | null>(null);
+
+  const openDialog = (trigger: HTMLElement) => {
+    previouslyFocusedElementRef.current = trigger;
+    setExpanded(true);
+  };
+
+  const closeDialog = React.useCallback(() => {
+    setExpanded(false);
+  }, []);
+
+  React.useEffect(() => {
+    if (expanded) {
+      modalPanelRef.current?.focus();
+      return undefined;
+    }
+
+    const focusTarget = previouslyFocusedElementRef.current?.isConnected
+      ? previouslyFocusedElementRef.current
+      : document.querySelector<HTMLElement>('button[aria-label="Expand source map"]');
+
+    focusTarget?.focus();
+    previouslyFocusedElementRef.current = null;
+    return undefined;
+  }, [expanded]);
 
   React.useEffect(() => {
     if (!expanded) {
@@ -435,7 +468,7 @@ const SourceTileFigure = () => {
 
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
-        setExpanded(false);
+        closeDialog();
       }
     };
 
@@ -443,7 +476,7 @@ const SourceTileFigure = () => {
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
     };
-  }, [expanded]);
+  }, [closeDialog, expanded]);
 
   return (
     <>
@@ -451,7 +484,7 @@ const SourceTileFigure = () => {
         <SourceTileFigureScene
           year={year}
           onYearChange={setYear}
-          onExpand={() => setExpanded(true)}
+          onExpand={openDialog}
         />
       )}
 
@@ -460,20 +493,22 @@ const SourceTileFigure = () => {
           role='presentation'
           onMouseDown={event => {
             if (event.target === event.currentTarget) {
-              setExpanded(false);
+              closeDialog();
             }
           }}
         >
           <Styled.ModalPanel
+            ref={modalPanelRef}
             role='dialog'
             aria-modal='true'
             aria-label='Expanded original source maps'
+            tabIndex={-1}
           >
             <SourceTileFigureScene
               expanded
               year={year}
               onYearChange={setYear}
-              onClose={() => setExpanded(false)}
+              onClose={closeDialog}
             />
           </Styled.ModalPanel>
         </Styled.ModalBackdrop>

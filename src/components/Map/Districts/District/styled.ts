@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 
 export const Container = styled(Link)``;
 
+export const StaticContainer = styled.g`
+  pointer-events: none;
+`;
+
 export const Boundary = styled.path.attrs<{ $strokeWidth: number; $fill: string }>(({ $strokeWidth, $fill }) => ({
   style: {
     strokeWidth: $strokeWidth,
