@@ -28,6 +28,7 @@ console.log(alaskaProjection([-152, 65]));
 
 let mapFiles: string[] = fs.readdirSync('../toTile')
   .filter((f: string) => f.split('.').pop() === 'tif')
+  .filter((f: string) => f.startsWith('OR-'))
   .filter((f: string) => (process.argv.length > 2) ? f.includes(process.argv[2]) : true);
 
 const tileMap = (idx: number): void => {
@@ -61,7 +62,7 @@ const tileMap = (idx: number): void => {
 
     //copy the file and edit the metadata 
     fs.copyFileSync(`../toTile/${f}`, `../fakeMercators/${f}`);
-    const gdalEdit = spawn('python3.9', [
+    const gdalEdit = spawn('python', [
       '/Library/Frameworks/GDAL.framework/Programs/gdal_edit.py',
       //"-a_srs", "EPSG:3395",
       "-a_srs", "EPSG:3857",
@@ -83,7 +84,7 @@ const tileMap = (idx: number): void => {
         //   console.log('finished!!');
         // }
       console.log(tileOptions.join(' '));
-      const tile = spawn('python3.9', tileOptions);
+      const tile = spawn('python', tileOptions);
       tile.stdout.on('data', (data: any) => {
         process.stdout.write(data.toString('utf8'));
       });

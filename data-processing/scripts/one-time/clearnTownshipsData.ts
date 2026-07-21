@@ -1,6 +1,10 @@
+/*
+ * One-time normalization script for tabular township data. It reconciles an
+ * updated raw file with the older file's IDs and writes a cleaned JSON export.
+ */
 const fs = require('fs');
-const newData = require('../data-input/townships_data2.json');
-const oldData = require('../data-input/townships_data.json');
+const newData = require('../../data-input/townships_data2.json');
+const oldData = require('../../data-input/townships_data.json');
 
 interface Data {
   office: string;
@@ -59,4 +63,4 @@ const cleanedData: CleanedData[] = (newData as Data[]).map(nd => {
 
 console.log(cleanedData);
 
-fs.writeFileSync('../data-input/townships_data_cleaned.json', JSON.stringify(cleanedData));
+fs.writeFileSync('../../data-input/townships_data_cleaned.json', JSON.stringify(cleanedData));

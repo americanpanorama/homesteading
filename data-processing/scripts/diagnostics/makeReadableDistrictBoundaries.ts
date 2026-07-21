@@ -1,7 +1,11 @@
+/*
+ * One-off inspection export that writes projected office boundaries in a more
+ * human-readable JSON shape. Helpful when debugging district geometry.
+ */
 import fs from 'fs';
-import { TownshipFeature, ProjectedTownship } from '../index.d';
-import { project, makeJSONFileNames, getOfficeNameFromStub } from '../functions.js';
-const Townships: { type: string, features: TownshipFeature[] } = JSON.parse(fs.readFileSync('../data-input/townshipssimplified.json', 'utf8'));
+import { TownshipFeature, ProjectedTownship } from '../../index.d';
+import { project, makeJSONFileNames, getOfficeNameFromStub } from '../../functions.js';
+const Townships: { type: string, features: TownshipFeature[] } = JSON.parse(fs.readFileSync('../../data-input/townshipssimplified.json', 'utf8'));
 
 const projectedTownships: ProjectedTownship[] = [];
 

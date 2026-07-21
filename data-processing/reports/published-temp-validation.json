@@ -1,0 +1,366 @@
+{
+  "years": "1863,1864,1865,1866,1867,1868,1869,1870,1871,1872,1873,1874,1875,1876,1877,1878,1879,1880,1881,1882,1883,1884,1885,1886,1887,1888,1889,1890,1891,1892,1893,1894,1895,1896,1897,1898,1899,1900,1901,1902,1903,1904,1905,1906,1907,1908,1909,1910,1911,1912",
+  "trialRoot": "/var/folders/x5/mtxs7qx935b81b54ns0yb9_m0000gp/T/homesteads2-trial-dqH6JI",
+  "publishRoot": "/var/folders/x5/mtxs7qx935b81b54ns0yb9_m0000gp/T/homesteads2-published-d5fSws",
+  "cases": {
+    "idaho1868": {
+      "raw": {
+        "claims": 43,
+        "patents": 0,
+        "acres_claimed": 6187.67,
+        "acres_patented": 0
+      },
+      "published": {
+        "claims": 43,
+        "patents": 0,
+        "acres_claimed": 6187.67,
+        "acres_patented": 0,
+        "tile_id": "ID-BoiseCity-18680113-18710925"
+      }
+    },
+    "oklahoma1902": {
+      "elReno": {
+        "raw": {
+          "claims": 9078,
+          "patents": 188,
+          "acres_claimed": 1372308.37,
+          "acres_patented": 28818.47
+        },
+        "published": {
+          "claims": 9078,
+          "patents": 188,
+          "acres_claimed": 1372308.37,
+          "acres_patented": 28818.47,
+          "tile_id": "OK-ElReno-19020120-19060630"
+        }
+      },
+      "oklahomaCity": {
+        "raw": {
+          "claims": 1564,
+          "patents": 1559,
+          "acres_claimed": 212988.2,
+          "acres_patented": 229909.49
+        },
+        "published": {
+          "claims": 1564,
+          "patents": 1559,
+          "acres_claimed": 212988.2,
+          "acres_patented": 229909.49,
+          "tile_id": "OK-Oklahoma-19020120-19060429"
+        }
+      },
+      "perry": {
+        "raw": {
+          "claims": 65,
+          "patents": 1365,
+          "acres_claimed": 7275.32,
+          "acres_patented": 197969.72
+        },
+        "published": null
+      },
+      "perryBuildPresence": {
+        "buildOfficePresent": true,
+        "boundaryTile": "OK-Perry-19010701-19020331",
+        "excludedForMap": true
+      }
+    },
+    "nevada1886to1893": [
+      {
+        "year": 1886,
+        "carsonCity": {
+          "raw": {
+            "claims": 10,
+            "patents": 5,
+            "acres_claimed": 1437.26,
+            "acres_patented": 800
+          },
+          "published": {
+            "claims": 10,
+            "patents": 5,
+            "acres_claimed": 1437.26,
+            "acres_patented": 800,
+            "tile_id": "NV-CarsonCity-18730701-18930910"
+          }
+        },
+        "eureka": {
+          "raw": {
+            "claims": 9,
+            "patents": 14,
+            "acres_claimed": 1280.7,
+            "acres_patented": 2199.42
+          },
+          "published": {
+            "claims": 9,
+            "patents": 14,
+            "acres_claimed": 1280.7,
+            "acres_patented": 2199.42,
+            "tile_id": "NV-Eureka-18840101-18930910"
+          }
+        }
+      },
+      {
+        "year": 1887,
+        "carsonCity": {
+          "raw": {
+            "claims": 6,
+            "patents": 5,
+            "acres_claimed": 960,
+            "acres_patented": 708.24
+          },
+          "published": {
+            "claims": 6,
+            "patents": 5,
+            "acres_claimed": 960,
+            "acres_patented": 708.24,
+            "tile_id": "NV-CarsonCity-18730701-18930910"
+          }
+        },
+        "eureka": {
+          "raw": {
+            "claims": 4,
+            "patents": 6,
+            "acres_claimed": 618.69,
+            "acres_patented": 906.3
+          },
+          "published": {
+            "claims": 4,
+            "patents": 6,
+            "acres_claimed": 618.69,
+            "acres_patented": 906.3,
+            "tile_id": "NV-Eureka-18840101-18930910"
+          }
+        }
+      },
+      {
+        "year": 1888,
+        "carsonCity": {
+          "raw": {
+            "claims": 5,
+            "patents": 3,
+            "acres_claimed": 796.68,
+            "acres_patented": 480
+          },
+          "published": {
+            "claims": 5,
+            "patents": 3,
+            "acres_claimed": 796.68,
+            "acres_patented": 480,
+            "tile_id": "NV-CarsonCity-18730701-18930910"
+          }
+        },
+        "eureka": {
+          "raw": {
+            "claims": 8,
+            "patents": 9,
+            "acres_claimed": 1270.51,
+            "acres_patented": 1431.6
+          },
+          "published": {
+            "claims": 8,
+            "patents": 9,
+            "acres_claimed": 1270.51,
+            "acres_patented": 1431.6,
+            "tile_id": "NV-Eureka-18840101-18930910"
+          }
+        }
+      },
+      {
+        "year": 1889,
+        "carsonCity": {
+          "raw": {
+            "claims": 2,
+            "patents": 4,
+            "acres_claimed": 320,
+            "acres_patented": 560.64
+          },
+          "published": {
+            "claims": 2,
+            "patents": 4,
+            "acres_claimed": 320,
+            "acres_patented": 560.64,
+            "tile_id": "NV-CarsonCity-18730701-18930910"
+          }
+        },
+        "eureka": {
+          "raw": {
+            "claims": 2,
+            "patents": 8,
+            "acres_claimed": 320,
+            "acres_patented": 1269.84
+          },
+          "published": {
+            "claims": 2,
+            "patents": 8,
+            "acres_claimed": 320,
+            "acres_patented": 1269.84,
+            "tile_id": "NV-Eureka-18840101-18930910"
+          }
+        }
+      },
+      {
+        "year": 1890,
+        "carsonCity": {
+          "raw": {
+            "claims": 1,
+            "patents": 0,
+            "acres_claimed": 160,
+            "acres_patented": 0
+          },
+          "published": {
+            "claims": 1,
+            "patents": 0,
+            "acres_claimed": 160,
+            "acres_patented": 0,
+            "tile_id": "NV-CarsonCity-18730701-18930910"
+          }
+        },
+        "eureka": {
+          "raw": {
+            "claims": 3,
+            "patents": 0,
+            "acres_claimed": 480,
+            "acres_patented": 0
+          },
+          "published": {
+            "claims": 3,
+            "patents": 0,
+            "acres_claimed": 480,
+            "acres_patented": 0,
+            "tile_id": "NV-Eureka-18840101-18930910"
+          }
+        }
+      },
+      {
+        "year": 1891,
+        "carsonCity": {
+          "raw": {
+            "claims": 1,
+            "patents": 6,
+            "acres_claimed": 160,
+            "acres_patented": 753.24
+          },
+          "published": {
+            "claims": 1,
+            "patents": 6,
+            "acres_claimed": 160,
+            "acres_patented": 753.24,
+            "tile_id": "NV-CarsonCity-18730701-18930910"
+          }
+        },
+        "eureka": {
+          "raw": {
+            "claims": 19,
+            "patents": 7,
+            "acres_claimed": 2800.35,
+            "acres_patented": 1037.29
+          },
+          "published": {
+            "claims": 19,
+            "patents": 7,
+            "acres_claimed": 2800.35,
+            "acres_patented": 1037.29,
+            "tile_id": "NV-Eureka-18840101-18930910"
+          }
+        }
+      },
+      {
+        "year": 1892,
+        "carsonCity": {
+          "raw": {
+            "claims": 15,
+            "patents": 1,
+            "acres_claimed": 2400,
+            "acres_patented": 160
+          },
+          "published": {
+            "claims": 15,
+            "patents": 1,
+            "acres_claimed": 2400,
+            "acres_patented": 160,
+            "tile_id": "NV-CarsonCity-18730701-18930910"
+          }
+        },
+        "eureka": {
+          "raw": {
+            "claims": 7,
+            "patents": 4,
+            "acres_claimed": 1080.48,
+            "acres_patented": 517.34
+          },
+          "published": {
+            "claims": 7,
+            "patents": 4,
+            "acres_claimed": 1080.48,
+            "acres_patented": 517.34,
+            "tile_id": "NV-Eureka-18840101-18930910"
+          }
+        }
+      },
+      {
+        "year": 1893,
+        "carsonCity": {
+          "raw": {
+            "claims": 6,
+            "patents": 4,
+            "acres_claimed": 915.03,
+            "acres_patented": 640
+          },
+          "published": {
+            "claims": 6,
+            "patents": 4,
+            "acres_claimed": 915.03,
+            "acres_patented": 640,
+            "tile_id": "NV-CarsonCity-18730701-18930910"
+          }
+        },
+        "eureka": {
+          "raw": {
+            "claims": 8,
+            "patents": 1,
+            "acres_claimed": 994.28,
+            "acres_patented": 157.8
+          },
+          "published": {
+            "claims": 8,
+            "patents": 1,
+            "acres_claimed": 994.28,
+            "acres_patented": 157.8,
+            "tile_id": "NV-Eureka-18840101-18930910"
+          }
+        }
+      }
+    ],
+    "fullStateCases": {
+      "ohio1863": {
+        "raw": {
+          "claims": 57,
+          "patents": 0,
+          "acres_claimed": 3638.46,
+          "acres_patented": 0
+        },
+        "published": {
+          "claims": 57,
+          "patents": 0,
+          "acres_claimed": 3638.46,
+          "acres_patented": 0,
+          "tile_id": null
+        }
+      },
+      "illinois1863": {
+        "raw": {
+          "claims": 3,
+          "patents": 0,
+          "acres_claimed": 118.16,
+          "acres_patented": 0
+        },
+        "published": {
+          "claims": 3,
+          "patents": 0,
+          "acres_claimed": 118.16,
+          "acres_patented": 0,
+          "tile_id": null
+        }
+      }
+    }
+  }
+}

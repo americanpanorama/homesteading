@@ -1,12 +1,16 @@
+/*
+ * Report/export script that derives year-based GeoJSON for hexbin experiments.
+ * This does not appear to be part of the runtime app pipeline.
+ */
 import fs from 'fs';
 import {
   TownshipFeature,
   TownshipData
-} from '../index.d';
-import { parseDate, makeJSONFileNames, albersPath, albersProjection, alaskaPath } from '../functions.js';
+} from '../../index.d';
+import { makeJSONFileNames } from '../../functions.js';
 
-const Townships: { type: string, features: TownshipFeature[] } = JSON.parse(fs.readFileSync('../data-input/townshipssimplified.json', 'utf8'));
-const TownshipsData: TownshipData[] = JSON.parse(fs.readFileSync('../data-input/townships_data.json', 'utf8'));
+const Townships: { type: string, features: TownshipFeature[] } = JSON.parse(fs.readFileSync('../../data-input/townshipssimplified.json', 'utf8'));
+const TownshipsData: TownshipData[] = JSON.parse(fs.readFileSync('../../data-input/townships_data.json', 'utf8'));
 
 Townships.features.forEach(township => {
   if (township.properties.STATENAM.includes('Dakota') && township.properties.End < new Date(1889, 0, 1, 0, 0, 0).valueOf()) {

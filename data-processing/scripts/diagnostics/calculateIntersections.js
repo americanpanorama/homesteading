@@ -1,6 +1,11 @@
+/*
+ * Diagnostic script for measuring how office polygons overlap across time.
+ * This appears to have been used to estimate how claims/patents should be
+ * redistributed when offices changed shape or were replaced by later offices.
+ */
 const turf = require('@turf/turf');
-const Offices = require('../data-input/townships.json');
-const OfficeData = require('../../public/data/townships_data.json');
+const Offices = require('../../data-input/townships.json');
+const OfficeData = require('../../../public/data/townships_data.json');
 
 const getDataForOffice = (gisjoin, year) => OfficeData.find(od => od.of_id === gisjoin && od.year === year);
 

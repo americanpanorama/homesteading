@@ -1,7 +1,10 @@
-// for the Indian Country map on the Indigenous Disposession explanation
+/*
+ * Report/export script for the Indigenous Dispossession essay map. It aggregates
+ * claimed acres by state for a bubble-style explanatory graphic.
+ */
 import fs from 'fs';
-import US from '../../src/us.js';
-import { TownshipData } from '../index.d';
+import US from '../../../src/us.js';
+import { TownshipData } from '../../index.d';
 
 interface TotalStateClaims {
     state?: string;
@@ -10,7 +13,7 @@ interface TotalStateClaims {
     radius?: number;
 }
 
-const TownshipsData: TownshipData[] = JSON.parse(fs.readFileSync('../data-input/townships_data.json', 'utf8'));
+const TownshipsData: TownshipData[] = JSON.parse(fs.readFileSync('../../data-input/townships_data.json', 'utf8'));
 
 const aggregatedStateData: TotalStateClaims[] = [];
 TownshipsData.forEach(d => {

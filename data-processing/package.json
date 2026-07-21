@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "audit-places-date-ranges": "node scripts/diagnostics/auditPlacesDateRanges.mjs",
+    "build-places-date-ranges": "node scripts/buildPlacesDateRanges.mjs",
     "cutTiles": "node --loader node --loader ts-node/esm makeTownshipMaps.ts",
     "use13": "source ~/.nvm/nvm.sh; nvm use 13",
     "use8": "source ~/.nvm/nvm.sh; nvm use 8"

@@ -1,0 +1,15 @@
+{
+  "mismatchCounts": {
+    "rowCount": 0,
+    "byMetric": {
+      "claims": 0,
+      "acres_claimed": 0,
+      "patents": 0,
+      "acres_patented": 0
+    }
+  },
+  "topStates": [],
+  "largestClaimDiffs": [],
+  "largestAcreDiffs": [],
+  "mismatches": []
+}

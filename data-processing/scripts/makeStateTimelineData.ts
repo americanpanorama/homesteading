@@ -1,4 +1,14 @@
+/*
+ * Core pipeline script that aggregates yearly office outputs into office-level
+ * and state-level timeline data, including fiscal-year clashes.
+ *
+ * Optional environment variables:
+ * - YEAR_FILTER=1868,1902 limits processing to selected fiscal years
+ * - BUILD_DATA_ROOT=/abs/path overrides ../../build/data for both input and output
+ * - CONFLICTS_INPUT_PATH=/abs/path overrides ../data-input/conflictsDataWithOffices.json
+ */
 import fs from 'fs';
+import path from 'path';
 // @ts-ignore: Unreachable code error
 import us from '../../src/us.js';
 import { 
@@ -7,14 +17,72 @@ import {
   TimelineYearPlaceData,
   TimelinePlaceData,
 } from '../index.d';
-import { overlapsWithFiscalYear2 } from '../functions.js';
+import { normalizeDataNumber, overlapsWithFiscalYear2 } from '../functions.js';
 
-const conflicts: ConflictData[] = JSON.parse(fs.readFileSync('../data-input/conflictsDataWithOffices.json', 'utf8'));
+const requestedYears = new Set(
+  (process.env.YEAR_FILTER || '')
+    .split(',')
+    .map(value => parseInt(value.trim(), 10))
+    .filter(value => !Number.isNaN(value))
+);
+const shouldIncludeYear = (year: number) => requestedYears.size === 0 || requestedYears.has(year);
+const buildDataRoot = process.env.BUILD_DATA_ROOT || path.resolve('../../build/data');
+const timelineOutputDir = path.join(buildDataRoot, 'timelineData');
+const yearDataDir = path.join(buildDataRoot, 'yearData');
+const conflictsInputPath = process.env.CONFLICTS_INPUT_PATH || path.resolve('../data-input/conflictsDataWithOffices.json');
+
+const normalizeProjectedTownship = (rawTownship: any): ProjectedTownship => {
+  if (Array.isArray(rawTownship.office_boundaries) && Array.isArray(rawTownship.data)) {
+    return rawTownship as ProjectedTownship;
+  }
+
+  return {
+    office: rawTownship.office,
+    state: rawTownship.state,
+    office_boundaries: [{
+      d: rawTownship.d,
+      tile_id: rawTownship.tile_id,
+      tile_ids: rawTownship.tile_ids,
+      area: normalizeDataNumber(rawTownship.area),
+      bounds: rawTownship.bounds,
+      rotation: rawTownship.rotation,
+    }],
+    data: [{
+      claims: rawTownship.claims || 0,
+      acres_claimed: normalizeDataNumber(rawTownship.acres_claimed),
+      claims_indian_lands: rawTownship.claims_indian_lands || 0,
+      acres_claimed_indian_lands: normalizeDataNumber(rawTownship.acres_claimed_indian_lands),
+      patents: rawTownship.patents || 0,
+      acres_patented: normalizeDataNumber(rawTownship.acres_patented),
+      patents_indian_lands: rawTownship.patents_indian_lands || 0,
+      acres_patented_indian_lands: normalizeDataNumber(rawTownship.acres_patented_indian_lands),
+      commutations_2301: rawTownship.commutations_2301 || 0,
+      acres_commuted_2301: normalizeDataNumber(rawTownship.acres_commuted_2301),
+      commutations_18800615: rawTownship.commutations_18800615 || 0,
+      acres_commuted_18800615: normalizeDataNumber(rawTownship.acres_commuted_18800615),
+      commutations_indian_lands: rawTownship.commutations_indian_lands || 0,
+      acres_commuted_indian_lands: normalizeDataNumber(rawTownship.acres_commuted_indian_lands),
+      adjustedForMap: false,
+    }],
+  };
+};
+
+fs.mkdirSync(timelineOutputDir, { recursive: true });
+
+const conflicts: ConflictData[] = JSON.parse(fs.readFileSync(conflictsInputPath, 'utf8'));
+const unmatchedStateConflicts: { [stateAbbr: string]: ConflictData[] } = {};
 
 // `state`, of course, can refer to state or territory
 const stateOfficeTimelineData: { [state: string]: TimelinePlaceData[]; } = {};
 [...Array(50).keys()].map(d => d + 1863).forEach(year => {
-  const townshipsData: ProjectedTownship[] = JSON.parse(fs.readFileSync(`../../build/data/yearData/${year}.json`, 'utf8')).offices;
+  if (!shouldIncludeYear(year)) {
+    return;
+  }
+  const yearPath = path.join(yearDataDir, `${year}.json`);
+  if (!fs.existsSync(yearPath)) {
+    return;
+  }
+  const townshipsData: ProjectedTownship[] = JSON.parse(fs.readFileSync(yearPath, 'utf8')).offices.map(normalizeProjectedTownship);
 
   townshipsData.forEach((d: ProjectedTownship) => {
     // the `land_office` field either has the state as the last two characters, but there are some where there's a general land office for the whole state that will have the characters 'GLO' in the land_office
@@ -26,10 +94,21 @@ const stateOfficeTimelineData: { [state: string]: TimelinePlaceData[]; } = {};
       console.error(`no boundaries for ${d.office} ${d.state} ${year}`);
     }
 
+    const sourceData = d.data.find(_d => !_d.adjustedForMap) || d.data[0];
+    const activeBoundary = d.office_boundaries.find(boundary => (
+      boundary.tile_id && boundary.tile_id.slice(-8) >= `${year}0630`
+    )) || d.office_boundaries[0];
     const yearData: TimelineYearPlaceData = {
       year: year,
-      ...d.data.find(_d => !_d.adjustedForMap),
-      area: (d.office_boundaries[0]) ? d.office_boundaries[0].area : 1,
+      ...sourceData,
+      acres_claimed: normalizeDataNumber(sourceData?.acres_claimed),
+      acres_claimed_indian_lands: normalizeDataNumber(sourceData?.acres_claimed_indian_lands),
+      acres_patented: normalizeDataNumber(sourceData?.acres_patented),
+      acres_patented_indian_lands: normalizeDataNumber(sourceData?.acres_patented_indian_lands),
+      acres_commuted_2301: normalizeDataNumber(sourceData?.acres_commuted_2301),
+      acres_commuted_18800615: normalizeDataNumber(sourceData?.acres_commuted_18800615),
+      acres_commuted_indian_lands: normalizeDataNumber(sourceData?.acres_commuted_indian_lands),
+      area: activeBoundary ? activeBoundary.area : 1,
     };
 
     // find the existing land office if it exists
@@ -50,7 +129,9 @@ const stateOfficeTimelineData: { [state: string]: TimelinePlaceData[]; } = {};
 
 // add the conflicts data
 conflicts.forEach(conflict => {
-  const office = stateOfficeTimelineData[us.lookup(conflict.state).abbr].find(d => d.name === conflict.office);
+  const stateAbbr = us.lookup(conflict.state).abbr;
+  const officesForState = stateOfficeTimelineData[stateAbbr] || [];
+  const office = officesForState.find(d => d.name === conflict.office);
   if (office) {
     // find the year data
     const yearData = office.yearData.find(yd => overlapsWithFiscalYear2(conflict.start_date, conflict.end_date, yd.year));
@@ -68,6 +149,9 @@ conflicts.forEach(conflict => {
         rotation: conflict.rotation,
       })
     }
+  } else {
+    unmatchedStateConflicts[stateAbbr] = unmatchedStateConflicts[stateAbbr] || [];
+    unmatchedStateConflicts[stateAbbr].push(conflict);
   }
 });
 
@@ -75,12 +159,12 @@ conflicts.forEach(conflict => {
 Object.keys(stateOfficeTimelineData).forEach(stateAbbr => {
   const yearData: TimelineYearPlaceData[] = [];
   stateOfficeTimelineData[stateAbbr].forEach(lod => {
-    const totalAcres: number = lod.yearData.reduce((acc: number, yd: TimelineYearPlaceData) => acc + yd.acres_claimed, 0);
+    const totalAcres: number = lod.yearData.reduce((acc: number, yd: TimelineYearPlaceData) => acc + normalizeDataNumber(yd.acres_claimed), 0);
     let count: number = 0; 
     for (let y = 1862; y < 1912 && count < totalAcres / 2; y++) {
       const aydIdx = lod.yearData.findIndex((lodyd: TimelineYearPlaceData) => lodyd.year === y);
       if (aydIdx !== -1) {
-        count += lod.yearData[aydIdx].acres_claimed;
+        count += normalizeDataNumber(lod.yearData[aydIdx].acres_claimed);
         lod.medianYearClaimsAcres = y;
       }
     }
@@ -90,14 +174,14 @@ Object.keys(stateOfficeTimelineData).forEach(stateAbbr => {
 // write the state files
 console.log('wrote national.json');
 Object.keys(stateOfficeTimelineData).forEach(stateAbbr => {
-  fs.writeFileSync(`../../build/data/timelineData/${stateAbbr}.json`, JSON.stringify(stateOfficeTimelineData[stateAbbr]));
+  fs.writeFileSync(path.join(timelineOutputDir, `${stateAbbr}.json`), JSON.stringify(stateOfficeTimelineData[stateAbbr]));
   console.log(`wrote ${stateAbbr}.json`);
 });
 
 const statesTimelineData: TimelinePlaceData[] = [];
 Object.keys(stateOfficeTimelineData).forEach(stateAbbr => {
   // calculate the total acres in the state
-  const totalAcres: number = stateOfficeTimelineData[stateAbbr].reduce((acc: number, lod: TimelinePlaceData) => lod.yearData.reduce((acc: number, yd: TimelineYearPlaceData) => acc + yd.acres_claimed, 0) + acc, 0);
+  const totalAcres: number = stateOfficeTimelineData[stateAbbr].reduce((acc: number, lod: TimelinePlaceData) => lod.yearData.reduce((acc: number, yd: TimelineYearPlaceData) => acc + normalizeDataNumber(yd.acres_claimed), 0) + acc, 0);
   let count: number = 0; 
   let medianYearClaimsAcres: number;
   for (let y = 1862; y < 1912 && count < totalAcres / 2; y++) {
@@ -106,7 +190,7 @@ Object.keys(stateOfficeTimelineData).forEach(stateAbbr => {
       .reduce((acc: number, lod: TimelinePlaceData) => {
         const aydIdx = lod.yearData.findIndex((lodyd: TimelineYearPlaceData) => lodyd.year === y);
         if (aydIdx !== -1) {
-          return lod.yearData[aydIdx].acres_claimed + acc;
+          return normalizeDataNumber(lod.yearData[aydIdx].acres_claimed) + acc;
         } else {
           return acc;
         }
@@ -121,19 +205,19 @@ Object.keys(stateOfficeTimelineData).forEach(stateAbbr => {
       if (yIdx === -1) {
         yearData2.push(yd);
       } else {
-        yearData2[yIdx].acres_claimed = yearData2[yIdx].acres_claimed + yd.acres_claimed;
+        yearData2[yIdx].acres_claimed = normalizeDataNumber(yearData2[yIdx].acres_claimed) + normalizeDataNumber(yd.acres_claimed);
         yearData2[yIdx].claims += yd.claims;
-        yearData2[yIdx].acres_patented += yd.acres_patented;
+        yearData2[yIdx].acres_patented = normalizeDataNumber(yearData2[yIdx].acres_patented) + normalizeDataNumber(yd.acres_patented);
         yearData2[yIdx].patents += yd.patents;
-        yearData2[yIdx].acres_claimed_indian_lands += yd.acres_claimed_indian_lands;
+        yearData2[yIdx].acres_claimed_indian_lands = normalizeDataNumber(yearData2[yIdx].acres_claimed_indian_lands) + normalizeDataNumber(yd.acres_claimed_indian_lands);
         yearData2[yIdx].claims_indian_lands += yd.claims_indian_lands;
-        yearData2[yIdx].acres_patented_indian_lands += yd.acres_patented_indian_lands;
+        yearData2[yIdx].acres_patented_indian_lands = normalizeDataNumber(yearData2[yIdx].acres_patented_indian_lands) + normalizeDataNumber(yd.acres_patented_indian_lands);
         yearData2[yIdx].patents_indian_lands += yd.patents_indian_lands;
-        yearData2[yIdx].acres_commuted_2301 += yd.acres_commuted_2301;
+        yearData2[yIdx].acres_commuted_2301 = normalizeDataNumber(yearData2[yIdx].acres_commuted_2301) + normalizeDataNumber(yd.acres_commuted_2301);
         yearData2[yIdx].commutations_2301 += yd.commutations_2301;
-        yearData2[yIdx].acres_commuted_18800615 += yd.acres_commuted_18800615;
+        yearData2[yIdx].acres_commuted_18800615 = normalizeDataNumber(yearData2[yIdx].acres_commuted_18800615) + normalizeDataNumber(yd.acres_commuted_18800615);
         yearData2[yIdx].commutations_18800615 += yd.commutations_18800615;
-        yearData2[yIdx].acres_commuted_indian_lands += yd.acres_commuted_indian_lands;
+        yearData2[yIdx].acres_commuted_indian_lands = normalizeDataNumber(yearData2[yIdx].acres_commuted_indian_lands) + normalizeDataNumber(yd.acres_commuted_indian_lands);
         yearData2[yIdx].commutations_indian_lands += yd.commutations_indian_lands;
         yearData2[yIdx].area += yd.area;
 
@@ -148,6 +232,30 @@ Object.keys(stateOfficeTimelineData).forEach(stateAbbr => {
     });
   });
 
+  // Many clashes can be located reliably to a state or territory but not to a
+  // specific land office. Preserve those for the national/state timeline by
+  // attaching them directly to the aggregated state-year rows.
+  (unmatchedStateConflicts[stateAbbr] || []).forEach(conflict => {
+    const yearData = yearData2.find(yd => overlapsWithFiscalYear2(conflict.start_date, conflict.end_date, yd.year));
+    if (!yearData) {
+      return;
+    }
+
+    if (!yearData.conflicts) {
+      yearData.conflicts = [];
+    }
+
+    yearData.conflicts.push({
+      names: conflict.names,
+      nations: conflict.nations,
+      us_casualties: conflict.us_casualties,
+      native_casualties: conflict.native_casualties,
+      start_date: conflict.start_date,
+      end_date: conflict.end_date,
+      rotation: conflict.rotation,
+    });
+  });
+
   statesTimelineData.push({
     name: us.lookup(stateAbbr).name,
     abbr: stateAbbr,
@@ -158,5 +266,5 @@ Object.keys(stateOfficeTimelineData).forEach(stateAbbr => {
 });
 
 // write the files
-fs.writeFileSync('../../build/data/timelineData/national.json', JSON.stringify(statesTimelineData));
+fs.writeFileSync(path.join(timelineOutputDir, 'national.json'), JSON.stringify(statesTimelineData));
 console.log('wrote national.json');

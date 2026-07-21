@@ -1,6 +1,11 @@
+/*
+ * Diagnostic script that reports large overlaps between office polygons in the
+ * same state/year. Useful for spotting geometry problems or office handoff
+ * periods that need manual review.
+ */
 const turf = require('@turf/turf');
-const Offices = require('../data-input/townships.json');
-const OfficeData = require('../../public/data/townships_data.json');
+const Offices = require('../../data-input/townships.json');
+const OfficeData = require('../../../public/data/townships_data.json');
 
 const getDataForOffice = (gisjoin, year) => OfficeData.find(od => od.of_id === gisjoin && od.year === year);
 

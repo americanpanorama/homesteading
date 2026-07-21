@@ -1,4 +1,16 @@
+/*
+ * Core pipeline script that combines raw township data, township boundaries,
+ * full-state GLO geometry, and clashes into yearly map data plus district files.
+ *
+ * Optional environment variables:
+ * - YEAR_FILTER=1868,1902 limits generation to selected fiscal years
+ * - BUILD_DATA_ROOT=/abs/path overrides ../../build/data
+ * - PUBLIC_DATA_ROOT=/abs/path overrides ../../public/data
+ * - CONFLICTS_OUTPUT_PATH=/abs/path overrides ../data-input/conflictsDataWithOffices.json
+ * - DIAGNOSTICS_ROOT=/abs/path overrides the local script directory for helper outputs
+ */
 import fs from 'fs';
+import path from 'path';
 // @ts-ignore: Unreachable code error
 import US from '../../src/us.js';
 import turf from '@turf/turf';
@@ -16,9 +28,25 @@ import {
   OfficeBoundary,
   District,
 } from '../index.d';
-import { parseDate, overlapsWithFiscalYear2, getTownshipFeaturesOnDate, getTownshipFeaturesForOffice, getStateAbbr, project, radiansToDegrees, getDateValue, makeJSONFileNames, albersProjection, getDataForYearFromTileID, getStandardizedOfficeName, getOfficeNameFromStub } from '../functions.js';
+import { parseDate, overlapsWithFiscalYear2, getTownshipFeaturesOnDate, getTownshipFeaturesForOffice, getStateAbbr, project, radiansToDegrees, getDateValue, makeJSONFileNames, albersProjection, getDataForYearFromTileID, getStandardizedOfficeName, getOfficeNameFromStub, normalizeDataNumber } from '../functions.js';
 import { csvFormat } from 'd3-dsv';
 import { start } from 'repl';
+
+const requestedYears = new Set(
+  (process.env.YEAR_FILTER || '')
+    .split(',')
+    .map(value => parseInt(value.trim(), 10))
+    .filter(value => !Number.isNaN(value))
+);
+const shouldIncludeYear = (year: number) => requestedYears.size === 0 || requestedYears.has(year);
+const buildDataRoot = process.env.BUILD_DATA_ROOT || path.resolve('../../build/data');
+const publicDataRoot = process.env.PUBLIC_DATA_ROOT || path.resolve('../../public/data');
+const diagnosticsRoot = process.env.DIAGNOSTICS_ROOT || path.resolve('.');
+const conflictsOutputPath = process.env.CONFLICTS_OUTPUT_PATH || path.resolve('../data-input/conflictsDataWithOffices.json');
+
+fs.mkdirSync(path.join(buildDataRoot, 'yearData'), { recursive: true });
+fs.mkdirSync(path.join(buildDataRoot, 'districtsData'), { recursive: true });
+fs.mkdirSync(path.join(publicDataRoot, 'yearData'), { recursive: true });
 
 const Townships: { type: string, features: TownshipFeature[] } = JSON.parse(fs.readFileSync('../data-input/townshipssimplified.json', 'utf8'));
 const TownshipsData: TownshipData[] = JSON.parse(fs.readFileSync('../data-input/townships_data.json', 'utf8'));
@@ -61,6 +89,98 @@ const projectedTownships: { [year: string]: ProjectedTownship[] } = {};
 
 const dataWithoutTiles: { [year: string]: TownshipData[] } = {};
 
+type MetricField = Exclude<keyof ClaimsAndPatentsData, 'adjustedForMap'>;
+
+interface PendingMapAllocation {
+  year: number;
+  state: string;
+  sourceOffice: string;
+  sourceData: ClaimsAndPatentsData;
+  sourceFeature: TownshipFeature;
+}
+
+interface MapAllocationDiagnostic {
+  year: number;
+  state: string;
+  sourceOffice: string;
+  recipients: { office: string; proportion: number }[];
+  allocatedProportion: number;
+  status: 'allocated' | 'unresolved';
+}
+
+interface MapConservationIssue {
+  year: number;
+  state: string;
+  differences: Partial<Record<MetricField, number>>;
+}
+
+const metricFields: MetricField[] = [
+  'claims',
+  'acres_claimed',
+  'claims_indian_lands',
+  'acres_claimed_indian_lands',
+  'patents',
+  'acres_patented',
+  'patents_indian_lands',
+  'acres_patented_indian_lands',
+  'commutations_2301',
+  'acres_commuted_2301',
+  'commutations_18800615',
+  'acres_commuted_18800615',
+  'commutations_indian_lands',
+  'acres_commuted_indian_lands',
+];
+
+const pendingMapAllocations: PendingMapAllocation[] = [];
+const mapAllocationDiagnostics: MapAllocationDiagnostic[] = [];
+
+const normalizeOfficeName = (name: string): string => name.toLowerCase().replace(/[^a-z0-9]/g, '');
+
+const getFeatureOfficeCandidates = (feature: TownshipFeature, stateAbbr: string): Set<string> => {
+  const candidates = new Set<string>();
+  const addCandidate = (name: string) => {
+    if (name) {
+      candidates.add(normalizeOfficeName(name));
+    }
+  };
+
+  addCandidate(feature.properties.Office);
+  makeJSONFileNames(feature).forEach(tileId => {
+    const officeStub = tileId.split('-')[1];
+    addCandidate(officeStub);
+    addCandidate(getOfficeNameFromStub(officeStub, stateAbbr));
+  });
+
+  return candidates;
+};
+
+const getRawMetrics = (district: ProjectedTownship): ClaimsAndPatentsData => (
+  district.data.find(datum => !datum.adjustedForMap) || district.data[0]
+);
+
+const getMapMetrics = (district: ProjectedTownship): ClaimsAndPatentsData => (
+  district.data.find(datum => datum.adjustedForMap) || getRawMetrics(district)
+);
+
+const addMapAllocation = (
+  district: ProjectedTownship,
+  sourceData: ClaimsAndPatentsData,
+  proportion: number,
+) => {
+  let adjustedData = district.data.find(datum => datum.adjustedForMap);
+  if (!adjustedData) {
+    adjustedData = {
+      ...getRawMetrics(district),
+      adjustedForMap: true,
+    };
+    district.data.push(adjustedData);
+  }
+
+  metricFields.forEach(field => {
+    adjustedData[field] += sourceData[field] * proportion;
+  });
+};
+
 // sort the township data into an object by year; this speeds the processing as it allows comparisons within a year--a considerably smaller set
 console.log('sorting townshipsData by year')
 const townshipsDataByYear: { [index: string]: TownshipData[] } = {};
@@ -90,6 +210,9 @@ Townships.features.forEach(township => {
     const startFiscalYear = Math.max(1863, (startMonth <= 6) ? startYear : startYear + 1);
     const endFiscalYear = Math.min(1912, (endMonth <= 6) ? endYear : endYear + 1);
     for (let y = startFiscalYear; y <= endFiscalYear; y++) {
+      if (!shouldIncludeYear(y)) {
+        continue;
+      }
       // look for the data
       const officeDataForYear = getDataForYearFromTileID(tile_id, y);
       // if there isn't data, add it to the projectedTownship with all values as 0
@@ -100,10 +223,11 @@ Townships.features.forEach(township => {
       if (!officeDataForYear && (stateAbbr !== 'AK' || y >= 1900) && (stateAbbr !== 'DK' || y < 1889) 
         && (getOfficeNameFromStub(officeStub, stateAbbr) !== '' || districtsWithoutData[stateAbbr].includes(officeStub)
       )) {
-        if (tile_id.includes('Detroit')) {
-          console.log(tile_id, officeDataForYear);
-        }
-        const idx = projectedTownships[y].findIndex(d => d.office.toLowerCase() === officeStub.toLowerCase() && d.state === stateAbbr);
+        const normalizedOfficeStub = officeStub.toLowerCase().replace(/[^a-z0-9]/g, '');
+        const idx = projectedTownships[y].findIndex(d => (
+          d.office.toLowerCase().replace(/[^a-z0-9]/g, '') === normalizedOfficeStub
+          && d.state === stateAbbr
+        ));
         // find any piece of data regardless of year so you can get the office name and not the officeStub
         if (idx === -1) {
           projectedTownships[y].push({
@@ -143,6 +267,9 @@ Townships.features.forEach(township => {
 });
 
 Object.keys(townshipsDataByYear).forEach(yearStr => {
+  if (!shouldIncludeYear(parseInt(yearStr, 10))) {
+    return;
+  }
   console.log(`creating projectedTownships for ${yearStr}`);
   townshipsDataByYear[yearStr]
     // sort so you're handling these in reverse chronological order; 
@@ -161,19 +288,19 @@ Object.keys(townshipsDataByYear).forEach(yearStr => {
       // the data
       const data: ClaimsAndPatentsData[] = [{
         claims: td.claims_num,
-        acres_claimed: td.claims_ac,
+        acres_claimed: normalizeDataNumber(td.claims_ac),
         claims_indian_lands: td.claims_num_indian_lands,
-        acres_claimed_indian_lands: td.claims_ac_indian_lands,
+        acres_claimed_indian_lands: normalizeDataNumber(td.claims_ac_indian_lands),
         patents: td.patents_num,
-        acres_patented: td.patents_ac,
+        acres_patented: normalizeDataNumber(td.patents_ac),
         patents_indian_lands: td.patents_num_indian_lands,
-        acres_patented_indian_lands: td.patents_ac_indian_lands,
+        acres_patented_indian_lands: normalizeDataNumber(td.patents_ac_indian_lands),
         commutations_2301: td.commutations_num_2301,
-        acres_commuted_2301: td.commutations_ac_2301,
+        acres_commuted_2301: normalizeDataNumber(td.commutations_ac_2301),
         commutations_18800615: td.commutations_num_18800615,
-        acres_commuted_18800615: td.commutations_ac_18800615,
+        acres_commuted_18800615: normalizeDataNumber(td.commutations_ac_18800615),
         commutations_indian_lands: td.commutations_num_indian_lands,
-        acres_commuted_indian_lands: td.commutations_ac_indian_lands,
+        acres_commuted_indian_lands: normalizeDataNumber(td.commutations_ac_indian_lands),
         adjustedForMap: false,
       }];
 
@@ -186,9 +313,6 @@ Object.keys(townshipsDataByYear).forEach(yearStr => {
       : // get spatial data for the township
       getTownshipFeaturesForOffice(td)
           .map(d => {
-            if (d.properties.Office.includes('Grande') && yearStr === '1910') {
-              console.log(makeJSONFileNames(d), makeJSONFileNames(d).sort().reverse());
-            }
             const tile_id = makeJSONFileNames(d)
               // sort them in reverse alphabetical order so the following find gets the last one chronologically
               .sort().reverse()
@@ -223,86 +347,26 @@ Object.keys(townshipsDataByYear).forEach(yearStr => {
               }
             }
             
-            if (office_boundaries.length > 0 && projectedTownships[yearStr].filter(x => x.office === td.office.slice(0, -4) && x.state === stateAbbr).length === 0) {
-              // if the district ends before the fiscal year, you need to distribute it's data to other offices
-              if (office_boundaries.every(_d => _d.tile_id && _d.tile_id.slice(-8) < `${yearStr}0630`)) {
-                //console.log(td.office, `${yearStr}0630`, office_boundaries.map(_d => _d.tile_id.slice(-8)));
-                const townshipFeatures = getTownshipFeaturesForOffice(td);
-                // if it's a multipolygon, you need to iterate through them one-by-one
-                const totalArea = turf.area(townshipFeatures[0].geometry);
-                const polygons = makeIntoTurfPolygons(townshipFeatures[0]);
-                
-                // if (townshipFeatures[0].properties.Office === 'Tallahassee') {
-                  //   console.log(polygons);
-                  // }
-                  
-                  
-                  // get the other polygons for the end of the fiscal year
-                  getTownshipFeaturesOnDate(td.year, 6, 30, stateAbbr).forEach(eofyFeature => {
-                    makeIntoTurfPolygons(eofyFeature).forEach(otherPolygon => {
-                      polygons.forEach(aPolygon => {
-                        const intersection = turf.intersect(aPolygon, otherPolygon);
-                // if (td.office === 'Tallahassee') {
-                  //   console.log(aPolygon, otherPolygon);
-                  // }
-                  if (intersection) {
-                  const areaOfIntersection = turf.area(intersection);
-                  const proportionToAttribute = (areaOfIntersection / turf.area(aPolygon)) * (turf.area(aPolygon) / totalArea);
-                  // get the matching office
-                  const districtToAdjust = projectedTownships[yearStr].find(_d => _d.state === stateAbbr && _d.office === eofyFeature.properties.Office);
-                  // add an adjusted for map array to data if it doesn't already exist
-                  if (districtToAdjust) {
-                    
-                    const idx = districtToAdjust.data.findIndex(__d => __d.adjustedForMap === true);
-                    if (idx === -1) {
-                      districtToAdjust.data.push({
-                        claims: districtToAdjust.data[0].claims + data[0].claims * proportionToAttribute,
-                        acres_claimed: districtToAdjust.data[0].acres_claimed + data[0].acres_claimed * proportionToAttribute,
-                        claims_indian_lands: districtToAdjust.data[0].claims_indian_lands + data[0].claims_indian_lands * proportionToAttribute,
-                        acres_claimed_indian_lands: districtToAdjust.data[0].acres_claimed_indian_lands + data[0].acres_claimed_indian_lands * proportionToAttribute,
-                        patents: districtToAdjust.data[0].patents + data[0].patents * proportionToAttribute,
-                        acres_patented: districtToAdjust.data[0].acres_patented + data[0].acres_patented * proportionToAttribute,
-                        patents_indian_lands: districtToAdjust.data[0].patents_indian_lands + data[0].patents_indian_lands * proportionToAttribute,
-                        acres_patented_indian_lands: districtToAdjust.data[0].acres_patented_indian_lands + data[0].acres_patented_indian_lands * proportionToAttribute,
-                        commutations_2301: districtToAdjust.data[0].commutations_2301 + data[0].commutations_2301 * proportionToAttribute,
-                        acres_commuted_2301: districtToAdjust.data[0].acres_commuted_2301 + data[0].acres_commuted_2301 * proportionToAttribute,
-                        commutations_18800615: districtToAdjust.data[0].acres_commuted_18800615 + data[0].acres_commuted_18800615 * proportionToAttribute,
-                        acres_commuted_18800615: districtToAdjust.data[0].acres_commuted_18800615 + data[0].acres_commuted_18800615 * proportionToAttribute,
-                        commutations_indian_lands: districtToAdjust.data[0].commutations_indian_lands + data[0].commutations_indian_lands * proportionToAttribute,
-                        acres_commuted_indian_lands: districtToAdjust.data[0].acres_commuted_indian_lands + data[0].acres_commuted_indian_lands * proportionToAttribute,
-                        adjustedForMap: true,
-                      });
-                    } else {
-                      districtToAdjust.data[idx].claims += data[0].claims * proportionToAttribute;
-                      districtToAdjust.data[idx].acres_claimed += data[0].acres_claimed * proportionToAttribute;
-                      districtToAdjust.data[idx].claims_indian_lands += data[0].claims_indian_lands * proportionToAttribute;
-                      districtToAdjust.data[idx].acres_claimed_indian_lands += data[0].acres_claimed_indian_lands * proportionToAttribute;
-                      districtToAdjust.data[idx].patents += data[0].patents * proportionToAttribute;
-                      districtToAdjust.data[idx].acres_patented += data[0].acres_patented * proportionToAttribute;
-                      districtToAdjust.data[idx].patents_indian_lands += data[0].patents_indian_lands * proportionToAttribute;
-                      districtToAdjust.data[idx].acres_patented_indian_lands += data[0].acres_patented_indian_lands * proportionToAttribute;
-                      districtToAdjust.data[idx].commutations_2301 += data[0].commutations_2301 * proportionToAttribute;
-                      districtToAdjust.data[idx].acres_commuted_2301 += data[0].acres_commuted_2301 * proportionToAttribute;
-                      districtToAdjust.data[idx].commutations_18800615 += data[0].acres_commuted_18800615 * proportionToAttribute;
-                      districtToAdjust.data[idx].acres_commuted_18800615 += data[0].acres_commuted_18800615 * proportionToAttribute;
-                      districtToAdjust.data[idx].commutations_indian_lands += data[0].commutations_indian_lands * proportionToAttribute;
-                      districtToAdjust.data[idx].acres_commuted_indian_lands += data[0].acres_commuted_indian_lands * proportionToAttribute;
-                    }
-                    // if (td.office.includes('Tallahassee')) {
-                      //   console.log(districtToAdjust.data, proportionToAttribute);
-                      // }
-                    }
-                    
-                  }
+            // If a reporting office is no longer displayed at the end of the
+            // fiscal year, defer its map allocation until every possible
+            // successor office has been instantiated for this year.
+            if (
+              office_boundaries.length > 0
+              && office_boundaries.every(boundary => boundary.tile_id && boundary.tile_id.slice(-8) < `${yearStr}0630`)
+            ) {
+              const sourceFeature = getTownshipFeaturesForOffice(td)
+                .sort((a, b) => (b.properties.End || 0) - (a.properties.End || 0))[0];
+              if (sourceFeature) {
+                pendingMapAllocations.push({
+                  year: td.year,
+                  state: stateAbbr,
+                  sourceOffice: td.office.slice(0, -4),
+                  sourceData: data[0],
+                  sourceFeature,
                 });
-              });
-            });
-          }
-        }
-        if (td.year === 1889 && td.office.includes('Salina')) {
-          console.log(td);
-          console.log(data, office_boundaries);
-        }
+              }
+            }
+
         projectedTownships[yearStr].push({
           office: fullStateOffices[stateAbbr] || td.office.slice(0, -4),
           state: ((stateAbbr === 'ND' || stateAbbr === 'SD') && td.year < 1889) ? 'DK' : stateAbbr,
@@ -311,6 +375,89 @@ Object.keys(townshipsDataByYear).forEach(yearStr => {
         });
       });
 });
+
+// Apply closed-office totals only after all June 30 recipient districts have
+// been instantiated. This makes redistribution independent of source-row
+// ordering and ensures that all of a source office's activity is conserved.
+pendingMapAllocations.forEach(allocation => {
+  const yearStr = allocation.year.toString();
+  const districtsForYear = projectedTownships[yearStr] || [];
+  const recipientAreas = new Map<ProjectedTownship, number>();
+  const sourcePolygons = makeIntoTurfPolygons(allocation.sourceFeature);
+
+  getTownshipFeaturesOnDate(allocation.year, 6, 30, allocation.state).forEach(activeFeature => {
+    const activeTileIds = new Set(makeJSONFileNames(activeFeature));
+    const officeCandidates = getFeatureOfficeCandidates(activeFeature, allocation.state);
+    const recipient = districtsForYear.find(district => (
+      district.state === allocation.state
+      && (
+        officeCandidates.has(normalizeOfficeName(district.office))
+        || district.office_boundaries.some(boundary => boundary.tile_id && activeTileIds.has(boundary.tile_id))
+      )
+    ));
+
+    if (!recipient) {
+      return;
+    }
+
+    let intersectionArea = 0;
+    makeIntoTurfPolygons(activeFeature).forEach(activePolygon => {
+      sourcePolygons.forEach(sourcePolygon => {
+        const intersection = turf.intersect(sourcePolygon, activePolygon);
+        if (intersection) {
+          intersectionArea += turf.area(intersection);
+        }
+      });
+    });
+
+    if (intersectionArea > 0) {
+      recipientAreas.set(recipient, (recipientAreas.get(recipient) || 0) + intersectionArea);
+    }
+  });
+
+  const totalIntersectionArea = [...recipientAreas.values()]
+    .reduce((total, area) => total + area, 0);
+
+  if (totalIntersectionArea <= 0) {
+    mapAllocationDiagnostics.push({
+      year: allocation.year,
+      state: allocation.state,
+      sourceOffice: allocation.sourceOffice,
+      recipients: [],
+      allocatedProportion: 0,
+      status: 'unresolved',
+    });
+    return;
+  }
+
+  const recipients = [...recipientAreas.entries()].map(([district, area]) => {
+    const proportion = area / totalIntersectionArea;
+    addMapAllocation(district, allocation.sourceData, proportion);
+    return {
+      office: district.office,
+      proportion,
+    };
+  });
+
+  mapAllocationDiagnostics.push({
+    year: allocation.year,
+    state: allocation.state,
+    sourceOffice: allocation.sourceOffice,
+    recipients,
+    allocatedProportion: recipients.reduce((total, recipient) => total + recipient.proportion, 0),
+    status: 'allocated',
+  });
+});
+
+fs.writeFileSync(
+  path.join(diagnosticsRoot, 'mapDataAllocations.json'),
+  JSON.stringify(mapAllocationDiagnostics, null, 2),
+);
+
+const unresolvedAllocations = mapAllocationDiagnostics.filter(diagnostic => diagnostic.status === 'unresolved');
+if (unresolvedAllocations.length > 0) {
+  throw new Error(`Unable to allocate ${unresolvedAllocations.length} closed-office record(s) to June 30 districts.`);
+}
 
 // filter out districts when the state no longer has any claims in the future
 Object.keys(projectedTownships).forEach(yearStr => {
@@ -339,6 +486,64 @@ Object.keys(projectedTownships).forEach(yearStr => {
     return true;
   });
 });
+
+// A map allocation may change office-level values, but it must never create or
+// lose activity at the state-year level. Enforce that invariant before writing
+// any generated output.
+const mapConservationIssues: MapConservationIssue[] = [];
+Object.keys(projectedTownships).forEach(yearStr => {
+  const year = parseInt(yearStr, 10);
+  if (!shouldIncludeYear(year)) {
+    return;
+  }
+
+  const districts = projectedTownships[yearStr];
+  const states = [...new Set(districts.map(district => district.state))];
+  states.forEach(state => {
+    const stateDistricts = districts.filter(district => district.state === state);
+    const rawTotals = Object.fromEntries(metricFields.map(field => [field, 0])) as Record<MetricField, number>;
+    const mapTotals = Object.fromEntries(metricFields.map(field => [field, 0])) as Record<MetricField, number>;
+
+    stateDistricts.forEach(district => {
+      const rawMetrics = getRawMetrics(district);
+      metricFields.forEach(field => {
+        rawTotals[field] += rawMetrics[field];
+      });
+
+      const isFullStateOffice = ['IL', 'IN', 'MS', 'OH'].includes(state);
+      const hasJune30Boundary = isFullStateOffice || district.office_boundaries.some(boundary => (
+        boundary.tile_id && boundary.tile_id.slice(-8) >= `${yearStr}0630`
+      ));
+      if (hasJune30Boundary) {
+        const mapMetrics = getMapMetrics(district);
+        metricFields.forEach(field => {
+          mapTotals[field] += mapMetrics[field];
+        });
+      }
+    });
+
+    const differences: Partial<Record<MetricField, number>> = {};
+    metricFields.forEach(field => {
+      const difference = mapTotals[field] - rawTotals[field];
+      if (Math.abs(difference) > 0.000001) {
+        differences[field] = difference;
+      }
+    });
+
+    if (Object.keys(differences).length > 0) {
+      mapConservationIssues.push({ year, state, differences });
+    }
+  });
+});
+
+fs.writeFileSync(
+  path.join(diagnosticsRoot, 'mapDataConservation.json'),
+  JSON.stringify(mapConservationIssues, null, 2),
+);
+
+if (mapConservationIssues.length > 0) {
+  throw new Error(`Map allocation failed state-level conservation for ${mapConservationIssues.length} state-year record(s).`);
+}
 
 
 // process the conflicts
@@ -402,6 +607,9 @@ const conflictsData: ConflictData[] = (Conflicts as ConflictRaw[])
 
 // 
 Object.keys(projectedTownships).forEach(year => {
+  if (!shouldIncludeYear(parseInt(year, 10))) {
+    return;
+  }
   const yearData = {
     offices: projectedTownships[year],
     conflicts: conflictsData.filter(cd => {
@@ -409,9 +617,9 @@ Object.keys(projectedTownships).forEach(year => {
     }),
   };
 
-  fs.writeFileSync(`../../build/data/yearData/${year}.json`, JSON.stringify(yearData));
-  fs.writeFileSync(`../../public/data/yearData/${year}.json`, JSON.stringify(yearData));
-  fs.writeFileSync('../data-input/conflictsDataWithOffices.json', JSON.stringify(conflictsData));
+  fs.writeFileSync(path.join(buildDataRoot, 'yearData', `${year}.json`), JSON.stringify(yearData));
+  fs.writeFileSync(path.join(publicDataRoot, 'yearData', `${year}.json`), JSON.stringify(yearData));
+  fs.writeFileSync(conflictsOutputPath, JSON.stringify(conflictsData));
   console.log(`wrote ${year}.json projected`);
 });
 
@@ -430,7 +638,7 @@ Object.keys(dataWithoutTiles).forEach(yearStr => {
   });
 });
 
-fs.writeFileSync('./dataWithoutTiles.json', JSON.stringify(officesWithoutTiles.sort((a, b) => b.years.length - a.years.length)));
+fs.writeFileSync(path.join(diagnosticsRoot, 'dataWithoutTiles.json'), JSON.stringify(officesWithoutTiles.sort((a, b) => b.years.length - a.years.length)));
 
 
 const districts: District[] = [];
@@ -493,5 +701,5 @@ Townships.features
 districts.forEach(district => {
   district.boundaries = district.boundaries.sort((a, b) => getDateValue(a.start_date.year, a.start_date.month, a.start_date.day) - getDateValue(b.start_date.year, b.start_date.month, b.start_date.day));
   const officeStub = district.office.replace(/[^a-zA-Z]/g, '');
-  fs.writeFileSync(`../../build/data/districtsData/${officeStub}-${district.state}.json`, JSON.stringify(district));
+  fs.writeFileSync(path.join(buildDataRoot, 'districtsData', `${officeStub}-${district.state}.json`), JSON.stringify(district));
 });

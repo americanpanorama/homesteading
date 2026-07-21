@@ -1,0 +1,4361 @@
+{
+  "topStates": [
+    {
+      "state": "MN",
+      "count": 19
+    },
+    {
+      "state": "NE",
+      "count": 17
+    },
+    {
+      "state": "KS",
+      "count": 16
+    },
+    {
+      "state": "SD",
+      "count": 10
+    },
+    {
+      "state": "OK",
+      "count": 9
+    },
+    {
+      "state": "CA",
+      "count": 5
+    },
+    {
+      "state": "CO",
+      "count": 5
+    },
+    {
+      "state": "AR",
+      "count": 4
+    },
+    {
+      "state": "NV",
+      "count": 4
+    },
+    {
+      "state": "OR",
+      "count": 4
+    },
+    {
+      "state": "WI",
+      "count": 4
+    },
+    {
+      "state": "LA",
+      "count": 3
+    },
+    {
+      "state": "AL",
+      "count": 2
+    },
+    {
+      "state": "IA",
+      "count": 2
+    },
+    {
+      "state": "MI",
+      "count": 2
+    }
+  ],
+  "largestClaimDiffs": [
+    {
+      "year": 1871,
+      "state": "KS",
+      "office": "Salina",
+      "normalizedOffice": "salina",
+      "yearData": {
+        "year": 1871,
+        "state": "KS",
+        "office": "Salina",
+        "claims": 3005.998307339641,
+        "acres_claimed": 399494.41142058885,
+        "patents": 100.99994295214661,
+        "acres_patented": 13005.682781460704
+      },
+      "timelineData": {
+        "year": 1871,
+        "state": "KS",
+        "office": "Salina",
+        "claims": 662,
+        "acres_claimed": 82957.34,
+        "patents": 22,
+        "acres_patented": 3009.44
+      },
+      "diff": {
+        "claims": 2343.998307339641,
+        "acres_claimed": 316537.0714205889,
+        "patents": 78.99994295214661,
+        "acres_patented": 9996.242781460704
+      }
+    },
+    {
+      "year": 1871,
+      "state": "AR",
+      "office": "Dardanelle",
+      "normalizedOffice": "dardanelle",
+      "yearData": {
+        "year": 1871,
+        "state": "AR",
+        "office": "Dardanelle",
+        "claims": 1256.5379995417732,
+        "acres_claimed": 80963.81378291533,
+        "patents": 0,
+        "acres_patented": 0
+      },
+      "timelineData": {
+        "year": 1871,
+        "state": "AR",
+        "office": "Dardanelle",
+        "claims": 71,
+        "acres_claimed": 6784.45,
+        "patents": 0,
+        "acres_patented": 0
+      },
+      "diff": {
+        "claims": 1185.5379995417732,
+        "acres_claimed": 74179.36378291533,
+        "patents": 0,
+        "acres_patented": 0
+      }
+    },
+    {
+      "year": 1879,
+      "state": "MN",
+      "office": "Crookston",
+      "normalizedOffice": "crookston",
+      "yearData": {
+        "year": 1879,
+        "state": "MN",
+        "office": "Crookston",
+        "claims": 1182.750161593712,
+        "acres_claimed": 151563.76440568455,
+        "patents": 173.96325284641242,
+        "acres_patented": 16143.279971854246
+      },
+      "timelineData": {
+        "year": 1879,
+        "state": "MN",
+        "office": "Crookston",
+        "claims": 0,
+        "acres_claimed": 0,
+        "patents": 0,
+        "acres_patented": 0
+      },
+      "diff": {
+        "claims": 1182.750161593712,
+        "acres_claimed": 151563.76440568455,
+        "patents": 173.96325284641242,
+        "acres_patented": 16143.279971854246
+      }
+    },
+    {
+      "year": 1869,
+      "state": "NE",
+      "office": "West Point",
+      "normalizedOffice": "westpoint",
+      "yearData": {
+        "year": 1869,
+        "state": "NE",
+        "office": "West Point",
+        "claims": 1150,
+        "acres_claimed": 105693.89,
+        "patents": 117,
+        "acres_patented": 17259.49
+      },
+      "timelineData": {
+        "year": 1869,
+        "state": "NE",
+        "office": "West Point",
+        "claims": 0,
+        "acres_claimed": 0,
+        "patents": 0,
+        "acres_patented": 0
+      },
+      "diff": {
+        "claims": 1150,
+        "acres_claimed": 105693.89,
+        "patents": 117,
+        "acres_patented": 17259.49
+      }
+    },
+    {
+      "year": 1871,
+      "state": "AR",
+      "office": "Harrison",
+      "normalizedOffice": "harrison",
+      "yearData": {
+        "year": 1871,
+        "state": "AR",
+        "office": "Harrison",
+        "claims": 1127.462000458227,
+        "acres_claimed": 70545.53621708468,
+        "patents": 0,
+        "acres_patented": 0
+      },
+      "timelineData": {
+        "year": 1871,
+        "state": "AR",
+        "office": "Harrison",
+        "claims": 0,
+        "acres_claimed": 0,
+        "patents": 0,
+        "acres_patented": 0
+      },
+      "diff": {
+        "claims": 1127.462000458227,
+        "acres_claimed": 70545.53621708468,
+        "patents": 0,
+        "acres_patented": 0
+      }
+    },
+    {
+      "year": 1873,
+      "state": "DK",
+      "office": "Sioux Falls",
+      "normalizedOffice": "siouxfalls",
+      "yearData": {
+        "year": 1873,
+        "state": "DK",
+        "office": "Sioux Falls",
+        "claims": 908,
+        "acres_claimed": 141935.61,
+        "patents": 194,
+        "acres_patented": 30641.88
+      },
+      "timelineData": {
+        "year": 1873,
+        "state": "DK",
+        "office": "Sioux Falls",
+        "claims": 0,
+        "acres_claimed": 0,
+        "patents": 15,
+        "acres_patented": 2378.25
+      },
+      "diff": {
+        "claims": 908,
+        "acres_claimed": 141935.61,
+        "patents": 179,
+        "acres_patented": 28263.63
+      }
+    },
+    {
+      "year": 1876,
+      "state": "MN",
+      "office": "Benson",
+      "normalizedOffice": "benson",
+      "yearData": {
+        "year": 1876,
+        "state": "MN",
+        "office": "Benson",
+        "claims": 763.9810894148249,
+        "acres_claimed": 80311.9520633467,
+        "patents": 399.9900991700654,
+        "acres_patented": 37332.25592633476
+      },
+      "timelineData": {
+        "year": 1876,
+        "state": "MN",
+        "office": "Benson",
+        "claims": 0,
+        "acres_claimed": 0,
+        "patents": 0,
+        "acres_patented": 0
+      },
+      "diff": {
+        "claims": 763.9810894148249,
+        "acres_claimed": 80311.9520633467,
+        "patents": 399.9900991700654,
+        "acres_patented": 37332.25592633476
+      }
+    },
+    {
+      "year": 1906,
+      "state": "OK",
+      "office": "Lawton",
+      "normalizedOffice": "lawton",
+      "yearData": {
+        "year": 1906,
+        "state": "OK",
+        "office": "Lawton",
+        "claims": 757,
+        "acres_claimed": 95371.56999999999,
+        "patents": 1211,
+        "acres_patented": 187873.68
+      },
+      "timelineData": {
+        "year": 1906,
+        "state": "OK",
+        "office": "Lawton",
+        "claims": 182,
+        "acres_claimed": 23034.26,
+        "patents": 153,
+        "acres_patented": 23807.34
+      },
+      "diff": {
+        "claims": 575,
+        "acres_claimed": 72337.31,
+        "patents": 1058,
+        "acres_patented": 164066.34
+      }
+    },
+    {
+      "year": 1880,
+      "state": "MN",
+      "office": "Tracy",
+      "normalizedOffice": "tracy",
+      "yearData": {
+        "year": 1880,
+        "state": "MN",
+        "office": "Tracy",
+        "claims": 630,
+        "acres_claimed": 85046.95999999999,
+        "patents": 307,
+        "acres_patented": 38840.11
+      },
+      "timelineData": {
+        "year": 1880,
+        "state": "MN",
+        "office": "Tracy",
+        "claims": 68,
+        "acres_claimed": 8386.2,
+        "patents": 64,
+        "acres_patented": 7184.22
+      },
+      "diff": {
+        "claims": 562,
+        "acres_claimed": 76660.76,
+        "patents": 243,
+        "acres_patented": 31655.89
+      }
+    },
+    {
+      "year": 1879,
+      "state": "AL",
+      "office": "Montgomery",
+      "normalizedOffice": "montgomery",
+      "yearData": {
+        "year": 1879,
+        "state": "AL",
+        "office": "Montgomery",
+        "claims": 667,
+        "acres_claimed": 62057.88,
+        "patents": 385,
+        "acres_patented": 38942.72
+      },
+      "timelineData": {
+        "year": 1879,
+        "state": "AL",
+        "office": "Montgomery",
+        "claims": 114,
+        "acres_claimed": 9908.5,
+        "patents": 123,
+        "acres_patented": 14500.71
+      },
+      "diff": {
+        "claims": 553,
+        "acres_claimed": 52149.38,
+        "patents": 262,
+        "acres_patented": 24442.010000000002
+      }
+    },
+    {
+      "year": 1874,
+      "state": "MN",
+      "office": "Worthington",
+      "normalizedOffice": "worthington",
+      "yearData": {
+        "year": 1874,
+        "state": "MN",
+        "office": "Worthington",
+        "claims": 723,
+        "acres_claimed": 80151.42,
+        "patents": 465,
+        "acres_patented": 52097.86
+      },
+      "timelineData": {
+        "year": 1874,
+        "state": "MN",
+        "office": "Worthington",
+        "claims": 226,
+        "acres_claimed": 24534.42,
+        "patents": 180,
+        "acres_patented": 19858.12
+      },
+      "diff": {
+        "claims": 497,
+        "acres_claimed": 55617,
+        "patents": 285,
+        "acres_patented": 32239.74
+      }
+    },
+    {
+      "year": 1875,
+      "state": "KS",
+      "office": "Kirwin",
+      "normalizedOffice": "kirwin",
+      "yearData": {
+        "year": 1875,
+        "state": "KS",
+        "office": "Kirwin",
+        "claims": 494,
+        "acres_claimed": 76855.77,
+        "patents": 267,
+        "acres_patented": 41469.69
+      },
+      "timelineData": {
+        "year": 1875,
+        "state": "KS",
+        "office": "Kirwin",
+        "claims": 0,
+        "acres_claimed": 0,
+        "patents": 0,
+        "acres_patented": 0
+      },
+      "diff": {
+        "claims": 494,
+        "acres_claimed": 76855.77,
+        "patents": 267,
+        "acres_patented": 41469.69
+      }
+    },
+    {
+      "year": 1905,
+      "state": "MO",
+      "office": "Springfield",
+      "normalizedOffice": "springfield",
+      "yearData": {
+        "year": 1905,
+        "state": "MO",
+        "office": "Springfield",
+        "claims": 946,
+        "acres_claimed": 82603.93,
+        "patents": 521,
+        "acres_patented": 49279.02
+      },
+      "timelineData": {
+        "year": 1905,
+        "state": "MO",
+        "office": "Springfield",
+        "claims": 463,
+        "acres_claimed": 44013.75,
+        "patents": 244,
+        "acres_patented": 25277.21
+      },
+      "diff": {
+        "claims": 483,
+        "acres_claimed": 38590.17999999999,
+        "patents": 277,
+        "acres_patented": 24001.809999999998
+      }
+    },
+    {
+      "year": 1905,
+      "state": "NE",
+      "office": "Lincoln",
+      "normalizedOffice": "lincoln",
+      "yearData": {
+        "year": 1905,
+        "state": "NE",
+        "office": "Lincoln",
+        "claims": 639,
+        "acres_claimed": 228412.58000000002,
+        "patents": 82,
+        "acres_patented": 10760.35
+      },
+      "timelineData": {
+        "year": 1905,
+        "state": "NE",
+        "office": "Lincoln",
+        "claims": 198,
+        "acres_claimed": 55900.17,
+        "patents": 52,
+        "acres_patented": 6737.42
+      },
+      "diff": {
+        "claims": 441,
+        "acres_claimed": 172512.41000000003,
+        "patents": 30,
+        "acres_patented": 4022.9300000000003
+      }
+    },
+    {
+      "year": 1863,
+      "state": "KS",
+      "office": "Atchison",
+      "normalizedOffice": "atchison",
+      "yearData": {
+        "year": 1863,
+        "state": "KS",
+        "office": "Atchison",
+        "claims": 466,
+        "acres_claimed": 67254.06,
+        "patents": 0,
+        "acres_patented": 0
+      },
+      "timelineData": {
+        "year": 1863,
+        "state": "KS",
+        "office": "Atchison",
+        "claims": 57,
+        "acres_claimed": 6831.7,
+        "patents": 0,
+        "acres_patented": 0
+      },
+      "diff": {
+        "claims": 409,
+        "acres_claimed": 60422.36,
+        "patents": 0,
+        "acres_patented": 0
+      }
+    },
+    {
+      "year": 1880,
+      "state": "KS",
+      "office": "Wakeeney",
+      "normalizedOffice": "wakeeney",
+      "yearData": {
+        "year": 1880,
+        "state": "KS",
+        "office": "Wakeeney",
+        "claims": 1082,
+        "acres_claimed": 162038.08000000002,
+        "patents": 91,
+        "acres_patented": 14208.41
+      },
+      "timelineData": {
+        "year": 1880,
+        "state": "KS",
+        "office": "Wakeeney",
+        "claims": 719,
+        "acres_claimed": 108542.19,
+        "patents": 75,
+        "acres_patented": 11752.75
+      },
+      "diff": {
+        "claims": 363,
+        "acres_claimed": 53495.890000000014,
+        "patents": 16,
+        "acres_patented": 2455.66
+      }
+    },
+    {
+      "year": 1906,
+      "state": "OK",
+      "office": "Guthrie",
+      "normalizedOffice": "guthrie",
+      "yearData": {
+        "year": 1906,
+        "state": "OK",
+        "office": "Guthrie",
+        "claims": 824.9999996035835,
+        "acres_claimed": 105774.19994699079,
+        "patents": 1485.999999381367,
+        "acres_patented": 216238.98990604206
+      },
+      "timelineData": {
+        "year": 1906,
+        "state": "OK",
+        "office": "Guthrie",
+        "claims": 470,
+        "acres_claimed": 58303.25,
+        "patents": 932,
+        "acres_patented": 132097.5
+      },
+      "diff": {
+        "claims": 354.99999960358355,
+        "acres_claimed": 47470.94994699079,
+        "patents": 553.9999993813669,
+        "acres_patented": 84141.48990604206
+      }
+    },
+    {
+      "year": 1906,
+      "state": "NE",
+      "office": "North Platte",
+      "normalizedOffice": "northplatte",
+      "yearData": {
+        "year": 1906,
+        "state": "NE",
+        "office": "North Platte",
+        "claims": 1081,
+        "acres_claimed": 437569.73,
+        "patents": 250,
+        "acres_patented": 37480.36
+      },
+      "timelineData": {
+        "year": 1906,
+        "state": "NE",
+        "office": "North Platte",
+        "claims": 741,
+        "acres_claimed": 320479.87,
+        "patents": 180,
+        "acres_patented": 26944.54
+      },
+      "diff": {
+        "claims": 340,
+        "acres_claimed": 117089.85999999999,
+        "patents": 70,
+        "acres_patented": 10535.82
+      }
+    },
+    {
+      "year": 1863,
+      "state": "MN",
+      "office": "St. Peter",
+      "normalizedOffice": "stpeter",
+      "yearData": {
+        "year": 1863,
+        "state": "MN",
+        "office": "St. Peter",
+        "claims": 829.9999983610621,
+        "acres_claimed": 94127.77980087444,
+        "patents": 0,
+        "acres_patented": 0
+      },
+      "timelineData": {
+        "year": 1863,
+        "state": "MN",
+        "office": "St. Peter",
+        "claims": 490,
+        "acres_claimed": 52818.9,
+        "patents": 0,
+        "acres_patented": 0
+      },
+      "diff": {
+        "claims": 339.9999983610621,
+        "acres_claimed": 41308.87980087444,
+        "patents": 0,
+        "acres_patented": 0
+      }
+    },
+    {
+      "year": 1873,
+      "state": "FL",
+      "office": "Gainesville",
+      "normalizedOffice": "gainesville",
+      "yearData": {
+        "year": 1873,
+        "state": "FL",
+        "office": "Gainesville",
+        "claims": 293,
+        "acres_claimed": 33892.87,
+        "patents": 32,
+        "acres_patented": 2136.69
+      },
+      "timelineData": {
+        "year": 1873,
+        "state": "FL",
+        "office": "Gainesville",
+        "claims": 0,
+        "acres_claimed": 0,
+        "patents": 17,
+        "acres_patented": 1112.45
+      },
+      "diff": {
+        "claims": 293,
+        "acres_claimed": 33892.87,
+        "patents": 15,
+        "acres_patented": 1024.24
+      }
+    }
+  ],
+  "idahoExamples": [],
+  "oklahomaExamples": [
+    {
+      "year": 1894,
+      "state": "OK",
+      "office": "Woodward",
+      "normalizedOffice": "woodward",
+      "yearData": {
+        "year": 1894,
+        "state": "OK",
+        "office": "Woodward",
+        "claims": 594,
+        "acres_claimed": 94120.71999999999,
+        "patents": 72,
+        "acres_patented": 11249.83
+      },
+      "timelineData": {
+        "year": 1894,
+        "state": "OK",
+        "office": "Woodward",
+        "claims": 573,
+        "acres_claimed": 90760.79,
+        "patents": 34,
+        "acres_patented": 5172.3
+      },
+      "diff": {
+        "claims": 21,
+        "acres_claimed": 3359.929999999993,
+        "patents": 38,
+        "acres_patented": 6077.53
+      }
+    },
+    {
+      "year": 1902,
+      "state": "OK",
+      "office": "Guthrie",
+      "normalizedOffice": "guthrie",
+      "yearData": {
+        "year": 1902,
+        "state": "OK",
+        "office": "Guthrie",
+        "claims": 124,
+        "acres_claimed": 12437.89,
+        "patents": 1841,
+        "acres_patented": 264780.43
+      },
+      "timelineData": {
+        "year": 1902,
+        "state": "OK",
+        "office": "Guthrie",
+        "claims": 59,
+        "acres_claimed": 5162.57,
+        "patents": 476,
+        "acres_patented": 66810.71
+      },
+      "diff": {
+        "claims": 65,
+        "acres_claimed": 7275.32,
+        "patents": 1365,
+        "acres_patented": 197969.71999999997
+      }
+    },
+    {
+      "year": 1906,
+      "state": "OK",
+      "office": "Guthrie",
+      "normalizedOffice": "guthrie",
+      "yearData": {
+        "year": 1906,
+        "state": "OK",
+        "office": "Guthrie",
+        "claims": 824.9999996035835,
+        "acres_claimed": 105774.19994699079,
+        "patents": 1485.999999381367,
+        "acres_patented": 216238.98990604206
+      },
+      "timelineData": {
+        "year": 1906,
+        "state": "OK",
+        "office": "Guthrie",
+        "claims": 470,
+        "acres_claimed": 58303.25,
+        "patents": 932,
+        "acres_patented": 132097.5
+      },
+      "diff": {
+        "claims": 354.99999960358355,
+        "acres_claimed": 47470.94994699079,
+        "patents": 553.9999993813669,
+        "acres_patented": 84141.48990604206
+      }
+    },
+    {
+      "year": 1906,
+      "state": "OK",
+      "office": "Lawton",
+      "normalizedOffice": "lawton",
+      "yearData": {
+        "year": 1906,
+        "state": "OK",
+        "office": "Lawton",
+        "claims": 757,
+        "acres_claimed": 95371.56999999999,
+        "patents": 1211,
+        "acres_patented": 187873.68
+      },
+      "timelineData": {
+        "year": 1906,
+        "state": "OK",
+        "office": "Lawton",
+        "claims": 182,
+        "acres_claimed": 23034.26,
+        "patents": 153,
+        "acres_patented": 23807.34
+      },
+      "diff": {
+        "claims": 575,
+        "acres_claimed": 72337.31,
+        "patents": 1058,
+        "acres_patented": 164066.34
+      }
+    },
+    {
+      "year": 1906,
+      "state": "OK",
+      "office": "El Reno",
+      "normalizedOffice": "elreno",
+      "yearData": {
+        "year": 1906,
+        "state": "OK",
+        "office": "El Reno",
+        "claims": 108.00000039641654,
+        "acres_claimed": 12898.87005300921,
+        "patents": 374.0000006186331,
+        "acres_patented": 55955.800093957965
+      },
+      "timelineData": {
+        "year": 1906,
+        "state": "OK",
+        "office": "El Reno",
+        "claims": 108,
+        "acres_claimed": 12898.87,
+        "patents": 374,
+        "acres_patented": 55955.8
+      },
+      "diff": {
+        "claims": 3.9641653870603477e-7,
+        "acres_claimed": 0.00005300920929585118,
+        "patents": 6.186331233948295e-7,
+        "acres_patented": 0.00009395796223543584
+      }
+    },
+    {
+      "year": 1908,
+      "state": "OK",
+      "office": "Guthrie",
+      "normalizedOffice": "guthrie",
+      "yearData": {
+        "year": 1908,
+        "state": "OK",
+        "office": "Guthrie",
+        "claims": 518.0741737712228,
+        "acres_claimed": 56050.88887516335,
+        "patents": 1546.0944029815564,
+        "acres_patented": 223909.7849642746
+      },
+      "timelineData": {
+        "year": 1908,
+        "state": "OK",
+        "office": "Guthrie",
+        "claims": 518,
+        "acres_claimed": 56042.31,
+        "patents": 1546,
+        "acres_patented": 223895.63
+      },
+      "diff": {
+        "claims": 0.07417377122283142,
+        "acres_claimed": 8.578875163351768,
+        "patents": 0.09440298155641358,
+        "acres_patented": 14.154964274581289
+      }
+    },
+    {
+      "year": 1908,
+      "state": "OK",
+      "office": "Woodward",
+      "normalizedOffice": "woodward",
+      "yearData": {
+        "year": 1908,
+        "state": "OK",
+        "office": "Woodward",
+        "claims": 2766.925826228777,
+        "acres_claimed": 390810.60112483666,
+        "patents": 2149.9055970184436,
+        "acres_patented": 331760.5050357254
+      },
+      "timelineData": {
+        "year": 1908,
+        "state": "OK",
+        "office": "Woodward",
+        "claims": 2591,
+        "acres_claimed": 370463.17,
+        "patents": 1926,
+        "acres_patented": 298187.67
+      },
+      "diff": {
+        "claims": 175.92582622877717,
+        "acres_claimed": 20347.431124836672,
+        "patents": 223.9055970184436,
+        "acres_patented": 33572.83503572544
+      }
+    },
+    {
+      "year": 1910,
+      "state": "OK",
+      "office": "Guthrie",
+      "normalizedOffice": "guthrie",
+      "yearData": {
+        "year": 1910,
+        "state": "OK",
+        "office": "Guthrie",
+        "claims": 311,
+        "acres_claimed": 33021.15,
+        "patents": 575,
+        "acres_patented": 79641.08
+      },
+      "timelineData": {
+        "year": 1910,
+        "state": "OK",
+        "office": "Guthrie",
+        "claims": 257,
+        "acres_claimed": 27388.53,
+        "patents": 496,
+        "acres_patented": 68578.14
+      },
+      "diff": {
+        "claims": 54,
+        "acres_claimed": 5632.620000000003,
+        "patents": 79,
+        "acres_patented": 11062.940000000002
+      }
+    },
+    {
+      "year": 1912,
+      "state": "OK",
+      "office": "Guthrie",
+      "normalizedOffice": "guthrie",
+      "yearData": {
+        "year": 1912,
+        "state": "OK",
+        "office": "Guthrie",
+        "claims": 365,
+        "acres_claimed": 36736.13,
+        "patents": 393,
+        "acres_patented": 54176.95
+      },
+      "timelineData": {
+        "year": 1912,
+        "state": "OK",
+        "office": "Guthrie",
+        "claims": 265,
+        "acres_claimed": 25210.87,
+        "patents": 326,
+        "acres_patented": 45314.92
+      },
+      "diff": {
+        "claims": 100,
+        "acres_claimed": 11525.259999999998,
+        "patents": 67,
+        "acres_patented": 8862.029999999999
+      }
+    }
+  ],
+  "mismatches": [
+    {
+      "year": 1863,
+      "state": "MN",
+      "office": "Taylors Falls",
+      "normalizedOffice": "taylorsfalls",
+      "yearData": {
+        "year": 1863,
+        "state": "MN",
+        "office": "Taylors Falls",
+        "claims": 66.00000163893785,
+        "acres_claimed": 9018.01019912555,
+        "patents": 0,
+        "acres_patented": 0
+      },
+      "timelineData": {
+        "year": 1863,
+        "state": "MN",
+        "office": "Taylors Falls",
+        "claims": 66,
+        "acres_claimed": 9018.01,
+        "patents": 0,
+        "acres_patented": 0
+      },
+      "diff": {
+        "claims": 0.0000016389378458825377,
+        "acres_claimed": 0.00019912555035261903,
+        "patents": 0,
+        "acres_patented": 0
+      }
+    },
+    {
+      "year": 1863,
+      "state": "MN",
+      "office": "St. Peter",
+      "normalizedOffice": "stpeter",
+      "yearData": {
+        "year": 1863,
+        "state": "MN",
+        "office": "St. Peter",
+        "claims": 829.9999983610621,
+        "acres_claimed": 94127.77980087444,
+        "patents": 0,
+        "acres_patented": 0
+      },
+      "timelineData": {
+        "year": 1863,
+        "state": "MN",
+        "office": "St. Peter",
+        "claims": 490,
+        "acres_claimed": 52818.9,
+        "patents": 0,
+        "acres_patented": 0
+      },
+      "diff": {
+        "claims": 339.9999983610621,
+        "acres_claimed": 41308.87980087444,
+        "patents": 0,
+        "acres_patented": 0
+      }
+    },
+    {
+      "year": 1863,
+      "state": "KS",
+      "office": "Atchison",
+      "normalizedOffice": "atchison",
+      "yearData": {
+        "year": 1863,
+        "state": "KS",
+        "office": "Atchison",
+        "claims": 466,
+        "acres_claimed": 67254.06,
+        "patents": 0,
+        "acres_patented": 0
+      },
+      "timelineData": {
+        "year": 1863,
+        "state": "KS",
+        "office": "Atchison",
+        "claims": 57,
+        "acres_claimed": 6831.7,
+        "patents": 0,
+        "acres_patented": 0
+      },
+      "diff": {
+        "claims": 409,
+        "acres_claimed": 60422.36,
+        "patents": 0,
+        "acres_patented": 0
+      }
+    },
+    {
+      "year": 1864,
+      "state": "KS",
+      "office": "Topeka",
+      "normalizedOffice": "topeka",
+      "yearData": {
+        "year": 1864,
+        "state": "KS",
+        "office": "Topeka",
+        "claims": 278,
+        "acres_claimed": 39235.200000000004,
+        "patents": 0,
+        "acres_patented": 0
+      },
+      "timelineData": {
+        "year": 1864,
+        "state": "KS",
+        "office": "Topeka",
+        "claims": 258,
+        "acres_claimed": 36718.97,
+        "patents": 0,
+        "acres_patented": 0
+      },
+      "diff": {
+        "claims": 20,
+        "acres_claimed": 2516.230000000003,
+        "patents": 0,
+        "acres_patented": 0
+      }
+    },
+    {
+      "year": 1869,
+      "state": "NE",
+      "office": "West Point",
+      "normalizedOffice": "westpoint",
+      "yearData": {
+        "year": 1869,
+        "state": "NE",
+        "office": "West Point",
+        "claims": 1150,
+        "acres_claimed": 105693.89,
+        "patents": 117,
+        "acres_patented": 17259.49
+      },
+      "timelineData": {
+        "year": 1869,
+        "state": "NE",
+        "office": "West Point",
+        "claims": 0,
+        "acres_claimed": 0,
+        "patents": 0,
+        "acres_patented": 0
+      },
+      "diff": {
+        "claims": 1150,
+        "acres_claimed": 105693.89,
+        "patents": 117,
+        "acres_patented": 17259.49
+      }
+    },
+    {
+      "year": 1869,
+      "state": "NE",
+      "office": "Lincoln",
+      "normalizedOffice": "lincoln",
+      "yearData": {
+        "year": 1869,
+        "state": "NE",
+        "office": "Lincoln",
+        "claims": 1483,
+        "acres_claimed": 120369.13,
+        "patents": 63,
+        "acres_patented": 9808.210000000001
+      },
+      "timelineData": {
+        "year": 1869,
+        "state": "NE",
+        "office": "Lincoln",
+        "claims": 1483,
+        "acres_claimed": 120369.13,
+        "patents": 56,
+        "acres_patented": 8778.78
+      },
+      "diff": {
+        "claims": 0,
+        "acres_claimed": 0,
+        "patents": 7,
+        "acres_patented": 1029.4300000000003
+      }
+    },
+    {
+      "year": 1871,
+      "state": "AR",
+      "office": "Harrison",
+      "normalizedOffice": "harrison",
+      "yearData": {
+        "year": 1871,
+        "state": "AR",
+        "office": "Harrison",
+        "claims": 1127.462000458227,
+        "acres_claimed": 70545.53621708468,
+        "patents": 0,
+        "acres_patented": 0
+      },
+      "timelineData": {
+        "year": 1871,
+        "state": "AR",
+        "office": "Harrison",
+        "claims": 0,
+        "acres_claimed": 0,
+        "patents": 0,
+        "acres_patented": 0
+      },
+      "diff": {
+        "claims": 1127.462000458227,
+        "acres_claimed": 70545.53621708468,
+        "patents": 0,
+        "acres_patented": 0
+      }
+    },
+    {
+      "year": 1871,
+      "state": "KS",
+      "office": "Topeka",
+      "normalizedOffice": "topeka",
+      "yearData": {
+        "year": 1871,
+        "state": "KS",
+        "office": "Topeka",
+        "claims": 849.0016926603589,
+        "acres_claimed": 75119.17857941118,
+        "patents": 94.00005704785339,
+        "acres_patented": 11920.547218539297
+      },
+      "timelineData": {
+        "year": 1871,
+        "state": "KS",
+        "office": "Topeka",
+        "claims": 849,
+        "acres_claimed": 75118.95,
+        "patents": 94,
+        "acres_patented": 11920.54
+      },
+      "diff": {
+        "claims": 0.0016926603589126898,
+        "acres_claimed": 0.228579411181272,
+        "patents": 0.00005704785338878082,
+        "acres_patented": 0.00721853929644567
+      }
+    },
+    {
+      "year": 1871,
+      "state": "AR",
+      "office": "Camden",
+      "normalizedOffice": "camden",
+      "yearData": {
+        "year": 1871,
+        "state": "AR",
+        "office": "Camden",
+        "claims": 663,
+        "acres_claimed": 67833.87,
+        "patents": 0,
+        "acres_patented": 0
+      },
+      "timelineData": {
+        "year": 1871,
+        "state": "AR",
+        "office": "Camden",
+        "claims": 416,
+        "acres_claimed": 42297.21,
+        "patents": 0,
+        "acres_patented": 0
+      },
+      "diff": {
+        "claims": 247,
+        "acres_claimed": 25536.659999999996,
+        "patents": 0,
+        "acres_patented": 0
+      }
+    },
+    {
+      "year": 1871,
+      "state": "AR",
+      "office": "Dardanelle",
+      "normalizedOffice": "dardanelle",
+      "yearData": {
+        "year": 1871,
+        "state": "AR",
+        "office": "Dardanelle",
+        "claims": 1256.5379995417732,
+        "acres_claimed": 80963.81378291533,
+        "patents": 0,
+        "acres_patented": 0
+      },
+      "timelineData": {
+        "year": 1871,
+        "state": "AR",
+        "office": "Dardanelle",
+        "claims": 71,
+        "acres_claimed": 6784.45,
+        "patents": 0,
+        "acres_patented": 0
+      },
+      "diff": {
+        "claims": 1185.5379995417732,
+        "acres_claimed": 74179.36378291533,
+        "patents": 0,
+        "acres_patented": 0
+      }
+    },
+    {
+      "year": 1871,
+      "state": "KS",
+      "office": "Salina",
+      "normalizedOffice": "salina",
+      "yearData": {
+        "year": 1871,
+        "state": "KS",
+        "office": "Salina",
+        "claims": 3005.998307339641,
+        "acres_claimed": 399494.41142058885,
+        "patents": 100.99994295214661,
+        "acres_patented": 13005.682781460704
+      },
+      "timelineData": {
+        "year": 1871,
+        "state": "KS",
+        "office": "Salina",
+        "claims": 662,
+        "acres_claimed": 82957.34,
+        "patents": 22,
+        "acres_patented": 3009.44
+      },
+      "diff": {
+        "claims": 2343.998307339641,
+        "acres_claimed": 316537.0714205889,
+        "patents": 78.99994295214661,
+        "acres_patented": 9996.242781460704
+      }
+    },
+    {
+      "year": 1872,
+      "state": "KS",
+      "office": "Independence",
+      "normalizedOffice": "independence",
+      "yearData": {
+        "year": 1872,
+        "state": "KS",
+        "office": "Independence",
+        "claims": 176,
+        "acres_claimed": 18680.239999999998,
+        "patents": 112,
+        "acres_patented": 14175.32
+      },
+      "timelineData": {
+        "year": 1872,
+        "state": "KS",
+        "office": "Independence",
+        "claims": 118,
+        "acres_claimed": 12964.74,
+        "patents": 55,
+        "acres_patented": 6783.48
+      },
+      "diff": {
+        "claims": 58,
+        "acres_claimed": 5715.499999999998,
+        "patents": 57,
+        "acres_patented": 7391.84
+      }
+    },
+    {
+      "year": 1873,
+      "state": "NV",
+      "office": "Eureka",
+      "normalizedOffice": "eureka",
+      "yearData": {
+        "year": 1873,
+        "state": "NV",
+        "office": "Eureka",
+        "claims": 6.000007581267858,
+        "acres_claimed": 960.0011683045573,
+        "patents": 0,
+        "acres_patented": 0
+      },
+      "timelineData": {
+        "year": 1873,
+        "state": "NV",
+        "office": "Eureka",
+        "claims": 0,
+        "acres_claimed": 0,
+        "patents": 0,
+        "acres_patented": 0
+      },
+      "diff": {
+        "claims": 6.000007581267858,
+        "acres_claimed": 960.0011683045573,
+        "patents": 0,
+        "acres_patented": 0
+      }
+    },
+    {
+      "year": 1873,
+      "state": "FL",
+      "office": "Gainesville",
+      "normalizedOffice": "gainesville",
+      "yearData": {
+        "year": 1873,
+        "state": "FL",
+        "office": "Gainesville",
+        "claims": 293,
+        "acres_claimed": 33892.87,
+        "patents": 32,
+        "acres_patented": 2136.69
+      },
+      "timelineData": {
+        "year": 1873,
+        "state": "FL",
+        "office": "Gainesville",
+        "claims": 0,
+        "acres_claimed": 0,
+        "patents": 17,
+        "acres_patented": 1112.45
+      },
+      "diff": {
+        "claims": 293,
+        "acres_claimed": 33892.87,
+        "patents": 15,
+        "acres_patented": 1024.24
+      }
+    },
+    {
+      "year": 1873,
+      "state": "IA",
+      "office": "Des Moines",
+      "normalizedOffice": "desmoines",
+      "yearData": {
+        "year": 1873,
+        "state": "IA",
+        "office": "Des Moines",
+        "claims": 154,
+        "acres_claimed": 12984.87,
+        "patents": 353,
+        "acres_patented": 31194.72
+      },
+      "timelineData": {
+        "year": 1873,
+        "state": "IA",
+        "office": "Des Moines",
+        "claims": 5,
+        "acres_claimed": 335.25,
+        "patents": 36,
+        "acres_patented": 2836.71
+      },
+      "diff": {
+        "claims": 149,
+        "acres_claimed": 12649.62,
+        "patents": 317,
+        "acres_patented": 28358.010000000002
+      }
+    },
+    {
+      "year": 1873,
+      "state": "NV",
+      "office": "Carson City",
+      "normalizedOffice": "carsoncity",
+      "yearData": {
+        "year": 1873,
+        "state": "NV",
+        "office": "Carson City",
+        "claims": 89.99999241873215,
+        "acres_claimed": 13145.498831695444,
+        "patents": 2,
+        "acres_patented": 320
+      },
+      "timelineData": {
+        "year": 1873,
+        "state": "NV",
+        "office": "Carson City",
+        "claims": 48,
+        "acres_claimed": 6630.86,
+        "patents": 2,
+        "acres_patented": 320
+      },
+      "diff": {
+        "claims": 41.99999241873215,
+        "acres_claimed": 6514.638831695444,
+        "patents": 0,
+        "acres_patented": 0
+      }
+    },
+    {
+      "year": 1873,
+      "state": "DK",
+      "office": "Sioux Falls",
+      "normalizedOffice": "siouxfalls",
+      "yearData": {
+        "year": 1873,
+        "state": "DK",
+        "office": "Sioux Falls",
+        "claims": 908,
+        "acres_claimed": 141935.61,
+        "patents": 194,
+        "acres_patented": 30641.88
+      },
+      "timelineData": {
+        "year": 1873,
+        "state": "DK",
+        "office": "Sioux Falls",
+        "claims": 0,
+        "acres_claimed": 0,
+        "patents": 15,
+        "acres_patented": 2378.25
+      },
+      "diff": {
+        "claims": 908,
+        "acres_claimed": 141935.61,
+        "patents": 179,
+        "acres_patented": 28263.63
+      }
+    },
+    {
+      "year": 1874,
+      "state": "MN",
+      "office": "St. Cloud",
+      "normalizedOffice": "stcloud",
+      "yearData": {
+        "year": 1874,
+        "state": "MN",
+        "office": "St. Cloud",
+        "claims": 350.01055952689296,
+        "acres_claimed": 30719.032600006558,
+        "patents": 552.001478333765,
+        "acres_patented": 65020.98963815937
+      },
+      "timelineData": {
+        "year": 1874,
+        "state": "MN",
+        "office": "St. Cloud",
+        "claims": 350,
+        "acres_claimed": 30717.73,
+        "patents": 552,
+        "acres_patented": 65020.77
+      },
+      "diff": {
+        "claims": 0.010559526892961912,
+        "acres_claimed": 1.3026000065583503,
+        "patents": 0.001478333765021489,
+        "acres_patented": 0.21963815937488107
+      }
+    },
+    {
+      "year": 1874,
+      "state": "MN",
+      "office": "Worthington",
+      "normalizedOffice": "worthington",
+      "yearData": {
+        "year": 1874,
+        "state": "MN",
+        "office": "Worthington",
+        "claims": 723,
+        "acres_claimed": 80151.42,
+        "patents": 465,
+        "acres_patented": 52097.86
+      },
+      "timelineData": {
+        "year": 1874,
+        "state": "MN",
+        "office": "Worthington",
+        "claims": 226,
+        "acres_claimed": 24534.42,
+        "patents": 180,
+        "acres_patented": 19858.12
+      },
+      "diff": {
+        "claims": 497,
+        "acres_claimed": 55617,
+        "patents": 285,
+        "acres_patented": 32239.74
+      }
+    },
+    {
+      "year": 1874,
+      "state": "MN",
+      "office": "Detroit Lakes",
+      "normalizedOffice": "detroit",
+      "yearData": {
+        "year": 1874,
+        "state": "MN",
+        "office": "Detroit Lakes",
+        "claims": 165.989440473107,
+        "acres_claimed": 19841.85739999344,
+        "patents": 16.998521666234982,
+        "acres_patented": 2559.780361840626
+      },
+      "timelineData": {
+        "year": 1874,
+        "state": "MN",
+        "office": "Detroit Lakes",
+        "claims": 116,
+        "acres_claimed": 13675.27,
+        "patents": 10,
+        "acres_patented": 1520
+      },
+      "diff": {
+        "claims": 49.98944047310701,
+        "acres_claimed": 6166.587399993441,
+        "patents": 6.998521666234982,
+        "acres_patented": 1039.780361840626
+      }
+    },
+    {
+      "year": 1875,
+      "state": "KS",
+      "office": "Kirwin",
+      "normalizedOffice": "kirwin",
+      "yearData": {
+        "year": 1875,
+        "state": "KS",
+        "office": "Kirwin",
+        "claims": 494,
+        "acres_claimed": 76855.77,
+        "patents": 267,
+        "acres_patented": 41469.69
+      },
+      "timelineData": {
+        "year": 1875,
+        "state": "KS",
+        "office": "Kirwin",
+        "claims": 0,
+        "acres_claimed": 0,
+        "patents": 0,
+        "acres_patented": 0
+      },
+      "diff": {
+        "claims": 494,
+        "acres_claimed": 76855.77,
+        "patents": 267,
+        "acres_patented": 41469.69
+      }
+    },
+    {
+      "year": 1875,
+      "state": "NE",
+      "office": "Bloomington",
+      "normalizedOffice": "bloomington",
+      "yearData": {
+        "year": 1875,
+        "state": "NE",
+        "office": "Bloomington",
+        "claims": 584.9999969309367,
+        "acres_claimed": 80252.25960286977,
+        "patents": 120,
+        "acres_patented": 16102.59
+      },
+      "timelineData": {
+        "year": 1875,
+        "state": "NE",
+        "office": "Bloomington",
+        "claims": 557,
+        "acres_claimed": 76629.12,
+        "patents": 120,
+        "acres_patented": 16102.59
+      },
+      "diff": {
+        "claims": 27.99999693093673,
+        "acres_claimed": 3623.139602869778,
+        "patents": 0,
+        "acres_patented": 0
+      }
+    },
+    {
+      "year": 1875,
+      "state": "NE",
+      "office": "Grand Island",
+      "normalizedOffice": "grandisland",
+      "yearData": {
+        "year": 1875,
+        "state": "NE",
+        "office": "Grand Island",
+        "claims": 571.0000030690633,
+        "acres_claimed": 66603.67039713022,
+        "patents": 275,
+        "acres_patented": 36654.91
+      },
+      "timelineData": {
+        "year": 1875,
+        "state": "NE",
+        "office": "Grand Island",
+        "claims": 571,
+        "acres_claimed": 66603.67,
+        "patents": 275,
+        "acres_patented": 36654.91
+      },
+      "diff": {
+        "claims": 0.0000030690632684127195,
+        "acres_claimed": 0.00039713022124487907,
+        "patents": 0,
+        "acres_patented": 0
+      }
+    },
+    {
+      "year": 1876,
+      "state": "MN",
+      "office": "Benson",
+      "normalizedOffice": "benson",
+      "yearData": {
+        "year": 1876,
+        "state": "MN",
+        "office": "Benson",
+        "claims": 763.9810894148249,
+        "acres_claimed": 80311.9520633467,
+        "patents": 399.9900991700654,
+        "acres_patented": 37332.25592633476
+      },
+      "timelineData": {
+        "year": 1876,
+        "state": "MN",
+        "office": "Benson",
+        "claims": 0,
+        "acres_claimed": 0,
+        "patents": 0,
+        "acres_patented": 0
+      },
+      "diff": {
+        "claims": 763.9810894148249,
+        "acres_claimed": 80311.9520633467,
+        "patents": 399.9900991700654,
+        "acres_patented": 37332.25592633476
+      }
+    },
+    {
+      "year": 1876,
+      "state": "MN",
+      "office": "St. Cloud",
+      "normalizedOffice": "stcloud",
+      "yearData": {
+        "year": 1876,
+        "state": "MN",
+        "office": "St. Cloud",
+        "claims": 297.0189098081226,
+        "acres_claimed": 26815.60785496724,
+        "patents": 497.0099004231008,
+        "acres_patented": 59706.064035694246
+      },
+      "timelineData": {
+        "year": 1876,
+        "state": "MN",
+        "office": "St. Cloud",
+        "claims": 297,
+        "acres_claimed": 26813.62,
+        "patents": 497,
+        "acres_patented": 59705.14
+      },
+      "diff": {
+        "claims": 0.01890980812260068,
+        "acres_claimed": 1.9878549672394001,
+        "patents": 0.009900423100816624,
+        "acres_patented": 0.9240356942464132
+      }
+    },
+    {
+      "year": 1876,
+      "state": "MN",
+      "office": "Taylors Falls",
+      "normalizedOffice": "taylorsfalls",
+      "yearData": {
+        "year": 1876,
+        "state": "MN",
+        "office": "Taylors Falls",
+        "claims": 75.00000077705249,
+        "acres_claimed": 7273.550081686056,
+        "patents": 266.00000040683375,
+        "acres_patented": 27879.700037970997
+      },
+      "timelineData": {
+        "year": 1876,
+        "state": "MN",
+        "office": "Taylors Falls",
+        "claims": 75,
+        "acres_claimed": 7273.55,
+        "patents": 266,
+        "acres_patented": 27879.7
+      },
+      "diff": {
+        "claims": 7.770524916850263e-7,
+        "acres_claimed": 0.00008168605563696474,
+        "patents": 4.0683374891159474e-7,
+        "acres_patented": 0.00003797099634539336
+      }
+    },
+    {
+      "year": 1876,
+      "state": "NE",
+      "office": "Niobrara",
+      "normalizedOffice": "niobrara",
+      "yearData": {
+        "year": 1876,
+        "state": "NE",
+        "office": "Niobrara",
+        "claims": 144,
+        "acres_claimed": 21778.61,
+        "patents": 170,
+        "acres_patented": 26081.35
+      },
+      "timelineData": {
+        "year": 1876,
+        "state": "NE",
+        "office": "Niobrara",
+        "claims": 144,
+        "acres_claimed": 21778.61,
+        "patents": 118,
+        "acres_patented": 18270.96
+      },
+      "diff": {
+        "claims": 0,
+        "acres_claimed": 0,
+        "patents": 52,
+        "acres_patented": 7810.389999999999
+      }
+    },
+    {
+      "year": 1877,
+      "state": "OR",
+      "office": "Lakeview",
+      "normalizedOffice": "lakeview",
+      "yearData": {
+        "year": 1877,
+        "state": "OR",
+        "office": "Lakeview",
+        "claims": 28,
+        "acres_claimed": 4038.92,
+        "patents": 1,
+        "acres_patented": 160
+      },
+      "timelineData": {
+        "year": 1877,
+        "state": "OR",
+        "office": "Lakeview",
+        "claims": 0,
+        "acres_claimed": 0,
+        "patents": 0,
+        "acres_patented": 0
+      },
+      "diff": {
+        "claims": 28,
+        "acres_claimed": 4038.92,
+        "patents": 1,
+        "acres_patented": 160
+      }
+    },
+    {
+      "year": 1877,
+      "state": "MN",
+      "office": "St. Cloud",
+      "normalizedOffice": "stcloud",
+      "yearData": {
+        "year": 1877,
+        "state": "MN",
+        "office": "St. Cloud",
+        "claims": 196.0218292741556,
+        "acres_claimed": 20020.382489475654,
+        "patents": 307.03410824086814,
+        "acres_patented": 37839.44278768206
+      },
+      "timelineData": {
+        "year": 1877,
+        "state": "MN",
+        "office": "St. Cloud",
+        "claims": 196,
+        "acres_claimed": 20017.78,
+        "patents": 307,
+        "acres_patented": 37834.65
+      },
+      "diff": {
+        "claims": 0.02182927415560698,
+        "acres_claimed": 2.6024894756556023,
+        "patents": 0.03410824086813591,
+        "acres_patented": 4.7927876820613164
+      }
+    },
+    {
+      "year": 1877,
+      "state": "NV",
+      "office": "Eureka",
+      "normalizedOffice": "eureka",
+      "yearData": {
+        "year": 1877,
+        "state": "NV",
+        "office": "Eureka",
+        "claims": 20,
+        "acres_claimed": 2900.75,
+        "patents": 7,
+        "acres_patented": 865.24
+      },
+      "timelineData": {
+        "year": 1877,
+        "state": "NV",
+        "office": "Eureka",
+        "claims": 13,
+        "acres_claimed": 1940.75,
+        "patents": 2,
+        "acres_patented": 320
+      },
+      "diff": {
+        "claims": 7,
+        "acres_claimed": 960,
+        "patents": 5,
+        "acres_patented": 545.24
+      }
+    },
+    {
+      "year": 1877,
+      "state": "MN",
+      "office": "Fergus Falls",
+      "normalizedOffice": "fergusfalls",
+      "yearData": {
+        "year": 1877,
+        "state": "MN",
+        "office": "Fergus Falls",
+        "claims": 304.9781707258444,
+        "acres_claimed": 36859.99751052434,
+        "patents": 304.96589175913186,
+        "acres_patented": 43472.53721231794
+      },
+      "timelineData": {
+        "year": 1877,
+        "state": "MN",
+        "office": "Fergus Falls",
+        "claims": 241,
+        "acres_claimed": 29232.51,
+        "patents": 205,
+        "acres_patented": 29425.63
+      },
+      "diff": {
+        "claims": 63.97817072584439,
+        "acres_claimed": 7627.4875105243445,
+        "patents": 99.96589175913186,
+        "acres_patented": 14046.90721231794
+      }
+    },
+    {
+      "year": 1878,
+      "state": "MI",
+      "office": "Reed City",
+      "normalizedOffice": "reedcity",
+      "yearData": {
+        "year": 1878,
+        "state": "MI",
+        "office": "Reed City",
+        "claims": 99,
+        "acres_claimed": 8940.25,
+        "patents": 297,
+        "acres_patented": 34656.66
+      },
+      "timelineData": {
+        "year": 1878,
+        "state": "MI",
+        "office": "Reed City",
+        "claims": 0,
+        "acres_claimed": 0,
+        "patents": 0,
+        "acres_patented": 0
+      },
+      "diff": {
+        "claims": 99,
+        "acres_claimed": 8940.25,
+        "patents": 297,
+        "acres_patented": 34656.66
+      }
+    },
+    {
+      "year": 1878,
+      "state": "IA",
+      "office": "Des Moines",
+      "normalizedOffice": "desmoines",
+      "yearData": {
+        "year": 1878,
+        "state": "IA",
+        "office": "Des Moines",
+        "claims": 101,
+        "acres_claimed": 8403.91,
+        "patents": 979,
+        "acres_patented": 92409.84000000001
+      },
+      "timelineData": {
+        "year": 1878,
+        "state": "IA",
+        "office": "Des Moines",
+        "claims": 32,
+        "acres_claimed": 2086.55,
+        "patents": 211,
+        "acres_patented": 17941.49
+      },
+      "diff": {
+        "claims": 69,
+        "acres_claimed": 6317.36,
+        "patents": 768,
+        "acres_patented": 74468.35
+      }
+    },
+    {
+      "year": 1879,
+      "state": "MN",
+      "office": "Crookston",
+      "normalizedOffice": "crookston",
+      "yearData": {
+        "year": 1879,
+        "state": "MN",
+        "office": "Crookston",
+        "claims": 1182.750161593712,
+        "acres_claimed": 151563.76440568455,
+        "patents": 173.96325284641242,
+        "acres_patented": 16143.279971854246
+      },
+      "timelineData": {
+        "year": 1879,
+        "state": "MN",
+        "office": "Crookston",
+        "claims": 0,
+        "acres_claimed": 0,
+        "patents": 0,
+        "acres_patented": 0
+      },
+      "diff": {
+        "claims": 1182.750161593712,
+        "acres_claimed": 151563.76440568455,
+        "patents": 173.96325284641242,
+        "acres_patented": 16143.279971854246
+      }
+    },
+    {
+      "year": 1879,
+      "state": "CO",
+      "office": "Leadville",
+      "normalizedOffice": "leadville",
+      "yearData": {
+        "year": 1879,
+        "state": "CO",
+        "office": "Leadville",
+        "claims": 33.999960965894374,
+        "acres_claimed": 5400.743799604531,
+        "patents": 15.999981631009117,
+        "acres_patented": 2558.5170626605905
+      },
+      "timelineData": {
+        "year": 1879,
+        "state": "CO",
+        "office": "Leadville",
+        "claims": 0,
+        "acres_claimed": 0,
+        "patents": 0,
+        "acres_patented": 0
+      },
+      "diff": {
+        "claims": 33.999960965894374,
+        "acres_claimed": 5400.743799604531,
+        "patents": 15.999981631009117,
+        "acres_patented": 2558.5170626605905
+      }
+    },
+    {
+      "year": 1879,
+      "state": "AL",
+      "office": "Montgomery",
+      "normalizedOffice": "montgomery",
+      "yearData": {
+        "year": 1879,
+        "state": "AL",
+        "office": "Montgomery",
+        "claims": 667,
+        "acres_claimed": 62057.88,
+        "patents": 385,
+        "acres_patented": 38942.72
+      },
+      "timelineData": {
+        "year": 1879,
+        "state": "AL",
+        "office": "Montgomery",
+        "claims": 114,
+        "acres_claimed": 9908.5,
+        "patents": 123,
+        "acres_patented": 14500.71
+      },
+      "diff": {
+        "claims": 553,
+        "acres_claimed": 52149.38,
+        "patents": 262,
+        "acres_patented": 24442.010000000002
+      }
+    },
+    {
+      "year": 1879,
+      "state": "CO",
+      "office": "Denver",
+      "normalizedOffice": "denver",
+      "yearData": {
+        "year": 1879,
+        "state": "CO",
+        "office": "Denver",
+        "claims": 157.0000003776021,
+        "acres_claimed": 19093.80005998043,
+        "patents": 121.00000017769511,
+        "acres_patented": 15554.030028414782
+      },
+      "timelineData": {
+        "year": 1879,
+        "state": "CO",
+        "office": "Denver",
+        "claims": 157,
+        "acres_claimed": 19093.8,
+        "patents": 121,
+        "acres_patented": 15554.03
+      },
+      "diff": {
+        "claims": 3.776021060275525e-7,
+        "acres_claimed": 0.000059980429796269163,
+        "patents": 1.7769511373444402e-7,
+        "acres_patented": 0.0000284147808997659
+      }
+    },
+    {
+      "year": 1879,
+      "state": "LA",
+      "office": "Natchitoches",
+      "normalizedOffice": "natchitoches",
+      "yearData": {
+        "year": 1879,
+        "state": "LA",
+        "office": "Natchitoches",
+        "claims": 93.00000645265835,
+        "acres_claimed": 8615.930342442578,
+        "patents": 100.00000645265835,
+        "acres_patented": 11124.660860203885
+      },
+      "timelineData": {
+        "year": 1879,
+        "state": "LA",
+        "office": "Natchitoches",
+        "claims": 93,
+        "acres_claimed": 8615.93,
+        "patents": 100,
+        "acres_patented": 11124.66
+      },
+      "diff": {
+        "claims": 0.00000645265835430564,
+        "acres_claimed": 0.0003424425776756834,
+        "patents": 0.00000645265835430564,
+        "acres_patented": 0.0008602038851677207
+      }
+    },
+    {
+      "year": 1879,
+      "state": "LA",
+      "office": "New Orleans",
+      "normalizedOffice": "neworleans",
+      "yearData": {
+        "year": 1879,
+        "state": "LA",
+        "office": "New Orleans",
+        "claims": 152.99999354734166,
+        "acres_claimed": 17935.96965755742,
+        "patents": 233.99999354734166,
+        "acres_patented": 29783.459139796116
+      },
+      "timelineData": {
+        "year": 1879,
+        "state": "LA",
+        "office": "New Orleans",
+        "claims": 150,
+        "acres_claimed": 17776.76,
+        "patents": 231,
+        "acres_patented": 29383.53
+      },
+      "diff": {
+        "claims": 2.99999354734166,
+        "acres_claimed": 159.20965755742145,
+        "patents": 2.99999354734166,
+        "acres_patented": 399.92913979611694
+      }
+    },
+    {
+      "year": 1879,
+      "state": "MN",
+      "office": "St. Cloud",
+      "normalizedOffice": "stcloud",
+      "yearData": {
+        "year": 1879,
+        "state": "MN",
+        "office": "St. Cloud",
+        "claims": 531.2498384062878,
+        "acres_claimed": 54087.24559431545,
+        "patents": 221.03674715358756,
+        "acres_patented": 30037.27002814575
+      },
+      "timelineData": {
+        "year": 1879,
+        "state": "MN",
+        "office": "St. Cloud",
+        "claims": 531,
+        "acres_claimed": 54055.23,
+        "patents": 221,
+        "acres_patented": 30033.86
+      },
+      "diff": {
+        "claims": 0.24983840628783582,
+        "acres_claimed": 32.015594315445924,
+        "patents": 0.036747153587555204,
+        "acres_patented": 3.4100281457504025
+      }
+    },
+    {
+      "year": 1879,
+      "state": "CO",
+      "office": "Central City",
+      "normalizedOffice": "centralcity",
+      "yearData": {
+        "year": 1879,
+        "state": "CO",
+        "office": "Central City",
+        "claims": 23.000038656503513,
+        "acres_claimed": 3320.0061404150397,
+        "patents": 13.000018191295771,
+        "acres_patented": 1679.4629089246284
+      },
+      "timelineData": {
+        "year": 1879,
+        "state": "CO",
+        "office": "Central City",
+        "claims": 23,
+        "acres_claimed": 3320,
+        "patents": 13,
+        "acres_patented": 1679.46
+      },
+      "diff": {
+        "claims": 0.00003865650351286831,
+        "acres_claimed": 0.006140415039681102,
+        "patents": 0.000018191295771075033,
+        "acres_patented": 0.0029089246284002
+      }
+    },
+    {
+      "year": 1880,
+      "state": "KS",
+      "office": "Wakeeney",
+      "normalizedOffice": "wakeeney",
+      "yearData": {
+        "year": 1880,
+        "state": "KS",
+        "office": "Wakeeney",
+        "claims": 1082,
+        "acres_claimed": 162038.08000000002,
+        "patents": 91,
+        "acres_patented": 14208.41
+      },
+      "timelineData": {
+        "year": 1880,
+        "state": "KS",
+        "office": "Wakeeney",
+        "claims": 719,
+        "acres_claimed": 108542.19,
+        "patents": 75,
+        "acres_patented": 11752.75
+      },
+      "diff": {
+        "claims": 363,
+        "acres_claimed": 53495.890000000014,
+        "patents": 16,
+        "acres_patented": 2455.66
+      }
+    },
+    {
+      "year": 1880,
+      "state": "MN",
+      "office": "Tracy",
+      "normalizedOffice": "tracy",
+      "yearData": {
+        "year": 1880,
+        "state": "MN",
+        "office": "Tracy",
+        "claims": 630,
+        "acres_claimed": 85046.95999999999,
+        "patents": 307,
+        "acres_patented": 38840.11
+      },
+      "timelineData": {
+        "year": 1880,
+        "state": "MN",
+        "office": "Tracy",
+        "claims": 68,
+        "acres_claimed": 8386.2,
+        "patents": 64,
+        "acres_patented": 7184.22
+      },
+      "diff": {
+        "claims": 562,
+        "acres_claimed": 76660.76,
+        "patents": 243,
+        "acres_patented": 31655.89
+      }
+    },
+    {
+      "year": 1881,
+      "state": "NE",
+      "office": "Neligh",
+      "normalizedOffice": "neligh",
+      "yearData": {
+        "year": 1881,
+        "state": "NE",
+        "office": "Neligh",
+        "claims": 265.99936384245694,
+        "acres_claimed": 39461.61562456963,
+        "patents": 99.99976084302892,
+        "acres_patented": 15164.353733304193
+      },
+      "timelineData": {
+        "year": 1881,
+        "state": "NE",
+        "office": "Neligh",
+        "claims": 0,
+        "acres_claimed": 0,
+        "patents": 0,
+        "acres_patented": 0
+      },
+      "diff": {
+        "claims": 265.99936384245694,
+        "acres_claimed": 39461.61562456963,
+        "patents": 99.99976084302892,
+        "acres_patented": 15164.353733304193
+      }
+    },
+    {
+      "year": 1881,
+      "state": "NE",
+      "office": "Lincoln",
+      "normalizedOffice": "lincoln",
+      "yearData": {
+        "year": 1881,
+        "state": "NE",
+        "office": "Lincoln",
+        "claims": 125.00000061526109,
+        "acres_claimed": 12009.960091275392,
+        "patents": 366.00000023130116,
+        "acres_patented": 34131.06003507541
+      },
+      "timelineData": {
+        "year": 1881,
+        "state": "NE",
+        "office": "Lincoln",
+        "claims": 125,
+        "acres_claimed": 12009.96,
+        "patents": 366,
+        "acres_patented": 34131.06
+      },
+      "diff": {
+        "claims": 6.15261086522878e-7,
+        "acres_claimed": 0.00009127539306064136,
+        "patents": 2.3130115778258187e-7,
+        "acres_patented": 0.00003507541259750724
+      }
+    },
+    {
+      "year": 1881,
+      "state": "NE",
+      "office": "North Platte",
+      "normalizedOffice": "northplatte",
+      "yearData": {
+        "year": 1881,
+        "state": "NE",
+        "office": "North Platte",
+        "claims": 275.00063554228194,
+        "acres_claimed": 42113.74428415498,
+        "patents": 67.00023892566992,
+        "acres_patented": 9671.256231620395
+      },
+      "timelineData": {
+        "year": 1881,
+        "state": "NE",
+        "office": "North Platte",
+        "claims": 275,
+        "acres_claimed": 42113.65,
+        "patents": 67,
+        "acres_patented": 9671.22
+      },
+      "diff": {
+        "claims": 0.0006355422819410705,
+        "acres_claimed": 0.09428415497677634,
+        "patents": 0.00023892566991889908,
+        "acres_patented": 0.03623162039548333
+      }
+    },
+    {
+      "year": 1885,
+      "state": "WA",
+      "office": "North Yakima",
+      "normalizedOffice": "northyakima",
+      "yearData": {
+        "year": 1885,
+        "state": "WA",
+        "office": "North Yakima",
+        "claims": 116,
+        "acres_claimed": 16838.64,
+        "patents": 27,
+        "acres_patented": 3858.58
+      },
+      "timelineData": {
+        "year": 1885,
+        "state": "WA",
+        "office": "North Yakima",
+        "claims": 0,
+        "acres_claimed": 0,
+        "patents": 0,
+        "acres_patented": 0
+      },
+      "diff": {
+        "claims": 116,
+        "acres_claimed": 16838.64,
+        "patents": 27,
+        "acres_patented": 3858.58
+      }
+    },
+    {
+      "year": 1887,
+      "state": "NE",
+      "office": "Lincoln",
+      "normalizedOffice": "lincoln",
+      "yearData": {
+        "year": 1887,
+        "state": "NE",
+        "office": "Lincoln",
+        "claims": 23,
+        "acres_claimed": 2089.95,
+        "patents": 101,
+        "acres_patented": 10277.15
+      },
+      "timelineData": {
+        "year": 1887,
+        "state": "NE",
+        "office": "Lincoln",
+        "claims": 17,
+        "acres_claimed": 1489.95,
+        "patents": 70,
+        "acres_patented": 7073.78
+      },
+      "diff": {
+        "claims": 6,
+        "acres_claimed": 599.9999999999998,
+        "patents": 31,
+        "acres_patented": 3203.37
+      }
+    },
+    {
+      "year": 1888,
+      "state": "MI",
+      "office": "Grayling",
+      "normalizedOffice": "grayling",
+      "yearData": {
+        "year": 1888,
+        "state": "MI",
+        "office": "Grayling",
+        "claims": 233,
+        "acres_claimed": 28019.85,
+        "patents": 167,
+        "acres_patented": 18930.56
+      },
+      "timelineData": {
+        "year": 1888,
+        "state": "MI",
+        "office": "Grayling",
+        "claims": 111,
+        "acres_claimed": 14680.09,
+        "patents": 25,
+        "acres_patented": 2916.52
+      },
+      "diff": {
+        "claims": 122,
+        "acres_claimed": 13339.759999999998,
+        "patents": 142,
+        "acres_patented": 16014.04
+      }
+    },
+    {
+      "year": 1889,
+      "state": "KS",
+      "office": "Topeka",
+      "normalizedOffice": "topeka",
+      "yearData": {
+        "year": 1889,
+        "state": "KS",
+        "office": "Topeka",
+        "claims": 12.000000301999265,
+        "acres_claimed": 1286.590034039847,
+        "patents": 68.00000092109775,
+        "acres_patented": 7905.450116710183
+      },
+      "timelineData": {
+        "year": 1889,
+        "state": "KS",
+        "office": "Topeka",
+        "claims": 10,
+        "acres_claimed": 1085.96,
+        "patents": 54,
+        "acres_patented": 6555.69
+      },
+      "diff": {
+        "claims": 2.0000003019992647,
+        "acres_claimed": 200.63003403984703,
+        "patents": 14.000000921097751,
+        "acres_patented": 1349.760116710183
+      }
+    },
+    {
+      "year": 1889,
+      "state": "MN",
+      "office": "St. Cloud",
+      "normalizedOffice": "stcloud",
+      "yearData": {
+        "year": 1889,
+        "state": "MN",
+        "office": "St. Cloud",
+        "claims": 336,
+        "acres_claimed": 42755.93,
+        "patents": 501,
+        "acres_patented": 64993.93
+      },
+      "timelineData": {
+        "year": 1889,
+        "state": "MN",
+        "office": "St. Cloud",
+        "claims": 260,
+        "acres_claimed": 33356.36,
+        "patents": 306,
+        "acres_patented": 40218.79
+      },
+      "diff": {
+        "claims": 76,
+        "acres_claimed": 9399.57,
+        "patents": 195,
+        "acres_patented": 24775.14
+      }
+    },
+    {
+      "year": 1889,
+      "state": "WI",
+      "office": "Ashland",
+      "normalizedOffice": "ashland",
+      "yearData": {
+        "year": 1889,
+        "state": "WI",
+        "office": "Ashland",
+        "claims": 286.0000005775254,
+        "acres_claimed": 37733.41006906126,
+        "patents": 53.00000138606098,
+        "acres_patented": 7982.100164653264
+      },
+      "timelineData": {
+        "year": 1889,
+        "state": "WI",
+        "office": "Ashland",
+        "claims": 286,
+        "acres_claimed": 37733.41,
+        "patents": 53,
+        "acres_patented": 7982.1
+      },
+      "diff": {
+        "claims": 5.775253839601646e-7,
+        "acres_claimed": 0.00006906125781824812,
+        "patents": 0.0000013860609797688994,
+        "acres_patented": 0.0001646532637096243
+      }
+    },
+    {
+      "year": 1889,
+      "state": "WI",
+      "office": "Eau Claire",
+      "normalizedOffice": "eauclaire",
+      "yearData": {
+        "year": 1889,
+        "state": "WI",
+        "office": "Eau Claire",
+        "claims": 171.9999994224746,
+        "acres_claimed": 18253.949930938743,
+        "patents": 292.99999861393906,
+        "acres_patented": 33809.00983534673
+      },
+      "timelineData": {
+        "year": 1889,
+        "state": "WI",
+        "office": "Eau Claire",
+        "claims": 108,
+        "acres_claimed": 11999.97,
+        "patents": 175,
+        "acres_patented": 21382.94
+      },
+      "diff": {
+        "claims": 63.99999942247459,
+        "acres_claimed": 6253.979930938744,
+        "patents": 117.99999861393906,
+        "acres_patented": 12426.069835346734
+      }
+    },
+    {
+      "year": 1889,
+      "state": "MN",
+      "office": "Marshall",
+      "normalizedOffice": "marshall",
+      "yearData": {
+        "year": 1889,
+        "state": "MN",
+        "office": "Marshall",
+        "claims": 197.9999998088496,
+        "acres_claimed": 22559.089979634377,
+        "patents": 353.9999995288269,
+        "acres_patented": 44044.51993903109
+      },
+      "timelineData": {
+        "year": 1889,
+        "state": "MN",
+        "office": "Marshall",
+        "claims": 72,
+        "acres_claimed": 8632.93,
+        "patents": 110,
+        "acres_patented": 12587.99
+      },
+      "diff": {
+        "claims": 125.9999998088496,
+        "acres_claimed": 13926.159979634376,
+        "patents": 243.9999995288269,
+        "acres_patented": 31456.52993903109
+      }
+    },
+    {
+      "year": 1889,
+      "state": "KS",
+      "office": "Salina",
+      "normalizedOffice": "salina",
+      "yearData": {
+        "year": 1889,
+        "state": "KS",
+        "office": "Salina",
+        "claims": 71.99999969800074,
+        "acres_claimed": 8388.209965960152,
+        "patents": 214.99999907890225,
+        "acres_patented": 27530.089883289816
+      },
+      "timelineData": {
+        "year": 1889,
+        "state": "KS",
+        "office": "Salina",
+        "claims": 52,
+        "acres_claimed": 6133.91,
+        "patents": 154,
+        "acres_patented": 19800.92
+      },
+      "diff": {
+        "claims": 19.999999698000735,
+        "acres_claimed": 2254.299965960152,
+        "patents": 60.99999907890225,
+        "acres_patented": 7729.169883289818
+      }
+    },
+    {
+      "year": 1889,
+      "state": "MN",
+      "office": "Taylors Falls",
+      "normalizedOffice": "taylorsfalls",
+      "yearData": {
+        "year": 1889,
+        "state": "MN",
+        "office": "Taylors Falls",
+        "claims": 94.00000019115042,
+        "acres_claimed": 10686.720020365625,
+        "patents": 59.00000047117312,
+        "acres_patented": 6822.710060968912
+      },
+      "timelineData": {
+        "year": 1889,
+        "state": "MN",
+        "office": "Taylors Falls",
+        "claims": 94,
+        "acres_claimed": 10686.72,
+        "patents": 59,
+        "acres_patented": 6822.71
+      },
+      "diff": {
+        "claims": 1.9115041993700288e-7,
+        "acres_claimed": 0.000020365625459817238,
+        "patents": 4.7117311652300486e-7,
+        "acres_patented": 0.00006096891229390167
+      }
+    },
+    {
+      "year": 1892,
+      "state": "NM",
+      "office": "Clayton",
+      "normalizedOffice": "clayton",
+      "yearData": {
+        "year": 1892,
+        "state": "NM",
+        "office": "Clayton",
+        "claims": 193,
+        "acres_claimed": 30530.01,
+        "patents": 18,
+        "acres_patented": 2758.77
+      },
+      "timelineData": {
+        "year": 1892,
+        "state": "NM",
+        "office": "Clayton",
+        "claims": 56,
+        "acres_claimed": 8695.25,
+        "patents": 10,
+        "acres_patented": 1479.56
+      },
+      "diff": {
+        "claims": 137,
+        "acres_claimed": 21834.76,
+        "patents": 8,
+        "acres_patented": 1279.21
+      }
+    },
+    {
+      "year": 1894,
+      "state": "KS",
+      "office": "Topeka",
+      "normalizedOffice": "topeka",
+      "yearData": {
+        "year": 1894,
+        "state": "KS",
+        "office": "Topeka",
+        "claims": 27.000006319666284,
+        "acres_claimed": 3517.0408411349426,
+        "patents": 48.00000983059199,
+        "acres_patented": 5463.521424927458
+      },
+      "timelineData": {
+        "year": 1894,
+        "state": "KS",
+        "office": "Topeka",
+        "claims": 27,
+        "acres_claimed": 3517.04,
+        "patents": 48,
+        "acres_patented": 5463.52
+      },
+      "diff": {
+        "claims": 0.000006319666283616243,
+        "acres_claimed": 0.0008411349426751258,
+        "patents": 0.000009830591991999427,
+        "acres_patented": 0.0014249274572648574
+      }
+    },
+    {
+      "year": 1894,
+      "state": "CO",
+      "office": "Denver",
+      "normalizedOffice": "denver",
+      "yearData": {
+        "year": 1894,
+        "state": "CO",
+        "office": "Denver",
+        "claims": 384.9999135205382,
+        "acres_claimed": 57184.03667640583,
+        "patents": 214.99994564148116,
+        "acres_patented": 33910.751519008605
+      },
+      "timelineData": {
+        "year": 1894,
+        "state": "CO",
+        "office": "Denver",
+        "claims": 350,
+        "acres_claimed": 51791.72,
+        "patents": 193,
+        "acres_patented": 30478.33
+      },
+      "diff": {
+        "claims": 34.9999135205382,
+        "acres_claimed": 5392.316676405826,
+        "patents": 21.999945641481162,
+        "acres_patented": 3432.4215190086034
+      }
+    },
+    {
+      "year": 1894,
+      "state": "CO",
+      "office": "Leadville",
+      "normalizedOffice": "leadville",
+      "yearData": {
+        "year": 1894,
+        "state": "CO",
+        "office": "Leadville",
+        "claims": 23.00008647946178,
+        "acres_claimed": 3354.5733235941752,
+        "patents": 21.00005435851883,
+        "acres_patented": 3278.4084809913998
+      },
+      "timelineData": {
+        "year": 1894,
+        "state": "CO",
+        "office": "Leadville",
+        "claims": 23,
+        "acres_claimed": 3354.56,
+        "patents": 21,
+        "acres_patented": 3278.4
+      },
+      "diff": {
+        "claims": 0.00008647946177831045,
+        "acres_claimed": 0.013323594175290054,
+        "patents": 0.000054358518831065794,
+        "acres_patented": 0.008480991399665072
+      }
+    },
+    {
+      "year": 1894,
+      "state": "NE",
+      "office": "Alliance",
+      "normalizedOffice": "alliance",
+      "yearData": {
+        "year": 1894,
+        "state": "NE",
+        "office": "Alliance",
+        "claims": 339.9996780632685,
+        "acres_claimed": 50677.7231109122,
+        "patents": 615.9993504285417,
+        "acres_patented": 97263.86715078691
+      },
+      "timelineData": {
+        "year": 1894,
+        "state": "NE",
+        "office": "Alliance",
+        "claims": 227,
+        "acres_claimed": 34219.67,
+        "patents": 388,
+        "acres_patented": 61163.83
+      },
+      "diff": {
+        "claims": 112.9996780632685,
+        "acres_claimed": 16458.053110912202,
+        "patents": 227.99935042854167,
+        "acres_patented": 36100.03715078691
+      }
+    },
+    {
+      "year": 1894,
+      "state": "NE",
+      "office": "Lincoln",
+      "normalizedOffice": "lincoln",
+      "yearData": {
+        "year": 1894,
+        "state": "NE",
+        "office": "Lincoln",
+        "claims": 98.9999934175353,
+        "acres_claimed": 11174.48923598815,
+        "patents": 111.99999580153033,
+        "acres_patented": 15906.159362280636
+      },
+      "timelineData": {
+        "year": 1894,
+        "state": "NE",
+        "office": "Lincoln",
+        "claims": 32,
+        "acres_claimed": 3161.79,
+        "patents": 59,
+        "acres_patented": 7875.7
+      },
+      "diff": {
+        "claims": 66.9999934175353,
+        "acres_claimed": 8012.699235988151,
+        "patents": 52.99999580153033,
+        "acres_patented": 8030.459362280636
+      }
+    },
+    {
+      "year": 1894,
+      "state": "NV",
+      "office": "Carson City",
+      "normalizedOffice": "carsoncity",
+      "yearData": {
+        "year": 1894,
+        "state": "NV",
+        "office": "Carson City",
+        "claims": 3,
+        "acres_claimed": 480,
+        "patents": 6,
+        "acres_patented": 931.4
+      },
+      "timelineData": {
+        "year": 1894,
+        "state": "NV",
+        "office": "Carson City",
+        "claims": 2,
+        "acres_claimed": 320,
+        "patents": 5,
+        "acres_patented": 771.4
+      },
+      "diff": {
+        "claims": 1,
+        "acres_claimed": 160,
+        "patents": 1,
+        "acres_patented": 160
+      }
+    },
+    {
+      "year": 1894,
+      "state": "WI",
+      "office": "Wausau",
+      "normalizedOffice": "wausau",
+      "yearData": {
+        "year": 1894,
+        "state": "WI",
+        "office": "Wausau",
+        "claims": 428,
+        "acres_claimed": 45262.81,
+        "patents": 102,
+        "acres_patented": 10619.74
+      },
+      "timelineData": {
+        "year": 1894,
+        "state": "WI",
+        "office": "Wausau",
+        "claims": 408,
+        "acres_claimed": 43422.81,
+        "patents": 93,
+        "acres_patented": 9749.77
+      },
+      "diff": {
+        "claims": 20,
+        "acres_claimed": 1840,
+        "patents": 9,
+        "acres_patented": 869.9699999999993
+      }
+    },
+    {
+      "year": 1894,
+      "state": "NE",
+      "office": "Broken Bow",
+      "normalizedOffice": "brokenbow",
+      "yearData": {
+        "year": 1894,
+        "state": "NE",
+        "office": "Broken Bow",
+        "claims": 137.00000083512742,
+        "acres_claimed": 20253.170114625656,
+        "patents": 133.00000130181627,
+        "acres_patented": 20578.36019624733
+      },
+      "timelineData": {
+        "year": 1894,
+        "state": "NE",
+        "office": "Broken Bow",
+        "claims": 137,
+        "acres_claimed": 20253.17,
+        "patents": 133,
+        "acres_patented": 20578.36
+      },
+      "diff": {
+        "claims": 8.351274232154537e-7,
+        "acres_claimed": 0.00011462565817055292,
+        "patents": 0.0000013018162690059398,
+        "acres_patented": 0.00019624732885858975
+      }
+    },
+    {
+      "year": 1894,
+      "state": "KS",
+      "office": "Dodge City",
+      "normalizedOffice": "dodgecity",
+      "yearData": {
+        "year": 1894,
+        "state": "KS",
+        "office": "Dodge City",
+        "claims": 214.96037009797158,
+        "acres_claimed": 31983.06071111875,
+        "patents": 509.90363293669026,
+        "acres_patented": 79278.37088317814
+      },
+      "timelineData": {
+        "year": 1894,
+        "state": "KS",
+        "office": "Dodge City",
+        "claims": 74,
+        "acres_claimed": 11116.47,
+        "patents": 202,
+        "acres_patented": 31608.29
+      },
+      "diff": {
+        "claims": 140.96037009797158,
+        "acres_claimed": 20866.590711118748,
+        "patents": 307.90363293669026,
+        "acres_patented": 47670.08088317814
+      }
+    },
+    {
+      "year": 1894,
+      "state": "NE",
+      "office": "O'Neill",
+      "normalizedOffice": "oneill",
+      "yearData": {
+        "year": 1894,
+        "state": "NE",
+        "office": "O'Neill",
+        "claims": 134.0000002466679,
+        "acres_claimed": 17557.439991547177,
+        "patents": 133.99999854537762,
+        "acres_patented": 19827.149782174936
+      },
+      "timelineData": {
+        "year": 1894,
+        "state": "NE",
+        "office": "O'Neill",
+        "claims": 100,
+        "acres_claimed": 12890.76,
+        "patents": 81,
+        "acres_patented": 11837.46
+      },
+      "diff": {
+        "claims": 34.000000246667895,
+        "acres_claimed": 4666.6799915471765,
+        "patents": 52.99999854537762,
+        "acres_patented": 7989.689782174937
+      }
+    },
+    {
+      "year": 1894,
+      "state": "NE",
+      "office": "Valentine",
+      "normalizedOffice": "valentine",
+      "yearData": {
+        "year": 1894,
+        "state": "NE",
+        "office": "Valentine",
+        "claims": 164.00032193673152,
+        "acres_claimed": 24971.246889087797,
+        "patents": 133.00064957145827,
+        "acres_patented": 20767.322849213087
+      },
+      "timelineData": {
+        "year": 1894,
+        "state": "NE",
+        "office": "Valentine",
+        "claims": 164,
+        "acres_claimed": 24971.2,
+        "patents": 133,
+        "acres_patented": 20767.22
+      },
+      "diff": {
+        "claims": 0.00032193673152391966,
+        "acres_claimed": 0.04688908779644407,
+        "patents": 0.0006495714582683831,
+        "acres_patented": 0.10284921308630146
+      }
+    },
+    {
+      "year": 1894,
+      "state": "OK",
+      "office": "Woodward",
+      "normalizedOffice": "woodward",
+      "yearData": {
+        "year": 1894,
+        "state": "OK",
+        "office": "Woodward",
+        "claims": 594,
+        "acres_claimed": 94120.71999999999,
+        "patents": 72,
+        "acres_patented": 11249.83
+      },
+      "timelineData": {
+        "year": 1894,
+        "state": "OK",
+        "office": "Woodward",
+        "claims": 573,
+        "acres_claimed": 90760.79,
+        "patents": 34,
+        "acres_patented": 5172.3
+      },
+      "diff": {
+        "claims": 21,
+        "acres_claimed": 3359.929999999993,
+        "patents": 38,
+        "acres_patented": 6077.53
+      }
+    },
+    {
+      "year": 1894,
+      "state": "SD",
+      "office": "Chamberlain",
+      "normalizedOffice": "chamberlain",
+      "yearData": {
+        "year": 1894,
+        "state": "SD",
+        "office": "Chamberlain",
+        "claims": 56.15476079534156,
+        "acres_claimed": 8601.900933443523,
+        "patents": 30.037875257904965,
+        "acres_patented": 4654.870622469428
+      },
+      "timelineData": {
+        "year": 1894,
+        "state": "SD",
+        "office": "Chamberlain",
+        "claims": 53,
+        "acres_claimed": 8178.75,
+        "patents": 20,
+        "acres_patented": 3224.33
+      },
+      "diff": {
+        "claims": 3.1547607953415593,
+        "acres_claimed": 423.1509334435232,
+        "patents": 10.037875257904965,
+        "acres_patented": 1430.540622469428
+      }
+    },
+    {
+      "year": 1894,
+      "state": "SD",
+      "office": "Mitchell",
+      "normalizedOffice": "mitchell",
+      "yearData": {
+        "year": 1894,
+        "state": "SD",
+        "office": "Mitchell",
+        "claims": 139.84523920465844,
+        "acres_claimed": 19657.209066556476,
+        "patents": 197.96212474209503,
+        "acres_patented": 29879.759377530572
+      },
+      "timelineData": {
+        "year": 1894,
+        "state": "SD",
+        "office": "Mitchell",
+        "claims": 132,
+        "acres_claimed": 18604.92,
+        "patents": 173,
+        "acres_patented": 26322.3
+      },
+      "diff": {
+        "claims": 7.845239204658441,
+        "acres_claimed": 1052.2890665564773,
+        "patents": 24.96212474209503,
+        "acres_patented": 3557.459377530573
+      }
+    },
+    {
+      "year": 1894,
+      "state": "KS",
+      "office": "Colby",
+      "normalizedOffice": "colby",
+      "yearData": {
+        "year": 1894,
+        "state": "KS",
+        "office": "Colby",
+        "claims": 382,
+        "acres_claimed": 54464.06,
+        "patents": 543,
+        "acres_patented": 83961.54999999999
+      },
+      "timelineData": {
+        "year": 1894,
+        "state": "KS",
+        "office": "Colby",
+        "claims": 128,
+        "acres_claimed": 17804.95,
+        "patents": 235,
+        "acres_patented": 36233.56
+      },
+      "diff": {
+        "claims": 254,
+        "acres_claimed": 36659.11,
+        "patents": 308,
+        "acres_patented": 47727.98999999999
+      }
+    },
+    {
+      "year": 1894,
+      "state": "MN",
+      "office": "St. Cloud",
+      "normalizedOffice": "stcloud",
+      "yearData": {
+        "year": 1894,
+        "state": "MN",
+        "office": "St. Cloud",
+        "claims": 617.9999992760012,
+        "acres_claimed": 72779.94992591308,
+        "patents": 287.9999996029684,
+        "acres_patented": 36731.35995064313
+      },
+      "timelineData": {
+        "year": 1894,
+        "state": "MN",
+        "office": "St. Cloud",
+        "claims": 556,
+        "acres_claimed": 66435.48,
+        "patents": 254,
+        "acres_patented": 32504.66
+      },
+      "diff": {
+        "claims": 61.999999276001176,
+        "acres_claimed": 6344.469925913087,
+        "patents": 33.99999960296839,
+        "acres_patented": 4226.6999506431275
+      }
+    },
+    {
+      "year": 1894,
+      "state": "KS",
+      "office": "Wakeeney",
+      "normalizedOffice": "wakeeney",
+      "yearData": {
+        "year": 1894,
+        "state": "KS",
+        "office": "Wakeeney",
+        "claims": 251.03962358236214,
+        "acres_claimed": 38663.75844774631,
+        "patents": 619.0963572327178,
+        "acres_patented": 97022.80769189438
+      },
+      "timelineData": {
+        "year": 1894,
+        "state": "KS",
+        "office": "Wakeeney",
+        "claims": 251,
+        "acres_claimed": 38657.66,
+        "patents": 619,
+        "acres_patented": 97007.65
+      },
+      "diff": {
+        "claims": 0.03962358236213959,
+        "acres_claimed": 6.098447746306192,
+        "patents": 0.09635723271776442,
+        "acres_patented": 15.157691894390155
+      }
+    },
+    {
+      "year": 1894,
+      "state": "NE",
+      "office": "McCook",
+      "normalizedOffice": "mccook",
+      "yearData": {
+        "year": 1894,
+        "state": "NE",
+        "office": "McCook",
+        "claims": 222.0000055006694,
+        "acres_claimed": 30126.41065783901,
+        "patents": 321.0000043512758,
+        "acres_patented": 49059.4006592971
+      },
+      "timelineData": {
+        "year": 1894,
+        "state": "NE",
+        "office": "McCook",
+        "claims": 199,
+        "acres_claimed": 27622.3,
+        "patents": 290,
+        "acres_patented": 44742.39
+      },
+      "diff": {
+        "claims": 23.000005500669403,
+        "acres_claimed": 2504.11065783901,
+        "patents": 31.000004351275777,
+        "acres_patented": 4317.010659297099
+      }
+    },
+    {
+      "year": 1894,
+      "state": "MN",
+      "office": "Marshall",
+      "normalizedOffice": "marshall",
+      "yearData": {
+        "year": 1894,
+        "state": "MN",
+        "office": "Marshall",
+        "claims": 108.00000072399884,
+        "acres_claimed": 9869.040074086919,
+        "patents": 149.0000003970316,
+        "acres_patented": 18394.11004935687
+      },
+      "timelineData": {
+        "year": 1894,
+        "state": "MN",
+        "office": "Marshall",
+        "claims": 108,
+        "acres_claimed": 9869.04,
+        "patents": 149,
+        "acres_patented": 18394.11
+      },
+      "diff": {
+        "claims": 7.239988377705231e-7,
+        "acres_claimed": 0.00007408691817545332,
+        "patents": 3.9703161291981814e-7,
+        "acres_patented": 0.00004935686956741847
+      }
+    },
+    {
+      "year": 1902,
+      "state": "AK",
+      "office": "Juneau",
+      "normalizedOffice": "juneau",
+      "yearData": {
+        "year": 1902,
+        "state": "AK",
+        "office": "Juneau",
+        "claims": 9,
+        "acres_claimed": 261.45,
+        "patents": 9,
+        "acres_patented": 261.45
+      },
+      "timelineData": {
+        "year": 1902,
+        "state": "AK",
+        "office": "Juneau",
+        "claims": 0,
+        "acres_claimed": 0,
+        "patents": 0,
+        "acres_patented": 0
+      },
+      "diff": {
+        "claims": 9,
+        "acres_claimed": 261.45,
+        "patents": 9,
+        "acres_patented": 261.45
+      }
+    },
+    {
+      "year": 1902,
+      "state": "OK",
+      "office": "Guthrie",
+      "normalizedOffice": "guthrie",
+      "yearData": {
+        "year": 1902,
+        "state": "OK",
+        "office": "Guthrie",
+        "claims": 124,
+        "acres_claimed": 12437.89,
+        "patents": 1841,
+        "acres_patented": 264780.43
+      },
+      "timelineData": {
+        "year": 1902,
+        "state": "OK",
+        "office": "Guthrie",
+        "claims": 59,
+        "acres_claimed": 5162.57,
+        "patents": 476,
+        "acres_patented": 66810.71
+      },
+      "diff": {
+        "claims": 65,
+        "acres_claimed": 7275.32,
+        "patents": 1365,
+        "acres_patented": 197969.71999999997
+      }
+    },
+    {
+      "year": 1905,
+      "state": "OR",
+      "office": "Portland",
+      "normalizedOffice": "portland",
+      "yearData": {
+        "year": 1905,
+        "state": "OR",
+        "office": "Portland",
+        "claims": 252.6174521690975,
+        "acres_claimed": 33610.45940401097,
+        "patents": 54.61998965818324,
+        "acres_patented": 7315.050389959263
+      },
+      "timelineData": {
+        "year": 1905,
+        "state": "OR",
+        "office": "Portland",
+        "claims": 0,
+        "acres_claimed": 0,
+        "patents": 0,
+        "acres_patented": 0
+      },
+      "diff": {
+        "claims": 252.6174521690975,
+        "acres_claimed": 33610.45940401097,
+        "patents": 54.61998965818324,
+        "acres_patented": 7315.050389959263
+      }
+    },
+    {
+      "year": 1905,
+      "state": "AL",
+      "office": "Montgomery",
+      "normalizedOffice": "montgomery",
+      "yearData": {
+        "year": 1905,
+        "state": "AL",
+        "office": "Montgomery",
+        "claims": 1032,
+        "acres_claimed": 93804.87,
+        "patents": 674,
+        "acres_patented": 66050.31
+      },
+      "timelineData": {
+        "year": 1905,
+        "state": "AL",
+        "office": "Montgomery",
+        "claims": 766,
+        "acres_claimed": 66788.09,
+        "patents": 426,
+        "acres_patented": 39147.5
+      },
+      "diff": {
+        "claims": 266,
+        "acres_claimed": 27016.78,
+        "patents": 248,
+        "acres_patented": 26902.809999999998
+      }
+    },
+    {
+      "year": 1905,
+      "state": "MO",
+      "office": "Springfield",
+      "normalizedOffice": "springfield",
+      "yearData": {
+        "year": 1905,
+        "state": "MO",
+        "office": "Springfield",
+        "claims": 946,
+        "acres_claimed": 82603.93,
+        "patents": 521,
+        "acres_patented": 49279.02
+      },
+      "timelineData": {
+        "year": 1905,
+        "state": "MO",
+        "office": "Springfield",
+        "claims": 463,
+        "acres_claimed": 44013.75,
+        "patents": 244,
+        "acres_patented": 25277.21
+      },
+      "diff": {
+        "claims": 483,
+        "acres_claimed": 38590.17999999999,
+        "patents": 277,
+        "acres_patented": 24001.809999999998
+      }
+    },
+    {
+      "year": 1905,
+      "state": "NE",
+      "office": "Lincoln",
+      "normalizedOffice": "lincoln",
+      "yearData": {
+        "year": 1905,
+        "state": "NE",
+        "office": "Lincoln",
+        "claims": 639,
+        "acres_claimed": 228412.58000000002,
+        "patents": 82,
+        "acres_patented": 10760.35
+      },
+      "timelineData": {
+        "year": 1905,
+        "state": "NE",
+        "office": "Lincoln",
+        "claims": 198,
+        "acres_claimed": 55900.17,
+        "patents": 52,
+        "acres_patented": 6737.42
+      },
+      "diff": {
+        "claims": 441,
+        "acres_claimed": 172512.41000000003,
+        "patents": 30,
+        "acres_patented": 4022.9300000000003
+      }
+    },
+    {
+      "year": 1905,
+      "state": "OR",
+      "office": "Roseburg",
+      "normalizedOffice": "roseburg",
+      "yearData": {
+        "year": 1905,
+        "state": "OR",
+        "office": "Roseburg",
+        "claims": 245.3816721803732,
+        "acres_claimed": 33405.344091700375,
+        "patents": 70.37982101197258,
+        "acres_patented": 9273.704253804692
+      },
+      "timelineData": {
+        "year": 1905,
+        "state": "OR",
+        "office": "Roseburg",
+        "claims": 239,
+        "acres_claimed": 32556.27,
+        "patents": 69,
+        "acres_patented": 9088.91
+      },
+      "diff": {
+        "claims": 6.381672180373187,
+        "acres_claimed": 849.074091700375,
+        "patents": 1.379821011972581,
+        "acres_patented": 184.79425380469183
+      }
+    },
+    {
+      "year": 1905,
+      "state": "OR",
+      "office": "The Dalles",
+      "normalizedOffice": "thedalles",
+      "yearData": {
+        "year": 1905,
+        "state": "OR",
+        "office": "The Dalles",
+        "claims": 952.0008756505293,
+        "acres_claimed": 140116.51650428865,
+        "patents": 247.00018932984418,
+        "acres_patented": 37859.94535623604
+      },
+      "timelineData": {
+        "year": 1905,
+        "state": "OR",
+        "office": "The Dalles",
+        "claims": 952,
+        "acres_claimed": 140116.4,
+        "patents": 247,
+        "acres_patented": 37859.92
+      },
+      "diff": {
+        "claims": 0.0008756505293376904,
+        "acres_claimed": 0.1165042886568699,
+        "patents": 0.00018932984417574517,
+        "acres_patented": 0.02535623604489956
+      }
+    },
+    {
+      "year": 1905,
+      "state": "KS",
+      "office": "Dodge City",
+      "normalizedOffice": "dodgecity",
+      "yearData": {
+        "year": 1905,
+        "state": "KS",
+        "office": "Dodge City",
+        "claims": 1102.3519219420655,
+        "acres_claimed": 171690.93467274253,
+        "patents": 126.70570034679739,
+        "acres_patented": 19388.212871803687
+      },
+      "timelineData": {
+        "year": 1905,
+        "state": "KS",
+        "office": "Dodge City",
+        "claims": 936,
+        "acres_claimed": 146011.54,
+        "patents": 97,
+        "acres_patented": 14976.55
+      },
+      "diff": {
+        "claims": 166.35192194206547,
+        "acres_claimed": 25679.39467274252,
+        "patents": 29.705700346797386,
+        "acres_patented": 4411.662871803688
+      }
+    },
+    {
+      "year": 1905,
+      "state": "KS",
+      "office": "Colby",
+      "normalizedOffice": "colby",
+      "yearData": {
+        "year": 1905,
+        "state": "KS",
+        "office": "Colby",
+        "claims": 597.6480780579345,
+        "acres_claimed": 89091.45532725746,
+        "patents": 163.29429965320261,
+        "acres_patented": 23737.52712819631
+      },
+      "timelineData": {
+        "year": 1905,
+        "state": "KS",
+        "office": "Colby",
+        "claims": 428,
+        "acres_claimed": 62903.24,
+        "patents": 133,
+        "acres_patented": 19238.45
+      },
+      "diff": {
+        "claims": 169.64807805793453,
+        "acres_claimed": 26188.215327257458,
+        "patents": 30.294299653202614,
+        "acres_patented": 4499.07712819631
+      }
+    },
+    {
+      "year": 1906,
+      "state": "CA",
+      "office": "Oakland",
+      "normalizedOffice": "oakland",
+      "yearData": {
+        "year": 1906,
+        "state": "CA",
+        "office": "Oakland",
+        "claims": 236.99999977103985,
+        "acres_claimed": 33154.66996797005,
+        "patents": 110.9999998927655,
+        "acres_patented": 16135.039984412317
+      },
+      "timelineData": {
+        "year": 1906,
+        "state": "CA",
+        "office": "Oakland",
+        "claims": 0,
+        "acres_claimed": 0,
+        "patents": 0,
+        "acres_patented": 0
+      },
+      "diff": {
+        "claims": 236.99999977103985,
+        "acres_claimed": 33154.66996797005,
+        "patents": 110.9999998927655,
+        "acres_patented": 16135.039984412317
+      }
+    },
+    {
+      "year": 1906,
+      "state": "AZ",
+      "office": "Phoenix",
+      "normalizedOffice": "phoenix",
+      "yearData": {
+        "year": 1906,
+        "state": "AZ",
+        "office": "Phoenix",
+        "claims": 427,
+        "acres_claimed": 60864.94,
+        "patents": 79,
+        "acres_patented": 10427.119999999999
+      },
+      "timelineData": {
+        "year": 1906,
+        "state": "AZ",
+        "office": "Phoenix",
+        "claims": 362,
+        "acres_claimed": 52173.24,
+        "patents": 50,
+        "acres_patented": 6393.92
+      },
+      "diff": {
+        "claims": 65,
+        "acres_claimed": 8691.700000000004,
+        "patents": 29,
+        "acres_patented": 4033.199999999999
+      }
+    },
+    {
+      "year": 1906,
+      "state": "CA",
+      "office": "Sacramento",
+      "normalizedOffice": "sacramento",
+      "yearData": {
+        "year": 1906,
+        "state": "CA",
+        "office": "Sacramento",
+        "claims": 283,
+        "acres_claimed": 38684.78,
+        "patents": 152,
+        "acres_patented": 21887.25
+      },
+      "timelineData": {
+        "year": 1906,
+        "state": "CA",
+        "office": "Sacramento",
+        "claims": 173,
+        "acres_claimed": 23422.31,
+        "patents": 103,
+        "acres_patented": 14684.87
+      },
+      "diff": {
+        "claims": 110,
+        "acres_claimed": 15262.469999999998,
+        "patents": 49,
+        "acres_patented": 7202.379999999999
+      }
+    },
+    {
+      "year": 1906,
+      "state": "OK",
+      "office": "Guthrie",
+      "normalizedOffice": "guthrie",
+      "yearData": {
+        "year": 1906,
+        "state": "OK",
+        "office": "Guthrie",
+        "claims": 824.9999996035835,
+        "acres_claimed": 105774.19994699079,
+        "patents": 1485.999999381367,
+        "acres_patented": 216238.98990604206
+      },
+      "timelineData": {
+        "year": 1906,
+        "state": "OK",
+        "office": "Guthrie",
+        "claims": 470,
+        "acres_claimed": 58303.25,
+        "patents": 932,
+        "acres_patented": 132097.5
+      },
+      "diff": {
+        "claims": 354.99999960358355,
+        "acres_claimed": 47470.94994699079,
+        "patents": 553.9999993813669,
+        "acres_patented": 84141.48990604206
+      }
+    },
+    {
+      "year": 1906,
+      "state": "WI",
+      "office": "Wausau",
+      "normalizedOffice": "wausau",
+      "yearData": {
+        "year": 1906,
+        "state": "WI",
+        "office": "Wausau",
+        "claims": 570,
+        "acres_claimed": 51425.11,
+        "patents": 444,
+        "acres_patented": 45521.65000000001
+      },
+      "timelineData": {
+        "year": 1906,
+        "state": "WI",
+        "office": "Wausau",
+        "claims": 455,
+        "acres_claimed": 38947.8,
+        "patents": 357,
+        "acres_patented": 35689.73
+      },
+      "diff": {
+        "claims": 115,
+        "acres_claimed": 12477.309999999998,
+        "patents": 87,
+        "acres_patented": 9831.920000000006
+      }
+    },
+    {
+      "year": 1906,
+      "state": "NE",
+      "office": "North Platte",
+      "normalizedOffice": "northplatte",
+      "yearData": {
+        "year": 1906,
+        "state": "NE",
+        "office": "North Platte",
+        "claims": 1081,
+        "acres_claimed": 437569.73,
+        "patents": 250,
+        "acres_patented": 37480.36
+      },
+      "timelineData": {
+        "year": 1906,
+        "state": "NE",
+        "office": "North Platte",
+        "claims": 741,
+        "acres_claimed": 320479.87,
+        "patents": 180,
+        "acres_patented": 26944.54
+      },
+      "diff": {
+        "claims": 340,
+        "acres_claimed": 117089.85999999999,
+        "patents": 70,
+        "acres_patented": 10535.82
+      }
+    },
+    {
+      "year": 1906,
+      "state": "ND",
+      "office": "Devils Lake",
+      "normalizedOffice": "devilslake",
+      "yearData": {
+        "year": 1906,
+        "state": "ND",
+        "office": "Devils Lake",
+        "claims": 1141,
+        "acres_claimed": 138049.07,
+        "patents": 1713,
+        "acres_patented": 254698.18
+      },
+      "timelineData": {
+        "year": 1906,
+        "state": "ND",
+        "office": "Devils Lake",
+        "claims": 1126,
+        "acres_claimed": 136420.54,
+        "patents": 1634,
+        "acres_patented": 244567.37
+      },
+      "diff": {
+        "claims": 15,
+        "acres_claimed": 1628.5299999999988,
+        "patents": 79,
+        "acres_patented": 10130.809999999998
+      }
+    },
+    {
+      "year": 1906,
+      "state": "CA",
+      "office": "Redding",
+      "normalizedOffice": "redding",
+      "yearData": {
+        "year": 1906,
+        "state": "CA",
+        "office": "Redding",
+        "claims": 209.00000022896012,
+        "acres_claimed": 31674.13003202995,
+        "patents": 70.0000001072345,
+        "acres_patented": 10030.460015587681
+      },
+      "timelineData": {
+        "year": 1906,
+        "state": "CA",
+        "office": "Redding",
+        "claims": 209,
+        "acres_claimed": 31674.13,
+        "patents": 70,
+        "acres_patented": 10030.46
+      },
+      "diff": {
+        "claims": 2.2896011842021835e-7,
+        "acres_claimed": 0.000032029947760747746,
+        "patents": 1.0723449861416157e-7,
+        "acres_patented": 0.00001558768235554453
+      }
+    },
+    {
+      "year": 1906,
+      "state": "OK",
+      "office": "Lawton",
+      "normalizedOffice": "lawton",
+      "yearData": {
+        "year": 1906,
+        "state": "OK",
+        "office": "Lawton",
+        "claims": 757,
+        "acres_claimed": 95371.56999999999,
+        "patents": 1211,
+        "acres_patented": 187873.68
+      },
+      "timelineData": {
+        "year": 1906,
+        "state": "OK",
+        "office": "Lawton",
+        "claims": 182,
+        "acres_claimed": 23034.26,
+        "patents": 153,
+        "acres_patented": 23807.34
+      },
+      "diff": {
+        "claims": 575,
+        "acres_claimed": 72337.31,
+        "patents": 1058,
+        "acres_patented": 164066.34
+      }
+    },
+    {
+      "year": 1906,
+      "state": "OK",
+      "office": "El Reno",
+      "normalizedOffice": "elreno",
+      "yearData": {
+        "year": 1906,
+        "state": "OK",
+        "office": "El Reno",
+        "claims": 108.00000039641654,
+        "acres_claimed": 12898.87005300921,
+        "patents": 374.0000006186331,
+        "acres_patented": 55955.800093957965
+      },
+      "timelineData": {
+        "year": 1906,
+        "state": "OK",
+        "office": "El Reno",
+        "claims": 108,
+        "acres_claimed": 12898.87,
+        "patents": 374,
+        "acres_patented": 55955.8
+      },
+      "diff": {
+        "claims": 3.9641653870603477e-7,
+        "acres_claimed": 0.00005300920929585118,
+        "patents": 6.186331233948295e-7,
+        "acres_patented": 0.00009395796223543584
+      }
+    },
+    {
+      "year": 1907,
+      "state": "MN",
+      "office": "Duluth",
+      "normalizedOffice": "duluth",
+      "yearData": {
+        "year": 1907,
+        "state": "MN",
+        "office": "Duluth",
+        "claims": 891,
+        "acres_claimed": 99614.82999999999,
+        "patents": 477,
+        "acres_patented": 48983.34
+      },
+      "timelineData": {
+        "year": 1907,
+        "state": "MN",
+        "office": "Duluth",
+        "claims": 802,
+        "acres_claimed": 93473.93,
+        "patents": 322,
+        "acres_patented": 33475.06
+      },
+      "diff": {
+        "claims": 89,
+        "acres_claimed": 6140.899999999994,
+        "patents": 155,
+        "acres_patented": 15508.279999999999
+      }
+    },
+    {
+      "year": 1907,
+      "state": "SD",
+      "office": "Aberdeen",
+      "normalizedOffice": "aberdeen",
+      "yearData": {
+        "year": 1907,
+        "state": "SD",
+        "office": "Aberdeen",
+        "claims": 320.99994833810115,
+        "acres_claimed": 41797.636413313056,
+        "patents": 328.999818521022,
+        "acres_patented": 44380.458401219825
+      },
+      "timelineData": {
+        "year": 1907,
+        "state": "SD",
+        "office": "Aberdeen",
+        "claims": 282,
+        "acres_claimed": 39090.02,
+        "patents": 192,
+        "acres_patented": 28075.38
+      },
+      "diff": {
+        "claims": 38.99994833810115,
+        "acres_claimed": 2707.6164133130587,
+        "patents": 136.999818521022,
+        "acres_patented": 16305.078401219824
+      }
+    },
+    {
+      "year": 1907,
+      "state": "SD",
+      "office": "Huron",
+      "normalizedOffice": "huron",
+      "yearData": {
+        "year": 1907,
+        "state": "SD",
+        "office": "Huron",
+        "claims": 164.00005166189885,
+        "acres_claimed": 22138.753586686937,
+        "patents": 178.00018147897802,
+        "acres_patented": 26858.571598780178
+      },
+      "timelineData": {
+        "year": 1907,
+        "state": "SD",
+        "office": "Huron",
+        "claims": 164,
+        "acres_claimed": 22138.75,
+        "patents": 178,
+        "acres_patented": 26858.55
+      },
+      "diff": {
+        "claims": 0.00005166189885130734,
+        "acres_claimed": 0.0035866869366145693,
+        "patents": 0.00018147897802123225,
+        "acres_patented": 0.02159878017846495
+      }
+    },
+    {
+      "year": 1908,
+      "state": "OK",
+      "office": "Guthrie",
+      "normalizedOffice": "guthrie",
+      "yearData": {
+        "year": 1908,
+        "state": "OK",
+        "office": "Guthrie",
+        "claims": 518.0741737712228,
+        "acres_claimed": 56050.88887516335,
+        "patents": 1546.0944029815564,
+        "acres_patented": 223909.7849642746
+      },
+      "timelineData": {
+        "year": 1908,
+        "state": "OK",
+        "office": "Guthrie",
+        "claims": 518,
+        "acres_claimed": 56042.31,
+        "patents": 1546,
+        "acres_patented": 223895.63
+      },
+      "diff": {
+        "claims": 0.07417377122283142,
+        "acres_claimed": 8.578875163351768,
+        "patents": 0.09440298155641358,
+        "acres_patented": 14.154964274581289
+      }
+    },
+    {
+      "year": 1908,
+      "state": "SD",
+      "office": "Pierre",
+      "normalizedOffice": "pierre",
+      "yearData": {
+        "year": 1908,
+        "state": "SD",
+        "office": "Pierre",
+        "claims": 3139.8809581567793,
+        "acres_claimed": 484431.47914980847,
+        "patents": 321.8152186314186,
+        "acres_patented": 49382.37295619276
+      },
+      "timelineData": {
+        "year": 1908,
+        "state": "SD",
+        "office": "Pierre",
+        "claims": 3073,
+        "acres_claimed": 476335.07,
+        "patents": 218,
+        "acres_patented": 34203.46
+      },
+      "diff": {
+        "claims": 66.88095815677934,
+        "acres_claimed": 8096.40914980846,
+        "patents": 103.81521863141859,
+        "acres_patented": 15178.912956192762
+      }
+    },
+    {
+      "year": 1908,
+      "state": "OK",
+      "office": "Woodward",
+      "normalizedOffice": "woodward",
+      "yearData": {
+        "year": 1908,
+        "state": "OK",
+        "office": "Woodward",
+        "claims": 2766.925826228777,
+        "acres_claimed": 390810.60112483666,
+        "patents": 2149.9055970184436,
+        "acres_patented": 331760.5050357254
+      },
+      "timelineData": {
+        "year": 1908,
+        "state": "OK",
+        "office": "Woodward",
+        "claims": 2591,
+        "acres_claimed": 370463.17,
+        "patents": 1926,
+        "acres_patented": 298187.67
+      },
+      "diff": {
+        "claims": 175.92582622877717,
+        "acres_claimed": 20347.431124836672,
+        "patents": 223.9055970184436,
+        "acres_patented": 33572.83503572544
+      }
+    },
+    {
+      "year": 1908,
+      "state": "SD",
+      "office": "Aberdeen",
+      "normalizedOffice": "aberdeen",
+      "yearData": {
+        "year": 1908,
+        "state": "SD",
+        "office": "Aberdeen",
+        "claims": 246.04451092200455,
+        "acres_claimed": 29219.258359349446,
+        "patents": 269.069091580425,
+        "acres_patented": 35060.01193976473
+      },
+      "timelineData": {
+        "year": 1908,
+        "state": "SD",
+        "office": "Aberdeen",
+        "claims": 246,
+        "acres_claimed": 29213.87,
+        "patents": 269,
+        "acres_patented": 35049.91
+      },
+      "diff": {
+        "claims": 0.04451092200454809,
+        "acres_claimed": 5.388359349446546,
+        "patents": 0.0690915804249812,
+        "acres_patented": 10.101939764725103
+      }
+    },
+    {
+      "year": 1908,
+      "state": "SD",
+      "office": "Chamberlain",
+      "normalizedOffice": "chamberlain",
+      "yearData": {
+        "year": 1908,
+        "state": "SD",
+        "office": "Chamberlain",
+        "claims": 1445.0278080609758,
+        "acres_claimed": 211427.08636085258,
+        "patents": 185.04316475136528,
+        "acres_patented": 29151.57115565123
+      },
+      "timelineData": {
+        "year": 1908,
+        "state": "SD",
+        "office": "Chamberlain",
+        "claims": 1445,
+        "acres_claimed": 211423.72,
+        "patents": 185,
+        "acres_patented": 29145.26
+      },
+      "diff": {
+        "claims": 0.027808060975758053,
+        "acres_claimed": 3.3663608525821473,
+        "patents": 0.04316475136528197,
+        "acres_patented": 6.311155651230365
+      }
+    },
+    {
+      "year": 1908,
+      "state": "SD",
+      "office": "Mitchell",
+      "normalizedOffice": "mitchell",
+      "yearData": {
+        "year": 1908,
+        "state": "SD",
+        "office": "Mitchell",
+        "claims": 35.04672286024043,
+        "acres_claimed": 3194.3461299894816,
+        "patents": 41.07252503679111,
+        "acres_patented": 5624.95394839128
+      },
+      "timelineData": {
+        "year": 1908,
+        "state": "SD",
+        "office": "Mitchell",
+        "claims": 35,
+        "acres_claimed": 3188.69,
+        "patents": 41,
+        "acres_patented": 5614.35
+      },
+      "diff": {
+        "claims": 0.04672286024042904,
+        "acres_claimed": 5.656129989481542,
+        "patents": 0.072525036791113,
+        "acres_patented": 10.603948391280028
+      }
+    },
+    {
+      "year": 1909,
+      "state": "KS",
+      "office": "Topeka",
+      "normalizedOffice": "topeka",
+      "yearData": {
+        "year": 1909,
+        "state": "KS",
+        "office": "Topeka",
+        "claims": 250,
+        "acres_claimed": 34122.909999999996,
+        "patents": 228,
+        "acres_patented": 33551.93
+      },
+      "timelineData": {
+        "year": 1909,
+        "state": "KS",
+        "office": "Topeka",
+        "claims": 63,
+        "acres_claimed": 8172.24,
+        "patents": 38,
+        "acres_patented": 5459.63
+      },
+      "diff": {
+        "claims": 187,
+        "acres_claimed": 25950.67,
+        "patents": 190,
+        "acres_patented": 28092.3
+      }
+    },
+    {
+      "year": 1909,
+      "state": "AR",
+      "office": "Little Rock",
+      "normalizedOffice": "littlerock",
+      "yearData": {
+        "year": 1909,
+        "state": "AR",
+        "office": "Little Rock",
+        "claims": 553,
+        "acres_claimed": 49736.6,
+        "patents": 505,
+        "acres_patented": 57399.759999999995
+      },
+      "timelineData": {
+        "year": 1909,
+        "state": "AR",
+        "office": "Little Rock",
+        "claims": 451,
+        "acres_claimed": 40744,
+        "patents": 373,
+        "acres_patented": 41238.96
+      },
+      "diff": {
+        "claims": 102,
+        "acres_claimed": 8992.599999999999,
+        "patents": 132,
+        "acres_patented": 16160.799999999996
+      }
+    },
+    {
+      "year": 1909,
+      "state": "SD",
+      "office": "Pierre",
+      "normalizedOffice": "pierre",
+      "yearData": {
+        "year": 1909,
+        "state": "SD",
+        "office": "Pierre",
+        "claims": 1410.01595996386,
+        "acres_claimed": 213254.22618845716,
+        "patents": 272.0062999857342,
+        "acres_patented": 42270.37919832615
+      },
+      "timelineData": {
+        "year": 1909,
+        "state": "SD",
+        "office": "Pierre",
+        "claims": 1410,
+        "acres_claimed": 213252.22,
+        "patents": 272,
+        "acres_patented": 42269.64
+      },
+      "diff": {
+        "claims": 0.01595996386004117,
+        "acres_claimed": 2.0061884571623523,
+        "patents": 0.006299985734187885,
+        "acres_patented": 0.7391983261477435
+      }
+    },
+    {
+      "year": 1909,
+      "state": "SD",
+      "office": "Gregory",
+      "normalizedOffice": "gregory",
+      "yearData": {
+        "year": 1909,
+        "state": "SD",
+        "office": "Gregory",
+        "claims": 50.98404003614003,
+        "acres_claimed": 6225.233811542849,
+        "patents": 23.9937000142658,
+        "acres_patented": 3053.890801673854
+      },
+      "timelineData": {
+        "year": 1909,
+        "state": "SD",
+        "office": "Gregory",
+        "claims": 13,
+        "acres_claimed": 1450.59,
+        "patents": 9,
+        "acres_patented": 1294.63
+      },
+      "diff": {
+        "claims": 37.98404003614003,
+        "acres_claimed": 4774.643811542849,
+        "patents": 14.993700014265801,
+        "acres_patented": 1759.260801673854
+      }
+    },
+    {
+      "year": 1910,
+      "state": "OK",
+      "office": "Guthrie",
+      "normalizedOffice": "guthrie",
+      "yearData": {
+        "year": 1910,
+        "state": "OK",
+        "office": "Guthrie",
+        "claims": 311,
+        "acres_claimed": 33021.15,
+        "patents": 575,
+        "acres_patented": 79641.08
+      },
+      "timelineData": {
+        "year": 1910,
+        "state": "OK",
+        "office": "Guthrie",
+        "claims": 257,
+        "acres_claimed": 27388.53,
+        "patents": 496,
+        "acres_patented": 68578.14
+      },
+      "diff": {
+        "claims": 54,
+        "acres_claimed": 5632.620000000003,
+        "patents": 79,
+        "acres_patented": 11062.940000000002
+      }
+    },
+    {
+      "year": 1911,
+      "state": "CA",
+      "office": "San Francisco",
+      "normalizedOffice": "sanfrancisco",
+      "yearData": {
+        "year": 1911,
+        "state": "CA",
+        "office": "San Francisco",
+        "claims": 328.9999997555826,
+        "acres_claimed": 44321.89996701022,
+        "patents": 83.99999993527287,
+        "acres_patented": 11914.019990789166
+      },
+      "timelineData": {
+        "year": 1911,
+        "state": "CA",
+        "office": "San Francisco",
+        "claims": 76,
+        "acres_claimed": 10173.7,
+        "patents": 17,
+        "acres_patented": 2379.75
+      },
+      "diff": {
+        "claims": 252.99999975558262,
+        "acres_claimed": 34148.19996701022,
+        "patents": 66.99999993527287,
+        "acres_patented": 9534.269990789166
+      }
+    },
+    {
+      "year": 1911,
+      "state": "LA",
+      "office": "Baton Rouge",
+      "normalizedOffice": "batonrouge",
+      "yearData": {
+        "year": 1911,
+        "state": "LA",
+        "office": "Baton Rouge",
+        "claims": 322,
+        "acres_claimed": 23419.56,
+        "patents": 285,
+        "acres_patented": 21904.63
+      },
+      "timelineData": {
+        "year": 1911,
+        "state": "LA",
+        "office": "Baton Rouge",
+        "claims": 54,
+        "acres_claimed": 3635.13,
+        "patents": 53,
+        "acres_patented": 3765.03
+      },
+      "diff": {
+        "claims": 268,
+        "acres_claimed": 19784.43,
+        "patents": 232,
+        "acres_patented": 18139.600000000002
+      }
+    },
+    {
+      "year": 1911,
+      "state": "CA",
+      "office": "Redding",
+      "normalizedOffice": "redding",
+      "yearData": {
+        "year": 1911,
+        "state": "CA",
+        "office": "Redding",
+        "claims": 152.00000024441735,
+        "acres_claimed": 19929.650032989775,
+        "patents": 65.00000006472713,
+        "acres_patented": 9524.690009210835
+      },
+      "timelineData": {
+        "year": 1911,
+        "state": "CA",
+        "office": "Redding",
+        "claims": 152,
+        "acres_claimed": 19929.65,
+        "patents": 65,
+        "acres_patented": 9524.69
+      },
+      "diff": {
+        "claims": 2.4441735035907186e-7,
+        "acres_claimed": 0.00003298977389931679,
+        "patents": 6.472713209859648e-8,
+        "acres_patented": 0.000009210834832629189
+      }
+    },
+    {
+      "year": 1912,
+      "state": "OK",
+      "office": "Guthrie",
+      "normalizedOffice": "guthrie",
+      "yearData": {
+        "year": 1912,
+        "state": "OK",
+        "office": "Guthrie",
+        "claims": 365,
+        "acres_claimed": 36736.13,
+        "patents": 393,
+        "acres_patented": 54176.95
+      },
+      "timelineData": {
+        "year": 1912,
+        "state": "OK",
+        "office": "Guthrie",
+        "claims": 265,
+        "acres_claimed": 25210.87,
+        "patents": 326,
+        "acres_patented": 45314.92
+      },
+      "diff": {
+        "claims": 100,
+        "acres_claimed": 11525.259999999998,
+        "patents": 67,
+        "acres_patented": 8862.029999999999
+      }
+    }
+  ]
+}

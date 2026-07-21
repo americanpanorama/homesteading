@@ -1,4 +1,6 @@
 import * as fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
 // @ts-ignore: Unreachable code error
 import US from '../src/us.js';
 import d3 from 'd3-geo';
@@ -10,7 +12,7 @@ import getSVGBounds from 'svg-path-bounds';
 import geojsonArea from '@mapbox/geojson-area';
 import { MapDate, TownshipFeature, OfficeMappings, TownshipData, YMD, PolygonOrMultipolygon } from './index.d';
 
-const dataProcessingDir = '/Users/rnelson2/Documents/projects/panorama/homesteads/data-processing';
+const dataProcessingDir = path.dirname(fileURLToPath(import.meta.url));
 const MapDates: MapDate[] = JSON.parse(fs.readFileSync(`${dataProcessingDir}/data-input/mapDates.json`, 'utf8'));
 const officeMappings: OfficeMappings = JSON.parse(fs.readFileSync(`${dataProcessingDir}/data-input/officeMappings.json`, 'utf8'));
 const Townships: { type: string, features: TownshipFeature[] } = JSON.parse(fs.readFileSync(`${dataProcessingDir}/data-input/townshipssimplified.json`, 'utf8'));
@@ -66,6 +68,50 @@ const onlyUnique = (value: any, index: number, self: any[]) => self.indexOf(valu
 
 export function radiansToDegrees(radians: number) { return radians * 180 / Math.PI; }
 
+/**
+ * Normalizes historical numeric fields that occasionally contain annotations
+ * or locale punctuation in the raw source tables.
+ *
+ * Examples seen in the source data:
+ * - `5729,66` -> `5729.66`
+ * - `835.9?` -> `835.9`
+ * - `151.873.06` -> `151873.06`
+ * - `mislaid?` / `ponca` / `?` -> `0`
+ */
+export function normalizeDataNumber(value: unknown): number {
+  if (typeof value === 'number') {
+    return Number.isFinite(value) ? value : 0;
+  }
+
+  if (typeof value !== 'string') {
+    return 0;
+  }
+
+  let normalized = value.trim();
+  if (!normalized) {
+    return 0;
+  }
+
+  if (/^\d+,\d+$/.test(normalized)) {
+    normalized = normalized.replace(',', '.');
+  }
+
+  normalized = normalized.replace(/\?/g, '');
+  normalized = normalized.replace(/[^0-9.\-]/g, '');
+
+  if (!normalized || normalized === '.' || normalized === '-' || normalized === '-.') {
+    return 0;
+  }
+
+  const decimalParts = normalized.split('.');
+  if (decimalParts.length > 2) {
+    normalized = `${decimalParts.slice(0, -1).join('')}.${decimalParts[decimalParts.length - 1]}`;
+  }
+
+  const parsed = parseFloat(normalized);
+  return Number.isFinite(parsed) ? parsed : 0;
+}
+
 export const parseDate = (start: number, end: number) => {
   const startDate = new Date(start);
   const endDate = new Date(end);
@@ -107,7 +153,10 @@ export const getMapsToCut = (township: TownshipFeature): string[] => {
 
 export const getDataForYearFromTileID = (tile_id: string, year: number): TownshipData | null => {
   const [stateAbbr, officeStub, startYearStr, endYearStr] = tile_id.split('-');
-  const officeName = (exceptions[stateAbbr] && exceptions[stateAbbr][officeStub]) ? exceptions[stateAbbr][officeStub] : officeStub;
+  const officeNames = [
+    officeStub,
+    (exceptions[stateAbbr] && exceptions[stateAbbr][officeStub]) ? exceptions[stateAbbr][officeStub] : officeStub,
+  ].filter(onlyUnique);
   // if (officeStub.includes('Detroit')) {
   //   console.log(officeName, `${officeName.replace(/[^a-zA-Z]/g, '')}${stateAbbr}`.toLowerCase(), TownshipsData.find(td => {
   //     if (stateAbbr === 'DK') {
@@ -117,10 +166,16 @@ export const getDataForYearFromTileID = (tile_id: string, year: number): Townshi
   //   }));
   // };
   return TownshipsData.find(td => {
+    const normalizedDataOffice = td.office.toLowerCase().replace(/[^a-zA-Z]/g, '');
     if (stateAbbr === 'DK') {
-      return td.year === year && (td.office.toLowerCase().replace(/[^a-zA-Z]/g, '') === `${officeName}ND`.toLowerCase().replace(/[^a-zA-Z]/g, '') || td.office.toLowerCase().replace(/[^a-zA-Z]/g, '') === `${officeName}SD`.toLowerCase().replace(/[^a-zA-Z]/g, ''));
+      return td.year === year && officeNames.some(officeName => (
+        normalizedDataOffice === `${officeName}ND`.toLowerCase().replace(/[^a-zA-Z]/g, '')
+        || normalizedDataOffice === `${officeName}SD`.toLowerCase().replace(/[^a-zA-Z]/g, '')
+      ));
     }
-    return td.year === year && td.office.toLowerCase().replace(/[^a-zA-Z]/g, '') === `${officeName}${stateAbbr}`.toLowerCase().replace(/[^a-zA-Z]/g, '')
+    return td.year === year && officeNames.some(officeName => (
+      normalizedDataOffice === `${officeName}${stateAbbr}`.toLowerCase().replace(/[^a-zA-Z]/g, '')
+    ));
   });
 }
 
@@ -197,7 +252,11 @@ export function getTownshipFeaturesOnDate(year: number, month: number, day: numb
       const dateValue = getDateValue(year, month, day);
       const startDateValue = getDateValue(startYear, startMonth, startDay);
       const endDateValue = getDateValue(endYear, endMonth, endDay);
-      return (!stateTerr || US.lookup(d.properties.STATENAM).abbr === stateTerr)
+      const featureState = US.lookup(d.properties.STATENAM).abbr;
+      const statesMatch = !stateTerr
+        || featureState === stateTerr
+        || (stateTerr === 'DK' && ['ND', 'SD'].includes(featureState));
+      return statesMatch
         && dateValue >= startDateValue && dateValue <= endDateValue;
     });
 }

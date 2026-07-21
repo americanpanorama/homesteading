@@ -1,3 +1,7 @@
+/*
+ * One-off helper that prints a SQL UNION query for calculating reservation area
+ * by year in the external Carto/PostGIS table named in the script.
+ */
 const startYear = 1862;
 const endYear = 1914;
 

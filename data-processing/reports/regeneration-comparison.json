@@ -1,0 +1,148 @@
+{
+  "years": "1863,1864,1865,1866,1867,1868,1869,1870,1871,1872,1873,1874,1875,1876,1877,1878,1879,1880,1881,1882,1883,1884,1885,1886,1887,1888,1889,1890,1891,1892,1893,1894,1895,1896,1897,1898,1899,1900,1901,1902,1903,1904,1905,1906,1907,1908,1909,1910,1911,1912",
+  "trialRoot": "/var/folders/x5/mtxs7qx935b81b54ns0yb9_m0000gp/T/homesteads2-trial-j03AG5",
+  "published": {
+    "stateMismatchRows": 201,
+    "officeMismatchRows": 193
+  },
+  "regenerated": {
+    "stateMismatchRows": 0,
+    "officeMismatchRows": 0
+  },
+  "reduction": {
+    "stateMismatchRows": {
+      "absolute": 201,
+      "percent": 100
+    },
+    "officeMismatchRows": {
+      "absolute": 193,
+      "percent": 100
+    }
+  },
+  "publishedTopStates": [
+    {
+      "state": "ID",
+      "count": 45
+    },
+    {
+      "state": "OK",
+      "count": 19
+    },
+    {
+      "state": "NE",
+      "count": 16
+    },
+    {
+      "state": "KS",
+      "count": 15
+    },
+    {
+      "state": "MN",
+      "count": 15
+    },
+    {
+      "state": "NV",
+      "count": 15
+    },
+    {
+      "state": "CO",
+      "count": 13
+    },
+    {
+      "state": "SD",
+      "count": 10
+    },
+    {
+      "state": "CA",
+      "count": 6
+    },
+    {
+      "state": "ND",
+      "count": 5
+    },
+    {
+      "state": "DK",
+      "count": 4
+    },
+    {
+      "state": "UT",
+      "count": 4
+    },
+    {
+      "state": "WA",
+      "count": 4
+    },
+    {
+      "state": "AL",
+      "count": 3
+    },
+    {
+      "state": "MT",
+      "count": 3
+    }
+  ],
+  "regeneratedTopStates": [],
+  "publishedTopOfficeStates": [
+    {
+      "state": "ID",
+      "count": 72
+    },
+    {
+      "state": "MN",
+      "count": 22
+    },
+    {
+      "state": "CO",
+      "count": 16
+    },
+    {
+      "state": "SD",
+      "count": 13
+    },
+    {
+      "state": "OK",
+      "count": 10
+    },
+    {
+      "state": "NE",
+      "count": 8
+    },
+    {
+      "state": "CA",
+      "count": 7
+    },
+    {
+      "state": "ND",
+      "count": 7
+    },
+    {
+      "state": "DK",
+      "count": 6
+    },
+    {
+      "state": "KS",
+      "count": 6
+    },
+    {
+      "state": "MT",
+      "count": 5
+    },
+    {
+      "state": "WA",
+      "count": 5
+    },
+    {
+      "state": "UT",
+      "count": 4
+    },
+    {
+      "state": "NV",
+      "count": 3
+    },
+    {
+      "state": "WY",
+      "count": 3
+    }
+  ],
+  "regeneratedTopOfficeStates": []
+}
