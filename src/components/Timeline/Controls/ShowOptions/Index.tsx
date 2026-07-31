@@ -16,8 +16,8 @@ const ShowOptions = ({
   const { year } = useURLParams();
   
   return (
-    <Styled.ToggleBlock>
-      <Styled.Label>Show</Styled.Label>
+    <Styled.ToggleBlock role='group' aria-labelledby='timeline-show-options-label'>
+      <Styled.GroupLabel id='timeline-show-options-label'>Show</Styled.GroupLabel>
       <Styled.ToggleList>
         <Styled.ToggleRow htmlFor='timeline-clashes'>
           <Styled.ToggleInput

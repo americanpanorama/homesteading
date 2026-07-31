@@ -114,7 +114,8 @@ const Row = (props: TimelineRowStyled) => {
           {(active) && (
             <Link
               to={linkTo}
-              aria-label={`View ${label}`}
+              aria-hidden='true'
+              tabIndex={-1}
             >
               <Styled.HitArea
                 x={0}

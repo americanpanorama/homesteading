@@ -20,9 +20,6 @@ const TimelineHeatmap = () => {
 
   return (
     <Styled.Container data-timeline-host>
-      <Styled.TableAccessLink to={buildTableLink()}>
-        This timeline visualization is also available as a data table with rows for places and columns for each year.
-      </Styled.TableAccessLink>
       <Styled.ScrollPanel $height={Math.min(height, rows.length * rowHeight + 340)}>
         <Controls
           sortBy={sortBy}
@@ -32,6 +29,10 @@ const TimelineHeatmap = () => {
           showInactiveAreasForSelectedYear={showInactiveAreasForSelectedYear}
           onToggleInactiveAreasForSelectedYear={setShowInactiveAreasForSelectedYear}
         />
+      <Styled.TableAccessLink to={buildTableLink()}>
+        <Styled.TableIcon aria-hidden='true' />
+        Tabular View
+      </Styled.TableAccessLink>
 
         <XAxis />
 

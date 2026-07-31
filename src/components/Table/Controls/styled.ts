@@ -34,6 +34,11 @@ export const Select = styled.select`
   color: ${Constants.colors.lightColor};
   font-family: ${Constants.fonts.sansSerif};
   font-size: 1rem;
+
+  &:focus-visible {
+    outline: 3px solid ${Constants.colors.focusRingColor};
+    outline-offset: 2px;
+  }
 `;
 
 export const ToggleRow = styled.label`

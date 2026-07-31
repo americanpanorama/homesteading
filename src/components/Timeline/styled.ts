@@ -15,29 +15,39 @@ export const Container = styled.div`
 `;
 
 export const TableAccessLink = styled(Link)`
-  position: absolute;
-  left: 12px;
-  top: 0;
-  z-index: 2;
-  max-width: min(420px, calc(100% - 24px));
-  padding: 10px 12px;
-  background: ${Constants.colors.whiteColor};
-  color: ${Constants.colors.lightColor};
-  border: 2px solid ${Constants.colors.focusRingColor};
-  border-radius: 4px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);
-  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  width: fit-content;
+  max-width: calc(100% - 24px);
+  box-sizing: border-box;
+  margin: 0 12px 8px auto;
+  padding: 0;
+  background: transparent;
+  color: ${Constants.colors.mutedTextColor};
+  border: 0;
+  font-family: ${Constants.fonts.sansSerif};
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  line-height: 1;
   text-decoration: none;
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(-140%);
-  transition: transform 160ms ease;
+  text-transform: uppercase;
+  white-space: nowrap;
 
-  body.keyboard-navigation &:focus {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateY(0);
+  &:hover {
+    text-decoration: underline;
   }
+`;
+
+export const TableIcon = styled.span`
+  display: inline-block;
+  width: 1.25em;
+  height: 1em;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 16' fill='none' stroke='%23777676' stroke-width='1.5'%3E%3Crect x='1' y='1' width='18' height='14'/%3E%3Cpath d='M1 5h18M1 10h18M7 1v14M13 1v14'/%3E%3C/svg%3E");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 `;
 
 export const ScrollPanel = styled.div<{ $height: number }>`
